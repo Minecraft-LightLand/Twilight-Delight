@@ -1,11 +1,10 @@
 {
   "required": true,
   "priority": 1000,
-  "package": "dev.xkmc.twilight_delight.mixin",
+  "package": "dev.xkmc.twilightdelight.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "magic_protection_overhaul.refmap.json",
+  "refmap": "twilightdelight.refmap.json",
   "mixins": [
-	"LivingEntityMixin"
   ],
   "client": [
   ],

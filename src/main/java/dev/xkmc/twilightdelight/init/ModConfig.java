@@ -1,4 +1,4 @@
-package dev.xkmc.twilight_delight;
+package dev.xkmc.twilightdelight.init;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ModLoadingContext;

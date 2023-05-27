@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "twilightdelight:item/glow_venison_rib_with_pasta"
+  }
+}
