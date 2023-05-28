@@ -1,0 +1,112 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"snake_body1": "twilightdelight:blocks/snake2",
+		"chop": "twilightdelight:blocks/chop",
+		"particle": "twilightdelight:blocks/tray_bottom",
+		"tray_bottom": "twilightdelight:blocks/tray_bottom",
+		"tray_top": "twilightdelight:blocks/tray_top_snakes",
+		"torchberry": "twilightdelight:blocks/torchberry",
+		"snake_head": "twilightdelight:blocks/snake1"
+	},
+	"elements": [
+		{
+			"name": "torchberry",
+			"from": [2, 2, 3],
+			"to": [4, 4, 5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 8]},
+			"faces": {
+				"north": {"uv": [3, 1, 5, 3], "texture": "#torchberry"},
+				"east": {"uv": [3, 4, 5, 6], "texture": "#torchberry"},
+				"south": {"uv": [0, 1, 2, 3], "texture": "#torchberry"},
+				"west": {"uv": [0, 4, 2, 6], "texture": "#torchberry"},
+				"up": {"uv": [8, 3, 6, 1], "rotation": 180, "texture": "#torchberry"},
+				"down": {"uv": [9, 0, 6, 3], "rotation": 180, "texture": "#torchberry"}
+			}
+		},
+		{
+			"name": "snake_head",
+			"from": [6, 2, 2],
+			"to": [9, 5, 5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 8]},
+			"faces": {
+				"north": {"uv": [3, 0, 6, 3], "texture": "#snake_head"},
+				"east": {"uv": [3, 3, 6, 6], "texture": "#snake_head"},
+				"south": {"uv": [0, 0, 3, 3], "texture": "#snake_head"},
+				"west": {"uv": [0, 3, 3, 6], "texture": "#snake_head"},
+				"up": {"uv": [3, 9, 0, 6], "rotation": 180, "texture": "#snake_head"},
+				"down": {"uv": [9, 0, 6, 3], "rotation": 180, "texture": "#snake_head"}
+			}
+		},
+		{
+			"name": "snake_body1",
+			"from": [9, 2, 3],
+			"to": [12, 4, 5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 8]},
+			"faces": {
+				"north": {"uv": [0, 2, 3, 4], "texture": "#snake_body1"},
+				"east": {"uv": [2, 4, 4, 6], "texture": "#snake_body1"},
+				"south": {"uv": [0, 0, 3, 2], "texture": "#snake_body1"},
+				"west": {"uv": [0, 4, 2, 6], "texture": "#snake_body1"},
+				"up": {"uv": [6, 2, 3, 0], "rotation": 180, "texture": "#snake_body1"},
+				"down": {"uv": [6, 2, 3, 4], "rotation": 180, "texture": "#snake_body1"}
+			}
+		},
+		{
+			"name": "chop",
+			"from": [8, 2, 6],
+			"to": [13, 7, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 8]},
+			"faces": {
+				"north": {"uv": [7.5, 2.5, 10, 5], "texture": "#chop"},
+				"east": {"uv": [0, 6, 3, 8.5], "texture": "#chop"},
+				"south": {"uv": [7.5, 0, 10, 2.5], "texture": "#chop"},
+				"west": {"uv": [5, 5, 8, 7.5], "texture": "#chop"},
+				"up": {"uv": [5, 3, 2.5, 0], "rotation": 180, "texture": "#chop"},
+				"down": {"uv": [5, 3, 2.5, 6], "rotation": 180, "texture": "#chop"}
+			}
+		},
+		{
+			"name": "plate",
+			"from": [1, 0, 1],
+			"to": [15, 2, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 8]},
+			"faces": {
+				"north": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
+				"east": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
+				"south": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
+				"west": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
+				"up": {"uv": [1, 1, 15, 15], "rotation": 180, "texture": "#tray_top"},
+				"down": {"uv": [1, 1, 15, 15], "rotation": 180, "texture": "#tray_bottom"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "fiery_snakes",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "snakes",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [0, 1, 2]
+				},
+				{
+					"name": "chop",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [3]
+				},
+				{
+					"name": "plate",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [4]
+				}
+			]
+		}
+	]
+}

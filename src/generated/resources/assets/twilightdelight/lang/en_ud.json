@@ -1,4 +1,9 @@
 {
+  "block.twilightdelight.fiery_snakes_block": "ʞɔoןᗺ sǝʞɐuS ʎɹǝıℲ",
+  "block.twilightdelight.lily_chicken_block": "ʞɔoןᗺ uǝʞɔıɥƆ ʎןıꞀ",
+  "block.twilightdelight.maze_stove": "ǝʌoʇS ǝzɐW",
+  "death.attack.twilightdelight.thorn_rose_tea": "uɹoɥʇ sʇı sɐɥ ǝsoɹ ʎɹǝʌǝ ʇɐɥʇ pǝbpǝןʍouʞɔɐ %1$s",
+  "death.attack.twilightdelight.thorn_rose_tea.player": "%2$s ǝdɐɔsǝ oʇ buıʎɹʇ ʇsןıɥʍ uɹoɥʇ sʇı sɐɥ ǝsoɹ ʎɹǝʌǝ ʇɐɥʇ pǝbpǝןʍouʞɔɐ s$Ɩ",
   "effect.twilightdelight.fire_range": "ǝbuɐᴚ ǝɹıℲ",
   "effect.twilightdelight.frozen_range": "ǝbuɐᴚ uǝzoɹℲ",
   "effect.twilightdelight.poison_range": "ǝbuɐᴚ uosıoԀ",
@@ -12,6 +17,7 @@
   "item.twilightdelight.experiment_110": "0ƖƖ ʇuǝɯıɹǝdxƎ",
   "item.twilightdelight.experiment_113": "ƐƖƖ ʇuǝɯıɹǝdxƎ",
   "item.twilightdelight.fiery_knife": "ǝɟıuʞ ʎɹǝıℲ",
+  "item.twilightdelight.fiery_knife.tooltip": "sʇǝbɹɐʇ suɹnᗺ",
   "item.twilightdelight.fried_insect": "ʇɔǝsuI pǝıɹℲ",
   "item.twilightdelight.glacier_ice_tea": "ɐǝ⟘ ǝɔI ɹǝıɔɐן⅁",
   "item.twilightdelight.glow_venison_rib_with_pasta": "ɐʇsɐԀ ɥʇıM qıᴚ uosıuǝΛ ʍoן⅁",
@@ -20,6 +26,7 @@
   "item.twilightdelight.hydra_piece": "ǝɔǝıԀ ɐɹpʎH",
   "item.twilightdelight.ironwood_knife": "ǝɟıuʞ pooʍuoɹI",
   "item.twilightdelight.knightmetal_knife": "ǝɟıuʞ ןɐʇǝɯʇɥbıuʞ",
+  "item.twilightdelight.knightmetal_knife.tooltip": "sʇǝbɹɐʇ pǝɹoɯɹɐ oʇ ǝbɐɯɐp ɐɹʇxƎ",
   "item.twilightdelight.phytochemical_juice": "ǝɔınſ ןɐɔıɯǝɥɔoʇʎɥԀ",
   "item.twilightdelight.plate_of_fiery_snakes": "sǝʞɐuS ʎɹǝıℲ ɟO ǝʇɐןԀ",
   "item.twilightdelight.plate_of_lily_chicken": "uǝʞɔıɥƆ ʎןıꞀ ɟO ǝʇɐןԀ",
@@ -29,9 +36,12 @@
   "item.twilightdelight.steeleaf_knife": "ǝɟıuʞ ɟɐǝןǝǝʇS",
   "item.twilightdelight.tear_drink": "ʞuıɹᗡ ɹɐǝ⟘",
   "item.twilightdelight.teardrop_sword": "pɹoʍS doɹpɹɐǝ⟘",
+  "item.twilightdelight.teardrop_sword.tooltip": "ʎɹɔ oʇ ǝɔuɐɥɔ ɐ sɐɥ puɐ ʇǝbɹɐʇ ǝɥʇ suɹnᗺ",
   "item.twilightdelight.thorn_rose_tea": "ɐǝ⟘ ǝsoᴚ uɹoɥ⟘",
   "item.twilightdelight.thousand_plant_stew": "ʍǝʇS ʇuɐןԀ puɐsnoɥ⟘",
   "item.twilightdelight.torchberry_cookie": "ǝıʞooƆ ʎɹɹǝqɥɔɹo⟘",
   "item.twilightdelight.torchberry_juice": "ǝɔınſ ʎɹɹǝqɥɔɹo⟘",
-  "item.twilightdelight.twilight_spring": "buıɹdS ʇɥbıןıʍ⟘"
+  "item.twilightdelight.twilight_spring": "buıɹdS ʇɥbıןıʍ⟘",
+  "itemGroup.tab.twilightdelight": "ʇɥbıןǝᗡ ʇɥbıןıʍ⟘",
+  "twilightdelight.tooltip.chance": "ǝɔuɐɥɔ %2$s%% ɥʇıʍ %1$s"
 }

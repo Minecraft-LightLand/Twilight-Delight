@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "twilightdelight:blocks/maze_stove_bottom",
+    "up": "twilightdelight:blocks/maze_stove_top",
+    "north": "twilightdelight:blocks/maze_stove_front",
+    "east": "twilightdelight:blocks/maze_stove_side",
+    "south": "twilightdelight:blocks/maze_stove_side",
+    "west": "twilightdelight:blocks/maze_stove_side",
+    "particle": "twilightdelight:blocks/maze_stove_bottom"
+  }
+}

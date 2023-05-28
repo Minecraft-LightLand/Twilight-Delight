@@ -25,7 +25,7 @@ public abstract class RangeSearchEffect extends MobEffect {
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		entity.clearFire();
-		if (entity.tickCount % 20 == 0) {
+		if (entity.tickCount % 10 == 0) {
 			for (LivingEntity e : getEntitiesInRange(6, entity)) {
 				if (e == entity) {
 					continue;

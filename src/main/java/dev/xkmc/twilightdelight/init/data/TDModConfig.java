@@ -1,10 +1,11 @@
-package dev.xkmc.twilightdelight.init;
+package dev.xkmc.twilightdelight.init.data;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ModLoadingContext;
+import net.minecraftforge.fml.config.ModConfig;
 import org.apache.commons.lang3.tuple.Pair;
 
-public class ModConfig {
+public class TDModConfig {
 
 	public static class Client {
 
@@ -40,11 +41,9 @@ public class ModConfig {
 	 * Registers any relevant listeners for config
 	 */
 	public static void init() {
-		ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.CLIENT, CLIENT_SPEC);
-		ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, COMMON_SPEC);
+		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CLIENT_SPEC);
+		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_SPEC);
 	}
-
-
 
 
 }

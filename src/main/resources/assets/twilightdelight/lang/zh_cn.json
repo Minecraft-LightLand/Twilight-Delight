@@ -3,6 +3,7 @@
 
   "death.attack.twilightdelight.thorn_rose_tea": "%1$s承认了每朵玫瑰都有刺",
   "death.attack.twilightdelight.thorn_rose_tea.player": "%1$s在试图逃离%2$s时承认了每朵玫瑰都有刺",
+  "twilightdelight.tooltip.chance": "%2$s%%的概率获得%1$s",
 
   "item.twilightdelight.knightmetal_knife.tooltip": "对有护甲的目标造成额外伤害",
   "item.twilightdelight.aurora_ice_cream": "极光冰淇淋",
@@ -16,7 +17,7 @@
   "item.twilightdelight.cooked_meef_slice": "熟牛头人肉片",
   "item.twilightdelight.torchberry_cookie": "火炬浆果曲奇",
   "item.twilightdelight.berry_stick": "浆果串",
-  "item.twilightdelight.fiery_snakes": "盘装炽汁蛇宴",
+  "item.twilightdelight.plate_of_fiery_snakes": "盘装炽汁蛇宴",
   "item.twilightdelight.torchberry_juice": "火炬浆果汁",
   "item.twilightdelight.cooked_insect": "熟虫肉",
   "item.twilightdelight.knightmetal_knife": "骑士刀",
@@ -30,7 +31,7 @@
   "item.twilightdelight.fiery_knife": "炽铁刀",
   "item.twilightdelight.phytochemical_juice": "植物素汁",
   "item.twilightdelight.experiment_113": "试验物品 113",
-  "item.twilightdelight.lily_chicken": "盘装荷花鸡",
+  "item.twilightdelight.plate_of_lily_chicken": "盘装荷花鸡",
   "item.twilightdelight.teardrop_sword.tooltip": "灼烧攻击目标并有概率使其哭泣",
   "item.twilightdelight.tear_drink": "盈泪之饮",
   "item.twilightdelight.raw_meef_slice": "生牛头人肉片",
