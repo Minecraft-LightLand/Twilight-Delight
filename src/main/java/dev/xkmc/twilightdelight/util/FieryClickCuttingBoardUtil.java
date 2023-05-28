@@ -1,6 +1,7 @@
 package dev.xkmc.twilightdelight.util;
 
 import dev.xkmc.twilightdelight.content.item.tool.FieryKnifeItem;
+import dev.xkmc.twilightdelight.mixin.CuttingBoardBlockEntityAccessor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
@@ -14,7 +15,6 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
 import vectorwing.farmersdelight.common.block.CuttingBoardBlock;
 import vectorwing.farmersdelight.common.block.entity.CuttingBoardBlockEntity;
@@ -22,9 +22,6 @@ import vectorwing.farmersdelight.common.crafting.CuttingBoardRecipe;
 import vectorwing.farmersdelight.common.registry.ModAdvancements;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Optional;
 
@@ -81,22 +78,8 @@ public class FieryClickCuttingBoardUtil {
 		}//TODO validate
 	}
 
-	/**
-	 * To get vectorwing.farmersdelight.common.block.entity.CuttingBoardBlockEntity.getMatchingRecipe(RecipeWrapper.class, ItemStack.class, Player.class)
-	 */
 	protected static Optional<CuttingBoardRecipe> getMatchingRecipe(CuttingBoardBlockEntity blockEntity, ItemStack toolItem, Player player) {
-		try {
-			Field inventory = blockEntity.getClass().getDeclaredField("inventory");
-			Method getMatchingRecipe = blockEntity.getClass().getDeclaredMethod("getMatchingRecipe", RecipeWrapper.class, ItemStack.class, Player.class);
-
-			// visit private
-			inventory.setAccessible(true);
-			getMatchingRecipe.setAccessible(true);
-
-			return (Optional<CuttingBoardRecipe>) getMatchingRecipe.invoke(blockEntity, new RecipeWrapper((IItemHandlerModifiable) inventory.get(blockEntity)), toolItem, player);
-		} catch (NoSuchFieldException | NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-			e.printStackTrace();
-			return Optional.empty();
-		}//TODO validate
+		CuttingBoardBlockEntityAccessor accessor = (CuttingBoardBlockEntityAccessor) blockEntity;
+		return accessor.callGetMatchingRecipe(new RecipeWrapper(accessor.getInventory()), toolItem, player);
 	}
 }

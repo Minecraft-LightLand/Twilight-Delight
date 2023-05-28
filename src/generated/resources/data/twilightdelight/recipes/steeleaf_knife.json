@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "twilightforest:steeleaf_ingot"
+    },
+    "B": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    " A",
+    "B "
+  ],
+  "result": {
+    "item": "twilightdelight:steeleaf_knife",
+    "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:looting\",lvl:2s}]}"
+  }
+}

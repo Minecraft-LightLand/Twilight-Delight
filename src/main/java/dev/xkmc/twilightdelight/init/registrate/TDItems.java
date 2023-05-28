@@ -130,7 +130,7 @@ public class TDItems {
 				new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1),
 				new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1)),
 		PLATE_OF_FIERY_SNAKES(FoodType.BOWL_MEAT, 20, 1.9f,
-				new EffectSupplier(ModEffects.NOURISHMENT, 12000, 0, 1),
+				new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1),
 				new EffectSupplier(ModEffects.COMFORT, 6000, 0, 1),
 				new EffectSupplier(() -> MobEffects.DAMAGE_BOOST, 6000, 1, 1),
 				new EffectSupplier(() -> MobEffects.REGENERATION, 400, 1, 1)),

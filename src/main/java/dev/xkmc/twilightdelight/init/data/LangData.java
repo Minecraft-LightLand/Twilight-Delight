@@ -42,7 +42,7 @@ public enum LangData {
 		for (LangData lang : LangData.values()) {
 			pvd.add(lang.key, lang.def);
 		}
-		pvd.add("itemGroup.tab." + TwilightDelight.MODID, "Twilight Delight");
+		pvd.add("itemGroup.tab." + TwilightDelight.MODID, "Twilight's Delight");
 		pvd.add("item.twilightdelight.fiery_knife.tooltip", "Burns targets");
 		pvd.add("item.twilightdelight.knightmetal_knife.tooltip", "Extra damage to armored targets");
 		pvd.add("item.twilightdelight.teardrop_sword.tooltip", "Burns the target and has a chance to cry");

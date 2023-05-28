@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightforest:ur_ghast_trophy"
+    }
+  ],
+  "result": [
+    {
+      "count": 9,
+      "item": "twilightdelight:experiment_113"
+    },
+    {
+      "count": 4,
+      "item": "twilightforest:experiment_115"
+    },
+    {
+      "chance": 0.1,
+      "item": "twilightdelight:experiment_113"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}

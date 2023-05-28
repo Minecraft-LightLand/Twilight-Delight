@@ -2,13 +2,13 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"snake_body1": "twilightdelight:blocks/snake2",
-		"chop": "twilightdelight:blocks/chop",
-		"particle": "twilightdelight:blocks/tray_bottom",
-		"tray_bottom": "twilightdelight:blocks/tray_bottom",
-		"tray_top": "twilightdelight:blocks/tray_top_snakes",
-		"torchberry": "twilightdelight:blocks/torchberry",
-		"snake_head": "twilightdelight:blocks/snake1"
+		"snake_body1": "twilightdelight:block/snake2",
+		"chop": "twilightdelight:block/chop",
+		"particle": "twilightdelight:block/tray_bottom",
+		"tray_bottom": "twilightdelight:block/tray_bottom",
+		"tray_top": "twilightdelight:block/tray_top_snakes",
+		"torchberry": "twilightdelight:block/torchberry",
+		"snake_head": "twilightdelight:block/snake1"
 	},
 	"elements": [
 		{

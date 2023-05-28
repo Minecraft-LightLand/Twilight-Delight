@@ -15,10 +15,14 @@ public class IronwoodKnifeItem extends TDKnifeItem {
 	@Override
 	public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> list) {
 		if (allowedIn(tab)) {
-			ItemStack istack = getDefaultInstance();
-			istack.enchant(Enchantments.KNOCKBACK, 1);
-			list.add(istack);
+			list.add(getDefault());
 		}
+	}
+
+	public ItemStack getDefault() {
+		ItemStack istack = getDefaultInstance();
+		istack.enchant(Enchantments.KNOCKBACK, 1);
+		return istack;
 	}
 
 }

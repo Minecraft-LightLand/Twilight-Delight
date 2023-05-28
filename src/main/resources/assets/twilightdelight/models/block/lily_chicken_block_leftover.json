@@ -2,11 +2,12 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"gibs": "twilightdelight:blocks/lily_chicken_gibs",
-		"particle": "twilightdelight:blocks/tray_top_leftover",
-		"tray_top": "twilightdelight:blocks/tray_top_leftover",
-		"tray_bottom": "twilightdelight:blocks/tray_bottom"
+		"gibs": "twilightdelight:block/lily_chicken_gibs",
+		"particle": "twilightdelight:block/tray_top_leftover",
+		"tray_top": "twilightdelight:block/tray_top_leftover",
+		"tray_bottom": "twilightdelight:block/tray_bottom"
 	},
+  	"render_type": "minecraft:cutout",
 	"elements": [
 		{
 			"name": "ribcage_end",

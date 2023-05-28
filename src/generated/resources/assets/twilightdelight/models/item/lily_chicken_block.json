@@ -1,3 +1,6 @@
 {
-  "parent": "twilightdelight:block/lily_chicken_block"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "twilightdelight:item/lily_chicken_block"
+  }
 }

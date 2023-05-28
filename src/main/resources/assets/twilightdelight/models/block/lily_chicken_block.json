@@ -2,11 +2,11 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"particle": "twilightdelight:blocks/lily_chicken_body",
-		"body": "twilightdelight:blocks/lily_chicken_body",
-		"gibs": "twilightdelight:blocks/lily_chicken_gibs",
-		"tray_bottom": "twilightdelight:blocks/tray_bottom",
-		"tray_top": "twilightdelight:blocks/tray_top_veggies"
+		"particle": "twilightdelight:block/lily_chicken_body",
+		"body": "twilightdelight:block/lily_chicken_body",
+		"gibs": "twilightdelight:block/lily_chicken_gibs",
+		"tray_bottom": "twilightdelight:block/tray_bottom",
+		"tray_top": "twilightdelight:block/tray_top_veggies"
 	},
 	"elements": [
 		{

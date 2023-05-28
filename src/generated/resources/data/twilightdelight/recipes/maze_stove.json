@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "minecraft:campfire"
+    },
+    "K": {
+      "item": "twilightforest:knightmetal_ingot"
+    },
+    "M": {
+      "item": "twilightforest:mazestone_brick"
+    },
+    "T": {
+      "item": "twilightforest:torchberries"
+    }
+  },
+  "pattern": [
+    "KKK",
+    "MTM",
+    "MCM"
+  ],
+  "result": {
+    "item": "twilightdelight:maze_stove"
+  }
+}

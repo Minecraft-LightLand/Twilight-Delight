@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "forge:insect"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "twilightdelight:raw_insect"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}

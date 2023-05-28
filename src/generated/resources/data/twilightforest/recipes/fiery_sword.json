@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "twilightdelight:experiment_113"
+  },
+  "base": {
+    "item": "twilightforest:fiery_sword"
+  },
+  "result": {
+    "item": "twilightdelight:teardrop_sword"
+  }
+}

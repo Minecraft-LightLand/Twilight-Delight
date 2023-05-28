@@ -12,13 +12,17 @@ public class SteeleafKnifeItem extends TDKnifeItem {
 		super(TwilightItemTier.STEELEAF, properties);
 	}
 
-	public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items) {
-		if (this.allowedIn(tab)) {
-			ItemStack stack = new ItemStack(this);
-			stack.enchant(Enchantments.MOB_LOOTING, 2);
-			items.add(stack);
+	@Override
+	public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> list) {
+		if (allowedIn(tab)) {
+			list.add(getDefault());
 		}
+	}
 
+	public ItemStack getDefault() {
+		ItemStack istack = getDefaultInstance();
+		istack.enchant(Enchantments.MOB_LOOTING, 2);
+		return istack;
 	}
 
 }

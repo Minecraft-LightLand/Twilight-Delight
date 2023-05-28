@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "minecraft:mushroom_stew"
+    },
+    {
+      "tag": "twilightdelight:meef_cooked"
+    },
+    {
+      "item": "twilightforest:liveroot"
+    },
+    {
+      "item": "twilightforest:torchberries"
+    },
+    {
+      "item": "farmersdelight:onion"
+    }
+  ],
+  "result": {
+    "item": "twilightforest:meef_stroganoff"
+  }
+}

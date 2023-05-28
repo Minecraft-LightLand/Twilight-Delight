@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightforest:cooked_venison"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "twilightdelight:cooked_venison_rib"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}

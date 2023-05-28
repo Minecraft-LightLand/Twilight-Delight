@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "cookingtime": 300,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "twilightdelight:raw_insect"
+  },
+  "result": "twilightdelight:cooked_insect"
+}

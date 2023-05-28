@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "twilightforest:ice_bomb"
+    },
+    {
+      "item": "minecraft:ice"
+    },
+    {
+      "item": "twilightforest:arctic_fur"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:glacier_ice_tea"
+  }
+}

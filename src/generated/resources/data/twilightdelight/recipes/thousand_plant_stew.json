@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "twilightforest:mayapple"
+    },
+    {
+      "item": "twilightforest:root_strand"
+    },
+    {
+      "item": "twilightforest:fallen_leaves"
+    },
+    {
+      "item": "twilightforest:moss_patch"
+    },
+    {
+      "item": "twilightforest:liveroot"
+    },
+    {
+      "item": "twilightforest:torchberry_plant"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:thousand_plant_stew"
+  }
+}

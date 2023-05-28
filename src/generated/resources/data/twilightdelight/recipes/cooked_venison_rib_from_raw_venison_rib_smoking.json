@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "twilightdelight:raw_venison_rib"
+  },
+  "result": "twilightdelight:cooked_venison_rib"
+}

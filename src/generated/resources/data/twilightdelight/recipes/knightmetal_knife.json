@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "twilightforest:knightmetal_ingot"
+    },
+    "B": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    " A",
+    "B "
+  ],
+  "result": {
+    "item": "twilightdelight:knightmetal_knife"
+  }
+}
