@@ -1,0 +1,87 @@
+{
+  "item.twilightdelight": {
+	"knightmetal_knife.tooltip": "对有护甲的目标造成额外伤害",
+	"thousand_plant_stew": "万草煲",
+	"hydra_piece": "九头蛇肉块",
+	"glow_venison_rib_with_pasta": "荧光浇汁鹿排配意面",
+	"grilled_ghast": "炽烤恶魂肉",
+	"thorn_rose_tea": "荆棘玫瑰茶",
+	"ironwood_knife": "铁木刀",
+	"chocolate_wafer": "巧克力夹心薄饼",
+	"cooked_meef_slice": "熟牛头人肉片",
+	"torchberry_cookie": "火炬浆果曲奇",
+	"berry_stick": "浆果串",
+	"plate_of_fiery_snakes": "盘装炽汁蛇宴",
+	"torchberry_juice": "火炬浆果汁",
+	"cooked_insect": "熟虫肉",
+	"knightmetal_knife": "骑士刀",
+	"twilight_spring": "暮色山泉™",
+	"fried_insect": "小炒肥虫",
+	"steeleaf_knife": "钢叶刀",
+	"cooked_venison_rib": "鹿肉肋排",
+	"experiment_110": "试验物品 110",
+	"raw_insect": "生虫肉",
+	"fiery_knife.tooltip": "灼烧攻击目标，煮熟切割的食物",
+	"fiery_knife": "炽铁刀",
+	"phytochemical_juice": "植物素汁",
+	"experiment_113": "试验物品 113",
+	"plate_of_lily_chicken": "盘装荷花鸡",
+	"teardrop_sword.tooltip": "灼烧攻击目标并有概率使其哭泣",
+	"tear_drink": "盈泪之饮",
+	"raw_meef_slice": "生牛头人肉片",
+	"teardrop_sword": "盈泪之剑",
+	"glowstew": "荧光煲",
+	"raw_venison_rib": "生鹿肉肋条",
+	"glacier_ice_tea": "冰川冰茶"
+  },
+  "-cartesian": {
+	"cakes": {
+	  "path": "block.twilightdelight",
+	  "list": [
+		{
+		  "aurora": "极光",
+		  "glacier": "冰川",
+		  "phytochemical": "植物素",
+		  "torchberry": "火炬浆果"
+		},
+		{
+		  "cake": "蛋糕"
+		}
+	  ]
+	},
+
+	"candles": {
+	  "path": "block.twilightdelight",
+	  "list": [
+		{
+		  "": "",
+		  "black": "黑色",
+		  "blue": "蓝色",
+		  "brown": "棕色",
+		  "cyan": "青色",
+		  "gray": "灰色",
+		  "green": "绿色",
+		  "light_blue": "淡蓝色",
+		  "light_gray": "淡灰色",
+		  "lime": "黄绿色",
+		  "magenta": "品红色",
+		  "orange": "橙色",
+		  "pink": "粉红色",
+		  "purple": "紫色",
+		  "red": "红色",
+		  "white": "白色",
+		  "yellow": "黄色"
+		},
+		{
+		  "aurora": "极光",
+		  "glacier": "冰川",
+		  "phytochemical": "植物素",
+		  "torchberry": "火炬浆果"
+		},
+		{
+		  "candle_cake": "蜡烛蛋糕"
+		}
+	  ]
+	}
+  }
+}

@@ -1,3 +1,6 @@
 {
-  "parent": "twilightdelight:block/torchberry_cake"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "twilightdelight:item/torchberry_cake"
+  }
 }

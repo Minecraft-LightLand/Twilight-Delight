@@ -3,6 +3,7 @@ package dev.xkmc.twilightdelight.content.effect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.Comparator;
@@ -27,7 +28,7 @@ public abstract class RangeSearchEffect extends MobEffect {
 		entity.clearFire();
 		if (entity.tickCount % 10 == 0) {
 			for (LivingEntity e : getEntitiesInRange(6, entity)) {
-				if (e == entity) {
+				if (e == entity || !(e instanceof Enemy)) {
 					continue;
 				}
 				applyEffect(e, amplifier);

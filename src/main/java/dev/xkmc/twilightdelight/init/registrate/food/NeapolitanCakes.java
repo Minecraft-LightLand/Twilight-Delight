@@ -50,7 +50,7 @@ public enum NeapolitanCakes {
 		var props = BlockBehaviour.Properties.of(Material.CAKE, color).strength(0.5F).sound(SoundType.WOOL);
 		block = TwilightDelight.REGISTRATE.block(base + "_cake", p -> new FlavoredCakeBlock(food, props))
 				.blockstate(this::genCakeModels)
-				.simpleItem().register();
+				.item().model((ctx, pvd) -> pvd.generated(ctx)).build().register();
 		this.candle = TwilightDelight.REGISTRATE.block(base + "_candle_cake",
 						p -> new FlavoredCandleCakeBlock(block::get, Blocks.CANDLE, props))
 				.blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, "candle"))

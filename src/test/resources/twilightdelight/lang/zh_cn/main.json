@@ -1,0 +1,17 @@
+{
+  "itemGroup.tab.twilightdelight": "暮色乐事",
+
+  "death.attack.twilightdelight.thorn_rose_tea": "%1$s承认了每朵玫瑰都有刺",
+  "death.attack.twilightdelight.thorn_rose_tea.player": "%1$s在试图逃离%2$s时承认了每朵玫瑰都有刺",
+  "twilightdelight.tooltip.chance": "%2$s%%的概率获得%1$s",
+
+  "block.twilightdelight.lily_chicken_block": "荷花鸡",
+  "block.twilightdelight.fiery_snakes_block": "炽汁蛇宴",
+  "block.twilightdelight.maze_stove": "迷宫炉灶",
+  "block.twilightdelight.maze_stove.tooltip": "以更快的速度烹饪暮色菜肴",
+
+  "effect.twilightdelight.poison_range": "剧毒范围",
+  "effect.twilightdelight.fire_range": "火焰范围",
+  "effect.twilightdelight.frozen_range": "冻结范围",
+  "effect.twilightdelight.temporal_sadness": "莫名的悲伤"
+}

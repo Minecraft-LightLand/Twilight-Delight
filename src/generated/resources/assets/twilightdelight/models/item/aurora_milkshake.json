@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "twilightdelight:item/phytochemical_cake"
+    "layer0": "twilightdelight:item/aurora_milkshake"
   }
 }
