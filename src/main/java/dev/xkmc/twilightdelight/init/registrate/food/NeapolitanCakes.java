@@ -1,6 +1,5 @@
 package dev.xkmc.twilightdelight.init.registrate.food;
 
-import com.teamabnormals.neapolitan.common.block.FlavoredCakeBlock;
 import com.teamabnormals.neapolitan.common.block.FlavoredCandleCakeBlock;
 import com.tterrag.registrate.providers.DataGenContext;
 import com.tterrag.registrate.providers.RegistrateBlockstateProvider;

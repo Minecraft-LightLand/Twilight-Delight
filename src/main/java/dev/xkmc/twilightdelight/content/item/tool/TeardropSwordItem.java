@@ -1,7 +1,7 @@
 package dev.xkmc.twilightdelight.content.item.tool;
 
-import dev.xkmc.twilightdelight.init.registrate.food.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
+import dev.xkmc.twilightdelight.init.registrate.food.DelightFood;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;

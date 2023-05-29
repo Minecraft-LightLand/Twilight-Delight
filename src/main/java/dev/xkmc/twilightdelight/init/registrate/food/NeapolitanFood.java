@@ -24,7 +24,7 @@ public enum NeapolitanFood {
 			new EffectSupplier(TDEffects.POISON_RANGE, 6000, 0, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SLOWDOWN, 200, 2, 1)),
 	PHYTOCHEMICAL_MILKSHAKE(FoodType.MILKSHAKE, 3, 0.6f,
-			new EffectSupplier(TDEffects.POISON_RANGE, 3600, 2, 1)),
+			new EffectSupplier(TDEffects.POISON_RANGE, 3600, 0, 1)),
 
 	GLACIER_ICE_CREAM(FoodType.ICE_CREAM, 6, 0.4f,
 			new EffectSupplier(TDEffects.FROZEN_RANGE, 6000, 0, 1),
