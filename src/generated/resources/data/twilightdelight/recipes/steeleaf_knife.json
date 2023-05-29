@@ -14,6 +14,6 @@
   ],
   "result": {
     "item": "twilightdelight:steeleaf_knife",
-    "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:looting\",lvl:2s}]}"
+    "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:looting\",lvl:2s},{id:\"minecraft:fortune\",lvl:2s}]}"
   }
 }

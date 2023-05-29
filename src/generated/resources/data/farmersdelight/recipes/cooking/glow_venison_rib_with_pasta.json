@@ -7,6 +7,9 @@
   "experience": 0.35,
   "ingredients": [
     {
+      "item": "twilightdelight:glowstew"
+    },
+    {
       "tag": "twilightdelight:vension_cooked"
     },
     {

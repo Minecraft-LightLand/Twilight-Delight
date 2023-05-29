@@ -1,4 +1,4 @@
-// 1.19.2	2023-05-28T18:05:03.736106	Registrate Provider for twilightdelight [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.19.2	2023-05-28T18:18:25.051772	Registrate Provider for twilightdelight [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 5091020bdceb16b0286ec64c6609319c49630068 assets/twilightdelight/lang/en_ud.json
 80e201e55c672fff09acd382f60835e6d79f7552 assets/twilightdelight/lang/en_us.json
 1a2fb3674f54b0b581a8ef90049ff182a564943c assets/twilightdelight/models/item/aurora_ice_cream.json
@@ -47,12 +47,12 @@ e59572d02badac696e83836b715e08276dfd8aa1 data/farmersdelight/advancements/recipe
 5176ba1207243caaa0c9681c66ad3ca99ba56641 data/farmersdelight/advancements/recipes/twilightforest/cooking/meef_stroganoff.json
 86b55a8777ae3a777c74edda41d9b687bbccf102 data/farmersdelight/recipes/cooking/fiery_snakes_block.json
 554bc5fca4ec811450fdcba9e3f55a98d2fcca71 data/farmersdelight/recipes/cooking/fried_insect.json
-5a68aa280ca759e01636f79b2e9fb1f50b7a5468 data/farmersdelight/recipes/cooking/glow_venison_rib_with_pasta.json
+c42524c0273ea71cb4cf6aff203f40185bfc2d66 data/farmersdelight/recipes/cooking/glow_venison_rib_with_pasta.json
 d5cb68e60bd376f55416320146ebed26633ee641 data/farmersdelight/recipes/cooking/glowstew.json
 13454d66e1a31b4673ae6b6706d38582f0d56127 data/farmersdelight/recipes/cooking/grilled_ghast.json
 97aebe412f4230a5b8cfd31c551cebdebbdfbc1b data/farmersdelight/recipes/cooking/meef_stroganoff.json
 6e91af61fe44d1b3d3823f6ea22a984fa7d4a644 data/farmersdelight/recipes/cooking/phytochemical_juice.json
-390553f9f88fa5483b85caff9823cbd0cd762eb4 data/farmersdelight/recipes/cooking/tear_drink.json
+5e7f34f217fc8d45cf22d6d72ed4c68da3534677 data/farmersdelight/recipes/cooking/tear_drink.json
 c968ec9fe876c2c257dda7df2d8c35cdae83af94 data/farmersdelight/recipes/cooking/thorn_rose_tea.json
 f4b4593875eeb61ac53fafb00d6ce44f2819433c data/farmersdelight/recipes/cooking/torchberry_juice.json
 1b5a6dc7ba8d3c280cc5d3a85ef412c74d75667d data/farmersdelight/recipes/cutting/barrier.json
@@ -61,7 +61,7 @@ f4b4593875eeb61ac53fafb00d6ce44f2819433c data/farmersdelight/recipes/cooking/tor
 8d87fdf09e50649dbd8c33e5ec6861744a429ee6 data/farmersdelight/recipes/cutting/hydra_chop.json
 3691fcd951054d6632520df944371defbafcfb17 data/farmersdelight/recipes/cutting/raw_meef.json
 56168dc78efe95a002d1b825b4d146d03b81e8d8 data/farmersdelight/recipes/cutting/raw_venison.json
-3c6dcadcb3da8158ba60cdc4616321a89b39df75 data/farmersdelight/recipes/cutting/ur_ghast_trophy.json
+eb506a67bd135b88943d92388428d5aefb7fc01c data/farmersdelight/recipes/cutting/ur_ghast_trophy.json
 6721c8be468978666c4d7975fe4bdb7843e6f151 data/farmersdelight/tags/blocks/heat_sources.json
 ebbda11a70d94d57d938f2d17e6686e8e0473286 data/farmersdelight/tags/items/tools/knives.json
 49a6ce7d86ba1c88a1961c2db7a6ae9fd9dc8e69 data/forge/tags/items/insect.json
@@ -92,7 +92,7 @@ cc031f86360a112446a4829a884346fba6cc994d data/twilightdelight/advancements/recip
 5f4227862c35ab03da7d134ca231173921e4ecc2 data/twilightdelight/loot_tables/blocks/fiery_snakes_block.json
 3662a62b1c57615883473e9bd58d16cd76a16d15 data/twilightdelight/loot_tables/blocks/lily_chicken_block.json
 36d96e5700c24c0589adcd075478149ea1c67843 data/twilightdelight/loot_tables/blocks/maze_stove.json
-7d873302a5fd05a689f94b260c42bdea626216b1 data/twilightdelight/recipes/aurora_ice_cream.json
+8b5648f5085c54ddd0e9a99936ce7d804232c4d1 data/twilightdelight/recipes/aurora_ice_cream.json
 ca57a45d550c665b176a49a91ebb26f56d1a3895 data/twilightdelight/recipes/berry_stick.json
 11d1cb6c0894364983078c68096e522e08e12bf0 data/twilightdelight/recipes/chocolate_wafer.json
 16c23cbcc513706a315b5fc4b9d32ec6dee0ce65 data/twilightdelight/recipes/cooked_insect_from_raw_insect_campfire.json
@@ -110,8 +110,8 @@ df0a613b9b3283d729c63437761c45a1a793fab7 data/twilightdelight/recipes/cooked_ven
 852fb978fec69cab2978bc67343ae0e3854335b8 data/twilightdelight/recipes/knightmetal_knife.json
 c46875e74deefa0ad78da00ca971707b1132269a data/twilightdelight/recipes/lily_chicken_block.json
 4b08c173c39833be956751b3084a56f5c4f1481b data/twilightdelight/recipes/maze_stove.json
-7f8ba376d4edefac6c5267e73e06e023403c2420 data/twilightdelight/recipes/steeleaf_knife.json
-25e0e37bec52a91d853b39023b07f60700ff99b1 data/twilightdelight/recipes/thousand_plant_stew.json
+6a9c1e20b6528122e8b4ba9e780affdda8449267 data/twilightdelight/recipes/steeleaf_knife.json
+757855f9bd1b75d7c557246707257a3608338a33 data/twilightdelight/recipes/thousand_plant_stew.json
 ae1f2b221570d4d440d616b079f7ee0c75977666 data/twilightdelight/recipes/torchberry_cookie.json
 8bf72557cdc827639f6879d08657b02a9342fcbe data/twilightdelight/recipes/twilight_spring.json
 e624a080046e8bdcf7092fc3b3783d8734380db2 data/twilightdelight/tags/items/hydra_meat.json

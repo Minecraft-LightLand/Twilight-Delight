@@ -34,10 +34,10 @@ import java.util.function.Supplier;
 @SuppressWarnings("unused")
 public class TDItems {
 
-	public static final Tab GOLEMS = new Tab();
+	public static final Tab TAB = new Tab();
 
 	static {
-		TwilightDelight.REGISTRATE.creativeModeTab(() -> GOLEMS);
+		TwilightDelight.REGISTRATE.creativeModeTab(() -> TAB);
 	}
 
 	public static final ItemEntry<FieryKnifeItem> FIERY_KNIFE;
@@ -198,7 +198,7 @@ public class TDItems {
 
 		@Override
 		public @NotNull ItemStack makeIcon() {
-			return Food.EXPERIMENT_113.item.asStack();
+			return TDBlocks.MAZE_STOVE.asStack();
 		}
 	}
 

@@ -84,7 +84,7 @@ public class RecipeGen {
 		// food crafting
 		{
 			unlock(pvd, new ShapelessRecipeBuilder(TDItems.Food.AURORA_ICE_CREAM.item.get(), 1)::unlockedBy, TFBlocks.AURORA_BLOCK.get().asItem())
-					.requires(Items.BOWL).requires(Items.SNOWBALL, 3).requires(TFBlocks.AURORA_BLOCK.get().asItem())
+					.requires(Items.BOWL).requires(Items.SNOWBALL, 3).requires(Items.ICE).requires(TFBlocks.AURORA_BLOCK.get().asItem())
 					.save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(TDItems.Food.BERRY_STICK.item.get(), 1)::unlockedBy, TFItems.TORCHBERRIES.get())
@@ -106,6 +106,7 @@ public class RecipeGen {
 					.requires(TFItems.LIVEROOT.get())
 					.requires(TFBlocks.TORCHBERRY_PLANT.get().asItem())
 					.requires(Items.VINE)
+					.requires(TFBlocks.FIDDLEHEAD.get().asItem())
 					.save(pvd);
 
 			unlock(pvd, new ShapedRecipeBuilder(TDItems.Food.TORCHBERRY_COOKIE.item.get(), 8)::unlockedBy, TFItems.TORCHBERRIES.get())
@@ -162,6 +163,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.Food.GLOW_VENISON_RIB_WITH_PASTA.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					TDItems.Food.GLOWSTEW.item.get())
+					.addIngredient(TDItems.Food.GLOWSTEW.item.get())
 					.addIngredient(TagGen.VENSION_COOKED)
 					.addIngredient(ModItems.RAW_PASTA.get())
 					.addIngredient(TFItems.LIVEROOT.get())
@@ -196,7 +198,7 @@ public class RecipeGen {
 							1, 800, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
 					TFItems.FIERY_TEARS.get())
 					.addIngredient(TFItems.FIERY_TEARS.get())
-					.addIngredient(TFItems.FIERY_BLOOD.get())
+					.addIngredient(Items.GHAST_TEAR)
 					.build(pvd);
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.Food.PHYTOCHEMICAL_JUICE.item.get().asItem(),
@@ -266,7 +268,7 @@ public class RecipeGen {
 							Ingredient.of(ModTags.KNIVES),
 							TDItems.Food.EXPERIMENT_113.item.get(), 9)
 					.addResult(TFItems.EXPERIMENT_115.get(), 4)
-					.addResultWithChance(TDItems.Food.EXPERIMENT_113.item.get(), 0.1f)
+					.addResultWithChance(TDItems.Food.EXPERIMENT_110.item.get(), 0.1f)
 					.build(pvd);
 
 		}

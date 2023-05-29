@@ -22,6 +22,7 @@ public class SteeleafKnifeItem extends TDKnifeItem {
 	public ItemStack getDefault() {
 		ItemStack istack = getDefaultInstance();
 		istack.enchant(Enchantments.MOB_LOOTING, 2);
+		istack.enchant(Enchantments.BLOCK_FORTUNE, 2);
 		return istack;
 	}
 
