@@ -43,9 +43,10 @@ public enum LangData {
 			pvd.add(lang.key, lang.def);
 		}
 		pvd.add("itemGroup.tab." + TwilightDelight.MODID, "Twilight's Delight");
-		pvd.add("item.twilightdelight.fiery_knife.tooltip", "Burns targets");
+		pvd.add("item.twilightdelight.fiery_knife.tooltip", "Burns targets. Cooks food when cut");
 		pvd.add("item.twilightdelight.knightmetal_knife.tooltip", "Extra damage to armored targets");
 		pvd.add("item.twilightdelight.teardrop_sword.tooltip", "Burns the target and has a chance to cry");
+		pvd.add("block.twilightdelight.maze_stove.tooltip", "Cook Twilight meals faster");
 		pvd.add("death.attack.twilightdelight.thorn_rose_tea", "%1$s acknowledged that every rose has its thorn");
 		pvd.add("death.attack.twilightdelight.thorn_rose_tea.player", "1$s acknowledged that every rose has its thorn whilst trying to escape %2$s");
 	}

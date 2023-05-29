@@ -16,10 +16,10 @@ import java.util.Optional;
 @Mixin(CuttingBoardBlockEntity.class)
 public interface CuttingBoardBlockEntityAccessor {
 
-	@Accessor
+	@Accessor(remap = false)
 	ItemStackHandler getInventory();
 
-	@Invoker
+	@Invoker(remap = false)
 	Optional<CuttingBoardRecipe> callGetMatchingRecipe(RecipeWrapper recipeWrapper, ItemStack toolStack, @Nullable Player player);
 
 }

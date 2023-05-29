@@ -8,6 +8,7 @@
 		"tray_bottom": "twilightdelight:block/tray_bottom",
 		"tray_top": "twilightdelight:block/tray_top_veggies"
 	},
+  "render_type": "minecraft:cutout",
 	"elements": [
 		{
 			"name": "body",

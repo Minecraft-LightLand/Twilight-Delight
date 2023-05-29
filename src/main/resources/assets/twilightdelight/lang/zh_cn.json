@@ -27,7 +27,7 @@
   "item.twilightdelight.cooked_venison_rib": "鹿肉肋排",
   "item.twilightdelight.experiment_110": "试验物品 110",
   "item.twilightdelight.raw_insect": "生虫肉",
-  "item.twilightdelight.fiery_knife.tooltip": "灼烧攻击目标",
+  "item.twilightdelight.fiery_knife.tooltip": "灼烧攻击目标，煮熟切割的食物",
   "item.twilightdelight.fiery_knife": "炽铁刀",
   "item.twilightdelight.phytochemical_juice": "植物素汁",
   "item.twilightdelight.experiment_113": "试验物品 113",
@@ -43,7 +43,7 @@
   "block.twilightdelight.lily_chicken_block": "荷花鸡",
   "block.twilightdelight.fiery_snakes_block": "炽汁蛇宴",
   "block.twilightdelight.maze_stove": "迷宫炉灶",
-  "twilightdelight.feast.error": "它很难轻易地被分开。试试在工作台上分离！",
+  "block.twilightdelight.maze_stove.tooltip": "以更快的速度烹饪暮色菜肴",
   
   "effect.twilightdelight.poison_range": "剧毒范围",
   "effect.twilightdelight.fire_range": "火焰范围",

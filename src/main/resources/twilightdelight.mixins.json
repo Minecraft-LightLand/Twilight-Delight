@@ -6,8 +6,10 @@
   "refmap": "twilightdelight.refmap.json",
   "mixins": [
 	"AddItemModifierAccessor",
+	"CookingPotBlockEntityMixin",
 	"CuttingBoardBlockEntityAccessor",
-	"CuttingBoardBlockMixin"
+	"CuttingBoardBlockMixin",
+	"StoveBlockEntityMixin"
   ],
   "client": [
   ],

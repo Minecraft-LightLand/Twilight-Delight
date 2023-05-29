@@ -1,6 +1,6 @@
-// 1.19.2	2023-05-28T16:46:44.318862	Registrate Provider for twilightdelight [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
-5bd396c536a27d1f73a2234614828e7d80db45ca assets/twilightdelight/lang/en_ud.json
-f4dfd03118436a3c6acc26401ce3b966b3921cb2 assets/twilightdelight/lang/en_us.json
+// 1.19.2	2023-05-28T18:05:03.736106	Registrate Provider for twilightdelight [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+5091020bdceb16b0286ec64c6609319c49630068 assets/twilightdelight/lang/en_ud.json
+80e201e55c672fff09acd382f60835e6d79f7552 assets/twilightdelight/lang/en_us.json
 1a2fb3674f54b0b581a8ef90049ff182a564943c assets/twilightdelight/models/item/aurora_ice_cream.json
 ca53533f07fa4d13788bf6c110d58247421f7e36 assets/twilightdelight/models/item/berry_stick.json
 86b9bec37d61f948b33026c856b7adfb585b53ff assets/twilightdelight/models/item/chocolate_wafer.json
@@ -45,14 +45,14 @@ c3145c74f36fb37c3021898dcaa78d88faa3f396 data/farmersdelight/advancements/recipe
 e59572d02badac696e83836b715e08276dfd8aa1 data/farmersdelight/advancements/recipes/tab.twilightdelight/cooking/thorn_rose_tea.json
 95e7f9efee4588f7e6d8d3e383c4482259b81225 data/farmersdelight/advancements/recipes/tab.twilightdelight/cooking/torchberry_juice.json
 5176ba1207243caaa0c9681c66ad3ca99ba56641 data/farmersdelight/advancements/recipes/twilightforest/cooking/meef_stroganoff.json
-af5042817a82a6a70c6804ac1f0542da98496ed4 data/farmersdelight/recipes/cooking/fiery_snakes_block.json
+86b55a8777ae3a777c74edda41d9b687bbccf102 data/farmersdelight/recipes/cooking/fiery_snakes_block.json
 554bc5fca4ec811450fdcba9e3f55a98d2fcca71 data/farmersdelight/recipes/cooking/fried_insect.json
 5a68aa280ca759e01636f79b2e9fb1f50b7a5468 data/farmersdelight/recipes/cooking/glow_venison_rib_with_pasta.json
 d5cb68e60bd376f55416320146ebed26633ee641 data/farmersdelight/recipes/cooking/glowstew.json
-ee5ddbd22c8838c78902ee310effc98e698160e9 data/farmersdelight/recipes/cooking/grilled_ghast.json
+13454d66e1a31b4673ae6b6706d38582f0d56127 data/farmersdelight/recipes/cooking/grilled_ghast.json
 97aebe412f4230a5b8cfd31c551cebdebbdfbc1b data/farmersdelight/recipes/cooking/meef_stroganoff.json
 6e91af61fe44d1b3d3823f6ea22a984fa7d4a644 data/farmersdelight/recipes/cooking/phytochemical_juice.json
-7bad54b85e2713307c032930fde4dff81c054b8f data/farmersdelight/recipes/cooking/tear_drink.json
+390553f9f88fa5483b85caff9823cbd0cd762eb4 data/farmersdelight/recipes/cooking/tear_drink.json
 c968ec9fe876c2c257dda7df2d8c35cdae83af94 data/farmersdelight/recipes/cooking/thorn_rose_tea.json
 f4b4593875eeb61ac53fafb00d6ce44f2819433c data/farmersdelight/recipes/cooking/torchberry_juice.json
 1b5a6dc7ba8d3c280cc5d3a85ef412c74d75667d data/farmersdelight/recipes/cutting/barrier.json

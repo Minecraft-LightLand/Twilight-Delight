@@ -22,7 +22,7 @@ public class TemporalSadness extends MobEffect {
 	public TemporalSadness() {
 		super(MobEffectCategory.HARMFUL, -1);
 		addAttributeModifier(Attributes.ATTACK_DAMAGE, ID_ATK.toString(), -4, AttributeModifier.Operation.ADDITION);
-        addAttributeModifier(Attributes.MOVEMENT_SPEED, ID_SPE.toString(), -0.15, AttributeModifier.Operation.MULTIPLY_BASE);
+		addAttributeModifier(Attributes.MOVEMENT_SPEED, ID_SPE.toString(), -0.15, AttributeModifier.Operation.MULTIPLY_BASE);
 	}
 
 	@Override

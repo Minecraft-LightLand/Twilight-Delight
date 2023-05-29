@@ -3,6 +3,7 @@ package dev.xkmc.twilightdelight.init.registrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import dev.xkmc.twilightdelight.content.block.FierySnakesBlock;
 import dev.xkmc.twilightdelight.content.block.LilyChickenBlock;
+import dev.xkmc.twilightdelight.content.block.MazeStoveBlock;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.tags.BlockTags;
@@ -17,7 +18,6 @@ import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import vectorwing.farmersdelight.common.block.FeastBlock;
-import vectorwing.farmersdelight.common.block.StoveBlock;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class TDBlocks {
@@ -52,8 +52,8 @@ public class TDBlocks {
 			))
 			.register();
 
-	public static BlockEntry<StoveBlock> MAZE_STOVE = TwilightDelight.REGISTRATE.block(
-					"maze_stove", p -> new StoveBlock(
+	public static BlockEntry<MazeStoveBlock> MAZE_STOVE = TwilightDelight.REGISTRATE.block(
+					"maze_stove", p -> new MazeStoveBlock(
 							BlockBehaviour.Properties.copy(Blocks.BRICKS)
 									.lightLevel((state) -> state.getValue(BlockStateProperties.LIT) ? 13 : 0)))
 			.blockstate((ctx, pvd) -> {

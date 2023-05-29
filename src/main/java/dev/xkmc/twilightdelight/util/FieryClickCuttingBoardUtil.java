@@ -62,7 +62,7 @@ public class FieryClickCuttingBoardUtil {
 						tool.hurtAndBreak(1, player, (user) -> {
 							user.broadcastBreakEvent(EquipmentSlot.MAINHAND);
 						});
-					} else if (tool.hurt(1, level.random, (ServerPlayer) null)) {
+					} else if (tool.hurt(1, level.random, null)) {
 						tool.setCount(0);
 					}
 

@@ -134,7 +134,7 @@ public class RecipeGen {
 		//food cooking
 		{
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.FIERY_SNAKES.get().asItem(),
-							1, 400, 0.5f, Items.BOWL)::unlockedBy,
+							1, 800, 0.5f, Items.BOWL)::unlockedBy,
 					TFItems.FIERY_BLOOD.get())
 					.addIngredient(TagGen.HYDRA_MEAT)
 					.addIngredient(TFItems.FIERY_BLOOD.get())
@@ -179,7 +179,7 @@ public class RecipeGen {
 					.build(pvd);
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.Food.GRILLED_GHAST.item.get(),
-							1, 400, 0.35f, Items.BOWL)::unlockedBy,
+							1, 800, 0.35f, Items.BOWL)::unlockedBy,
 					TFItems.EXPERIMENT_115.get())
 					.addIngredient(ModItems.TOMATO.get())
 					.addIngredient(Items.BEETROOT)
@@ -193,7 +193,7 @@ public class RecipeGen {
 		{
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.Food.TEAR_DRINK.item.get().asItem(),
-							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
+							1, 800, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
 					TFItems.FIERY_TEARS.get())
 					.addIngredient(TFItems.FIERY_TEARS.get())
 					.addIngredient(TFItems.FIERY_BLOOD.get())

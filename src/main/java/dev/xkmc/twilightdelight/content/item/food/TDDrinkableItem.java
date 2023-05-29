@@ -1,4 +1,3 @@
-
 package dev.xkmc.twilightdelight.content.item.food;
 
 import net.minecraft.network.chat.Component;
