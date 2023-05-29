@@ -121,15 +121,22 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
 
-    implementation fg.deobf(jarJar("com.tterrag.registrate:Registrate:${registrate_version}")){
+    compileOnly fg.deobf(jarJar("com.tterrag.registrate:Registrate:${registrate_version}")){
         transitive = false
-        jarJar.ranged(it, "[MC1.19,MC1.19.3)")
+        jarJar.ranged(it, "[MC1.19-1.1.5,)")
     }
 
     implementation fg.deobf('curse.maven:farmers-delight-398521:3999157')
     implementation fg.deobf('curse.maven:the-twilight-forest-227639:4075841')
     implementation fg.deobf("mezz.jei:jei-${jei_minecraft_version}:${jei_version}")
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
+
+    implementation fg.deobf('curse.maven:blueprint-382216:4442628')
+    implementation fg.deobf('curse.maven:neapolitan-382016:4023083')
+    implementation fg.deobf('curse.maven:create-328085:4371809')
+    //implementation fg.deobf('curse.maven:create-enchantment-industry-688768:4504113')
+    //implementation fg.deobf('curse.maven:create-central-kitchen-820977:4522788')
+
     runtimeOnly fg.deobf('curse.maven:appleskin-248787:3872808')
 
 }

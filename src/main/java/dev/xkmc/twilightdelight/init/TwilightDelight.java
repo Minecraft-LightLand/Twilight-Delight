@@ -7,6 +7,8 @@ import dev.xkmc.twilightdelight.init.data.*;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
+import dev.xkmc.twilightdelight.init.registrate.food.DelightFood;
+import dev.xkmc.twilightdelight.init.registrate.food.NeapolitanCakes;
 import dev.xkmc.twilightdelight.util.StoveAddBlockUtil;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -24,8 +26,10 @@ public class TwilightDelight {
 	public static final Registrate REGISTRATE = Registrate.create(MODID);
 
 	public TwilightDelight() {
-		TDItems.register();
 		TDBlocks.register();
+		TDItems.register();
+		DelightFood.register();
+		NeapolitanCakes.register();
 		TDEffects.register();
 		TDModConfig.init();
 		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TagGen::genItemTag);

@@ -5,6 +5,7 @@ import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
+import dev.xkmc.twilightdelight.init.registrate.food.DelightFood;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -69,35 +70,32 @@ public class RecipeGen {
 					.save(pvd);
 
 			unlock(pvd, UpgradeRecipeBuilder.smithing(Ingredient.of(TFItems.FIERY_SWORD.get()),
-					Ingredient.of(TDItems.Food.EXPERIMENT_113.item.get()),
-					TDItems.TEARDROP_SWORD.get())::unlocks, TDItems.Food.EXPERIMENT_113.item.get())
+					Ingredient.of(DelightFood.EXPERIMENT_113.item.get()),
+					TDItems.TEARDROP_SWORD.get())::unlocks, DelightFood.EXPERIMENT_113.item.get())
 					.save(pvd, TFItems.FIERY_SWORD.getId());
 		}
 
 		// smelting
 		{
-			tripleCook(pvd, DataIngredient.items(TDItems.Food.RAW_MEEF_SLICE.item.get()), TDItems.Food.COOKED_MEEF_SLICE.item, 1);
-			tripleCook(pvd, DataIngredient.items(TDItems.Food.RAW_INSECT.item.get()), TDItems.Food.COOKED_INSECT.item, 1);
-			tripleCook(pvd, DataIngredient.items(TDItems.Food.RAW_VENISON_RIB.item.get()), TDItems.Food.COOKED_VENISON_RIB.item, 1);
+			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_MEEF_SLICE.item.get()), DelightFood.COOKED_MEEF_SLICE.item, 1);
+			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_INSECT.item.get()), DelightFood.COOKED_INSECT.item, 1);
+			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_VENISON_RIB.item.get()), DelightFood.COOKED_VENISON_RIB.item, 1);
 		}
 
 		// food crafting
 		{
-			unlock(pvd, new ShapelessRecipeBuilder(TDItems.Food.AURORA_ICE_CREAM.item.get(), 1)::unlockedBy, TFBlocks.AURORA_BLOCK.get().asItem())
-					.requires(Items.BOWL).requires(Items.SNOWBALL, 3).requires(Items.ICE).requires(TFBlocks.AURORA_BLOCK.get().asItem())
-					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(TDItems.Food.BERRY_STICK.item.get(), 1)::unlockedBy, TFItems.TORCHBERRIES.get())
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.BERRY_STICK.item.get(), 1)::unlockedBy, TFItems.TORCHBERRIES.get())
 					.requires(Items.SWEET_BERRIES).requires(Items.GLOW_BERRIES).requires(TFItems.TORCHBERRIES.get())
 					.requires(Items.STICK).save(pvd);
 
-			unlock(pvd, new ShapedRecipeBuilder(TDItems.Food.CHOCOLATE_WAFER.item.get(), 1)::unlockedBy, TFItems.MAZE_WAFER.get())
+			unlock(pvd, new ShapedRecipeBuilder(DelightFood.CHOCOLATE_WAFER.item.get(), 1)::unlockedBy, TFItems.MAZE_WAFER.get())
 					.pattern("A").pattern("B").pattern("A")
 					.define('A', TFItems.MAZE_WAFER.get())
 					.define('B', Items.COCOA_BEANS)
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(TDItems.Food.THOUSAND_PLANT_STEW.item.get(), 1)::unlockedBy, TFBlocks.MAYAPPLE.get().asItem())
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.THOUSAND_PLANT_STEW.item.get(), 1)::unlockedBy, TFBlocks.MAYAPPLE.get().asItem())
 					.requires(Items.BOWL)
 					.requires(TFBlocks.MAYAPPLE.get().asItem())
 					.requires(TFBlocks.ROOT_STRAND.get().asItem())
@@ -109,7 +107,7 @@ public class RecipeGen {
 					.requires(TFBlocks.FIDDLEHEAD.get().asItem())
 					.save(pvd);
 
-			unlock(pvd, new ShapedRecipeBuilder(TDItems.Food.TORCHBERRY_COOKIE.item.get(), 8)::unlockedBy, TFItems.TORCHBERRIES.get())
+			unlock(pvd, new ShapedRecipeBuilder(DelightFood.TORCHBERRY_COOKIE.item.get(), 8)::unlockedBy, TFItems.TORCHBERRIES.get())
 					.pattern("BAB")
 					.define('A', TFItems.TORCHBERRIES.get())
 					.define('B', Items.WHEAT)
@@ -122,12 +120,12 @@ public class RecipeGen {
 					.define('C', TFBlocks.HUGE_WATER_LILY.get().asItem())
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(TDItems.Food.GLACIER_ICE_TEA.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GLACIER_ICE_TEA.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
 					.requires(Items.GLASS_BOTTLE).requires(TFItems.ICE_BOMB.get())
 					.requires(Items.ICE).requires(TFItems.ARCTIC_FUR.get())
 					.requires(Items.SUGAR).save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(TDItems.Food.TWILIGHT_SPRING.item.get(), 1)::unlockedBy, TFItems.RAW_IRONWOOD.get())
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.TWILIGHT_SPRING.item.get(), 1)::unlockedBy, TFItems.RAW_IRONWOOD.get())
 					.requires(Items.GLASS_BOTTLE).requires(TFItems.RAW_IRONWOOD.get()).requires(Items.ICE).save(pvd);
 
 		}
@@ -144,15 +142,15 @@ public class RecipeGen {
 					.addIngredient(TFItems.TORCHBERRIES.get())
 					.build(pvd);
 
-			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.Food.FRIED_INSECT.item.get().asItem(),
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.FRIED_INSECT.item.get().asItem(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
-					TDItems.Food.RAW_INSECT.item.get())
-					.addIngredient(TDItems.Food.RAW_INSECT.item.get())
+					DelightFood.RAW_INSECT.item.get())
+					.addIngredient(DelightFood.RAW_INSECT.item.get())
 					.addIngredient(ModItems.ONION.get())
 					.addIngredient(Items.CARROT)
 					.build(pvd);
 
-			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.Food.GLOWSTEW.item.get(),
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GLOWSTEW.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					TFBlocks.MUSHGLOOM.get().asItem())
 					.addIngredient(Items.GLOWSTONE_DUST)
@@ -160,10 +158,10 @@ public class RecipeGen {
 					.addIngredient(TFItems.TORCHBERRIES.get())
 					.build(pvd);
 
-			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.Food.GLOW_VENISON_RIB_WITH_PASTA.item.get(),
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GLOW_VENISON_RIB_WITH_PASTA.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
-					TDItems.Food.GLOWSTEW.item.get())
-					.addIngredient(TDItems.Food.GLOWSTEW.item.get())
+					DelightFood.GLOWSTEW.item.get())
+					.addIngredient(DelightFood.GLOWSTEW.item.get())
 					.addIngredient(TagGen.VENSION_COOKED)
 					.addIngredient(ModItems.RAW_PASTA.get())
 					.addIngredient(TFItems.LIVEROOT.get())
@@ -180,7 +178,7 @@ public class RecipeGen {
 					.addIngredient(ModItems.ONION.get())
 					.build(pvd);
 
-			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.Food.GRILLED_GHAST.item.get(),
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GRILLED_GHAST.item.get(),
 							1, 800, 0.35f, Items.BOWL)::unlockedBy,
 					TFItems.EXPERIMENT_115.get())
 					.addIngredient(ModItems.TOMATO.get())
@@ -194,14 +192,14 @@ public class RecipeGen {
 		// drink cooking
 		{
 
-			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.Food.TEAR_DRINK.item.get().asItem(),
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.TEAR_DRINK.item.get().asItem(),
 							1, 800, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
 					TFItems.FIERY_TEARS.get())
 					.addIngredient(TFItems.FIERY_TEARS.get())
 					.addIngredient(Items.GHAST_TEAR)
 					.build(pvd);
 
-			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.Food.PHYTOCHEMICAL_JUICE.item.get().asItem(),
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.PHYTOCHEMICAL_JUICE.item.get().asItem(),
 							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
 					TFItems.LIVEROOT.get())
 					.addIngredient(TFItems.LIVEROOT.get())
@@ -209,14 +207,14 @@ public class RecipeGen {
 					.addIngredient(Items.SUGAR)
 					.build(pvd);
 
-			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.Food.THORN_ROSE_TEA.item.get().asItem(),
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.THORN_ROSE_TEA.item.get().asItem(),
 							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
 					TFBlocks.THORN_ROSE.get().asItem())
 					.addIngredient(TFBlocks.THORN_ROSE.get().asItem())
 					.addIngredient(Items.SUGAR)
 					.build(pvd);
 
-			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.Food.TORCHBERRY_JUICE.item.get().asItem(),
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.TORCHBERRY_JUICE.item.get().asItem(),
 							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
 					TFItems.TORCHBERRIES.get())
 					.addIngredient(TFItems.TORCHBERRIES.get())
@@ -230,47 +228,56 @@ public class RecipeGen {
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.RAW_MEEF.get()),
 							Ingredient.of(ModTags.KNIVES),
-							TDItems.Food.RAW_MEEF_SLICE.item.get(), 2)
+							DelightFood.RAW_MEEF_SLICE.item.get(), 2)
 					.build(pvd);
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.COOKED_MEEF.get()),
 							Ingredient.of(ModTags.KNIVES),
-							TDItems.Food.COOKED_MEEF_SLICE.item.get(), 2)
+							DelightFood.COOKED_MEEF_SLICE.item.get(), 2)
 					.build(pvd);
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.RAW_VENISON.get()),
 							Ingredient.of(ModTags.KNIVES),
-							TDItems.Food.RAW_VENISON_RIB.item.get(), 2)
+							DelightFood.RAW_VENISON_RIB.item.get(), 2)
 					.build(pvd);
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.COOKED_VENISON.get()),
 							Ingredient.of(ModTags.KNIVES),
-							TDItems.Food.COOKED_VENISON_RIB.item.get(), 2)
+							DelightFood.COOKED_VENISON_RIB.item.get(), 2)
 					.build(pvd);
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.HYDRA_CHOP.get()),
 							Ingredient.of(ModTags.KNIVES),
-							TDItems.Food.HYDRA_PIECE.item.get(), 2)
+							DelightFood.HYDRA_PIECE.item.get(), 2)
 					.build(pvd);
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TagGen.INSECT),
 							Ingredient.of(ModTags.KNIVES),
-							TDItems.Food.RAW_INSECT.item.get(), 2)
+							DelightFood.RAW_INSECT.item.get(), 2)
 					.build(pvd);
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.UR_GHAST_TROPHY.get()),
 							Ingredient.of(ModTags.KNIVES),
-							TDItems.Food.EXPERIMENT_113.item.get(), 9)
+							DelightFood.EXPERIMENT_113.item.get(), 9)
 					.addResult(TFItems.EXPERIMENT_115.get(), 4)
-					.addResultWithChance(TDItems.Food.EXPERIMENT_110.item.get(), 0.1f)
+					.addResultWithChance(DelightFood.EXPERIMENT_110.item.get(), 0.1f)
 					.build(pvd);
 
+		}
+
+		// neapolitan
+		{
+			/*
+			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.AURORA_ICE_CREAM.item.get(), 1)::unlockedBy, TFBlocks.AURORA_BLOCK.get().asItem())
+					.requires(Items.BOWL).requires(Items.SNOWBALL, 3).requires(Items.ICE).requires(TFBlocks.AURORA_BLOCK.get().asItem())
+					.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID));
+			*/
 		}
 	}
 

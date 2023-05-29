@@ -1,7 +1,7 @@
 package dev.xkmc.twilightdelight.content.item.tool;
 
+import dev.xkmc.twilightdelight.init.registrate.food.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
-import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -19,7 +19,7 @@ public class TeardropSwordItem extends FierySwordItem {
 
 	public static final Tier TIER = new ForgeTier(4, 1536, 9, 5, 30,
 			BlockTags.create(TwilightForestMod.prefix("needs_fiery_tool")),
-			() -> Ingredient.of(new ItemStack(TDItems.Food.EXPERIMENT_113.item.get())));
+			() -> Ingredient.of(new ItemStack(DelightFood.EXPERIMENT_113.item.get())));
 
 	public TeardropSwordItem(Item.Properties p) {
 		super(TIER, p.rarity(Rarity.UNCOMMON).fireResistant());

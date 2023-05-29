@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.content.block;
 
-import dev.xkmc.twilightdelight.init.registrate.TDItems;
+import dev.xkmc.twilightdelight.init.registrate.food.DelightFood;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -20,7 +20,7 @@ public class FierySnakesBlock extends FeastBlock {
 	protected static final VoxelShape PLATE_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 15.0D);
 
 	public FierySnakesBlock() {
-		super(Properties.copy(Blocks.WHITE_WOOL), TDItems.Food.PLATE_OF_FIERY_SNAKES.item, true);
+		super(Properties.copy(Blocks.WHITE_WOOL), DelightFood.PLATE_OF_FIERY_SNAKES.item, true);
 	}
 
 	@Override

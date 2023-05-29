@@ -22,6 +22,19 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class TDBlocks {
 
+	public static final TDTab TAB = new TDTab();
+
+	static {
+		TwilightDelight.REGISTRATE.creativeModeTab(() -> TAB);
+	}
+
+	public static BlockEntry<MazeStoveBlock> MAZE_STOVE = TwilightDelight.REGISTRATE.block(
+					"maze_stove", p -> new MazeStoveBlock(
+							BlockBehaviour.Properties.copy(Blocks.BRICKS)
+									.lightLevel((state) -> state.getValue(BlockStateProperties.LIT) ? 13 : 0)))
+			.blockstate((ctx, pvd) -> {
+			}).tag(ModTags.HEAT_SOURCES, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register();
+
 	public static BlockEntry<FierySnakesBlock> FIERY_SNAKES = TwilightDelight.REGISTRATE.block(
 					"fiery_snakes_block", p -> new FierySnakesBlock())
 			.blockstate((ctx, pvd) -> {
@@ -51,13 +64,6 @@ public class TDBlocks {
 							.when(InvertedLootItemCondition.invert(getServe(block))))
 			))
 			.register();
-
-	public static BlockEntry<MazeStoveBlock> MAZE_STOVE = TwilightDelight.REGISTRATE.block(
-					"maze_stove", p -> new MazeStoveBlock(
-							BlockBehaviour.Properties.copy(Blocks.BRICKS)
-									.lightLevel((state) -> state.getValue(BlockStateProperties.LIT) ? 13 : 0)))
-			.blockstate((ctx, pvd) -> {
-			}).tag(ModTags.HEAT_SOURCES, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register();
 
 	public static void register() {
 
