@@ -5,6 +5,7 @@ import com.teamabnormals.neapolitan.common.block.FlavoredCandleCakeBlock;
 import com.tterrag.registrate.providers.DataGenContext;
 import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import dev.xkmc.twilightdelight.compat.neapolitan.TDCakeBlock;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
@@ -30,16 +31,16 @@ public enum NeapolitanCakes {
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 600, 2, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SLOWDOWN, 40, 0, 1)),
 	TORCHBERRY(MaterialColor.COLOR_YELLOW,
-			new EffectSupplier(TDEffects.FIRE_RANGE, 3600, 0, 1)),
+			new EffectSupplier(TDEffects.FIRE_RANGE, 1200, 0, 1)),
 	PHYTOCHEMICAL(MaterialColor.COLOR_GREEN,
-			new EffectSupplier(TDEffects.POISON_RANGE, 3600, 2, 1)),
+			new EffectSupplier(TDEffects.POISON_RANGE, 1200, 0, 1)),
 	GLACIER(MaterialColor.COLOR_LIGHT_BLUE,
-			new EffectSupplier(TDEffects.FROZEN_RANGE, 3600, 0, 1)),
+			new EffectSupplier(TDEffects.FROZEN_RANGE, 1200, 0, 1)),
 	;
 
 	private final String base;
 
-	public final BlockEntry<FlavoredCakeBlock> block;
+	public final BlockEntry<TDCakeBlock> block;
 	public final BlockEntry<FlavoredCandleCakeBlock> candle;
 	public final BlockEntry<FlavoredCandleCakeBlock>[] colored_candles;
 
@@ -48,7 +49,7 @@ public enum NeapolitanCakes {
 		base = name().toLowerCase(Locale.ROOT);
 		var food = TDItems.simpleFood(FoodType.NONE, 1, 0.1f, effects);
 		var props = BlockBehaviour.Properties.of(Material.CAKE, color).strength(0.5F).sound(SoundType.WOOL);
-		block = TwilightDelight.REGISTRATE.block(base + "_cake", p -> new FlavoredCakeBlock(food, props))
+		block = TwilightDelight.REGISTRATE.block(base + "_cake", p -> new TDCakeBlock(food, props))
 				.blockstate(this::genCakeModels)
 				.item().model((ctx, pvd) -> pvd.generated(ctx)).build().register();
 		this.candle = TwilightDelight.REGISTRATE.block(base + "_candle_cake",
@@ -75,7 +76,7 @@ public enum NeapolitanCakes {
 				ConfiguredModel.builder().modelFile(e.getValue(BlockStateProperties.LIT) ? lit : nolit).build());
 	}
 
-	private void genCakeModels(DataGenContext<Block, FlavoredCakeBlock> ctx, RegistrateBlockstateProvider pvd) {
+	private void genCakeModels(DataGenContext<Block, TDCakeBlock> ctx, RegistrateBlockstateProvider pvd) {
 		BlockModelBuilder[] slice = new BlockModelBuilder[7];
 		slice[0] = genCakeModel(pvd, "cake");
 		for (int i = 1; i <= 6; i++) {

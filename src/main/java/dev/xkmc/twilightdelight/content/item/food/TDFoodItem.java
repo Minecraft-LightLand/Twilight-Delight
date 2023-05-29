@@ -6,6 +6,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffectUtil;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -35,6 +36,10 @@ public class TDFoodItem extends Item {
 	public static void getFoodEffects(ItemStack stack, List<Component> list) {
 		var food = stack.getFoodProperties(null);
 		if (food == null) return;
+		getFoodEffects(food, list);
+	}
+
+	public static void getFoodEffects(FoodProperties food, List<Component> list) {
 		for (var eff : food.getEffects()) {
 			int chance = Math.round(eff.getSecond() * 100);
 			Component ans = getTooltip(eff.getFirst());

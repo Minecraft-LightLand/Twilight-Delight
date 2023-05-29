@@ -1,17 +1,26 @@
 package dev.xkmc.twilightdelight.init.data;
 
 import com.google.gson.JsonObject;
+import com.teamabnormals.neapolitan.core.Neapolitan;
+import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
+import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.ItemEntry;
+import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.food.DelightFood;
+import dev.xkmc.twilightdelight.init.registrate.food.NeapolitanCakes;
+import dev.xkmc.twilightdelight.init.registrate.food.NeapolitanFood;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.UpgradeRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -31,6 +40,8 @@ import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
 public class RecipeGen {
+
+	private static String path = "";
 
 	public static void genRecipes(RegistrateRecipeProvider pvd) {
 
@@ -72,11 +83,12 @@ public class RecipeGen {
 			unlock(pvd, UpgradeRecipeBuilder.smithing(Ingredient.of(TFItems.FIERY_SWORD.get()),
 					Ingredient.of(DelightFood.EXPERIMENT_113.item.get()),
 					TDItems.TEARDROP_SWORD.get())::unlocks, DelightFood.EXPERIMENT_113.item.get())
-					.save(pvd, TFItems.FIERY_SWORD.getId());
+					.save(pvd, TDItems.TEARDROP_SWORD.getId());
 		}
 
 		// smelting
 		{
+
 			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_MEEF_SLICE.item.get()), DelightFood.COOKED_MEEF_SLICE.item, 1);
 			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_INSECT.item.get()), DelightFood.COOKED_INSECT.item, 1);
 			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_VENISON_RIB.item.get()), DelightFood.COOKED_VENISON_RIB.item, 1);
@@ -132,6 +144,7 @@ public class RecipeGen {
 
 		//food cooking
 		{
+			path = "cooking/";
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.FIERY_SNAKES.get().asItem(),
 							1, 800, 0.5f, Items.BOWL)::unlockedBy,
 					TFItems.FIERY_BLOOD.get())
@@ -140,7 +153,7 @@ public class RecipeGen {
 					.addIngredient(TFItems.NAGA_SCALE.get())
 					.addIngredient(ModItems.TOMATO_SAUCE.get())
 					.addIngredient(TFItems.TORCHBERRIES.get())
-					.build(pvd);
+					.build(pvd, getID(TDBlocks.FIERY_SNAKES.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.FRIED_INSECT.item.get().asItem(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -148,7 +161,7 @@ public class RecipeGen {
 					.addIngredient(DelightFood.RAW_INSECT.item.get())
 					.addIngredient(ModItems.ONION.get())
 					.addIngredient(Items.CARROT)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.FRIED_INSECT.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GLOWSTEW.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -156,7 +169,7 @@ public class RecipeGen {
 					.addIngredient(Items.GLOWSTONE_DUST)
 					.addIngredient(TFBlocks.MUSHGLOOM.get().asItem())
 					.addIngredient(TFItems.TORCHBERRIES.get())
-					.build(pvd);
+					.build(pvd, getID(DelightFood.GLOWSTEW.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GLOW_VENISON_RIB_WITH_PASTA.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -166,7 +179,7 @@ public class RecipeGen {
 					.addIngredient(ModItems.RAW_PASTA.get())
 					.addIngredient(TFItems.LIVEROOT.get())
 					.addIngredient(Items.BEETROOT)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.GLOW_VENISON_RIB_WITH_PASTA.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TFItems.MEEF_STROGANOFF.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -176,7 +189,7 @@ public class RecipeGen {
 					.addIngredient(TFItems.LIVEROOT.get())
 					.addIngredient(TFItems.TORCHBERRIES.get())
 					.addIngredient(ModItems.ONION.get())
-					.build(pvd);
+					.build(pvd, getID(TFItems.MEEF_STROGANOFF.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GRILLED_GHAST.item.get(),
 							1, 800, 0.35f, Items.BOWL)::unlockedBy,
@@ -185,7 +198,7 @@ public class RecipeGen {
 					.addIngredient(Items.BEETROOT)
 					.addIngredient(TFItems.FIERY_TEARS.get())
 					.addIngredient(TFItems.EXPERIMENT_115.get(), 2)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.GRILLED_GHAST.item.getId()));
 
 		}
 
@@ -197,7 +210,7 @@ public class RecipeGen {
 					TFItems.FIERY_TEARS.get())
 					.addIngredient(TFItems.FIERY_TEARS.get())
 					.addIngredient(Items.GHAST_TEAR)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.TEAR_DRINK.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.PHYTOCHEMICAL_JUICE.item.get().asItem(),
 							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
@@ -205,61 +218,62 @@ public class RecipeGen {
 					.addIngredient(TFItems.LIVEROOT.get())
 					.addIngredient(TFItems.STEELEAF_INGOT.get())
 					.addIngredient(Items.SUGAR)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.PHYTOCHEMICAL_JUICE.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.THORN_ROSE_TEA.item.get().asItem(),
 							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
 					TFBlocks.THORN_ROSE.get().asItem())
 					.addIngredient(TFBlocks.THORN_ROSE.get().asItem())
 					.addIngredient(Items.SUGAR)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.THORN_ROSE_TEA.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.TORCHBERRY_JUICE.item.get().asItem(),
 							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
 					TFItems.TORCHBERRIES.get())
 					.addIngredient(TFItems.TORCHBERRIES.get())
 					.addIngredient(Items.SUGAR)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.TORCHBERRY_JUICE.item.getId()));
 		}
 
 		// cutting
 		{
+			path = "cutting/";
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.RAW_MEEF.get()),
 							Ingredient.of(ModTags.KNIVES),
 							DelightFood.RAW_MEEF_SLICE.item.get(), 2)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.RAW_MEEF_SLICE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.COOKED_MEEF.get()),
 							Ingredient.of(ModTags.KNIVES),
 							DelightFood.COOKED_MEEF_SLICE.item.get(), 2)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.COOKED_MEEF_SLICE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.RAW_VENISON.get()),
 							Ingredient.of(ModTags.KNIVES),
 							DelightFood.RAW_VENISON_RIB.item.get(), 2)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.RAW_VENISON_RIB.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.COOKED_VENISON.get()),
 							Ingredient.of(ModTags.KNIVES),
 							DelightFood.COOKED_VENISON_RIB.item.get(), 2)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.COOKED_VENISON_RIB.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.HYDRA_CHOP.get()),
 							Ingredient.of(ModTags.KNIVES),
 							DelightFood.HYDRA_PIECE.item.get(), 2)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.HYDRA_PIECE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TagGen.INSECT),
 							Ingredient.of(ModTags.KNIVES),
 							DelightFood.RAW_INSECT.item.get(), 2)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.RAW_INSECT.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.UR_GHAST_TROPHY.get()),
@@ -267,19 +281,52 @@ public class RecipeGen {
 							DelightFood.EXPERIMENT_113.item.get(), 9)
 					.addResult(TFItems.EXPERIMENT_115.get(), 4)
 					.addResultWithChance(DelightFood.EXPERIMENT_110.item.get(), 0.1f)
-					.build(pvd);
+					.build(pvd, getID(DelightFood.EXPERIMENT_113.item.getId()));
 
 		}
-		//TODO recipe names
 
 		// neapolitan
 		{
-			/*
-			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.AURORA_ICE_CREAM.item.get(), 1)::unlockedBy, TFBlocks.AURORA_BLOCK.get().asItem())
-					.requires(Items.BOWL).requires(Items.SNOWBALL, 3).requires(Items.ICE).requires(TFBlocks.AURORA_BLOCK.get().asItem())
-					.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID));
-			*/
+			path = "neapolitan/";
+			neapolitan(pvd, NeapolitanFood.AURORA_ICE_CREAM.item,
+					NeapolitanFood.AURORA_MILKSHAKE.item,
+					NeapolitanCakes.AURORA.block,
+					TFBlocks.AURORA_BLOCK.get().asItem());
+			neapolitan(pvd, NeapolitanFood.GLACIER_ICE_CREAM.item,
+					NeapolitanFood.GLACIER_MILKSHAKE.item,
+					NeapolitanCakes.GLACIER.block,
+					TFItems.ICE_BOMB.get());
+			neapolitan(pvd, NeapolitanFood.PHYTOCHEMICAL_ICE_CREAM.item,
+					NeapolitanFood.PHYTOCHEMICAL_MILKSHAKE.item,
+					NeapolitanCakes.PHYTOCHEMICAL.block,
+					TFItems.STEELEAF_INGOT.get());
+			neapolitan(pvd, NeapolitanFood.TORCHBERRY_ICE_CREAM.item,
+					NeapolitanFood.TORCHBERRY_MILKSHAKE.item,
+					NeapolitanCakes.TORCHBERRY.block,
+					TFItems.TORCHBERRIES.get());
 		}
+	}
+
+	private static void neapolitan(RegistrateRecipeProvider pvd, ItemEntry<?> ice_cream, ItemEntry<?> milkshake, BlockEntry<?> cake, Item ingredient) {
+		TagKey<Item> milk = ItemTags.create(new ResourceLocation("forge", "milk"));
+		unlock(pvd, new ShapelessRecipeBuilder(ice_cream.get(), 1)::unlockedBy, ingredient)
+				.requires(Items.BOWL).requires(milk).requires(NeapolitanItems.ICE_CUBES.get()).requires(Items.SUGAR)
+				.requires(ingredient)
+				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(ice_cream.getId()));
+
+		unlock(pvd, new ShapelessRecipeBuilder(milkshake.get(), 3)::unlockedBy, ingredient)
+				.requires(Items.GLASS_BOTTLE, 3).requires(milk).requires(NeapolitanItems.VANILLA_ICE_CREAM.get())
+				.requires(ingredient)
+				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(milkshake.getId()));
+
+		unlock(pvd, new ShapelessRecipeBuilder(milkshake.get(), 3)::unlockedBy, ingredient)
+				.requires(Items.GLASS_BOTTLE, 3).requires(milk).requires(ice_cream.get())
+				.requires(NeapolitanItems.DRIED_VANILLA_PODS.get())
+				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(milkshake.getId()) + "_alt");
+	}
+
+	private static String getID(ResourceLocation item) {
+		return TwilightDelight.MODID + ":" + path + item.getPath();
 	}
 
 	private static <T> T unlock(RegistrateRecipeProvider pvd, BiFunction<String, InventoryChangeTrigger.TriggerInstance, T> func, Item item) {

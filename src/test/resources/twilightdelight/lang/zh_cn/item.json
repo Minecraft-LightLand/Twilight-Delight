@@ -35,6 +35,21 @@
 	"glacier_ice_tea": "冰川冰茶"
   },
   "-cartesian": {
+	"drinks": {
+	  "path": "item.twilightdelight",
+	  "list": [
+		{
+		  "aurora": "极光",
+		  "glacier": "冰川",
+		  "phytochemical": "植物素",
+		  "torchberry": "火炬浆果"
+		},
+		{
+		  "ice_cream": "冰淇淋",
+		  "milkshake": "奶昔"
+		}
+	  ]
+	},
 	"cakes": {
 	  "path": "block.twilightdelight",
 	  "list": [
@@ -49,7 +64,6 @@
 		}
 	  ]
 	},
-
 	"candles": {
 	  "path": "block.twilightdelight",
 	  "list": [
