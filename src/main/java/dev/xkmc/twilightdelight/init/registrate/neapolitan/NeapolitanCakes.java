@@ -1,4 +1,4 @@
-package dev.xkmc.twilightdelight.init.registrate.food;
+package dev.xkmc.twilightdelight.init.registrate.neapolitan;
 
 import com.teamabnormals.neapolitan.common.block.FlavoredCandleCakeBlock;
 import com.tterrag.registrate.providers.DataGenContext;
@@ -8,6 +8,8 @@ import dev.xkmc.twilightdelight.compat.neapolitan.TDCakeBlock;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
+import dev.xkmc.twilightdelight.init.registrate.delight.DelightFoodType;
+import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -46,7 +48,7 @@ public enum NeapolitanCakes {
 	@SuppressWarnings({"unchecked", "rawtype", "unsafe", "deprecation"})
 	NeapolitanCakes(MaterialColor color, EffectSupplier... effects) {
 		base = name().toLowerCase(Locale.ROOT);
-		var food = TDItems.simpleFood(FoodType.NONE, 1, 0.1f, effects);
+		var food = TDItems.simpleFood(DelightFoodType.NONE, 1, 0.1f, effects);
 		var props = BlockBehaviour.Properties.of(Material.CAKE, color).strength(0.5F).sound(SoundType.WOOL);
 		block = TwilightDelight.REGISTRATE.block(base + "_cake", p -> new TDCakeBlock(food, props))
 				.blockstate(this::genCakeModels)

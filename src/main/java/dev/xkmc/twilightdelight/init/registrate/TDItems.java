@@ -6,8 +6,8 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.twilightdelight.content.item.tool.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
-import dev.xkmc.twilightdelight.init.registrate.food.EffectSupplier;
-import dev.xkmc.twilightdelight.init.registrate.food.FoodType;
+import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
+import dev.xkmc.twilightdelight.init.registrate.delight.IFoodType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.Tags;
@@ -35,14 +35,14 @@ public class TDItems {
 		TEARDROP_SWORD = handheld("teardrop_sword", TeardropSwordItem::new).tag(Tags.Items.TOOLS_SWORDS).register();
 	}
 
-	public static ItemEntry<Item> simpleFood(FoodType r, String name, int nutrition, float saturation, EffectSupplier... effects) {
+	public static ItemEntry<Item> simpleFood(IFoodType r, String name, int nutrition, float saturation, EffectSupplier... effects) {
 		return food(name.toLowerCase(Locale.ROOT),
-				p -> r.create(p.rarity(r.rarity)),
+				p -> r.create(p.rarity(r.getRarity())),
 				() -> simpleFood(r, nutrition, saturation, effects))
 				.model(r::model).register();
 	}
 
-	public static FoodProperties simpleFood(FoodType r, int nutrition, float saturation, EffectSupplier... effects) {
+	public static FoodProperties simpleFood(IFoodType r, int nutrition, float saturation, EffectSupplier... effects) {
 		FoodProperties.Builder builder = new FoodProperties.Builder();
 		builder = builder.nutrition(nutrition).saturationMod(saturation);
 		builder = r.process(builder);

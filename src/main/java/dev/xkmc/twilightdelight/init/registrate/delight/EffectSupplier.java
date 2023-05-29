@@ -1,4 +1,4 @@
-package dev.xkmc.twilightdelight.init.registrate.food;
+package dev.xkmc.twilightdelight.init.registrate.delight;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;

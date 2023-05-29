@@ -1,18 +1,20 @@
 package dev.xkmc.twilightdelight.init;
 
 import com.mojang.logging.LogUtils;
+import com.teamabnormals.neapolitan.core.Neapolitan;
 import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.providers.ProviderType;
 import dev.xkmc.twilightdelight.init.data.*;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
-import dev.xkmc.twilightdelight.init.registrate.food.DelightFood;
-import dev.xkmc.twilightdelight.init.registrate.food.NeapolitanCakes;
-import dev.xkmc.twilightdelight.init.registrate.food.NeapolitanFood;
+import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import dev.xkmc.twilightdelight.util.StoveAddBlockUtil;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import org.slf4j.Logger;
@@ -30,8 +32,10 @@ public class TwilightDelight {
 		TDBlocks.register();
 		TDItems.register();
 		DelightFood.register();
-		NeapolitanFood.register();
-		NeapolitanCakes.register();
+		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
+			NeapolitanFood.register();
+			NeapolitanCakes.register();
+		}
 		TDEffects.register();
 		TDModConfig.init();
 		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TagGen::genItemTag);

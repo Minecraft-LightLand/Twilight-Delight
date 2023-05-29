@@ -1,7 +1,7 @@
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 
-package dev.xkmc.twilightdelight.init.registrate.food;
+package dev.xkmc.twilightdelight.init.registrate.neapolitan;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 

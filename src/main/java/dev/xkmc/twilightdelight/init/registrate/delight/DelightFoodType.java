@@ -1,4 +1,4 @@
-package dev.xkmc.twilightdelight.init.registrate.food;
+package dev.xkmc.twilightdelight.init.registrate.delight;
 
 import com.tterrag.registrate.providers.DataGenContext;
 import com.tterrag.registrate.providers.RegistrateItemModelProvider;
@@ -8,23 +8,21 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.client.model.generators.ModelFile;
 
-public enum FoodType {
-	NONE(Rarity.COMMON, false, false, false, FoodClassType.REGULAR),
-	MEAT(Rarity.COMMON, true, false, false, FoodClassType.REGULAR),
-	COOKIE(Rarity.COMMON, false, true, false, FoodClassType.REGULAR),
-	UNCOMMON_MEAT(Rarity.UNCOMMON, true, false, false, FoodClassType.REGULAR),
-	BOWL(Rarity.COMMON, false, false, false, FoodClassType.BOWL),
-	BOWL_MEAT(Rarity.COMMON, true, false, false, FoodClassType.BOWL),
-	DRINK(Rarity.COMMON, false, false, true, FoodClassType.DRINK),
-	ROSE(Rarity.COMMON, false, false, true, FoodClassType.ROSE_TEA),
-	MILKSHAKE(Rarity.COMMON, false, false, false, FoodClassType.MILKSHAKE),
-	ICE_CREAM(Rarity.COMMON, false, false, false, FoodClassType.ICE_CREAM);
+public enum DelightFoodType implements IFoodType {
+	NONE(Rarity.COMMON, false, false, false, DelightFoodClassType.REGULAR),
+	MEAT(Rarity.COMMON, true, false, false, DelightFoodClassType.REGULAR),
+	COOKIE(Rarity.COMMON, false, true, false, DelightFoodClassType.REGULAR),
+	UNCOMMON_MEAT(Rarity.UNCOMMON, true, false, false, DelightFoodClassType.REGULAR),
+	BOWL(Rarity.COMMON, false, false, false, DelightFoodClassType.BOWL),
+	BOWL_MEAT(Rarity.COMMON, true, false, false, DelightFoodClassType.BOWL),
+	DRINK(Rarity.COMMON, false, false, true, DelightFoodClassType.DRINK),
+	ROSE(Rarity.COMMON, false, false, true, DelightFoodClassType.ROSE_TEA);
 
 	public final Rarity rarity;
 	public final boolean meat, fast, drink;
-	private final FoodClassType type;
+	private final DelightFoodClassType type;
 
-	FoodType(Rarity rarity, boolean meat, boolean fast, boolean drink, FoodClassType type) {
+	DelightFoodType(Rarity rarity, boolean meat, boolean fast, boolean drink, DelightFoodClassType type) {
 		this.rarity = rarity;
 		this.meat = meat;
 		this.fast = fast;
@@ -50,6 +48,12 @@ public enum FoodType {
 	}
 
 	public Item create(Item.Properties props) {
-		return type.factory.get().apply(props);
+		return type.factory.apply(props);
 	}
+
+	@Override
+	public Rarity getRarity() {
+		return rarity;
+	}
+
 }

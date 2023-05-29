@@ -3,7 +3,7 @@ package dev.xkmc.twilightdelight.init.data;
 import com.tterrag.registrate.providers.RegistrateItemTagsProvider;
 import com.tterrag.registrate.providers.RegistrateTagsProvider;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
-import dev.xkmc.twilightdelight.init.registrate.food.DelightFood;
+import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;

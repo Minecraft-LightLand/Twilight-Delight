@@ -10,9 +10,9 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
-import dev.xkmc.twilightdelight.init.registrate.food.DelightFood;
-import dev.xkmc.twilightdelight.init.registrate.food.NeapolitanCakes;
-import dev.xkmc.twilightdelight.init.registrate.food.NeapolitanFood;
+import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -27,6 +27,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.Nullable;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
@@ -286,7 +287,7 @@ public class RecipeGen {
 		}
 
 		// neapolitan
-		{
+		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			path = "neapolitan/";
 			neapolitan(pvd, NeapolitanFood.AURORA_ICE_CREAM.item,
 					NeapolitanFood.AURORA_MILKSHAKE.item,

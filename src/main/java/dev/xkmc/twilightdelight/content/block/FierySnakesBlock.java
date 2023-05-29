@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.content.block;
 
-import dev.xkmc.twilightdelight.init.registrate.food.DelightFood;
+import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
