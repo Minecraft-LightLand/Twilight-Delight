@@ -2,6 +2,7 @@ package dev.xkmc.twilightdelight.content.effect;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.phys.Vec3;
@@ -12,9 +13,11 @@ import java.util.stream.Collectors;
 
 public abstract class RangeSearchEffect extends MobEffect {
 
-	public static List<LivingEntity> getEntitiesInRange(double size, LivingEntity center) {
+	public static final int RANGE = 6;
+
+	public static <T extends Entity> List<T> getEntitiesInRange(LivingEntity center, Class<T> cls) {
 		Vec3 pos = center.position();
-		return center.getLevel().getEntitiesOfClass(LivingEntity.class, center.getBoundingBox().inflate(size), e -> true)
+		return center.getLevel().getEntitiesOfClass(cls, center.getBoundingBox().inflate(RANGE), e -> true)
 				.stream().sorted(Comparator.comparingDouble(entcnd -> entcnd.distanceToSqr(pos)))
 				.collect(Collectors.toList());
 	}
@@ -25,14 +28,17 @@ public abstract class RangeSearchEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		entity.clearFire();
 		if (entity.tickCount % 10 == 0) {
-			for (LivingEntity e : getEntitiesInRange(6, entity)) {
-				if (e == entity || !(e instanceof Enemy)) {
-					continue;
-				}
-				applyEffect(e, amplifier);
+			searchEntities(entity, amplifier);
+		}
+	}
+
+	protected void searchEntities(LivingEntity entity, int amplifier) {
+		for (LivingEntity e : getEntitiesInRange(entity, LivingEntity.class)) {
+			if (e == entity || !(e instanceof Enemy)) {
+				continue;
 			}
+			applyEffect(e, amplifier);
 		}
 	}
 

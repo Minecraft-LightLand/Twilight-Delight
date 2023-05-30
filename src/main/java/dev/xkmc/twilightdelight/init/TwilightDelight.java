@@ -53,7 +53,7 @@ public class TwilightDelight {
 	public static void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			StoveAddBlockUtil.addBlock(ModBlockEntityTypes.STOVE.get(), TDBlocks.MAZE_STOVE.get());
-			((FoodPropertiesAccessor) TFItems.STROGANOFF).getEffects()
+			((FoodPropertiesAccessor) TFItems.STROGANOFF).getEffectSupplierList()
 					.add(Pair.of(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000), 1f));
 		});
 	}

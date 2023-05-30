@@ -24,7 +24,7 @@ public enum DelightFood {
 			new EffectSupplier(() -> MobEffects.CONFUSION, 1200, 0, 1),
 			new EffectSupplier(() -> MobEffects.HEALTH_BOOST, 2400, 4, 1),
 			new EffectSupplier(() -> MobEffects.NIGHT_VISION, 2400, 0, 1)),
-	BERRY_STICK(DelightFoodType.NONE, 4, 0.2f),
+	BERRY_STICK(DelightFoodType.STICK, 6, 0.3f),
 
 	GLOWSTEW(DelightFoodType.BOWL, 7, 0.675F,
 			new EffectSupplier(() -> MobEffects.GLOWING, 200, 0, 1),
@@ -36,7 +36,8 @@ public enum DelightFood {
 			new EffectSupplier(ModEffects.NOURISHMENT, 3600, 0, 1)),
 	THOUSAND_PLANT_STEW(DelightFoodType.BOWL, 10, 0.61f,
 			new EffectSupplier(() -> MobEffects.HEALTH_BOOST, 600, 1, 1),
-			new EffectSupplier(() -> MobEffects.CONFUSION, 300, 0, 0.1f)),
+			new EffectSupplier(() -> MobEffects.CONFUSION, 300, 0, 0.1f),
+			new EffectSupplier(ModEffects.COMFORT, 1200, 0, 1)),
 	GRILLED_GHAST(DelightFoodType.BOWL_MEAT, 10, 0.72f,
 			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1)),
 	PLATE_OF_LILY_CHICKEN(DelightFoodType.BOWL_MEAT, 16, 0.875f,

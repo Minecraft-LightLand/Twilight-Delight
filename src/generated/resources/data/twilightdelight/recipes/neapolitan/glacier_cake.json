@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "neapolitan"
+    }
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:egg"
+    },
+    "M": {
+      "tag": "forge:milk"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    },
+    "X": {
+      "item": "twilightforest:ice_bomb"
+    }
+  },
+  "pattern": [
+    "MXM",
+    "SES",
+    "WXW"
+  ],
+  "result": {
+    "item": "twilightdelight:glacier_cake"
+  }
+}

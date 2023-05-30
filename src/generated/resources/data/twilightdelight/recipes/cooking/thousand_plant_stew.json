@@ -1,20 +1,19 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
   "ingredients": [
     {
       "item": "minecraft:bowl"
-    },
-    {
-      "item": "twilightforest:mayapple"
     },
     {
       "item": "twilightforest:root_strand"
     },
     {
       "item": "twilightforest:fallen_leaves"
-    },
-    {
-      "item": "twilightforest:moss_patch"
     },
     {
       "item": "twilightforest:liveroot"

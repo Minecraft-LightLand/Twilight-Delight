@@ -10,6 +10,12 @@ public class FireRange extends RangeSearchEffect {
 	}
 
 	@Override
+	public void applyEffectTick(LivingEntity entity, int amplifier) {
+		entity.clearFire();
+		super.applyEffectTick(entity, amplifier);
+	}
+
+	@Override
 	protected void applyEffect(LivingEntity target, int amplifier) {
 		target.setSecondsOnFire(amplifier + 5);
 	}

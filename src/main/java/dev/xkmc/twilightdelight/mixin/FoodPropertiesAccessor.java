@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 @Mixin(FoodProperties.class)
 public interface FoodPropertiesAccessor {
 
-	@Accessor
-	List<Pair<Supplier<MobEffectInstance>, Float>> getEffects();
+	@Accessor("effects")
+	List<Pair<Supplier<MobEffectInstance>, Float>> getEffectSupplierList();
 
 }

@@ -1,18 +1,33 @@
 package dev.xkmc.twilightdelight.events;
 
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import net.minecraft.network.protocol.game.ClientboundAnimatePacket;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.living.MobEffectEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import twilightforest.init.TFMobEffects;
 
 @Mod.EventBusSubscriber(modid = TwilightDelight.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class TwilightEventCopy {
+
+	@SubscribeEvent
+	public static void onPotionTest(MobEffectEvent.Applicable event) {
+		if (event.getEffectInstance().getEffect() == MobEffects.POISON && event.getEntity().hasEffect(TDEffects.POISON_RANGE.get())) {
+			event.setResult(Event.Result.DENY);
+		}
+		if (event.getEffectInstance().getEffect() == TFMobEffects.FROSTY.get() && event.getEntity().hasEffect(TDEffects.FROZEN_RANGE.get())) {
+			event.setResult(Event.Result.DENY);
+		}
+	}
 
 	@SubscribeEvent
 	public static void onKnightmetalToolDamage(LivingHurtEvent event) {

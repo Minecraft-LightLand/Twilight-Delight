@@ -12,6 +12,14 @@ public class PoisonRange extends RangeSearchEffect {
 	}
 
 	@Override
+	public void applyEffectTick(LivingEntity entity, int amplifier) {
+		if (entity.hasEffect(MobEffects.POISON)) {
+			entity.removeEffect(MobEffects.POISON);
+		}
+		super.applyEffectTick(entity, amplifier);
+	}
+
+	@Override
 	protected void applyEffect(LivingEntity target, int amplifier) {
 		target.addEffect(new MobEffectInstance(MobEffects.POISON, 21));
 	}

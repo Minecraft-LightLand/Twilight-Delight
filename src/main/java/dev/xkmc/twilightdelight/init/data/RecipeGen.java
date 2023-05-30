@@ -108,18 +108,6 @@ public class RecipeGen {
 					.define('B', Items.COCOA_BEANS)
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.THOUSAND_PLANT_STEW.item.get(), 1)::unlockedBy, TFBlocks.MAYAPPLE.get().asItem())
-					.requires(Items.BOWL)
-					.requires(TFBlocks.MAYAPPLE.get().asItem())
-					.requires(TFBlocks.ROOT_STRAND.get().asItem())
-					.requires(TFBlocks.FALLEN_LEAVES.get().asItem())
-					.requires(TFBlocks.MOSS_PATCH.get().asItem())
-					.requires(TFItems.LIVEROOT.get())
-					.requires(TFBlocks.TORCHBERRY_PLANT.get().asItem())
-					.requires(Items.VINE)
-					.requires(TFBlocks.FIDDLEHEAD.get().asItem())
-					.save(pvd);
-
 			unlock(pvd, new ShapedRecipeBuilder(DelightFood.TORCHBERRY_COOKIE.item.get(), 8)::unlockedBy, TFItems.TORCHBERRIES.get())
 					.pattern("BAB")
 					.define('A', TFItems.TORCHBERRIES.get())
@@ -169,7 +157,7 @@ public class RecipeGen {
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					DelightFood.GLOWSTEW.item.get())
 					.addIngredient(DelightFood.GLOWSTEW.item.get())
-					.addIngredient(TagGen.VENSION_COOKED)
+					.addIngredient(TagGen.VENSION_RAW)
 					.addIngredient(ModItems.RAW_PASTA.get())
 					.addIngredient(TFItems.LIVEROOT.get())
 					.addIngredient(Items.BEETROOT)
@@ -201,6 +189,19 @@ public class RecipeGen {
 					.addIngredient(ModBlocks.ROAST_CHICKEN_BLOCK.get().asItem())
 					.addIngredient(TFBlocks.HUGE_WATER_LILY.get().asItem())
 					.build(pvd, getID(TDBlocks.LILY_CHICKEN.getId()));
+
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.THOUSAND_PLANT_STEW.item.get(),
+							1, 400, 0.35f, Items.BOWL)::unlockedBy,
+					TFBlocks.MAYAPPLE.get().asItem())
+					.addIngredient(Items.BOWL)
+					.addIngredient(TFBlocks.ROOT_STRAND.get().asItem())
+					.addIngredient(TFBlocks.FALLEN_LEAVES.get().asItem())
+					.addIngredient(TFItems.LIVEROOT.get())
+					.addIngredient(TFBlocks.TORCHBERRY_PLANT.get().asItem())
+					.addIngredient(Items.VINE)
+					.addIngredient(TFBlocks.FIDDLEHEAD.get().asItem())
+					.build(pvd, getID(DelightFood.THOUSAND_PLANT_STEW.item.getId()));
 		}
 
 		// drink cooking
@@ -324,6 +325,13 @@ public class RecipeGen {
 				.requires(Items.GLASS_BOTTLE, 3).requires(milk).requires(ice_cream.get())
 				.requires(NeapolitanItems.DRIED_VANILLA_PODS.get())
 				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(milkshake.getId()) + "_alt");
+
+		unlock(pvd, new ShapedRecipeBuilder(cake.get().asItem(), 1)::unlockedBy, ingredient)
+				.pattern("MXM").pattern("SES").pattern("WXW")
+				.define('M', milk).define('S', Items.SUGAR)
+				.define('W', Items.WHEAT).define('E', Items.EGG)
+				.define('X', ingredient)
+				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cake.getId()));
 	}
 
 	private static String getID(ResourceLocation item) {
