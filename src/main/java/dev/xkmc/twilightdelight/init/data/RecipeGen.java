@@ -126,13 +126,6 @@ public class RecipeGen {
 					.define('B', Items.WHEAT)
 					.save(pvd);
 
-			unlock(pvd, new ShapedRecipeBuilder(TDBlocks.LILY_CHICKEN.get().asItem(), 1)::unlockedBy, TFBlocks.HUGE_LILY_PAD.get().asItem())
-					.pattern("A").pattern("B").pattern("C")
-					.define('A', TFBlocks.HUGE_LILY_PAD.get().asItem())
-					.define('B', ModBlocks.ROAST_CHICKEN_BLOCK.get().asItem())
-					.define('C', TFBlocks.HUGE_WATER_LILY.get().asItem())
-					.save(pvd);
-
 			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GLACIER_ICE_TEA.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
 					.requires(Items.GLASS_BOTTLE).requires(TFItems.ICE_BOMB.get())
 					.requires(Items.ICE).requires(TFItems.ARCTIC_FUR.get())
@@ -184,7 +177,7 @@ public class RecipeGen {
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TFItems.MEEF_STROGANOFF.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
-					Items.MUSHROOM_STEW)
+					TFItems.RAW_MEEF.get())
 					.addIngredient(Items.MUSHROOM_STEW)
 					.addIngredient(TagGen.MEEF_COOKED)
 					.addIngredient(TFItems.LIVEROOT.get())
@@ -201,6 +194,13 @@ public class RecipeGen {
 					.addIngredient(TFItems.EXPERIMENT_115.get(), 2)
 					.build(pvd, getID(DelightFood.GRILLED_GHAST.item.getId()));
 
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.LILY_CHICKEN.get().asItem(),
+							1, 400, 0.35f, Items.BOWL)::unlockedBy,
+					TFBlocks.HUGE_LILY_PAD.get().asItem())
+					.addIngredient(TFBlocks.HUGE_LILY_PAD.get().asItem())
+					.addIngredient(ModBlocks.ROAST_CHICKEN_BLOCK.get().asItem())
+					.addIngredient(TFBlocks.HUGE_WATER_LILY.get().asItem())
+					.build(pvd, getID(TDBlocks.LILY_CHICKEN.getId()));
 		}
 
 		// drink cooking

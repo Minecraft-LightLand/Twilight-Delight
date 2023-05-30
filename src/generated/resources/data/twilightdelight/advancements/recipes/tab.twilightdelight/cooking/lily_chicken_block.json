@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightdelight:lily_chicken_block"
+        "recipe": "twilightdelight:cooking/lily_chicken_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "twilightdelight:lily_chicken_block"
+      "twilightdelight:cooking/lily_chicken_block"
     ]
   }
 }

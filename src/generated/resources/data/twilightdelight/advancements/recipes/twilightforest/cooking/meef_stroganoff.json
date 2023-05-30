@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_mushroom_stew": {
+    "has_raw_meef": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:mushroom_stew"
+              "twilightforest:raw_meef"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_mushroom_stew",
+      "has_raw_meef",
       "has_the_recipe"
     ]
   ],
