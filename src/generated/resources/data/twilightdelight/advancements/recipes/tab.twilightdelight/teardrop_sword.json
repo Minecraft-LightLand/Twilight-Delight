@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_experiment_113": {
+    "has_experiment_110": {
       "conditions": {
         "items": [
           {
             "items": [
-              "twilightdelight:experiment_113"
+              "twilightdelight:experiment_110"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_experiment_113",
+      "has_experiment_110",
       "has_the_recipe"
     ]
   ],

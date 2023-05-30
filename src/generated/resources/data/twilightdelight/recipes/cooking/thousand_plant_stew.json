@@ -7,9 +7,6 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "item": "minecraft:bowl"
-    },
-    {
       "item": "twilightforest:root_strand"
     },
     {

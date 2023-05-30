@@ -82,8 +82,8 @@ public class RecipeGen {
 					.save(pvd);
 
 			unlock(pvd, UpgradeRecipeBuilder.smithing(Ingredient.of(TFItems.FIERY_SWORD.get()),
-					Ingredient.of(DelightFood.EXPERIMENT_113.item.get()),
-					TDItems.TEARDROP_SWORD.get())::unlocks, DelightFood.EXPERIMENT_113.item.get())
+					Ingredient.of(DelightFood.EXPERIMENT_110.item.get()),
+					TDItems.TEARDROP_SWORD.get())::unlocks, DelightFood.EXPERIMENT_110.item.get())
 					.save(pvd, TDItems.TEARDROP_SWORD.getId());
 		}
 
@@ -190,11 +190,9 @@ public class RecipeGen {
 					.addIngredient(TFBlocks.HUGE_WATER_LILY.get().asItem())
 					.build(pvd, getID(TDBlocks.LILY_CHICKEN.getId()));
 
-
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.THOUSAND_PLANT_STEW.item.get(),
 							1, 400, 0.35f, Items.BOWL)::unlockedBy,
-					TFBlocks.MAYAPPLE.get().asItem())
-					.addIngredient(Items.BOWL)
+					TFItems.LIVEROOT.get())
 					.addIngredient(TFBlocks.ROOT_STRAND.get().asItem())
 					.addIngredient(TFBlocks.FALLEN_LEAVES.get().asItem())
 					.addIngredient(TFItems.LIVEROOT.get())

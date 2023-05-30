@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_mayapple": {
+    "has_liveroot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "twilightforest:mayapple"
+              "twilightforest:liveroot"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_mayapple",
+      "has_liveroot",
       "has_the_recipe"
     ]
   ],
