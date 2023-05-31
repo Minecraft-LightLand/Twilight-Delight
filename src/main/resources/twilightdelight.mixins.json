@@ -10,6 +10,7 @@
 	"CuttingBoardBlockEntityAccessor",
 	"CuttingBoardBlockMixin",
 	"FoodPropertiesAccessor",
+	"RichSoilBlockMixin",
 	"StoveBlockEntityMixin"
   ],
   "client": [

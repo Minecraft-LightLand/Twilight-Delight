@@ -21,7 +21,7 @@ public class PoisonRange extends RangeSearchEffect {
 
 	@Override
 	protected void applyEffect(LivingEntity target, int amplifier) {
-		target.addEffect(new MobEffectInstance(MobEffects.POISON, 21));
+		target.addEffect(new MobEffectInstance(MobEffects.POISON, 26));
 	}
 
 }
