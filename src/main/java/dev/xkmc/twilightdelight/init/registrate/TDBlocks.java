@@ -5,24 +5,34 @@ import dev.xkmc.twilightdelight.content.block.FierySnakesBlock;
 import dev.xkmc.twilightdelight.content.block.LilyChickenBlock;
 import dev.xkmc.twilightdelight.content.block.MazeStoveBlock;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.world.IronwoodTreeGrower;
+import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.ApplyExplosionDecay;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.Tags;
+import twilightforest.block.DarkLeavesBlock;
+import twilightforest.block.TFLogBlock;
 import twilightforest.init.TFBlocks;
+import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.MushroomColonyBlock;
 import vectorwing.farmersdelight.common.item.MushroomColonyItem;
@@ -77,7 +87,8 @@ public class TDBlocks {
 
 	public static final BlockEntry<MushroomColonyBlock> MUSHGLOOM_COLONY = TwilightDelight.REGISTRATE.block(
 					"mushgloom_colony", p -> new MushroomColonyBlock(BlockBehaviour.Properties.copy(
-							TFBlocks.MUSHGLOOM.get()), () -> TFBlocks.MUSHGLOOM.get().asItem()))
+							TFBlocks.MUSHGLOOM.get()).randomTicks(),
+							() -> TFBlocks.MUSHGLOOM.get().asItem()))
 			.blockstate((ctx, pvd) -> pvd.getVariantBuilder(ctx.get()).forAllStates((state) -> {
 				String stageName = ctx.getName() + "_stage" + state.getValue(MushroomColonyBlock.COLONY_AGE);
 				return ConfiguredModel.builder().modelFile(pvd.models()
@@ -113,6 +124,54 @@ public class TDBlocks {
 			})
 			.item(MushroomColonyItem::new)
 			.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("block/" + ctx.getName() + "_stage3"))).build()
+			.register();
+
+	public static final BlockEntry<SaplingBlock> IRON_SAPLING = TwilightDelight.REGISTRATE.block(
+					"ironwood_sapling", p -> new SaplingBlock(new IronwoodTreeGrower(), BlockBehaviour.Properties.copy(TFBlocks.DARKWOOD_SAPLING.get())))
+			.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models()
+					.cross(ctx.getName(), pvd.modLoc("block/" + ctx.getName()))
+					.renderType("cutout")))
+			.tag(BlockTags.SAPLINGS)
+			.item().model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("block/" + ctx.getName())))
+			.tag(ItemTags.SAPLINGS).build()
+			.register();
+
+	public static final BlockEntry<TFLogBlock> IRON_LOGS = TwilightDelight.REGISTRATE.block(
+					"ironwood_log", p -> new TFLogBlock(BlockBehaviour.Properties.copy(TFBlocks.DARK_LOG.get())
+							.strength(10, 10).requiresCorrectToolForDrops()))
+			.blockstate((ctx, pvd) -> pvd.logBlock(ctx.get()))
+			.tag(BlockTags.LOGS, BlockTags.LOGS_THAT_BURN, BlockTags.MINEABLE_WITH_AXE, BlockTags.NEEDS_DIAMOND_TOOL)
+			.item().tag(ItemTags.LOGS, ItemTags.LOGS_THAT_BURN).build()
+			.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
+					.add(AlternativesEntry.alternatives(
+							LootItem.lootTableItem(block.asItem())
+									.when(MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(
+											new EnchantmentPredicate(Enchantments.SILK_TOUCH,
+													MinMaxBounds.Ints.atLeast(1))))),
+							LootItem.lootTableItem(TFItems.IRONWOOD_INGOT.get())
+									.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
+					)).when(ExplosionCondition.survivesExplosion())
+			))).register();
+
+	public static final BlockEntry<DarkLeavesBlock> IRON_LEAVES = TwilightDelight.REGISTRATE.block(
+					"ironwood_leaves", p -> new DarkLeavesBlock(BlockBehaviour.Properties.copy(TFBlocks.DARK_LEAVES.get())
+							.strength(10, 10).requiresCorrectToolForDrops()))
+			.tag(BlockTags.LEAVES, BlockTags.MINEABLE_WITH_HOE, BlockTags.NEEDS_DIAMOND_TOOL)
+			.item().tag(ItemTags.LEAVES).build()
+			.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
+					.add(AlternativesEntry.alternatives(
+							LootItem.lootTableItem(block.asItem())
+									.when(MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(
+											new EnchantmentPredicate(Enchantments.SILK_TOUCH,
+													MinMaxBounds.Ints.atLeast(1))))),
+							LootItem.lootTableItem(TDBlocks.IRON_SAPLING.get())
+									.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE,
+											0.01f, 0.02f, 0.03f, 0.04f)),
+							LootItem.lootTableItem(TFItems.STEELEAF_INGOT.get())
+									.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE,
+											0.1f, 0.2f, 0.3f, 0.4f))
+					)).when(ExplosionCondition.survivesExplosion())
+			)))
 			.register();
 
 	public static void register() {

@@ -2,6 +2,7 @@ package dev.xkmc.twilightdelight.init.data;
 
 import com.tterrag.registrate.providers.loot.RegistrateLootTableProvider;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
@@ -30,7 +31,7 @@ public class ExtraLootGen {
 								LootItem.lootTableItem(TFItems.LIVEROOT.get())
 										.when(BonusLevelTableCondition.bonusLevelFlatChance(
 												Enchantments.BLOCK_FORTUNE,
-												0.1f, 0.3f, 0.5f, 0.7f, 0.9f, 1f)),
+												0.01f, 0.06f, 0.11f, 0.16f)),
 								LootItem.lootTableItem(Items.STICK))))));
 
 		pvd.addLootAction(LootContextParamSets.BLOCK, e -> e.accept(SCRAP_115,

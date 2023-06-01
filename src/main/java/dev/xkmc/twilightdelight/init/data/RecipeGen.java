@@ -87,6 +87,15 @@ public class RecipeGen {
 					.save(pvd, TDItems.TEARDROP_SWORD.getId());
 		}
 
+		//misc
+		{
+			unlock(pvd, new ShapelessRecipeBuilder(TFItems.RAW_IRONWOOD.get(), 1)::unlockedBy,
+					TFItems.LIVEROOT.get()).requires(TFItems.LIVEROOT.get())
+					.requires(Items.IRON_INGOT).requires(Items.GOLD_NUGGET)
+					.save(pvd, getID(TFItems.RAW_IRONWOOD.getId()));
+
+		}
+
 		// smelting
 		{
 

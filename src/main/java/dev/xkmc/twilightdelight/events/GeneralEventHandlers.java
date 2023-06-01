@@ -15,6 +15,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -48,6 +49,16 @@ public class GeneralEventHandlers {
 	@SubscribeEvent
 	public static void onItemUse(PlayerInteractEvent.RightClickBlock event) {
 		BlockState state = event.getLevel().getBlockState(event.getPos());
+		if (state.is(TFBlocks.EXPERIMENT_115.get())) {
+			if (event.getItemStack().is(Items.REDSTONE)) {
+				if (!state.getValue(Experiment115Block.REGENERATE)) {
+					if (state.getValue(Experiment115Block.BITES_TAKEN) > 0) {
+						event.setCanceled(true);
+						event.setCancellationResult(InteractionResult.FAIL);
+					}
+				}
+			}
+		}
 		if (event.getItemStack().is(ModTags.KNIVES)) {
 			if (state.is(TFBlocks.LIVEROOT_BLOCK.get())) {
 				if (event.getLevel() instanceof ServerLevel sl) {
@@ -56,11 +67,11 @@ public class GeneralEventHandlers {
 					for (var e : loot) {
 						event.getEntity().getInventory().placeItemBackInInventory(e);
 					}
-					event.getLevel().playSound(event.getEntity(), event.getPos(),
-							SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
 					event.getItemStack().hurtAndBreak(1, event.getEntity(),
 							e -> e.broadcastBreakEvent(event.getHand()));
 				}
+				event.getLevel().playSound(event.getEntity(), event.getPos(),
+						SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
 				event.setCanceled(true);
 				event.setCancellationResult(InteractionResult.SUCCESS);
 			}
@@ -76,11 +87,13 @@ public class GeneralEventHandlers {
 					for (var e : loot) {
 						event.getEntity().getInventory().placeItemBackInInventory(e);
 					}
-					event.getLevel().playSound(event.getEntity(), event.getPos(),
-							SoundEvents.WOOL_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
 					event.getItemStack().hurtAndBreak(1, event.getEntity(),
 							e -> e.broadcastBreakEvent(event.getHand()));
 				}
+				event.getLevel().playSound(event.getEntity(), event.getPos(),
+						SoundEvents.WOOL_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+				event.setCanceled(true);
+				event.setCancellationResult(InteractionResult.SUCCESS);
 			}
 		}
 	}

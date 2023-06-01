@@ -22,6 +22,7 @@ public class IronwoodKnifeItem extends TDKnifeItem {
 	public ItemStack getDefault() {
 		ItemStack istack = getDefaultInstance();
 		istack.enchant(Enchantments.KNOCKBACK, 1);
+		istack.enchant(Enchantments.UNBREAKING, 1);
 		return istack;
 	}
 

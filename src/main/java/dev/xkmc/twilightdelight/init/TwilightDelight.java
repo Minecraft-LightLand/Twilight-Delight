@@ -12,6 +12,7 @@ import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
+import dev.xkmc.twilightdelight.init.world.TreeConfig;
 import dev.xkmc.twilightdelight.mixin.FoodPropertiesAccessor;
 import dev.xkmc.twilightdelight.util.StoveAddBlockUtil;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -54,6 +55,7 @@ public class TwilightDelight {
 	@SubscribeEvent
 	public static void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
+			TreeConfig.register();
 			StoveAddBlockUtil.addBlock(ModBlockEntityTypes.STOVE.get(), TDBlocks.MAZE_STOVE.get());
 			((FoodPropertiesAccessor) TFItems.STROGANOFF).getEffectSupplierList()
 					.add(Pair.of(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000), 1f));

@@ -14,6 +14,6 @@
   ],
   "result": {
     "item": "twilightdelight:ironwood_knife",
-    "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:knockback\",lvl:1s}]}"
+    "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:knockback\",lvl:1s},{id:\"minecraft:unbreaking\",lvl:1s}]}"
   }
 }
