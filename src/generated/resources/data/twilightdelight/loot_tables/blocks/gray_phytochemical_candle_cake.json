@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "minecraft:gray_candle"
         }
       ],
       "rolls": 1.0

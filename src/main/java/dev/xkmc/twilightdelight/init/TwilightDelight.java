@@ -48,6 +48,7 @@ public class TwilightDelight {
 		REGISTRATE.addDataGenerator(ProviderType.BLOCK_TAGS, TagGen::genBlockTag);
 		REGISTRATE.addDataGenerator(ProviderType.LANG, LangData::genLang);
 		REGISTRATE.addDataGenerator(ProviderType.RECIPE, RecipeGen::genRecipes);
+		REGISTRATE.addDataGenerator(ProviderType.LOOT, ExtraLootGen::genLoot);
 	}
 
 	@SubscribeEvent

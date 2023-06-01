@@ -15,6 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -24,6 +25,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.Locale;
 
@@ -51,11 +53,12 @@ public enum NeapolitanCakes {
 		var food = TDItems.simpleFood(DelightFoodType.NONE, 1, 0.1f, effects);
 		var props = BlockBehaviour.Properties.of(Material.CAKE, color).strength(0.5F).sound(SoundType.WOOL);
 		block = TwilightDelight.REGISTRATE.block(base + "_cake", p -> new TDCakeBlock(food, props))
-				.blockstate(this::genCakeModels)
+				.blockstate(this::genCakeModels).loot((pvd, block) -> pvd.dropOther(block, ModItems.CAKE_SLICE.get()))
 				.item().model((ctx, pvd) -> pvd.generated(ctx)).build().register();
 		this.candle = TwilightDelight.REGISTRATE.block(base + "_candle_cake",
 						p -> new FlavoredCandleCakeBlock(block::get, Blocks.CANDLE, props))
 				.blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, "candle"))
+				.loot((pvd, block) -> pvd.dropOther(block, Items.CANDLE))
 				.tag(BlockTags.CANDLE_CAKES)
 				.register();
 		colored_candles = new BlockEntry[DyeColor.values().length];
@@ -65,6 +68,7 @@ public enum NeapolitanCakes {
 			this.colored_candles[dye.ordinal()] = TwilightDelight.REGISTRATE.block(color_name + "_" + base + "_candle_cake",
 							p -> new FlavoredCandleCakeBlock(block::get, candle, props))
 					.blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, color_name + "_candle"))
+					.loot((pvd, block) -> pvd.dropOther(block, candle.asItem()))
 					.tag(BlockTags.CANDLE_CAKES)
 					.register();
 		}

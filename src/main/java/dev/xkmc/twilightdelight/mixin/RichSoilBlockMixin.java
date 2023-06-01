@@ -1,6 +1,7 @@
 package dev.xkmc.twilightdelight.mixin;
 
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
+import dev.xkmc.twilightdelight.util.RichSoilUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -17,8 +18,9 @@ import vectorwing.farmersdelight.common.block.RichSoilBlock;
 public class RichSoilBlockMixin {
 
 	@Inject(at = @At("HEAD"), method = "randomTick", cancellable = true)
-	public void twilightdelight$randomTick$growMushgloom(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand, CallbackInfo ci) {
+	public void twilightdelight$randomTick$growMushgloomAndRoot(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand, CallbackInfo ci) {
 		if (!level.isClientSide) {
+			RichSoilUtil.convert(pos, level);
 			BlockPos abovePos = pos.above();
 			BlockState aboveState = level.getBlockState(abovePos);
 			Block aboveBlock = aboveState.getBlock();

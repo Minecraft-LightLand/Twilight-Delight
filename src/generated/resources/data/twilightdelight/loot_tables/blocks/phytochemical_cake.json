@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "twilightdelight:phytochemical_cake"
+          "name": "farmersdelight:cake_slice"
         }
       ],
       "rolls": 1.0
