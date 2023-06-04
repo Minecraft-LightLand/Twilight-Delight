@@ -5,6 +5,7 @@ import com.mojang.logging.LogUtils;
 import com.teamabnormals.neapolitan.core.Neapolitan;
 import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.providers.ProviderType;
+import dev.xkmc.l2library.base.effects.EffectSyncEvents;
 import dev.xkmc.twilightdelight.init.data.*;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
@@ -61,6 +62,11 @@ public class TwilightDelight {
 					.add(Pair.of(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000), 1f));
 
 			ComposterBlock.COMPOSTABLES.put(TDBlocks.MUSHGLOOM_COLONY.get().asItem(), 1.0F);
+
+
+			EffectSyncEvents.TRACKED.add(TDEffects.FIRE_RANGE.get());
+			EffectSyncEvents.TRACKED.add(TDEffects.FROZEN_RANGE.get());
+			EffectSyncEvents.TRACKED.add(TDEffects.POISON_RANGE.get());
 		});
 	}
 

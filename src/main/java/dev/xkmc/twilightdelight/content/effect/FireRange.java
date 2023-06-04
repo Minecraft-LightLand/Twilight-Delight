@@ -1,5 +1,7 @@
 package dev.xkmc.twilightdelight.content.effect;
 
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
@@ -20,4 +22,8 @@ public class FireRange extends RangeSearchEffect {
 		target.setSecondsOnFire(amplifier + 5);
 	}
 
+	@Override
+	protected ParticleOptions getParticle() {
+		return ParticleTypes.FLAME;
+	}
 }

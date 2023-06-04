@@ -126,6 +126,12 @@ dependencies {
         jarJar.ranged(it, "[MC1.19-1.1.5,)")
     }
 
+
+    implementation fg.deobf(jarJar("curse.maven:l2library-620203:4566224")) {
+        transitive = false
+        jarJar.ranged(it, "[1.9.6,)")
+    }
+
     implementation fg.deobf('curse.maven:farmers-delight-398521:3999157')
     implementation fg.deobf('curse.maven:the-twilight-forest-227639:4075841')
     implementation fg.deobf("mezz.jei:jei-${jei_minecraft_version}:${jei_version}")

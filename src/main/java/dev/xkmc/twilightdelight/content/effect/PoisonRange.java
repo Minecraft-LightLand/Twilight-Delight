@@ -1,5 +1,7 @@
 package dev.xkmc.twilightdelight.content.effect;
 
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -24,4 +26,8 @@ public class PoisonRange extends RangeSearchEffect {
 		target.addEffect(new MobEffectInstance(MobEffects.POISON, 26));
 	}
 
+	@Override
+	protected ParticleOptions getParticle() {
+		return ParticleTypes.COMPOSTER;
+	}
 }
