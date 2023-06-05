@@ -9,14 +9,25 @@ public class TDModConfig {
 
 	public static class Client {
 
+		public ForgeConfigSpec.IntValue auroraPeriod;
+
 		Client(ForgeConfigSpec.Builder builder) {
+			auroraPeriod = builder.comment("Period for aurora color change")
+					.defineInRange("auroraPeriod",30,0,10000);
 		}
 
 	}
 
 	public static class Common {
 
+		public ForgeConfigSpec.IntValue effectRange;
+		public ForgeConfigSpec.IntValue auroraRange;
+
 		Common(ForgeConfigSpec.Builder builder) {
+			effectRange = builder.comment("Range for hostile effects, such as fire/frost/poison")
+					.defineInRange("effectRange",6,0,128);
+			auroraRange = builder.comment("Range for aurora range")
+					.defineInRange("auroraRange",24,0,128);
 		}
 
 	}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "twilightdelight:block/maze_stove_bottom",
+    "east": "twilightdelight:block/maze_stove_side",
+    "north": "twilightdelight:block/maze_stove_front_on",
+    "particle": "twilightdelight:block/maze_stove_bottom",
+    "south": "twilightdelight:block/maze_stove_side",
+    "up": "twilightdelight:block/maze_stove_top_on",
+    "west": "twilightdelight:block/maze_stove_side"
+  }
+}

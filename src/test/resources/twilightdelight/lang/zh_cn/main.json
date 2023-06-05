@@ -13,9 +13,11 @@
   "block.twilightdelight.ironwood_leaves": "刚性树叶",
   "block.twilightdelight.ironwood_log": "铁木原木",
   "block.twilightdelight.ironwood_sapling": "铁树树苗",
+  "block.twilightdelight.meef_wellington_block": "暮光惠灵顿牛排",
 
-  "effect.twilightdelight.poison_range": "剧毒范围",
-  "effect.twilightdelight.fire_range": "火焰范围",
-  "effect.twilightdelight.frozen_range": "冻结范围",
-  "effect.twilightdelight.temporal_sadness": "莫名的悲伤"
+  "effect.twilightdelight.poison_range": "范围剧毒",
+  "effect.twilightdelight.fire_range": "范围火焰",
+  "effect.twilightdelight.frozen_range": "范围冻结",
+  "effect.twilightdelight.temporal_sadness": "莫名的悲伤",
+  "effect.twilightdelight.aurora_glowing": "极光"
 }

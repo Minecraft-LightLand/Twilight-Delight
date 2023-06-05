@@ -1,11 +1,13 @@
 package dev.xkmc.twilightdelight.content.effect;
 
 import dev.xkmc.l2library.base.effects.EffectSyncEvents;
+import dev.xkmc.twilightdelight.init.data.TDModConfig;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -60,11 +62,16 @@ public class AuroraGlowing extends MobEffect {
 
 	@OnlyIn(Dist.CLIENT)
 	public static int getColor(Level level) {
-		return getColor((level.getGameTime() + Minecraft.getInstance().getPartialTick()) / 30 % 1, 1, 1);
+		float tick = level.getGameTime() + Minecraft.getInstance().getPartialTick();
+		int period = TDModConfig.CLIENT.auroraPeriod.get();
+		return getColor(tick / period % 1, 1, 1);
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	public static boolean shouldRender(Entity self) {
+		Player player = Minecraft.getInstance().player;
+		if (player != null && player.hasEffect(TDEffects.AURORA_GLOWING.get()))
+			return true;
 		if (EffectSyncEvents.EFFECT_MAP.containsKey(self.getUUID())) {
 			var map = EffectSyncEvents.EFFECT_MAP.get(self.getUUID());
 			return map.containsKey(TDEffects.AURORA_GLOWING.get());

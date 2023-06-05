@@ -12,7 +12,7 @@ import net.minecraft.world.item.Items;
 import twilightforest.init.TFItems;
 import twilightforest.init.TFMobEffects;
 
-public class FrozenRange extends RangeSearchEffect {
+public class FrozenRange extends RangeRenderEffect {
 
 	public FrozenRange() {
 		super(MobEffectCategory.BENEFICIAL, -16724788);

@@ -32,6 +32,8 @@
   "item.twilightdelight.glowstew": "荧光煲",
   "item.twilightdelight.raw_venison_rib": "生鹿肉肋条",
   "item.twilightdelight.glacier_ice_tea": "冰川冰茶",
+  "item.twilightdelight.mushgloom_sauce": "荧光蘑菇酱",
+  "item.twilightdelight.plate_of_meef_wellington": "盘装暮光惠灵顿牛排",
   "item.twilightdelight.aurora_ice_cream": "极光冰淇淋",
   "item.twilightdelight.aurora_milkshake": "极光奶昔",
   "item.twilightdelight.glacier_ice_cream": "冰川冰淇淋",
@@ -121,11 +123,13 @@
   "block.twilightdelight.maze_stove": "迷宫炉灶",
   "block.twilightdelight.maze_stove.tooltip": "以更快的速度烹饪暮色菜肴",
   "block.twilightdelight.mushgloom_colony": "荧光蘑菇菌落",
-  "block.twilightdelight.ironwood_leaves": "刚叶",
+  "block.twilightdelight.ironwood_leaves": "刚性树叶",
   "block.twilightdelight.ironwood_log": "铁木原木",
   "block.twilightdelight.ironwood_sapling": "铁树树苗",
-  "effect.twilightdelight.poison_range": "剧毒范围",
-  "effect.twilightdelight.fire_range": "火焰范围",
-  "effect.twilightdelight.frozen_range": "冻结范围",
-  "effect.twilightdelight.temporal_sadness": "莫名的悲伤"
+  "block.twilightdelight.meef_wellington_block": "暮光惠灵顿牛排",
+  "effect.twilightdelight.poison_range": "范围剧毒",
+  "effect.twilightdelight.fire_range": "范围火焰",
+  "effect.twilightdelight.frozen_range": "范围冻结",
+  "effect.twilightdelight.temporal_sadness": "莫名的悲伤",
+  "effect.twilightdelight.aurora_glowing": "极光"
 }

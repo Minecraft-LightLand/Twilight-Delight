@@ -1,41 +1,36 @@
 package dev.xkmc.twilightdelight.content.effect;
 
-import dev.xkmc.l2library.base.effects.api.ClientRenderEffect;
-import dev.xkmc.l2library.base.effects.api.FirstPlayerRenderEffect;
-import dev.xkmc.l2library.util.Proxy;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.player.AbstractClientPlayer;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.resources.ResourceLocation;
+import dev.xkmc.twilightdelight.init.data.TDModConfig;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Enemy;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-public abstract class RangeSearchEffect extends MobEffect implements ClientRenderEffect, FirstPlayerRenderEffect {
+public abstract class RangeSearchEffect extends MobEffect {
 
-	public static final int RANGE = 6;
-
-	public static <T extends Entity> List<T> getEntitiesInRange(LivingEntity center, Class<T> cls) {
+	public <T extends Entity> List<T> getEntitiesInRange(LivingEntity center, Class<T> cls) {
 		Vec3 pos = center.position();
-		return center.getLevel().getEntitiesOfClass(cls, center.getBoundingBox().inflate(RANGE), e -> true)
+		return center.getLevel().getEntitiesOfClass(cls, center.getBoundingBox().inflate(getRange()), e -> true)
 				.stream().sorted(Comparator.comparingDouble(entcnd -> entcnd.distanceToSqr(pos)))
 				.collect(Collectors.toList());
 	}
 
 	protected RangeSearchEffect(MobEffectCategory pCategory, int pColor) {
 		super(pCategory, pColor);
+	}
+
+	protected int getRange() {
+		return TDModConfig.COMMON.effectRange.get();
+	}
+
+	protected boolean applicable(LivingEntity entity) {
+		return entity instanceof Enemy;
 	}
 
 	@Override
@@ -48,7 +43,7 @@ public abstract class RangeSearchEffect extends MobEffect implements ClientRende
 
 	protected void searchEntities(LivingEntity entity, int amplifier) {
 		for (LivingEntity e : getEntitiesInRange(entity, LivingEntity.class)) {
-			if (e == entity || !(e instanceof Enemy)) {
+			if (e == entity || !applicable(e)) {
 				continue;
 			}
 			applyEffect(e, amplifier);
@@ -61,44 +56,5 @@ public abstract class RangeSearchEffect extends MobEffect implements ClientRende
 	}
 
 	protected abstract void applyEffect(LivingEntity target, int amplifier);
-
-
-	@Override
-	public void render(LivingEntity entity, int lv, Consumer<ResourceLocation> consumer) {
-		if (entity == Proxy.getClientPlayer()) return;
-		renderEffect(lv, entity);
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	@Override
-	public void onClientLevelRender(AbstractClientPlayer player, MobEffectInstance ins) {
-		renderEffect(ins.getAmplifier(), player);
-	}
-
-	private void renderEffect(int lv, Entity entity) {
-		if (Minecraft.getInstance().isPaused()) return;
-		int r = 6;
-		int count = getParticleCount(lv);
-		for (int i = 0; i < count; i++) {
-			addParticle(entity.level, entity.position().add(0,entity.getEyeHeight(),0), r);
-		}
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	private void addParticle(Level w, Vec3 vec, int r) {
-		float tpi = (float) (Math.PI * 2);
-		Vec3 v0 = new Vec3(0, r, 0);
-		v0 = v0.xRot(tpi / 4).yRot(w.getRandom().nextFloat() * tpi);
-		w.addAlwaysVisibleParticle(getParticle(),
-				vec.x + v0.x,
-				vec.y + v0.y,
-				vec.z + v0.z, 0, 0, 0);
-	}
-
-	protected int getParticleCount(int lv) {
-		return 5;
-	}
-
-	protected abstract ParticleOptions getParticle();
 
 }

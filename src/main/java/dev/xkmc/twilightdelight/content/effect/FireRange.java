@@ -5,7 +5,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
-public class FireRange extends RangeSearchEffect {
+public class FireRange extends RangeRenderEffect {
 
 	public FireRange() {
 		super(MobEffectCategory.BENEFICIAL, -39424);

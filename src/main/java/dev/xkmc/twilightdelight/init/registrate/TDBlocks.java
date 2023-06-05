@@ -60,7 +60,7 @@ public class TDBlocks {
 									.lightLevel((state) -> state.getValue(BlockStateProperties.LIT) ? 13 : 0)))
 			.blockstate((ctx, pvd) -> {
 				ModelFile on = pvd.models().cube(
-						ctx.getName(),
+						ctx.getName() + "_on",
 						pvd.modLoc("block/" + ctx.getName() + "_bottom"),
 						pvd.modLoc("block/" + ctx.getName() + "_top_on"),
 						pvd.modLoc("block/" + ctx.getName() + "_front_on"),
@@ -187,7 +187,7 @@ public class TDBlocks {
 					.renderType("cutout")))
 			.tag(BlockTags.SAPLINGS)
 			.item().model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("block/" + ctx.getName())))
-			.tag(ItemTags.SAPLINGS).build()
+			.tag(ItemTags.SAPLINGS).tab(() -> null).build()
 			.register();
 
 	public static final BlockEntry<TFLogBlock> IRON_LOGS = TwilightDelight.REGISTRATE.block(
@@ -196,7 +196,7 @@ public class TDBlocks {
 									.strength(10, 10).requiresCorrectToolForDrops()))
 			.blockstate((ctx, pvd) -> pvd.logBlock(ctx.get()))
 			.tag(BlockTags.LOGS, BlockTags.LOGS_THAT_BURN, BlockTags.MINEABLE_WITH_AXE, BlockTags.NEEDS_DIAMOND_TOOL)
-			.item().tag(ItemTags.LOGS, ItemTags.LOGS_THAT_BURN).build()
+			.item().tag(ItemTags.LOGS, ItemTags.LOGS_THAT_BURN).tab(() -> null).build()
 			.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
 					.add(AlternativesEntry.alternatives(
 							LootItem.lootTableItem(block.asItem())
@@ -217,7 +217,7 @@ public class TDBlocks {
 			.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().withExistingParent(ctx.getName(), "block/leaves")
 					.texture("all", pvd.modLoc("block/" + ctx.getName()))))
 			.tag(BlockTags.LEAVES, BlockTags.MINEABLE_WITH_HOE, BlockTags.NEEDS_DIAMOND_TOOL)
-			.item().tag(ItemTags.LEAVES).build()
+			.item().tag(ItemTags.LEAVES).tab(() -> null).build()
 			.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
 					.add(AlternativesEntry.alternatives(
 							LootItem.lootTableItem(block.asItem())

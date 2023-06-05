@@ -31,7 +31,8 @@ import java.util.Locale;
 
 public enum NeapolitanCakes {
 	AURORA(MaterialColor.COLOR_CYAN,
-			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 600, 2, 1),
+			new EffectSupplier(TDEffects.AURORA_GLOWING, 1200, 0, 1),
+			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 1200, 2, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SLOWDOWN, 40, 0, 1)),
 	TORCHBERRY(MaterialColor.COLOR_YELLOW,
 			new EffectSupplier(TDEffects.FIRE_RANGE, 1200, 0, 1)),

@@ -9,9 +9,11 @@ import net.minecraft.world.item.Item;
 
 public enum NeapolitanFood {
 	AURORA_ICE_CREAM(NeapolitanFoodType.ICE_CREAM, 6, 0.4f,
+			new EffectSupplier(TDEffects.AURORA_GLOWING, 1200, 0, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 1200, 2, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SLOWDOWN, 200, 1, 1)),
 	AURORA_MILKSHAKE(NeapolitanFoodType.MILKSHAKE, 3, 0.6f,
+			new EffectSupplier(TDEffects.AURORA_GLOWING, 600, 0, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 600, 2, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SLOWDOWN, 300, 0, 1)),
 

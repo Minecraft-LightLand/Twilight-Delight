@@ -7,7 +7,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 
-public class PoisonRange extends RangeSearchEffect {
+public class PoisonRange extends RangeRenderEffect {
 
 	public PoisonRange() {
 		super(MobEffectCategory.BENEFICIAL, -16751104);
