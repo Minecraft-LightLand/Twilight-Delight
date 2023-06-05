@@ -67,6 +67,7 @@ public class TwilightDelight {
 			EffectSyncEvents.TRACKED.add(TDEffects.FIRE_RANGE.get());
 			EffectSyncEvents.TRACKED.add(TDEffects.FROZEN_RANGE.get());
 			EffectSyncEvents.TRACKED.add(TDEffects.POISON_RANGE.get());
+			EffectSyncEvents.TRACKED.add(TDEffects.AURORA_GLOWING.get());
 		});
 	}
 

@@ -4,6 +4,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import dev.xkmc.twilightdelight.content.block.FierySnakesBlock;
 import dev.xkmc.twilightdelight.content.block.LilyChickenBlock;
 import dev.xkmc.twilightdelight.content.block.MazeStoveBlock;
+import dev.xkmc.twilightdelight.content.block.MeefWellingtonBlock;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.world.IronwoodTreeGrower;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
@@ -31,6 +32,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.Tags;
 import twilightforest.block.DarkLeavesBlock;
 import twilightforest.block.TFLogBlock;
@@ -38,6 +40,7 @@ import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.MushroomColonyBlock;
+import vectorwing.farmersdelight.common.block.StoveBlock;
 import vectorwing.farmersdelight.common.item.MushroomColonyItem;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -56,12 +59,37 @@ public class TDBlocks {
 							BlockBehaviour.Properties.copy(Blocks.BRICKS)
 									.lightLevel((state) -> state.getValue(BlockStateProperties.LIT) ? 13 : 0)))
 			.blockstate((ctx, pvd) -> {
-			}).tag(ModTags.HEAT_SOURCES, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register();
+				ModelFile on = pvd.models().cube(
+						ctx.getName(),
+						pvd.modLoc("block/" + ctx.getName() + "_bottom"),
+						pvd.modLoc("block/" + ctx.getName() + "_top_on"),
+						pvd.modLoc("block/" + ctx.getName() + "_front_on"),
+						pvd.modLoc("block/" + ctx.getName() + "_side"),
+						pvd.modLoc("block/" + ctx.getName() + "_side"),
+						pvd.modLoc("block/" + ctx.getName() + "_side")
+				).texture("particle", pvd.modLoc("block/" + ctx.getName() + "_bottom"));
+
+				ModelFile off = pvd.models().cube(
+						ctx.getName(),
+						pvd.modLoc("block/" + ctx.getName() + "_bottom"),
+						pvd.modLoc("block/" + ctx.getName() + "_top"),
+						pvd.modLoc("block/" + ctx.getName() + "_front"),
+						pvd.modLoc("block/" + ctx.getName() + "_side"),
+						pvd.modLoc("block/" + ctx.getName() + "_side"),
+						pvd.modLoc("block/" + ctx.getName() + "_side")
+				).texture("particle", pvd.modLoc("block/" + ctx.getName() + "_bottom"));
+				pvd.horizontalBlock(ctx.get(), state -> state.getValue(StoveBlock.LIT) ? on : off);
+			})
+			.tag(ModTags.HEAT_SOURCES, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register();
 
 	public static final BlockEntry<FierySnakesBlock> FIERY_SNAKES = TwilightDelight.REGISTRATE.block(
 					"fiery_snakes_block", p -> new FierySnakesBlock())
-			.blockstate((ctx, pvd) -> {
-			}).item().model((ctx, pvd) -> pvd.generated(ctx)).build()
+			.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
+				int serve = state.getValue(FeastBlock.SERVINGS);
+				String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
+				return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
+			}))
+			.item().model((ctx, pvd) -> pvd.generated(ctx)).build()
 			.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
 					.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
 							.when(ExplosionCondition.survivesExplosion())
@@ -73,8 +101,12 @@ public class TDBlocks {
 
 	public static final BlockEntry<LilyChickenBlock> LILY_CHICKEN = TwilightDelight.REGISTRATE.block(
 					"lily_chicken_block", p -> new LilyChickenBlock())
-			.blockstate((ctx, pvd) -> {
-			}).item().model((ctx, pvd) -> pvd.generated(ctx)).build()
+			.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
+				int serve = state.getValue(FeastBlock.SERVINGS);
+				String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
+				return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
+			}))
+			.item().model((ctx, pvd) -> pvd.generated(ctx)).build()
 			.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
 					.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
 							.when(ExplosionCondition.survivesExplosion())
@@ -87,6 +119,23 @@ public class TDBlocks {
 							.when(InvertedLootItemCondition.invert(getServe(block))))
 			))
 			.register();
+
+	public static final BlockEntry<MeefWellingtonBlock> MEEF_WELLINGTON = TwilightDelight.REGISTRATE.block(
+					"meef_wellington_block", p -> new MeefWellingtonBlock())
+			.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
+				int serve = state.getValue(FeastBlock.SERVINGS);
+				String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
+				return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
+			}))
+			.item().model((ctx, pvd) -> pvd.generated(ctx)).build()
+			.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
+					.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
+							.when(ExplosionCondition.survivesExplosion())
+							.when(getServe(block))))
+					.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BOWL))
+							.when(ExplosionCondition.survivesExplosion())
+							.when(InvertedLootItemCondition.invert(getServe(block))))
+			)).register();
 
 	public static final BlockEntry<MushroomColonyBlock> MUSHGLOOM_COLONY = TwilightDelight.REGISTRATE.block(
 					"mushgloom_colony", p -> new MushroomColonyBlock(BlockBehaviour.Properties

@@ -1,0 +1,82 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "block/block",
+  "textures": {
+	"particle": "farmersdelight:block/tray_bottom",
+	"tray_top": "twilightdelight:block/meef_wellington_block_tray",
+	"tray_side": "farmersdelight:block/tray_bottom"
+  },
+  "elements": [
+	{
+	  "from": [
+		1,
+		0,
+		1
+	  ],
+	  "to": [
+		15,
+		2,
+		15
+	  ],
+	  "faces": {
+		"north": {
+		  "uv": [
+			1,
+			11,
+			15,
+			13
+		  ],
+		  "texture": "#tray_side"
+		},
+		"east": {
+		  "uv": [
+			1,
+			11,
+			15,
+			13
+		  ],
+		  "texture": "#tray_side"
+		},
+		"south": {
+		  "uv": [
+			1,
+			11,
+			15,
+			13
+		  ],
+		  "texture": "#tray_side"
+		},
+		"west": {
+		  "uv": [
+			1,
+			11,
+			15,
+			13
+		  ],
+		  "texture": "#tray_side"
+		},
+		"up": {
+		  "uv": [
+			1,
+			1,
+			15,
+			15
+		  ],
+		  "rotation": 90,
+		  "texture": "#tray_top"
+		},
+		"down": {
+		  "uv": [
+			1,
+			1,
+			15,
+			15
+		  ],
+		  "rotation": 270,
+		  "texture": "#tray_side",
+		  "cullface": "down"
+		}
+	  }
+	}
+  ]
+}

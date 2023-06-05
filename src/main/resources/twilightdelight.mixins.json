@@ -9,6 +9,7 @@
 	"CookingPotBlockEntityMixin",
 	"CuttingBoardBlockEntityAccessor",
 	"CuttingBoardBlockMixin",
+	"EntityMixin",
 	"FoodPropertiesAccessor",
 	"ItemEntityMixin",
 	"RichSoilBlockMixin",
