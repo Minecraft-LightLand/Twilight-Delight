@@ -123,6 +123,13 @@ public class RecipeGen {
 					.define('B', Items.WHEAT)
 					.save(pvd);
 
+			unlock(pvd, new ShapedRecipeBuilder(TFItems.MAZE_WAFER.get(), 12)::unlockedBy, TFItems.LIVEROOT.get())
+					.pattern("AAA").pattern("BCB").pattern("AAA")
+					.define('A', Items.WHEAT)
+					.define('B', TagGen.MILK)
+					.define('C', TFItems.LIVEROOT.get())
+					.save(pvd);
+
 			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GLACIER_ICE_TEA.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
 					.requires(Items.GLASS_BOTTLE).requires(TFItems.ICE_BOMB.get())
 					.requires(Items.ICE).requires(TFItems.ARCTIC_FUR.get())
@@ -130,6 +137,16 @@ public class RecipeGen {
 
 			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.TWILIGHT_SPRING.item.get(), 1)::unlockedBy, TFItems.RAW_IRONWOOD.get())
 					.requires(Items.GLASS_BOTTLE).requires(TFItems.RAW_IRONWOOD.get()).requires(Items.ICE).save(pvd);
+
+			unlock(pvd, new ShapedRecipeBuilder(TDBlocks.MEEF_WELLINGTON.get(), 1)::unlockedBy, DelightFood.MUSHGLOOM_SAUCE.item.get())
+					.pattern("BAB").pattern("DCD").pattern("FEF")
+					.define('A', ModItems.PIE_CRUST.get())
+					.define('B', Tags.Items.EGGS)
+					.define('C', DelightFood.MUSHGLOOM_SAUCE.item.get())
+					.define('D', TagGen.MEEF_COOKED)
+					.define('E', Items.BOWL)
+					.define('F', ModItems.BACON.get())
+					.save(pvd);
 
 		}
 
@@ -161,6 +178,14 @@ public class RecipeGen {
 					.addIngredient(TFBlocks.MUSHGLOOM.get().asItem())
 					.addIngredient(TFItems.TORCHBERRIES.get())
 					.build(pvd, getID(DelightFood.GLOWSTEW.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.MUSHGLOOM_SAUCE.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					TFBlocks.MUSHGLOOM.get().asItem())
+					.addIngredient(Items.BROWN_MUSHROOM)
+					.addIngredient(TFBlocks.MUSHGLOOM.get().asItem())
+					.addIngredient(ModItems.ONION.get())
+					.build(pvd, getID(DelightFood.MUSHGLOOM_SAUCE.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GLOW_VENISON_RIB_WITH_PASTA.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,

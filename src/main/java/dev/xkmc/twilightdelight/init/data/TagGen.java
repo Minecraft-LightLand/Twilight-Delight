@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
@@ -16,6 +17,7 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 public class TagGen {
 
 	public static final TagKey<Item> INSECT = ItemTags.create(new ResourceLocation("forge", "insect"));
+	public static final TagKey<Item> MILK = ItemTags.create(new ResourceLocation("forge", "milk"));
 	public static final TagKey<Item> HYDRA_MEAT = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "hydra_meat"));
 	public static final TagKey<Item> MEEF_COOKED = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "meef_cooked"));
 	public static final TagKey<Item> MEEF_RAW = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "meef_raw"));
@@ -27,6 +29,7 @@ public class TagGen {
 				.add(TFBlocks.FIREFLY.get().asItem(),
 						TFBlocks.CICADA.get().asItem(),
 						TFBlocks.MOONWORM.get().asItem());
+		pvd.tag(MILK).add(Items.MILK_BUCKET);
 		pvd.tag(HYDRA_MEAT).add(TFItems.HYDRA_CHOP.get(), DelightFood.HYDRA_PIECE.item.get());
 		pvd.tag(MEEF_COOKED).add(TFItems.COOKED_MEEF.get(), DelightFood.COOKED_MEEF_SLICE.item.get());
 		pvd.tag(MEEF_RAW).add(TFItems.RAW_MEEF.get(), DelightFood.RAW_MEEF_SLICE.item.get());

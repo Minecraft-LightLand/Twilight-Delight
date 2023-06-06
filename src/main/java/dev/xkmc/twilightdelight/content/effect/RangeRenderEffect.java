@@ -41,7 +41,7 @@ public abstract class RangeRenderEffect extends RangeSearchEffect implements Cli
 		int r = getRange();
 		int count = getParticleCount(lv);
 		for (int i = 0; i < count; i++) {
-			addParticle(entity.level, entity.position().add(0,entity.getEyeHeight(),0), r);
+			addParticle(entity.level, entity.position().add(0, entity.getEyeHeight() / 2, 0), r);
 		}
 	}
 

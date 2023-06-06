@@ -8,9 +8,6 @@ import dev.xkmc.twilightdelight.init.TwilightDelight;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraftforge.registries.ForgeRegistries;
 
-/**
- * @author Goulixiaoji
- */
 public class TDEffects {
 
 	public static final RegistryEntry<MobEffect> FIRE_RANGE;
