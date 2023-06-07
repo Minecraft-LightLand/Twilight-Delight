@@ -315,7 +315,43 @@ public class RecipeGen {
 							DelightFood.EXPERIMENT_113.item.get(), 9)
 					.addResult(TFItems.EXPERIMENT_115.get(), 4)
 					.addResultWithChance(DelightFood.EXPERIMENT_110.item.get(), 0.1f)
-					.build(pvd, getID(DelightFood.EXPERIMENT_113.item.getId()));
+					.build(pvd, getID(TFBlocks.UR_GHAST_TROPHY.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFBlocks.HYDRA_TROPHY.get()),
+							Ingredient.of(ModTags.KNIVES),
+							TFItems.HYDRA_CHOP.get(), 4)
+					.build(pvd, getID(TFBlocks.HYDRA_TROPHY.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFBlocks.NAGA_TROPHY.get()),
+							Ingredient.of(ModTags.KNIVES),
+							TFItems.NAGA_SCALE.get(), 4)
+					.build(pvd, getID(TFBlocks.NAGA_TROPHY.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFBlocks.KNIGHT_PHANTOM_TROPHY.get()),
+							Ingredient.of(ModTags.KNIVES),
+							TFItems.PHANTOM_HELMET.get(), 1)
+					.build(pvd, getID(TFBlocks.KNIGHT_PHANTOM_TROPHY.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFBlocks.LICH_TROPHY.get()),
+							Ingredient.of(ModTags.KNIVES),
+							Items.SKELETON_SKULL, 1)
+					.build(pvd, getID(TFBlocks.LICH_TROPHY.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFBlocks.MINOSHROOM_TROPHY.get()),
+							Ingredient.of(ModTags.KNIVES),
+							TFItems.RAW_MEEF.get(), 4)
+					.build(pvd, getID(TFBlocks.MINOSHROOM_TROPHY.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFBlocks.ALPHA_YETI_TROPHY.get()),
+							Ingredient.of(ModTags.KNIVES),
+							TFItems.ALPHA_YETI_FUR.get(), 4)
+					.build(pvd, getID(TFBlocks.ALPHA_YETI_TROPHY.getId()));
 
 		}
 

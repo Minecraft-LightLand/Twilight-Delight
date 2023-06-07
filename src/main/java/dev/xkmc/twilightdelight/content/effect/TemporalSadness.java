@@ -14,15 +14,15 @@ import java.util.UUID;
 public class TemporalSadness extends MobEffect {
 
 	private static final String NAME_ATK = "temporalSadness_atk";
-	private static final String NAME_SPE = "temporalSadness_atk";
+	private static final String NAME_SPE = "temporalSadness_speed";
 
 	private static final UUID ID_ATK = UUID.nameUUIDFromBytes(NAME_ATK.getBytes(StandardCharsets.UTF_8));
 	private static final UUID ID_SPE = UUID.nameUUIDFromBytes(NAME_SPE.getBytes(StandardCharsets.UTF_8));
 
 	public TemporalSadness() {
 		super(MobEffectCategory.HARMFUL, -1);
-		addAttributeModifier(Attributes.ATTACK_DAMAGE, ID_ATK.toString(), -4, AttributeModifier.Operation.ADDITION);
-		addAttributeModifier(Attributes.MOVEMENT_SPEED, ID_SPE.toString(), -0.15, AttributeModifier.Operation.MULTIPLY_BASE);
+		addAttributeModifier(Attributes.ATTACK_DAMAGE, ID_ATK.toString(), -10, AttributeModifier.Operation.ADDITION);
+		addAttributeModifier(Attributes.MOVEMENT_SPEED, ID_SPE.toString(), -0.5, AttributeModifier.Operation.MULTIPLY_BASE);
 	}
 
 	@Override

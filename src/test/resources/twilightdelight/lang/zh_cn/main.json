@@ -17,7 +17,10 @@
 
   "effect.twilightdelight.poison_range": "范围剧毒",
   "effect.twilightdelight.fire_range": "范围火焰",
-  "effect.twilightdelight.frozen_range": "范围冻结",
+  "effect.twilightdelight.frozen_range": "范围霜冻",
   "effect.twilightdelight.temporal_sadness": "莫名的悲伤",
-  "effect.twilightdelight.aurora_glowing": "极光"
+  "effect.twilightdelight.aurora_glowing": "极光",
+
+  "patchouli.twilightdelight.landing": "享受来自暮色的美味和甜品",
+  "patchouli.twilightdelight.title": "暮色风味乐事教程"
 }

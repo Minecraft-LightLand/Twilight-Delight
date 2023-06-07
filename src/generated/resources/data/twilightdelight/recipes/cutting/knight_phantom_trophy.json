@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightforest:knight_phantom_trophy"
+    }
+  ],
+  "result": [
+    {
+      "item": "twilightforest:phantom_helmet"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}

@@ -16,6 +16,7 @@
 	"StoveBlockEntityMixin"
   ],
   "client": [
+	"CuttingBoardRendererMixin"
   ],
   "injectors": {
 	"defaultRequire": 1

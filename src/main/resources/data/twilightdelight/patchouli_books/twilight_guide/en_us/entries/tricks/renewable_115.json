@@ -1,0 +1,16 @@
+{
+  "name": "Getting Experiment 115",
+  "icon": "twilightforest:experiment_115",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "You can scavenge Experiment 115 from Twilight Ghastguard, Twilight Ghastling, and Ghasts, with varying chances."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:experiment_115",
+	  "text": "With a Silk Touch knife, you can also cut Experiment 115 blocks to get a piece."
+	}
+  ]
+}

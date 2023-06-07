@@ -1,0 +1,16 @@
+{
+  "name": "Getting Liveroot",
+  "icon": "twilightforest:liveroot",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "You can scrab Liveroot block with knife, turning it into Root block, and you can get a stick or liveroot (with a very small chance).$(br2)Using Fortune enchantment can increase the chance to get Liveroot."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:liveroot_block",
+	  "text": "Root blocks adjacent to rich soil and Liveroot block will slowly turn into Liveroot block, making Liveroot farmable."
+	}
+  ]
+}

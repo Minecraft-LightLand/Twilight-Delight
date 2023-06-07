@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightforest:alpha_yeti_trophy"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "twilightforest:alpha_yeti_fur"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}

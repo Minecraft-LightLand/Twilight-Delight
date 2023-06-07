@@ -1,6 +1,7 @@
 package dev.xkmc.twilightdelight.init.data;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
+import dev.xkmc.twilightdelight.compat.PatchouliLang;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -49,6 +50,8 @@ public enum LangData {
 		pvd.add("block.twilightdelight.maze_stove.tooltip", "Cook Twilight meals faster");
 		pvd.add("death.attack.twilightdelight.thorn_rose_tea", "%1$s acknowledged that every rose has its thorn");
 		pvd.add("death.attack.twilightdelight.thorn_rose_tea.player", "1$s acknowledged that every rose has its thorn whilst trying to escape %2$s");
+
+		PatchouliLang.genLang(pvd);
 	}
 
 

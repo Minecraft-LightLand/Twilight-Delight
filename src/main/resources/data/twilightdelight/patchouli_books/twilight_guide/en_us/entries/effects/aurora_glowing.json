@@ -1,0 +1,16 @@
+{
+  "name": "Aurora Glowing",
+  "icon": "twilightforest:aurora_block",
+  "category": "twilightdelight:effects",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "This effect will make you and all entities you see to have a rainbow glowing layer, including items.$(br2)It is useful to find enemies behind walls, items left behind, and underground caves."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:aurora_block",
+	  "text": "Obtainable from drinks and desserts made from Aurora Block."
+	}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Poison Range",
+  "icon": "twilightforest:steeleaf_ingot",
+  "category": "twilightdelight:effects",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "This effect will protect player from Poison effect, and will apply Poison to all enemies around you. It will inflict damage way faster than normal poison.$(br2)Range of effect is marked with green particles."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:steeleaf_ingot",
+	  "text": "Obtainable from drinks and desserts made from Steeleaf."
+	}
+  ]
+}

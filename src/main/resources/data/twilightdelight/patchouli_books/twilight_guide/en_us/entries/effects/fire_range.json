@@ -1,0 +1,16 @@
+{
+  "name": "Fire Range",
+  "icon": "twilightforest:torchberries",
+  "category": "twilightdelight:effects",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "This effect will prevent player from being ignited, and will ignite all enemies around you. Note that this effect does not protect you from fire damage.$(br2)Range of effect is marked with flame particles."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:torchberries",
+	  "text": "Obtainable from drinks and desserts made from Torchberries"
+	}
+  ]
+}

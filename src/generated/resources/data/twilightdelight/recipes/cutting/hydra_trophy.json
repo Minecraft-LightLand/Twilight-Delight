@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightforest:hydra_trophy"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "twilightforest:hydra_chop"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}
