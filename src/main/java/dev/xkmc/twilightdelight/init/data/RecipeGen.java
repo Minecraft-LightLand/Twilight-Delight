@@ -310,6 +310,12 @@ public class RecipeGen {
 					.build(pvd, getID(DelightFood.RAW_INSECT.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TDBlocks.MUSHGLOOM_COLONY.get()),
+							Ingredient.of(ModTags.KNIVES),
+							TFBlocks.MUSHGLOOM.get(), 5)
+					.build(pvd, getID(TDBlocks.MUSHGLOOM_COLONY.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.UR_GHAST_TROPHY.get()),
 							Ingredient.of(ModTags.KNIVES),
 							DelightFood.EXPERIMENT_113.item.get(), 9)
@@ -326,7 +332,7 @@ public class RecipeGen {
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.NAGA_TROPHY.get()),
 							Ingredient.of(ModTags.KNIVES),
-							TFItems.NAGA_SCALE.get(), 4)
+							TFItems.NAGA_SCALE.get(), 9)
 					.build(pvd, getID(TFBlocks.NAGA_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
@@ -339,19 +345,51 @@ public class RecipeGen {
 							Ingredient.of(TFBlocks.LICH_TROPHY.get()),
 							Ingredient.of(ModTags.KNIVES),
 							Items.SKELETON_SKULL, 1)
+					.addResultWithChance(TFItems.ZOMBIE_SCEPTER.get(), 0.2f)
+					.addResultWithChance(TFItems.LIFEDRAIN_SCEPTER.get(), 0.2f)
+					.addResultWithChance(TFItems.TWILIGHT_SCEPTER.get(), 0.2f)
 					.build(pvd, getID(TFBlocks.LICH_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.MINOSHROOM_TROPHY.get()),
 							Ingredient.of(ModTags.KNIVES),
-							TFItems.RAW_MEEF.get(), 4)
+							TFItems.RAW_MEEF.get(), 9)
+					.addResultWithChance(Items.RED_MUSHROOM, 0.5f, 8)
 					.build(pvd, getID(TFBlocks.MINOSHROOM_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.ALPHA_YETI_TROPHY.get()),
 							Ingredient.of(ModTags.KNIVES),
-							TFItems.ALPHA_YETI_FUR.get(), 4)
+							TFItems.ALPHA_YETI_FUR.get(), 9)
+					.addResultWithChance(TFItems.ICE_BOMB.get(), 0.5f, 4)
 					.build(pvd, getID(TFBlocks.ALPHA_YETI_TROPHY.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFItems.PHANTOM_HELMET.get()),
+							Ingredient.of(Tags.Items.TOOLS_PICKAXES),
+							TFItems.ARMOR_SHARD_CLUSTER.get(), 3)
+					.build(pvd, getID(TFItems.PHANTOM_HELMET.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFItems.PHANTOM_CHESTPLATE.get()),
+							Ingredient.of(Tags.Items.TOOLS_PICKAXES),
+							TFItems.ARMOR_SHARD_CLUSTER.get(), 5)
+					.build(pvd, getID(TFItems.PHANTOM_CHESTPLATE.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFBlocks.SNOW_QUEEN_TROPHY.get()),
+							Ingredient.of(ModTags.KNIVES),
+							TFItems.ICE_BOMB.get(), 9)
+					.addResultWithChance(TFItems.ICE_SWORD.get(), 0.2f)
+					.addResultWithChance(TFItems.GLASS_SWORD.get(), 0.1f)
+					.addResultWithChance(TFItems.ICE_BOW.get(), 0.2f)
+					.build(pvd, getID(TFBlocks.SNOW_QUEEN_TROPHY.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFBlocks.QUEST_RAM_TROPHY.get()),
+							Ingredient.of(ModTags.KNIVES),
+							Items.MUTTON, 9)
+					.build(pvd, getID(TFBlocks.QUEST_RAM_TROPHY.getId()));
 
 		}
 

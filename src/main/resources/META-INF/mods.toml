@@ -28,6 +28,7 @@ displayName="Twilight's Flavor & Delight" #mandatory
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="logo.png" #optional
+logoBlur=false
 # A text field displayed in the mod UI
 credits="LightLand Team and Goulixiaoji" #optional
 # A text field displayed in the mod UI

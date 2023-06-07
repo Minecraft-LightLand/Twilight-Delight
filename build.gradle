@@ -140,8 +140,8 @@ dependencies {
     implementation fg.deobf('curse.maven:blueprint-382216:4442628')
     implementation fg.deobf('curse.maven:neapolitan-382016:4023083')
     implementation fg.deobf('curse.maven:create-328085:4371809')
-    //implementation fg.deobf('curse.maven:create-enchantment-industry-688768:4504113')
-    //implementation fg.deobf('curse.maven:create-central-kitchen-820977:4522788')
+    implementation fg.deobf("curse.maven:create-enchantment-industry-688768:4563304")
+    implementation fg.deobf("curse.maven:create-central-kitchen-820977:4568474")
 
     runtimeOnly fg.deobf('curse.maven:appleskin-248787:3872808')
 

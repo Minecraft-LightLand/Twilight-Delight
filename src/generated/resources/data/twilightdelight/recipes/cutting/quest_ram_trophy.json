@@ -2,13 +2,13 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "twilightforest:naga_trophy"
+      "item": "twilightforest:quest_ram_trophy"
     }
   ],
   "result": [
     {
       "count": 9,
-      "item": "twilightforest:naga_scale"
+      "item": "minecraft:mutton"
     }
   ],
   "tool": {

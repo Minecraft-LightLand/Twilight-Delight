@@ -7,8 +7,13 @@
   ],
   "result": [
     {
-      "count": 4,
+      "count": 9,
       "item": "twilightforest:raw_meef"
+    },
+    {
+      "chance": 0.5,
+      "count": 8,
+      "item": "minecraft:red_mushroom"
     }
   ],
   "tool": {

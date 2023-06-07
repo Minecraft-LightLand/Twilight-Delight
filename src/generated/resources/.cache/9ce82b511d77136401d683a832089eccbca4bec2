@@ -1,4 +1,4 @@
-// 1.19.2	2023-06-06T18:00:41.643278	Registrate Provider for twilightdelight [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.19.2	2023-06-06T19:54:56.897734	Registrate Provider for twilightdelight [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 65b1422c3db103ee59e5d726f67f9b64167c0741 assets/twilightdelight/blockstates/black_aurora_candle_cake.json
@@ -484,18 +484,22 @@ e0438fd1aabaea81f439cd7bc665475f27ef36ca data/twilightdelight/recipes/cooking/li
 c968ec9fe876c2c257dda7df2d8c35cdae83af94 data/twilightdelight/recipes/cooking/thorn_rose_tea.json
 cca456625f4a22fd82e94a5b23feee39800d218b data/twilightdelight/recipes/cooking/thousand_plant_stew.json
 f4b4593875eeb61ac53fafb00d6ce44f2819433c data/twilightdelight/recipes/cooking/torchberry_juice.json
-a9af4091e5b6b486a037d1f51ea2e9a3ea92fb91 data/twilightdelight/recipes/cutting/alpha_yeti_trophy.json
+dbbbfc97a46d4ed2a6b529c6b79d8a90bacf96b0 data/twilightdelight/recipes/cutting/alpha_yeti_trophy.json
 3021789c48c12cd25fb201efc7f9f9a330fb56b7 data/twilightdelight/recipes/cutting/cooked_meef_slice.json
 2baacd46862e59799b80dc7dffa0865ed8192689 data/twilightdelight/recipes/cutting/cooked_venison_rib.json
 8d87fdf09e50649dbd8c33e5ec6861744a429ee6 data/twilightdelight/recipes/cutting/hydra_piece.json
 7b4c16338f2e53a5f49d46ac03bce3892fec834e data/twilightdelight/recipes/cutting/hydra_trophy.json
 51e13e2df1f9fdb6dac4b53da4f3adc11db0e3e9 data/twilightdelight/recipes/cutting/knight_phantom_trophy.json
-d1b7c10be8fe691447a379df74e21f2109c8ebf7 data/twilightdelight/recipes/cutting/lich_trophy.json
-e518b669f0f157a3ae24c322d2b2dbc4385b3ffa data/twilightdelight/recipes/cutting/minoshroom_trophy.json
-0e154fb93025b06dca9f0a00df63561dcb901493 data/twilightdelight/recipes/cutting/naga_trophy.json
+41a1af57055235d600ee1476b0fd3bedcd9c760f data/twilightdelight/recipes/cutting/lich_trophy.json
+c3b453c8cfe9a5100a30e7e65b64780eec0e9360 data/twilightdelight/recipes/cutting/minoshroom_trophy.json
+6141281958654fda226e44c9cce6a26fb56b5e17 data/twilightdelight/recipes/cutting/naga_trophy.json
+ec9a3c8d08db809f276d149f73f874491410915c data/twilightdelight/recipes/cutting/phantom_chestplate.json
+802e277cb8476e69141b4a93c28341d1dee06b7b data/twilightdelight/recipes/cutting/phantom_helmet.json
+da9144a4ba2e61aff0dff57ee55db006dbf160a4 data/twilightdelight/recipes/cutting/quest_ram_trophy.json
 1b5a6dc7ba8d3c280cc5d3a85ef412c74d75667d data/twilightdelight/recipes/cutting/raw_insect.json
 3691fcd951054d6632520df944371defbafcfb17 data/twilightdelight/recipes/cutting/raw_meef_slice.json
 56168dc78efe95a002d1b825b4d146d03b81e8d8 data/twilightdelight/recipes/cutting/raw_venison_rib.json
+cb757de510fc14003b0f07c3ff1ee7fdfc3e3f83 data/twilightdelight/recipes/cutting/snow_queen_trophy.json
 eb506a67bd135b88943d92388428d5aefb7fc01c data/twilightdelight/recipes/cutting/ur_ghast_trophy.json
 58b9e092e1088af87d878691c0fa89377ac38e02 data/twilightdelight/recipes/fiery_knife.json
 48276ffc806550837f4337c08798c8568cd84941 data/twilightdelight/recipes/glacier_ice_tea.json
