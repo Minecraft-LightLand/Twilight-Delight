@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:block/cross",
-  "render_type": "minecraft:cutout",
+  "parent": "twilightforest:block/mushgloom",
   "textures": {
-    "cross": "twilightdelight:block/mushgloom_colony_stage0"
+    "cross": "twilightdelight:block/mushgloom_colony_stage0",
+    "cross2": "twilightdelight:block/mushgloom_colony_stage0_head"
   }
 }

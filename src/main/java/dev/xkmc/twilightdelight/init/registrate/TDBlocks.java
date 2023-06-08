@@ -11,6 +11,7 @@ import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
@@ -34,6 +35,7 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.Tags;
+import twilightforest.TwilightForestMod;
 import twilightforest.block.DarkLeavesBlock;
 import twilightforest.block.TFLogBlock;
 import twilightforest.init.TFBlocks;
@@ -145,8 +147,10 @@ public class TDBlocks {
 			.blockstate((ctx, pvd) -> pvd.getVariantBuilder(ctx.get()).forAllStates((state) -> {
 				String stageName = ctx.getName() + "_stage" + state.getValue(MushroomColonyBlock.COLONY_AGE);
 				return ConfiguredModel.builder().modelFile(pvd.models()
-						.cross(stageName, pvd.modLoc("block/" + stageName))
-						.renderType("cutout")).build();
+						.getBuilder(stageName).parent(new ModelFile.UncheckedModelFile(
+								new ResourceLocation(TwilightForestMod.ID, "block/mushgloom")))
+						.texture("cross", pvd.modLoc("block/" + stageName))
+						.texture("cross2", pvd.modLoc("block/" + stageName + "_head"))).build();
 			}))
 			.tag(ModTags.COMPOST_ACTIVATORS, ModTags.UNAFFECTED_BY_RICH_SOIL)
 			.loot((pvd, block) -> {
@@ -176,7 +180,9 @@ public class TDBlocks {
 						.apply(ApplyExplosionDecay.explosionDecay())));
 			})
 			.item(MushroomColonyItem::new)
-			.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("block/" + ctx.getName() + "_stage3"))).build()
+			.model((ctx, pvd) -> pvd.generated(ctx,
+					pvd.modLoc("block/" + ctx.getName() + "_stage3"),
+					pvd.modLoc("block/" + ctx.getName() + "_stage3_head"))).build()
 			.register();
 
 	public static final BlockEntry<SaplingBlock> IRON_SAPLING = TwilightDelight.REGISTRATE.block(

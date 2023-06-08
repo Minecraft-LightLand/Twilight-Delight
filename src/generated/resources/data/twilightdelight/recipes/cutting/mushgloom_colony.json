@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightdelight:mushgloom_colony"
+    }
+  ],
+  "result": [
+    {
+      "count": 5,
+      "item": "twilightforest:mushgloom"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}

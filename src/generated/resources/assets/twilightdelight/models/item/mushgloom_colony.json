@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "twilightdelight:block/mushgloom_colony_stage3"
+    "layer0": "twilightdelight:block/mushgloom_colony_stage3",
+    "layer1": "twilightdelight:block/mushgloom_colony_stage3_head"
   }
 }

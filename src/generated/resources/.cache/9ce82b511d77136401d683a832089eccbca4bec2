@@ -1,4 +1,4 @@
-// 1.19.2	2023-06-06T19:54:56.897734	Registrate Provider for twilightdelight [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.19.2	2023-06-07T21:05:48.994467	Registrate Provider for twilightdelight [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 65b1422c3db103ee59e5d726f67f9b64167c0741 assets/twilightdelight/blockstates/black_aurora_candle_cake.json
@@ -185,10 +185,10 @@ ef192a02eea28538f76c9b37ae85baadf15fc5d0 assets/twilightdelight/models/block/mag
 6dd4e8f5fd433be8eab62737c2167509f898d615 assets/twilightdelight/models/block/magenta_torchberry_candle_cake_lit.json
 7f1d71f54996bdeb8212bf664b6237e4a372f27f assets/twilightdelight/models/block/maze_stove.json
 5f27031aa8360ddf19d3a80a4e8f9dd5ff7eda4d assets/twilightdelight/models/block/maze_stove_on.json
-9f09b86ae29352cd47b8d2e75b42c1d18968ca3b assets/twilightdelight/models/block/mushgloom_colony_stage0.json
-f8ec09e734f5f543f5af20d1923cdd06571aee96 assets/twilightdelight/models/block/mushgloom_colony_stage1.json
-73980a78af4f03fd78c491ff30ce3eac3bd4ef38 assets/twilightdelight/models/block/mushgloom_colony_stage2.json
-5a41351238fc6d9ed7525546830c385c8c59a882 assets/twilightdelight/models/block/mushgloom_colony_stage3.json
+beb7517626d58ac3d7b8f01502faad504fdaa9d0 assets/twilightdelight/models/block/mushgloom_colony_stage0.json
+67c099a5ee450b98f01802920f83434ae5df27b1 assets/twilightdelight/models/block/mushgloom_colony_stage1.json
+70b46616bdd6f26733826c8e1765ddf9202967dc assets/twilightdelight/models/block/mushgloom_colony_stage2.json
+f79c4753d2a4e5e456cd26703d74323d85e7b241 assets/twilightdelight/models/block/mushgloom_colony_stage3.json
 ef7b24946e013de379f09300ab13d07a7177ff60 assets/twilightdelight/models/block/orange_aurora_candle_cake.json
 727710a6f204464074a486976bd86ac271f5f04d assets/twilightdelight/models/block/orange_aurora_candle_cake_lit.json
 84e904136a2d4d367db5472b84116560730e19ba assets/twilightdelight/models/block/orange_glacier_candle_cake.json
@@ -284,7 +284,7 @@ c74f845081881eb40dbb58b41abbb78df6844756 assets/twilightdelight/models/item/knig
 856b8353e92528854b8eac72f17c833c6d493e7d assets/twilightdelight/models/item/lily_chicken_block.json
 36f4b9d742d644a85111ddc68d4f24dcead51b0b assets/twilightdelight/models/item/maze_stove.json
 973c3255d29bee266a7634e057d3f1bb754c3eaf assets/twilightdelight/models/item/meef_wellington_block.json
-7c9ab72033662103c38e24ddbe22645635a2dbbb assets/twilightdelight/models/item/mushgloom_colony.json
+8988410aab37f84e189a8aa171b40e7810b160a3 assets/twilightdelight/models/item/mushgloom_colony.json
 bf75d2a7564479be8138f35f4a2a468287cb6ae4 assets/twilightdelight/models/item/mushgloom_sauce.json
 383e6aadf8a715a7fe22243cb62af44227105fc0 assets/twilightdelight/models/item/phytochemical_cake.json
 ffd8f4b56e940c555bac1217bc299acf8d666a49 assets/twilightdelight/models/item/phytochemical_ice_cream.json
@@ -492,6 +492,7 @@ dbbbfc97a46d4ed2a6b529c6b79d8a90bacf96b0 data/twilightdelight/recipes/cutting/al
 51e13e2df1f9fdb6dac4b53da4f3adc11db0e3e9 data/twilightdelight/recipes/cutting/knight_phantom_trophy.json
 41a1af57055235d600ee1476b0fd3bedcd9c760f data/twilightdelight/recipes/cutting/lich_trophy.json
 c3b453c8cfe9a5100a30e7e65b64780eec0e9360 data/twilightdelight/recipes/cutting/minoshroom_trophy.json
+b264959c572a8f68833cebae93ec77b27623054a data/twilightdelight/recipes/cutting/mushgloom_colony.json
 6141281958654fda226e44c9cce6a26fb56b5e17 data/twilightdelight/recipes/cutting/naga_trophy.json
 ec9a3c8d08db809f276d149f73f874491410915c data/twilightdelight/recipes/cutting/phantom_chestplate.json
 802e277cb8476e69141b4a93c28341d1dee06b7b data/twilightdelight/recipes/cutting/phantom_helmet.json

@@ -11,6 +11,7 @@ import java.util.function.Function;
 
 public enum DelightFoodClassType {
 	REGULAR(TDFoodItem::new),
+	FIRE_PROOF(p-> new TDFoodItem(p.fireResistant())),
 	STICK(p -> new TDFoodItem(p.craftRemainder(Items.STICK))),
 	BOWL(p -> new InBowlItem(p.stacksTo(16).craftRemainder(Items.BOWL))),
 	DRINK(p -> new TDDrinkableItem(p.stacksTo(16).craftRemainder(Items.GLASS_BOTTLE))),

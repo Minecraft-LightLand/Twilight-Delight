@@ -11,8 +11,9 @@ import net.minecraftforge.client.model.generators.ModelFile;
 public enum DelightFoodType implements IFoodType {
 	NONE(Rarity.COMMON, false, false, false, DelightFoodClassType.REGULAR),
 	MEAT(Rarity.COMMON, true, false, false, DelightFoodClassType.REGULAR),
+	MEAT_PIECE(Rarity.COMMON, true, true, false, DelightFoodClassType.REGULAR),
 	COOKIE(Rarity.COMMON, false, true, false, DelightFoodClassType.REGULAR),
-	UNCOMMON_MEAT(Rarity.UNCOMMON, true, false, false, DelightFoodClassType.REGULAR),
+	HYDRA_PIECE(Rarity.UNCOMMON, true, true, false, DelightFoodClassType.FIRE_PROOF),
 	STICK(Rarity.COMMON, false, true, false, DelightFoodClassType.STICK),
 	BOWL(Rarity.COMMON, false, false, false, DelightFoodClassType.BOWL),
 	BOWL_MEAT(Rarity.COMMON, true, false, false, DelightFoodClassType.BOWL),

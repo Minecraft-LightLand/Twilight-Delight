@@ -8,12 +8,12 @@ import net.minecraft.world.item.Item;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public enum DelightFood {
-	HYDRA_PIECE(DelightFoodType.UNCOMMON_MEAT, 9, 2.0F,
+	HYDRA_PIECE(DelightFoodType.HYDRA_PIECE, 9, 2.0F,
 			new EffectSupplier(() -> MobEffects.REGENERATION, 20, 0, 1)),
-	RAW_VENISON_RIB(DelightFoodType.MEAT, 2, 0.25f),
-	COOKED_VENISON_RIB(DelightFoodType.MEAT, 4, 0.875f),
-	RAW_MEEF_SLICE(DelightFoodType.MEAT, 1, 0.7F),
-	COOKED_MEEF_SLICE(DelightFoodType.MEAT, 3, 0.6F),
+	RAW_VENISON_RIB(DelightFoodType.MEAT_PIECE, 2, 0.25f),
+	COOKED_VENISON_RIB(DelightFoodType.MEAT_PIECE, 4, 0.875f),
+	RAW_MEEF_SLICE(DelightFoodType.MEAT_PIECE, 1, 0.7F),
+	COOKED_MEEF_SLICE(DelightFoodType.MEAT_PIECE, 3, 0.6F),
 	RAW_INSECT(DelightFoodType.MEAT, 2, 0.2F),
 	COOKED_INSECT(DelightFoodType.MEAT, 6, 0.6F),
 	TORCHBERRY_COOKIE(DelightFoodType.COOKIE, 2, 0.2F),
