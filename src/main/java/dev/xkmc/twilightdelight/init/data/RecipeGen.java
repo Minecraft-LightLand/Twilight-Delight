@@ -3,10 +3,11 @@ package dev.xkmc.twilightdelight.init.data;
 import com.google.gson.JsonObject;
 import com.teamabnormals.neapolitan.core.Neapolitan;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
-import com.tterrag.registrate.providers.RegistrateRecipeProvider;
-import com.tterrag.registrate.util.DataIngredient;
-import com.tterrag.registrate.util.entry.BlockEntry;
-import com.tterrag.registrate.util.entry.ItemEntry;
+import dev.xkmc.l2library.repack.registrate.providers.RegistrateRecipeProvider;
+import dev.xkmc.l2library.repack.registrate.util.DataIngredient;
+import dev.xkmc.l2library.repack.registrate.util.entry.BlockEntry;
+import dev.xkmc.l2library.repack.registrate.util.entry.ItemEntry;
+import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipeBuilder;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
@@ -33,6 +34,7 @@ import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
@@ -148,6 +150,12 @@ public class RecipeGen {
 					.define('F', ModItems.BACON.get())
 					.save(pvd);
 
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.MEEF_WRAP.item.get(), 1)::unlockedBy, TFItems.RAW_MEEF.get())
+					.requires(ForgeTags.BREAD).requires(TagGen.MEEF_COOKED)
+					.requires(ForgeTags.SALAD_INGREDIENTS)
+					.requires(ForgeTags.CROPS_ONION)
+					.save(pvd);
+
 		}
 
 		//food cooking
@@ -196,6 +204,14 @@ public class RecipeGen {
 					.addIngredient(TFItems.LIVEROOT.get())
 					.addIngredient(Items.BEETROOT)
 					.build(pvd, getID(DelightFood.GLOW_VENISON_RIB_WITH_PASTA.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.MEEF_PASTA.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					DelightFood.MUSHGLOOM_SAUCE.item.get())
+					.addIngredient(DelightFood.MUSHGLOOM_SAUCE.item.get())
+					.addIngredient(TagGen.MEEF_RAW)
+					.addIngredient(ModItems.RAW_PASTA.get())
+					.build(pvd, getID(DelightFood.MEEF_PASTA.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TFItems.MEEF_STROGANOFF.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -391,6 +407,24 @@ public class RecipeGen {
 							Items.MUTTON, 9)
 					.build(pvd, getID(TFBlocks.QUEST_RAM_TROPHY.getId()));
 
+		}
+
+		// freezing
+		{
+			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(Items.BLUE_ICE), TFItems.ICE_BOMB.get())::unlockedBy,
+					Items.BLUE_ICE).save(pvd, new ResourceLocation(getID(TFItems.ICE_BOMB.getId())));
+
+			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(Items.MAGMA_BLOCK), Items.OBSIDIAN)::unlockedBy,
+					Items.MAGMA_BLOCK).save(pvd, new ResourceLocation(TwilightDelight.MODID, "obsidian"));
+
+			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(Items.ICE), Items.PACKED_ICE)::unlockedBy,
+					Items.ICE).save(pvd, new ResourceLocation(TwilightDelight.MODID, "packed_ice"));
+
+			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(Items.DIAMOND_SWORD), TFItems.ICE_SWORD.get())::unlockedBy,
+					Items.DIAMOND_SWORD).save(pvd, new ResourceLocation(getID(TFItems.ICE_SWORD.getId())));
+
+			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(Items.BOW), TFItems.ICE_BOW.get())::unlockedBy,
+					Items.BOW).save(pvd, new ResourceLocation(getID(TFItems.ICE_BOW.getId())));
 		}
 
 		// neapolitan

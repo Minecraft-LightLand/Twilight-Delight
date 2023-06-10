@@ -3,13 +3,14 @@ package dev.xkmc.twilightdelight.init;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.neapolitan.core.Neapolitan;
-import com.tterrag.registrate.Registrate;
-import com.tterrag.registrate.providers.ProviderType;
+import dev.xkmc.l2library.base.L2Registrate;
 import dev.xkmc.l2library.base.effects.EffectSyncEvents;
+import dev.xkmc.l2library.repack.registrate.providers.ProviderType;
 import dev.xkmc.twilightdelight.init.data.*;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
+import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
@@ -23,6 +24,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
@@ -34,7 +36,7 @@ public class TwilightDelight {
 
 	public static final String MODID = "twilightdelight";
 	public static final Logger LOGGER = LogUtils.getLogger();
-	public static final Registrate REGISTRATE = Registrate.create(MODID);
+	public static final L2Registrate REGISTRATE = new L2Registrate(MODID);
 
 	public TwilightDelight() {
 		TDBlocks.register();
@@ -45,6 +47,7 @@ public class TwilightDelight {
 			NeapolitanCakes.register();
 		}
 		TDEffects.register();
+		TDRecipes.register(FMLJavaModLoadingContext.get().getModEventBus());
 		TDModConfig.init();
 		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TagGen::genItemTag);
 		REGISTRATE.addDataGenerator(ProviderType.BLOCK_TAGS, TagGen::genBlockTag);

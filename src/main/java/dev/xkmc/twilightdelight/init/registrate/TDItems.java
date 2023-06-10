@@ -1,9 +1,9 @@
 package dev.xkmc.twilightdelight.init.registrate;
 
-import com.tterrag.registrate.Registrate;
-import com.tterrag.registrate.builders.ItemBuilder;
-import com.tterrag.registrate.util.entry.ItemEntry;
-import com.tterrag.registrate.util.nullness.NonNullFunction;
+import dev.xkmc.l2library.base.L2Registrate;
+import dev.xkmc.l2library.repack.registrate.builders.ItemBuilder;
+import dev.xkmc.l2library.repack.registrate.util.entry.ItemEntry;
+import dev.xkmc.l2library.repack.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.twilightdelight.content.item.tool.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
@@ -52,12 +52,12 @@ public class TDItems {
 		return builder.build();
 	}
 
-	private static <T extends Item> ItemBuilder<T, Registrate> food(String id, Function<Item.Properties, T> factory,
-																	Supplier<FoodProperties> food) {
+	private static <T extends Item> ItemBuilder<T, L2Registrate> food(String id, Function<Item.Properties, T> factory,
+																	  Supplier<FoodProperties> food) {
 		return TwilightDelight.REGISTRATE.item(id, p -> factory.apply(p.food(food.get())));
 	}
 
-	private static <T extends Item> ItemBuilder<T, Registrate> handheld(String id, NonNullFunction<Item.Properties, T> factory) {
+	private static <T extends Item> ItemBuilder<T, L2Registrate> handheld(String id, NonNullFunction<Item.Properties, T> factory) {
 		return TwilightDelight.REGISTRATE.item(id, factory).model((ctx, pvd) -> pvd.handheld(ctx));
 	}
 

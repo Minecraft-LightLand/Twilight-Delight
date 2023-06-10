@@ -121,10 +121,10 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
 
-    compileOnly fg.deobf(jarJar("com.tterrag.registrate:Registrate:${registrate_version}")){
-        transitive = false
-        jarJar.ranged(it, "[MC1.19-1.1.5,)")
-    }
+    //compileOnly fg.deobf(jarJar("com.tterrag.registrate:Registrate:${registrate_version}")){
+    //    transitive = false
+    //    jarJar.ranged(it, "[MC1.19-1.1.5,)")
+    //}
 
 
     implementation fg.deobf(jarJar("curse.maven:l2library-620203:4566224")) {
@@ -139,9 +139,11 @@ dependencies {
 
     implementation fg.deobf('curse.maven:blueprint-382216:4442628')
     implementation fg.deobf('curse.maven:neapolitan-382016:4023083')
-    implementation fg.deobf('curse.maven:create-328085:4371809')
-    implementation fg.deobf("curse.maven:create-enchantment-industry-688768:4563304")
-    compileOnly fg.deobf("curse.maven:create-central-kitchen-820977:4568474")
+    implementation fg.deobf("curse.maven:create-328085:4550987")
+    implementation fg.deobf("curse.maven:create-enchantment-industry-688768:4571835")
+    compileOnly fg.deobf("curse.maven:create-central-kitchen-820977:4569833")
+    runtimeOnly fg.deobf('curse.maven:wthit-forge-455982:3947982')
+    runtimeOnly fg.deobf('curse.maven:badpackets-615134:3903799')
 
     runtimeOnly fg.deobf('curse.maven:appleskin-248787:3872808')
 

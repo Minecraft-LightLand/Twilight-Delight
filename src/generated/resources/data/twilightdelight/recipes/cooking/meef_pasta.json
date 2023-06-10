@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "twilightdelight:mushgloom_sauce"
+    },
+    {
+      "tag": "twilightdelight:meef_raw"
+    },
+    {
+      "item": "farmersdelight:raw_pasta"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:meef_pasta"
+  }
+}

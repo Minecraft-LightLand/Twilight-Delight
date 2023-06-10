@@ -1,8 +1,7 @@
 package dev.xkmc.twilightdelight.init.data;
 
-import com.tterrag.registrate.providers.loot.RegistrateLootTableProvider;
+import dev.xkmc.l2library.repack.registrate.providers.loot.RegistrateLootTableProvider;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
-import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;

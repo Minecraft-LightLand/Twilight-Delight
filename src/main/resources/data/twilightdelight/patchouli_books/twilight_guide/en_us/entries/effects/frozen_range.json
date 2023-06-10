@@ -10,7 +10,7 @@
 	{
 	  "type": "patchouli:spotlight",
 	  "item": "twilightforest:ice_bomb",
-	  "text": "Obtainable from drinks and desserts made from Ice Bomb.$(br2)If you have this effect, Blue Ice items around you will slowly turn into Ice Bomb."
+	  "text": "Obtainable from drinks and desserts made from Ice Bomb.$(br2)If you have this effect, you can freeze surrounding items on ground. Check JEI for Glacier Ice Tea for more info."
 	}
   ]
 }

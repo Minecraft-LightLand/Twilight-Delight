@@ -1,9 +1,9 @@
 package dev.xkmc.twilightdelight.init.registrate.neapolitan;
 
-import com.tterrag.registrate.providers.DataGenContext;
-import com.tterrag.registrate.providers.RegistrateItemModelProvider;
-import dev.xkmc.twilightdelight.compat.neapolitan.TDIceCreamItem;
+import dev.xkmc.l2library.repack.registrate.providers.DataGenContext;
+import dev.xkmc.l2library.repack.registrate.providers.RegistrateItemModelProvider;
 import dev.xkmc.twilightdelight.compat.neapolitan.TDMilkshakeItem;
+import dev.xkmc.twilightdelight.content.item.food.InBowlItem;
 import dev.xkmc.twilightdelight.init.registrate.delight.IFoodType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -14,7 +14,7 @@ import java.util.function.Function;
 
 public enum NeapolitanFoodType implements IFoodType {
 	MILKSHAKE(Rarity.COMMON, false, false, false, p -> new TDMilkshakeItem(p.stacksTo(16).craftRemainder(Items.GLASS_BOTTLE))),
-	ICE_CREAM(Rarity.COMMON, false, false, false, p -> new TDIceCreamItem(p.stacksTo(1).craftRemainder(Items.BOWL)));
+	ICE_CREAM(Rarity.COMMON, false, false, false, p -> new InBowlItem(p.stacksTo(16).craftRemainder(Items.BOWL)));
 
 	public final Rarity rarity;
 	public final boolean meat, fast, drink;

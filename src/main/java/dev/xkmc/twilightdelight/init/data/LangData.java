@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.init.data;
 
-import com.tterrag.registrate.providers.RegistrateLangProvider;
+import dev.xkmc.l2library.repack.registrate.providers.RegistrateLangProvider;
 import dev.xkmc.twilightdelight.compat.PatchouliLang;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import net.minecraft.ChatFormatting;
@@ -11,7 +11,8 @@ import javax.annotation.Nullable;
 import java.util.Locale;
 
 public enum LangData {
-	CHANCE_EFFECT("tooltip.chance", "%1$s with %2$s%% chance", 2, ChatFormatting.GRAY);
+	CHANCE_EFFECT("tooltip.chance", "%1$s with %2$s%% chance", 2, ChatFormatting.GRAY),
+	FROZEN_TITLE("jei.frozen", "Freezing", 0, null);
 
 	private final String key, def;
 	private final int arg;

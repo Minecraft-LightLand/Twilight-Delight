@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.init.registrate;
 
-import com.tterrag.registrate.util.entry.BlockEntry;
+import dev.xkmc.l2library.repack.registrate.util.entry.BlockEntry;
 import dev.xkmc.twilightdelight.content.block.FierySnakesBlock;
 import dev.xkmc.twilightdelight.content.block.LilyChickenBlock;
 import dev.xkmc.twilightdelight.content.block.MazeStoveBlock;

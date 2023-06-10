@@ -1,9 +1,9 @@
 package dev.xkmc.twilightdelight.init.registrate.neapolitan;
 
 import com.teamabnormals.neapolitan.common.block.FlavoredCandleCakeBlock;
-import com.tterrag.registrate.providers.DataGenContext;
-import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
-import com.tterrag.registrate.util.entry.BlockEntry;
+import dev.xkmc.l2library.repack.registrate.providers.DataGenContext;
+import dev.xkmc.l2library.repack.registrate.providers.RegistrateBlockstateProvider;
+import dev.xkmc.l2library.repack.registrate.util.entry.BlockEntry;
 import dev.xkmc.twilightdelight.compat.neapolitan.TDCakeBlock;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
@@ -31,15 +31,15 @@ import java.util.Locale;
 
 public enum NeapolitanCakes {
 	AURORA(MaterialColor.COLOR_CYAN,
-			new EffectSupplier(TDEffects.AURORA_GLOWING, 1200, 0, 1),
-			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 1200, 2, 1),
-			new EffectSupplier(() -> MobEffects.MOVEMENT_SLOWDOWN, 40, 0, 1)),
+			new EffectSupplier(TDEffects.AURORA_GLOWING, 300, 0, 1),
+			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 300, 2, 1),
+			new EffectSupplier(() -> MobEffects.JUMP, 300, 1, 1)),
 	TORCHBERRY(MaterialColor.COLOR_YELLOW,
-			new EffectSupplier(TDEffects.FIRE_RANGE, 1200, 0, 1)),
+			new EffectSupplier(TDEffects.FIRE_RANGE, 300, 0, 1)),
 	PHYTOCHEMICAL(MaterialColor.COLOR_GREEN,
-			new EffectSupplier(TDEffects.POISON_RANGE, 1200, 0, 1)),
+			new EffectSupplier(TDEffects.POISON_RANGE, 300, 0, 1)),
 	GLACIER(MaterialColor.COLOR_LIGHT_BLUE,
-			new EffectSupplier(TDEffects.FROZEN_RANGE, 1200, 0, 1)),
+			new EffectSupplier(TDEffects.FROZEN_RANGE, 300, 0, 1)),
 	;
 
 	private final String base;

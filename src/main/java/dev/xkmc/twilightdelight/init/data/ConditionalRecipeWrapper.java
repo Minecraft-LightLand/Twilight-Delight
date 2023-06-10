@@ -2,7 +2,7 @@ package dev.xkmc.twilightdelight.init.data;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.tterrag.registrate.providers.RegistrateRecipeProvider;
+import dev.xkmc.l2library.repack.registrate.providers.RegistrateRecipeProvider;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
