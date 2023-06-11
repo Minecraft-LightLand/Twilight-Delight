@@ -109,8 +109,8 @@
   "item.twilightdelight.ironwood_knife": "Ironwood Knife",
   "item.twilightdelight.knightmetal_knife": "Knightly Knife",
   "item.twilightdelight.knightmetal_knife.tooltip": "Extra damage to armored targets",
-  "item.twilightdelight.meef_pasta": "Meef Pasta",
   "item.twilightdelight.meef_wrap": "Meef Wrap",
+  "item.twilightdelight.mushgloom_meef_pasta": "Mushgloom Meef Pasta",
   "item.twilightdelight.mushgloom_sauce": "Mushgloom Sauce",
   "item.twilightdelight.phytochemical_ice_cream": "Phytochemical Ice Cream",
   "item.twilightdelight.phytochemical_juice": "Phytochemical Juice",
@@ -135,6 +135,6 @@
   "itemGroup.tab.twilightdelight": "Twilight's Delight",
   "patchouli.twilightdelight.landing": "Enjoy crossover among Twilight Forest, Farmer's Delight, and Neapolitan",
   "patchouli.twilightdelight.title": "Twilight's Flavor & Delight Guide",
-  "twilightdelight.jei.frozen": "Frozen",
+  "twilightdelight.jei.frozen": "Freezing",
   "twilightdelight.tooltip.chance": "%1$s with %2$s%% chance"
 }

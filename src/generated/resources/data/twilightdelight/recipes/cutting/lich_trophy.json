@@ -23,6 +23,6 @@
     }
   ],
   "tool": {
-    "tag": "farmersdelight:tools/knives"
+    "tag": "forge:tools/knives"
   }
 }

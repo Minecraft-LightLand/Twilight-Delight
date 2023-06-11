@@ -1,0 +1,10 @@
+{
+  "type": "twilightdelight:frozen",
+  "ingredient": {
+    "item": "minecraft:diamond_sword"
+  },
+  "result": {
+    "item": "twilightforest:ice_sword",
+    "nbt": "{Damage:0}"
+  }
+}

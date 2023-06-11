@@ -11,6 +11,7 @@ import dev.xkmc.twilightdelight.init.registrate.delight.IFoodType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.Tags;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.Locale;
@@ -28,10 +29,10 @@ public class TDItems {
 
 	// KNIVES
 	static {
-		FIERY_KNIFE = handheld("fiery_knife", FieryKnifeItem::new).tag(ModTags.KNIVES).register();
-		IRONWOOD_KNIFE = handheld("ironwood_knife", IronwoodKnifeItem::new).tag(ModTags.KNIVES).register();
-		STEELEAF_KNIFE = handheld("steeleaf_knife", SteeleafKnifeItem::new).tag(ModTags.KNIVES).register();
-		KNIGHTMETAL_KNIFE = handheld("knightmetal_knife", KnightmetalKnifeItem::new).lang("Knightly Knife").tag(ModTags.KNIVES).register();
+		FIERY_KNIFE = handheld("fiery_knife", FieryKnifeItem::new).tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).register();
+		IRONWOOD_KNIFE = handheld("ironwood_knife", IronwoodKnifeItem::new).tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).register();
+		STEELEAF_KNIFE = handheld("steeleaf_knife", SteeleafKnifeItem::new).tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).register();
+		KNIGHTMETAL_KNIFE = handheld("knightmetal_knife", KnightmetalKnifeItem::new).lang("Knightly Knife").tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).register();
 		TEARDROP_SWORD = handheld("teardrop_sword", TeardropSwordItem::new).tag(Tags.Items.TOOLS_SWORDS).register();
 	}
 

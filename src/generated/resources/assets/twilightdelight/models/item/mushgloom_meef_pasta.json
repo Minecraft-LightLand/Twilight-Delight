@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "twilightdelight:item/meef_pasta"
+    "layer0": "twilightdelight:item/mushgloom_meef_pasta"
   }
 }

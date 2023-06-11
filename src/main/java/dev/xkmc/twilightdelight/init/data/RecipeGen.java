@@ -205,13 +205,13 @@ public class RecipeGen {
 					.addIngredient(Items.BEETROOT)
 					.build(pvd, getID(DelightFood.GLOW_VENISON_RIB_WITH_PASTA.item.getId()));
 
-			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.MEEF_PASTA.item.get(),
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.MUSHGLOOM_MEEF_PASTA.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					DelightFood.MUSHGLOOM_SAUCE.item.get())
 					.addIngredient(DelightFood.MUSHGLOOM_SAUCE.item.get())
 					.addIngredient(TagGen.MEEF_RAW)
 					.addIngredient(ModItems.RAW_PASTA.get())
-					.build(pvd, getID(DelightFood.MEEF_PASTA.item.getId()));
+					.build(pvd, getID(DelightFood.MUSHGLOOM_MEEF_PASTA.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TFItems.MEEF_STROGANOFF.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -291,49 +291,49 @@ public class RecipeGen {
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.RAW_MEEF.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							DelightFood.RAW_MEEF_SLICE.item.get(), 2)
 					.build(pvd, getID(DelightFood.RAW_MEEF_SLICE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.COOKED_MEEF.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							DelightFood.COOKED_MEEF_SLICE.item.get(), 2)
 					.build(pvd, getID(DelightFood.COOKED_MEEF_SLICE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.RAW_VENISON.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							DelightFood.RAW_VENISON_RIB.item.get(), 2)
 					.build(pvd, getID(DelightFood.RAW_VENISON_RIB.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.COOKED_VENISON.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							DelightFood.COOKED_VENISON_RIB.item.get(), 2)
 					.build(pvd, getID(DelightFood.COOKED_VENISON_RIB.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.HYDRA_CHOP.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							DelightFood.HYDRA_PIECE.item.get(), 2)
 					.build(pvd, getID(DelightFood.HYDRA_PIECE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TagGen.INSECT),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							DelightFood.RAW_INSECT.item.get(), 2)
 					.build(pvd, getID(DelightFood.RAW_INSECT.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TDBlocks.MUSHGLOOM_COLONY.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							TFBlocks.MUSHGLOOM.get(), 5)
 					.build(pvd, getID(TDBlocks.MUSHGLOOM_COLONY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.UR_GHAST_TROPHY.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							DelightFood.EXPERIMENT_113.item.get(), 9)
 					.addResult(TFItems.EXPERIMENT_115.get(), 4)
 					.addResultWithChance(DelightFood.EXPERIMENT_110.item.get(), 0.1f)
@@ -341,25 +341,25 @@ public class RecipeGen {
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.HYDRA_TROPHY.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							TFItems.HYDRA_CHOP.get(), 4)
 					.build(pvd, getID(TFBlocks.HYDRA_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.NAGA_TROPHY.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							TFItems.NAGA_SCALE.get(), 9)
 					.build(pvd, getID(TFBlocks.NAGA_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.KNIGHT_PHANTOM_TROPHY.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							TFItems.PHANTOM_HELMET.get(), 1)
 					.build(pvd, getID(TFBlocks.KNIGHT_PHANTOM_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.LICH_TROPHY.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							Items.SKELETON_SKULL, 1)
 					.addResultWithChance(TFItems.ZOMBIE_SCEPTER.get(), 0.2f)
 					.addResultWithChance(TFItems.LIFEDRAIN_SCEPTER.get(), 0.2f)
@@ -368,14 +368,14 @@ public class RecipeGen {
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.MINOSHROOM_TROPHY.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							TFItems.RAW_MEEF.get(), 9)
 					.addResultWithChance(Items.RED_MUSHROOM, 0.5f, 8)
 					.build(pvd, getID(TFBlocks.MINOSHROOM_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.ALPHA_YETI_TROPHY.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							TFItems.ALPHA_YETI_FUR.get(), 9)
 					.addResultWithChance(TFItems.ICE_BOMB.get(), 0.5f, 4)
 					.build(pvd, getID(TFBlocks.ALPHA_YETI_TROPHY.getId()));
@@ -394,7 +394,7 @@ public class RecipeGen {
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.SNOW_QUEEN_TROPHY.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							TFItems.ICE_BOMB.get(), 9)
 					.addResultWithChance(TFItems.ICE_SWORD.get(), 0.2f)
 					.addResultWithChance(TFItems.GLASS_SWORD.get(), 0.1f)
@@ -403,7 +403,7 @@ public class RecipeGen {
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.QUEST_RAM_TROPHY.get()),
-							Ingredient.of(ModTags.KNIVES),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							Items.MUTTON, 9)
 					.build(pvd, getID(TFBlocks.QUEST_RAM_TROPHY.getId()));
 
