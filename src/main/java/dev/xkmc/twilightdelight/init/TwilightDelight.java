@@ -3,9 +3,11 @@ package dev.xkmc.twilightdelight.init;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.neapolitan.core.Neapolitan;
+import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import dev.xkmc.l2library.base.L2Registrate;
 import dev.xkmc.l2library.base.effects.EffectSyncEvents;
 import dev.xkmc.l2library.repack.registrate.providers.ProviderType;
+import dev.xkmc.twilightdelight.events.NeapolitanEventListeners;
 import dev.xkmc.twilightdelight.init.data.*;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
@@ -16,9 +18,12 @@ import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import dev.xkmc.twilightdelight.init.world.TreeConfig;
 import dev.xkmc.twilightdelight.mixin.FoodPropertiesAccessor;
+import dev.xkmc.twilightdelight.mixin.ItemAccessor;
 import dev.xkmc.twilightdelight.util.StoveAddBlockUtil;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.ComposterBlock;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
@@ -45,6 +50,7 @@ public class TwilightDelight {
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			NeapolitanFood.register();
 			NeapolitanCakes.register();
+			MinecraftForge.EVENT_BUS.register(NeapolitanEventListeners.class);
 		}
 		TDEffects.register();
 		TDRecipes.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -66,11 +72,16 @@ public class TwilightDelight {
 
 			ComposterBlock.COMPOSTABLES.put(TDBlocks.MUSHGLOOM_COLONY.get().asItem(), 1.0F);
 
-
 			EffectSyncEvents.TRACKED.add(TDEffects.FIRE_RANGE.get());
 			EffectSyncEvents.TRACKED.add(TDEffects.FROZEN_RANGE.get());
 			EffectSyncEvents.TRACKED.add(TDEffects.POISON_RANGE.get());
 			EffectSyncEvents.TRACKED.add(TDEffects.AURORA_GLOWING.get());
+
+			if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
+				((ItemAccessor) NeapolitanItems.ADZUKI_ICE_CREAM.get()).setCraftingRemainingItem(Items.BOWL);
+				((ItemAccessor) NeapolitanItems.BANANA_ICE_CREAM.get()).setCraftingRemainingItem(Items.BOWL);
+				((ItemAccessor) NeapolitanItems.MINT_ICE_CREAM.get()).setCraftingRemainingItem(Items.BOWL);
+			}
 		});
 	}
 

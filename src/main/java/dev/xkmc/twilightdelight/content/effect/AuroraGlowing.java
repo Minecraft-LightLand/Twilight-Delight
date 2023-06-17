@@ -1,16 +1,22 @@
 package dev.xkmc.twilightdelight.content.effect;
 
 import dev.xkmc.l2library.base.effects.EffectSyncEvents;
+import dev.xkmc.l2library.util.Proxy;
 import dev.xkmc.twilightdelight.init.data.TDModConfig;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.entity.PartEntity;
 
 public class AuroraGlowing extends MobEffect {
 
@@ -61,14 +67,24 @@ public class AuroraGlowing extends MobEffect {
 	}
 
 	@OnlyIn(Dist.CLIENT)
-	public static int getColor(Level level) {
-		float tick = level.getGameTime() + Minecraft.getInstance().getPartialTick();
+	public static int getColor(Entity entity) {
+		Level level = entity.level;
+		float pTick = Minecraft.getInstance().getPartialTick();
+		Player player = Proxy.getClientPlayer();
+		Vec3 pos = entity.getPosition(pTick).subtract(player.getPosition(pTick));
+		double dis = Math.atan2(pos.x, pos.z) / Math.PI * 180 / 6;
+		float tick = level.getGameTime() + Minecraft.getInstance().getPartialTick() + (float) dis;
 		int period = TDModConfig.CLIENT.auroraPeriod.get();
 		return getColor(tick / period % 1, 1, 1);
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	public static boolean shouldRender(Entity self) {
+		if (!(self instanceof ItemEntity) &&
+				!(self instanceof Projectile) &&
+				!(self instanceof LivingEntity) &&
+				!(self instanceof PartEntity))
+			return false;
 		Player player = Minecraft.getInstance().player;
 		if (player != null && player.hasEffect(TDEffects.AURORA_GLOWING.get()))
 			return true;

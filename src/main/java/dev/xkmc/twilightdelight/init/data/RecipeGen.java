@@ -5,7 +5,6 @@ import com.teamabnormals.neapolitan.core.Neapolitan;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import dev.xkmc.l2library.repack.registrate.providers.RegistrateRecipeProvider;
 import dev.xkmc.l2library.repack.registrate.util.DataIngredient;
-import dev.xkmc.l2library.repack.registrate.util.entry.BlockEntry;
 import dev.xkmc.l2library.repack.registrate.util.entry.ItemEntry;
 import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipeBuilder;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
@@ -35,7 +34,6 @@ import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
-import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
@@ -432,24 +430,43 @@ public class RecipeGen {
 			path = "neapolitan/";
 			neapolitan(pvd, NeapolitanFood.AURORA_ICE_CREAM.item,
 					NeapolitanFood.AURORA_MILKSHAKE.item,
-					NeapolitanCakes.AURORA.block,
+					NeapolitanCakes.AURORA,
 					TFBlocks.AURORA_BLOCK.get().asItem());
 			neapolitan(pvd, NeapolitanFood.GLACIER_ICE_CREAM.item,
 					NeapolitanFood.GLACIER_MILKSHAKE.item,
-					NeapolitanCakes.GLACIER.block,
+					NeapolitanCakes.GLACIER,
 					TFItems.ICE_BOMB.get());
 			neapolitan(pvd, NeapolitanFood.PHYTOCHEMICAL_ICE_CREAM.item,
 					NeapolitanFood.PHYTOCHEMICAL_MILKSHAKE.item,
-					NeapolitanCakes.PHYTOCHEMICAL.block,
+					NeapolitanCakes.PHYTOCHEMICAL,
 					TFItems.STEELEAF_INGOT.get());
 			neapolitan(pvd, NeapolitanFood.TORCHBERRY_ICE_CREAM.item,
 					NeapolitanFood.TORCHBERRY_MILKSHAKE.item,
-					NeapolitanCakes.TORCHBERRY.block,
+					NeapolitanCakes.TORCHBERRY,
 					TFItems.TORCHBERRIES.get());
+
+			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.TWILIGHT_ICE_CREAM.item.get(), 3)::unlockedBy, TFItems.TORCHBERRIES.get())
+					.requires(NeapolitanFood.TORCHBERRY_ICE_CREAM.item.get())
+					.requires(NeapolitanItems.CHOCOLATE_ICE_CREAM.get())
+					.requires(NeapolitanItems.STRAWBERRY_ICE_CREAM.get())
+					.requires(Items.BOWL, 3).save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.RAINBOW_ICE_CREAM.item.get(), 3)::unlockedBy, TFBlocks.AURORA_BLOCK.get().asItem())
+					.requires(NeapolitanFood.AURORA_ICE_CREAM.item.get())
+					.requires(NeapolitanItems.BANANA_ICE_CREAM.get())
+					.requires(NeapolitanItems.ADZUKI_ICE_CREAM.get())
+					.requires(Items.BOWL, 3).save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.REFRESHING_ICE_CREAM.item.get(), 3)::unlockedBy, TFItems.ICE_BOMB.get())
+					.requires(NeapolitanFood.GLACIER_ICE_CREAM.item.get())
+					.requires(NeapolitanItems.MINT_ICE_CREAM.get())
+					.requires(NeapolitanFood.PHYTOCHEMICAL_ICE_CREAM.item.get())
+					.requires(Items.BOWL, 3).save(pvd);
+
 		}
 	}
 
-	private static void neapolitan(RegistrateRecipeProvider pvd, ItemEntry<?> ice_cream, ItemEntry<?> milkshake, BlockEntry<?> cake, Item ingredient) {
+	private static void neapolitan(RegistrateRecipeProvider pvd, ItemEntry<?> ice_cream, ItemEntry<?> milkshake, NeapolitanCakes cake, Item ingredient) {
 		TagKey<Item> milk = ItemTags.create(new ResourceLocation("forge", "milk"));
 		unlock(pvd, new ShapelessRecipeBuilder(ice_cream.get(), 1)::unlockedBy, ingredient)
 				.requires(Items.BOWL).requires(milk).requires(NeapolitanItems.ICE_CUBES.get()).requires(Items.SUGAR)
@@ -466,12 +483,22 @@ public class RecipeGen {
 				.requires(NeapolitanItems.DRIED_VANILLA_PODS.get())
 				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(milkshake.getId()) + "_alt");
 
-		unlock(pvd, new ShapedRecipeBuilder(cake.get().asItem(), 1)::unlockedBy, ingredient)
+		unlock(pvd, new ShapedRecipeBuilder(cake.block.get().asItem(), 1)::unlockedBy, ingredient)
 				.pattern("MXM").pattern("SES").pattern("WXW")
 				.define('M', milk).define('S', Items.SUGAR)
 				.define('W', Items.WHEAT).define('E', Items.EGG)
 				.define('X', ingredient)
-				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cake.getId()));
+				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cake.block.getId()));
+
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(cake.block.get()),
+						Ingredient.of(ForgeTags.TOOLS_KNIVES),
+						cake.item.get(), 7)
+				.build(pvd, getID(cake.item.getId()));
+
+		unlock(pvd, new ShapelessRecipeBuilder(cake.block.get(), 1)::unlockedBy, cake.item.get())
+				.requires(cake.item.get(), 7)
+				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cake.block.getId()) + "_assemble");
 	}
 
 	private static String getID(ResourceLocation item) {

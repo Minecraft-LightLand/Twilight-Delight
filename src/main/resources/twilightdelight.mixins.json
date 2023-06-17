@@ -11,6 +11,7 @@
 	"CuttingBoardBlockMixin",
 	"EntityMixin",
 	"FoodPropertiesAccessor",
+	"ItemAccessor",
 	"ItemEntityMixin",
 	"RichSoilBlockMixin",
 	"StoveBlockEntityMixin"

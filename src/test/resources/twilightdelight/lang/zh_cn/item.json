@@ -8,7 +8,7 @@
 	"thorn_rose_tea": "荆棘玫瑰茶",
 	"ironwood_knife": "铁木刀",
 	"chocolate_wafer": "巧克力夹心薄饼",
-	"cooked_meef_slice": "熟牛头人肉片",
+	"cooked_meef_slice": "熟米诺陶肉片",
 	"torchberry_cookie": "火炬浆果曲奇",
 	"berry_stick": "浆果串",
 	"plate_of_fiery_snakes": "盘装炽汁蛇宴",
@@ -28,15 +28,18 @@
 	"plate_of_lily_chicken": "盘装荷花鸡",
 	"teardrop_sword.tooltip": "灼烧攻击目标并有概率使其哭泣",
 	"tear_drink": "盈泪之饮",
-	"raw_meef_slice": "生牛头人肉片",
+	"raw_meef_slice": "生米诺陶肉片",
 	"teardrop_sword": "盈泪之剑",
 	"glowstew": "荧光煲",
 	"raw_venison_rib": "生鹿肉肋条",
 	"glacier_ice_tea": "冰川冰茶",
 	"mushgloom_sauce": "荧光蘑菇酱",
 	"plate_of_meef_wellington": "盘装暮光惠灵顿牛排",
-	"mushgloom_meef_pasta": "荧光牛头人意面",
-	"meef_wrap": "牛头人卷"
+	"mushgloom_meef_pasta": "荧光米诺陶意面",
+	"meef_wrap": "米诺陶卷",
+	"rainbow_ice_cream": "彩虹冰淇淋",
+	"refreshing_ice_cream": "清爽冰淇淋",
+	"twilight_ice_cream": "暮色冰淇淋"
   },
   "-cartesian": {
 	"drinks": {
@@ -50,7 +53,8 @@
 		},
 		{
 		  "ice_cream": "冰淇淋",
-		  "milkshake": "奶昔"
+		  "milkshake": "奶昔",
+		  "cake_slice": "蛋糕切片"
 		}
 	  ]
 	},

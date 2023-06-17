@@ -1,6 +1,5 @@
 package dev.xkmc.twilightdelight.events;
 
-import com.teamabnormals.neapolitan.core.Neapolitan;
 import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.data.ExtraLootGen;
@@ -33,7 +32,6 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
-import twilightforest.TwilightForestMod;
 import twilightforest.block.Experiment115Block;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFMobEffects;

@@ -2,6 +2,7 @@ package dev.xkmc.twilightdelight.compat.neapolitan;
 
 import com.teamabnormals.neapolitan.common.block.FlavoredCakeBlock;
 import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
@@ -15,9 +16,12 @@ public class TDCakeBlock extends FlavoredCakeBlock {
 
 	private final FoodProperties food;
 
-	public TDCakeBlock(FoodProperties food, Properties properties) {
+	public final NeapolitanCakes cake;
+
+	public TDCakeBlock(FoodProperties food, Properties properties, NeapolitanCakes cake) {
 		super(food, properties);
 		this.food = food;
+		this.cake = cake;
 	}
 
 	@Override

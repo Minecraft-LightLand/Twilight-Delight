@@ -14,7 +14,7 @@ public class EntityMixin {
 	public void twilightdelight$getTeamColor$renderShiny(CallbackInfoReturnable<Integer> cir) {
 		Entity self = (Entity) (Object) this;
 		if (self.level.isClientSide() && AuroraGlowing.shouldRender(self)) {
-			cir.setReturnValue(AuroraGlowing.getColor(self.level));
+			cir.setReturnValue(AuroraGlowing.getColor(self));
 		}
 	}
 

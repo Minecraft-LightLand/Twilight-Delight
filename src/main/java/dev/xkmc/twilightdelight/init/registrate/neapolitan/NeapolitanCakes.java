@@ -4,7 +4,9 @@ import com.teamabnormals.neapolitan.common.block.FlavoredCandleCakeBlock;
 import dev.xkmc.l2library.repack.registrate.providers.DataGenContext;
 import dev.xkmc.l2library.repack.registrate.providers.RegistrateBlockstateProvider;
 import dev.xkmc.l2library.repack.registrate.util.entry.BlockEntry;
+import dev.xkmc.l2library.repack.registrate.util.entry.ItemEntry;
 import dev.xkmc.twilightdelight.compat.neapolitan.TDCakeBlock;
+import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
@@ -25,7 +27,6 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
-import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.Locale;
 
@@ -47,14 +48,17 @@ public enum NeapolitanCakes {
 	public final BlockEntry<TDCakeBlock> block;
 	public final BlockEntry<FlavoredCandleCakeBlock> candle;
 	public final BlockEntry<FlavoredCandleCakeBlock>[] colored_candles;
+	public final ItemEntry<TDFoodItem> item;
 
 	@SuppressWarnings({"unchecked", "rawtype", "unsafe", "deprecation"})
 	NeapolitanCakes(MaterialColor color, EffectSupplier... effects) {
 		base = name().toLowerCase(Locale.ROOT);
 		var food = TDItems.simpleFood(DelightFoodType.NONE, 1, 0.1f, effects);
 		var props = BlockBehaviour.Properties.of(Material.CAKE, color).strength(0.5F).sound(SoundType.WOOL);
-		block = TwilightDelight.REGISTRATE.block(base + "_cake", p -> new TDCakeBlock(food, props))
-				.blockstate(this::genCakeModels).loot((pvd, block) -> pvd.dropOther(block, ModItems.CAKE_SLICE.get()))
+		item = TwilightDelight.REGISTRATE.item(base + "_cake_slice", p -> new TDFoodItem(p.food(food)))
+				.defaultModel().defaultLang().register();
+		block = TwilightDelight.REGISTRATE.block(base + "_cake", p -> new TDCakeBlock(food, props, this))
+				.blockstate(this::genCakeModels).loot((pvd, block) -> pvd.dropOther(block, item.get()))
 				.item().model((ctx, pvd) -> pvd.generated(ctx)).build().register();
 		this.candle = TwilightDelight.REGISTRATE.block(base + "_candle_cake",
 						p -> new FlavoredCandleCakeBlock(block::get, Blocks.CANDLE, props))
