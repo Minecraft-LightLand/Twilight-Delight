@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "twilightdelight:experiment_113"
+    },
+    {
+      "item": "twilightdelight:glowstew"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:glow_113"
+  }
+}

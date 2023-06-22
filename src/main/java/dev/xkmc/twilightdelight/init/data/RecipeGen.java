@@ -111,6 +111,45 @@ public class RecipeGen {
 					.requires(Items.SWEET_BERRIES).requires(Items.GLOW_BERRIES).requires(TFItems.TORCHBERRIES.get())
 					.requires(Items.STICK).save(pvd);
 
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.CHOCOLATE_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
+					.requires(DelightFood.EXPERIMENT_113.item.get())
+					.requires(TagGen.MILK)
+					.requires(Items.SUGAR)
+					.requires(Items.COCOA_BEANS)
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.MILKY_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
+					.requires(DelightFood.EXPERIMENT_113.item.get())
+					.requires(TagGen.MILK)
+					.requires(Items.SUGAR)
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.HONEY_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
+					.requires(DelightFood.EXPERIMENT_113.item.get())
+					.requires(Items.HONEY_BOTTLE)
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GLOW_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
+					.requires(DelightFood.EXPERIMENT_113.item.get())
+					.requires(DelightFood.GLOWSTEW.item.get())
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GHAST_BURGER.item.get(), 1)::unlockedBy, TFItems.EXPERIMENT_115.get())
+					.requires(ForgeTags.BREAD)
+					.requires(TFItems.EXPERIMENT_115.get())
+					.requires(ForgeTags.VEGETABLES_BEETROOT)
+					.requires(ForgeTags.CROPS_TOMATO)
+					.requires(ForgeTags.CROPS_ONION)
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.HYDRA_BURGER.item.get(), 1)::unlockedBy, TFItems.HYDRA_CHOP.get())
+					.requires(ForgeTags.BREAD)
+					.requires(TagGen.HYDRA_MEAT)
+					.requires(ForgeTags.SALAD_INGREDIENTS)
+					.requires(ForgeTags.CROPS_TOMATO)
+					.requires(ForgeTags.CROPS_ONION)
+					.save(pvd);
+
 			unlock(pvd, new ShapedRecipeBuilder(DelightFood.CHOCOLATE_WAFER.item.get(), 1)::unlockedBy, TFItems.MAZE_WAFER.get())
 					.pattern("A").pattern("B").pattern("A")
 					.define('A', TFItems.MAZE_WAFER.get())
