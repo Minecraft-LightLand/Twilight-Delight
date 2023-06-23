@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "twilightforest:mazestone_brick"
+    },
+    "F": {
+      "item": "twilightforest:fiery_ingot"
+    },
+    "S": {
+      "item": "twilightforest:ironwood_shovel"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "pattern": [
+    "BSB",
+    "FWF",
+    "FFF"
+  ],
+  "result": {
+    "item": "twilightdelight:fiery_stove"
+  }
+}

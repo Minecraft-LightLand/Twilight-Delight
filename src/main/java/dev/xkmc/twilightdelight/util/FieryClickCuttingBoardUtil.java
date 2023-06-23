@@ -25,6 +25,8 @@ import vectorwing.farmersdelight.common.utility.ItemUtils;
 import java.util.List;
 import java.util.Optional;
 
+//FIXME clean up old shit
+
 /**
  * @author Goulixiaoji
  */
@@ -75,9 +77,10 @@ public class FieryClickCuttingBoardUtil {
 
 				});
 			}
-		}//TODO validate
+		}
 	}
 
+	// use mixin instead of reflection
 	protected static Optional<CuttingBoardRecipe> getMatchingRecipe(CuttingBoardBlockEntity blockEntity, ItemStack toolItem, Player player) {
 		CuttingBoardBlockEntityAccessor accessor = (CuttingBoardBlockEntityAccessor) blockEntity;
 		return accessor.callGetMatchingRecipe(new RecipeWrapper(accessor.getInventory()), toolItem, player);

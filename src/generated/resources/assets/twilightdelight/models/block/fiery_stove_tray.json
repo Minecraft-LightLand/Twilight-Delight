@@ -1,0 +1,9 @@
+{
+  "parent": "twilightdelight:block/hot_cooking_pot",
+  "textures": {
+    "bottom": "twilightdelight:block/hot_cooking_pot_bottom",
+    "parts": "twilightdelight:block/hot_cooking_pot_parts",
+    "side": "twilightdelight:block/hot_cooking_pot_side",
+    "top": "twilightdelight:block/hot_cooking_pot_top"
+  }
+}

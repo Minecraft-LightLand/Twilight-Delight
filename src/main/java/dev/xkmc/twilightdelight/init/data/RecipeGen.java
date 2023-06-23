@@ -81,6 +81,14 @@ public class RecipeGen {
 					.define('C', Items.CAMPFIRE)
 					.save(pvd);
 
+			unlock(pvd, new ShapedRecipeBuilder(TDBlocks.FIERY_POT.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
+					.pattern("BSB").pattern("FWF").pattern("FFF")
+					.define('F', TFItems.FIERY_INGOT.get())
+					.define('B', TFBlocks.MAZESTONE_BRICK.get())
+					.define('S', TFItems.IRONWOOD_SHOVEL.get())
+					.define('W', Items.WATER_BUCKET)
+					.save(pvd);
+
 			unlock(pvd, UpgradeRecipeBuilder.smithing(Ingredient.of(TFItems.FIERY_SWORD.get()),
 					Ingredient.of(DelightFood.EXPERIMENT_110.item.get()),
 					TDItems.TEARDROP_SWORD.get())::unlocks, DelightFood.EXPERIMENT_110.item.get())
@@ -110,6 +118,43 @@ public class RecipeGen {
 			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.BERRY_STICK.item.get(), 1)::unlockedBy, TFItems.TORCHBERRIES.get())
 					.requires(Items.SWEET_BERRIES).requires(Items.GLOW_BERRIES).requires(TFItems.TORCHBERRIES.get())
 					.requires(Items.STICK).save(pvd);
+
+			unlock(pvd, new ShapedRecipeBuilder(DelightFood.TORCHBERRY_COOKIE.item.get(), 8)::unlockedBy, TFItems.TORCHBERRIES.get())
+					.pattern("BAB")
+					.define('A', TFItems.TORCHBERRIES.get())
+					.define('B', Items.WHEAT)
+					.save(pvd);
+
+			unlock(pvd, new ShapedRecipeBuilder(TFItems.MAZE_WAFER.get(), 12)::unlockedBy, TFItems.LIVEROOT.get())
+					.pattern("AAA").pattern("BCB").pattern("AAA")
+					.define('A', Items.WHEAT)
+					.define('B', TagGen.MILK)
+					.define('C', TFItems.LIVEROOT.get())
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GLACIER_ICE_TEA.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
+					.requires(Items.GLASS_BOTTLE).requires(TFItems.ICE_BOMB.get())
+					.requires(Items.ICE).requires(TFItems.ARCTIC_FUR.get())
+					.requires(Items.SUGAR).save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.TWILIGHT_SPRING.item.get(), 1)::unlockedBy, TFItems.RAW_IRONWOOD.get())
+					.requires(Items.GLASS_BOTTLE).requires(TFItems.RAW_IRONWOOD.get()).requires(Items.ICE).save(pvd);
+
+			unlock(pvd, new ShapedRecipeBuilder(TDBlocks.MEEF_WELLINGTON.get(), 1)::unlockedBy, DelightFood.MUSHGLOOM_SAUCE.item.get())
+					.pattern("BAB").pattern("DCD").pattern("FEF")
+					.define('A', ModItems.PIE_CRUST.get())
+					.define('B', Tags.Items.EGGS)
+					.define('C', DelightFood.MUSHGLOOM_SAUCE.item.get())
+					.define('D', TagGen.MEEF_COOKED)
+					.define('E', Items.BOWL)
+					.define('F', ModItems.BACON.get())
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.MEEF_WRAP.item.get(), 1)::unlockedBy, TFItems.RAW_MEEF.get())
+					.requires(ForgeTags.BREAD).requires(TagGen.MEEF_COOKED)
+					.requires(ForgeTags.SALAD_INGREDIENTS)
+					.requires(ForgeTags.CROPS_ONION)
+					.save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.CHOCOLATE_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
 					.requires(DelightFood.EXPERIMENT_113.item.get())
@@ -156,41 +201,23 @@ public class RecipeGen {
 					.define('B', Items.COCOA_BEANS)
 					.save(pvd);
 
-			unlock(pvd, new ShapedRecipeBuilder(DelightFood.TORCHBERRY_COOKIE.item.get(), 8)::unlockedBy, TFItems.TORCHBERRIES.get())
-					.pattern("BAB")
-					.define('A', TFItems.TORCHBERRIES.get())
-					.define('B', Items.WHEAT)
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.BORER_TEAR_SOUP.item.get(), 1)::unlockedBy, TFItems.BORER_ESSENCE.get())
+					.requires(Items.BOWL)
+					.requires(Items.BEETROOT)
+					.requires(Items.BEETROOT)
+					.requires(Items.BEETROOT)
+					.requires(Items.BEETROOT)
+					.requires(TFItems.BORER_ESSENCE.get())
 					.save(pvd);
 
-			unlock(pvd, new ShapedRecipeBuilder(TFItems.MAZE_WAFER.get(), 12)::unlockedBy, TFItems.LIVEROOT.get())
-					.pattern("AAA").pattern("BCB").pattern("AAA")
-					.define('A', Items.WHEAT)
-					.define('B', TagGen.MILK)
-					.define('C', TFItems.LIVEROOT.get())
-					.save(pvd);
-
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GLACIER_ICE_TEA.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
-					.requires(Items.GLASS_BOTTLE).requires(TFItems.ICE_BOMB.get())
-					.requires(Items.ICE).requires(TFItems.ARCTIC_FUR.get())
-					.requires(Items.SUGAR).save(pvd);
-
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.TWILIGHT_SPRING.item.get(), 1)::unlockedBy, TFItems.RAW_IRONWOOD.get())
-					.requires(Items.GLASS_BOTTLE).requires(TFItems.RAW_IRONWOOD.get()).requires(Items.ICE).save(pvd);
-
-			unlock(pvd, new ShapedRecipeBuilder(TDBlocks.MEEF_WELLINGTON.get(), 1)::unlockedBy, DelightFood.MUSHGLOOM_SAUCE.item.get())
-					.pattern("BAB").pattern("DCD").pattern("FEF")
-					.define('A', ModItems.PIE_CRUST.get())
-					.define('B', Tags.Items.EGGS)
-					.define('C', DelightFood.MUSHGLOOM_SAUCE.item.get())
-					.define('D', TagGen.MEEF_COOKED)
-					.define('E', Items.BOWL)
-					.define('F', ModItems.BACON.get())
-					.save(pvd);
-
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.MEEF_WRAP.item.get(), 1)::unlockedBy, TFItems.RAW_MEEF.get())
-					.requires(ForgeTags.BREAD).requires(TagGen.MEEF_COOKED)
+			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GHAST_BRAIN_SALAD.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_110.item.get())
+					.requires(Items.BOWL)
 					.requires(ForgeTags.SALAD_INGREDIENTS)
 					.requires(ForgeTags.CROPS_ONION)
+					.requires(ForgeTags.CROPS_TOMATO)
+					.requires(DelightFood.EXPERIMENT_110.item.get())
+					.requires(TFItems.BORER_ESSENCE.get())
+					.requires(TFItems.TRANSFORMATION_POWDER.get())
 					.save(pvd);
 
 		}

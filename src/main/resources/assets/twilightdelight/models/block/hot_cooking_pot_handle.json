@@ -1,0 +1,452 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "block/block",
+  "textures": {
+	"1": "#top",
+	"2": "#bottom",
+	"3": "#parts",
+	"4": "#side",
+	"handle": "#handle",
+	"particle": "#bottom"
+  },
+  "elements": [
+	{
+	  "from": [
+		2,
+		0,
+		2
+	  ],
+	  "to": [
+		14,
+		10,
+		14
+	  ],
+	  "faces": {
+		"north": {
+		  "uv": [
+			14,
+			6,
+			2,
+			16
+		  ],
+		  "texture": "#4"
+		},
+		"east": {
+		  "uv": [
+			2,
+			6,
+			14,
+			16
+		  ],
+		  "texture": "#4"
+		},
+		"south": {
+		  "uv": [
+			14,
+			6,
+			2,
+			16
+		  ],
+		  "texture": "#4"
+		},
+		"west": {
+		  "uv": [
+			2,
+			6,
+			14,
+			16
+		  ],
+		  "texture": "#4"
+		},
+		"up": {
+		  "uv": [
+			14,
+			2,
+			2,
+			14
+		  ],
+		  "texture": "#1"
+		},
+		"down": {
+		  "uv": [
+			14,
+			2,
+			2,
+			14
+		  ],
+		  "texture": "#2",
+		  "cullface": "down"
+		}
+	  }
+	},
+	{
+	  "from": [
+		7,
+		3,
+		7
+	  ],
+	  "to": [
+		9,
+		15,
+		9
+	  ],
+	  "rotation": {
+		"angle": -22.5,
+		"axis": "z",
+		"origin": [
+		  8,
+		  3,
+		  8
+		]
+	  },
+	  "faces": {
+		"north": {
+		  "uv": [
+			2,
+			2,
+			0,
+			14
+		  ],
+		  "texture": "#3"
+		},
+		"east": {
+		  "uv": [
+			0,
+			2,
+			2,
+			14
+		  ],
+		  "texture": "#3"
+		},
+		"south": {
+		  "uv": [
+			2,
+			2,
+			0,
+			14
+		  ],
+		  "texture": "#3"
+		},
+		"west": {
+		  "uv": [
+			0,
+			2,
+			2,
+			14
+		  ],
+		  "texture": "#3"
+		},
+		"up": {
+		  "uv": [
+			0,
+			0,
+			2,
+			2
+		  ],
+		  "texture": "#3"
+		},
+		"down": {
+		  "uv": [
+			0,
+			0,
+			2,
+			2
+		  ],
+		  "texture": "#3"
+		}
+	  }
+	},
+	{
+	  "from": [
+		14,
+		7,
+		5
+	  ],
+	  "to": [
+		16,
+		9,
+		11
+	  ],
+	  "faces": {
+		"north": {
+		  "uv": [
+			10,
+			0,
+			12,
+			2
+		  ],
+		  "texture": "#3"
+		},
+		"east": {
+		  "uv": [
+			4,
+			2,
+			10,
+			4
+		  ],
+		  "texture": "#3"
+		},
+		"south": {
+		  "uv": [
+			2,
+			0,
+			4,
+			2
+		  ],
+		  "texture": "#3"
+		},
+		"up": {
+		  "uv": [
+			4,
+			0,
+			10,
+			2
+		  ],
+		  "rotation": 90,
+		  "texture": "#3"
+		},
+		"down": {
+		  "uv": [
+			4,
+			2,
+			10,
+			4
+		  ],
+		  "rotation": 90,
+		  "texture": "#3"
+		}
+	  }
+	},
+	{
+	  "from": [
+		0,
+		7,
+		5
+	  ],
+	  "to": [
+		2,
+		9,
+		11
+	  ],
+	  "faces": {
+		"north": {
+		  "uv": [
+			2,
+			0,
+			4,
+			2
+		  ],
+		  "texture": "#3"
+		},
+		"east": {
+		  "uv": [
+			0,
+			0,
+			0,
+			0
+		  ],
+		  "texture": "#3"
+		},
+		"south": {
+		  "uv": [
+			10,
+			0,
+			12,
+			2
+		  ],
+		  "texture": "#3"
+		},
+		"west": {
+		  "uv": [
+			4,
+			2,
+			10,
+			4
+		  ],
+		  "texture": "#3"
+		},
+		"up": {
+		  "uv": [
+			4,
+			0,
+			10,
+			2
+		  ],
+		  "rotation": 270,
+		  "texture": "#3"
+		},
+		"down": {
+		  "uv": [
+			4,
+			2,
+			10,
+			4
+		  ],
+		  "rotation": 270,
+		  "texture": "#3"
+		}
+	  }
+	},
+	{
+	  "from": [
+		1,
+		8,
+		8
+	  ],
+	  "to": [
+		15,
+		16,
+		8
+	  ],
+	  "faces": {
+		"north": {
+		  "uv": [
+			1,
+			8,
+			15,
+			16
+		  ],
+		  "texture": "#handle"
+		},
+		"south": {
+		  "uv": [
+			1,
+			8,
+			15,
+			16
+		  ],
+		  "texture": "#handle"
+		}
+	  }
+	},
+	{
+	  "from": [
+		15,
+		8,
+		7
+	  ],
+	  "to": [
+		15,
+		16,
+		9
+	  ],
+	  "faces": {
+		"east": {
+		  "uv": [
+			2,
+			0,
+			0,
+			8
+		  ],
+		  "texture": "#handle"
+		},
+		"west": {
+		  "uv": [
+			0,
+			0,
+			2,
+			8
+		  ],
+		  "texture": "#handle"
+		}
+	  }
+	},
+	{
+	  "from": [
+		1,
+		8,
+		7
+	  ],
+	  "to": [
+		1,
+		16,
+		9
+	  ],
+	  "faces": {
+		"east": {
+		  "uv": [
+			2,
+			0,
+			0,
+			8
+		  ],
+		  "texture": "#handle"
+		},
+		"west": {
+		  "uv": [
+			0,
+			0,
+			2,
+			8
+		  ],
+		  "texture": "#handle"
+		}
+	  }
+	},
+	{
+	  "from": [
+		1,
+		15.999,
+		7
+	  ],
+	  "to": [
+		15,
+		15.999,
+		9
+	  ],
+	  "faces": {
+		"up": {
+		  "uv": [
+			2,
+			0,
+			16,
+			2
+		  ],
+		  "texture": "#handle"
+		},
+		"down": {
+		  "uv": [
+			2,
+			0,
+			16,
+			2
+		  ],
+		  "texture": "#handle"
+		}
+	  }
+	}
+  ],
+  "display": {},
+  "groups": [
+	{
+	  "name": "cooking pot",
+	  "origin": [
+		8,
+		8,
+		8
+	  ],
+	  "color": 0,
+	  "children": [
+		0,
+		1,
+		2,
+		3
+	  ]
+	},
+	{
+	  "name": "handle",
+	  "origin": [
+		8,
+		8,
+		8
+	  ],
+	  "color": 0,
+	  "children": [
+		4,
+		5,
+		6,
+		7
+	  ]
+	}
+  ]
+}

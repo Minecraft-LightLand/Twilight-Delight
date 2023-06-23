@@ -1,10 +1,7 @@
 package dev.xkmc.twilightdelight.init.registrate;
 
 import dev.xkmc.l2library.repack.registrate.util.entry.BlockEntry;
-import dev.xkmc.twilightdelight.content.block.FierySnakesBlock;
-import dev.xkmc.twilightdelight.content.block.LilyChickenBlock;
-import dev.xkmc.twilightdelight.content.block.MazeStoveBlock;
-import dev.xkmc.twilightdelight.content.block.MeefWellingtonBlock;
+import dev.xkmc.twilightdelight.content.block.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.world.IronwoodTreeGrower;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
@@ -40,6 +37,7 @@ import twilightforest.block.DarkLeavesBlock;
 import twilightforest.block.TFLogBlock;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
+import vectorwing.farmersdelight.common.block.CookingPotBlock;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.MushroomColonyBlock;
 import vectorwing.farmersdelight.common.block.StoveBlock;
@@ -83,6 +81,37 @@ public class TDBlocks {
 				pvd.horizontalBlock(ctx.get(), state -> state.getValue(StoveBlock.LIT) ? on : off);
 			})
 			.tag(ModTags.HEAT_SOURCES, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register();
+
+	public static final BlockEntry<FieryCookingPotBlock> FIERY_POT = TwilightDelight.REGISTRATE.block(
+					"fiery_stove", p -> new FieryCookingPotBlock())
+			.blockstate((ctx, pvd) -> {
+				String asset = "block/hot_cooking_pot";
+				ModelFile base = pvd.models().getBuilder(ctx.getName())
+						.parent(new ModelFile.UncheckedModelFile(pvd.modLoc(asset)))
+						.texture("top", asset + "_top")
+						.texture("bottom", asset + "_bottom")
+						.texture("side", asset + "_side")
+						.texture("parts", asset + "_parts");
+				ModelFile handle = pvd.models().getBuilder(ctx.getName() + "_handle")
+						.parent(new ModelFile.UncheckedModelFile(pvd.modLoc(asset)))
+						.texture("top", asset + "_top")
+						.texture("bottom", asset + "_bottom")
+						.texture("side", asset + "_side")
+						.texture("parts", asset + "_parts")
+						.texture("handle", asset + "_handle");
+				ModelFile tray = pvd.models().getBuilder(ctx.getName() + "_tray")
+						.parent(new ModelFile.UncheckedModelFile(pvd.modLoc(asset)))
+						.texture("top", asset + "_top")
+						.texture("bottom", asset + "_bottom")
+						.texture("side", asset + "_side")
+						.texture("parts", asset + "_parts");
+				pvd.horizontalBlock(ctx.getEntry(), state->
+						switch (state.getValue(CookingPotBlock.SUPPORT)){
+							case NONE -> base;
+							case HANDLE -> handle;
+							case TRAY -> tray;
+						});
+			}).simpleItem().defaultLoot().defaultLang().register();
 
 	public static final BlockEntry<FierySnakesBlock> FIERY_SNAKES = TwilightDelight.REGISTRATE.block(
 					"fiery_snakes_block", p -> new FierySnakesBlock())

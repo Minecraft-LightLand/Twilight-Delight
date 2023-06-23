@@ -1,0 +1,7 @@
+package dev.xkmc.twilightdelight.content.block;
+
+import vectorwing.farmersdelight.common.block.CookingPotBlock;
+
+public class FieryCookingPotBlock extends CookingPotBlock {
+
+}
