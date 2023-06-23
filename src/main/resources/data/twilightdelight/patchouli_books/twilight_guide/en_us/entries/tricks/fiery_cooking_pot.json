@@ -1,0 +1,15 @@
+{
+  "name": "Fiery Cooking Pot",
+  "icon": "twilightdelight:fiery_cooking_pot",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "Heats itself. Cooks meal added by Twilight Forest or Twilight's Flavor & Delight for 10 seconds if they need longer. Cooks those for 5 seconds on Maze Stove."
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "twilightdelight:fiery_cooking_pot"
+	}
+  ]
+}

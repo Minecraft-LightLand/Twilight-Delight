@@ -1,0 +1,15 @@
+{
+  "name": "Maze Stove",
+  "icon": "twilightdelight:maze_stove",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "Cooks meal added by Twilight Forest or Twilight's Flavor & Delight at double speed"
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "twilightdelight:maze_stove"
+	}
+  ]
+}

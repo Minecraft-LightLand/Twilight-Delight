@@ -7,6 +7,7 @@
   "mixins": [
 	"AddItemModifierAccessor",
 	"CookingPotBlockEntityMixin",
+	"CookingPotMenuMixin",
 	"CuttingBoardBlockEntityAccessor",
 	"CuttingBoardBlockMixin",
 	"EntityMixin",

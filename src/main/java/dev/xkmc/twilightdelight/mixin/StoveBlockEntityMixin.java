@@ -37,7 +37,7 @@ public abstract class StoveBlockEntityMixin extends SyncedBlockEntity {
 			Item item = recipe.getResultItem().getItem();
 			ResourceLocation id = ForgeRegistries.ITEMS.getKey(item);
 			if (id != null && (id.getNamespace().equals(TwilightForestMod.ID) || id.getNamespace().equals(TwilightDelight.MODID))) {
-				cookingTimesTotal[slot] = Math.min(200, cookingTimesTotal[slot]) / 2;
+				cookingTimesTotal[slot] = cookingTimesTotal[slot] / 2;
 			}
 		}
 	}
