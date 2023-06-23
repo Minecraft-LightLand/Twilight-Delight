@@ -32,7 +32,7 @@ public abstract class CookingPotBlockEntityMixin extends SyncedBlockEntity {
 	public void twilightdelight$processCooking$fasterCooking(CookingPotRecipe recipe, CookingPotBlockEntity cookingPot, CallbackInfoReturnable<Boolean> cir) {
 		if (level == null) return;
 		BlockState below = level.getBlockState(getBlockPos().below());
-		if (below.getBlock() == TDBlocks.MAZE_STOVE.get()) {
+		if (getBlockState().is(TDBlocks.FIERY_POT.get()) || below.getBlock() == TDBlocks.MAZE_STOVE.get()) {
 			Item item = recipe.getResultItem().getItem();
 			ResourceLocation id = ForgeRegistries.ITEMS.getKey(item);
 			if (id != null && (id.getNamespace().equals(TwilightForestMod.ID) || id.getNamespace().equals(TwilightDelight.MODID))) {
@@ -40,6 +40,13 @@ public abstract class CookingPotBlockEntityMixin extends SyncedBlockEntity {
 				int factor = recipe.getCookTime() / total;
 				cookTime += factor - 1;
 			}
+		}
+	}
+
+	@Inject(at = @At("HEAD"), method = "isHeated", remap = false, cancellable = true)
+	public void twilightdelight$isHeated$fieryPot(CallbackInfoReturnable<Boolean> cir) {
+		if (getBlockState().is(TDBlocks.FIERY_POT.get())) {
+			cir.setReturnValue(true);
 		}
 	}
 

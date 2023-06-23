@@ -83,7 +83,7 @@ public class TDBlocks {
 			.tag(ModTags.HEAT_SOURCES, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register();
 
 	public static final BlockEntry<FieryCookingPotBlock> FIERY_POT = TwilightDelight.REGISTRATE.block(
-					"fiery_stove", p -> new FieryCookingPotBlock())
+					"fiery_cooking_pot", p -> new FieryCookingPotBlock())
 			.blockstate((ctx, pvd) -> {
 				String asset = "block/hot_cooking_pot";
 				ModelFile base = pvd.models().getBuilder(ctx.getName())

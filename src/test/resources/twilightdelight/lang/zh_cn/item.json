@@ -45,7 +45,22 @@
 	"glow_113": "113蘸荧光煲",
 	"honey_113": "113蘸蜂蜜",
 	"hydra_burger": "九头蛇汉堡",
-	"milky_113": "113蘸炼乳"
+	"milky_113": "113蘸炼乳",
+	"borer_tear_soup": "蛀虫精华甜菜汤",
+	"ghast_brain_salad": "恶魂脑沙拉"
+  },
+  "block.twilightdelight": {
+	"lily_chicken_block": "荷花鸡",
+	"fiery_snakes_block": "炽汁蛇宴",
+	"maze_stove": "迷宫炉灶",
+	"maze_stove.tooltip": "以更快的速度烹饪暮色菜肴",
+	"mushgloom_colony": "荧光蘑菇菌落",
+	"ironwood_leaves": "刚性树叶",
+	"ironwood_log": "铁木原木",
+	"ironwood_sapling": "铁树树苗",
+	"meef_wellington_block": "暮光惠灵顿牛排",
+	"fiery_cooking_pot": "炽铁锅",
+	"fiery_cooking_pot.tooltip": "自我供热，以更快的速度烹饪暮色菜肴"
   },
   "-cartesian": {
 	"drinks": {

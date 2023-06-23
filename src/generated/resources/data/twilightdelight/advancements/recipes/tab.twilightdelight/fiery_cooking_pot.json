@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightdelight:fiery_stove"
+        "recipe": "twilightdelight:fiery_cooking_pot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "twilightdelight:fiery_stove"
+      "twilightdelight:fiery_cooking_pot"
     ]
   }
 }
