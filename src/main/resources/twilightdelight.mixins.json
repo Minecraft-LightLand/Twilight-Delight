@@ -8,13 +8,13 @@
 	"AddItemModifierAccessor",
 	"CookingPotBlockEntityMixin",
 	"CookingPotMenuMixin",
-	"CuttingBoardBlockEntityAccessor",
-	"CuttingBoardBlockMixin",
+	"CuttingBoardBlockEntityMixin",
 	"EntityMixin",
 	"FoodPropertiesAccessor",
 	"ItemAccessor",
 	"ItemEntityMixin",
 	"RichSoilBlockMixin",
+	"SkilletBlockEntityMixin",
 	"StoveBlockEntityMixin"
   ],
   "client": [

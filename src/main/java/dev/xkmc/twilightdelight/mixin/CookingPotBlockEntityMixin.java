@@ -38,38 +38,38 @@ public abstract class CookingPotBlockEntityMixin extends SyncedBlockEntity imple
 	@Shadow(remap = false)
 	private int cookTime;
 
-	@Shadow
+	@Shadow(remap = false)
 	protected abstract boolean hasInput();
 
-	@Shadow
+	@Shadow(remap = false)
 	public abstract boolean isHeated();
 
-	@Shadow
+	@Shadow(remap = false)
 	protected abstract Optional<CookingPotRecipe> getMatchingRecipe(RecipeWrapper inventoryWrapper);
 
-	@Shadow
+	@Shadow(remap = false)
 	@Final
 	private ItemStackHandler inventory;
 
-	@Shadow
+	@Shadow(remap = false)
 	protected abstract boolean canCook(CookingPotRecipe recipe);
 
-	@Shadow
+	@Shadow(remap = false)
 	protected abstract boolean processCooking(CookingPotRecipe recipe, CookingPotBlockEntity cookingPot);
 
-	@Shadow
+	@Shadow(remap = false)
 	private int cookTimeTotal;
 
-	@Shadow
+	@Shadow(remap = false)
 	public abstract ItemStack getMeal();
 
-	@Shadow
+	@Shadow(remap = false)
 	protected abstract boolean doesMealHaveContainer(ItemStack meal);
 
-	@Shadow
+	@Shadow(remap = false)
 	protected abstract void moveMealToOutput();
 
-	@Shadow
+	@Shadow(remap = false)
 	protected abstract void useStoredContainersOnMeal();
 
 	public CookingPotBlockEntityMixin(BlockEntityType<?> tileEntityTypeIn, BlockPos pos, BlockState state) {
