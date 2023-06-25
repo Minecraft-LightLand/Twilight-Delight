@@ -93,20 +93,20 @@ public class TDBlocks {
 						.texture("side", asset + "_side")
 						.texture("parts", asset + "_parts");
 				ModelFile handle = pvd.models().getBuilder(ctx.getName() + "_handle")
-						.parent(new ModelFile.UncheckedModelFile(pvd.modLoc(asset)))
+						.parent(new ModelFile.UncheckedModelFile(pvd.modLoc(asset + "_handle")))
 						.texture("top", asset + "_top")
 						.texture("bottom", asset + "_bottom")
 						.texture("side", asset + "_side")
 						.texture("parts", asset + "_parts")
 						.texture("handle", asset + "_handle");
 				ModelFile tray = pvd.models().getBuilder(ctx.getName() + "_tray")
-						.parent(new ModelFile.UncheckedModelFile(pvd.modLoc(asset)))
+						.parent(new ModelFile.UncheckedModelFile(pvd.modLoc(asset + "_tray")))
 						.texture("top", asset + "_top")
 						.texture("bottom", asset + "_bottom")
 						.texture("side", asset + "_side")
 						.texture("parts", asset + "_parts");
-				pvd.horizontalBlock(ctx.getEntry(), state->
-						switch (state.getValue(CookingPotBlock.SUPPORT)){
+				pvd.horizontalBlock(ctx.getEntry(), state ->
+						switch (state.getValue(CookingPotBlock.SUPPORT)) {
 							case NONE -> base;
 							case HANDLE -> handle;
 							case TRAY -> tray;
