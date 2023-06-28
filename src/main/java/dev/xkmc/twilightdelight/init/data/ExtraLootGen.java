@@ -20,19 +20,9 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ExtraLootGen {
 
-	public static final ResourceLocation SCRAP_LIVEROOT = new ResourceLocation(TwilightDelight.MODID, "scrap_liveroot");
 	public static final ResourceLocation SCRAP_115 = new ResourceLocation(TwilightDelight.MODID, "scrap_115");
 
 	public static void genLoot(RegistrateLootTableProvider pvd) {
-		pvd.addLootAction(LootContextParamSets.BLOCK, e -> e.accept(SCRAP_LIVEROOT,
-				LootTable.lootTable().withPool(LootPool.lootPool()
-						.add(AlternativesEntry.alternatives(
-								LootItem.lootTableItem(TFItems.LIVEROOT.get())
-										.when(BonusLevelTableCondition.bonusLevelFlatChance(
-												Enchantments.BLOCK_FORTUNE,
-												0.01f, 0.06f, 0.11f, 0.16f)),
-								LootItem.lootTableItem(Items.STICK))))));
-
 		pvd.addLootAction(LootContextParamSets.BLOCK, e -> e.accept(SCRAP_115,
 				LootTable.lootTable().withPool(LootPool.lootPool()
 						.add(AlternativesEntry.alternatives(

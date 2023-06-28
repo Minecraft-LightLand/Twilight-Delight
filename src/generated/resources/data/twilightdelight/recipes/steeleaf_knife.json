@@ -9,8 +9,8 @@
     }
   },
   "pattern": [
-    " A",
-    "B "
+    "A",
+    "B"
   ],
   "result": {
     "item": "twilightdelight:steeleaf_knife",

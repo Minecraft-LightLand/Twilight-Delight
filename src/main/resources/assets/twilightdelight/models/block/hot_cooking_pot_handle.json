@@ -1,6 +1,8 @@
 {
   "credit": "Made with Blockbench",
   "parent": "block/block",
+  "render_type": "minecraft:cutout",
+  "ambientocclusion": false,
   "textures": {
 	"1": "#top",
 	"2": "#bottom",
@@ -21,6 +23,7 @@
 		10,
 		14
 	  ],
+	  "shade": false,
 	  "faces": {
 		"north": {
 		  "uv": [
@@ -96,6 +99,7 @@
 		15,
 		9
 	  ],
+	  "shade": false,
 	  "rotation": {
 		"angle": -22.5,
 		"axis": "z",
@@ -179,6 +183,7 @@
 		9,
 		11
 	  ],
+	  "shade": false,
 	  "faces": {
 		"north": {
 		  "uv": [
@@ -245,6 +250,7 @@
 		9,
 		11
 	  ],
+	  "shade": false,
 	  "faces": {
 		"north": {
 		  "uv": [

@@ -29,6 +29,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.Nullable;
+import twilightforest.data.tags.ItemTagGenerator;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
@@ -50,25 +51,31 @@ public class RecipeGen {
 		{
 
 			unlock(pvd, new ShapedRecipeBuilder(TDItems.FIERY_KNIFE.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
-					.pattern(" A").pattern("B ")
+					.pattern("A").pattern("B")
 					.define('A', TFItems.FIERY_INGOT.get())
 					.define('B', Items.BLAZE_ROD)
 					.save(pvd);
 
+			unlock(pvd, new ShapelessRecipeBuilder(TDItems.FIERY_KNIFE.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
+					.requires(ModItems.IRON_KNIFE.get())
+					.requires(ItemTagGenerator.FIERY_VIAL)
+					.requires(Items.BLAZE_ROD)
+					.save(pvd, getID(TDItems.FIERY_KNIFE.getId(), "alt"));
+
 			unlock(pvd, new ShapedRecipeBuilder(TDItems.IRONWOOD_KNIFE.get(), 1)::unlockedBy, TFItems.IRONWOOD_INGOT.get())
-					.pattern(" A").pattern("B ")
+					.pattern("A").pattern("B")
 					.define('A', TFItems.IRONWOOD_INGOT.get())
 					.define('B', Tags.Items.RODS_WOODEN)
 					.save(e -> pvd.accept(new NBTRecipe(e, TDItems.IRONWOOD_KNIFE.get().getDefault())));
 
 			unlock(pvd, new ShapedRecipeBuilder(TDItems.STEELEAF_KNIFE.get(), 1)::unlockedBy, TFItems.STEELEAF_INGOT.get())
-					.pattern(" A").pattern("B ")
+					.pattern("A").pattern("B")
 					.define('A', TFItems.STEELEAF_INGOT.get())
 					.define('B', Tags.Items.RODS_WOODEN)
 					.save(e -> pvd.accept(new NBTRecipe(e, TDItems.STEELEAF_KNIFE.get().getDefault())));
 
 			unlock(pvd, new ShapedRecipeBuilder(TDItems.KNIGHTMETAL_KNIFE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
-					.pattern(" A").pattern("B ")
+					.pattern("A").pattern("B")
 					.define('A', TFItems.KNIGHTMETAL_INGOT.get())
 					.define('B', Tags.Items.RODS_WOODEN)
 					.save(pvd);
@@ -569,6 +576,10 @@ public class RecipeGen {
 
 	private static String getID(ResourceLocation item) {
 		return TwilightDelight.MODID + ":" + path + item.getPath();
+	}
+
+	private static String getID(ResourceLocation item, String suffix) {
+		return TwilightDelight.MODID + ":" + path + item.getPath() + suffix;
 	}
 
 	private static <T> T unlock(RegistrateRecipeProvider pvd, BiFunction<String, InventoryChangeTrigger.TriggerInstance, T> func, Item item) {

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "farmersdelight:iron_knife"
+    },
+    {
+      "tag": "twilightforest:fiery_vial"
+    },
+    {
+      "item": "minecraft:blaze_rod"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:fiery_knife"
+  }
+}

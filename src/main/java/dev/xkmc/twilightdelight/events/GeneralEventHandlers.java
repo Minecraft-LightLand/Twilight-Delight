@@ -65,21 +65,6 @@ public class GeneralEventHandlers {
 			}
 		}
 		if (event.getItemStack().is(ModTags.KNIVES)) {
-			if (state.is(TFBlocks.LIVEROOT_BLOCK.get())) {
-				if (event.getLevel() instanceof ServerLevel sl) {
-					event.getLevel().setBlockAndUpdate(event.getPos(), TFBlocks.ROOT_BLOCK.get().defaultBlockState());
-					var loot = getLoot(sl, ExtraLootGen.SCRAP_LIVEROOT, state, event);
-					for (var e : loot) {
-						event.getEntity().getInventory().placeItemBackInInventory(e);
-					}
-					event.getItemStack().hurtAndBreak(1, event.getEntity(),
-							e -> e.broadcastBreakEvent(event.getHand()));
-				}
-				event.getLevel().playSound(event.getEntity(), event.getPos(),
-						SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
-				event.setCanceled(true);
-				event.setCancellationResult(InteractionResult.SUCCESS);
-			}
 			if (state.is(TFBlocks.EXPERIMENT_115.get())) {
 				if (event.getLevel() instanceof ServerLevel sl) {
 					int i = state.getValue(Experiment115Block.BITES_TAKEN);

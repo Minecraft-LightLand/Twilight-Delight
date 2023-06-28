@@ -4,10 +4,6 @@
   "category": "twilightdelight:tricks",
   "pages": [
 	{
-	  "type": "patchouli:text",
-	  "text": "用小刀刮活根方块会让方块变成根方块，同时获得一根木棍，或者小概率获得活根。$(br2)使用时运附魔的小刀可以提高概率（只有暮色小刀能附魔时运）"
-	},
-	{
 	  "type": "patchouli:spotlight",
 	  "item": "twilightforest:liveroot_block",
 	  "text": "与沃土和活根方块相邻的根方块会缓慢变成活根方块。"
