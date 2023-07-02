@@ -1,0 +1,16 @@
+{
+  "name": "Getting Tomahawk Smeak",
+  "icon": "twilightdelight:raw_tomahawk_smeak",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "You can scavenge Tomahawk Smeak from Minotaur and Minoshroom with Diamond Minotaur Axe with varying chance."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:raw_tomahawk_smeak",
+	  "text": "It's an ingredient to cook Meef stroganoff."
+	}
+  ]
+}

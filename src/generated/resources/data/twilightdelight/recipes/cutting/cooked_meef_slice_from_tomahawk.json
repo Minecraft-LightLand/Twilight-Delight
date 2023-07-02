@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightdelight:cooked_tomahawk_smeak"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "twilightdelight:cooked_meef_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

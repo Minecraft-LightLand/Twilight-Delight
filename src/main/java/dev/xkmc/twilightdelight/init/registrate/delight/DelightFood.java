@@ -14,6 +14,8 @@ public enum DelightFood {
 	COOKED_VENISON_RIB(DelightFoodType.MEAT_PIECE, 4, 0.8f),
 	RAW_MEEF_SLICE(DelightFoodType.MEAT_PIECE, 1, 0.7F),
 	COOKED_MEEF_SLICE(DelightFoodType.MEAT_PIECE, 3, 0.8F),
+	RAW_TOMAHAWK_SMEAK(DelightFoodType.MEAT, 6, 0.7F),
+	COOKED_TOMAHAWK_SMEAK(DelightFoodType.MEAT, 12, 0.8F),
 	RAW_INSECT(DelightFoodType.MEAT, 2, 0.2F),
 	COOKED_INSECT(DelightFoodType.MEAT, 6, 0.6F),
 	TORCHBERRY_COOKIE(DelightFoodType.COOKIE, 2, 0.2F,

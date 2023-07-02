@@ -42,6 +42,7 @@ public class TDFoodItem extends Item {
 	public static void getFoodEffects(FoodProperties food, List<Component> list) {
 		for (var eff : food.getEffects()) {
 			int chance = Math.round(eff.getSecond() * 100);
+			if (eff.getFirst() == null) continue; //I hate stupid modders
 			Component ans = getTooltip(eff.getFirst());
 			if (chance == 100) {
 				list.add(ans);

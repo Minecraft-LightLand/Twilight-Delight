@@ -4,22 +4,24 @@ import dev.xkmc.l2library.base.L2Registrate;
 import dev.xkmc.l2library.repack.registrate.builders.ItemBuilder;
 import dev.xkmc.l2library.repack.registrate.util.entry.ItemEntry;
 import dev.xkmc.l2library.repack.registrate.util.nullness.NonNullFunction;
-import dev.xkmc.l2library.util.code.Wrappers;
 import dev.xkmc.twilightdelight.content.item.tool.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
 import dev.xkmc.twilightdelight.init.registrate.delight.IFoodType;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.loaders.ItemLayersModelBuilder;
 import net.minecraftforge.common.Tags;
+import org.apache.commons.lang3.StringUtils;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
+import java.util.Arrays;
 import java.util.Locale;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("unused")
 public class TDItems {
@@ -63,7 +65,15 @@ public class TDItems {
 
 	private static <T extends Item> ItemBuilder<T, L2Registrate> food(String id, Function<Item.Properties, T> factory,
 																	  Supplier<FoodProperties> food) {
-		return TwilightDelight.REGISTRATE.item(id, p -> factory.apply(p.food(food.get())));
+		return TwilightDelight.REGISTRATE.item(id, p -> factory.apply(p.food(food.get()))).lang(toEnglishName(id));
+	}
+
+	private static final Set<String> SMALL_WORDS = Set.of("of", "the", "with");
+
+	public static String toEnglishName(String internalName) {
+		return Arrays.stream(internalName.toLowerCase(Locale.ROOT).split("_"))
+				.map(e -> SMALL_WORDS.contains(e) ? e : StringUtils.capitalize(e))
+				.collect(Collectors.joining(" "));
 	}
 
 	private static <T extends Item> ItemBuilder<T, L2Registrate> handheld(String id, NonNullFunction<Item.Properties, T> factory) {

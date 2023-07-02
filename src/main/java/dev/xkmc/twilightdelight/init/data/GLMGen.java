@@ -1,6 +1,8 @@
 package dev.xkmc.twilightdelight.init.data;
 
+import dev.xkmc.l2library.repack.registrate.util.entry.RegistryEntry;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.mixin.AddItemModifierAccessor;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.data.DataGenerator;
@@ -31,19 +33,35 @@ public class GLMGen extends GlobalLootModifierProvider {
 		scavenging(of(TFItems.EXPERIMENT_115), of(TFEntities.CARMINITE_GHASTLING), 0.01f, 0.1f, false);
 		scavenging(of(TFItems.EXPERIMENT_115), vanilla(EntityType.GHAST, "ghast"), 0.3f, 0.1f, false);
 		scavenging(of(ModItems.HAM), of(TFEntities.BOAR), 0.67f, 0.1f, true);
+		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAK.item), of(TFEntities.MINOTAUR), 0.3f, 0.1f, false);
+		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAK.item), of(TFEntities.MINOTAUR), 0.3f, 0.1f, true);
+		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAK.item), of(TFEntities.MINOSHROOM), 0.7f, 0.1f, false);
+		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAK.item), of(TFEntities.MINOSHROOM), 0.7f, 0.1f, true);
 	}
 
 	private void scavenging(EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float base, float loot, boolean nofire) {
-		add("scavenging_" + item.id().getPath() + "_from_" + type.id().getPath(), nofire ?
+		lootDrop(item, type, nofire ?
 				create(item.type(), 1,
 						killedByKnife(),
 						killTarget(type.type()),
 						withChance(base, loot),
-						noFire()) :
+						fire(false)) :
 				create(item.type(), 1,
 						killedByKnife(),
 						killTarget(type.type()),
 						withChance(base, loot)));
+	}
+
+	private void lootDropMeat(Item tool, EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float base, float loot, boolean fire) {
+		lootDrop(item, type, create(item.type, 1,
+				killedByItem(tool),
+				killTarget(type.type),
+				withChance(base, loot),
+				fire(fire)));
+	}
+
+	private void lootDrop(EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, AddItemModifier loot) {
+		add("scavenging_" + item.id().getPath() + "_from_" + type.id().getPath(), loot);
 	}
 
 	private static LootItemCondition killTarget(EntityType<?> type) {
@@ -62,14 +80,23 @@ public class GLMGen extends GlobalLootModifierProvider {
 								.build()).build()).build();
 	}
 
+	private static LootItemCondition killedByItem(Item item) {
+		return LootItemEntityPropertyCondition.hasProperties(
+				LootContext.EntityTarget.KILLER,
+				EntityPredicate.Builder.entity().equipment(
+						EntityEquipmentPredicate.Builder.equipment().mainhand(
+										ItemPredicate.Builder.item().of(item).build())
+								.build()).build()).build();
+	}
+
 	private static LootItemCondition withChance(float base, float loot) {
 		return LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(base, loot).build();
 	}
 
-	private static LootItemCondition noFire() {
+	private static LootItemCondition fire(boolean fire) {
 		return LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
 				EntityPredicate.Builder.entity().flags(
-						EntityFlagsPredicate.Builder.flags().setOnFire(false)
+						EntityFlagsPredicate.Builder.flags().setOnFire(fire)
 								.build()).build()).build();
 	}
 
@@ -84,6 +111,10 @@ public class GLMGen extends GlobalLootModifierProvider {
 	}
 
 	private static <T> EntryHolder<T> of(RegistryObject<T> obj) {
+		return new EntryHolder<>(obj.get(), obj.getId());
+	}
+
+	private static <T> EntryHolder<T> of(RegistryEntry<T> obj) {
 		return new EntryHolder<>(obj.get(), obj.getId());
 	}
 

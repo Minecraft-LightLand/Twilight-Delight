@@ -137,7 +137,7 @@ public class RecipeGen {
 					.define('A', Items.WHEAT)
 					.define('B', TagGen.MILK)
 					.define('C', TFItems.LIVEROOT.get())
-					.save(pvd);
+					.save(pvd, getID(TFItems.MAZE_WAFER.getId()));
 
 			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GLACIER_ICE_TEA.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
 					.requires(Items.GLASS_BOTTLE).requires(TFItems.ICE_BOMB.get())
@@ -286,9 +286,9 @@ public class RecipeGen {
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TFItems.MEEF_STROGANOFF.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
-					TFItems.RAW_MEEF.get())
+					DelightFood.RAW_TOMAHAWK_SMEAK.item.get())
 					.addIngredient(Items.MUSHROOM_STEW)
-					.addIngredient(TagGen.MEEF_COOKED)
+					.addIngredient(DelightFood.RAW_TOMAHAWK_SMEAK.item.get())
 					.addIngredient(TFItems.LIVEROOT.get())
 					.addIngredient(TFItems.TORCHBERRIES.get())
 					.addIngredient(ModItems.ONION.get())
@@ -371,6 +371,18 @@ public class RecipeGen {
 							Ingredient.of(ForgeTags.TOOLS_KNIVES),
 							DelightFood.COOKED_MEEF_SLICE.item.get(), 2)
 					.build(pvd, getID(DelightFood.COOKED_MEEF_SLICE.item.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(DelightFood.RAW_TOMAHAWK_SMEAK.item.get()),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
+							DelightFood.RAW_MEEF_SLICE.item.get(), 4)
+					.build(pvd, getID(DelightFood.RAW_MEEF_SLICE.item.getId(), "_from_tomahawk"));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(DelightFood.COOKED_TOMAHAWK_SMEAK.item.get()),
+							Ingredient.of(ForgeTags.TOOLS_KNIVES),
+							DelightFood.COOKED_MEEF_SLICE.item.get(), 4)
+					.build(pvd, getID(DelightFood.COOKED_MEEF_SLICE.item.getId(), "_from_tomahawk"));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.RAW_VENISON.get()),

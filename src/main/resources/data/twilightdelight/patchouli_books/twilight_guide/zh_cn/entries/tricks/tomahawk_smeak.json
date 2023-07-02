@@ -1,0 +1,16 @@
+{
+  "name": "获取战斧牛头人排",
+  "icon": "twilightdelight:raw_tomahawk_smeak",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "你可以用钻石米诺陶战斧从米诺陶和米诺菇身上砍下战斧牛头人排"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:raw_tomahawk_smeak",
+	  "text": "战斧牛头人排能用来做牛头人沙拉酱肉"
+	}
+  ]
+}

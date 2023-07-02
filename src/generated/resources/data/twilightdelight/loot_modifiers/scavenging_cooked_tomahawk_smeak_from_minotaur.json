@@ -1,0 +1,40 @@
+{
+  "type": "farmersdelight:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "killer",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "items": [
+              "twilightforest:diamond_minotaur_axe"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "twilightforest:minotaur"
+      }
+    },
+    {
+      "chance": 0.3,
+      "condition": "minecraft:random_chance_with_looting",
+      "looting_multiplier": 0.1
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "flags": {
+          "is_on_fire": true
+        }
+      }
+    }
+  ],
+  "item": "twilightdelight:cooked_tomahawk_smeak"
+}

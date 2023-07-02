@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw_meef": {
+    "has_raw_tomahawk_smeak": {
       "conditions": {
         "items": [
           {
             "items": [
-              "twilightforest:raw_meef"
+              "twilightdelight:raw_tomahawk_smeak"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_raw_meef",
+      "has_raw_tomahawk_smeak",
       "has_the_recipe"
     ]
   ],

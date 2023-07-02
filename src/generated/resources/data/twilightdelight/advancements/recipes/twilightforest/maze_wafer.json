@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightforest:maze_wafer"
+        "recipe": "twilightdelight:maze_wafer"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "twilightforest:maze_wafer"
+      "twilightdelight:maze_wafer"
     ]
   }
 }
