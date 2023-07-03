@@ -6,13 +6,16 @@ import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import dev.xkmc.l2library.repack.registrate.providers.RegistrateRecipeProvider;
 import dev.xkmc.l2library.repack.registrate.util.DataIngredient;
 import dev.xkmc.l2library.repack.registrate.util.entry.ItemEntry;
+import dev.xkmc.twilightdelight.compat.jeed.JeedDataGenerator;
 import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipeBuilder;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
+import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
+import net.mehvahdjukaar.jeed.Jeed;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -115,6 +118,7 @@ public class RecipeGen {
 		{
 
 			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_MEEF_SLICE.item.get()), DelightFood.COOKED_MEEF_SLICE.item, 1);
+			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_TOMAHAWK_SMEAK.item.get()), DelightFood.COOKED_TOMAHAWK_SMEAK.item, 1);
 			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_INSECT.item.get()), DelightFood.COOKED_INSECT.item, 1);
 			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_VENISON_RIB.item.get()), DelightFood.COOKED_VENISON_RIB.item, 1);
 		}
@@ -548,6 +552,11 @@ public class RecipeGen {
 					.requires(NeapolitanFood.PHYTOCHEMICAL_ICE_CREAM.item.get())
 					.requires(Items.BOWL, 3).save(pvd);
 
+		}
+
+		if (ModList.get().isLoaded(Jeed.MOD_ID)) {
+			JeedDataGenerator.add(TDItems.TEARDROP_SWORD.get(), TDEffects.TEMPORAL_SADNESS.get());
+			JeedDataGenerator.finalizeRecipes(pvd);
 		}
 	}
 

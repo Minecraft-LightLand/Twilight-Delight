@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "twilightdelight:raw_tomahawk_smeak"
+  },
+  "result": "twilightdelight:cooked_tomahawk_smeak"
+}

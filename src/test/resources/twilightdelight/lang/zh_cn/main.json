@@ -8,7 +8,13 @@
 	"fire_range": "范围火焰",
 	"frozen_range": "范围霜冻",
 	"temporal_sadness": "莫名的悲伤",
-	"aurora_glowing": "极光"
+	"aurora_glowing": "极光",
+	"fire_range.description": "点燃周围的敌人，自身不会被点燃",
+	"poison_range.description": "使周围的敌人中毒，自身免疫中毒",
+	"frozen_range.description": "冰冻周围敌人，自身免疫冰冻。可以冷冻物品",
+	"temporal_sadness.description": "降低攻击和移动速度",
+	"aurora_glowing.description": "让自身和看到的所有实体发出彩虹色的光"
+
   },
   "patchouli.twilightdelight.landing": "享受来自暮色的美味和甜品",
   "patchouli.twilightdelight.title": "暮色风味乐事教程",

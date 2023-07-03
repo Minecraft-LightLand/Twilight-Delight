@@ -1,0 +1,9 @@
+{
+  "type": "jeed:effect_provider",
+  "effect": "twilightdelight:temporal_sadness",
+  "providers": [
+    {
+      "item": "twilightdelight:teardrop_sword"
+    }
+  ]
+}

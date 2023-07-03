@@ -149,6 +149,7 @@ dependencies {
 
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
+    implementation fg.deobf("curse.maven:just-enough-effect-descriptions-jeed-532286:4599099")
 
 }
 
