@@ -112,6 +112,8 @@ public class RecipeGen {
 					.requires(Items.IRON_INGOT).requires(Items.GOLD_NUGGET)
 					.save(pvd, getID(TFItems.RAW_IRONWOOD.getId()));
 
+			pvd.storage(TFItems.TORCHBERRIES::get, TDBlocks.TORCHBERRIES_CRATE);
+
 		}
 
 		// smelting

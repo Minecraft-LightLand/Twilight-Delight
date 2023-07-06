@@ -1,11 +1,11 @@
 {
-  "name": "获取战斧牛头人排",
+  "name": "获取战斧牛头人肋排",
   "icon": "twilightdelight:raw_tomahawk_smeak",
   "category": "twilightdelight:tricks",
   "pages": [
 	{
 	  "type": "patchouli:text",
-	  "text": "你可以用钻石米诺陶战斧从米诺陶和米诺菇身上砍下战斧牛头人排"
+	  "text": "用钻石米诺陶战斧击杀米诺陶和米诺菇有概率掉落战斧牛头人肋排。抢夺附魔能提升概率。"
 	},
 	{
 	  "type": "patchouli:spotlight",
