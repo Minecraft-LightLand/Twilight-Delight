@@ -12,6 +12,10 @@ import java.util.List;
 
 public class FieryCookingPotBlock extends CookingPotBlock {
 
+	public FieryCookingPotBlock(Properties properties) {
+		super(properties);
+	}
+
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable BlockGetter level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(stack, level, list, flag);

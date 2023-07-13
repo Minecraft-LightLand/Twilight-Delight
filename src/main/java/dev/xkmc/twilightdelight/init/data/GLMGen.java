@@ -33,10 +33,10 @@ public class GLMGen extends GlobalLootModifierProvider {
 		scavenging(of(TFItems.EXPERIMENT_115), of(TFEntities.CARMINITE_GHASTLING), 0.01f, 0.1f, false);
 		scavenging(of(TFItems.EXPERIMENT_115), vanilla(EntityType.GHAST, "ghast"), 0.3f, 0.1f, false);
 		scavenging(of(ModItems.HAM), of(TFEntities.BOAR), 0.67f, 0.1f, true);
-		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAK.item), of(TFEntities.MINOTAUR), 0.3f, 0.1f, false);
-		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAK.item), of(TFEntities.MINOTAUR), 0.3f, 0.1f, true);
-		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAK.item), of(TFEntities.MINOSHROOM), 0.7f, 0.1f, false);
-		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAK.item), of(TFEntities.MINOSHROOM), 0.7f, 0.1f, true);
+		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAK.item), of(TFEntities.MINOTAUR), 0.3f, false);
+		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAK.item), of(TFEntities.MINOTAUR), 0.3f, true);
+		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAK.item), of(TFEntities.MINOSHROOM), 1f, false);
+		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAK.item), of(TFEntities.MINOSHROOM), 1f, true);
 	}
 
 	private void scavenging(EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float base, float loot, boolean nofire) {
@@ -52,11 +52,11 @@ public class GLMGen extends GlobalLootModifierProvider {
 						withChance(base, loot)));
 	}
 
-	private void lootDropMeat(Item tool, EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float base, float loot, boolean fire) {
+	private void lootDropMeat(Item tool, EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float base, boolean fire) {
 		lootDrop(item, type, create(item.type, 1,
 				killedByItem(tool),
 				killTarget(type.type),
-				withChance(base, loot),
+				withChance(base, 0),
 				fire(fire)));
 	}
 

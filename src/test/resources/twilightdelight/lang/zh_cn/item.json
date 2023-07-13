@@ -47,7 +47,9 @@
 	"hydra_burger": "九头蛇汉堡",
 	"milky_113": "113蘸炼乳",
 	"borer_tear_soup": "蛀虫精华甜菜汤",
-	"ghast_brain_salad": "恶魂脑沙拉"
+	"ghast_brain_salad": "恶魂脑沙拉",
+	"cooked_tomahawk_smeak": "熟战斧牛头人肋排",
+	"raw_tomahawk_smeak": "生战斧牛头人肋排"
   },
   "block.twilightdelight": {
 	"lily_chicken_block": "荷花鸡",
@@ -61,8 +63,7 @@
 	"meef_wellington_block": "暮光惠灵顿牛排",
 	"fiery_cooking_pot": "炽铁锅",
 	"fiery_cooking_pot.tooltip": "自我供热，快速烹饪暮色菜肴",
-	"cooked_tomahawk_smeak": "熟战斧牛头人肋排",
-	"raw_tomahawk_smeak": "生战斧牛头人肋排"
+	"torchberries_crate": "箱装火炬浆果"
   },
   "-cartesian": {
 	"drinks": {

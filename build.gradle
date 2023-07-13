@@ -132,7 +132,7 @@ dependencies {
         jarJar.ranged(it, "[1.9.6,)")
     }
 
-    implementation fg.deobf('curse.maven:farmers-delight-398521:3999157')
+    implementation fg.deobf("curse.maven:farmers-delight-398521:4636013")
     implementation fg.deobf('curse.maven:the-twilight-forest-227639:4075841')
     implementation fg.deobf("mezz.jei:jei-${jei_minecraft_version}:${jei_version}")
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
@@ -141,6 +141,8 @@ dependencies {
     implementation fg.deobf('curse.maven:neapolitan-382016:4023083')
     implementation fg.deobf("curse.maven:create-328085:4550987")
     implementation fg.deobf("curse.maven:create-enchantment-industry-688768:4571835")
+    implementation fg.deobf("curse.maven:just-enough-effect-descriptions-jeed-532286:4599099")
+
     compileOnly fg.deobf("curse.maven:create-central-kitchen-820977:4569833")
     runtimeOnly fg.deobf('curse.maven:wthit-forge-455982:3947982')
     runtimeOnly fg.deobf('curse.maven:badpackets-615134:3903799')
@@ -149,7 +151,8 @@ dependencies {
 
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
-    implementation fg.deobf("curse.maven:just-enough-effect-descriptions-jeed-532286:4599099")
+
+    runtimeOnly fg.deobf("curse.maven:rubidium-574856:4573226")
 
 }
 

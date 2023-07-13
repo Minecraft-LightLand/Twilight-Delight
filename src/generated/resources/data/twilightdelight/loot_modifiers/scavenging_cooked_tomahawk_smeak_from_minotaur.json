@@ -24,7 +24,7 @@
     {
       "chance": 0.3,
       "condition": "minecraft:random_chance_with_looting",
-      "looting_multiplier": 0.1
+      "looting_multiplier": 0.0
     },
     {
       "condition": "minecraft:entity_properties",
