@@ -143,7 +143,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:farmers-delight-398521:4638874")
     implementation fg.deobf("mezz.jei:jei-${jei_minecraft_version}:${jei_version}")
-    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
+    implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
     implementation fg.deobf("curse.maven:blueprint-382216:4594238")
     compileOnly fg.deobf('curse.maven:neapolitan-382016:4023083')
     //compileOnly fg.deobf("curse.maven:create-central-kitchen-820977:4569833")

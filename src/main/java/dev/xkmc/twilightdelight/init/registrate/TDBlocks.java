@@ -1,6 +1,7 @@
 package dev.xkmc.twilightdelight.init.registrate;
 
 import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import dev.xkmc.twilightdelight.content.block.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.world.IronwoodTreeGrower;
@@ -8,9 +9,11 @@ import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
@@ -49,10 +52,9 @@ import java.util.function.Function;
 
 public class TDBlocks {
 
-	static {
-		TwilightDelight.REGISTRATE.buildModCreativeTab("twilight_delight", "Twilight's Flavors & Delight",
-				e -> e.icon(TDBlocks.MAZE_STOVE::asStack));
-	}
+	public static final RegistryEntry<CreativeModeTab> TAB =
+			TwilightDelight.REGISTRATE.buildModCreativeTab("twilight_delight", "Twilight's Flavors & Delight",
+					e -> e.icon(TDBlocks.MAZE_STOVE::asStack));
 
 	public static final BlockEntry<MazeStoveBlock> MAZE_STOVE;
 	public static final BlockEntry<FieryCookingPotBlock> FIERY_POT;
@@ -259,7 +261,7 @@ public class TDBlocks {
 							.renderType("cutout")))
 					.tag(BlockTags.SAPLINGS)
 					.item().model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("block/" + ctx.getName())))
-					.tag(ItemTags.SAPLINGS).tab(null).build()//TODO
+					.tag(ItemTags.SAPLINGS).removeTab(TAB.getKey()).build()//TODO
 					.register();
 			IRON_LOGS = TwilightDelight.REGISTRATE.block(
 							"ironwood_log", p -> new TFLogBlock(
@@ -267,7 +269,7 @@ public class TDBlocks {
 											.strength(10, 10).requiresCorrectToolForDrops()))
 					.blockstate((ctx, pvd) -> pvd.logBlock(ctx.get()))
 					.tag(BlockTags.LOGS, BlockTags.LOGS_THAT_BURN, BlockTags.MINEABLE_WITH_AXE, BlockTags.NEEDS_DIAMOND_TOOL)
-					.item().tag(ItemTags.LOGS, ItemTags.LOGS_THAT_BURN).tab(null).build()//TODO
+					.item().tag(ItemTags.LOGS, ItemTags.LOGS_THAT_BURN).removeTab(TAB.getKey()).build()//TODO
 					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
 							.add(AlternativesEntry.alternatives(
 									LootItem.lootTableItem(block.asItem())
@@ -290,7 +292,7 @@ public class TDBlocks {
 					.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().withExistingParent(ctx.getName(), "block/leaves")
 							.texture("all", pvd.modLoc("block/" + ctx.getName()))))
 					.tag(BlockTags.LEAVES, BlockTags.MINEABLE_WITH_HOE, BlockTags.NEEDS_DIAMOND_TOOL)
-					.item().tag(ItemTags.LEAVES).tab(null).build()//TODO
+					.item().tag(ItemTags.LEAVES).removeTab(TAB.getKey()).build()//TODO
 					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
 							.add(AlternativesEntry.alternatives(
 									LootItem.lootTableItem(block.asItem())

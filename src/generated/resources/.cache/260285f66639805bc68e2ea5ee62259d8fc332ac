@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-14T21:08:44.241668	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2023-07-14T22:25:18.085971	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 95461c1272911b68df4ceac09c8c4929c7e2cb05 assets/twilightdelight/blockstates/fiery_cooking_pot.json
 5549c8862609cc5461f31463064c67926ec6e182 assets/twilightdelight/blockstates/fiery_snakes_block.json
 7be3dee61f14ac8c55cf87e8e7cbdcd1f966111c assets/twilightdelight/blockstates/ironwood_leaves.json
@@ -9,8 +9,8 @@ d93f8370eb28433506655d2e1d02ab7485e72ef8 assets/twilightdelight/blockstates/iron
 70459e56f247be39a1e5f915e7b2454a5c448310 assets/twilightdelight/blockstates/meef_wellington_block.json
 0f456eb2cceb28a0a1c51d721fd46f4dfe7631f4 assets/twilightdelight/blockstates/mushgloom_colony.json
 a74f9646a71079840a054fb50c235ed47183f3b6 assets/twilightdelight/blockstates/torchberries_crate.json
-4938c288b9409718312c7331f9ac5f05dc7ff7a8 assets/twilightdelight/lang/en_ud.json
-367883d556d2a99067ad438ed9f2ed4c646a67d4 assets/twilightdelight/lang/en_us.json
+1f607925d1766eb5af18f748235c57f53fc48793 assets/twilightdelight/lang/en_ud.json
+c67362b7a85341fd44d0d8c1747fbe1198f3b0b4 assets/twilightdelight/lang/en_us.json
 0d600ae7e82be165cd8d0ecde20c4fc939b5b0cc assets/twilightdelight/models/block/fiery_cooking_pot.json
 0099d7be39326d625dfceac81b6f8edeb542b642 assets/twilightdelight/models/block/fiery_cooking_pot_handle.json
 6b7e1765218a56d917174dcc0dc60a4416b63b57 assets/twilightdelight/models/block/fiery_cooking_pot_tray.json

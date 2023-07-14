@@ -161,5 +161,7 @@
   "effect.twilightdelight.aurora_glowing.description": "让自身和看到的所有实体发出彩虹色的光",
   "patchouli.twilightdelight.landing": "享受来自暮色的美味和甜品",
   "patchouli.twilightdelight.title": "暮色风味乐事教程",
-  "twilightdelight.jei.frozen": "冰镇"
+  "twilightdelight.jei.frozen": "冰镇",
+  "item.twilightdelight.teardrop_sword.desc": "Burns the target and has a chance to cry",
+  "itemGroup.twilightdelight.twilight_delight": "Twilight's Flavors & Delight"
 }
