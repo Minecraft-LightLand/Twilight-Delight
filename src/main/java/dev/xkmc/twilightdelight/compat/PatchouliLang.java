@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.compat;
 
-import dev.xkmc.l2library.repack.registrate.providers.RegistrateLangProvider;
+import com.tterrag.registrate.providers.RegistrateLangProvider;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 
 public enum PatchouliLang {

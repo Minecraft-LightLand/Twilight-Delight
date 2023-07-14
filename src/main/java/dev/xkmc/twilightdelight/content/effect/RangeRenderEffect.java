@@ -1,6 +1,7 @@
 package dev.xkmc.twilightdelight.content.effect;
 
 import dev.xkmc.l2library.base.effects.api.ClientRenderEffect;
+import dev.xkmc.l2library.base.effects.api.DelayedEntityRender;
 import dev.xkmc.l2library.base.effects.api.FirstPlayerRenderEffect;
 import dev.xkmc.l2library.util.Proxy;
 import net.minecraft.client.Minecraft;
@@ -25,7 +26,7 @@ public abstract class RangeRenderEffect extends RangeSearchEffect implements Cli
 	}
 
 	@Override
-	public void render(LivingEntity entity, int lv, Consumer<ResourceLocation> consumer) {
+	public void render(LivingEntity entity, int lv, Consumer<DelayedEntityRender> consumer) {
 		if (entity == Proxy.getClientPlayer()) return;
 		renderEffect(lv, entity);
 	}
@@ -41,7 +42,7 @@ public abstract class RangeRenderEffect extends RangeSearchEffect implements Cli
 		int r = getRange();
 		int count = getParticleCount(lv);
 		for (int i = 0; i < count; i++) {
-			addParticle(entity.level, entity.position().add(0, entity.getEyeHeight() / 2, 0), r);
+			addParticle(entity.level(), entity.position().add(0, entity.getEyeHeight() / 2, 0), r);
 		}
 	}
 

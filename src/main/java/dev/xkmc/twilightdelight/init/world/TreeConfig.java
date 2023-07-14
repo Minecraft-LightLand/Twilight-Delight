@@ -3,12 +3,12 @@ package dev.xkmc.twilightdelight.init.world;
 import com.google.common.collect.ImmutableList;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
-import net.minecraft.core.Holder;
-import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
@@ -33,12 +33,12 @@ public class TreeConfig {
 			new TwoLayersFeatureSize(4, 1, 1))
 			.decorators(ImmutableList.of(TreeDecorators.LIVING_ROOTS)).ignoreVines().build();
 
-	public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> CF_IRONWOOD =
-			register("tree/ironwood_tree", TFFeatures.DARK_CANOPY_TREE.get(), TC_IRONWOOD);
+	public static final ResourceKey<ConfiguredFeature<?, ?>> CF_IRONWOOD = ResourceKey.create(Registries.CONFIGURED_FEATURE,
+			new ResourceLocation(TwilightDelight.MODID, "tree/ironwood_tree"));
 
-	public static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> register(String name, F feature, FC config) {
-		return BuiltinRegistries.registerExact(BuiltinRegistries.CONFIGURED_FEATURE,
-				TwilightDelight.MODID + ":" + name, new ConfiguredFeature<>(feature, config));
+	//FIXME gen
+	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+		context.register(CF_IRONWOOD, new ConfiguredFeature<>(TFFeatures.DARK_CANOPY_TREE.get(), TC_IRONWOOD));
 	}
 
 	public static void register() {

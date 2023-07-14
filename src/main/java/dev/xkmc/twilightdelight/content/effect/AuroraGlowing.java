@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.content.effect;
 
-import dev.xkmc.l2library.base.effects.EffectSyncEvents;
+import dev.xkmc.l2library.base.effects.ClientEffectCap;
 import dev.xkmc.l2library.util.Proxy;
 import dev.xkmc.twilightdelight.init.data.TDModConfig;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
@@ -68,7 +68,7 @@ public class AuroraGlowing extends MobEffect {
 
 	@OnlyIn(Dist.CLIENT)
 	public static int getColor(Entity entity) {
-		Level level = entity.level;
+		Level level = entity.level();
 		float pTick = Minecraft.getInstance().getPartialTick();
 		Player player = Proxy.getClientPlayer();
 		Vec3 pos = entity.getPosition(pTick).subtract(player.getPosition(pTick));
@@ -88,9 +88,8 @@ public class AuroraGlowing extends MobEffect {
 		Player player = Minecraft.getInstance().player;
 		if (player != null && player.hasEffect(TDEffects.AURORA_GLOWING.get()))
 			return true;
-		if (EffectSyncEvents.EFFECT_MAP.containsKey(self.getUUID())) {
-			var map = EffectSyncEvents.EFFECT_MAP.get(self.getUUID());
-			return map.containsKey(TDEffects.AURORA_GLOWING.get());
+		if (self instanceof LivingEntity le && ClientEffectCap.HOLDER.isProper(le)) {
+			return ClientEffectCap.HOLDER.get(le).map.containsKey(TDEffects.AURORA_GLOWING.get());
 		}
 		return false;
 	}

@@ -1,7 +1,7 @@
 package dev.xkmc.twilightdelight.init.data;
 
-import dev.xkmc.l2library.repack.registrate.providers.RegistrateItemTagsProvider;
-import dev.xkmc.l2library.repack.registrate.providers.RegistrateTagsProvider;
+import com.tterrag.registrate.providers.RegistrateItemTagsProvider;
+import com.tterrag.registrate.providers.RegistrateTagsProvider;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import net.minecraft.resources.ResourceLocation;
@@ -25,20 +25,20 @@ public class TagGen {
 	public static final TagKey<Item> VENSION_RAW = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "vension_raw"));
 
 	public static void genItemTag(RegistrateItemTagsProvider pvd) {
-		pvd.tag(INSECT)
+		pvd.addTag(INSECT)
 				.add(TFBlocks.FIREFLY.get().asItem(),
 						TFBlocks.CICADA.get().asItem(),
 						TFBlocks.MOONWORM.get().asItem());
-		pvd.tag(MILK).add(Items.MILK_BUCKET);
-		pvd.tag(HYDRA_MEAT).add(TFItems.HYDRA_CHOP.get(), DelightFood.HYDRA_PIECE.item.get());
-		pvd.tag(MEEF_COOKED).add(TFItems.COOKED_MEEF.get(), DelightFood.COOKED_MEEF_SLICE.item.get());
-		pvd.tag(MEEF_RAW).add(TFItems.RAW_MEEF.get(), DelightFood.RAW_MEEF_SLICE.item.get());
-		pvd.tag(VENSION_COOKED).add(TFItems.COOKED_VENISON.get(), DelightFood.COOKED_VENISON_RIB.item.get());
-		pvd.tag(VENSION_RAW).add(TFItems.RAW_VENISON.get(), DelightFood.RAW_VENISON_RIB.item.get());
+		pvd.addTag(MILK).add(Items.MILK_BUCKET);
+		pvd.addTag(HYDRA_MEAT).add(TFItems.HYDRA_CHOP.get(), DelightFood.HYDRA_PIECE.item.get());
+		pvd.addTag(MEEF_COOKED).add(TFItems.COOKED_MEEF.get(), DelightFood.COOKED_MEEF_SLICE.item.get());
+		pvd.addTag(MEEF_RAW).add(TFItems.RAW_MEEF.get(), DelightFood.RAW_MEEF_SLICE.item.get());
+		pvd.addTag(VENSION_COOKED).add(TFItems.COOKED_VENISON.get(), DelightFood.COOKED_VENISON_RIB.item.get());
+		pvd.addTag(VENSION_RAW).add(TFItems.RAW_VENISON.get(), DelightFood.RAW_VENISON_RIB.item.get());
 	}
 
-	public static void genBlockTag(RegistrateTagsProvider<Block> pvd) {
-		pvd.tag(ModTags.HEAT_SOURCES).add(TFBlocks.FIERY_BLOCK.get());
+	public static void genBlockTag(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {
+		pvd.addTag(ModTags.HEAT_SOURCES).add(TFBlocks.FIERY_BLOCK.get());
 	}
 
 }

@@ -16,7 +16,7 @@ public abstract class RangeSearchEffect extends MobEffect {
 
 	public <T extends Entity> List<T> getEntitiesInRange(LivingEntity center, Class<T> cls) {
 		Vec3 pos = center.position();
-		return center.getLevel().getEntitiesOfClass(cls, center.getBoundingBox().inflate(getRange()), e -> true)
+		return center.level().getEntitiesOfClass(cls, center.getBoundingBox().inflate(getRange()), e -> true)
 				.stream().sorted(Comparator.comparingDouble(entcnd -> entcnd.distanceToSqr(pos)))
 				.collect(Collectors.toList());
 	}
@@ -35,7 +35,7 @@ public abstract class RangeSearchEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		if (entity.level.isClientSide()) return;
+		if (entity.level().isClientSide()) return;
 		if (entity.tickCount % 10 == 0) {
 			searchEntities(entity, amplifier);
 		}

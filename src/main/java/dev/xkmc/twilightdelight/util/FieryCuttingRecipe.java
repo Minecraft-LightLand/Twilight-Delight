@@ -53,7 +53,7 @@ public class FieryCuttingRecipe extends CuttingBoardRecipe {
 			if (opt.isEmpty()) {
 				ans.add(stack);
 			} else {
-				ItemStack result = opt.get().assemble(cont);
+				ItemStack result = opt.get().assemble(cont, level.registryAccess());
 				result.setCount(stack.getCount());
 				ans.add(result);
 				particle += stack.getCount();

@@ -1,7 +1,8 @@
 package dev.xkmc.twilightdelight.content.recipe;
 
-import dev.xkmc.l2library.base.recipe.BaseRecipe;
-import dev.xkmc.l2library.serial.SerialClass;
+import dev.xkmc.l2library.serial.recipe.BaseRecipe;
+import dev.xkmc.l2serial.serialization.SerialClass;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -26,7 +27,7 @@ public class BaseEffectRecipe<T extends BaseEffectRecipe<T>> extends BaseRecipe<
 	}
 
 	@Override
-	public ItemStack assemble(WorldInv worldInv) {
+	public ItemStack assemble(WorldInv worldInv, RegistryAccess access) {
 		var ans = result.copy();
 		ans.setCount(result.getCount() * worldInv.getItem(0).getCount());
 		return ans;
@@ -38,7 +39,7 @@ public class BaseEffectRecipe<T extends BaseEffectRecipe<T>> extends BaseRecipe<
 	}
 
 	@Override
-	public ItemStack getResultItem() {
+	public ItemStack getResultItem(RegistryAccess access) {
 		return result;
 	}
 

@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.init.registrate.delight;
 
-import dev.xkmc.l2library.repack.registrate.util.entry.ItemEntry;
+import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import net.minecraft.world.effect.MobEffects;

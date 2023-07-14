@@ -27,8 +27,8 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    //mappings channel: 'official', version: "${minecraft_version}"
-    mappings channel: 'parchment', version: '2022.08.14-1.19.2'
+    mappings channel: 'official', version: "${minecraft_version}"
+    //mappings channel: 'parchment', version: '2022.08.14-1.19.2'
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     runs {
         client {
@@ -121,38 +121,40 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
 
-    //compileOnly fg.deobf(jarJar("com.tterrag.registrate:Registrate:${registrate_version}")){
-    //    transitive = false
-    //    jarJar.ranged(it, "[MC1.19-1.1.5,)")
-    //}
-
-
-    implementation fg.deobf(jarJar("dev.xkmc.l2library:l2library:1.9.7")) {
+    compileOnly fg.deobf(jarJar("com.tterrag.registrate:Registrate:${registrate_version}")){
         transitive = false
-        jarJar.ranged(it, "[1.9.6,)")
+        jarJar.ranged(it, "[MC1.20-1.3.3,)")
     }
 
-    implementation fg.deobf("curse.maven:farmers-delight-398521:4636013")
-    implementation fg.deobf('curse.maven:the-twilight-forest-227639:4075841')
+    implementation fg.deobf(jarJar("dev.xkmc.l2serial:l2serial:1.2.0")) {
+        transitive = false
+        jarJar.ranged(it, "[1.2.0,)")
+    }
+
+    implementation fg.deobf(jarJar("dev.xkmc.l2library:l2library:2.4.8-slim")) {
+        transitive = false
+        jarJar.ranged(it, "[2.4.8,)")
+    }
+
+    implementation fg.deobf("curse.maven:farmers-delight-398521:4638874")
     implementation fg.deobf("mezz.jei:jei-${jei_minecraft_version}:${jei_version}")
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
+    implementation fg.deobf("curse.maven:blueprint-382216:4594238")
+    compileOnly fg.deobf('curse.maven:neapolitan-382016:4023083')
+    //compileOnly fg.deobf("curse.maven:create-central-kitchen-820977:4569833")
+    //implementation fg.deobf("curse.maven:create-enchantment-industry-688768:4571835")
+    implementation fg.deobf("curse.maven:just-enough-effect-descriptions-jeed-532286:4599236")
 
-    implementation fg.deobf('curse.maven:blueprint-382216:4442628')
-    implementation fg.deobf('curse.maven:neapolitan-382016:4023083')
-    implementation fg.deobf("curse.maven:create-328085:4550987")
-    implementation fg.deobf("curse.maven:create-enchantment-industry-688768:4571835")
-    implementation fg.deobf("curse.maven:just-enough-effect-descriptions-jeed-532286:4599099")
 
-    compileOnly fg.deobf("curse.maven:create-central-kitchen-820977:4569833")
-    runtimeOnly fg.deobf('curse.maven:wthit-forge-455982:3947982')
-    runtimeOnly fg.deobf('curse.maven:badpackets-615134:3903799')
+    runtimeOnly fg.deobf("curse.maven:badpackets-615134:4438956")
+    runtimeOnly fg.deobf("curse.maven:wthit-forge-455982:4596739")
+    implementation fg.deobf("curse.maven:create-328085:4626108")
+    implementation fg.deobf("curse.maven:the-twilight-forest-227639:4635921")
 
-    runtimeOnly fg.deobf('curse.maven:appleskin-248787:3872808')
+    runtimeOnly fg.deobf("curse.maven:appleskin-248787:4605078")
+    runtimeOnly fg.deobf("curse.maven:patchouli-306770:4633797")
 
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
-    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
-
-    runtimeOnly fg.deobf("curse.maven:rubidium-574856:4573226")
+    //runtimeOnly fg.deobf("curse.maven:rubidium-574856:4573226")
 
 }
 

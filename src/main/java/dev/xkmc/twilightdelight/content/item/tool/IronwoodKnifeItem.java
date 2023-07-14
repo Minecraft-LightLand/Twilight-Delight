@@ -1,5 +1,6 @@
 package dev.xkmc.twilightdelight.content.item.tool;
 
+import com.tterrag.registrate.util.CreativeModeTabModifier;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -12,11 +13,8 @@ public class IronwoodKnifeItem extends TDKnifeItem {
 		super(TwilightItemTier.IRONWOOD, properties);
 	}
 
-	@Override
-	public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> list) {
-		if (allowedIn(tab)) {
-			list.add(getDefault());
-		}
+	public void fillItemCategory(CreativeModeTabModifier tab){
+		tab.accept(getDefault());
 	}
 
 	public ItemStack getDefault() {

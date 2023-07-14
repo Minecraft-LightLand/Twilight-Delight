@@ -30,12 +30,12 @@ public class FrozenRange extends RangeRenderEffect {
 		super.searchEntities(entity, amplifier);
 		for (ItemEntity e : getEntitiesInRange(entity, ItemEntity.class)) {
 			var inv = new WorldInv(e.getItem());
-			var opt = entity.level.getRecipeManager().getRecipeFor(TDRecipes.WORLD_RECIPE.get(), inv, entity.level);
+			var opt = entity.level().getRecipeManager().getRecipeFor(TDRecipes.WORLD_RECIPE.get(), inv, entity.level());
 			if (opt.isPresent()) {
 				e.setTicksFrozen(e.getTicksFrozen() + 10);
-				e.level.broadcastEntityEvent(e, EntityEvent.FROZEN);
+				e.level().broadcastEntityEvent(e, EntityEvent.FROZEN);
 				if (e.isFullyFrozen()) {
-					e.setItem(opt.get().assemble(inv));
+					e.setItem(opt.get().assemble(inv, entity.level().registryAccess()));
 					e.setTicksFrozen(0);
 				}
 			}

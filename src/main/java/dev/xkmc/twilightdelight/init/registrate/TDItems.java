@@ -1,17 +1,17 @@
 package dev.xkmc.twilightdelight.init.registrate;
 
+import com.tterrag.registrate.builders.ItemBuilder;
+import com.tterrag.registrate.util.entry.ItemEntry;
+import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.l2library.base.L2Registrate;
-import dev.xkmc.l2library.repack.registrate.builders.ItemBuilder;
-import dev.xkmc.l2library.repack.registrate.util.entry.ItemEntry;
-import dev.xkmc.l2library.repack.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.twilightdelight.content.item.tool.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
 import dev.xkmc.twilightdelight.init.registrate.delight.IFoodType;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.client.model.generators.loaders.ItemLayersModelBuilder;
-import net.minecraftforge.common.Tags;
+import net.minecraftforge.client.model.generators.loaders.ItemLayerModelBuilder;
 import org.apache.commons.lang3.StringUtils;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
@@ -39,11 +39,11 @@ public class TDItems {
 		KNIGHTMETAL_KNIFE = handheld("knightmetal_knife", KnightmetalKnifeItem::new).lang("Knightly Knife").tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).register();
 
 		FIERY_KNIFE = handheld("fiery_knife", FieryKnifeItem::new)
-				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayersModelBuilder::begin).emissive(0))
+				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))
 				.tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).register();
 		TEARDROP_SWORD = handheld("teardrop_sword", TeardropSwordItem::new)
-				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayersModelBuilder::begin).emissive(0))
-				.tag(Tags.Items.TOOLS_SWORDS).register();
+				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))
+				.tag(ItemTags.SWORDS).register();
 	}
 
 	public static ItemEntry<Item> simpleFood(IFoodType r, String name, int nutrition, float saturation, EffectSupplier... effects) {

@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.mixin;
 
-import dev.xkmc.l2library.util.code.Wrappers;
+import dev.xkmc.l2serial.util.Wrappers;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import net.minecraft.core.BlockPos;
@@ -83,7 +83,7 @@ public abstract class CookingPotBlockEntityMixin extends SyncedBlockEntity imple
 		boolean fiery = getBlockState().is(TDBlocks.FIERY_POT.get());
 		boolean maze = below.getBlock() == TDBlocks.MAZE_STOVE.get();
 		if (fiery || maze) {
-			Item item = recipe.getResultItem().getItem();
+			Item item = recipe.getResultItem(level.registryAccess()).getItem();
 			ResourceLocation id = ForgeRegistries.ITEMS.getKey(item);
 			if (id != null && (id.getNamespace().equals(TwilightForestMod.ID) || id.getNamespace().equals(TwilightDelight.MODID))) {
 				int time = recipe.getCookTime();

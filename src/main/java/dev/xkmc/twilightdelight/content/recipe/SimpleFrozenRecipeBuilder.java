@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.content.recipe;
 
-import dev.xkmc.l2library.base.recipe.BaseRecipeBuilder;
+import dev.xkmc.l2library.serial.recipe.BaseRecipeBuilder;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

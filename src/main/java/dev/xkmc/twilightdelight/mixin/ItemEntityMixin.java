@@ -20,11 +20,11 @@ public abstract class ItemEntityMixin extends Entity {
 
 	@Inject(at = @At("HEAD"), method = "tick")
 	public void twilightdelight$tick$frozen(CallbackInfo ci) {
-		if (getType() == EntityType.ITEM && level.isClientSide()) {
-			if (getTicksFrozen() > 0 && level.random.nextBoolean()) {
-				double x = Mth.randomBetween(level.getRandom(), -1, 1) / 12;
-				double z = Mth.randomBetween(level.getRandom(), -1, 1) / 12;
-				level.addParticle(ParticleTypes.SNOWFLAKE, getX(), getY() + getBbHeight() / 2, getZ(), x, 0.05f, z);
+		if (getType() == EntityType.ITEM && level().isClientSide()) {
+			if (getTicksFrozen() > 0 && level().random.nextBoolean()) {
+				double x = Mth.randomBetween(level().getRandom(), -1, 1) / 12;
+				double z = Mth.randomBetween(level().getRandom(), -1, 1) / 12;
+				level().addParticle(ParticleTypes.SNOWFLAKE, getX(), getY() + getBbHeight() / 2, getZ(), x, 0.05f, z);
 			}
 		}
 	}

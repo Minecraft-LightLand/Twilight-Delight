@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.init.data;
 
-import dev.xkmc.l2library.repack.registrate.util.entry.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.mixin.AddItemModifierAccessor;
@@ -24,7 +24,7 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 public class GLMGen extends GlobalLootModifierProvider {
 
 	public GLMGen(DataGenerator gen) {
-		super(gen, TwilightDelight.MODID);
+		super(gen.getPackOutput(), TwilightDelight.MODID);
 	}
 
 	@Override

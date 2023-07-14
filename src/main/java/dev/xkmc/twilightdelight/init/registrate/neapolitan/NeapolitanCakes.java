@@ -1,10 +1,10 @@
 package dev.xkmc.twilightdelight.init.registrate.neapolitan;
 
 import com.teamabnormals.neapolitan.common.block.FlavoredCandleCakeBlock;
-import dev.xkmc.l2library.repack.registrate.providers.DataGenContext;
-import dev.xkmc.l2library.repack.registrate.providers.RegistrateBlockstateProvider;
-import dev.xkmc.l2library.repack.registrate.util.entry.BlockEntry;
-import dev.xkmc.l2library.repack.registrate.util.entry.ItemEntry;
+import com.tterrag.registrate.providers.DataGenContext;
+import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
+import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.twilightdelight.compat.neapolitan.TDCakeBlock;
 import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
@@ -12,7 +12,6 @@ import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFoodType;
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
-import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffects;
@@ -23,23 +22,24 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Locale;
 
 public enum NeapolitanCakes {
-	AURORA(MaterialColor.COLOR_CYAN,
+	AURORA(MapColor.COLOR_CYAN,
 			new EffectSupplier(TDEffects.AURORA_GLOWING, 300, 0, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 300, 2, 1),
 			new EffectSupplier(() -> MobEffects.JUMP, 300, 1, 1)),
-	TORCHBERRY(MaterialColor.COLOR_YELLOW,
+	TORCHBERRY(MapColor.COLOR_YELLOW,
 			new EffectSupplier(TDEffects.FIRE_RANGE, 300, 0, 1)),
-	PHYTOCHEMICAL(MaterialColor.COLOR_GREEN,
+	PHYTOCHEMICAL(MapColor.COLOR_GREEN,
 			new EffectSupplier(TDEffects.POISON_RANGE, 300, 0, 1)),
-	GLACIER(MaterialColor.COLOR_LIGHT_BLUE,
+	GLACIER(MapColor.COLOR_LIGHT_BLUE,
 			new EffectSupplier(TDEffects.FROZEN_RANGE, 300, 0, 1)),
 	;
 
@@ -50,11 +50,12 @@ public enum NeapolitanCakes {
 	public final BlockEntry<FlavoredCandleCakeBlock>[] colored_candles;
 	public final ItemEntry<TDFoodItem> item;
 
-	@SuppressWarnings({"unchecked", "rawtype", "unsafe", "deprecation"})
-	NeapolitanCakes(MaterialColor color, EffectSupplier... effects) {
+	@SuppressWarnings({"unchecked", "rawtype", "unsafe"})
+	NeapolitanCakes(MapColor color, EffectSupplier... effects) {
 		base = name().toLowerCase(Locale.ROOT);
 		var food = TDItems.simpleFood(DelightFoodType.NONE, 1, 0.1f, effects);
-		var props = BlockBehaviour.Properties.of(Material.CAKE, color).strength(0.5F).sound(SoundType.WOOL);
+		var props = BlockBehaviour.Properties.of().mapColor(color).forceSolidOn().strength(0.5F)
+				.sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY);
 		item = TwilightDelight.REGISTRATE.item(base + "_cake_slice", p -> new TDFoodItem(p.food(food)))
 				.defaultModel().defaultLang().register();
 		block = TwilightDelight.REGISTRATE.block(base + "_cake", p -> new TDCakeBlock(food, props, this))
@@ -69,7 +70,8 @@ public enum NeapolitanCakes {
 		colored_candles = new BlockEntry[DyeColor.values().length];
 		for (DyeColor dye : DyeColor.values()) {
 			String color_name = dye.getName();
-			Block candle = Registry.BLOCK.get(new ResourceLocation(color_name + "_candle"));
+			Block candle = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(color_name + "_candle"));
+			assert candle != null;
 			this.colored_candles[dye.ordinal()] = TwilightDelight.REGISTRATE.block(color_name + "_" + base + "_candle_cake",
 							p -> new FlavoredCandleCakeBlock(block::get, candle, props))
 					.blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, color_name + "_candle"))

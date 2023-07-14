@@ -13,7 +13,7 @@ public class EntityMixin {
 	@Inject(at = @At("HEAD"), method = "getTeamColor", cancellable = true)
 	public void twilightdelight$getTeamColor$renderShiny(CallbackInfoReturnable<Integer> cir) {
 		Entity self = (Entity) (Object) this;
-		if (self.level.isClientSide() && AuroraGlowing.shouldRender(self)) {
+		if (self.level().isClientSide() && AuroraGlowing.shouldRender(self)) {
 			cir.setReturnValue(AuroraGlowing.getColor(self));
 		}
 	}
@@ -21,7 +21,7 @@ public class EntityMixin {
 	@Inject(at = @At("HEAD"), method = "isCurrentlyGlowing", cancellable = true)
 	public void twilightdelight$isCurrentlyGlowing$renderShinny(CallbackInfoReturnable<Boolean> cir) {
 		Entity self = (Entity) (Object) this;
-		if (self.level.isClientSide()) {
+		if (self.level().isClientSide()) {
 			if (AuroraGlowing.shouldRender(self)) {
 				cir.setReturnValue(true);
 			}

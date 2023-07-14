@@ -1,7 +1,7 @@
 package dev.xkmc.twilightdelight.init.registrate.neapolitan;
 
-import dev.xkmc.l2library.repack.registrate.providers.DataGenContext;
-import dev.xkmc.l2library.repack.registrate.providers.RegistrateItemModelProvider;
+import com.tterrag.registrate.providers.DataGenContext;
+import com.tterrag.registrate.providers.RegistrateItemModelProvider;
 import dev.xkmc.twilightdelight.compat.neapolitan.TDMilkshakeItem;
 import dev.xkmc.twilightdelight.content.item.food.InBowlItem;
 import dev.xkmc.twilightdelight.init.registrate.delight.IFoodType;

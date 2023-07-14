@@ -1,7 +1,7 @@
 package dev.xkmc.twilightdelight.init.registrate.neapolitan;
 
 import com.teamabnormals.neapolitan.core.registry.NeapolitanMobEffects;
-import dev.xkmc.l2library.repack.registrate.util.entry.ItemEntry;
+import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;

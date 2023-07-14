@@ -3,10 +3,11 @@ package dev.xkmc.twilightdelight.init.data;
 import com.google.gson.JsonObject;
 import com.teamabnormals.neapolitan.core.Neapolitan;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
-import dev.xkmc.l2library.repack.registrate.providers.RegistrateRecipeProvider;
-import dev.xkmc.l2library.repack.registrate.util.DataIngredient;
-import dev.xkmc.l2library.repack.registrate.util.entry.ItemEntry;
-import dev.xkmc.twilightdelight.compat.jeed.JeedDataGenerator;
+import com.tterrag.registrate.providers.RegistrateRecipeProvider;
+import com.tterrag.registrate.util.DataIngredient;
+import com.tterrag.registrate.util.entry.ItemEntry;
+import dev.xkmc.l2library.compat.jeed.JeedDataGenerator;
+import dev.xkmc.l2library.serial.recipe.ConditionalRecipeWrapper;
 import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipeBuilder;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
@@ -17,10 +18,7 @@ import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import net.mehvahdjukaar.jeed.Jeed;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
-import net.minecraft.data.recipes.UpgradeRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -53,37 +51,37 @@ public class RecipeGen {
 		// tool crafting
 		{
 
-			unlock(pvd, new ShapedRecipeBuilder(TDItems.FIERY_KNIFE.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.FIERY_KNIFE.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
 					.pattern("A").pattern("B")
 					.define('A', TFItems.FIERY_INGOT.get())
 					.define('B', Items.BLAZE_ROD)
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(TDItems.FIERY_KNIFE.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.MISC, TDItems.FIERY_KNIFE.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
 					.requires(ModItems.IRON_KNIFE.get())
 					.requires(ItemTagGenerator.FIERY_VIAL)
 					.requires(Items.BLAZE_ROD)
 					.save(pvd, getID(TDItems.FIERY_KNIFE.getId(), "alt"));
 
-			unlock(pvd, new ShapedRecipeBuilder(TDItems.IRONWOOD_KNIFE.get(), 1)::unlockedBy, TFItems.IRONWOOD_INGOT.get())
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.IRONWOOD_KNIFE.get(), 1)::unlockedBy, TFItems.IRONWOOD_INGOT.get())
 					.pattern("A").pattern("B")
 					.define('A', TFItems.IRONWOOD_INGOT.get())
 					.define('B', Tags.Items.RODS_WOODEN)
 					.save(e -> pvd.accept(new NBTRecipe(e, TDItems.IRONWOOD_KNIFE.get().getDefault())));
 
-			unlock(pvd, new ShapedRecipeBuilder(TDItems.STEELEAF_KNIFE.get(), 1)::unlockedBy, TFItems.STEELEAF_INGOT.get())
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.STEELEAF_KNIFE.get(), 1)::unlockedBy, TFItems.STEELEAF_INGOT.get())
 					.pattern("A").pattern("B")
 					.define('A', TFItems.STEELEAF_INGOT.get())
 					.define('B', Tags.Items.RODS_WOODEN)
 					.save(e -> pvd.accept(new NBTRecipe(e, TDItems.STEELEAF_KNIFE.get().getDefault())));
 
-			unlock(pvd, new ShapedRecipeBuilder(TDItems.KNIGHTMETAL_KNIFE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.KNIGHTMETAL_KNIFE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
 					.pattern("A").pattern("B")
 					.define('A', TFItems.KNIGHTMETAL_INGOT.get())
 					.define('B', Tags.Items.RODS_WOODEN)
 					.save(pvd);
 
-			unlock(pvd, new ShapedRecipeBuilder(TDBlocks.MAZE_STOVE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDBlocks.MAZE_STOVE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
 					.pattern("KKK").pattern("MTM").pattern("MCM")
 					.define('K', TFItems.KNIGHTMETAL_INGOT.get())
 					.define('M', TFBlocks.MAZESTONE_BRICK.get())
@@ -91,7 +89,7 @@ public class RecipeGen {
 					.define('C', Items.CAMPFIRE)
 					.save(pvd);
 
-			unlock(pvd, new ShapedRecipeBuilder(TDBlocks.FIERY_POT.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDBlocks.FIERY_POT.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
 					.pattern("BSB").pattern("FWF").pattern("FFF")
 					.define('F', TFItems.FIERY_INGOT.get())
 					.define('B', TFBlocks.MAZESTONE_BRICK.get())
@@ -99,20 +97,22 @@ public class RecipeGen {
 					.define('W', Items.WATER_BUCKET)
 					.save(pvd);
 
-			unlock(pvd, UpgradeRecipeBuilder.smithing(Ingredient.of(TFItems.FIERY_SWORD.get()),
+			unlock(pvd, SmithingTransformRecipeBuilder.smithing(Ingredient.EMPTY,
+					Ingredient.of(TFItems.FIERY_SWORD.get()),
 					Ingredient.of(DelightFood.EXPERIMENT_110.item.get()),
+					RecipeCategory.MISC,
 					TDItems.TEARDROP_SWORD.get())::unlocks, DelightFood.EXPERIMENT_110.item.get())
 					.save(pvd, TDItems.TEARDROP_SWORD.getId());
 		}
 
 		//misc
 		{
-			unlock(pvd, new ShapelessRecipeBuilder(TFItems.RAW_IRONWOOD.get(), 1)::unlockedBy,
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.MISC, TFItems.RAW_IRONWOOD.get(), 1)::unlockedBy,
 					TFItems.LIVEROOT.get()).requires(TFItems.LIVEROOT.get())
 					.requires(Items.IRON_INGOT).requires(Items.GOLD_NUGGET)
 					.save(pvd, getID(TFItems.RAW_IRONWOOD.getId()));
 
-			pvd.storage(TFItems.TORCHBERRIES::get, TDBlocks.TORCHBERRIES_CRATE);
+			pvd.storage(TFItems.TORCHBERRIES::get, RecipeCategory.MISC, TDBlocks.TORCHBERRIES_CRATE);
 
 		}
 
@@ -128,32 +128,32 @@ public class RecipeGen {
 		// food crafting
 		{
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.BERRY_STICK.item.get(), 1)::unlockedBy, TFItems.TORCHBERRIES.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.BERRY_STICK.item.get(), 1)::unlockedBy, TFItems.TORCHBERRIES.get())
 					.requires(Items.SWEET_BERRIES).requires(Items.GLOW_BERRIES).requires(TFItems.TORCHBERRIES.get())
 					.requires(Items.STICK).save(pvd);
 
-			unlock(pvd, new ShapedRecipeBuilder(DelightFood.TORCHBERRY_COOKIE.item.get(), 8)::unlockedBy, TFItems.TORCHBERRIES.get())
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, DelightFood.TORCHBERRY_COOKIE.item.get(), 8)::unlockedBy, TFItems.TORCHBERRIES.get())
 					.pattern("BAB")
 					.define('A', TFItems.TORCHBERRIES.get())
 					.define('B', Items.WHEAT)
 					.save(pvd);
 
-			unlock(pvd, new ShapedRecipeBuilder(TFItems.MAZE_WAFER.get(), 12)::unlockedBy, TFItems.LIVEROOT.get())
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, TFItems.MAZE_WAFER.get(), 12)::unlockedBy, TFItems.LIVEROOT.get())
 					.pattern("AAA").pattern("BCB").pattern("AAA")
 					.define('A', Items.WHEAT)
 					.define('B', TagGen.MILK)
 					.define('C', TFItems.LIVEROOT.get())
 					.save(pvd, getID(TFItems.MAZE_WAFER.getId()));
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GLACIER_ICE_TEA.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.GLACIER_ICE_TEA.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
 					.requires(Items.GLASS_BOTTLE).requires(TFItems.ICE_BOMB.get())
 					.requires(Items.ICE).requires(TFItems.ARCTIC_FUR.get())
 					.requires(Items.SUGAR).save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.TWILIGHT_SPRING.item.get(), 1)::unlockedBy, TFItems.RAW_IRONWOOD.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.TWILIGHT_SPRING.item.get(), 1)::unlockedBy, TFItems.RAW_IRONWOOD.get())
 					.requires(Items.GLASS_BOTTLE).requires(TFItems.RAW_IRONWOOD.get()).requires(Items.ICE).save(pvd);
 
-			unlock(pvd, new ShapedRecipeBuilder(TDBlocks.MEEF_WELLINGTON.get(), 1)::unlockedBy, DelightFood.MUSHGLOOM_SAUCE.item.get())
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, TDBlocks.MEEF_WELLINGTON.get(), 1)::unlockedBy, DelightFood.MUSHGLOOM_SAUCE.item.get())
 					.pattern("BAB").pattern("DCD").pattern("FEF")
 					.define('A', ModItems.PIE_CRUST.get())
 					.define('B', Tags.Items.EGGS)
@@ -163,36 +163,36 @@ public class RecipeGen {
 					.define('F', ModItems.BACON.get())
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.MEEF_WRAP.item.get(), 1)::unlockedBy, TFItems.RAW_MEEF.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.MEEF_WRAP.item.get(), 1)::unlockedBy, TFItems.RAW_MEEF.get())
 					.requires(ForgeTags.BREAD).requires(TagGen.MEEF_COOKED)
 					.requires(ForgeTags.SALAD_INGREDIENTS)
 					.requires(ForgeTags.CROPS_ONION)
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.CHOCOLATE_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.CHOCOLATE_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
 					.requires(DelightFood.EXPERIMENT_113.item.get())
 					.requires(TagGen.MILK)
 					.requires(Items.SUGAR)
 					.requires(Items.COCOA_BEANS)
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.MILKY_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.MILKY_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
 					.requires(DelightFood.EXPERIMENT_113.item.get())
 					.requires(TagGen.MILK)
 					.requires(Items.SUGAR)
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.HONEY_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.HONEY_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
 					.requires(DelightFood.EXPERIMENT_113.item.get())
 					.requires(Items.HONEY_BOTTLE)
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GLOW_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.GLOW_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
 					.requires(DelightFood.EXPERIMENT_113.item.get())
 					.requires(DelightFood.GLOWSTEW.item.get())
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GHAST_BURGER.item.get(), 1)::unlockedBy, TFItems.EXPERIMENT_115.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.GHAST_BURGER.item.get(), 1)::unlockedBy, TFItems.EXPERIMENT_115.get())
 					.requires(ForgeTags.BREAD)
 					.requires(TFItems.EXPERIMENT_115.get())
 					.requires(ForgeTags.VEGETABLES_BEETROOT)
@@ -200,7 +200,7 @@ public class RecipeGen {
 					.requires(ForgeTags.CROPS_ONION)
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.HYDRA_BURGER.item.get(), 1)::unlockedBy, TFItems.HYDRA_CHOP.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.HYDRA_BURGER.item.get(), 1)::unlockedBy, TFItems.HYDRA_CHOP.get())
 					.requires(ForgeTags.BREAD)
 					.requires(TagGen.HYDRA_MEAT)
 					.requires(ForgeTags.SALAD_INGREDIENTS)
@@ -208,13 +208,13 @@ public class RecipeGen {
 					.requires(ForgeTags.CROPS_ONION)
 					.save(pvd);
 
-			unlock(pvd, new ShapedRecipeBuilder(DelightFood.CHOCOLATE_WAFER.item.get(), 1)::unlockedBy, TFItems.MAZE_WAFER.get())
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, DelightFood.CHOCOLATE_WAFER.item.get(), 1)::unlockedBy, TFItems.MAZE_WAFER.get())
 					.pattern("A").pattern("B").pattern("A")
 					.define('A', TFItems.MAZE_WAFER.get())
 					.define('B', Items.COCOA_BEANS)
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.BORER_TEAR_SOUP.item.get(), 1)::unlockedBy, TFItems.BORER_ESSENCE.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.BORER_TEAR_SOUP.item.get(), 1)::unlockedBy, TFItems.BORER_ESSENCE.get())
 					.requires(Items.BOWL)
 					.requires(Items.BEETROOT)
 					.requires(Items.BEETROOT)
@@ -223,7 +223,7 @@ public class RecipeGen {
 					.requires(TFItems.BORER_ESSENCE.get())
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(DelightFood.GHAST_BRAIN_SALAD.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_110.item.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.GHAST_BRAIN_SALAD.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_110.item.get())
 					.requires(Items.BOWL)
 					.requires(ForgeTags.SALAD_INGREDIENTS)
 					.requires(ForgeTags.CROPS_ONION)
@@ -471,13 +471,13 @@ public class RecipeGen {
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.PHANTOM_HELMET.get()),
-							Ingredient.of(Tags.Items.TOOLS_PICKAXES),
+							Ingredient.of(ItemTags.PICKAXES),
 							TFItems.ARMOR_SHARD_CLUSTER.get(), 3)
 					.build(pvd, getID(TFItems.PHANTOM_HELMET.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.PHANTOM_CHESTPLATE.get()),
-							Ingredient.of(Tags.Items.TOOLS_PICKAXES),
+							Ingredient.of(ItemTags.PICKAXES),
 							TFItems.ARMOR_SHARD_CLUSTER.get(), 5)
 					.build(pvd, getID(TFItems.PHANTOM_CHESTPLATE.getId()));
 
@@ -536,19 +536,19 @@ public class RecipeGen {
 					NeapolitanCakes.TORCHBERRY,
 					TFItems.TORCHBERRIES.get());
 
-			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.TWILIGHT_ICE_CREAM.item.get(), 3)::unlockedBy, TFItems.TORCHBERRIES.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, NeapolitanFood.TWILIGHT_ICE_CREAM.item.get(), 3)::unlockedBy, TFItems.TORCHBERRIES.get())
 					.requires(NeapolitanFood.TORCHBERRY_ICE_CREAM.item.get())
 					.requires(NeapolitanItems.CHOCOLATE_ICE_CREAM.get())
 					.requires(NeapolitanItems.STRAWBERRY_ICE_CREAM.get())
 					.requires(Items.BOWL, 3).save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.RAINBOW_ICE_CREAM.item.get(), 3)::unlockedBy, TFBlocks.AURORA_BLOCK.get().asItem())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, NeapolitanFood.RAINBOW_ICE_CREAM.item.get(), 3)::unlockedBy, TFBlocks.AURORA_BLOCK.get().asItem())
 					.requires(NeapolitanFood.AURORA_ICE_CREAM.item.get())
 					.requires(NeapolitanItems.BANANA_ICE_CREAM.get())
 					.requires(NeapolitanItems.ADZUKI_ICE_CREAM.get())
 					.requires(Items.BOWL, 3).save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.REFRESHING_ICE_CREAM.item.get(), 3)::unlockedBy, TFItems.ICE_BOMB.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, NeapolitanFood.REFRESHING_ICE_CREAM.item.get(), 3)::unlockedBy, TFItems.ICE_BOMB.get())
 					.requires(NeapolitanFood.GLACIER_ICE_CREAM.item.get())
 					.requires(NeapolitanItems.MINT_ICE_CREAM.get())
 					.requires(NeapolitanFood.PHYTOCHEMICAL_ICE_CREAM.item.get())
@@ -557,29 +557,30 @@ public class RecipeGen {
 		}
 
 		if (ModList.get().isLoaded(Jeed.MOD_ID)) {
-			JeedDataGenerator.add(TDItems.TEARDROP_SWORD.get(), TDEffects.TEMPORAL_SADNESS.get());
-			JeedDataGenerator.finalizeRecipes(pvd);
+			var gen = new JeedDataGenerator(TwilightDelight.MODID);
+			gen.add(TDItems.TEARDROP_SWORD.get(), TDEffects.TEMPORAL_SADNESS.get());
+			gen.generate(pvd);
 		}
 	}
 
 	private static void neapolitan(RegistrateRecipeProvider pvd, ItemEntry<?> ice_cream, ItemEntry<?> milkshake, NeapolitanCakes cake, Item ingredient) {
 		TagKey<Item> milk = ItemTags.create(new ResourceLocation("forge", "milk"));
-		unlock(pvd, new ShapelessRecipeBuilder(ice_cream.get(), 1)::unlockedBy, ingredient)
+		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, ice_cream.get(), 1)::unlockedBy, ingredient)
 				.requires(Items.BOWL).requires(milk).requires(NeapolitanItems.ICE_CUBES.get()).requires(Items.SUGAR)
 				.requires(ingredient)
 				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(ice_cream.getId()));
 
-		unlock(pvd, new ShapelessRecipeBuilder(milkshake.get(), 3)::unlockedBy, ingredient)
+		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, milkshake.get(), 3)::unlockedBy, ingredient)
 				.requires(Items.GLASS_BOTTLE, 3).requires(milk).requires(NeapolitanItems.VANILLA_ICE_CREAM.get())
 				.requires(ingredient)
 				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(milkshake.getId()));
 
-		unlock(pvd, new ShapelessRecipeBuilder(milkshake.get(), 3)::unlockedBy, ingredient)
+		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, milkshake.get(), 3)::unlockedBy, ingredient)
 				.requires(Items.GLASS_BOTTLE, 3).requires(milk).requires(ice_cream.get())
 				.requires(NeapolitanItems.DRIED_VANILLA_PODS.get())
 				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(milkshake.getId()) + "_alt");
 
-		unlock(pvd, new ShapedRecipeBuilder(cake.block.get().asItem(), 1)::unlockedBy, ingredient)
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, cake.block.get().asItem(), 1)::unlockedBy, ingredient)
 				.pattern("MXM").pattern("SES").pattern("WXW")
 				.define('M', milk).define('S', Items.SUGAR)
 				.define('W', Items.WHEAT).define('E', Items.EGG)
@@ -592,7 +593,7 @@ public class RecipeGen {
 						cake.item.get(), 7)
 				.build(pvd, getID(cake.item.getId()));
 
-		unlock(pvd, new ShapelessRecipeBuilder(cake.block.get(), 1)::unlockedBy, cake.item.get())
+		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, cake.block.get(), 1)::unlockedBy, cake.item.get())
 				.requires(cake.item.get(), 7)
 				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cake.block.getId()) + "_assemble");
 	}
@@ -610,9 +611,9 @@ public class RecipeGen {
 	}
 
 	private static void tripleCook(RegistrateRecipeProvider pvd, DataIngredient in, Supplier<Item> out, int exp) {
-		pvd.smelting(in, out, exp, 200);
-		pvd.smoking(in, out, exp, 100);
-		pvd.campfire(in, out, exp, 300);
+		pvd.smelting(in, RecipeCategory.FOOD, out, exp, 200);
+		pvd.smoking(in, RecipeCategory.FOOD, out, exp, 100);
+		pvd.campfire(in, RecipeCategory.FOOD, out, exp, 300);
 	}
 
 	private record NBTRecipe(FinishedRecipe recipe, ItemStack stack) implements FinishedRecipe {

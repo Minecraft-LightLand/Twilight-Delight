@@ -4,9 +4,9 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.neapolitan.core.Neapolitan;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
+import com.tterrag.registrate.providers.ProviderType;
 import dev.xkmc.l2library.base.L2Registrate;
-import dev.xkmc.l2library.base.effects.EffectSyncEvents;
-import dev.xkmc.l2library.repack.registrate.providers.ProviderType;
+import dev.xkmc.l2library.init.events.EffectSyncEvents;
 import dev.xkmc.twilightdelight.events.NeapolitanEventListeners;
 import dev.xkmc.twilightdelight.init.data.*;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
@@ -68,7 +68,7 @@ public class TwilightDelight {
 			TreeConfig.register();
 			StoveAddBlockUtil.addBlock(ModBlockEntityTypes.STOVE.get(), TDBlocks.MAZE_STOVE.get());
 			StoveAddBlockUtil.addBlock(ModBlockEntityTypes.COOKING_POT.get(), TDBlocks.FIERY_POT.get());
-			((FoodPropertiesAccessor) TFItems.STROGANOFF).getEffectSupplierList()
+			((FoodPropertiesAccessor) TFItems.MEEF_STROGANOFF.get()).getEffectSupplierList()
 					.add(Pair.of(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000), 1f));
 
 			ComposterBlock.COMPOSTABLES.put(TDBlocks.MUSHGLOOM_COLONY.get().asItem(), 1.0F);

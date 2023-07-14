@@ -1,8 +1,8 @@
 package dev.xkmc.twilightdelight.init.registrate;
 
-import dev.xkmc.l2library.repack.registrate.builders.NoConfigBuilder;
-import dev.xkmc.l2library.repack.registrate.util.entry.RegistryEntry;
-import dev.xkmc.l2library.repack.registrate.util.nullness.NonNullSupplier;
+import com.tterrag.registrate.builders.NoConfigBuilder;
+import com.tterrag.registrate.util.entry.RegistryEntry;
+import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import dev.xkmc.twilightdelight.content.effect.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import net.minecraft.world.effect.MobEffect;

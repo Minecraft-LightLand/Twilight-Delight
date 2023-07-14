@@ -1,7 +1,7 @@
 package dev.xkmc.twilightdelight.compat.jei;
 
-import dev.xkmc.l2library.base.recipe.BaseRecipeCategory;
-import dev.xkmc.l2library.util.code.Wrappers;
+import dev.xkmc.l2library.serial.recipe.BaseRecipeCategory;
+import dev.xkmc.l2serial.util.Wrappers;
 import dev.xkmc.twilightdelight.content.recipe.BaseEffectRecipe;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.data.LangData;

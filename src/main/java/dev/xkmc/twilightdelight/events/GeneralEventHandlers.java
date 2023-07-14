@@ -21,6 +21,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
@@ -41,13 +42,13 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 public class GeneralEventHandlers {
 
 	private static ObjectArrayList<ItemStack> getLoot(ServerLevel sl, ResourceLocation id, BlockState state, PlayerInteractEvent.RightClickBlock event) {
-		var ctx = new LootContext.Builder(sl)
+		var ctx = new LootParams.Builder(sl)
 				.withParameter(LootContextParams.BLOCK_STATE, state)
 				.withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(event.getPos()))
 				.withParameter(LootContextParams.TOOL, event.getItemStack())
 				.withParameter(LootContextParams.THIS_ENTITY, event.getEntity())
 				.create(LootContextParamSets.BLOCK);
-		return sl.getServer().getLootTables().get(id)
+		return sl.getServer().getLootData().getLootTable(id)
 				.getRandomItems(ctx);
 	}
 
@@ -101,7 +102,7 @@ public class GeneralEventHandlers {
 	@SubscribeEvent
 	public static void onKnightmetalToolDamage(LivingHurtEvent event) {
 		LivingEntity target = event.getEntity();
-		if (!target.getLevel().isClientSide()) {
+		if (!target.level().isClientSide()) {
 			Entity var3 = event.getSource().getDirectEntity();
 			if (var3 instanceof LivingEntity living) {
 				ItemStack weapon = living.getMainHandItem();
@@ -113,7 +114,7 @@ public class GeneralEventHandlers {
 						} else {
 							event.setAmount(event.getAmount() + 2.0F);
 						}
-						((ServerLevel) target.getLevel()).getChunkSource().broadcastAndSend(target, new ClientboundAnimatePacket(target, 5));
+						((ServerLevel) target.level()).getChunkSource().broadcastAndSend(target, new ClientboundAnimatePacket(target, 5));
 					}
 				}
 			}

@@ -34,7 +34,7 @@ public abstract class StoveBlockEntityMixin extends SyncedBlockEntity {
 	@Inject(at = @At(value = "RETURN", ordinal = 0), method = "addItem", remap = false)
 	public void twilightdelight$addItem$doubleSpeed(ItemStack stack, CampfireCookingRecipe recipe, int slot, CallbackInfoReturnable<Boolean> cir) {
 		if (getBlockState().getBlock() == TDBlocks.MAZE_STOVE.get()) {
-			Item item = recipe.getResultItem().getItem();
+			Item item = recipe.getResultItem(level.registryAccess()).getItem();
 			ResourceLocation id = ForgeRegistries.ITEMS.getKey(item);
 			if (id != null && (id.getNamespace().equals(TwilightForestMod.ID) || id.getNamespace().equals(TwilightDelight.MODID))) {
 				cookingTimesTotal[slot] = cookingTimesTotal[slot] / 2;

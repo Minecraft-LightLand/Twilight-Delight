@@ -33,14 +33,14 @@ public class FieryKnifeItem extends TDKnifeItem {
 
 	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
 		boolean result = super.hurtEnemy(stack, target, attacker);
-		if (result && !target.getLevel().isClientSide() && !target.fireImmune()) {
+		if (result && !target.level().isClientSide() && !target.fireImmune()) {
 			target.setSecondsOnFire(15);
 		} else {
 			for (int var1 = 0; var1 < 20; ++var1) {
-				double px = target.getX() + (double) (target.getLevel().getRandom().nextFloat() * target.getBbWidth() * 2.0F) - (double) target.getBbWidth();
-				double py = target.getY() + (double) (target.getLevel().getRandom().nextFloat() * target.getBbHeight());
-				double pz = target.getZ() + (double) (target.getLevel().getRandom().nextFloat() * target.getBbWidth() * 2.0F) - (double) target.getBbWidth();
-				target.getLevel().addParticle(ParticleTypes.FLAME, px, py, pz, 0.02D, 0.02D, 0.02D);
+				double px = target.getX() + (double) (target.level().getRandom().nextFloat() * target.getBbWidth() * 2.0F) - (double) target.getBbWidth();
+				double py = target.getY() + (double) (target.level().getRandom().nextFloat() * target.getBbHeight());
+				double pz = target.getZ() + (double) (target.level().getRandom().nextFloat() * target.getBbWidth() * 2.0F) - (double) target.getBbWidth();
+				target.level().addParticle(ParticleTypes.FLAME, px, py, pz, 0.02D, 0.02D, 0.02D);
 			}
 		}
 		return result;

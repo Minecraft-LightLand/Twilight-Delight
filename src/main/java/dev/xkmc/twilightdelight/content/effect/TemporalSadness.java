@@ -28,7 +28,7 @@ public class TemporalSadness extends MobEffect {
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		entity.setSprinting(false);
-		if (entity.level instanceof ServerLevel serverLevel) {
+		if (entity.level() instanceof ServerLevel serverLevel) {
 			serverLevel.sendParticles(ParticleTypes.FALLING_WATER, entity.getX(), entity.getY(), entity.getZ(), 5, 1, 1, 1, 1);
 		}
 	}

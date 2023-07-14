@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.content.recipe;
 
-import dev.xkmc.l2library.serial.SerialClass;
+import dev.xkmc.l2serial.serialization.SerialClass;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import net.minecraft.resources.ResourceLocation;
 

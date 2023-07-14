@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.init.registrate;
 
-import dev.xkmc.l2library.repack.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.BlockEntry;
 import dev.xkmc.twilightdelight.content.block.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.world.IronwoodTreeGrower;
@@ -19,8 +19,8 @@ import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
@@ -49,10 +49,9 @@ import java.util.function.Function;
 
 public class TDBlocks {
 
-	public static final TDTab TAB = new TDTab();
-
 	static {
-		TwilightDelight.REGISTRATE.creativeModeTab(() -> TAB);
+		TwilightDelight.REGISTRATE.buildModCreativeTab("twilight_delight", "Twilight's Flavors & Delight",
+				e -> e.icon(TDBlocks.MAZE_STOVE::asStack));
 	}
 
 	public static final BlockEntry<MazeStoveBlock> MAZE_STOVE;
@@ -101,7 +100,7 @@ public class TDBlocks {
 					.tag(ModTags.HEAT_SOURCES, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register();
 			FIERY_POT = TwilightDelight.REGISTRATE.block(
 							"fiery_cooking_pot", p -> new FieryCookingPotBlock(
-									BlockBehaviour.Properties.of(Material.METAL)
+									BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
 											.strength(0.5F, 6.0F)
 											.sound(SoundType.LANTERN)))
 					.blockstate((ctx, pvd) -> {
@@ -192,7 +191,7 @@ public class TDBlocks {
 		{
 			TORCHBERRIES_CRATE = TwilightDelight.REGISTRATE.block(
 							"torchberries_crate", p -> new Block(BlockBehaviour.Properties
-									.of(Material.WOOD).strength(2.0F, 3.0F)
+									.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F)
 									.sound(SoundType.WOOD).lightLevel(state -> 15)))
 					.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().cubeBottomTop(
 							ctx.getName(),
@@ -203,7 +202,7 @@ public class TDBlocks {
 
 			MUSHGLOOM_COLONY = TwilightDelight.REGISTRATE.block(
 							"mushgloom_colony", p -> new MushroomColonyBlock(BlockBehaviour.Properties
-									.of(Material.PLANT).instabreak().sound(SoundType.FUNGUS)
+									.copy(Blocks.BROWN_MUSHROOM).instabreak().sound(SoundType.FUNGUS)
 									.noCollission().noOcclusion().lightLevel((state) -> 3).randomTicks(),
 									() -> TFBlocks.MUSHGLOOM.get().asItem()))
 					.blockstate((ctx, pvd) -> pvd.getVariantBuilder(ctx.get()).forAllStates((state) -> {
@@ -251,21 +250,24 @@ public class TDBlocks {
 		{
 			IRON_SAPLING = TwilightDelight.REGISTRATE.block(
 							"ironwood_sapling", p -> new SaplingBlock(new IronwoodTreeGrower(),
-									BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noCollission().randomTicks()))
+									BlockBehaviour.Properties.of().mapColor(MapColor.PLANT)
+											.pushReaction(PushReaction.DESTROY).instabreak()
+											.sound(SoundType.GRASS).noCollission().randomTicks()
+							))
 					.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models()
 							.cross(ctx.getName(), pvd.modLoc("block/" + ctx.getName()))
 							.renderType("cutout")))
 					.tag(BlockTags.SAPLINGS)
 					.item().model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("block/" + ctx.getName())))
-					.tag(ItemTags.SAPLINGS).tab(() -> null).build()//TODO
+					.tag(ItemTags.SAPLINGS).tab(null).build()//TODO
 					.register();
 			IRON_LOGS = TwilightDelight.REGISTRATE.block(
 							"ironwood_log", p -> new TFLogBlock(
-									BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).sound(SoundType.WOOD)
+									BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD)
 											.strength(10, 10).requiresCorrectToolForDrops()))
 					.blockstate((ctx, pvd) -> pvd.logBlock(ctx.get()))
 					.tag(BlockTags.LOGS, BlockTags.LOGS_THAT_BURN, BlockTags.MINEABLE_WITH_AXE, BlockTags.NEEDS_DIAMOND_TOOL)
-					.item().tag(ItemTags.LOGS, ItemTags.LOGS_THAT_BURN).tab(() -> null).build()//TODO
+					.item().tag(ItemTags.LOGS, ItemTags.LOGS_THAT_BURN).tab(null).build()//TODO
 					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
 							.add(AlternativesEntry.alternatives(
 									LootItem.lootTableItem(block.asItem())
@@ -278,15 +280,17 @@ public class TDBlocks {
 					))).register();
 
 			IRON_LEAVES = TwilightDelight.REGISTRATE.block(
-							"ironwood_leaves", p -> new DarkLeavesBlock(BlockBehaviour.Properties
-									.of(Material.LEAVES).sound(SoundType.AZALEA_LEAVES)
-									.isSuffocating((state, getter, pos) -> false)
-									.isViewBlocking((state, getter, pos) -> false)
-									.strength(10, 10).requiresCorrectToolForDrops()))
+							"ironwood_leaves", p -> new DarkLeavesBlock(
+									BlockBehaviour.Properties.of().mapColor(MapColor.PLANT)
+											.pushReaction(PushReaction.DESTROY)
+											.sound(SoundType.AZALEA_LEAVES)
+											.isSuffocating((state, getter, pos) -> false)
+											.isViewBlocking((state, getter, pos) -> false)
+											.strength(10, 10).requiresCorrectToolForDrops()))
 					.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().withExistingParent(ctx.getName(), "block/leaves")
 							.texture("all", pvd.modLoc("block/" + ctx.getName()))))
 					.tag(BlockTags.LEAVES, BlockTags.MINEABLE_WITH_HOE, BlockTags.NEEDS_DIAMOND_TOOL)
-					.item().tag(ItemTags.LEAVES).tab(() -> null).build()//TODO
+					.item().tag(ItemTags.LEAVES).tab(null).build()//TODO
 					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
 							.add(AlternativesEntry.alternatives(
 									LootItem.lootTableItem(block.asItem())
