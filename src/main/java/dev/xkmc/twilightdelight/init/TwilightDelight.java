@@ -66,7 +66,7 @@ public class TwilightDelight {
 		event.enqueueWork(() -> {
 			StoveAddBlockUtil.addBlock(ModBlockEntityTypes.STOVE.get(), TDBlocks.MAZE_STOVE.get());
 			StoveAddBlockUtil.addBlock(ModBlockEntityTypes.COOKING_POT.get(), TDBlocks.FIERY_POT.get());
-			((FoodPropertiesAccessor) TFItems.MEEF_STROGANOFF.get()).getEffectSupplierList()
+			((FoodPropertiesAccessor) TFItems.MEEF_STROGANOFF.get().getFoodProperties()).getEffectSupplierList()
 					.add(Pair.of(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000), 1f));
 
 			ComposterBlock.COMPOSTABLES.put(TDBlocks.MUSHGLOOM_COLONY.get().asItem(), 1.0F);

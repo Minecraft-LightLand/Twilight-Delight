@@ -1,6 +1,5 @@
 package dev.xkmc.twilightdelight.init.data;
 
-import com.simibubi.create.foundation.damageTypes.DamageTypeDataProvider;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.world.TreeConfig;
 import net.minecraft.core.HolderLookup;
