@@ -16,7 +16,6 @@ import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
-import dev.xkmc.twilightdelight.init.world.TreeConfig;
 import dev.xkmc.twilightdelight.mixin.FoodPropertiesAccessor;
 import dev.xkmc.twilightdelight.mixin.ItemAccessor;
 import dev.xkmc.twilightdelight.util.StoveAddBlockUtil;
@@ -65,7 +64,6 @@ public class TwilightDelight {
 	@SubscribeEvent
 	public static void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			TreeConfig.register();
 			StoveAddBlockUtil.addBlock(ModBlockEntityTypes.STOVE.get(), TDBlocks.MAZE_STOVE.get());
 			StoveAddBlockUtil.addBlock(ModBlockEntityTypes.COOKING_POT.get(), TDBlocks.FIERY_POT.get());
 			((FoodPropertiesAccessor) TFItems.MEEF_STROGANOFF.get()).getEffectSupplierList()
@@ -89,6 +87,10 @@ public class TwilightDelight {
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
 		event.getGenerator().addProvider(event.includeServer(), new GLMGen(event.getGenerator()));
+		var output = event.getGenerator().getPackOutput();
+		var reg = new TDDatapackRegistriesGen(output, event.getLookupProvider());
+		event.getGenerator().addProvider(event.includeServer(), reg);
+		event.getGenerator().addProvider(event.includeServer(), new TDDatapackTagsGen(output, reg.getRegistryProvider(), event.getExistingFileHelper()));
 	}
 
 }

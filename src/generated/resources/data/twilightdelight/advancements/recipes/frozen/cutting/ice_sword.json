@@ -30,5 +30,6 @@
     "recipes": [
       "twilightdelight:cutting/ice_sword"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

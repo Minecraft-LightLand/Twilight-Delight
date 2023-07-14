@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_experiment_110": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "twilightdelight:experiment_110"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:teardrop_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_experiment_110",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:teardrop_sword"
+    ]
+  },
+  "sends_telemetry_event": false
+}

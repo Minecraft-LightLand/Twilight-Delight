@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "A": {
       "item": "twilightforest:ironwood_ingot"
@@ -15,5 +16,6 @@
   "result": {
     "item": "twilightdelight:ironwood_knife",
     "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:knockback\",lvl:1s},{id:\"minecraft:unbreaking\",lvl:1s}]}"
-  }
+  },
+  "show_notification": true
 }

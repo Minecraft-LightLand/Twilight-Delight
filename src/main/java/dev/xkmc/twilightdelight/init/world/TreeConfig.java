@@ -36,13 +36,9 @@ public class TreeConfig {
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CF_IRONWOOD = ResourceKey.create(Registries.CONFIGURED_FEATURE,
 			new ResourceLocation(TwilightDelight.MODID, "tree/ironwood_tree"));
 
-	//FIXME gen
 	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 		context.register(CF_IRONWOOD, new ConfiguredFeature<>(TFFeatures.DARK_CANOPY_TREE.get(), TC_IRONWOOD));
 	}
 
-	public static void register() {
-
-	}
 
 }

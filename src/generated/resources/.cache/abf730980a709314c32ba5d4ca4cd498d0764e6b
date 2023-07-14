@@ -1,0 +1,5 @@
+// 1.20.1	2023-07-14T21:08:44.2457	Tags for minecraft:damage_type mod id twilightdelight
+6e39d084ba0c85c2442be128a073cb7d5b506d69 data/minecraft/tags/damage_type/bypasses_armor.json
+6e39d084ba0c85c2442be128a073cb7d5b506d69 data/minecraft/tags/damage_type/bypasses_effects.json
+6e39d084ba0c85c2442be128a073cb7d5b506d69 data/minecraft/tags/damage_type/bypasses_enchantments.json
+6e39d084ba0c85c2442be128a073cb7d5b506d69 data/minecraft/tags/damage_type/bypasses_resistance.json

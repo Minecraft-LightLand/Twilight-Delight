@@ -1,5 +1,7 @@
 package dev.xkmc.twilightdelight.content.item.food;
 
+import dev.xkmc.twilightdelight.init.data.TDDatapackRegistriesGen;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -12,8 +14,8 @@ public class RoseTeaItem extends TDDrinkableItem {
 	}
 
 	@Override
-	public ItemStack finishUsingItem(ItemStack stack, Level worldIn, LivingEntity consumer) {
-		consumer.hurt(new DamageSource("twilightdelight.thorn_rose_tea"), 4);
-		return super.finishUsingItem(stack, worldIn, consumer);
+	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
+		consumer.hurt(new DamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(TDDatapackRegistriesGen.ROSE_TEA)), 4);
+		return super.finishUsingItem(stack, level, consumer);
 	}
 }

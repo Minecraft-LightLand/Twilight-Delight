@@ -3,6 +3,7 @@ package dev.xkmc.twilightdelight.mixin;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
@@ -24,7 +25,7 @@ public abstract class SkilletBlockEntityMixin extends SyncedBlockEntity {
 	}
 
 	@Inject(at = @At("HEAD"), method = "cookAndOutputItems", remap = false)
-	public void twilightdelight$cookAndOutputItem$mazeStove(ItemStack cookingStack, CallbackInfo ci) {
+	public void twilightdelight$cookAndOutputItem$mazeStove(ItemStack cookingStack, Level level, CallbackInfo ci) {
 		if (level != null && level.getBlockState(getBlockPos().below()).is(TDBlocks.MAZE_STOVE.get())) {
 			cookingTime++;
 		}

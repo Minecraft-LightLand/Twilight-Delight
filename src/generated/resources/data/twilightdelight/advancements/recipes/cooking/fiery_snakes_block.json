@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fiery_blood": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "twilightforest:fiery_blood"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:cooking/fiery_snakes_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_fiery_blood",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:cooking/fiery_snakes_block"
+    ]
+  },
+  "sends_telemetry_event": true
+}

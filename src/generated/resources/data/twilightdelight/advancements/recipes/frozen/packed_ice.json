@@ -30,5 +30,6 @@
     "recipes": [
       "twilightdelight:packed_ice"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

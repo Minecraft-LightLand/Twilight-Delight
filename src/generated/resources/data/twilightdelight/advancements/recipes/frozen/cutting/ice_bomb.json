@@ -30,5 +30,6 @@
     "recipes": [
       "twilightdelight:cutting/ice_bomb"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

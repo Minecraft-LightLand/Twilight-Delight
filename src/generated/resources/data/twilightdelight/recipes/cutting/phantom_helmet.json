@@ -12,6 +12,6 @@
     }
   ],
   "tool": {
-    "tag": "forge:tools/pickaxes"
+    "tag": "minecraft:pickaxes"
   }
 }

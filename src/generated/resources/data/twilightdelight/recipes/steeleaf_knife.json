@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "A": {
       "item": "twilightforest:steeleaf_ingot"
@@ -15,5 +16,6 @@
   "result": {
     "item": "twilightdelight:steeleaf_knife",
     "nbt": "{Damage:0,Enchantments:[{id:\"minecraft:looting\",lvl:2s},{id:\"minecraft:fortune\",lvl:2s}]}"
-  }
+  },
+  "show_notification": true
 }

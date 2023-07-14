@@ -33,7 +33,6 @@ public class FrozenRange extends RangeRenderEffect {
 			var opt = entity.level().getRecipeManager().getRecipeFor(TDRecipes.WORLD_RECIPE.get(), inv, entity.level());
 			if (opt.isPresent()) {
 				e.setTicksFrozen(e.getTicksFrozen() + 10);
-				e.level().broadcastEntityEvent(e, EntityEvent.FROZEN);
 				if (e.isFullyFrozen()) {
 					e.setItem(opt.get().assemble(inv, entity.level().registryAccess()));
 					e.setTicksFrozen(0);

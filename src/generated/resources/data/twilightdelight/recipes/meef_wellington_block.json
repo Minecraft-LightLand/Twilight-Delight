@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "A": {
       "item": "farmersdelight:pie_crust"
@@ -27,5 +28,6 @@
   ],
   "result": {
     "item": "twilightdelight:meef_wellington_block"
-  }
+  },
+  "show_notification": true
 }

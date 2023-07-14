@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "A": {
       "item": "twilightforest:maze_wafer"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "twilightdelight:chocolate_wafer"
-  }
+  },
+  "show_notification": true
 }

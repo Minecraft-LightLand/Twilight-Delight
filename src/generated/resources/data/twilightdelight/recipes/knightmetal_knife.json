@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "A": {
       "item": "twilightforest:knightmetal_ingot"
@@ -14,5 +15,6 @@
   ],
   "result": {
     "item": "twilightdelight:knightmetal_knife"
-  }
+  },
+  "show_notification": true
 }
