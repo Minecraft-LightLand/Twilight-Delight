@@ -34,8 +34,8 @@ public class TDItems {
 
 	// KNIVES
 	static {
-		IRONWOOD_KNIFE = handheld("ironwood_knife", IronwoodKnifeItem::new).tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).register();
-		STEELEAF_KNIFE = handheld("steeleaf_knife", SteeleafKnifeItem::new).tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).register();
+		IRONWOOD_KNIFE = handheld("ironwood_knife", IronwoodKnifeItem::new).tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).transform(e -> e.tab(TDBlocks.TAB.getKey(), x -> e.getEntry().fillItemCategory(x))).register();
+		STEELEAF_KNIFE = handheld("steeleaf_knife", SteeleafKnifeItem::new).tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).transform(e -> e.tab(TDBlocks.TAB.getKey(), x -> e.getEntry().fillItemCategory(x))).register();
 		KNIGHTMETAL_KNIFE = handheld("knightmetal_knife", KnightmetalKnifeItem::new).lang("Knightly Knife").tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).register();
 
 		FIERY_KNIFE = handheld("fiery_knife", FieryKnifeItem::new)
