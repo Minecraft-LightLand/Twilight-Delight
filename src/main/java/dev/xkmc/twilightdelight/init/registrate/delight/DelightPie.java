@@ -20,11 +20,11 @@ import vectorwing.farmersdelight.common.block.PieBlock;
 import java.util.Locale;
 
 public enum DelightPie {
-	TORCHBERRY_PIE(new EffectSupplier(TDEffects.FIRE_RANGE, 600, 0, 1)),
+	TORCHBERRY_PIE(new EffectSupplier(TDEffects.FIRE_RANGE, 300, 0, 1)),
 	AURORA_PIE(
-			new EffectSupplier(TDEffects.AURORA_GLOWING, 600, 0, 1),
-			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 600, 2, 1),
-			new EffectSupplier(() -> MobEffects.JUMP, 600, 1, 1));
+			new EffectSupplier(TDEffects.AURORA_GLOWING, 300, 0, 1),
+			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 300, 2, 1),
+			new EffectSupplier(() -> MobEffects.JUMP, 300, 1, 1));
 
 	public static void register() {
 
@@ -53,7 +53,7 @@ public enum DelightPie {
 	private BlockModelBuilder genCakeModel(RegistrateBlockstateProvider pvd, String model) {
 		String base = name().toLowerCase(Locale.ROOT);
 		return pvd.models().getBuilder(base + model).parent(new ModelFile.UncheckedModelFile(
-						new ResourceLocation(FarmersDelight.MODID, "block/pie")))
+						new ResourceLocation(FarmersDelight.MODID, "block/pie" + model)))
 				.texture("particle", pvd.modLoc("block/" + base + "_top"))
 				.texture("top", pvd.modLoc("block/" + base + "_top"))
 				.texture("bottom", pvd.modLoc("block/pie_bottom"))

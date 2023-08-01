@@ -49,7 +49,11 @@
 	"borer_tear_soup": "蛀虫精华甜菜汤",
 	"ghast_brain_salad": "恶魂脑沙拉",
 	"cooked_tomahawk_smeak": "熟战斧牛头人肋排",
-	"raw_tomahawk_smeak": "生战斧牛头人肋排"
+	"raw_tomahawk_smeak": "生战斧牛头人肋排",
+	"aurora_pie_slice": "极光冰晶派切片",
+	"grilled_tomahawk_smeak": "战斧牛排",
+	"naga_chip": "娜迦脆片",
+	"torchberry_pie_slice": "火炬浆果派切片"
   },
   "block.twilightdelight": {
 	"lily_chicken_block": "荷花鸡",
@@ -63,7 +67,9 @@
 	"meef_wellington_block": "暮光惠灵顿牛排",
 	"fiery_cooking_pot": "炽铁锅",
 	"fiery_cooking_pot.tooltip": "自我供热，快速烹饪暮色菜肴",
-	"torchberries_crate": "箱装火炬浆果"
+	"torchberries_crate": "箱装火炬浆果",
+	"aurora_pie": "极光冰晶派",
+	"torchberry_pie": "火炬浆果派"
   },
   "-cartesian": {
 	"drinks": {

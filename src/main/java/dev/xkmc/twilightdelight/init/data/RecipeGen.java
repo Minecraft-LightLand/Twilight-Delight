@@ -313,6 +313,14 @@ public class RecipeGen {
 					.addIngredient(TFItems.EXPERIMENT_115.get(), 2)
 					.build(pvd, getID(DelightFood.GRILLED_GHAST.item.getId()));
 
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GRILLED_TOMAHAWK_SMEAK.item.get(),
+							1, 1600, 0.35f, Items.BOWL)::unlockedBy,
+					DelightFood.RAW_TOMAHAWK_SMEAK.item.get())
+					.addIngredient(DelightFood.RAW_TOMAHAWK_SMEAK.item.get())
+					.addIngredient(DelightFood.MUSHGLOOM_SAUCE.item.get())
+					.addIngredient(ModItems.MILK_BOTTLE.get())
+					.build(pvd, getID(DelightFood.GRILLED_TOMAHAWK_SMEAK.item.getId()));
+
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.LILY_CHICKEN.get().asItem(),
 							1, 400, 0.35f, Items.BOWL)::unlockedBy,
 					TFBlocks.HUGE_LILY_PAD.get().asItem())
@@ -580,12 +588,18 @@ public class RecipeGen {
 				.define('a', ingredient)
 				.define('x', Items.SUGAR)
 				.define('O', ModItems.PIE_CRUST.get())
-				.save(pvd, getID(pie.block.getId()));
+				.save(pvd);
 
 		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, pie.block.asItem(), 1)::unlockedBy, pie.slice.get())
 				.pattern("##").pattern("##")
 				.define('#', pie.slice.get())
 				.save(pvd, getID(pie.block.getId(), "_from_slices"));
+
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(pie.block.get()),
+						Ingredient.of(ForgeTags.TOOLS_KNIVES),
+						pie.slice.get(), 4)
+				.build(pvd, getID(pie.slice.getId()));
 	}
 
 	private static void neapolitan(RegistrateRecipeProvider pvd, ItemEntry<?> ice_cream, ItemEntry<?> milkshake, NeapolitanCakes cake, Item ingredient) {

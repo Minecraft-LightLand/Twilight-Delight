@@ -1,5 +1,5 @@
 {
-  "parent": "farmersdelight:block/pie",
+  "parent": "farmersdelight:block/pie_slice3",
   "textures": {
     "bottom": "twilightdelight:block/pie_bottom",
     "inner": "twilightdelight:block/torchberry_pie_inner",
