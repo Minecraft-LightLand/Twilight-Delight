@@ -3,13 +3,13 @@ package dev.xkmc.twilightdelight.init.registrate.delight;
 import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
@@ -31,16 +31,16 @@ public enum DelightPie {
 	}
 
 	public final BlockEntry<PieBlock> block;
-	public final ItemEntry<Item> slice;
+	public final ItemEntry<TDFoodItem> slice;
 
 
 	DelightPie(EffectSupplier... effects) {
 		String name = name().toLowerCase(Locale.ROOT);
 		FoodProperties food = TDItems.simpleFood(DelightFoodType.COOKIE, 3, 0.3f, effects);
-		slice = TwilightDelight.REGISTRATE.item(name + "_slice", p -> new Item(p.food(food)))
+		slice = TwilightDelight.REGISTRATE.item(name + "_slice", p -> new TDFoodItem(p.food(food)))
 				.defaultModel().defaultLang().register();
 		block = TwilightDelight.REGISTRATE.block(name,
-						p -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), slice))
+						p -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), slice::get))
 				.blockstate((ctx, pvd) -> {
 					ModelFile[] models = new ModelFile[4];
 					for (int i = 0; i < 4; i++) {
