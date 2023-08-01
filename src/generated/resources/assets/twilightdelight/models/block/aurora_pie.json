@@ -1,0 +1,10 @@
+{
+  "parent": "farmersdelight:block/pie",
+  "textures": {
+    "bottom": "twilightdelight:block/pie_bottom",
+    "inner": "twilightdelight:block/aurora_pie_inner",
+    "particle": "twilightdelight:block/aurora_pie_top",
+    "side": "twilightdelight:block/pie_side",
+    "top": "twilightdelight:block/aurora_pie_top"
+  }
+}

@@ -14,6 +14,7 @@ import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
+import dev.xkmc.twilightdelight.init.registrate.delight.DelightPie;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import dev.xkmc.twilightdelight.mixin.FoodPropertiesAccessor;
@@ -46,6 +47,7 @@ public class TwilightDelight {
 		TDBlocks.register();
 		TDItems.register();
 		DelightFood.register();
+		DelightPie.register();
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			NeapolitanFood.register();
 			NeapolitanCakes.register();

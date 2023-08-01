@@ -14,6 +14,7 @@ import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
+import dev.xkmc.twilightdelight.init.registrate.delight.DelightPie;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import net.mehvahdjukaar.jeed.Jeed;
@@ -127,6 +128,9 @@ public class RecipeGen {
 
 		// food crafting
 		{
+
+			delightPie(pvd, DelightPie.AURORA_PIE, TFBlocks.AURORA_BLOCK.get().asItem());
+			delightPie(pvd, DelightPie.TORCHBERRY_PIE, TFItems.TORCHBERRIES.get());
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.BERRY_STICK.item.get(), 1)::unlockedBy, TFItems.TORCHBERRIES.get())
 					.requires(Items.SWEET_BERRIES).requires(Items.GLOW_BERRIES).requires(TFItems.TORCHBERRIES.get())
@@ -496,6 +500,12 @@ public class RecipeGen {
 							Items.MUTTON, 9)
 					.build(pvd, getID(TFBlocks.QUEST_RAM_TROPHY.getId()));
 
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFItems.NAGA_SCALE.get()),
+							Ingredient.of(TFItems.DIAMOND_MINOTAUR_AXE.get()),
+							DelightFood.NAGA_CHIP.item.get(), 4)
+					.build(pvd, getID(TFItems.NAGA_SCALE.getId()));
+
 		}
 
 		// freezing
@@ -561,6 +571,21 @@ public class RecipeGen {
 			gen.add(TDItems.TEARDROP_SWORD.get(), TDEffects.TEMPORAL_SADNESS.get());
 			gen.generate(pvd);
 		}
+	}
+
+	private static void delightPie(RegistrateRecipeProvider pvd, DelightPie pie, Item ingredient) {
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, pie.block.asItem(), 1)::unlockedBy, ingredient)
+				.pattern("###").pattern("aaa").pattern("xOx")
+				.define('#', Items.WHEAT)
+				.define('a', ingredient)
+				.define('x', Items.SUGAR)
+				.define('O', ModItems.PIE_CRUST.get())
+				.save(pvd, getID(pie.block.getId()));
+
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, pie.block.asItem(), 1)::unlockedBy, pie.slice.get())
+				.pattern("##").pattern("##")
+				.define('#', pie.slice.get())
+				.save(pvd, getID(pie.block.getId(), "_from_slices"));
 	}
 
 	private static void neapolitan(RegistrateRecipeProvider pvd, ItemEntry<?> ice_cream, ItemEntry<?> milkshake, NeapolitanCakes cake, Item ingredient) {
