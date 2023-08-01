@@ -1,0 +1,12 @@
+{
+  "name": "Отримання живокоріння",
+  "icon": "twilightforest:liveroot",
+  "category": "twilightdelight:tricks",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "twilightforest:liveroot_block",
+      "text": "Блоки коріння, що прилягають до родючого ґрунту й блоку живокоренів повільно перетворяться в живокоріння, роблячи живокорені відновними."
+    }
+  ]
+}
