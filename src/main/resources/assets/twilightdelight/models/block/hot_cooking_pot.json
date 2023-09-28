@@ -31,7 +31,7 @@
 			2,
 			16
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#3"
 		},
 		"east": {
@@ -41,7 +41,7 @@
 			14,
 			16
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#3"
 		},
 		"south": {
@@ -51,7 +51,7 @@
 			2,
 			16
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#3"
 		},
 		"west": {
@@ -61,7 +61,7 @@
 			14,
 			16
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#3"
 		},
 		"up": {
@@ -71,7 +71,7 @@
 			2,
 			14
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#4"
 		},
 		"down": {
@@ -81,7 +81,7 @@
 			2,
 			14
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#0",
 		  "cullface": "down"
 		}
@@ -116,7 +116,7 @@
 			0,
 			14
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"east": {
@@ -126,7 +126,7 @@
 			2,
 			14
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"south": {
@@ -136,7 +136,7 @@
 			0,
 			14
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"west": {
@@ -146,7 +146,7 @@
 			2,
 			14
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"up": {
@@ -156,7 +156,7 @@
 			2,
 			2
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"down": {
@@ -166,7 +166,7 @@
 			2,
 			2
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		}
 	  }
@@ -191,7 +191,7 @@
 			12,
 			2
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"east": {
@@ -201,7 +201,7 @@
 			10,
 			4
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"south": {
@@ -211,7 +211,7 @@
 			4,
 			2
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"west": {
@@ -221,7 +221,7 @@
 			0,
 			0
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"up": {
@@ -232,7 +232,7 @@
 			2
 		  ],
 		  "rotation": 90,
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"down": {
@@ -243,7 +243,7 @@
 			4
 		  ],
 		  "rotation": 90,
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		}
 	  }
@@ -268,7 +268,7 @@
 			4,
 			2
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"east": {
@@ -278,7 +278,7 @@
 			0,
 			0
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"south": {
@@ -288,7 +288,7 @@
 			12,
 			2
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"west": {
@@ -298,7 +298,7 @@
 			10,
 			4
 		  ],
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"up": {
@@ -309,7 +309,7 @@
 			2
 		  ],
 		  "rotation": 270,
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		},
 		"down": {
@@ -320,7 +320,7 @@
 			4
 		  ],
 		  "rotation": 270,
-		  "emissivity": 15,
+		  "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 },
 		  "texture": "#1"
 		}
 	  }
