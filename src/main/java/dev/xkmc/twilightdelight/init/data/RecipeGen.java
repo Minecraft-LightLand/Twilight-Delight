@@ -592,7 +592,7 @@ public class RecipeGen {
 						Ingredient.of(cake.block.get()),
 						Ingredient.of(ForgeTags.TOOLS_KNIVES),
 						cake.item.get(), 7)
-				.build(pvd, getID(cake.item.getId()));
+				.build(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cake.item.getId()));
 
 		unlock(pvd, new ShapelessRecipeBuilder(cake.block.get(), 1)::unlockedBy, cake.item.get())
 				.requires(cake.item.get(), 7)

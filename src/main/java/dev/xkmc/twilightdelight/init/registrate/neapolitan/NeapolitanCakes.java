@@ -14,7 +14,6 @@ import dev.xkmc.twilightdelight.init.registrate.delight.DelightFoodType;
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Items;
@@ -64,7 +63,6 @@ public enum NeapolitanCakes {
 						p -> new FlavoredCandleCakeBlock(block::get, Blocks.CANDLE, props))
 				.blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, "candle"))
 				.loot((pvd, block) -> pvd.dropOther(block, Items.CANDLE))
-				.tag(BlockTags.CANDLE_CAKES)
 				.register();
 		colored_candles = new BlockEntry[DyeColor.values().length];
 		for (DyeColor dye : DyeColor.values()) {
@@ -74,7 +72,6 @@ public enum NeapolitanCakes {
 							p -> new FlavoredCandleCakeBlock(block::get, candle, props))
 					.blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, color_name + "_candle"))
 					.loot((pvd, block) -> pvd.dropOther(block, candle.asItem()))
-					.tag(BlockTags.CANDLE_CAKES)
 					.register();
 		}
 	}
