@@ -15,6 +15,7 @@ import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCauldron;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import dev.xkmc.twilightdelight.init.world.TreeConfig;
 import dev.xkmc.twilightdelight.mixin.FoodPropertiesAccessor;
@@ -50,6 +51,7 @@ public class TwilightDelight {
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			NeapolitanFood.register();
 			NeapolitanCakes.register();
+			NeapolitanCauldron.register();
 			MinecraftForge.EVENT_BUS.register(NeapolitanEventListeners.class);
 		}
 		TDEffects.register();
@@ -82,6 +84,7 @@ public class TwilightDelight {
 				((ItemAccessor) NeapolitanItems.ADZUKI_ICE_CREAM.get()).setCraftingRemainingItem(Items.BOWL);
 				((ItemAccessor) NeapolitanItems.BANANA_ICE_CREAM.get()).setCraftingRemainingItem(Items.BOWL);
 				((ItemAccessor) NeapolitanItems.MINT_ICE_CREAM.get()).setCraftingRemainingItem(Items.BOWL);
+				NeapolitanCauldron.registerInteractions();
 			}
 		});
 	}

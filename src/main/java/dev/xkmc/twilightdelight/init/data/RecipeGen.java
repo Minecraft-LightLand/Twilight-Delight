@@ -14,6 +14,7 @@ import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCauldron;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import net.mehvahdjukaar.jeed.Jeed;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -519,39 +520,39 @@ public class RecipeGen {
 		// neapolitan
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			path = "neapolitan/";
-			neapolitan(pvd, NeapolitanFood.AURORA_ICE_CREAM.item,
-					NeapolitanFood.AURORA_MILKSHAKE.item,
+			neapolitan(pvd, NeapolitanCauldron.AURORA.iceCream,
+					NeapolitanCauldron.AURORA.milkshake,
 					NeapolitanCakes.AURORA,
 					TFBlocks.AURORA_BLOCK.get().asItem());
-			neapolitan(pvd, NeapolitanFood.GLACIER_ICE_CREAM.item,
-					NeapolitanFood.GLACIER_MILKSHAKE.item,
+			neapolitan(pvd, NeapolitanCauldron.GLACIER.iceCream,
+					NeapolitanCauldron.GLACIER.milkshake,
 					NeapolitanCakes.GLACIER,
 					TFItems.ICE_BOMB.get());
-			neapolitan(pvd, NeapolitanFood.PHYTOCHEMICAL_ICE_CREAM.item,
-					NeapolitanFood.PHYTOCHEMICAL_MILKSHAKE.item,
+			neapolitan(pvd, NeapolitanCauldron.PHYTOCHEMICAL.iceCream,
+					NeapolitanCauldron.PHYTOCHEMICAL.milkshake,
 					NeapolitanCakes.PHYTOCHEMICAL,
 					TFItems.STEELEAF_INGOT.get());
-			neapolitan(pvd, NeapolitanFood.TORCHBERRY_ICE_CREAM.item,
-					NeapolitanFood.TORCHBERRY_MILKSHAKE.item,
+			neapolitan(pvd, NeapolitanCauldron.TORCHBERRY.iceCream,
+					NeapolitanCauldron.TORCHBERRY.milkshake,
 					NeapolitanCakes.TORCHBERRY,
 					TFItems.TORCHBERRIES.get());
 
 			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.TWILIGHT_ICE_CREAM.item.get(), 3)::unlockedBy, TFItems.TORCHBERRIES.get())
-					.requires(NeapolitanFood.TORCHBERRY_ICE_CREAM.item.get())
+					.requires(NeapolitanCauldron.TORCHBERRY.iceCream.get())
 					.requires(NeapolitanItems.CHOCOLATE_ICE_CREAM.get())
 					.requires(NeapolitanItems.STRAWBERRY_ICE_CREAM.get())
 					.requires(Items.BOWL, 3).save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.RAINBOW_ICE_CREAM.item.get(), 3)::unlockedBy, TFBlocks.AURORA_BLOCK.get().asItem())
-					.requires(NeapolitanFood.AURORA_ICE_CREAM.item.get())
+					.requires(NeapolitanCauldron.AURORA.iceCream.get())
 					.requires(NeapolitanItems.BANANA_ICE_CREAM.get())
 					.requires(NeapolitanItems.ADZUKI_ICE_CREAM.get())
 					.requires(Items.BOWL, 3).save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.REFRESHING_ICE_CREAM.item.get(), 3)::unlockedBy, TFItems.ICE_BOMB.get())
-					.requires(NeapolitanFood.GLACIER_ICE_CREAM.item.get())
+					.requires(NeapolitanCauldron.GLACIER.iceCream.get())
 					.requires(NeapolitanItems.MINT_ICE_CREAM.get())
-					.requires(NeapolitanFood.PHYTOCHEMICAL_ICE_CREAM.item.get())
+					.requires(NeapolitanCauldron.PHYTOCHEMICAL.iceCream.get())
 					.requires(Items.BOWL, 3).save(pvd);
 
 		}

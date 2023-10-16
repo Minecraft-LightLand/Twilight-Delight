@@ -6,7 +6,7 @@ import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
-import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCauldron;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.helpers.IGuiHelper;
@@ -68,8 +68,8 @@ public class TDJeiPlugin implements IModPlugin {
 		registration.addRecipeCatalyst(DelightFood.GLACIER_ICE_TEA.item.asStack(), FROZEN.getRecipeType());
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			registration.addRecipeCatalyst(NeapolitanCakes.GLACIER.block.asStack(), FROZEN.getRecipeType());
-			registration.addRecipeCatalyst(NeapolitanFood.GLACIER_ICE_CREAM.item.asStack(), FROZEN.getRecipeType());
-			registration.addRecipeCatalyst(NeapolitanFood.GLACIER_MILKSHAKE.item.asStack(), FROZEN.getRecipeType());
+			registration.addRecipeCatalyst(NeapolitanCauldron.GLACIER.iceCream.asStack(), FROZEN.getRecipeType());
+			registration.addRecipeCatalyst(NeapolitanCauldron.GLACIER.milkshake.asStack(), FROZEN.getRecipeType());
 		}
 	}
 

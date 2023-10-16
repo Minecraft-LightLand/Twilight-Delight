@@ -137,8 +137,8 @@ dependencies {
     implementation fg.deobf("mezz.jei:jei-${jei_minecraft_version}:${jei_version}")
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
 
-    implementation fg.deobf('curse.maven:blueprint-382216:4442628')
-    implementation fg.deobf('curse.maven:neapolitan-382016:4023083')
+    implementation fg.deobf("curse.maven:blueprint-382216:4749000")
+    implementation fg.deobf("curse.maven:neapolitan-382016:4783978")
     implementation fg.deobf("curse.maven:create-328085:4550987")
     implementation fg.deobf("curse.maven:create-enchantment-industry-688768:4571835")
     implementation fg.deobf("curse.maven:just-enough-effect-descriptions-jeed-532286:4599099")
@@ -152,7 +152,7 @@ dependencies {
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 
-    runtimeOnly fg.deobf("curse.maven:rubidium-574856:4573226")
+    //runtimeOnly fg.deobf("curse.maven:rubidium-574856:4573226")
 
 }
 
