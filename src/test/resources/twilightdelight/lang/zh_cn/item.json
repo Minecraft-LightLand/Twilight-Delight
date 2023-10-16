@@ -92,7 +92,9 @@
 		  "torchberry": "火炬浆果"
 		},
 		{
-		  "cake": "蛋糕"
+		  "cake": "蛋糕",
+		  "ice_cream_block": "冰淇淋方块",
+		  "milkshake_cauldron": "奶昔锅"
 		}
 	  ]
 	},

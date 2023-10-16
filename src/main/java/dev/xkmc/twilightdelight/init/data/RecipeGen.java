@@ -5,7 +5,6 @@ import com.teamabnormals.neapolitan.core.Neapolitan;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import dev.xkmc.l2library.repack.registrate.providers.RegistrateRecipeProvider;
 import dev.xkmc.l2library.repack.registrate.util.DataIngredient;
-import dev.xkmc.l2library.repack.registrate.util.entry.ItemEntry;
 import dev.xkmc.twilightdelight.compat.jeed.JeedDataGenerator;
 import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipeBuilder;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
@@ -520,20 +519,16 @@ public class RecipeGen {
 		// neapolitan
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			path = "neapolitan/";
-			neapolitan(pvd, NeapolitanCauldron.AURORA.iceCream,
-					NeapolitanCauldron.AURORA.milkshake,
+			neapolitan(pvd, NeapolitanCauldron.AURORA,
 					NeapolitanCakes.AURORA,
 					TFBlocks.AURORA_BLOCK.get().asItem());
-			neapolitan(pvd, NeapolitanCauldron.GLACIER.iceCream,
-					NeapolitanCauldron.GLACIER.milkshake,
+			neapolitan(pvd, NeapolitanCauldron.GLACIER,
 					NeapolitanCakes.GLACIER,
 					TFItems.ICE_BOMB.get());
-			neapolitan(pvd, NeapolitanCauldron.PHYTOCHEMICAL.iceCream,
-					NeapolitanCauldron.PHYTOCHEMICAL.milkshake,
+			neapolitan(pvd, NeapolitanCauldron.PHYTOCHEMICAL,
 					NeapolitanCakes.PHYTOCHEMICAL,
 					TFItems.STEELEAF_INGOT.get());
-			neapolitan(pvd, NeapolitanCauldron.TORCHBERRY.iceCream,
-					NeapolitanCauldron.TORCHBERRY.milkshake,
+			neapolitan(pvd, NeapolitanCauldron.TORCHBERRY,
 					NeapolitanCakes.TORCHBERRY,
 					TFItems.TORCHBERRIES.get());
 
@@ -563,22 +558,28 @@ public class RecipeGen {
 		}
 	}
 
-	private static void neapolitan(RegistrateRecipeProvider pvd, ItemEntry<?> ice_cream, ItemEntry<?> milkshake, NeapolitanCakes cake, Item ingredient) {
+	private static void neapolitan(RegistrateRecipeProvider pvd, NeapolitanCauldron cauldron, NeapolitanCakes cake, Item ingredient) {
 		TagKey<Item> milk = ItemTags.create(new ResourceLocation("forge", "milk"));
-		unlock(pvd, new ShapelessRecipeBuilder(ice_cream.get(), 1)::unlockedBy, ingredient)
+		unlock(pvd, new ShapelessRecipeBuilder(cauldron.iceCream.get(), 1)::unlockedBy, ingredient)
 				.requires(Items.BOWL).requires(milk).requires(NeapolitanItems.ICE_CUBES.get()).requires(Items.SUGAR)
 				.requires(ingredient)
-				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(ice_cream.getId()));
+				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cauldron.iceCream.getId()));
 
-		unlock(pvd, new ShapelessRecipeBuilder(milkshake.get(), 3)::unlockedBy, ingredient)
+		unlock(pvd, new ShapedRecipeBuilder(cauldron.iceCreamBlock.get(), 8)::unlockedBy, ingredient)
+				.pattern("AAA").pattern("ABA").pattern("AAA")
+				.define('A', Items.SNOW_BLOCK)
+				.define('B', cauldron.iceCream.get())
+				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cauldron.iceCreamBlock.getId()));
+
+		unlock(pvd, new ShapelessRecipeBuilder(cauldron.milkshake.get(), 3)::unlockedBy, ingredient)
 				.requires(Items.GLASS_BOTTLE, 3).requires(milk).requires(NeapolitanItems.VANILLA_ICE_CREAM.get())
 				.requires(ingredient)
-				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(milkshake.getId()));
+				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cauldron.milkshake.getId()));
 
-		unlock(pvd, new ShapelessRecipeBuilder(milkshake.get(), 3)::unlockedBy, ingredient)
-				.requires(Items.GLASS_BOTTLE, 3).requires(milk).requires(ice_cream.get())
+		unlock(pvd, new ShapelessRecipeBuilder(cauldron.milkshake.get(), 3)::unlockedBy, ingredient)
+				.requires(Items.GLASS_BOTTLE, 3).requires(milk).requires(cauldron.iceCream.get())
 				.requires(NeapolitanItems.DRIED_VANILLA_PODS.get())
-				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(milkshake.getId()) + "_alt");
+				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cauldron.milkshake.getId()) + "_alt");
 
 		unlock(pvd, new ShapedRecipeBuilder(cake.block.get().asItem(), 1)::unlockedBy, ingredient)
 				.pattern("MXM").pattern("SES").pattern("WXW")
