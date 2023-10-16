@@ -536,19 +536,19 @@ public class RecipeGen {
 					.requires(NeapolitanCauldron.TORCHBERRY.iceCream.get())
 					.requires(NeapolitanItems.CHOCOLATE_ICE_CREAM.get())
 					.requires(NeapolitanItems.STRAWBERRY_ICE_CREAM.get())
-					.requires(Items.BOWL, 3).save(pvd);
+					.requires(Items.BOWL, 3).save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID));
 
 			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.RAINBOW_ICE_CREAM.item.get(), 3)::unlockedBy, TFBlocks.AURORA_BLOCK.get().asItem())
 					.requires(NeapolitanCauldron.AURORA.iceCream.get())
 					.requires(NeapolitanItems.BANANA_ICE_CREAM.get())
 					.requires(NeapolitanItems.ADZUKI_ICE_CREAM.get())
-					.requires(Items.BOWL, 3).save(pvd);
+					.requires(Items.BOWL, 3).save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID));
 
 			unlock(pvd, new ShapelessRecipeBuilder(NeapolitanFood.REFRESHING_ICE_CREAM.item.get(), 3)::unlockedBy, TFItems.ICE_BOMB.get())
 					.requires(NeapolitanCauldron.GLACIER.iceCream.get())
 					.requires(NeapolitanItems.MINT_ICE_CREAM.get())
 					.requires(NeapolitanCauldron.PHYTOCHEMICAL.iceCream.get())
-					.requires(Items.BOWL, 3).save(pvd);
+					.requires(Items.BOWL, 3).save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID));
 
 		}
 

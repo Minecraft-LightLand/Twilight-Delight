@@ -6,59 +6,62 @@ import dev.xkmc.l2library.repack.registrate.providers.RegistrateRecipeProvider;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.function.Consumer;
 
-public record ConditionalRecipeWrapper(FinishedRecipe base, String modid) implements FinishedRecipe {
+public record ConditionalRecipeWrapper(FinishedRecipe base, String[] modid) implements FinishedRecipe {
 
-	public ConditionalRecipeWrapper(FinishedRecipe base, String modid) {
-		this.base = base;
-		this.modid = modid;
-	}
-
-	public static Consumer<FinishedRecipe> mod(RegistrateRecipeProvider pvd, String modid) {
+	public static Consumer<FinishedRecipe> mod(RegistrateRecipeProvider pvd, String... modid) {
 		return (r) -> pvd.accept(new ConditionalRecipeWrapper(r, modid));
 	}
 
+	@Override
 	public void serializeRecipeData(JsonObject pJson) {
-		this.base.serializeRecipeData(pJson);
+		base.serializeRecipeData(pJson);
 	}
 
+	@Override
 	public ResourceLocation getId() {
-		return this.base.getId();
+		return base.getId();
 	}
 
+	@Override
 	public RecipeSerializer<?> getType() {
-		return this.base.getType();
+		return base.getType();
 	}
 
-	@Nullable
+	@org.jetbrains.annotations.Nullable
+	@Override
 	public JsonObject serializeAdvancement() {
-		return this.base.serializeAdvancement();
-	}
-
-	@Nullable
-	public ResourceLocation getAdvancementId() {
-		return this.base.getAdvancementId();
-	}
-
-	public JsonObject serializeRecipe() {
-		JsonObject ans = this.base.serializeRecipe();
-		JsonArray conditions = new JsonArray();
-		JsonObject condition = new JsonObject();
-		condition.addProperty("type", "forge:mod_loaded");
-		condition.addProperty("modid", this.modid);
-		conditions.add(condition);
-		ans.add("conditions", conditions);
+		JsonObject ans = base.serializeAdvancement();
+		if (ans == null) return null;
+		addCondition(ans);
 		return ans;
 	}
 
-	public FinishedRecipe base() {
-		return this.base;
+	@Nullable
+	@Override
+	public ResourceLocation getAdvancementId() {
+		return base.getAdvancementId();
 	}
 
-	public String modid() {
-		return this.modid;
+	@Override
+	public JsonObject serializeRecipe() {
+		JsonObject ans = base.serializeRecipe();
+		addCondition(ans);
+		return ans;
 	}
+
+	private void addCondition(JsonObject ans) {
+		JsonArray conditions = new JsonArray();
+		for (String str : modid) {
+			JsonObject condition = new JsonObject();
+			condition.addProperty("type", "forge:mod_loaded");
+			condition.addProperty("modid", str);
+			conditions.add(condition);
+		}
+		ans.add("conditions", conditions);
+	}
+
 }
