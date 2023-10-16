@@ -56,12 +56,18 @@ public class TagGen {
 	public static void genBlockTag(RegistrateTagsProvider<Block> pvd) {
 		pvd.tag(ModTags.HEAT_SOURCES).add(TFBlocks.FIERY_BLOCK.get());
 		if (ModList.get().isLoaded("neapolitan")) {
-			var tag = pvd.tag(BlockTags.CANDLE_CAKES);
+			var candleCake = pvd.tag(BlockTags.CANDLE_CAKES);
 			for (var e : NeapolitanCakes.values()) {
-				tag.addOptional(e.candle.getId());
+				candleCake.addOptional(e.candle.getId());
 				for (int i = 0; i < 16; i++) {
-					tag.addOptional(e.colored_candles[i].getId());
+					candleCake.addOptional(e.colored_candles[i].getId());
 				}
+			}
+			var shovel = pvd.tag(BlockTags.MINEABLE_WITH_SHOVEL);
+			var cauldrons = pvd.tag(BlockTags.CAULDRONS);
+			for (var e : NeapolitanCauldron.values()) {
+				shovel.addOptional(e.iceCreamBlock.getId());
+				cauldrons.addOptional(e.cauldron.getId());
 			}
 		}
 	}

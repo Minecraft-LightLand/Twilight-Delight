@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "twilightdelight:aurora_ice_cream_block",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:torchberry_ice_cream_block",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:phytochemical_ice_cream_block",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:glacier_ice_cream_block",
+      "required": false
+    }
+  ]
+}

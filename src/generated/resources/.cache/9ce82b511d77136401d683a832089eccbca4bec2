@@ -1,4 +1,4 @@
-// 1.19.2	2023-10-16T14:14:41.916332	Registrate Provider for twilightdelight [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.19.2	2023-10-16T14:44:08.706987	Registrate Provider for twilightdelight [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 5ce8d85114d9f31278fe97ced9513bbe8bde78a2 assets/twilightdelight/blockstates/aurora_ice_cream_block.json
@@ -371,12 +371,14 @@ edb5947f84984a39ab47c98c6fb0b3c3a9a8cc39 data/forge/tags/items/milk.json
 9489f52928c3ed546dfeca4fbf5b855e783f895f data/forge/tags/items/tools/knives.json
 5ca4109cdd28263ef9767d2ec3ec9e3b1e97ec57 data/forge/tags/items/tools/swords.json
 b980245147365d88bc2f127eab29162fa613a7f7 data/minecraft/tags/blocks/candle_cakes.json
+c5a1ecc24debed1747d63945bbb610a81eac8d7c data/minecraft/tags/blocks/cauldrons.json
 8c5a1df7a5e207cea1175a4c5b347e0e9a51418d data/minecraft/tags/blocks/leaves.json
 1aee46c0c3a73d49349dc17ea4d5bb99419010f0 data/minecraft/tags/blocks/logs.json
 1aee46c0c3a73d49349dc17ea4d5bb99419010f0 data/minecraft/tags/blocks/logs_that_burn.json
 1aee46c0c3a73d49349dc17ea4d5bb99419010f0 data/minecraft/tags/blocks/mineable/axe.json
 8c5a1df7a5e207cea1175a4c5b347e0e9a51418d data/minecraft/tags/blocks/mineable/hoe.json
 3f1e54194628a32263501056a38e78ee02f44350 data/minecraft/tags/blocks/mineable/pickaxe.json
+89390c31460fcff899eeca19354bc5c196b861bd data/minecraft/tags/blocks/mineable/shovel.json
 0990552ad72106de914a0407c5338841e04e3d99 data/minecraft/tags/blocks/needs_diamond_tool.json
 069d49892b6911001308e2a4f2ec807b68bbc5db data/minecraft/tags/blocks/saplings.json
 8c5a1df7a5e207cea1175a4c5b347e0e9a51418d data/minecraft/tags/items/leaves.json

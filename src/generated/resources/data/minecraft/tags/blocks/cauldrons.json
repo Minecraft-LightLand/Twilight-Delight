@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "twilightdelight:aurora_milkshake_cauldron",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:torchberry_milkshake_cauldron",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:phytochemical_milkshake_cauldron",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:glacier_milkshake_cauldron",
+      "required": false
+    }
+  ]
+}

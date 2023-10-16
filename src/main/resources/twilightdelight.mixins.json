@@ -13,6 +13,7 @@
 	"FoodPropertiesAccessor",
 	"ItemAccessor",
 	"ItemEntityMixin",
+	"LootTablesMixin",
 	"RichSoilBlockMixin",
 	"SkilletBlockEntityMixin",
 	"StoveBlockEntityMixin"
