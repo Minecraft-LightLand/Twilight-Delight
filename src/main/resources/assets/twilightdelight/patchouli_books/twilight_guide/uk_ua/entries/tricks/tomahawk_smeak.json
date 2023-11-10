@@ -1,0 +1,16 @@
+{
+  "name": "Отримання томагавка мінотавра",
+  "icon": "twilightdelight:raw_tomahawk_smeak",
+  "category": "twilightdelight:tricks",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Ви можете зібрати стейк томагавк з мінотавра і міногриб за допомогою діамантової сокири мінотавра з різним шансом."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "twilightdelight:raw_tomahawk_smeak",
+      "text": "Інгредієнт для приготування строганова з м'яса мінотавра."
+    }
+  ]
+}

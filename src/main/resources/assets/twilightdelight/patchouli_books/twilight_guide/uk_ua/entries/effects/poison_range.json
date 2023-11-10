@@ -1,0 +1,16 @@
+{
+  "name": "Отруйний діапазон",
+  "icon": "twilightforest:steeleaf_ingot",
+  "category": "twilightdelight:effects",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Цей ефект захистить гравця від ефекту отруєння і застосує отруту до всіх ворогів навколо. Завдає шкоди набагато швидше ніж нормальна отрута.$(br2)Діапазон ефекту позначено зеленими частинками."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "twilightforest:steeleaf_ingot",
+      "text": "Отримується з напоїв та десертів приготованих зі сталевого листа."
+    }
+  ]
+}
