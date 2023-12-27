@@ -1,0 +1,16 @@
+{
+  "name": "Тимчасовий смуток",
+  "icon": "twilightdelight:teardrop_sword",
+  "category": "twilightdelight:effects",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Цей ефекти зменшить атаку на 10 очок і наполовину швидкість пересування цільової сутності."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "twilightdelight:teardrop_sword",
+      "text": "Завдається ворогу під час використання меча сліз."
+    }
+  ]
+}

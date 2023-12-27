@@ -1,0 +1,16 @@
+{
+  "name": "Вогневий діапазон",
+  "icon": "twilightforest:torchberries",
+  "category": "twilightdelight:effects",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Цей ефект запобігатиме підпаленню гравця і підпалюватиме ворогів навколо гравця. Зверніть увагу, що цей ефект не захищає вас від вогневої школи.$(br2)Діапазон ефекту позначений частинками полум'я."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "twilightforest:torchberries",
+      "text": "Отримується з напоїв та десертів приготованих зі смолоскипних ягід"
+    }
+  ]
+}

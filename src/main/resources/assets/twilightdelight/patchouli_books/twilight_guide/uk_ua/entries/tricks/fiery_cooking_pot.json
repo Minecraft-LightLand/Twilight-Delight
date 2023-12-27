@@ -1,0 +1,15 @@
+{
+  "name": "Вогняна каструля",
+  "icon": "twilightdelight:fiery_cooking_pot",
+  "category": "twilightdelight:tricks",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Самонагрівна. Готує страви додані Twilight Forest або Twilight's Flavor & Delight за 10 секунд, якщо їм потрібно більше. Готує все це за 5 секунд на лабіринтові кухонній плиті."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "twilightdelight:fiery_cooking_pot"
+    }
+  ]
+}
