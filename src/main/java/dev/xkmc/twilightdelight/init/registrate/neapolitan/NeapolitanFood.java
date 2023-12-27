@@ -8,7 +8,7 @@ import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 
-public enum NeapolitanFood {//TODO ice cream tag
+public enum NeapolitanFood {
 
 	TWILIGHT_ICE_CREAM(NeapolitanFoodType.ICE_CREAM, 6, 0.4f,
 			new EffectSupplier(TDEffects.FIRE_RANGE, 600, 0, 1),

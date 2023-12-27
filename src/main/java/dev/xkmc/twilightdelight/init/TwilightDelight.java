@@ -21,16 +21,22 @@ import dev.xkmc.twilightdelight.init.world.TreeConfig;
 import dev.xkmc.twilightdelight.mixin.FoodPropertiesAccessor;
 import dev.xkmc.twilightdelight.mixin.ItemAccessor;
 import dev.xkmc.twilightdelight.util.StoveAddBlockUtil;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.forgespi.language.IModFileInfo;
+import net.minecraftforge.forgespi.locating.IModFile;
 import org.slf4j.Logger;
 import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
@@ -92,6 +98,21 @@ public class TwilightDelight {
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
 		event.getGenerator().addProvider(event.includeServer(), new GLMGen(event.getGenerator()));
+	}
+
+	@SubscribeEvent
+	public static void addPackFinders(AddPackFindersEvent event) {
+		if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+			IModFileInfo modFileInfo = ModList.get().getModFileById(MODID);
+			if (modFileInfo == null)
+				return;
+			String builtin = "shader_compatible_fiery";
+			IModFile modFile = modFileInfo.getFile();
+			event.addRepositorySource((consumer, constructor) ->
+					consumer.accept(Pack.create(MODID + ":" + builtin, false,
+							() -> new ModFilePackResources("Shader Compatible Fiery", modFile, "resourcepacks/" + builtin),
+							constructor, Pack.Position.TOP, PackSource.BUILT_IN)));
+		}
 	}
 
 }
