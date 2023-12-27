@@ -20,16 +20,24 @@ import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import dev.xkmc.twilightdelight.mixin.FoodPropertiesAccessor;
 import dev.xkmc.twilightdelight.mixin.ItemAccessor;
 import dev.xkmc.twilightdelight.util.StoveAddBlockUtil;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.forgespi.language.IModFileInfo;
+import net.minecraftforge.forgespi.locating.IModFile;
 import org.slf4j.Logger;
 import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
@@ -93,6 +101,26 @@ public class TwilightDelight {
 		var reg = new TDDatapackRegistriesGen(output, event.getLookupProvider());
 		event.getGenerator().addProvider(event.includeServer(), reg);
 		event.getGenerator().addProvider(event.includeServer(), new TDDatapackTagsGen(output, reg.getRegistryProvider(), event.getExistingFileHelper()));
+	}
+
+	@SubscribeEvent
+	public static void addPackFinders(AddPackFindersEvent event) {
+		if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+			IModFileInfo modFileInfo = ModList.get().getModFileById(MODID);
+			if (modFileInfo == null)
+				return;
+			String builtin = "shader_compatible_fiery";
+			IModFile modFile = modFileInfo.getFile();
+			event.addRepositorySource((consumer) -> {
+				Pack pack = Pack.readMetaAndCreate(MODID + ":" + builtin,
+						Component.literal("Shader Compatible Fiery"), false,
+						(id) -> new ModFilePackResources(id, modFile, "resourcepacks/" + builtin),
+						PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
+				if (pack != null) {
+					consumer.accept(pack);
+				}
+			});
+		}
 	}
 
 }
