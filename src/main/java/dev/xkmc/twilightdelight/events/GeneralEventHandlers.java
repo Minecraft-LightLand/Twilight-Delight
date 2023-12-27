@@ -1,9 +1,7 @@
 package dev.xkmc.twilightdelight.events;
 
-import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.data.ExtraLootGen;
-import dev.xkmc.twilightdelight.init.data.TDModConfig;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -16,23 +14,19 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
 import twilightforest.block.Experiment115Block;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFMobEffects;
@@ -120,21 +114,6 @@ public class GeneralEventHandlers {
 			}
 		}
 
-	}
-
-	@SubscribeEvent
-	public static void onItemTooltip(ItemTooltipEvent event) {
-		LivingEntity entity = event.getEntity();
-		ItemStack stack = event.getItemStack();
-		FoodProperties food = stack.getFoodProperties(entity);
-		ResourceLocation id = ForgeRegistries.ITEMS.getKey(stack.getItem());
-		if (food != null && food.getEffects().size() > 0 && id != null) {
-			String mod = id.getNamespace();
-			boolean pass = TDModConfig.COMMON.genAllModFoodValues.get() & !mod.equals(TwilightDelight.MODID);
-			if (pass) {
-				TDFoodItem.getFoodEffects(food, event.getToolTip());
-			}
-		}
 	}
 
 }

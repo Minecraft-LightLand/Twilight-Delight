@@ -22,15 +22,12 @@ public class TDModConfig {
 
 		public ForgeConfigSpec.IntValue effectRange;
 		public ForgeConfigSpec.IntValue auroraRange;
-		public ForgeConfigSpec.BooleanValue genAllModFoodValues;
 
 		Common(ForgeConfigSpec.Builder builder) {
 			effectRange = builder.comment("Range for hostile effects, such as fire/frost/poison")
 					.defineInRange("effectRange", 6, 0, 128);
 			auroraRange = builder.comment("Range for aurora range")
 					.defineInRange("auroraRange", 24, 0, 128);
-			genAllModFoodValues = builder.comment("Generate food effect tooltip for all modded food")
-					.define("genAllModFoodValues", true);
 		}
 
 	}
