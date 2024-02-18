@@ -171,17 +171,17 @@ public abstract class CookingPotBlockEntityMixin extends SyncedBlockEntity imple
 		}
 	}
 
-	@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z"), method = "getMealFromItem", remap = false)
+	@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z"), method = "getMealFromItem")
 	private static boolean twilightDelight$getMealFromItem$fiery(ItemStack stack, Item item, Operation<Boolean> old) {
 		return stack.is(TDBlocks.FIERY_POT.asItem()) || old.call(stack, item);
 	}
 
-	@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z"), method = "takeServingFromItem", remap = false)
+	@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z"), method = "takeServingFromItem")
 	private static boolean twilightDelight$takeServingFromItem$fiery(ItemStack stack, Item item, Operation<Boolean> old) {
 		return stack.is(TDBlocks.FIERY_POT.asItem()) || old.call(stack, item);
 	}
 
-	@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z"), method = "getContainerFromItem", remap = false)
+	@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z"), method = "getContainerFromItem")
 	private static boolean twilightDelight$getContainerFromItem$fiery(ItemStack stack, Item item, Operation<Boolean> old) {
 		return stack.is(TDBlocks.FIERY_POT.asItem()) || old.call(stack, item);
 	}
