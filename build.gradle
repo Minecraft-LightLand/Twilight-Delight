@@ -119,20 +119,20 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    compileOnly(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixin_extras_version}"))
+    implementation(jarJar("com.github.llamalad7.mixinextras:mixinextras-forge:${mixin_extras_version}")) {
+        transitive = false
+        jarJar.ranged(it, "[${mixin_extras_version},)")
+    }
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
-
-    //compileOnly fg.deobf(jarJar("com.tterrag.registrate:Registrate:${registrate_version}")){
-    //    transitive = false
-    //    jarJar.ranged(it, "[MC1.19-1.1.5,)")
-    //}
-
 
     implementation fg.deobf(jarJar("dev.xkmc.l2library:l2library:1.9.7")) {
         transitive = false
         jarJar.ranged(it, "[1.9.6,)")
     }
 
-    implementation fg.deobf("curse.maven:farmers-delight-398521:4636013")
+    implementation fg.deobf("curse.maven:farmers-delight-398521:5051241")
     implementation fg.deobf('curse.maven:the-twilight-forest-227639:4075841')
     implementation fg.deobf("mezz.jei:jei-${jei_minecraft_version}:${jei_version}")
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
@@ -148,6 +148,7 @@ dependencies {
     runtimeOnly fg.deobf('curse.maven:badpackets-615134:3903799')
 
     runtimeOnly fg.deobf('curse.maven:appleskin-248787:3872808')
+    implementation fg.deobf("curse.maven:thirst-was-taken-679270:5071552")
 
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")

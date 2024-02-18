@@ -1,12 +1,48 @@
 {
   "variants": {
-    "level=1": {
+    "level=1,purity=0": {
       "model": "twilightdelight:block/phytochemical_milkshake_cauldron_level1"
     },
-    "level=2": {
+    "level=1,purity=1": {
+      "model": "twilightdelight:block/phytochemical_milkshake_cauldron_level1"
+    },
+    "level=1,purity=2": {
+      "model": "twilightdelight:block/phytochemical_milkshake_cauldron_level1"
+    },
+    "level=1,purity=3": {
+      "model": "twilightdelight:block/phytochemical_milkshake_cauldron_level1"
+    },
+    "level=1,purity=4": {
+      "model": "twilightdelight:block/phytochemical_milkshake_cauldron_level1"
+    },
+    "level=2,purity=0": {
       "model": "twilightdelight:block/phytochemical_milkshake_cauldron_level2"
     },
-    "level=3": {
+    "level=2,purity=1": {
+      "model": "twilightdelight:block/phytochemical_milkshake_cauldron_level2"
+    },
+    "level=2,purity=2": {
+      "model": "twilightdelight:block/phytochemical_milkshake_cauldron_level2"
+    },
+    "level=2,purity=3": {
+      "model": "twilightdelight:block/phytochemical_milkshake_cauldron_level2"
+    },
+    "level=2,purity=4": {
+      "model": "twilightdelight:block/phytochemical_milkshake_cauldron_level2"
+    },
+    "level=3,purity=0": {
+      "model": "twilightdelight:block/phytochemical_milkshake_cauldron_full"
+    },
+    "level=3,purity=1": {
+      "model": "twilightdelight:block/phytochemical_milkshake_cauldron_full"
+    },
+    "level=3,purity=2": {
+      "model": "twilightdelight:block/phytochemical_milkshake_cauldron_full"
+    },
+    "level=3,purity=3": {
+      "model": "twilightdelight:block/phytochemical_milkshake_cauldron_full"
+    },
+    "level=3,purity=4": {
       "model": "twilightdelight:block/phytochemical_milkshake_cauldron_full"
     }
   }

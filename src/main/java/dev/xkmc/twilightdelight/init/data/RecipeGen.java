@@ -310,7 +310,7 @@ public class RecipeGen {
 					.build(pvd, getID(DelightFood.GRILLED_GHAST.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.LILY_CHICKEN.get().asItem(),
-							1, 400, 0.35f, Items.BOWL)::unlockedBy,
+							1, 400, 0.35f)::unlockedBy,
 					TFBlocks.HUGE_LILY_PAD.get().asItem())
 					.addIngredient(TFBlocks.HUGE_LILY_PAD.get().asItem())
 					.addIngredient(ModBlocks.ROAST_CHICKEN_BLOCK.get().asItem())

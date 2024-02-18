@@ -27,6 +27,7 @@ import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.ApplyExplosionDecay;
+import net.minecraft.world.level.storage.loot.functions.CopyNameFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -42,7 +43,9 @@ import vectorwing.farmersdelight.common.block.CookingPotBlock;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.MushroomColonyBlock;
 import vectorwing.farmersdelight.common.block.StoveBlock;
+import vectorwing.farmersdelight.common.item.CookingPotItem;
 import vectorwing.farmersdelight.common.item.MushroomColonyItem;
+import vectorwing.farmersdelight.common.loot.function.CopyMealFunction;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.function.Function;
@@ -131,7 +134,13 @@ public class TDBlocks {
 									case HANDLE -> handle;
 									case TRAY -> tray;
 								});
-					}).simpleItem().defaultLoot().defaultLang().register();
+					}).item(FieryCookingPotItem::new).properties(e -> e.stacksTo(1)).build()
+					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(
+							LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+									.add(LootItem.lootTableItem(block)
+											.apply(CopyNameFunction.copyName(CopyNameFunction.NameSource.BLOCK_ENTITY))
+											.apply(CopyMealFunction.builder())).when(ExplosionCondition.survivesExplosion()))))
+					.defaultLang().register();
 		}
 		// food
 		{
