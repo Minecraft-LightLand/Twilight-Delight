@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-01T22:13:18.918553	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-02-17T17:49:18.790426	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
 95461c1272911b68df4ceac09c8c4929c7e2cb05 assets/twilightdelight/blockstates/fiery_cooking_pot.json
 5549c8862609cc5461f31463064c67926ec6e182 assets/twilightdelight/blockstates/fiery_snakes_block.json
@@ -179,7 +179,7 @@ bc26fe6a3dcb31b7776685fb4f986ce267b61ee6 data/twilightdelight/advancements/recip
 ae44b6375aaf5ab22fdcc7fb8a89064c3b9060f5 data/twilightdelight/advancements/recipes/misc/torchberries_crate.json
 e75bd8b36dacd628d5a1aa3374d216ac3f5f3161 data/twilightdelight/advancements/recipes/misc/torchberries_from_torchberries_crate.json
 82b181401ce9d354cc8ce8374af52c81f1aad22c data/twilightdelight/loot_tables/blocks/aurora_pie.json
-d40be42b25c0dd541368b964e21f4d7c392ba272 data/twilightdelight/loot_tables/blocks/fiery_cooking_pot.json
+8843cca59825833c6faee47fbf537e802f28e9ab data/twilightdelight/loot_tables/blocks/fiery_cooking_pot.json
 f5cda1f11abcba39ccd71ca93f8a65b53035f267 data/twilightdelight/loot_tables/blocks/fiery_snakes_block.json
 96ea387c21d1b0052cbd25f339fe025f8c3317a5 data/twilightdelight/loot_tables/blocks/ironwood_leaves.json
 f2bde4e0452f0068d8fba535209f34fa7d0ed653 data/twilightdelight/loot_tables/blocks/ironwood_log.json
@@ -216,7 +216,7 @@ a19f5be0b781d923164d1a5310f651667e8d7da0 data/twilightdelight/recipes/cooked_ven
 d5cb68e60bd376f55416320146ebed26633ee641 data/twilightdelight/recipes/cooking/glowstew.json
 13454d66e1a31b4673ae6b6706d38582f0d56127 data/twilightdelight/recipes/cooking/grilled_ghast.json
 1d23c419a7aaaceea179f747635ddbf12c3d14d6 data/twilightdelight/recipes/cooking/grilled_tomahawk_smeak.json
-e0438fd1aabaea81f439cd7bc665475f27ef36ca data/twilightdelight/recipes/cooking/lily_chicken_block.json
+a811135c1e18dc62cd08c9532b1fcdd0cfd71368 data/twilightdelight/recipes/cooking/lily_chicken_block.json
 0e941dd4e421578d58d15292475f433398f9c88e data/twilightdelight/recipes/cooking/meef_stroganoff.json
 fd1bb0a4e8008a8a867327447d17692ac8384e29 data/twilightdelight/recipes/cooking/mushgloom_meef_pasta.json
 7d16d0ce88c3680a9a732eaeb677d1b82e2b55db data/twilightdelight/recipes/cooking/mushgloom_sauce.json

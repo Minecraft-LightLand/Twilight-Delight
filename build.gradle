@@ -141,7 +141,7 @@ dependencies {
         jarJar.ranged(it, "[2.4.16,)")
     }
 
-    implementation fg.deobf("curse.maven:farmers-delight-398521:4638874")
+    implementation fg.deobf("curse.maven:farmers-delight-398521:5051242")
     implementation fg.deobf("mezz.jei:jei-${jei_minecraft_version}:${jei_version}")
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
     implementation fg.deobf("curse.maven:blueprint-382216:4594238")
@@ -158,6 +158,7 @@ dependencies {
 
     runtimeOnly fg.deobf("curse.maven:appleskin-248787:4605078")
     runtimeOnly fg.deobf("curse.maven:patchouli-306770:4633797")
+    implementation fg.deobf("curse.maven:thirst-was-taken-679270:5071555")
 
     //runtimeOnly fg.deobf("curse.maven:rubidium-574856:4573226")
 

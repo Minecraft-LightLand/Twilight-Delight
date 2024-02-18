@@ -76,6 +76,6 @@ Adds food from Twilight Forest in the styles of Farmer's Delight and Neapolitan
     modId="farmersdelight"
     mandatory=true
     # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.20.1-1.2.2,)"
+    versionRange="[1.20.1-1.2.4,)"
     ordering="NONE"
     side="BOTH"

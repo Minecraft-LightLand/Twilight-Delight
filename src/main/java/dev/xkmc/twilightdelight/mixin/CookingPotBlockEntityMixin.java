@@ -1,5 +1,7 @@
 package dev.xkmc.twilightdelight.mixin;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import dev.xkmc.l2serial.util.Wrappers;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
@@ -167,6 +169,21 @@ public abstract class CookingPotBlockEntityMixin extends SyncedBlockEntity imple
 			}
 			ci.cancel();
 		}
+	}
+
+	@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z"), method = "getMealFromItem", remap = false)
+	private static boolean twilightDelight$getMealFromItem$fiery(ItemStack stack, Item item, Operation<Boolean> old) {
+		return stack.is(TDBlocks.FIERY_POT.asItem()) || old.call(stack, item);
+	}
+
+	@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z"), method = "takeServingFromItem", remap = false)
+	private static boolean twilightDelight$takeServingFromItem$fiery(ItemStack stack, Item item, Operation<Boolean> old) {
+		return stack.is(TDBlocks.FIERY_POT.asItem()) || old.call(stack, item);
+	}
+
+	@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z"), method = "getContainerFromItem", remap = false)
+	private static boolean twilightDelight$getContainerFromItem$fiery(ItemStack stack, Item item, Operation<Boolean> old) {
+		return stack.is(TDBlocks.FIERY_POT.asItem()) || old.call(stack, item);
 	}
 
 }
