@@ -15,6 +15,7 @@ public enum DelightFoodType implements IFoodType {
 	COOKIE(Rarity.COMMON, false, true, false, DelightFoodClassType.REGULAR),
 	HYDRA_PIECE(Rarity.UNCOMMON, true, true, false, DelightFoodClassType.FIRE_PROOF),
 	STICK(Rarity.COMMON, false, true, false, DelightFoodClassType.STICK),
+	SAUCE(Rarity.COMMON, false, false, false, DelightFoodClassType.SAUCE),
 	BOWL(Rarity.COMMON, false, false, false, DelightFoodClassType.BOWL),
 	BOWL_MEAT(Rarity.COMMON, true, false, false, DelightFoodClassType.BOWL),
 	DRINK(Rarity.COMMON, false, false, true, DelightFoodClassType.DRINK),

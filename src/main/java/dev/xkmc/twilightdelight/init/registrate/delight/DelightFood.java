@@ -62,7 +62,7 @@ public enum DelightFood {
 			new EffectSupplier(() -> MobEffects.GLOWING, 3600, 0, 1),
 			new EffectSupplier(() -> MobEffects.NIGHT_VISION, 3600, 0, 1),
 			new EffectSupplier(ModEffects.COMFORT, 1200, 0, 1)),
-	MUSHGLOOM_SAUCE(DelightFoodType.BOWL, 5, 0.4f,
+	MUSHGLOOM_SAUCE(DelightFoodType.SAUCE, 5, 0.4f,
 			new EffectSupplier(() -> MobEffects.GLOWING, 200, 0, 1)),
 	GLOW_VENISON_RIB_WITH_PASTA(DelightFoodType.BOWL_MEAT, 12, 0.8f,
 			new EffectSupplier(() -> MobEffects.GLOWING, 200, 0, 1),

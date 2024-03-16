@@ -13,6 +13,7 @@ public enum DelightFoodClassType {
 	REGULAR(TDFoodItem::new),
 	FIRE_PROOF(p-> new TDFoodItem(p.fireResistant())),
 	STICK(p -> new TDFoodItem(p.craftRemainder(Items.STICK))),
+	SAUCE(p -> new InBowlItem(p.stacksTo(64).craftRemainder(Items.BOWL))),
 	BOWL(p -> new InBowlItem(p.stacksTo(16).craftRemainder(Items.BOWL))),
 	DRINK(p -> new TDDrinkableItem(p.stacksTo(16).craftRemainder(Items.GLASS_BOTTLE))),
 	ROSE_TEA(p -> new RoseTeaItem(p.stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));

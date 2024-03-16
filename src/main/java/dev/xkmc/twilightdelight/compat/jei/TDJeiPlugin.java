@@ -3,18 +3,21 @@ package dev.xkmc.twilightdelight.compat.jei;
 import com.teamabnormals.neapolitan.core.Neapolitan;
 import dev.xkmc.l2library.util.Proxy;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.registration.*;
 import mezz.jei.api.runtime.IJeiRuntime;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.ModList;
 import twilightforest.init.TFItems;
+import vectorwing.farmersdelight.integration.jei.FDRecipeTypes;
 
 @JeiPlugin
 public class TDJeiPlugin implements IModPlugin {
@@ -71,6 +74,8 @@ public class TDJeiPlugin implements IModPlugin {
 			registration.addRecipeCatalyst(NeapolitanFood.GLACIER_ICE_CREAM.item.asStack(), FROZEN.getRecipeType());
 			registration.addRecipeCatalyst(NeapolitanFood.GLACIER_MILKSHAKE.item.asStack(), FROZEN.getRecipeType());
 		}
+		registration.addRecipeCatalyst(TDBlocks.FIERY_POT.asStack(), FDRecipeTypes.COOKING);
+		registration.addRecipeCatalyst(TDBlocks.MAZE_STOVE.asStack(), RecipeTypes.CAMPFIRE_COOKING);
 	}
 
 	@Override
