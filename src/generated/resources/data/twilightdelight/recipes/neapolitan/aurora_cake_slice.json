@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightdelight:aurora_cake"
+    }
+  ],
+  "result": [
+    {
+      "count": 7,
+      "item": "twilightdelight:aurora_cake_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

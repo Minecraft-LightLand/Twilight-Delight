@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "neapolitan"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "twilightdelight:glacier_cake_slice"
+    },
+    {
+      "item": "twilightdelight:glacier_cake_slice"
+    },
+    {
+      "item": "twilightdelight:glacier_cake_slice"
+    },
+    {
+      "item": "twilightdelight:glacier_cake_slice"
+    },
+    {
+      "item": "twilightdelight:glacier_cake_slice"
+    },
+    {
+      "item": "twilightdelight:glacier_cake_slice"
+    },
+    {
+      "item": "twilightdelight:glacier_cake_slice"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:glacier_cake"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/template_cake_with_candle",
+  "textures": {
+    "bottom": "twilightdelight:block/aurora_cake_bottom",
+    "candle": "minecraft:block/green_candle",
+    "particle": "twilightdelight:block/aurora_cake_side",
+    "side": "twilightdelight:block/aurora_cake_side",
+    "top": "twilightdelight:block/aurora_cake_top"
+  }
+}

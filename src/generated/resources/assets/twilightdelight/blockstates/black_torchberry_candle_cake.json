@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "twilightdelight:block/black_torchberry_candle_cake"
+    },
+    "lit=true": {
+      "model": "twilightdelight:block/black_torchberry_candle_cake_lit"
+    }
+  }
+}

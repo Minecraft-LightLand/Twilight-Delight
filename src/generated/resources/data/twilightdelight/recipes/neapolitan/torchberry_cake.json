@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "neapolitan"
+    }
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:egg"
+    },
+    "M": {
+      "tag": "forge:milk"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    },
+    "X": {
+      "item": "twilightforest:torchberries"
+    }
+  },
+  "pattern": [
+    "MXM",
+    "SES",
+    "WXW"
+  ],
+  "result": {
+    "item": "twilightdelight:torchberry_cake"
+  },
+  "show_notification": true
+}
