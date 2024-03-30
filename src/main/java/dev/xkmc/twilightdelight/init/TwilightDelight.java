@@ -36,7 +36,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forgespi.language.IModFileInfo;
 import net.minecraftforge.forgespi.locating.IModFile;
 import org.slf4j.Logger;
@@ -63,7 +62,7 @@ public class TwilightDelight {
 			MinecraftForge.EVENT_BUS.register(NeapolitanEventListeners.class);
 		}
 		TDEffects.register();
-		TDRecipes.register(FMLJavaModLoadingContext.get().getModEventBus());
+		TDRecipes.register();
 		TDModConfig.init();
 		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TagGen::genItemTag);
 		REGISTRATE.addDataGenerator(ProviderType.BLOCK_TAGS, TagGen::genBlockTag);

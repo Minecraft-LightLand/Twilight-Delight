@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-26T00:30:54.42928	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-03-29T15:56:35.567032	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
@@ -647,6 +647,22 @@ f41c0b56ab2061d2f26fd8e31fb31b7665efec1b data/twilightdelight/recipes/neapolitan
 5f995833632d0c48d459440053bff0b3f7519e0c data/twilightdelight/recipes/raw_ironwood.json
 d37899956ffeb9857339a365c7513d58ec609b55 data/twilightdelight/recipes/refreshing_ice_cream.json
 146521595cfe967f91f9b857efa23457388bba85 data/twilightdelight/recipes/steeleaf_knife.json
+ad3be2165c3013c51716abf237c6b8e206ecbfee data/twilightdelight/recipes/stripping/stripped_canopy_log.json
+adce9ee49752197edf43fc48c73057cd7de70628 data/twilightdelight/recipes/stripping/stripped_canopy_wood.json
+8cdb28a86473c1100967d5f94f6c4421009722be data/twilightdelight/recipes/stripping/stripped_dark_log.json
+7f5a8f51505b3de521a38b944cd0234f445ac6e7 data/twilightdelight/recipes/stripping/stripped_dark_wood.json
+55c395c65eed6d994d4aa183508362109a7ea0ca data/twilightdelight/recipes/stripping/stripped_mangrove_log.json
+80ad76b18e87ae0ceedc50eba361d9a6d146e906 data/twilightdelight/recipes/stripping/stripped_mangrove_wood.json
+5c529700698ea27252cf120bb57f6d950114821d data/twilightdelight/recipes/stripping/stripped_mining_log.json
+ec15ac98dc77f514fcc28431f6078776fed0d75c data/twilightdelight/recipes/stripping/stripped_mining_wood.json
+2c54c61fb877f7ff3bcedda1088a2aedd7d4ebc0 data/twilightdelight/recipes/stripping/stripped_sorting_log.json
+c1f1f4527f9e097f60f486508f31bcf8e1f76e62 data/twilightdelight/recipes/stripping/stripped_sorting_wood.json
+a17078cccbb9c77371aae6fe7552705f83e933ee data/twilightdelight/recipes/stripping/stripped_time_log.json
+80a8926f0ca5735767e2733c45859b40f34fdd76 data/twilightdelight/recipes/stripping/stripped_time_wood.json
+df2bb2aa0559fe563e61d9a50240584d1bf372a1 data/twilightdelight/recipes/stripping/stripped_transformation_log.json
+7b20bbcfd51eb30faf3b5b37c4f2de939230f153 data/twilightdelight/recipes/stripping/stripped_transformation_wood.json
+630d5e4397f197d27f5872d47100e5c73ea9a191 data/twilightdelight/recipes/stripping/stripped_twilight_oak_log.json
+7d239255760b9efd14ad1c1fcd6b75eab4346954 data/twilightdelight/recipes/stripping/stripped_twilight_oak_wood.json
 86bdc2d3cd093ff0cd5f2257366d2b1e12697bff data/twilightdelight/recipes/teardrop_sword.json
 79488b80b181efe68f9d37284635fe79e884b3e5 data/twilightdelight/recipes/torchberries_crate.json
 e0eb51a29cb405a030f1da7ec260c167dbea9e4c data/twilightdelight/recipes/torchberries_from_torchberries_crate.json

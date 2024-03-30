@@ -21,6 +21,7 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -111,6 +112,18 @@ public class GeneralEventHandlers {
 						((ServerLevel) target.level()).getChunkSource().broadcastAndSend(target, new ClientboundAnimatePacket(target, 5));
 					}
 				}
+			}
+		}
+
+	}
+
+	@SubscribeEvent
+	public static void fieryToolSetFire(LivingAttackEvent event) {
+		Entity var2 = event.getSource().getEntity();
+		if (var2 instanceof LivingEntity living) {
+			var item = living.getMainHandItem();
+			if ((item.is(TDItems.FIERY_KNIFE.get()) || item.is(TDItems.TEARDROP_SWORD.get())) && !event.getEntity().fireImmune()) {
+				event.getEntity().setSecondsOnFire(1);
 			}
 		}
 

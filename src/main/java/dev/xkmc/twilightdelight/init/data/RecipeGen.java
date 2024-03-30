@@ -21,6 +21,7 @@ import net.mehvahdjukaar.jeed.Jeed;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -28,12 +29,17 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 import twilightforest.data.tags.ItemTagGenerator;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
+import vectorwing.farmersdelight.common.crafting.ingredient.ToolActionIngredient;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
@@ -534,6 +540,28 @@ public class RecipeGen {
 					Items.BOW).save(pvd, new ResourceLocation(getID(TFItems.ICE_BOW.getId())));
 		}
 
+		// log stripping
+		{
+			path = "stripping/";
+			stripLog(pvd, TFBlocks.TWILIGHT_OAK_LOG, TFBlocks.STRIPPED_TWILIGHT_OAK_LOG);
+			stripLog(pvd, TFBlocks.CANOPY_LOG, TFBlocks.STRIPPED_CANOPY_LOG);
+			stripLog(pvd, TFBlocks.DARK_LOG, TFBlocks.STRIPPED_DARK_LOG);
+			stripLog(pvd, TFBlocks.MANGROVE_LOG, TFBlocks.STRIPPED_MANGROVE_LOG);
+			stripLog(pvd, TFBlocks.MINING_LOG, TFBlocks.STRIPPED_MINING_LOG);
+			stripLog(pvd, TFBlocks.TIME_LOG, TFBlocks.STRIPPED_TIME_LOG);
+			stripLog(pvd, TFBlocks.SORTING_LOG, TFBlocks.STRIPPED_SORTING_LOG);
+			stripLog(pvd, TFBlocks.TRANSFORMATION_LOG, TFBlocks.STRIPPED_TRANSFORMATION_LOG);
+
+			stripLog(pvd, TFBlocks.TWILIGHT_OAK_WOOD, TFBlocks.STRIPPED_TWILIGHT_OAK_WOOD);
+			stripLog(pvd, TFBlocks.CANOPY_WOOD, TFBlocks.STRIPPED_CANOPY_WOOD);
+			stripLog(pvd, TFBlocks.DARK_WOOD, TFBlocks.STRIPPED_DARK_WOOD);
+			stripLog(pvd, TFBlocks.MANGROVE_WOOD, TFBlocks.STRIPPED_MANGROVE_WOOD);
+			stripLog(pvd, TFBlocks.MINING_WOOD, TFBlocks.STRIPPED_MINING_WOOD);
+			stripLog(pvd, TFBlocks.TIME_WOOD, TFBlocks.STRIPPED_TIME_WOOD);
+			stripLog(pvd, TFBlocks.SORTING_WOOD, TFBlocks.STRIPPED_SORTING_WOOD);
+			stripLog(pvd, TFBlocks.TRANSFORMATION_WOOD, TFBlocks.STRIPPED_TRANSFORMATION_WOOD);
+		}
+
 		// neapolitan
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			path = "neapolitan/";
@@ -653,6 +681,13 @@ public class RecipeGen {
 		pvd.smelting(in, RecipeCategory.FOOD, out, exp, 200);
 		pvd.smoking(in, RecipeCategory.FOOD, out, exp, 100);
 		pvd.campfire(in, RecipeCategory.FOOD, out, exp, 300);
+	}
+
+	private static void stripLog(RegistrateRecipeProvider pvd, RegistryObject<? extends Block> log, RegistryObject<? extends Block> stripped) {
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log.get()), new ToolActionIngredient(ToolActions.AXE_STRIP), stripped.get())
+				.addResult(ModItems.TREE_BARK.get())
+				.addSound(ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AXE_STRIP).toString())
+				.build(pvd, getID(stripped.getId()));
 	}
 
 	private record NBTRecipe(FinishedRecipe recipe, ItemStack stack) implements FinishedRecipe {

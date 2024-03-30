@@ -18,7 +18,7 @@ public class TDRecipes {
 			TwilightDelight.REGISTRATE.simple("frozen", ForgeRegistries.Keys.RECIPE_SERIALIZERS,
 					() -> new BaseRecipe.RecType<>(SimpleFrozenRecipe.class, WORLD_RECIPE));
 
-	public static void register(IEventBus bus) {
+	public static void register() {
 	}
 
 }
