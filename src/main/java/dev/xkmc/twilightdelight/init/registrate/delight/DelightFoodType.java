@@ -12,6 +12,7 @@ public enum DelightFoodType implements IFoodType {
 	NONE(Rarity.COMMON, false, false, false, DelightFoodClassType.REGULAR),
 	MEAT(Rarity.COMMON, true, false, false, DelightFoodClassType.REGULAR),
 	MEAT_PIECE(Rarity.COMMON, true, true, false, DelightFoodClassType.REGULAR),
+	MEAT_STICK(Rarity.COMMON, true, true, false, DelightFoodClassType.REGULAR),
 	COOKIE(Rarity.COMMON, false, true, false, DelightFoodClassType.REGULAR),
 	HYDRA_PIECE(Rarity.UNCOMMON, true, true, false, DelightFoodClassType.FIRE_PROOF),
 	STICK(Rarity.COMMON, false, true, false, DelightFoodClassType.STICK),
@@ -45,6 +46,8 @@ public enum DelightFoodType implements IFoodType {
 			pvd.getBuilder(ctx.getName()).parent(new ModelFile.UncheckedModelFile(
 							new ResourceLocation("farmersdelight:item/mug")))
 					.texture("layer0", pvd.itemTexture(ctx));
+		} else if (this == MEAT_STICK || this == STICK) {
+			pvd.handheld(ctx);
 		} else {
 			pvd.generated(ctx);
 		}

@@ -65,7 +65,6 @@ public enum NeapolitanCakes {
 						p -> new FlavoredCandleCakeBlock(block::get, Blocks.CANDLE, props))
 				.blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, "candle"))
 				.loot((pvd, block) -> pvd.dropOther(block, Items.CANDLE))
-				.tag(BlockTags.CANDLE_CAKES)
 				.register();
 		colored_candles = new BlockEntry[DyeColor.values().length];
 		for (DyeColor dye : DyeColor.values()) {
@@ -76,7 +75,6 @@ public enum NeapolitanCakes {
 							p -> new FlavoredCandleCakeBlock(block::get, candle, props))
 					.blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, color_name + "_candle"))
 					.loot((pvd, block) -> pvd.dropOther(block, candle.asItem()))
-					.tag(BlockTags.CANDLE_CAKES)
 					.register();
 		}
 	}
