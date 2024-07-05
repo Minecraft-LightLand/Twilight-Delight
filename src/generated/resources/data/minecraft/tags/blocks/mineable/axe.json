@@ -1,5 +1,13 @@
 {
   "values": [
+    "twilightdelight:twilight_oak_cabinet",
+    "twilightdelight:canopy_cabinet",
+    "twilightdelight:dark_cabinet",
+    "twilightdelight:mangrove_cabinet",
+    "twilightdelight:mining_cabinet",
+    "twilightdelight:sorting_cabinet",
+    "twilightdelight:time_cabinet",
+    "twilightdelight:transformation_cabinet",
     "twilightdelight:ironwood_log"
   ]
 }

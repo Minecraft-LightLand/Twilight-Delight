@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:twilight_oak_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_twilight_oak_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "twilightforest:twilight_oak_slab"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_twilight_oak_slab",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:twilight_oak_cabinet"
+    ]
+  },
+  "sends_telemetry_event": false
+}

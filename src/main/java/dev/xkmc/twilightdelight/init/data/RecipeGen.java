@@ -36,6 +36,7 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
+import twilightforest.TwilightForestMod;
 import twilightforest.data.tags.ItemTagGenerator;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
@@ -110,6 +111,18 @@ public class RecipeGen {
 					RecipeCategory.MISC,
 					TDItems.TEARDROP_SWORD.get())::unlocks, DelightFood.EXPERIMENT_110.item.get())
 					.save(pvd, TDItems.TEARDROP_SWORD.getId());
+
+			for (var e : TDBlocks.WoodTypes.values()) {
+				String id = e.id();
+				var cab = TDBlocks.CABINETS[e.ordinal()];
+				var slab = ForgeRegistries.ITEMS.getValue(new ResourceLocation(TwilightForestMod.ID, id + "_slab"));
+				var trapdoor = ForgeRegistries.ITEMS.getValue(new ResourceLocation(TwilightForestMod.ID, id + "_trapdoor"));
+				assert slab != null && trapdoor != null;
+				unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, cab.get(), 1)::unlockedBy, slab)
+						.pattern("---").pattern("D D").pattern("---")
+						.define('-', slab).define('D', trapdoor)
+						.save(pvd);
+			}
 		}
 
 		//misc

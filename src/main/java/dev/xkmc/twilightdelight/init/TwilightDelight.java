@@ -28,6 +28,7 @@ import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -42,6 +43,9 @@ import org.slf4j.Logger;
 import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 import vectorwing.farmersdelight.common.registry.ModEffects;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Mod(TwilightDelight.MODID)
 @Mod.EventBusSubscriber(modid = TwilightDelight.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -78,6 +82,10 @@ public class TwilightDelight {
 			StoveAddBlockUtil.addBlock(ModBlockEntityTypes.COOKING_POT.get(), TDBlocks.FIERY_POT.get());
 			((FoodPropertiesAccessor) TFItems.MEEF_STROGANOFF.get().getFoodProperties()).getEffectSupplierList()
 					.add(Pair.of(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000), 1f));
+
+			Set<Block> set = new LinkedHashSet<>(ModBlockEntityTypes.CABINET.get().validBlocks);
+			for (var e : TDBlocks.WoodTypes.values()) set.add(TDBlocks.CABINETS[e.ordinal()].get());
+			ModBlockEntityTypes.CABINET.get().validBlocks = set;
 
 			ComposterBlock.COMPOSTABLES.put(TDBlocks.MUSHGLOOM_COLONY.get().asItem(), 1.0F);
 

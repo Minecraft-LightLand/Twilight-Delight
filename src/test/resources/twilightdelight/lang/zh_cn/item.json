@@ -134,6 +134,24 @@
 		  "candle_cake": "蜡烛蛋糕"
 		}
 	  ]
+	},
+	"cabinets": {
+	  "path": "block.twilightdelight",
+	  "list": [
+		{
+		  "twilight_oak": "暮色橡木",
+		  "canopy": "苍穹木",
+		  "dark": "黑木",
+		  "mangrove": "红木",
+		  "time": "时光木",
+		  "sorting": "分类木",
+		  "mining": "矿石木",
+		  "transformation": "变化木"
+		},
+		{
+		  "cabinet": "橱柜"
+		}
+	  ]
 	}
   }
 }

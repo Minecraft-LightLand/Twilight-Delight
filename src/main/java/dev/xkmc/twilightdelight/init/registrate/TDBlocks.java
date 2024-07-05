@@ -41,15 +41,13 @@ import twilightforest.block.DarkLeavesBlock;
 import twilightforest.block.TFLogBlock;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
-import vectorwing.farmersdelight.common.block.CookingPotBlock;
-import vectorwing.farmersdelight.common.block.FeastBlock;
-import vectorwing.farmersdelight.common.block.MushroomColonyBlock;
-import vectorwing.farmersdelight.common.block.StoveBlock;
-import vectorwing.farmersdelight.common.item.CookingPotItem;
+import vectorwing.farmersdelight.common.block.*;
 import vectorwing.farmersdelight.common.item.MushroomColonyItem;
 import vectorwing.farmersdelight.common.loot.function.CopyMealFunction;
+import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
+import java.util.Locale;
 import java.util.function.Function;
 
 public class TDBlocks {
@@ -71,6 +69,8 @@ public class TDBlocks {
 	public static final BlockEntry<SaplingBlock> IRON_SAPLING;
 	public static final BlockEntry<TFLogBlock> IRON_LOGS;
 	public static final BlockEntry<DarkLeavesBlock> IRON_LEAVES;
+
+	public static final BlockEntry<CabinetBlock>[] CABINETS;
 
 	static {
 		// utensils
@@ -257,6 +257,27 @@ public class TDBlocks {
 							pvd.modLoc("block/" + ctx.getName() + "_stage3_head"))).build()
 					.register();
 		}
+		// cabinet
+		{
+			CABINETS = new BlockEntry[WoodTypes.values().length];
+			for (var type : WoodTypes.values())
+				CABINETS[type.ordinal()] = TwilightDelight.REGISTRATE.block(type.id() + "_cabinet",
+								p -> new CabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL))
+						).blockstate((ctx, pvd) -> {
+							ModelFile close = pvd.models().orientable("block/" + ctx.getName(),
+									pvd.modLoc("block/" + ctx.getName() + "_side"),
+									pvd.modLoc("block/" + ctx.getName() + "_front"),
+									pvd.modLoc("block/" + ctx.getName() + "_top"));
+							ModelFile open = pvd.models().orientable("block/" + ctx.getName() + "_open",
+									pvd.modLoc("block/" + ctx.getName() + "_side"),
+									pvd.modLoc("block/" + ctx.getName() + "_open"),
+									pvd.modLoc("block/" + ctx.getName() + "_top"));
+							pvd.horizontalBlock(ctx.get(), state -> state.getValue(CabinetBlock.OPEN) ? open : close);
+						})
+						.tag(BlockTags.MINEABLE_WITH_AXE)
+						.simpleItem()
+						.register();
+		}
 		// tree
 		{
 			IRON_SAPLING = TwilightDelight.REGISTRATE.block(
@@ -318,6 +339,15 @@ public class TDBlocks {
 					)))
 					.register();
 		}
+	}
+
+	public enum WoodTypes {
+		TWILIGHT_OAK, CANOPY, DARK, MANGROVE, MINING, SORTING, TIME, TRANSFORMATION;
+
+		public String id() {
+			return name().toLowerCase(Locale.ROOT);
+		}
+
 	}
 
 	public static void register() {

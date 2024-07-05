@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "twilightdelight:block/dark_cabinet_open",
+    "side": "twilightdelight:block/dark_cabinet_side",
+    "top": "twilightdelight:block/dark_cabinet_top"
+  }
+}
