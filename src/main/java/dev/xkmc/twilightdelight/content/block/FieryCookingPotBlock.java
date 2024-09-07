@@ -8,4 +8,8 @@ public class FieryCookingPotBlock extends CookingPotBlock {
 		super(properties);
 	}
 
+	@Override
+	public String getDescriptionId() {
+		return super.getDescriptionId();
+	}
 }
