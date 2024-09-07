@@ -159,6 +159,7 @@ dependencies {
     implementation jarJar(group: 'dev.xkmc', name: 'l2core', version: "[${l2core_ver},)")
 
     implementation "mezz.jei:jei-${jei_minecraft_version}:${jei_version}"
+    implementation "dev.xkmc:cuisinedelight:1.2.1+1"
 
     implementation "curse.maven:thirst-was-taken-679270:5568715"
     implementation "curse.maven:just-enough-effect-descriptions-jeed-532286:5634312"
