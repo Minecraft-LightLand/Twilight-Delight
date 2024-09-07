@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mangrove_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:mangrove_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:mangrove_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mangrove_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:mangrove_cabinet"
+    ]
+  }
+}

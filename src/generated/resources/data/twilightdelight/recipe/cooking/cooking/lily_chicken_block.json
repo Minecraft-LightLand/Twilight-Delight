@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "twilightforest:huge_lily_pad"
+    },
+    {
+      "item": "farmersdelight:roast_chicken_block"
+    },
+    {
+      "item": "twilightforest:huge_water_lily"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:lily_chicken_block"
+  }
+}

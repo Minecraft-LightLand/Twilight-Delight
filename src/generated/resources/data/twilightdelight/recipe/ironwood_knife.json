@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "twilightforest:ironwood_ingot"
+    },
+    "B": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "result": {
+    "components": {
+      "minecraft:enchantments": {
+        "levels": {
+          "minecraft:knockback": 1,
+          "minecraft:unbreaking": 1
+        }
+      }
+    },
+    "count": 1,
+    "id": "twilightdelight:ironwood_knife"
+  }
+}

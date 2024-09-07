@@ -1,9 +1,0 @@
-{
-  "type": "twilightdelight:frozen",
-  "ingredient": {
-    "item": "minecraft:magma_block"
-  },
-  "result": {
-    "item": "minecraft:obsidian"
-  }
-}

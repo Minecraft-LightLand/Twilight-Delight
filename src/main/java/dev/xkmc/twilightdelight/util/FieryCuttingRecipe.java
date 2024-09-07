@@ -7,10 +7,11 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import vectorwing.farmersdelight.common.crafting.CuttingBoardRecipe;
@@ -22,22 +23,19 @@ import java.util.Optional;
 public class FieryCuttingRecipe extends CuttingBoardRecipe {
 
 	@SuppressWarnings({"OptionalUsedAsFieldOrParameterType"})
-	public static Optional<CuttingBoardRecipe> transform(Level level, Vec3 pos, Optional<CuttingBoardRecipe> optional) {
-		if (optional.isEmpty()) {
-			return Optional.empty();
-		}
-		return Optional.of(new FieryCuttingRecipe(level, pos, optional.get()));
+	public static Optional<RecipeHolder<CuttingBoardRecipe>> transform(Level level, Vec3 pos, Optional<RecipeHolder<CuttingBoardRecipe>> optional) {
+		return optional.map(h -> new RecipeHolder<>(h.id(), new FieryCuttingRecipe(level, pos, h.value())));
 	}
 
 	private static Ingredient extract(NonNullList<Ingredient> ingredients) {
-		return ingredients.size() == 0 ? Ingredient.EMPTY : ingredients.get(0);
+		return ingredients.isEmpty() ? Ingredient.EMPTY : ingredients.getFirst();
 	}
 
 	private final Level level;
 	private final Vec3 pos;
 
 	private FieryCuttingRecipe(Level level, Vec3 pos, CuttingBoardRecipe recipe) {
-		super(recipe.getId(), recipe.getGroup(), extract(recipe.getIngredients()), recipe.getTool(), recipe.getRollableResults(), recipe.getSoundEventID());
+		super(recipe.getGroup(), extract(recipe.getIngredients()), recipe.getTool(), recipe.getRollableResults(), recipe.getSoundEvent());
 		this.level = level;
 		this.pos = pos;
 	}
@@ -48,12 +46,12 @@ public class FieryCuttingRecipe extends CuttingBoardRecipe {
 		List<ItemStack> ans = new ArrayList<>();
 		int particle = 0;
 		for (ItemStack stack : prev) {
-			SimpleContainer cont = new SimpleContainer(stack);
+			SingleRecipeInput cont = new SingleRecipeInput(stack);
 			var opt = level.getRecipeManager().getRecipeFor(RecipeType.SMELTING, cont, level);
 			if (opt.isEmpty()) {
 				ans.add(stack);
 			} else {
-				ItemStack result = opt.get().assemble(cont, level.registryAccess());
+				ItemStack result = opt.get().value().assemble(cont, level.registryAccess());
 				result.setCount(stack.getCount());
 				ans.add(result);
 				particle += stack.getCount();

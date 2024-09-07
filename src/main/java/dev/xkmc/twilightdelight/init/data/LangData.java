@@ -51,11 +51,6 @@ public enum LangData {
 		pvd.add("block.twilightdelight.fiery_cooking_pot.tooltip", "Heats itself. Cook Twilight meals fastly.");
 		pvd.add("death.attack.twilightdelight.thorn_rose_tea", "%1$s acknowledged that every rose has its thorn");
 		pvd.add("death.attack.twilightdelight.thorn_rose_tea.player", "1$s acknowledged that every rose has its thorn whilst trying to escape %2$s");
-		pvd.add("effect.twilightdelight.fire_range.description", "Ignite enemies around you, and make you cannot be ignited.");
-		pvd.add("effect.twilightdelight.poison_range.description", "Poison enemies around you, and make you immune to Poison.");
-		pvd.add("effect.twilightdelight.frozen_range.description", "Freeze enemies around you, and make you immune to Frosty. Can also freeze items.");
-		pvd.add("effect.twilightdelight.temporal_sadness.description", "Reduce movement speed and attack damage.");
-		pvd.add("effect.twilightdelight.aurora_glowing.description", "Make yourself and all entities your see glow with rainbow color.");
 		PatchouliLang.genLang(pvd);
 	}
 

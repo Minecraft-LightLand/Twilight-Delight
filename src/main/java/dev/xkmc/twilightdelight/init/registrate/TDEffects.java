@@ -15,10 +15,10 @@ public class TDEffects {
 	public static final SimpleEntry<MobEffect> AURORA_GLOWING;
 
 	static {
-		FIRE_RANGE = genEffect("fire_range", FireRange::new, "Ignite entities around you");
-		POISON_RANGE = genEffect("poison_range", PoisonRange::new,"Poison entities around you");
-		FROZEN_RANGE = genEffect("frozen_range", FrozenRange::new,"Freeze entities around you");
-		TEMPORAL_SADNESS = genEffect("temporal_sadness", TemporalSadness::new,"");
+		FIRE_RANGE = genEffect("fire_range", FireRange::new, "Ignite enemies around you, and make you cannot be ignited.");
+		POISON_RANGE = genEffect("poison_range", PoisonRange::new,"Poison enemies around you, and make you immune to Poison.");
+		FROZEN_RANGE = genEffect("frozen_range", FrozenRange::new,"Freeze enemies around you, and make you immune to Frosty. Can also freeze items.");
+		TEMPORAL_SADNESS = genEffect("temporal_sadness", TemporalSadness::new,"Reduce movement speed and attack damage.");
 		AURORA_GLOWING = genEffect("aurora_glowing", AuroraGlowing::new,"Make yourself glow with rainbow color. All entities appear rainbow glowing to you");
 	}
 

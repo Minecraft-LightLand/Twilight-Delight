@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 1600,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "twilightdelight:raw_tomahawk_smeak"
+    },
+    {
+      "item": "twilightdelight:mushgloom_sauce"
+    },
+    {
+      "item": "farmersdelight:milk_bottle"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:grilled_tomahawk_smeak"
+  }
+}

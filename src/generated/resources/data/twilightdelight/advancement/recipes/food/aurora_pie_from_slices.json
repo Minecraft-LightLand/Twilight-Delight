@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_aurora_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightdelight:aurora_pie_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:aurora_pie_from_slices"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_aurora_pie_slice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:aurora_pie_from_slices"
+    ]
+  }
+}

@@ -27,3 +27,9 @@ mandatory=true
 versionRange="${project.farmersdelight_version_range}"
 ordering="AFTER"
 side="BOTH"
+[[dependencies.${ mod_id }]]
+modId="twilightforest"
+mandatory=true
+versionRange="[4.2,)"
+ordering="AFTER"
+side="BOTH"

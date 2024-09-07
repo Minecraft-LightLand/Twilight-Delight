@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "twilightforest:torchberries"
+    },
+    "B": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "pattern": [
+    "BAB"
+  ],
+  "result": {
+    "count": 8,
+    "id": "twilightdelight:torchberry_cookie"
+  }
+}

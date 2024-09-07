@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_meef_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightdelight:raw_meef_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:cooked_meef_slice_from_raw_meef_slice_smelting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_meef_slice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:cooked_meef_slice_from_raw_meef_slice_smelting"
+    ]
+  }
+}

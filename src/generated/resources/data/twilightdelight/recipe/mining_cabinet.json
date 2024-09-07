@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "-": {
+      "item": "twilightforest:mining_slab"
+    },
+    "D": {
+      "item": "twilightforest:mining_trapdoor"
+    }
+  },
+  "pattern": [
+    "---",
+    "D D",
+    "---"
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:mining_cabinet"
+  }
+}

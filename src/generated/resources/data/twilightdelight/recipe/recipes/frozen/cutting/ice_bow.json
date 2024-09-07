@@ -1,0 +1,10 @@
+{
+  "type": "twilightdelight:frozen",
+  "ingredient": {
+    "item": "minecraft:bow"
+  },
+  "result": {
+    "count": 1,
+    "id": "twilightforest:ice_bow"
+  }
+}

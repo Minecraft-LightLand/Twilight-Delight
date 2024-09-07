@@ -1,9 +1,0 @@
-{
-  "type": "twilightdelight:frozen",
-  "ingredient": {
-    "item": "minecraft:blue_ice"
-  },
-  "result": {
-    "item": "twilightforest:ice_bomb"
-  }
-}

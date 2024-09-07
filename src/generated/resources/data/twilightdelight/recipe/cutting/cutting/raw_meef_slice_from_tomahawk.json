@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightdelight:raw_tomahawk_smeak"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "twilightdelight:raw_meef_slice"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

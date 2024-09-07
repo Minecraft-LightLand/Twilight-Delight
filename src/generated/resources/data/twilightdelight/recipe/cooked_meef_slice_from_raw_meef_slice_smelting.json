@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "twilightdelight:raw_meef_slice"
+  },
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:cooked_meef_slice"
+  }
+}

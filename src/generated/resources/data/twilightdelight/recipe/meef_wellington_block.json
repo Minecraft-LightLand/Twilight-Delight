@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "B": {
+      "tag": "c:eggs"
+    },
+    "C": {
+      "item": "twilightdelight:mushgloom_sauce"
+    },
+    "D": {
+      "tag": "twilightdelight:meef_cooked"
+    },
+    "E": {
+      "item": "minecraft:bowl"
+    },
+    "F": {
+      "item": "farmersdelight:bacon"
+    }
+  },
+  "pattern": [
+    "BAB",
+    "DCD",
+    "FEF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:meef_wellington_block"
+  }
+}

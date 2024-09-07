@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "twilightdelight:experiment_113"
+    },
+    {
+      "item": "twilightdelight:glowstew"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:glow_113"
+  }
+}

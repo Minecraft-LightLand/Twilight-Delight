@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 300,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "twilightdelight:raw_tomahawk_smeak"
+  },
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:cooked_tomahawk_smeak"
+  }
+}

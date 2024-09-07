@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightforest:hydra_chop"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "twilightdelight:hydra_piece"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightforest:naga_trophy"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 9,
+        "id": "twilightforest:naga_scale"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

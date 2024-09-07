@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "twilightdelight:mushgloom_sauce"
+    },
+    {
+      "tag": "twilightdelight:meef_raw"
+    },
+    {
+      "item": "farmersdelight:raw_pasta"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:mushgloom_meef_pasta"
+  }
+}

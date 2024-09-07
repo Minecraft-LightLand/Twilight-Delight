@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "cookingtime": 800,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "twilightforest:fiery_tears"
+    },
+    {
+      "item": "minecraft:ghast_tear"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:tear_drink"
+  }
+}

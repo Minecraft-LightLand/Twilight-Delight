@@ -52,7 +52,7 @@ public abstract class RangeSearchEffect extends MobEffect {
 	}
 
 	@Override
-	public boolean isDurationEffectTick(int tick, int amplifier) {
+	public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
 		return true;
 	}
 

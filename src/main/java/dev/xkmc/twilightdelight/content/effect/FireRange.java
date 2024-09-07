@@ -19,7 +19,7 @@ public class FireRange extends RangeRenderEffect {
 
 	@Override
 	protected void applyEffect(LivingEntity target, int amplifier) {
-		target.setSecondsOnFire(amplifier + 5);
+		target.setRemainingFireTicks((amplifier + 2) * 20);
 	}
 
 	@Override

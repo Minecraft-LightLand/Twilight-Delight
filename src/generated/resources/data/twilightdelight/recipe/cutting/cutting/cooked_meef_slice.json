@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightforest:cooked_meef"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "twilightdelight:cooked_meef_slice"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

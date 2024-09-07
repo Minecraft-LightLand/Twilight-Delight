@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hydra_chop": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:hydra_chop"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:hydra_burger"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hydra_chop"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:hydra_burger"
+    ]
+  }
+}

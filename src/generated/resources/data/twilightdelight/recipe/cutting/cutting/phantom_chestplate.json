@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightforest:phantom_chestplate"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 5,
+        "id": "twilightforest:armor_shard_cluster"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:pickaxes"
+  }
+}

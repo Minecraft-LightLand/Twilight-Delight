@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:foods/leafy_green"
+    },
+    {
+      "tag": "c:foods/onion"
+    },
+    {
+      "tag": "c:foods/tomato"
+    },
+    {
+      "item": "twilightdelight:experiment_110"
+    },
+    {
+      "item": "twilightforest:borer_essence"
+    },
+    {
+      "item": "twilightforest:transformation_powder"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:ghast_brain_salad"
+  }
+}

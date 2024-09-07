@@ -3,13 +3,14 @@ package dev.xkmc.twilightdelight.mixin;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CampfireCookingRecipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -32,11 +33,11 @@ public abstract class StoveBlockEntityMixin extends SyncedBlockEntity {
 	}
 
 	@Inject(at = @At(value = "RETURN", ordinal = 0), method = "addItem", remap = false)
-	public void twilightdelight$addItem$doubleSpeed(ItemStack stack, CampfireCookingRecipe recipe, int slot, CallbackInfoReturnable<Boolean> cir) {
-		if (getBlockState().getBlock() == TDBlocks.MAZE_STOVE.get()) {
-			Item item = recipe.getResultItem(level.registryAccess()).getItem();
-			ResourceLocation id = ForgeRegistries.ITEMS.getKey(item);
-			if (id != null && (id.getNamespace().equals(TwilightForestMod.ID) || id.getNamespace().equals(TwilightDelight.MODID))) {
+	public void twilightdelight$addItem$doubleSpeed(ItemStack stack, RecipeHolder<CampfireCookingRecipe> recipe, int slot, CallbackInfoReturnable<Boolean> cir) {
+		if (getBlockState().getBlock() == TDBlocks.MAZE_STOVE.get() && level != null) {
+			Item item = recipe.value().getResultItem(level.registryAccess()).getItem();
+			ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
+			if (id.getNamespace().equals(TwilightForestMod.ID) || id.getNamespace().equals(TwilightDelight.MODID)) {
 				cookingTimesTotal[slot] = cookingTimesTotal[slot] / 2;
 			}
 		}

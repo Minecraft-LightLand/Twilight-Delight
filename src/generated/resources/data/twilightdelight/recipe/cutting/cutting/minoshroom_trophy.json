@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightforest:minoshroom_trophy"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 9,
+        "id": "twilightforest:raw_meef"
+      }
+    },
+    {
+      "chance": 0.5,
+      "item": {
+        "count": 8,
+        "id": "minecraft:red_mushroom"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

@@ -3,15 +3,12 @@ package dev.xkmc.twilightdelight.init.data;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
 import dev.xkmc.l2core.serial.recipe.DataRecipeWrapper;
-import dev.xkmc.l2library.compat.jeed.JeedDataGenerator;
 import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipeBuilder;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
-import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightPie;
-import net.mehvahdjukaar.jeed.Jeed;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -26,7 +23,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.fml.ModList;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -34,6 +30,7 @@ import twilightforest.TwilightForestMod;
 import twilightforest.data.tags.ItemTagGenerator;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -157,7 +154,7 @@ public class RecipeGen {
 			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, TFItems.MAZE_WAFER.get(), 12)::unlockedBy, TFItems.LIVEROOT.get())
 					.pattern("AAA").pattern("BCB").pattern("AAA")
 					.define('A', Items.WHEAT)
-					.define('B', TagGen.MILK)
+					.define('B', CommonTags.FOODS_MILK)
 					.define('C', TFItems.LIVEROOT.get())
 					.save(pvd, getID(TFItems.MAZE_WAFER.getId()));
 
@@ -187,14 +184,14 @@ public class RecipeGen {
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.CHOCOLATE_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
 					.requires(DelightFood.EXPERIMENT_113.item.get())
-					.requires(TagGen.MILK)
+					.requires(CommonTags.FOODS_MILK)
 					.requires(Items.SUGAR)
 					.requires(Items.COCOA_BEANS)
 					.save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.MILKY_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
 					.requires(DelightFood.EXPERIMENT_113.item.get())
-					.requires(TagGen.MILK)
+					.requires(CommonTags.FOODS_MILK)
 					.requires(Items.SUGAR)
 					.save(pvd);
 
@@ -257,6 +254,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.FIERY_SNAKES.get().asItem(),
 							1, 800, 0.5f, Items.BOWL)::unlockedBy,
 					TFItems.FIERY_BLOOD.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(TagGen.HYDRA_MEAT)
 					.addIngredient(TFItems.FIERY_BLOOD.get())
 					.addIngredient(TFItems.NAGA_SCALE.get())
@@ -267,6 +265,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.FRIED_INSECT.item.get().asItem(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					DelightFood.RAW_INSECT.item.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(DelightFood.RAW_INSECT.item.get())
 					.addIngredient(ModItems.ONION.get())
 					.addIngredient(Items.CARROT)
@@ -275,6 +274,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GLOWSTEW.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					TFBlocks.MUSHGLOOM.get().asItem())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(Items.GLOWSTONE_DUST)
 					.addIngredient(TFBlocks.MUSHGLOOM.get().asItem())
 					.addIngredient(TFItems.TORCHBERRIES.get())
@@ -283,6 +283,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.MUSHGLOOM_SAUCE.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					TFBlocks.MUSHGLOOM.get().asItem())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(Items.BROWN_MUSHROOM)
 					.addIngredient(TFBlocks.MUSHGLOOM.get().asItem())
 					.addIngredient(ModItems.ONION.get())
@@ -291,6 +292,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GLOW_VENISON_RIB_WITH_PASTA.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					DelightFood.GLOWSTEW.item.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(DelightFood.GLOWSTEW.item.get())
 					.addIngredient(TagGen.VENSION_RAW)
 					.addIngredient(ModItems.RAW_PASTA.get())
@@ -301,6 +303,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.MUSHGLOOM_MEEF_PASTA.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					DelightFood.MUSHGLOOM_SAUCE.item.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(DelightFood.MUSHGLOOM_SAUCE.item.get())
 					.addIngredient(TagGen.MEEF_RAW)
 					.addIngredient(ModItems.RAW_PASTA.get())
@@ -309,6 +312,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TFItems.MEEF_STROGANOFF.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					DelightFood.RAW_TOMAHAWK_SMEAK.item.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(Items.MUSHROOM_STEW)
 					.addIngredient(DelightFood.RAW_TOMAHAWK_SMEAK.item.get())
 					.addIngredient(TFItems.LIVEROOT.get())
@@ -319,6 +323,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GRILLED_GHAST.item.get(),
 							1, 800, 0.35f, Items.BOWL)::unlockedBy,
 					TFItems.EXPERIMENT_115.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(ModItems.TOMATO.get())
 					.addIngredient(Items.BEETROOT)
 					.addIngredient(TFItems.FIERY_TEARS.get())
@@ -328,6 +333,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GRILLED_TOMAHAWK_SMEAK.item.get(),
 							1, 1600, 0.35f, Items.BOWL)::unlockedBy,
 					DelightFood.RAW_TOMAHAWK_SMEAK.item.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(DelightFood.RAW_TOMAHAWK_SMEAK.item.get())
 					.addIngredient(DelightFood.MUSHGLOOM_SAUCE.item.get())
 					.addIngredient(ModItems.MILK_BOTTLE.get())
@@ -336,6 +342,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.LILY_CHICKEN.get().asItem(),
 							1, 400, 0.35f)::unlockedBy,
 					TFBlocks.HUGE_LILY_PAD.get().asItem())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(TFBlocks.HUGE_LILY_PAD.get().asItem())
 					.addIngredient(ModBlocks.ROAST_CHICKEN_BLOCK.get().asItem())
 					.addIngredient(TFBlocks.HUGE_WATER_LILY.get().asItem())
@@ -344,6 +351,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.THOUSAND_PLANT_STEW.item.get(),
 							1, 400, 0.35f, Items.BOWL)::unlockedBy,
 					TFItems.LIVEROOT.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(TFBlocks.ROOT_STRAND.get().asItem())
 					.addIngredient(TFBlocks.FALLEN_LEAVES.get().asItem())
 					.addIngredient(TFItems.LIVEROOT.get())
@@ -359,6 +367,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.TEAR_DRINK.item.get().asItem(),
 							1, 800, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
 					TFItems.FIERY_TEARS.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 					.addIngredient(TFItems.FIERY_TEARS.get())
 					.addIngredient(Items.GHAST_TEAR)
 					.build(pvd, getID(DelightFood.TEAR_DRINK.item.getId()));
@@ -366,6 +375,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.PHYTOCHEMICAL_JUICE.item.get().asItem(),
 							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
 					TFItems.LIVEROOT.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 					.addIngredient(TFItems.LIVEROOT.get())
 					.addIngredient(TFItems.STEELEAF_INGOT.get())
 					.addIngredient(Items.SUGAR)
@@ -374,6 +384,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.THORN_ROSE_TEA.item.get().asItem(),
 							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
 					TFBlocks.THORN_ROSE.get().asItem())
+					.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 					.addIngredient(TFBlocks.THORN_ROSE.get().asItem())
 					.addIngredient(Items.SUGAR)
 					.build(pvd, getID(DelightFood.THORN_ROSE_TEA.item.getId()));
@@ -381,6 +392,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.TORCHBERRY_JUICE.item.get().asItem(),
 							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
 					TFItems.TORCHBERRIES.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 					.addIngredient(TFItems.TORCHBERRIES.get())
 					.addIngredient(Items.SUGAR)
 					.build(pvd, getID(DelightFood.TORCHBERRY_JUICE.item.getId()));
@@ -610,11 +622,6 @@ public class RecipeGen {
 
 		 */
 
-		if (ModList.get().isLoaded(Jeed.MOD_ID)) {
-			var gen = new JeedDataGenerator(TwilightDelight.MODID);
-			gen.add(TDItems.TEARDROP_SWORD.get(), TDEffects.TEMPORAL_SADNESS.get());
-			gen.generate(pvd);
-		}
 	}
 
 	private static void delightPie(RegistrateRecipeProvider pvd, DelightPie pie, Item ingredient) {

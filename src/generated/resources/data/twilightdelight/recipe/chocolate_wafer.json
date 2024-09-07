@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "twilightforest:maze_wafer"
+    },
+    "B": {
+      "item": "minecraft:cocoa_beans"
+    }
+  },
+  "pattern": [
+    "A",
+    "B",
+    "A"
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:chocolate_wafer"
+  }
+}

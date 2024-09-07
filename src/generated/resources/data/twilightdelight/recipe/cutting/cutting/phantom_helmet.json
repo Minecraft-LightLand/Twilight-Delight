@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightforest:phantom_helmet"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 3,
+        "id": "twilightforest:armor_shard_cluster"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:pickaxes"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "twilightforest:steeleaf_ingot"
+    },
+    "B": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "result": {
+    "components": {
+      "minecraft:enchantments": {
+        "levels": {
+          "minecraft:fortune": 2,
+          "minecraft:looting": 2
+        }
+      }
+    },
+    "count": 1,
+    "id": "twilightdelight:steeleaf_knife"
+  }
+}

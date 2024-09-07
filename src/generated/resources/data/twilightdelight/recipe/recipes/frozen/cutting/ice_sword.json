@@ -1,0 +1,10 @@
+{
+  "type": "twilightdelight:frozen",
+  "ingredient": {
+    "item": "minecraft:diamond_sword"
+  },
+  "result": {
+    "count": 1,
+    "id": "twilightforest:ice_sword"
+  }
+}

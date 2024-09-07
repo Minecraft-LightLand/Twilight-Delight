@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightforest:naga_scale"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "twilightdelight:naga_chip"
+      }
+    }
+  ],
+  "tool": {
+    "item": "twilightforest:diamond_minotaur_axe"
+  }
+}

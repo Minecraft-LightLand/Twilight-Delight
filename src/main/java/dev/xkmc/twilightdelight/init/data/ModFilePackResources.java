@@ -1,25 +1,28 @@
 
 package dev.xkmc.twilightdelight.init.data;
 
-import net.minecraftforge.forgespi.locating.IModFile;
-import net.minecraftforge.resource.PathPackResources;
+import net.minecraft.server.packs.PackLocationInfo;
+import net.minecraft.server.packs.PackResources;
+import net.minecraft.server.packs.PathPackResources;
+import net.minecraft.server.packs.repository.Pack;
+import net.neoforged.neoforgespi.locating.IModFile;
 
-import java.nio.file.Path;
-
-public class ModFilePackResources extends PathPackResources {
+public class ModFilePackResources implements Pack.ResourcesSupplier {
 	protected final IModFile modFile;
 	protected final String sourcePath;
 
-	public ModFilePackResources(String name, IModFile modFile, String sourcePath) {
-		super(name, true, modFile.findResource(sourcePath));
+	public ModFilePackResources(IModFile modFile, String sourcePath) {
 		this.modFile = modFile;
 		this.sourcePath = sourcePath;
 	}
 
-	protected Path resolve(String... paths) {
-		String[] allPaths = new String[paths.length + 1];
-		allPaths[0] = this.sourcePath;
-		System.arraycopy(paths, 0, allPaths, 1, paths.length);
-		return this.modFile.findResource(allPaths);
+	@Override
+	public PackResources openPrimary(PackLocationInfo location) {
+		return new PathPackResources(location, modFile.findResource(sourcePath));
+	}
+
+	@Override
+	public PackResources openFull(PackLocationInfo location, Pack.Metadata metadata) {
+		return new PathPackResources(location, modFile.findResource(sourcePath));
 	}
 }
