@@ -1,28 +1,26 @@
 package dev.xkmc.twilightdelight.compat.jei;
 
-import com.teamabnormals.neapolitan.core.Neapolitan;
-import dev.xkmc.l2library.util.Proxy;
+import dev.xkmc.l2serial.util.Wrappers;
+import dev.xkmc.twilightdelight.content.recipe.BaseEffectRecipe;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
-import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
-import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.registration.*;
 import mezz.jei.api.runtime.IJeiRuntime;
+import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.fml.ModList;
 import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.integration.jei.FDRecipeTypes;
 
 @JeiPlugin
 public class TDJeiPlugin implements IModPlugin {
 
-	public static final ResourceLocation ID = new ResourceLocation(TwilightDelight.MODID, "main");
+	public static final ResourceLocation ID = TwilightDelight.loc("main");
 
 	@Override
 	public ResourceLocation getPluginUid() {
@@ -58,7 +56,10 @@ public class TDJeiPlugin implements IModPlugin {
 
 	@Override
 	public void registerRecipes(IRecipeRegistration registration) {
-		registration.addRecipes(FROZEN.getRecipeType(), Proxy.getClientWorld().getRecipeManager().getAllRecipesFor(TDRecipes.WORLD_RECIPE.get()));
+		registration.addRecipes(FROZEN.getRecipeType(),
+				Minecraft.getInstance().level.getRecipeManager()
+						.getAllRecipesFor(TDRecipes.WORLD_RECIPE.get())
+						.stream().<BaseEffectRecipe<?>>map(e -> Wrappers.cast(e.value())).toList());
 	}
 
 	@Override
@@ -69,11 +70,12 @@ public class TDJeiPlugin implements IModPlugin {
 	public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
 		registration.addRecipeCatalyst(TFItems.ICE_BOMB.get().getDefaultInstance(), FROZEN.getRecipeType());
 		registration.addRecipeCatalyst(DelightFood.GLACIER_ICE_TEA.item.asStack(), FROZEN.getRecipeType());
+		/*TODO neapolitan
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			registration.addRecipeCatalyst(NeapolitanCakes.GLACIER.block.asStack(), FROZEN.getRecipeType());
 			registration.addRecipeCatalyst(NeapolitanFood.GLACIER_ICE_CREAM.item.asStack(), FROZEN.getRecipeType());
 			registration.addRecipeCatalyst(NeapolitanFood.GLACIER_MILKSHAKE.item.asStack(), FROZEN.getRecipeType());
-		}
+		}*/
 		registration.addRecipeCatalyst(TDBlocks.FIERY_POT.asStack(), FDRecipeTypes.COOKING);
 		registration.addRecipeCatalyst(TDBlocks.MAZE_STOVE.asStack(), RecipeTypes.CAMPFIRE_COOKING);
 	}

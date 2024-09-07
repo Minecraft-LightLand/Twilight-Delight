@@ -12,8 +12,8 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
-import net.minecraftforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
@@ -23,8 +23,8 @@ public enum DelightPie {
 	TORCHBERRY_PIE(new EffectSupplier(TDEffects.FIRE_RANGE, 300, 0, 1)),
 	AURORA_PIE(
 			new EffectSupplier(TDEffects.AURORA_GLOWING, 300, 0, 1),
-			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 300, 2, 1),
-			new EffectSupplier(() -> MobEffects.JUMP, 300, 1, 1));
+			new EffectSupplier(MobEffects.MOVEMENT_SPEED, 300, 2, 1),
+			new EffectSupplier(MobEffects.JUMP, 300, 1, 1));
 
 	public static void register() {
 
@@ -40,7 +40,7 @@ public enum DelightPie {
 		slice = TwilightDelight.REGISTRATE.item(name + "_slice", p -> new TDFoodItem(p.food(food)))
 				.defaultModel().defaultLang().register();
 		block = TwilightDelight.REGISTRATE.block(name,
-						p -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), slice::get))
+						p -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), slice::get))
 				.blockstate((ctx, pvd) -> {
 					ModelFile[] models = new ModelFile[4];
 					for (int i = 0; i < 4; i++) {
@@ -53,7 +53,7 @@ public enum DelightPie {
 	private BlockModelBuilder genCakeModel(RegistrateBlockstateProvider pvd, String model) {
 		String base = name().toLowerCase(Locale.ROOT);
 		return pvd.models().getBuilder(base + model).parent(new ModelFile.UncheckedModelFile(
-						new ResourceLocation(FarmersDelight.MODID, "block/pie" + model)))
+						ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "block/pie" + model)))
 				.texture("particle", pvd.modLoc("block/" + base + "_top"))
 				.texture("top", pvd.modLoc("block/" + base + "_top"))
 				.texture("bottom", pvd.modLoc("block/pie_bottom"))

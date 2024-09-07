@@ -1,8 +1,7 @@
-package dev.xkmc.twilightdelight.init.world;
+package dev.xkmc.twilightdelight.init.registrate;
 
 import com.google.common.collect.ImmutableList;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
-import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;

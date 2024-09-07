@@ -6,6 +6,7 @@ import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.network.protocol.game.ClientboundAnimatePacket;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -18,32 +19,31 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.living.MobEffectEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import twilightforest.block.Experiment115Block;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFMobEffects;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
-@Mod.EventBusSubscriber(modid = TwilightDelight.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(modid = TwilightDelight.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class GeneralEventHandlers {
 
-	private static ObjectArrayList<ItemStack> getLoot(ServerLevel sl, ResourceLocation id, BlockState state, PlayerInteractEvent.RightClickBlock event) {
+	private static ObjectArrayList<ItemStack> getLoot(ServerLevel sl, ResourceKey<LootTable> id, BlockState state, PlayerInteractEvent.RightClickBlock event) {
 		var ctx = new LootParams.Builder(sl)
 				.withParameter(LootContextParams.BLOCK_STATE, state)
 				.withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(event.getPos()))
 				.withParameter(LootContextParams.TOOL, event.getItemStack())
 				.withParameter(LootContextParams.THIS_ENTITY, event.getEntity())
 				.create(LootContextParamSets.BLOCK);
-		return sl.getServer().getLootData().getLootTable(id)
+		return sl.getServer().reloadableRegistries().getLootTable(id)
 				.getRandomItems(ctx);
 	}
 
@@ -73,8 +73,7 @@ public class GeneralEventHandlers {
 					for (var e : loot) {
 						event.getEntity().getInventory().placeItemBackInInventory(e);
 					}
-					event.getItemStack().hurtAndBreak(1, event.getEntity(),
-							e -> e.broadcastBreakEvent(event.getHand()));
+					event.getItemStack().hurtAndBreak(1, event.getEntity(), LivingEntity.getSlotForHand(event.getHand()));
 				}
 				event.getLevel().playSound(event.getEntity(), event.getPos(),
 						SoundEvents.WOOL_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
@@ -86,16 +85,24 @@ public class GeneralEventHandlers {
 
 	@SubscribeEvent
 	public static void onPotionTest(MobEffectEvent.Applicable event) {
-		if (event.getEffectInstance().getEffect() == MobEffects.POISON && event.getEntity().hasEffect(TDEffects.POISON_RANGE.get())) {
-			event.setResult(Event.Result.DENY);
+		if (event.getEffectInstance() == null) return;
+		if (event.getEffectInstance().getEffect() == MobEffects.POISON && event.getEntity().hasEffect(TDEffects.POISON_RANGE)) {
+			event.setResult(MobEffectEvent.Applicable.Result.DO_NOT_APPLY);
 		}
-		if (event.getEffectInstance().getEffect() == TFMobEffects.FROSTY.get() && event.getEntity().hasEffect(TDEffects.FROZEN_RANGE.get())) {
-			event.setResult(Event.Result.DENY);
+		if (event.getEffectInstance().getEffect() == TFMobEffects.FROSTY.get() && event.getEntity().hasEffect(TDEffects.FROZEN_RANGE)) {
+			event.setResult(MobEffectEvent.Applicable.Result.DO_NOT_APPLY);
 		}
 	}
 
 	@SubscribeEvent
-	public static void onKnightmetalToolDamage(LivingHurtEvent event) {
+	public static void onKnightmetalToolDamage(LivingIncomingDamageEvent event) {
+		if (event.getSource().getDirectEntity() instanceof LivingEntity living) {
+			var item = living.getMainHandItem();
+			if ((item.is(TDItems.FIERY_KNIFE.get()) || item.is(TDItems.TEARDROP_SWORD.get())) && !event.getEntity().fireImmune()) {
+				event.getEntity().setRemainingFireTicks(20);
+			}
+		}
+
 		LivingEntity target = event.getEntity();
 		if (!target.level().isClientSide()) {
 			Entity var3 = event.getSource().getDirectEntity();
@@ -112,18 +119,6 @@ public class GeneralEventHandlers {
 						((ServerLevel) target.level()).getChunkSource().broadcastAndSend(target, new ClientboundAnimatePacket(target, 5));
 					}
 				}
-			}
-		}
-
-	}
-
-	@SubscribeEvent
-	public static void fieryToolSetFire(LivingAttackEvent event) {
-		Entity var2 = event.getSource().getEntity();
-		if (var2 instanceof LivingEntity living) {
-			var item = living.getMainHandItem();
-			if ((item.is(TDItems.FIERY_KNIFE.get()) || item.is(TDItems.TEARDROP_SWORD.get())) && !event.getEntity().fireImmune()) {
-				event.getEntity().setSecondsOnFire(1);
 			}
 		}
 

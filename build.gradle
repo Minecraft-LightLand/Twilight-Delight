@@ -160,6 +160,8 @@ dependencies {
 
     implementation "mezz.jei:jei-${jei_minecraft_version}:${jei_version}"
 
+    implementation "curse.maven:thirst-was-taken-679270:5568715"
+    implementation "curse.maven:just-enough-effect-descriptions-jeed-532286:5634312"
     implementation "curse.maven:the-twilight-forest-227639:5699076"
     implementation "curse.maven:farmers-delight-398521:5566383"
 }

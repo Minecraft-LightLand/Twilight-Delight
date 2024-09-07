@@ -1,24 +1,21 @@
 package dev.xkmc.twilightdelight.init.registrate;
 
 import com.tterrag.registrate.util.entry.BlockEntry;
-import com.tterrag.registrate.util.entry.RegistryEntry;
+import dev.xkmc.l2core.init.reg.registrate.SimpleEntry;
+import dev.xkmc.l2core.serial.loot.LootHelper;
 import dev.xkmc.twilightdelight.content.block.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
-import dev.xkmc.twilightdelight.init.world.IronwoodTreeGrower;
-import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.MapColor;
@@ -27,32 +24,32 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.ApplyExplosionDecay;
+import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
 import net.minecraft.world.level.storage.loot.functions.CopyNameFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import twilightforest.TwilightForestMod;
 import twilightforest.block.DarkLeavesBlock;
-import twilightforest.block.TFLogBlock;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.block.*;
 import vectorwing.farmersdelight.common.item.MushroomColonyItem;
-import vectorwing.farmersdelight.common.loot.function.CopyMealFunction;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
+import vectorwing.farmersdelight.common.registry.ModDataComponents;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.Locale;
+import java.util.Optional;
 import java.util.function.Function;
 
 public class TDBlocks {
 
-	public static final RegistryEntry<CreativeModeTab> TAB =
+	public static final SimpleEntry<CreativeModeTab> TAB =
 			TwilightDelight.REGISTRATE.buildModCreativeTab("twilight_delight", "Twilight's Flavors & Delight",
 					e -> e.icon(TDBlocks.MAZE_STOVE::asStack));
 
@@ -67,7 +64,7 @@ public class TDBlocks {
 	public static final BlockEntry<MushroomColonyBlock> MUSHGLOOM_COLONY;
 
 	public static final BlockEntry<SaplingBlock> IRON_SAPLING;
-	public static final BlockEntry<TFLogBlock> IRON_LOGS;
+	public static final BlockEntry<RotatedPillarBlock> IRON_LOGS;
 	public static final BlockEntry<DarkLeavesBlock> IRON_LEAVES;
 
 	public static final BlockEntry<CabinetBlock>[] CABINETS;
@@ -77,7 +74,7 @@ public class TDBlocks {
 		{
 			MAZE_STOVE = TwilightDelight.REGISTRATE.block(
 							"maze_stove", p -> new MazeStoveBlock(
-									BlockBehaviour.Properties.copy(Blocks.BRICKS)
+									BlockBehaviour.Properties.ofFullCopy(Blocks.BRICKS)
 											.lightLevel((state) -> state.getValue(BlockStateProperties.LIT) ? 13 : 0)))
 					.blockstate((ctx, pvd) -> {
 						ModelFile on = pvd.models().cube(
@@ -140,7 +137,11 @@ public class TDBlocks {
 									LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 											.add(LootItem.lootTableItem(block)
 													.apply(CopyNameFunction.copyName(CopyNameFunction.NameSource.BLOCK_ENTITY))
-													.apply(CopyMealFunction.builder()))))))
+													.apply(CopyComponentsFunction.copyComponents(
+																	CopyComponentsFunction.Source.BLOCK_ENTITY
+															).include(DataComponents.CUSTOM_NAME)
+															.include(ModDataComponents.MEAL.get())
+															.include(ModDataComponents.CONTAINER.get())))))))
 					.defaultLang().register();
 		}
 		// food
@@ -202,7 +203,7 @@ public class TDBlocks {
 		{
 			TORCHBERRIES_CRATE = TwilightDelight.REGISTRATE.block(
 							"torchberries_crate", p -> new Block(BlockBehaviour.Properties
-									.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F)
+									.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F)
 									.sound(SoundType.WOOD).lightLevel(state -> 15)))
 					.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().cubeBottomTop(
 							ctx.getName(),
@@ -212,15 +213,15 @@ public class TDBlocks {
 					.simpleItem().register();
 
 			MUSHGLOOM_COLONY = TwilightDelight.REGISTRATE.block(
-							"mushgloom_colony", p -> new MushroomColonyBlock(BlockBehaviour.Properties
-									.copy(Blocks.BROWN_MUSHROOM).instabreak().sound(SoundType.FUNGUS)
-									.noCollission().noOcclusion().lightLevel((state) -> 3).randomTicks(),
-									() -> TFBlocks.MUSHGLOOM.get().asItem()))
+							"mushgloom_colony", p -> new MushroomColonyBlock(
+									DeferredHolder.create(Registries.ITEM, TFBlocks.MUSHGLOOM.unwrapKey().orElseThrow().location()),
+									BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM).instabreak().sound(SoundType.FUNGUS)
+											.noCollission().noOcclusion().lightLevel((state) -> 3).randomTicks()))
 					.blockstate((ctx, pvd) -> pvd.getVariantBuilder(ctx.get()).forAllStates((state) -> {
 						String stageName = ctx.getName() + "_stage" + state.getValue(MushroomColonyBlock.COLONY_AGE);
 						return ConfiguredModel.builder().modelFile(pvd.models()
 								.getBuilder(stageName).parent(new ModelFile.UncheckedModelFile(
-										new ResourceLocation(TwilightForestMod.ID, "block/mushgloom")))
+										ResourceLocation.fromNamespaceAndPath(TwilightForestMod.ID, "block/mushgloom")))
 								.texture("cross", pvd.modLoc("block/" + stageName))
 								.texture("cross2", pvd.modLoc("block/" + stageName + "_head"))).build();
 					}))
@@ -242,10 +243,10 @@ public class TDBlocks {
 								.when(prop.apply(2));
 						var s3 = LootItem.lootTableItem(item)
 								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(5)))
-								.when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS)).invert())
+								.when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.TOOLS_SHEAR)).invert())
 								.when(prop.apply(3));
 						var self = LootItem.lootTableItem(block.asItem())
-								.when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS)))
+								.when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.TOOLS_SHEAR)))
 								.when(prop.apply(3));
 						pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool().add(
 										AlternativesEntry.alternatives(s0, s1, s2, s3, self))
@@ -262,7 +263,7 @@ public class TDBlocks {
 			CABINETS = new BlockEntry[WoodTypes.values().length];
 			for (var type : WoodTypes.values())
 				CABINETS[type.ordinal()] = TwilightDelight.REGISTRATE.block(type.id() + "_cabinet",
-								p -> new CabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL))
+								p -> new CabinetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL))
 						).blockstate((ctx, pvd) -> {
 							ModelFile close = pvd.models().orientable("block/" + ctx.getName(),
 									pvd.modLoc("block/" + ctx.getName() + "_side"),
@@ -281,7 +282,8 @@ public class TDBlocks {
 		// tree
 		{
 			IRON_SAPLING = TwilightDelight.REGISTRATE.block(
-							"ironwood_sapling", p -> new SaplingBlock(new IronwoodTreeGrower(),
+							"ironwood_sapling", p -> new SaplingBlock(new TreeGrower("ironwood",
+									Optional.empty(), Optional.of(TreeConfig.CF_IRONWOOD), Optional.empty()),
 									BlockBehaviour.Properties.of().mapColor(MapColor.PLANT)
 											.pushReaction(PushReaction.DESTROY).instabreak()
 											.sound(SoundType.GRASS).noCollission().randomTicks()
@@ -291,25 +293,27 @@ public class TDBlocks {
 							.renderType("cutout")))
 					.tag(BlockTags.SAPLINGS)
 					.item().model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("block/" + ctx.getName())))
-					.tag(ItemTags.SAPLINGS).removeTab(TAB.getKey()).build()//TODO
+					.tag(ItemTags.SAPLINGS).removeTab(TAB.key()).build()//TODO
 					.register();
+
 			IRON_LOGS = TwilightDelight.REGISTRATE.block(
-							"ironwood_log", p -> new TFLogBlock(
+							"ironwood_log", p -> new RotatedPillarBlock(
 									BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD)
 											.strength(10, 10).requiresCorrectToolForDrops()))
 					.blockstate((ctx, pvd) -> pvd.logBlock(ctx.get()))
 					.tag(BlockTags.LOGS, BlockTags.LOGS_THAT_BURN, BlockTags.MINEABLE_WITH_AXE, BlockTags.NEEDS_DIAMOND_TOOL)
-					.item().tag(ItemTags.LOGS, ItemTags.LOGS_THAT_BURN).removeTab(TAB.getKey()).build()//TODO
-					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
-							.add(AlternativesEntry.alternatives(
-									LootItem.lootTableItem(block.asItem())
-											.when(MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(
-													new EnchantmentPredicate(Enchantments.SILK_TOUCH,
-															MinMaxBounds.Ints.atLeast(1))))),
-									LootItem.lootTableItem(TFItems.IRONWOOD_INGOT.get())
-											.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
-							)).when(ExplosionCondition.survivesExplosion())
-					))).register();
+					.item().tag(ItemTags.LOGS, ItemTags.LOGS_THAT_BURN).removeTab(TAB.key()).build()//TODO
+					.loot((pvd, block) -> {
+						var helper = new LootHelper(pvd);
+						pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
+								.add(AlternativesEntry.alternatives(
+										LootItem.lootTableItem(block.asItem())
+												.when(helper.silk()),
+										LootItem.lootTableItem(TFItems.IRONWOOD_INGOT.get())
+												.apply(helper.fortuneCount(1))
+								)).when(ExplosionCondition.survivesExplosion())
+						));
+					}).register();
 
 			IRON_LEAVES = TwilightDelight.REGISTRATE.block(
 							"ironwood_leaves", p -> new DarkLeavesBlock(
@@ -322,21 +326,20 @@ public class TDBlocks {
 					.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().withExistingParent(ctx.getName(), "block/leaves")
 							.texture("all", pvd.modLoc("block/" + ctx.getName()))))
 					.tag(BlockTags.LEAVES, BlockTags.MINEABLE_WITH_HOE, BlockTags.NEEDS_DIAMOND_TOOL)
-					.item().tag(ItemTags.LEAVES).removeTab(TAB.getKey()).build()//TODO
-					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
-							.add(AlternativesEntry.alternatives(
-									LootItem.lootTableItem(block.asItem())
-											.when(MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(
-													new EnchantmentPredicate(Enchantments.SILK_TOUCH,
-															MinMaxBounds.Ints.atLeast(1))))),
-									LootItem.lootTableItem(TDBlocks.IRON_SAPLING.get())
-											.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE,
-													0.001f, 0.002f, 0.003f, 0.004f)),
-									LootItem.lootTableItem(TFItems.STEELEAF_INGOT.get())
-											.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE,
-													0.04f, 0.05f, 0.06f, 0.07f))
-							)).when(ExplosionCondition.survivesExplosion())
-					)))
+					.item().tag(ItemTags.LEAVES).removeTab(TAB.key()).build()
+					.loot((pvd, block) -> {
+						var helper = new LootHelper(pvd);
+						pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
+								.add(AlternativesEntry.alternatives(
+										LootItem.lootTableItem(block.asItem())
+												.when(helper.silk()),
+										LootItem.lootTableItem(TDBlocks.IRON_SAPLING.get())
+												.when(helper.fortuneChance(1000, 500, 333, 250)),
+										LootItem.lootTableItem(TFItems.STEELEAF_INGOT.get())
+												.when(helper.fortuneChance(25, 20, 15, 10))
+								)).when(ExplosionCondition.survivesExplosion())
+						));
+					})
 					.register();
 		}
 	}

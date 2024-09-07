@@ -1,21 +1,17 @@
 package dev.xkmc.twilightdelight.content.effect;
 
-import dev.xkmc.l2library.base.effects.api.ClientRenderEffect;
-import dev.xkmc.l2library.base.effects.api.DelayedEntityRender;
-import dev.xkmc.l2library.base.effects.api.FirstPlayerRenderEffect;
-import dev.xkmc.l2library.util.Proxy;
+import dev.xkmc.l2core.base.effects.api.ClientRenderEffect;
+import dev.xkmc.l2core.base.effects.api.DelayedEntityRender;
+import dev.xkmc.l2core.base.effects.api.FirstPlayerRenderEffect;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.Consumer;
 
@@ -27,11 +23,10 @@ public abstract class RangeRenderEffect extends RangeSearchEffect implements Cli
 
 	@Override
 	public void render(LivingEntity entity, int lv, Consumer<DelayedEntityRender> consumer) {
-		if (entity == Proxy.getClientPlayer()) return;
+		if (entity == Minecraft.getInstance().player) return;
 		renderEffect(lv, entity);
 	}
 
-	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void onClientLevelRender(AbstractClientPlayer player, MobEffectInstance ins) {
 		renderEffect(ins.getAmplifier(), player);
@@ -46,7 +41,6 @@ public abstract class RangeRenderEffect extends RangeSearchEffect implements Cli
 		}
 	}
 
-	@OnlyIn(Dist.CLIENT)
 	private void addParticle(Level w, Vec3 vec, int r) {
 		float tpi = (float) (Math.PI * 2);
 		Vec3 v0 = new Vec3(0, r, 0);

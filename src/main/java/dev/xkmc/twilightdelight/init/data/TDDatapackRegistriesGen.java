@@ -1,7 +1,7 @@
 package dev.xkmc.twilightdelight.init.data;
 
 import dev.xkmc.twilightdelight.init.TwilightDelight;
-import dev.xkmc.twilightdelight.init.world.TreeConfig;
+import dev.xkmc.twilightdelight.init.registrate.TreeConfig;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;

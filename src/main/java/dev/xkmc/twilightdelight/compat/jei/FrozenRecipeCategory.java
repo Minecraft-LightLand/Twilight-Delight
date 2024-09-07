@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.compat.jei;
 
-import dev.xkmc.l2library.serial.recipe.BaseRecipeCategory;
+import dev.xkmc.l2core.serial.recipe.BaseRecipeCategory;
 import dev.xkmc.l2serial.util.Wrappers;
 import dev.xkmc.twilightdelight.content.recipe.BaseEffectRecipe;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
@@ -16,10 +16,10 @@ import twilightforest.init.TFItems;
 
 public class FrozenRecipeCategory extends BaseRecipeCategory<BaseEffectRecipe<?>, FrozenRecipeCategory> {
 
-	protected static final ResourceLocation BG = new ResourceLocation(TwilightDelight.MODID, "textures/jei/background.png");
+	protected static final ResourceLocation BG = TwilightDelight.loc("textures/jei/background.png");
 
 	public FrozenRecipeCategory() {
-		super(new ResourceLocation(TwilightDelight.MODID, "frozen"), Wrappers.cast(BaseEffectRecipe.class));
+		super(TwilightDelight.loc("frozen"), Wrappers.cast(BaseEffectRecipe.class));
 	}
 
 	public FrozenRecipeCategory init(IGuiHelper guiHelper) {

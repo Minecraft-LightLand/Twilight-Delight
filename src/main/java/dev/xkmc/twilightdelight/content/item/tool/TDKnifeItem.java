@@ -18,4 +18,8 @@ public class TDKnifeItem extends KnifeItem {
 		return enchantment.is(Enchantments.FORTUNE) || super.isPrimaryItemFor(stack, enchantment);
 	}
 
+	@Override
+	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
+		return enchantment.is(Enchantments.FORTUNE) || super.supportsEnchantment(stack, enchantment);
+	}
 }

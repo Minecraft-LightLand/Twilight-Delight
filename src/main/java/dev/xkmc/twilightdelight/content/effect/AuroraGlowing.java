@@ -1,7 +1,6 @@
 package dev.xkmc.twilightdelight.content.effect;
 
-import dev.xkmc.l2library.base.effects.ClientEffectCap;
-import dev.xkmc.l2library.util.Proxy;
+import dev.xkmc.l2core.init.L2LibReg;
 import dev.xkmc.twilightdelight.init.data.TDModConfig;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import net.minecraft.client.Minecraft;
@@ -14,9 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.entity.PartEntity;
+import net.neoforged.neoforge.entity.PartEntity;
 
 public class AuroraGlowing extends MobEffect {
 
@@ -66,30 +63,29 @@ public class AuroraGlowing extends MobEffect {
 		return 0xff000000 | (r << 16) | (g << 8) | (b);
 	}
 
-	@OnlyIn(Dist.CLIENT)
 	public static int getColor(Entity entity) {
+		float pTick = Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(true);
 		Level level = entity.level();
-		float pTick = Minecraft.getInstance().getPartialTick();
-		Player player = Proxy.getClientPlayer();
+		Player player = Minecraft.getInstance().player;
+		if (player == null) return -1;
 		Vec3 pos = entity.getPosition(pTick).subtract(player.getPosition(pTick));
 		double dis = Math.atan2(pos.x, pos.z) / Math.PI * 180 / 6;
-		float tick = level.getGameTime() + Minecraft.getInstance().getPartialTick() + (float) dis;
+		float tick = level.getGameTime() + pTick + (float) dis;
 		int period = TDModConfig.CLIENT.auroraPeriod.get();
 		return getColor(tick / period % 1, 1, 1);
 	}
 
-	@OnlyIn(Dist.CLIENT)
 	public static boolean shouldRender(Entity self) {
 		if (!(self instanceof ItemEntity) &&
 				!(self instanceof Projectile) &&
 				!(self instanceof LivingEntity) &&
-				!(self instanceof PartEntity))
+				!(self instanceof PartEntity<?>))
 			return false;
 		Player player = Minecraft.getInstance().player;
-		if (player != null && player.hasEffect(TDEffects.AURORA_GLOWING.get()))
+		if (player != null && player.hasEffect(TDEffects.AURORA_GLOWING))
 			return true;
-		if (self instanceof LivingEntity le && ClientEffectCap.HOLDER.isProper(le)) {
-			return ClientEffectCap.HOLDER.get(le).map.containsKey(TDEffects.AURORA_GLOWING.get());
+		if (self instanceof LivingEntity le && L2LibReg.EFFECT.type().isProper(le)) {
+			return L2LibReg.EFFECT.type().getExisting(le).map(x -> x.map.get(TDEffects.AURORA_GLOWING)).isPresent();
 		}
 		return false;
 	}

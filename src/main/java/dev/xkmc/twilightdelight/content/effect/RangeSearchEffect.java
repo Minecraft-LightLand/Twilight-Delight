@@ -34,11 +34,12 @@ public abstract class RangeSearchEffect extends MobEffect {
 	}
 
 	@Override
-	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		if (entity.level().isClientSide()) return;
+	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
+		if (entity.level().isClientSide()) return true;
 		if (entity.tickCount % 10 == 0) {
 			searchEntities(entity, amplifier);
 		}
+		return true;
 	}
 
 	protected void searchEntities(LivingEntity entity, int amplifier) {

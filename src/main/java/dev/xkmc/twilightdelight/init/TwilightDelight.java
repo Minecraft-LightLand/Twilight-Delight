@@ -8,10 +8,8 @@ import com.tterrag.registrate.providers.ProviderType;
 import dev.ghen.thirst.Thirst;
 import dev.xkmc.l2core.events.EffectSyncEvents;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
-import dev.xkmc.l2library.base.L2Registrate;
-import dev.xkmc.l2library.init.events.EffectSyncEvents;
+import dev.xkmc.l2core.init.reg.simple.Reg;
 import dev.xkmc.twilightdelight.compat.ThirstCompat;
-import dev.xkmc.twilightdelight.events.NeapolitanEventListeners;
 import dev.xkmc.twilightdelight.init.data.*;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
@@ -19,8 +17,6 @@ import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightPie;
-import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
-import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import dev.xkmc.twilightdelight.mixin.FoodPropertiesAccessor;
 import dev.xkmc.twilightdelight.mixin.ItemAccessor;
 import dev.xkmc.twilightdelight.util.StoveAddBlockUtil;
@@ -33,13 +29,6 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ComposterBlock;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.event.AddPackFindersEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.forgespi.language.IModFileInfo;
 import net.minecraftforge.forgespi.locating.IModFile;
 import net.neoforged.bus.api.EventPriority;
@@ -64,6 +53,7 @@ public class TwilightDelight {
 
 	public static final String MODID = "twilightdelight";
 	public static final Logger LOGGER = LogUtils.getLogger();
+	public static final Reg REG = new Reg(MODID);
 	public static final L2Registrate REGISTRATE = new L2Registrate(MODID);
 
 	public TwilightDelight() {
@@ -71,11 +61,12 @@ public class TwilightDelight {
 		TDItems.register();
 		DelightFood.register();
 		DelightPie.register();
+		/* TODO neapolitan
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			NeapolitanFood.register();
 			NeapolitanCakes.register();
 			MinecraftForge.EVENT_BUS.register(NeapolitanEventListeners.class);
-		}
+		}*/
 		TDEffects.register();
 		TDRecipes.register();
 		TDModConfig.init();
@@ -148,7 +139,7 @@ public class TwilightDelight {
 		}
 	}
 
-	public static ResourceLocation loc(String id){
+	public static ResourceLocation loc(String id) {
 		return ResourceLocation.fromNamespaceAndPath(MODID, id);
 	}
 

@@ -1,13 +1,9 @@
 package dev.xkmc.twilightdelight.init.data;
 
-import com.teamabnormals.neapolitan.core.Neapolitan;
-import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
-import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.l2core.serial.recipe.DataRecipeWrapper;
 import dev.xkmc.l2library.compat.jeed.JeedDataGenerator;
-import dev.xkmc.l2library.serial.recipe.ConditionalRecipeWrapper;
 import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipeBuilder;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
@@ -15,8 +11,6 @@ import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightPie;
-import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
-import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import net.mehvahdjukaar.jeed.Jeed;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -28,7 +22,6 @@ import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -538,19 +531,19 @@ public class RecipeGen {
 		// freezing
 		{
 			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(Items.BLUE_ICE), TFItems.ICE_BOMB.get())::unlockedBy,
-					Items.BLUE_ICE).save(pvd, new ResourceLocation(getID(TFItems.ICE_BOMB.getId())));
+					Items.BLUE_ICE).save(pvd, ResourceLocation.parse(getID(TFItems.ICE_BOMB.getId())));
 
 			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(Items.MAGMA_BLOCK), Items.OBSIDIAN)::unlockedBy,
-					Items.MAGMA_BLOCK).save(pvd, new ResourceLocation(TwilightDelight.MODID, "obsidian"));
+					Items.MAGMA_BLOCK).save(pvd, ResourceLocation.fromNamespaceAndPath(TwilightDelight.MODID, "obsidian"));
 
 			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(Items.ICE), Items.PACKED_ICE)::unlockedBy,
-					Items.ICE).save(pvd, new ResourceLocation(TwilightDelight.MODID, "packed_ice"));
+					Items.ICE).save(pvd, ResourceLocation.fromNamespaceAndPath(TwilightDelight.MODID, "packed_ice"));
 
 			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(Items.DIAMOND_SWORD), TFItems.ICE_SWORD.get())::unlockedBy,
-					Items.DIAMOND_SWORD).save(pvd, new ResourceLocation(getID(TFItems.ICE_SWORD.getId())));
+					Items.DIAMOND_SWORD).save(pvd, ResourceLocation.parse(getID(TFItems.ICE_SWORD.getId())));
 
 			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(Items.BOW), TFItems.ICE_BOW.get())::unlockedBy,
-					Items.BOW).save(pvd, new ResourceLocation(getID(TFItems.ICE_BOW.getId())));
+					Items.BOW).save(pvd, ResourceLocation.parse(getID(TFItems.ICE_BOW.getId())));
 		}
 
 		// log stripping
@@ -575,7 +568,7 @@ public class RecipeGen {
 			stripLog(pvd, TFBlocks.TRANSFORMATION_WOOD, TFBlocks.STRIPPED_TRANSFORMATION_WOOD);
 		}
 
-		// neapolitan
+		/* TODO neapolitan
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			path = "neapolitan/";
 			neapolitan(pvd, NeapolitanFood.AURORA_ICE_CREAM.item,
@@ -615,6 +608,8 @@ public class RecipeGen {
 
 		}
 
+		 */
+
 		if (ModList.get().isLoaded(Jeed.MOD_ID)) {
 			var gen = new JeedDataGenerator(TwilightDelight.MODID);
 			gen.add(TDItems.TEARDROP_SWORD.get(), TDEffects.TEMPORAL_SADNESS.get());
@@ -643,6 +638,7 @@ public class RecipeGen {
 				.build(pvd, getID(pie.slice.getId()));
 	}
 
+	/* TODO neapolitan
 	private static void neapolitan(RegistrateRecipeProvider pvd, ItemEntry<?> ice_cream, ItemEntry<?> milkshake, NeapolitanCakes cake, Item ingredient) {
 		TagKey<Item> milk = ItemTags.create(new ResourceLocation("forge", "milk"));
 		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, ice_cream.get(), 1)::unlockedBy, ingredient)
@@ -677,6 +673,7 @@ public class RecipeGen {
 				.requires(cake.item.get(), 7)
 				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cake.block.getId()) + "_assemble");
 	}
+	*/
 
 	private static String getID(ResourceLocation item) {
 		return TwilightDelight.MODID + ":" + path + item.getPath();

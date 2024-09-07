@@ -12,9 +12,9 @@ public class FireRange extends RangeRenderEffect {
 	}
 
 	@Override
-	public void applyEffectTick(LivingEntity entity, int amplifier) {
+	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
 		entity.clearFire();
-		super.applyEffectTick(entity, amplifier);
+		return super.applyEffectTick(entity, amplifier);
 	}
 
 	@Override

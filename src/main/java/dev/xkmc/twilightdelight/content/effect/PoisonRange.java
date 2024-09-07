@@ -14,11 +14,11 @@ public class PoisonRange extends RangeRenderEffect {
 	}
 
 	@Override
-	public void applyEffectTick(LivingEntity entity, int amplifier) {
+	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
 		if (entity.hasEffect(MobEffects.POISON)) {
 			entity.removeEffect(MobEffects.POISON);
 		}
-		super.applyEffectTick(entity, amplifier);
+		return super.applyEffectTick(entity, amplifier);
 	}
 
 	@Override

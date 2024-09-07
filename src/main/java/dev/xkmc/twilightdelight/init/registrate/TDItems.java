@@ -34,10 +34,10 @@ public class TDItems {
 	// KNIVES
 	static {
 		IRONWOOD_KNIFE = handheld("ironwood_knife", IronwoodKnifeItem::new)
-				.tab(TDBlocks.TAB.getKey(), (x, m) -> x.get().fillItemCategory(m))
+				.tab(TDBlocks.TAB.key(), (x, m) -> x.get().fillItemCategory(m))
 				.register();
 		STEELEAF_KNIFE = handheld("steeleaf_knife", SteeleafKnifeItem::new)
-				.tab(TDBlocks.TAB.getKey(), (x, m) -> x.get().fillItemCategory(m))
+				.tab(TDBlocks.TAB.key(), (x, m) -> x.get().fillItemCategory(m))
 				.register();
 		KNIGHTMETAL_KNIFE = handheld("knightmetal_knife", KnightmetalKnifeItem::new)
 				.lang("Knightly Knife").register();
