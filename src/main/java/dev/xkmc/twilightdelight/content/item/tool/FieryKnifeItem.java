@@ -12,7 +12,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import twilightforest.util.TwilightItemTier;
+import twilightforest.util.TFToolMaterials;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.List;
 public class FieryKnifeItem extends TDKnifeItem {
 
 	public FieryKnifeItem(Item.Properties p) {
-		super(TwilightItemTier.FIERY, p.rarity(Rarity.UNCOMMON).fireResistant());
+		super(TFToolMaterials.FIERY, p.rarity(Rarity.UNCOMMON).fireResistant());
 	}
 
 	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {

@@ -36,7 +36,7 @@ public enum DelightPie {
 
 	DelightPie(EffectSupplier... effects) {
 		String name = name().toLowerCase(Locale.ROOT);
-		FoodProperties food = TDItems.simpleFood(DelightFoodType.COOKIE, 3, 0.3f, effects);
+		FoodProperties food = TDItems.simpleFood(DelightFoodType.FAST, 3, 0.3f, effects);
 		slice = TwilightDelight.REGISTRATE.item(name + "_slice", p -> new TDFoodItem(p.food(food)))
 				.defaultModel().defaultLang().register();
 		block = TwilightDelight.REGISTRATE.block(name,

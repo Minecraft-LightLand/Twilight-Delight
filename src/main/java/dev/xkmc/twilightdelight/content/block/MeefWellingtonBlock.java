@@ -16,7 +16,7 @@ public class MeefWellingtonBlock extends FeastBlock {
 	protected static final VoxelShape PLATE_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 15.0D);
 
 	public MeefWellingtonBlock() {
-		super(Properties.copy(Blocks.WHITE_WOOL), DelightFood.PLATE_OF_MEEF_WELLINGTON.item, true);
+		super(Properties.ofFullCopy(Blocks.WHITE_WOOL), DelightFood.PLATE_OF_MEEF_WELLINGTON.item, true);
 	}
 
 	@Override

@@ -20,13 +20,13 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class TagGen {
 
-	public static final TagKey<Item> INSECT = ItemTags.create(new ResourceLocation("forge", "insect"));
-	public static final TagKey<Item> MILK = ItemTags.create(new ResourceLocation("forge", "milk"));
-	public static final TagKey<Item> HYDRA_MEAT = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "hydra_meat"));
-	public static final TagKey<Item> MEEF_COOKED = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "meef_cooked"));
-	public static final TagKey<Item> MEEF_RAW = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "meef_raw"));
-	public static final TagKey<Item> VENSION_COOKED = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "vension_cooked"));
-	public static final TagKey<Item> VENSION_RAW = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "vension_raw"));
+	public static final TagKey<Item> INSECT = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "insect"));//TODO
+	public static final TagKey<Item> MILK = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "milk"));
+	public static final TagKey<Item> HYDRA_MEAT = ItemTags.create(TwilightDelight.loc("hydra_meat"));
+	public static final TagKey<Item> MEEF_COOKED = ItemTags.create(TwilightDelight.loc("meef_cooked"));
+	public static final TagKey<Item> MEEF_RAW = ItemTags.create(TwilightDelight.loc("meef_raw"));
+	public static final TagKey<Item> VENSION_COOKED = ItemTags.create(TwilightDelight.loc("vension_cooked"));
+	public static final TagKey<Item> VENSION_RAW = ItemTags.create(TwilightDelight.loc("vension_raw"));
 
 	public static void genItemTag(RegistrateItemTagsProvider pvd) {
 		pvd.addTag(INSECT)

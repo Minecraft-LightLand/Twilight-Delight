@@ -20,7 +20,7 @@ public class LilyChickenBlock extends FeastBlock {
 	protected static final VoxelShape ROAST_SHAPE = Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(4.0D, 2.0D, 4.0D, 12.0D, 9.0D, 12.0D), BooleanOp.OR);
 
 	public LilyChickenBlock() {
-		super(Properties.copy(Blocks.WHITE_WOOL), DelightFood.PLATE_OF_LILY_CHICKEN.item, true);
+		super(Properties.ofFullCopy(Blocks.WHITE_WOOL), DelightFood.PLATE_OF_LILY_CHICKEN.item, true);
 	}
 
 	@Override

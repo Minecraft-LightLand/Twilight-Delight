@@ -33,8 +33,8 @@ import java.util.Locale;
 public enum NeapolitanCakes {
 	AURORA(MapColor.COLOR_CYAN,
 			new EffectSupplier(TDEffects.AURORA_GLOWING, 300, 0, 1),
-			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 300, 2, 1),
-			new EffectSupplier(() -> MobEffects.JUMP, 300, 1, 1)),
+			new EffectSupplier(MobEffects.MOVEMENT_SPEED, 300, 2, 1),
+			new EffectSupplier( MobEffects.JUMP, 300, 1, 1)),
 	TORCHBERRY(MapColor.COLOR_YELLOW,
 			new EffectSupplier(TDEffects.FIRE_RANGE, 300, 0, 1)),
 	PHYTOCHEMICAL(MapColor.COLOR_GREEN,

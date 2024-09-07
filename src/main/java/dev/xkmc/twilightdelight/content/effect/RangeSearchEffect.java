@@ -26,7 +26,7 @@ public abstract class RangeSearchEffect extends MobEffect {
 	}
 
 	protected int getRange() {
-		return TDModConfig.COMMON.effectRange.get();
+		return TDModConfig.SERVER.effectRange.get();
 	}
 
 	protected boolean applicable(LivingEntity entity) {

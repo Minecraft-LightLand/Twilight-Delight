@@ -4,9 +4,8 @@ import com.google.common.collect.ImmutableList;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -21,9 +20,10 @@ import twilightforest.world.registration.TreeDecorators;
 public class TreeConfig {
 
 	public static final TreeConfiguration TC_IRONWOOD = new TreeConfiguration.TreeConfigurationBuilder(
-			BlockStateProvider.simple(TDBlocks.IRON_LOGS.get()),
+			BlockStateProvider.simple(TDBlocks.IRON_LOGS.getDefaultState()),
 			new BranchingTrunkPlacer(9, 1, 1, 3,
-					new BranchesConfig(4, 0,
+					new BranchesConfig(BlockStateProvider.simple(TDBlocks.IRON_LOGS.getDefaultState()),
+							4, 0,
 							8.0D, 2.0D,
 							0.23D, 0.23D),
 					false),
@@ -34,9 +34,9 @@ public class TreeConfig {
 			.decorators(ImmutableList.of(TreeDecorators.LIVING_ROOTS)).ignoreVines().build();
 
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CF_IRONWOOD = ResourceKey.create(Registries.CONFIGURED_FEATURE,
-			new ResourceLocation(TwilightDelight.MODID, "tree/ironwood_tree"));
+			TwilightDelight.loc("tree/ironwood_tree"));
 
-	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+	public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 		context.register(CF_IRONWOOD, new ConfiguredFeature<>(TFFeatures.DARK_CANOPY_TREE.get(), TC_IRONWOOD));
 	}
 

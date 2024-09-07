@@ -6,6 +6,8 @@ import com.teamabnormals.neapolitan.core.Neapolitan;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import com.tterrag.registrate.providers.ProviderType;
 import dev.ghen.thirst.Thirst;
+import dev.xkmc.l2core.events.EffectSyncEvents;
+import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
 import dev.xkmc.l2library.base.L2Registrate;
 import dev.xkmc.l2library.init.events.EffectSyncEvents;
 import dev.xkmc.twilightdelight.compat.ThirstCompat;
@@ -23,6 +25,7 @@ import dev.xkmc.twilightdelight.mixin.FoodPropertiesAccessor;
 import dev.xkmc.twilightdelight.mixin.ItemAccessor;
 import dev.xkmc.twilightdelight.util.StoveAddBlockUtil;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
@@ -39,6 +42,14 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.forgespi.language.IModFileInfo;
 import net.minecraftforge.forgespi.locating.IModFile;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.event.AddPackFindersEvent;
 import org.slf4j.Logger;
 import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
@@ -48,7 +59,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Mod(TwilightDelight.MODID)
-@Mod.EventBusSubscriber(modid = TwilightDelight.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = TwilightDelight.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class TwilightDelight {
 
 	public static final String MODID = "twilightdelight";
@@ -68,11 +79,6 @@ public class TwilightDelight {
 		TDEffects.register();
 		TDRecipes.register();
 		TDModConfig.init();
-		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TagGen::genItemTag);
-		REGISTRATE.addDataGenerator(ProviderType.BLOCK_TAGS, TagGen::genBlockTag);
-		REGISTRATE.addDataGenerator(ProviderType.LANG, LangData::genLang);
-		REGISTRATE.addDataGenerator(ProviderType.RECIPE, RecipeGen::genRecipes);
-		REGISTRATE.addDataGenerator(ProviderType.LOOT, ExtraLootGen::genLoot);
 	}
 
 	@SubscribeEvent
@@ -106,8 +112,15 @@ public class TwilightDelight {
 		});
 	}
 
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGH)
 	public static void gatherData(GatherDataEvent event) {
+
+		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TagGen::genItemTag);
+		REGISTRATE.addDataGenerator(ProviderType.BLOCK_TAGS, TagGen::genBlockTag);
+		REGISTRATE.addDataGenerator(ProviderType.LANG, LangData::genLang);
+		REGISTRATE.addDataGenerator(ProviderType.RECIPE, RecipeGen::genRecipes);
+		REGISTRATE.addDataGenerator(ProviderType.LOOT, ExtraLootGen::genLoot);
+
 		event.getGenerator().addProvider(event.includeServer(), new GLMGen(event.getGenerator()));
 		var output = event.getGenerator().getPackOutput();
 		var reg = new TDDatapackRegistriesGen(output, event.getLookupProvider());
@@ -133,6 +146,10 @@ public class TwilightDelight {
 				}
 			});
 		}
+	}
+
+	public static ResourceLocation loc(String id){
+		return ResourceLocation.fromNamespaceAndPath(MODID, id);
 	}
 
 }

@@ -1,33 +1,34 @@
 package dev.xkmc.twilightdelight.content.recipe;
 
-import dev.xkmc.l2library.serial.recipe.BaseRecipe;
-import dev.xkmc.l2serial.serialization.SerialClass;
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.resources.ResourceLocation;
+import dev.xkmc.l2core.serial.recipe.BaseRecipe;
+import dev.xkmc.l2serial.serialization.marker.SerialClass;
+import dev.xkmc.l2serial.serialization.marker.SerialField;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 
 @SerialClass
-public class BaseEffectRecipe<T extends BaseEffectRecipe<T>> extends BaseRecipe<T, BaseEffectRecipe<?>, WorldInv> {
+public class BaseEffectRecipe<T extends BaseEffectRecipe<T>> extends BaseRecipe<T, BaseEffectRecipe<?>, SingleRecipeInput> {
 
-	@SerialClass.SerialField
+	@SerialField
 	public Ingredient ingredient;
 
-	@SerialClass.SerialField
+	@SerialField
 	public ItemStack result;
 
-	public BaseEffectRecipe(ResourceLocation id, BaseRecipe.RecType<T, BaseEffectRecipe<?>, WorldInv> type) {
-		super(id, type);
+	public BaseEffectRecipe(BaseRecipe.RecType<T, BaseEffectRecipe<?>, SingleRecipeInput> type) {
+		super(type);
 	}
 
 	@Override
-	public boolean matches(WorldInv worldInv, Level level) {
+	public boolean matches(SingleRecipeInput worldInv, Level level) {
 		return ingredient.test(worldInv.getItem(0));
 	}
 
 	@Override
-	public ItemStack assemble(WorldInv worldInv, RegistryAccess access) {
+	public ItemStack assemble(SingleRecipeInput worldInv, HolderLookup.Provider access) {
 		var ans = result.copy();
 		ans.setCount(result.getCount() * worldInv.getItem(0).getCount());
 		return ans;
@@ -39,7 +40,7 @@ public class BaseEffectRecipe<T extends BaseEffectRecipe<T>> extends BaseRecipe<
 	}
 
 	@Override
-	public ItemStack getResultItem(RegistryAccess access) {
+	public ItemStack getResultItem(HolderLookup.Provider access) {
 		return result;
 	}
 

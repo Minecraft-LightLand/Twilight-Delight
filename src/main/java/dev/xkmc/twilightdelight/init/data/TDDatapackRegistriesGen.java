@@ -7,9 +7,8 @@ import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageType;
-import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
+import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
@@ -18,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
 public class TDDatapackRegistriesGen extends DatapackBuiltinEntriesProvider {
 
 	public static final ResourceKey<DamageType> ROSE_TEA = ResourceKey.create(Registries.DAMAGE_TYPE,
-			new ResourceLocation(TwilightDelight.MODID, "thorn_rose_tea"));
+			TwilightDelight.loc("thorn_rose_tea"));
 
 	private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
 			.add(Registries.DAMAGE_TYPE, ctx -> {

@@ -18,8 +18,8 @@ public class FieryCookingPotItem extends CookingPotItem {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(stack, level, list, flag);
+	public void appendHoverText(ItemStack stack, TooltipContext ctx, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(stack, ctx, list, flag);
 		list.add(Component.translatable(getDescriptionId() + ".tooltip").withStyle(ChatFormatting.GRAY));
 	}
 

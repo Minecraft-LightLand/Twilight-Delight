@@ -15,4 +15,7 @@ public interface IFoodType {
 	Item create(Item.Properties props);
 
 	Rarity getRarity();
+
+	void container(FoodProperties.Builder builder);
+
 }
