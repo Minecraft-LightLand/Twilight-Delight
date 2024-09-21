@@ -12,6 +12,8 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 import java.util.function.Consumer;
 
@@ -27,6 +29,7 @@ public abstract class RangeRenderEffect extends RangeSearchEffect implements Cli
 		renderEffect(lv, entity);
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void onClientLevelRender(AbstractClientPlayer player, MobEffectInstance ins) {
 		renderEffect(ins.getAmplifier(), player);

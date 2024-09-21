@@ -17,16 +17,15 @@ public class ExtraLootGen {
 
 	public static final ResourceKey<LootTable> SCRAP_115 = ResourceKey.create(Registries.LOOT_TABLE, TwilightDelight.loc("scrap_115"));
 
-	public static void genLoot(RegistrateLootTableProvider pvd) {//TODO double check
-		pvd.addLootAction(RegistrateLootTableProvider.LootType.BLOCK, block -> {
-			LootHelper helper = new LootHelper(block.getRegistries());
-			pvd.addLootAction(LootContextParamSets.BLOCK, e -> e.accept(SCRAP_115,
-					LootTable.lootTable().withPool(LootPool.lootPool()
-							.add(AlternativesEntry.alternatives(
-									LootItem.lootTableItem(TFItems.EXPERIMENT_115.get())
-											.when(helper.silk()),
-									LootItem.lootTableItem(ModItems.CAKE_SLICE.get()))))));
-		});
+	public static void genLoot(RegistrateLootTableProvider pvd) {
+		LootHelper helper = new LootHelper(pvd.getProvider());
+		pvd.addLootAction(LootContextParamSets.BLOCK, e -> e.accept(SCRAP_115,
+				LootTable.lootTable().withPool(LootPool.lootPool()
+						.add(AlternativesEntry.alternatives(
+								LootItem.lootTableItem(TFItems.EXPERIMENT_115.get())
+										.when(helper.silk()),
+								LootItem.lootTableItem(ModItems.CAKE_SLICE.get()))))));
+
 	}
 
 }

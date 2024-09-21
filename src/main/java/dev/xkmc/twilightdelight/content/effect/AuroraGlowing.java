@@ -1,6 +1,7 @@
 package dev.xkmc.twilightdelight.content.effect;
 
 import dev.xkmc.l2core.init.L2LibReg;
+import dev.xkmc.l2core.util.Proxy;
 import dev.xkmc.twilightdelight.init.data.TDModConfig;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import net.minecraft.client.Minecraft;
@@ -66,7 +67,7 @@ public class AuroraGlowing extends MobEffect {
 	public static int getColor(Entity entity) {
 		float pTick = Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(true);
 		Level level = entity.level();
-		Player player = Minecraft.getInstance().player;
+		Player player = Proxy.getPlayer();
 		if (player == null) return -1;
 		Vec3 pos = entity.getPosition(pTick).subtract(player.getPosition(pTick));
 		double dis = Math.atan2(pos.x, pos.z) / Math.PI * 180 / 6;
@@ -81,7 +82,7 @@ public class AuroraGlowing extends MobEffect {
 				!(self instanceof LivingEntity) &&
 				!(self instanceof PartEntity<?>))
 			return false;
-		Player player = Minecraft.getInstance().player;
+		Player player = Proxy.getPlayer();
 		if (player != null && player.hasEffect(TDEffects.AURORA_GLOWING))
 			return true;
 		if (self instanceof LivingEntity le && L2LibReg.EFFECT.type().isProper(le)) {
