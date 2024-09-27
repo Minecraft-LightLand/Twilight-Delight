@@ -6,10 +6,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.SimpleTier;
 import twilightforest.item.FierySwordItem;
@@ -21,7 +18,7 @@ public class TeardropSwordItem extends FierySwordItem {
 			() -> Ingredient.of(new ItemStack(DelightFood.EXPERIMENT_113.item.get())));
 
 	public TeardropSwordItem(Item.Properties p) {
-		super(TIER, p.rarity(Rarity.UNCOMMON).fireResistant());
+		super(TIER, p.rarity(Rarity.UNCOMMON).fireResistant().attributes(SwordItem.createAttributes(TIER, 3, -2.4f)));
 	}
 
 	@Override
