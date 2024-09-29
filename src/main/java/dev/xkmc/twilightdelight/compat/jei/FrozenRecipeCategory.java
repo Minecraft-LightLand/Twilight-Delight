@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.compat.jei;
 
-import dev.xkmc.l2core.serial.recipe.BaseRecipeCategory;
+import dev.xkmc.l2core.compat.jei.BaseRecipeCategory;
 import dev.xkmc.l2serial.util.Wrappers;
 import dev.xkmc.twilightdelight.content.recipe.BaseEffectRecipe;
 import dev.xkmc.twilightdelight.init.TwilightDelight;

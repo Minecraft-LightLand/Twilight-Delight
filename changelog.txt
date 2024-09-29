@@ -1,3 +1,6 @@
+3.0.0+5
+- Fix compat with Enchantment Description
+
 3.0.0+4
 - Fix teardrop sword attack damage
 
