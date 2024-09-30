@@ -1,3 +1,6 @@
+3.0.0+6
+- Fix effect tooltip not controlled by Farmer's Delight Config
+
 3.0.0+5
 - Fix compat with Enchantment Description
 
