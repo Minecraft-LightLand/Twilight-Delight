@@ -21,10 +21,7 @@
       "tag": "forge:milk"
     },
     {
-      "item": "neapolitan:vanilla_ice_cream"
-    },
-    {
-      "item": "twilightforest:steeleaf_ingot"
+      "item": "twilightdelight:phytochemical_ice_cream"
     }
   ],
   "result": {

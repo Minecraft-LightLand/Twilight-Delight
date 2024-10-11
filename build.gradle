@@ -1,3 +1,5 @@
+import net.darkhax.curseforgegradle.TaskPublishCurseForge
+
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
@@ -6,10 +8,16 @@ buildscript {
         maven { url = 'https://maven.parchmentmc.org' }
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.+', changing: true
         classpath "org.spongepowered:mixingradle:${mixingradle_version}"
         classpath 'org.parchmentmc:librarian:1.+'
     }
+}
+
+plugins{
+    id 'net.darkhax.curseforgegradle' version '[1.1.24,)'
+    id "at.stnwtr.gradle-secrets-plugin" version "1.0.1"
+    id "com.modrinth.minotaur" version "2.+"
 }
 
 apply plugin: 'net.minecraftforge.gradle'
@@ -210,12 +218,40 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 tasks.jarJar.configure {
-    // remove '-all' from jarJar jar file
-    classifier ''
+    archiveClassifier.set('')
 }
 
 jar {
-    // this now conflicts with jarJar as filenames are the same
-    // append a `-slim` to this jar, as this jar contains no pre-packaged libs
-    classifier 'slim'
+    archiveClassifier.set('slim')
+}
+
+tasks.register('publishCurseForge', TaskPublishCurseForge) {
+    apiToken = secrets.get("curseforge_token")
+    def mainFile = upload(curseforge_project, new File("./build/libs/${modid}-${ll_version}.jar"))
+    mainFile.changelog = new File('./changelog.txt')
+    mainFile.addEnvironment("Client", "Server")
+    mainFile.addGameVersion("1.20.1")
+    mainFile.addModLoader("NeoForge","Forge")
+    mainFile.addRequirement("farmers-delight", "the-twilight-forest")
+    mainFile.addOptional("neapolitan", "patchouli", "just-enough-effect-descriptions-jeed", "thirst-was-taken")
+    mainFile.releaseType = "release"
+    disableVersionDetection()
+}
+
+modrinth {
+    token = secrets.get("modrinth_token")
+    projectId = project.modrinth_project
+    versionName = "Twilight Delight ${project.ll_version}"
+    versionNumber = project.ll_version
+    versionType = "release"
+    uploadFile = new File("./build/libs/${modid}-${ll_version}.jar")
+    gameVersions = ["1.20.1"]
+    loaders = ["neoforge","forge"]
+    changelog = new File('./changelog.txt').text.split("\n\n")[0]
+    dependencies {
+        required.project "farmers-delight"
+        optional.project "neapolitan"
+        optional.project "patchouli"
+        optional.project "thirst-was-taken"
+    }
 }

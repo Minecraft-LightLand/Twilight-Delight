@@ -651,14 +651,8 @@ public class RecipeGen {
 				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(ice_cream.getId()));
 
 		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, milkshake.get(), 3)::unlockedBy, ingredient)
-				.requires(Items.GLASS_BOTTLE, 3).requires(milk).requires(NeapolitanItems.VANILLA_ICE_CREAM.get())
-				.requires(ingredient)
-				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(milkshake.getId()));
-
-		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, milkshake.get(), 3)::unlockedBy, ingredient)
 				.requires(Items.GLASS_BOTTLE, 3).requires(milk).requires(ice_cream.get())
-				.requires(NeapolitanItems.DRIED_VANILLA_PODS.get())
-				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(milkshake.getId()) + "_alt");
+				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(milkshake.getId()));
 
 		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, cake.block.get().asItem(), 1)::unlockedBy, ingredient)
 				.pattern("MXM").pattern("SES").pattern("WXW")

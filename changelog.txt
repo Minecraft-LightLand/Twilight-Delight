@@ -1,3 +1,6 @@
+2.0.13
+- Update Neapolitan compat to match new behaviors of Neapolitan
+
 2.0.12
 - Add Twilight Wood Cabinets
 

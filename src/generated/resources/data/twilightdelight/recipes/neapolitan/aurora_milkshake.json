@@ -21,10 +21,7 @@
       "tag": "forge:milk"
     },
     {
-      "item": "neapolitan:vanilla_ice_cream"
-    },
-    {
-      "item": "twilightforest:aurora_block"
+      "item": "twilightdelight:aurora_ice_cream"
     }
   ],
   "result": {
