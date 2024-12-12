@@ -29,7 +29,7 @@ public class TreeConfig {
 								4, 0,
 								8.0D, 2.0D,
 								0.23D, 0.23D),
-						false),
+						false, false),
 				BlockStateProvider.simple(TDBlocks.IRON_LEAVES.get()),
 				new LeafSpheroidFoliagePlacer(4.5F, 2.25F, ConstantInt.of(0),
 						1, 0, 0.45F, 36),

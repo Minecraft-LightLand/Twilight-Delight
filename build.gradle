@@ -5,7 +5,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.gradle.userdev' version '7.0.153'
+    id 'net.neoforged.gradle.userdev' version '7.0.165'
     id 'net.darkhax.curseforgegradle' version '[1.1.24,)'
     id "at.stnwtr.gradle-secrets-plugin" version "1.0.1"
     id "com.modrinth.minotaur" version "2.+"
@@ -163,7 +163,7 @@ dependencies {
 
     implementation "curse.maven:thirst-was-taken-679270:5568715"
     implementation "curse.maven:just-enough-effect-descriptions-jeed-532286:5634312"
-    implementation "curse.maven:the-twilight-forest-227639:5699076"
+    implementation "curse.maven:the-twilight-forest-227639:5983260"
     implementation "curse.maven:farmers-delight-398521:5566383"
 }
 
@@ -174,17 +174,8 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
     mainFile.addEnvironment("Client", "Server")
     mainFile.addGameVersion("1.21.1")
     mainFile.addModLoader("NeoForge")
-    mainFile.addRequirement("farmers-delight")
-    mainFile.addOptional(
-            "alexs-delight",
-            "alexs-mobs",
-            "croptopia",
-            "ends-delight",
-            "miners-delight-plus",
-            "nethers-delight",
-            "oceans-delight",
-            "the-twilight-forest",
-            "twilights-flavors-delight")
+    mainFile.addRequirement("farmers-delight", "the-twilight-forest")
+    mainFile.addOptional("neapolitan", "patchouli", "just-enough-effect-descriptions-jeed", "thirst-was-taken")
     mainFile.releaseType = "release"
     disableVersionDetection()
 }
@@ -201,11 +192,8 @@ modrinth {
     changelog = new File('./changelog.txt').text.split("\n\n")[0]
     dependencies {
         required.project "farmers-delight"
-        optional.project "alexs-mobs"
-        optional.project "ends-delight"
-        optional.project "miners-delight"
-        optional.project "nethers-delight"
-        optional.project "oceans-delight"
-        optional.project "twilight-delight"
+        optional.project "neapolitan"
+        optional.project "patchouli"
+        optional.project "thirst-was-taken"
     }
 }
