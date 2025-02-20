@@ -336,7 +336,7 @@ public class RecipeGen {
 					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(DelightFood.RAW_TOMAHAWK_SMEAK.item.get())
 					.addIngredient(DelightFood.MUSHGLOOM_SAUCE.item.get())
-					.addIngredient(ModItems.MILK_BOTTLE.get())
+					.addIngredient(CommonTags.FOODS_MILK)
 					.build(pvd, getID(DelightFood.GRILLED_TOMAHAWK_SMEAK.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.LILY_CHICKEN.get().asItem(),

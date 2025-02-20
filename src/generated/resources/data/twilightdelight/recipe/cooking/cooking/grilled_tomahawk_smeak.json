@@ -14,7 +14,7 @@
       "item": "twilightdelight:mushgloom_sauce"
     },
     {
-      "item": "farmersdelight:milk_bottle"
+      "tag": "c:foods/milk"
     }
   ],
   "recipe_book_tab": "meals",

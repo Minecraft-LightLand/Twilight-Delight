@@ -131,7 +131,7 @@ public class TDBlocks {
 									case HANDLE -> handle;
 									case TRAY -> tray;
 								});
-					}).item(FieryCookingPotItem::new).properties(e -> e.stacksTo(1)).build()
+					}).item(FieryCookingPotItem::new).properties(e -> e.stacksTo(1).fireResistant()).build()
 					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(
 							pvd.applyExplosionCondition(block,
 									LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
