@@ -210,7 +210,8 @@ public class TDBlocks {
 							pvd.modLoc("block/" + ctx.getName() + "_side"),
 							pvd.modLoc("block/crate_bottom"),
 							pvd.modLoc("block/" + ctx.getName() + "_top"))))
-					.simpleItem().register();
+					.tag(BlockTags.MINEABLE_WITH_AXE, Tags.Blocks.STORAGE_BLOCKS)
+					.item().tag(Tags.Items.STORAGE_BLOCKS).build().register();
 
 			MUSHGLOOM_COLONY = TwilightDelight.REGISTRATE.block(
 							"mushgloom_colony", p -> new MushroomColonyBlock(
