@@ -105,7 +105,8 @@ public class RecipeGen {
 					.define('W', Items.WATER_BUCKET)
 					.save(pvd);
 
-			unlock(pvd, SmithingTransformRecipeBuilder.smithing(Ingredient.EMPTY,
+			unlock(pvd, SmithingTransformRecipeBuilder.smithing(
+					Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
 					Ingredient.of(TFItems.FIERY_SWORD.get()),
 					Ingredient.of(DelightFood.EXPERIMENT_110.item.get()),
 					RecipeCategory.MISC,
@@ -337,7 +338,7 @@ public class RecipeGen {
 					DelightFood.RAW_TOMAHAWK_SMEAK.item.get())
 					.addIngredient(DelightFood.RAW_TOMAHAWK_SMEAK.item.get())
 					.addIngredient(DelightFood.MUSHGLOOM_SAUCE.item.get())
-					.addIngredient(ModItems.MILK_BOTTLE.get())
+					.addIngredient(TagGen.MILK)
 					.build(pvd, getID(DelightFood.GRILLED_TOMAHAWK_SMEAK.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.LILY_CHICKEN.get().asItem(),

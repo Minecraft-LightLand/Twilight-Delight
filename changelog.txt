@@ -1,5 +1,12 @@
+2.0.14
+- Add storage block tag for crates
+- Add smithing template for teardrop sword
+- Use milk tag instead of milk bottle for smeak
+- Compatible with newest Thirst mod
+
 2.0.13
 - Update Neapolitan compat to match new behaviors of Neapolitan
+
 
 2.0.12
 - Add Twilight Wood Cabinets

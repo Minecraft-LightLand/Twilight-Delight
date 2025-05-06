@@ -9,5 +9,7 @@
   "result": {
     "item": "twilightdelight:teardrop_sword"
   },
-  "template": []
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
 }
