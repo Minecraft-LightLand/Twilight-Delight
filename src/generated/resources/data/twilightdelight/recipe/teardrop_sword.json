@@ -10,5 +10,7 @@
     "count": 1,
     "id": "twilightdelight:teardrop_sword"
   },
-  "template": []
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
 }

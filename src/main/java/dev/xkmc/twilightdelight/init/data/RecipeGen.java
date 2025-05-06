@@ -96,7 +96,8 @@ public class RecipeGen {
 					.define('W', Items.WATER_BUCKET)
 					.save(pvd);
 
-			unlock(pvd, SmithingTransformRecipeBuilder.smithing(Ingredient.EMPTY,
+			unlock(pvd, SmithingTransformRecipeBuilder.smithing(
+					Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
 					Ingredient.of(TFItems.FIERY_SWORD.get()),
 					Ingredient.of(DelightFood.EXPERIMENT_110.item.get()),
 					RecipeCategory.MISC,

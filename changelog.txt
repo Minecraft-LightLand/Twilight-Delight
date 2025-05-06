@@ -1,3 +1,7 @@
+3.0.3
+- Add storage block tag for crates
+- Add smithing template for teardrop sword
+
 3.0.2
 - Make Fiery Pot fire immune
 - Make Grill Tomahawk Smeak use milk tag ingredient
