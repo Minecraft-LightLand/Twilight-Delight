@@ -277,7 +277,7 @@ public class TDBlocks {
 							pvd.horizontalBlock(ctx.get(), state -> state.getValue(CabinetBlock.OPEN) ? open : close);
 						})
 						.tag(BlockTags.MINEABLE_WITH_AXE)
-						.simpleItem()
+						.item().tag(ModTags.CABINETS, ModTags.WOODEN_CABINETS).build()
 						.register();
 		}
 		// tree
