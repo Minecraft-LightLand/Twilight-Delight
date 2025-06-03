@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-06T11:18:45.786382	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2025-06-03T08:11:52.093753	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
@@ -385,6 +385,8 @@ fa499578e9ceeb889d13e12ab2a60882c73edc06 assets/twilightdelight/models/item/twil
 f1ea3fc1012b4fa5982613a49bf0f10885ac9466 data/farmersdelight/tags/blocks/compost_activators.json
 6721c8be468978666c4d7975fe4bdb7843e6f151 data/farmersdelight/tags/blocks/heat_sources.json
 f1ea3fc1012b4fa5982613a49bf0f10885ac9466 data/farmersdelight/tags/blocks/unaffected_by_rich_soil.json
+ed112369ce7a17629048f84177e4cf85ab00797f data/farmersdelight/tags/items/cabinets.json
+ed112369ce7a17629048f84177e4cf85ab00797f data/farmersdelight/tags/items/cabinets/wooden.json
 9489f52928c3ed546dfeca4fbf5b855e783f895f data/farmersdelight/tags/items/tools/knives.json
 43b5b1389f457fe487b4e9dd2ac100b17f400b91 data/forge/tags/blocks/storage_blocks.json
 49a6ce7d86ba1c88a1961c2db7a6ae9fd9dc8e69 data/forge/tags/items/insect.json

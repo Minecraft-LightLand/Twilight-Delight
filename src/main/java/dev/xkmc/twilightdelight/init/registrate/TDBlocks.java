@@ -44,7 +44,6 @@ import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.block.*;
 import vectorwing.farmersdelight.common.item.MushroomColonyItem;
 import vectorwing.farmersdelight.common.loot.function.CopyMealFunction;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.Locale;
@@ -277,7 +276,7 @@ public class TDBlocks {
 							pvd.horizontalBlock(ctx.get(), state -> state.getValue(CabinetBlock.OPEN) ? open : close);
 						})
 						.tag(BlockTags.MINEABLE_WITH_AXE)
-						.simpleItem()
+						.item().tag(ModTags.CABINETS, ModTags.WOODEN_CABINETS).build()
 						.register();
 		}
 		// tree
