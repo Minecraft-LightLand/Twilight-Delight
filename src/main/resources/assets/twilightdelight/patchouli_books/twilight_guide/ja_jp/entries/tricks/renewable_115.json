@@ -1,0 +1,16 @@
+{
+  "name": "エクスペリメント115",
+  "icon": "twilightforest:experiment_115",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "カーミナイトガスト(守護兵)、カーミナイトガスト、ガストは、それぞれ確率でエクスペリメント115をドロップします。"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:experiment_115",
+	  "text": "シルクタッチのナイフを使えば、エクスペリメント115を切り取って一切れを入手できます。"
+	}
+  ]
+}

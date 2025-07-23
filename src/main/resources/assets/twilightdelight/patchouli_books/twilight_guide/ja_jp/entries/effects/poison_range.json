@@ -1,0 +1,16 @@
+{
+  "name": "毒の領域",
+  "icon": "twilightforest:steeleaf_ingot",
+  "category": "twilightdelight:effects",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "この効果はプレイヤーを毒効果から守り、周囲の敵すべてに毒を付与します。通常の毒よりも速くダメージを与えます。$(br2)効果範囲は緑色のパーティクルで表示されます。"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:steeleaf_ingot",
+	  "text": "葉鋼を使った飲み物やデザートから入手可能です。"
+	}
+  ]
+}

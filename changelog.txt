@@ -1,3 +1,8 @@
+3.0.6
+- Make food effects not giving particles
+- Add JP translation and patchouli book
+- Makes feasts non-stackable
+
 3.0.5
 - Add cabinet and wooden cabinet tags to cabinet items
 - improve KR translation

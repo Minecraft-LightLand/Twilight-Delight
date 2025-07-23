@@ -1,0 +1,16 @@
+{
+  "name": "オーロラ発光",
+  "icon": "twilightforest:aurora_block",
+  "category": "twilightdelight:effects",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "この効果は、自分と視界内のすべてのエンティティに虹色の発光レイヤーを付与します。アイテムも含まれます。$(br2)壁の向こうの敵や置き忘れたアイテム、地下洞窟の発見に役立ちます。"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:aurora_block",
+	  "text": "オーロラブロックを使った飲み物やデザートから入手可能です。"
+	}
+  ]
+}

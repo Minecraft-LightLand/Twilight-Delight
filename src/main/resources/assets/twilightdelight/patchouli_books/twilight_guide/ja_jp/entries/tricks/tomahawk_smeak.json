@@ -1,0 +1,16 @@
+{
+  "name": "トマホークスメーキ",
+  "icon": "twilightdelight:raw_tomahawk_smeak",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "ダイヤモンドのミノタウロスの斧でミノタウロスやミノッシュルームを倒すとトマホークスメーキをドロップすることがあります。"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightdelight:raw_tomahawk_smeak",
+	  "text": "ミーフストロガノフの材料になります。"
+	}
+  ]
+}

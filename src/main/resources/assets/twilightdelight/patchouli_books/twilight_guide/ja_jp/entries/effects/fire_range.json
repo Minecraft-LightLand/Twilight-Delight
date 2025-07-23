@@ -1,0 +1,16 @@
+{
+  "name": "炎の領域",
+  "icon": "twilightforest:torchberries",
+  "category": "twilightdelight:effects",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "この効果はプレイヤーが延焼するのを防ぎ、周囲の敵をすべて炎で包みます。ただし、火ダメージからの防御効果はありません。$(br2)効果範囲は炎のパーティクルで表示されます。"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:torchberries",
+	  "text": "トーチベリーを使った飲み物やデザートから入手可能です。"
+	}
+  ]
+}

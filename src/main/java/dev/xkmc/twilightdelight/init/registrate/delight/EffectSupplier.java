@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 public record EffectSupplier(Holder<MobEffect> eff, int time, int amp, float chance) {
 
 	public MobEffectInstance get() {
-		return new MobEffectInstance(eff, time, amp);
+		return new MobEffectInstance(eff, time, amp, false, false, true);
 	}
 
 }
