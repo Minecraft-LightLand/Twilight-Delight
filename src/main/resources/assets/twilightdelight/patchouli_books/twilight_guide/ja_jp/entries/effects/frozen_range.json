@@ -1,0 +1,16 @@
+{
+  "name": "凍結の領域",
+  "icon": "twilightforest:ice_bomb",
+  "category": "twilightdelight:effects",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "この効果はプレイヤーを凍結効果から守り、周囲の敵すべてに凍結Vを付与して実質的に行動不能にします。$(br2)効果範囲は雪の結晶パーティクルで表示されます。"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:ice_bomb",
+	  "text": "アイスボムを使った飲み物やデザートから入手可能です。$(br2)この効果があると、周囲の地面にあるアイテムを凍らせることができます。詳細はレシピModの氷河アイスティーを参照してください。"
+	}
+  ]
+}

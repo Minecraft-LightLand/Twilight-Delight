@@ -1,0 +1,16 @@
+{
+  "name": "一時の悲哀",
+  "icon": "twilightdelight:teardrop_sword",
+  "category": "twilightdelight:effects",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "この効果は対象の攻撃力を10減少させ、移動速度を半減させます。"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightdelight:teardrop_sword",
+	  "text": "涙滴の剣使用時に敵に付与されます。"
+	}
+  ]
+}

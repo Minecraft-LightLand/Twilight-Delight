@@ -151,7 +151,7 @@ public class TDBlocks {
 						String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
 						return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
 					}))
-					.item().model((ctx, pvd) -> pvd.generated(ctx)).build()
+					.item().properties(p->p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
 					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
 							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
 									.when(ExplosionCondition.survivesExplosion())
@@ -167,7 +167,7 @@ public class TDBlocks {
 						String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
 						return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
 					}))
-					.item().model((ctx, pvd) -> pvd.generated(ctx)).build()
+					.item().properties(p->p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
 					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
 							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
 									.when(ExplosionCondition.survivesExplosion())
@@ -187,7 +187,7 @@ public class TDBlocks {
 						String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
 						return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
 					}))
-					.item().model((ctx, pvd) -> pvd.generated(ctx)).build()
+					.item().properties(p->p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
 					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
 							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
 									.when(ExplosionCondition.survivesExplosion())

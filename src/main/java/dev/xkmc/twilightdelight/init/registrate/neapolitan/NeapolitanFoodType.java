@@ -14,7 +14,7 @@ import java.util.function.Function;
 
 public enum NeapolitanFoodType implements IFoodType {
 	MILKSHAKE(Rarity.COMMON, false, false, false, p -> new TDMilkshakeItem(p.stacksTo(16).craftRemainder(Items.GLASS_BOTTLE))),
-	ICE_CREAM(Rarity.COMMON, false, false, false, p -> new TDIceCreamItem(p.stacksTo(16).craftRemainder(Items.BOWL)));
+	ICE_CREAM(Rarity.COMMON, false, false, false, p -> new TDIceCreamItem(p.stacksTo(1).craftRemainder(Items.BOWL)));
 
 	public final Rarity rarity;
 	public final boolean meat, fast, drink;

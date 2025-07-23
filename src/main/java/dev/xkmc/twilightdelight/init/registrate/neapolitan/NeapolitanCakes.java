@@ -60,7 +60,7 @@ public enum NeapolitanCakes {
 				.defaultModel().defaultLang().register();
 		block = TwilightDelight.REGISTRATE.block(base + "_cake", p -> new TDCakeBlock(food, props, this))
 				.blockstate(this::genCakeModels).loot((pvd, block) -> pvd.dropOther(block, item.get()))
-				.item().model((ctx, pvd) -> pvd.generated(ctx)).build().register();
+				.item().properties(p->p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build().register();
 		this.candle = TwilightDelight.REGISTRATE.block(base + "_candle_cake",
 						p -> new FlavoredCandleCakeBlock(block::get, Blocks.CANDLE, props))
 				.blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, "candle"))

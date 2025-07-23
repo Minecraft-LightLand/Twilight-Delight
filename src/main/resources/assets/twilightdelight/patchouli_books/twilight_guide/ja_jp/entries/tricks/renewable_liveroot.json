@@ -1,0 +1,12 @@
+{
+  "name": "生きている根ブロック",
+  "icon": "twilightforest:liveroot",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:liveroot_block",
+	  "text": "肥沃な土と生きている根ブロックに隣接した根ブロックは、ゆっくりと生きている根ブロックへと変化し、生きている根ブロックの栽培が可能になります。"
+	}
+  ]
+}

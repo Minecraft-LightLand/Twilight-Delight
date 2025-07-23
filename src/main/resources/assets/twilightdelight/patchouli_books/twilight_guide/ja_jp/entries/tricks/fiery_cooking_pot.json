@@ -1,0 +1,15 @@
+{
+  "name": "灼熱の鍋",
+  "icon": "twilightdelight:fiery_cooking_pot",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "自ら加熱する。メイズストーブの上で使うと通常10秒かかる Twilight Forest または Twilight's Flavor & Delight の料理を5秒で調理できます。"
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "twilightdelight:fiery_cooking_pot"
+	}
+  ]
+}
