@@ -35,13 +35,13 @@ public class TDItems {
 	static {
 		IRONWOOD_KNIFE = handheld("ironwood_knife", IronwoodKnifeItem::new)
 				.tab(TDBlocks.TAB.key(), (x, m) -> x.get().fillItemCategory(m))
-				.register();
+				.tag(ModTags.KNIVES, CommonTags.TOOLS_KNIFE).register();
 		STEELEAF_KNIFE = handheld("steeleaf_knife", SteeleafKnifeItem::new)
 				.tab(TDBlocks.TAB.key(), (x, m) -> x.get().fillItemCategory(m))
-				.register();
+				.tag(ModTags.KNIVES, CommonTags.TOOLS_KNIFE).register();
 		KNIGHTMETAL_KNIFE = handheld("knightmetal_knife", KnightmetalKnifeItem::new)
-				.lang("Knightly Knife").register();
-
+				.lang("Knightly Knife")
+				.tag(ModTags.KNIVES, CommonTags.TOOLS_KNIFE).register();
 		FIERY_KNIFE = handheld("fiery_knife", FieryKnifeItem::new)
 				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))
 				.tag(ModTags.KNIVES, CommonTags.TOOLS_KNIFE).register();
@@ -82,7 +82,7 @@ public class TDItems {
 	}
 
 	private static <T extends Item> ItemBuilder<T, L2Registrate> handheld(String id, NonNullFunction<Item.Properties, T> factory) {
-		return TwilightDelight.REGISTRATE.item(id, factory).model((ctx, pvd) -> pvd.handheld(ctx)).tag(ModTags.KNIVES, CommonTags.TOOLS_KNIFE);
+		return TwilightDelight.REGISTRATE.item(id, factory).model((ctx, pvd) -> pvd.handheld(ctx));
 	}
 
 	public static void register() {

@@ -1,3 +1,8 @@
+3.0.7
+- Fix Creative Item Pick on Fiery Pot
+- Remove knife tag from Teardrop sword
+- Completely disable possible modded enchantment descriptions added by this mod
+
 3.0.6
 - Make food effects not giving particles
 - Add JP translation and patchouli book
