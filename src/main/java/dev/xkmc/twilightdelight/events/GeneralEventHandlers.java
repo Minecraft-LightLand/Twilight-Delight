@@ -28,6 +28,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 import twilightforest.block.Experiment115Block;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFMobEffects;
@@ -127,6 +128,17 @@ public class GeneralEventHandlers {
 			}
 		}
 
+	}
+
+	public static boolean skipLootTable(ResourceLocation name) {
+		if (name.getNamespace().equals(TwilightDelight.MODID)) {
+			if (name.getPath().startsWith("blocks/")) {
+				if (!ForgeRegistries.BLOCKS.containsKey(name.withPath(e -> e.substring(7)))) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 }

@@ -579,6 +579,7 @@ public class RecipeGen {
 		// neapolitan
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			path = "neapolitan/";
+			var nea = ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID);
 			neapolitan(pvd, NeapolitanFood.AURORA_ICE_CREAM.item,
 					NeapolitanFood.AURORA_MILKSHAKE.item,
 					NeapolitanCakes.AURORA,
@@ -600,19 +601,19 @@ public class RecipeGen {
 					.requires(NeapolitanFood.TORCHBERRY_ICE_CREAM.item.get())
 					.requires(NeapolitanItems.CHOCOLATE_ICE_CREAM.get())
 					.requires(NeapolitanItems.STRAWBERRY_ICE_CREAM.get())
-					.requires(Items.BOWL, 3).save(pvd);
+					.requires(Items.BOWL, 3).save(nea);
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, NeapolitanFood.RAINBOW_ICE_CREAM.item.get(), 3)::unlockedBy, TFBlocks.AURORA_BLOCK.get().asItem())
 					.requires(NeapolitanFood.AURORA_ICE_CREAM.item.get())
 					.requires(NeapolitanItems.BANANA_ICE_CREAM.get())
 					.requires(NeapolitanItems.ADZUKI_ICE_CREAM.get())
-					.requires(Items.BOWL, 3).save(pvd);
+					.requires(Items.BOWL, 3).save(nea);
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, NeapolitanFood.REFRESHING_ICE_CREAM.item.get(), 3)::unlockedBy, TFItems.ICE_BOMB.get())
 					.requires(NeapolitanFood.GLACIER_ICE_CREAM.item.get())
 					.requires(NeapolitanItems.MINT_ICE_CREAM.get())
 					.requires(NeapolitanFood.PHYTOCHEMICAL_ICE_CREAM.item.get())
-					.requires(Items.BOWL, 3).save(pvd);
+					.requires(Items.BOWL, 3).save(nea);
 
 		}
 
@@ -666,7 +667,7 @@ public class RecipeGen {
 						Ingredient.of(cake.block.get()),
 						Ingredient.of(ForgeTags.TOOLS_KNIVES),
 						cake.item.get(), 7)
-				.build(pvd, getID(cake.item.getId()));
+				.build(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cake.item.getId()));
 
 		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, cake.block.get(), 1)::unlockedBy, cake.item.get())
 				.requires(cake.item.get(), 7)
