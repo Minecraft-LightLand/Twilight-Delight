@@ -165,6 +165,8 @@ dependencies {
     implementation "curse.maven:just-enough-effect-descriptions-jeed-532286:5634312"
     implementation "curse.maven:the-twilight-forest-227639:5983260"
     implementation "curse.maven:farmers-delight-398521:5566383"
+
+    implementation "vazkii.patchouli:Patchouli:${patchouli_ver}"
 }
 
 tasks.register('publishCurseForge', TaskPublishCurseForge) {

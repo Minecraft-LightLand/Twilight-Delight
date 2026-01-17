@@ -43,6 +43,7 @@ import net.neoforged.neoforgespi.language.IModFileInfo;
 import net.neoforged.neoforgespi.locating.IModFile;
 import org.slf4j.Logger;
 import twilightforest.init.TFItems;
+import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
@@ -103,6 +104,10 @@ public class TwilightDelight {
 		event.modify(TFItems.MEEF_STROGANOFF, b -> b.set(DataComponents.FOOD, new FoodProperties.Builder()
 				.nutrition(8).saturationModifier(0.6F).alwaysEdible().usingConvertsTo(Items.BOWL)
 				.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 6000), 1f).build()));
+		if (Configuration.ENABLE_STACKABLE_SOUP_ITEMS.get()) {
+			event.modify(TFItems.MEEF_STROGANOFF, b -> b.set(DataComponents.MAX_STACK_SIZE, 16));
+		}
+
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGH)
