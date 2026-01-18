@@ -1,3 +1,6 @@
+2.0.19
+- Fix Refmap crash
+
 2.0.18
 - make meef stroganoff stackable if enabled in Farmer's Delight config
 - remove annoying errors in log when neapolitan is not installed
