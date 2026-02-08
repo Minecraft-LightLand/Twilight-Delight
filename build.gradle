@@ -163,8 +163,12 @@ dependencies {
 
     compileOnly "curse.maven:thirst-was-taken-679270:6490040"
     implementation "curse.maven:just-enough-effect-descriptions-jeed-532286:5634312"
-    implementation "curse.maven:the-twilight-forest-227639:5983260"
-    implementation "curse.maven:farmers-delight-398521:5566383"
+    implementation "curse.maven:the-twilight-forest-227639:7398100"
+    implementation "curse.maven:farmers-delight-398521:6917256"
+    runtimeOnly "curse.maven:geckolib-388172:7415496"
+    runtimeOnly "curse.maven:ars-nouveau-401955:7417840"
+    runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.0.14+1.21.1"
+
 
     implementation "vazkii.patchouli:Patchouli:${patchouli_ver}"
 }

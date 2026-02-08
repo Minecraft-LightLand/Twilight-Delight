@@ -1,6 +1,10 @@
+3.1.0
+- Lily Pad farming
+
 3.0.8
 - Make meef stroganoff stackable if enabled in Farmer's Delight config
 - Fix patchouli book recipe
+
 
 3.0.7
 - Fix Creative Item Pick on Fiery Pot

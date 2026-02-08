@@ -1,0 +1,16 @@
+{
+  "name": "Farming Lily",
+  "icon": "twilightforest:huge_lily_pad",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "Put rich soil a block below water, and put lily pad above water. Lily pad may grow into huge water lily or huge lily pad, if space permits."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightforest:huge_water_lily",
+	  "text": "After lily pad grow into huge water lily, it would continue to spread more lily pad around the water lily."
+	}
+  ]
+}
