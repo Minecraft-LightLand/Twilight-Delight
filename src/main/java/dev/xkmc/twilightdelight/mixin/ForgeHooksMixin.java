@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ForgeHooks.class)
 public class ForgeHooksMixin {
 
-	@Inject(method = "loadLootTable", at = @At("HEAD"), cancellable = true, remap = false)
+	@Inject(method = "loadLootTable", at = @At("HEAD"), cancellable = true, remap = false, require = 0)
 	private static void twilightdelight$removeLogErrors(Gson gson, ResourceLocation name, JsonElement data, boolean custom, CallbackInfoReturnable<LootTable> cir) {
 		if (GeneralEventHandlers.skipLootTable(name)) {
 			cir.setReturnValue(null);

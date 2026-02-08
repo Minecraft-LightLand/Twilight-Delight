@@ -1,3 +1,6 @@
+2.1.0
+- Lily Pad farming
+
 2.0.19
 - Fix Refmap crash
 
