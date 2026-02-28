@@ -5,7 +5,7 @@
   "pages": [
 	{
 	  "type": "patchouli:text",
-	  "text": "Put rich soil a block below water, and put lily pad above water. Lily pad may grow into huge water lily or huge lily pad, if space permits."
+	  "text": "Put rich soil a block below water, and put lily pad above water. Lily pad may grow into huge lily pad if space permits.$(br2)Lily pad next to huge lily pad might grow into huge water lily as well."
 	},
 	{
 	  "type": "patchouli:spotlight",
