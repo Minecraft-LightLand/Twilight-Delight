@@ -38,9 +38,14 @@ public class RichSoilUtil {
 		BlockPos target = pos.above(2);
 		var state = level.getBlockState(target);
 		if (state.is(Blocks.LILY_PAD)) {
-			if (level.getRandom().nextBoolean())
-				level.setBlockAndUpdate(target, TFBlocks.HUGE_WATER_LILY.get().defaultBlockState());
-			else convertPadToHuge(target, level);
+			if (level.getRandom().nextBoolean()) {
+				Direction dir = Direction.from2DDataValue(level.getRandom().nextInt(4));
+				if (level.getBlockState(target.relative(dir)).is(TFBlocks.HUGE_LILY_PAD.get())) {
+					level.setBlockAndUpdate(target, TFBlocks.HUGE_WATER_LILY.get().defaultBlockState());
+					return;
+				}
+			}
+			convertPadToHuge(target, level);
 		} else if (state.is(TFBlocks.HUGE_WATER_LILY.get())) {
 			spreadLilyPad(target, level);
 		}
@@ -90,8 +95,19 @@ public class RichSoilUtil {
 		var up = pos.above();
 		var state = level.getBlockState(up);
 		if (state.is(TFBlocks.DARKWOOD_SAPLING.get())) {
-			if (MathUtils.RAND.nextFloat() <= Configuration.RICH_SOIL_BOOST_CHANCE.get())
-				level.setBlockAndUpdate(up, TDBlocks.IRON_SAPLING.get().defaultBlockState());
+			if (MathUtils.RAND.nextFloat() <= Configuration.RICH_SOIL_BOOST_CHANCE.get()) {
+				int count = 0;
+				for (int x = -1; x <= 1; x++) {
+					for (int z = -1; z <= 1; z++) {
+						if (level.getBlockState(pos.offset(x, -1, z)).is(TFBlocks.LIVEROOT_BLOCK.get())) {
+							count++;
+						}
+					}
+				}
+				if (level.getRandom().nextFloat() * 10 < count) {
+					level.setBlockAndUpdate(up, TDBlocks.IRON_SAPLING.get().defaultBlockState());
+				}
+			}
 		}
 	}
 
