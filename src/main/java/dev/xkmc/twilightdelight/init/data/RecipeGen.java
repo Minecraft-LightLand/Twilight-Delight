@@ -183,6 +183,12 @@ public class RecipeGen {
 					.requires(CommonTags.FOODS_ONION)
 					.save(pvd);
 
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.TORCHBERRY_VENISON_SANDWICH.item.get(), 1)::unlockedBy, TFItems.RAW_VENISON.get())
+					.requires(Tags.Items.FOODS_BREAD).requires(TagGen.VENSION_COOKED)
+					.requires(CommonTags.FOODS_LEAFY_GREEN)
+					.requires(TFItems.TORCHBERRIES.get())
+					.save(pvd);
+
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.CHOCOLATE_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
 					.requires(DelightFood.EXPERIMENT_113.item.get())
 					.requires(CommonTags.FOODS_MILK)
@@ -257,7 +263,7 @@ public class RecipeGen {
 					TFItems.FIERY_BLOOD.get())
 					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(TagGen.HYDRA_MEAT)
-					.addIngredient(TFItems.FIERY_BLOOD.get())
+					.addIngredient(ItemTagGenerator.FIERY_VIAL)
 					.addIngredient(TFItems.NAGA_SCALE.get())
 					.addIngredient(ModItems.TOMATO_SAUCE.get())
 					.addIngredient(TFItems.TORCHBERRIES.get())
@@ -327,7 +333,7 @@ public class RecipeGen {
 					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(ModItems.TOMATO.get())
 					.addIngredient(Items.BEETROOT)
-					.addIngredient(TFItems.FIERY_TEARS.get())
+					.addIngredient(ItemTagGenerator.FIERY_VIAL)
 					.addIngredient(TFItems.EXPERIMENT_115.get(), 2)
 					.build(pvd, getID(DelightFood.GRILLED_GHAST.item.getId()));
 
@@ -360,6 +366,40 @@ public class RecipeGen {
 					.addIngredient(Items.VINE)
 					.addIngredient(TFBlocks.FIDDLEHEAD.get().asItem())
 					.build(pvd, getID(DelightFood.THOUSAND_PLANT_STEW.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TFItems.TRANSFORMATION_POWDER.get().asItem(),
+							1, 800, 0.5f, ModItems.CANVAS.get())::unlockedBy,
+					TFItems.BORER_ESSENCE.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+					.addIngredient(Items.NETHER_WART)
+					.addIngredient(Items.FERMENTED_SPIDER_EYE)
+					.addIngredient(Items.PUFFERFISH)
+					.addIngredient(Items.POISONOUS_POTATO)
+					.addIngredient(ModItems.ROTTEN_TOMATO.get())
+					.addIngredient(TFItems.BORER_ESSENCE.get())
+					.build(pvd, getID(TFItems.TRANSFORMATION_POWDER.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.LIVEROOT_PORK_FRIED_RICE.item,
+							1, 200, 0.5f, Items.BOWL)::unlockedBy,
+					TFItems.LIVEROOT.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(CommonTags.CROPS_RICE)
+					.addIngredient(CommonTags.FOODS_RAW_PORK)
+					.addIngredient(CommonTags.FOODS_RAW_PORK)
+					.addIngredient(Tags.Items.EGGS)
+					.addIngredient(TFItems.LIVEROOT.get())
+					.build(pvd, getID(DelightFood.LIVEROOT_PORK_FRIED_RICE.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.LIVEROOT_VENISON_NOODLE_SOUP.item,
+							1, 200, 0.5f, Items.BOWL)::unlockedBy,
+					TFItems.LIVEROOT.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(CommonTags.FOODS_PASTA)
+					.addIngredient(TagGen.VENSION_RAW)
+					.addIngredient(ModItems.CHICKEN_SOUP.get())
+					.addIngredient(TFItems.LIVEROOT.get())
+					.build(pvd, getID(DelightFood.LIVEROOT_VENISON_NOODLE_SOUP.item.getId()));
+
 		}
 
 		// drink cooking

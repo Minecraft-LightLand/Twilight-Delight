@@ -23,6 +23,7 @@ public class ThirstCompat {
 		event.addDrink(DelightFood.GLOWSTEW.item.get(), 8, 13);
 		event.addDrink(DelightFood.BORER_TEAR_SOUP.item.get(), 8, 13);
 		event.addDrink(DelightFood.MUSHGLOOM_SAUCE.item.get(), 4, 6);
+		event.addDrink(DelightFood.LIVEROOT_VENISON_NOODLE_SOUP.item.get(), 8, 13);
 	}
 
 }

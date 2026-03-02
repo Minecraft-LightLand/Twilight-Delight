@@ -168,6 +168,7 @@ dependencies {
     runtimeOnly "curse.maven:geckolib-388172:7415496"
     runtimeOnly "curse.maven:ars-nouveau-401955:7417840"
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.0.14+1.21.1"
+    runtimeOnly "curse.maven:appleskin-248787:7517379"
 
 
     implementation "vazkii.patchouli:Patchouli:${patchouli_ver}"

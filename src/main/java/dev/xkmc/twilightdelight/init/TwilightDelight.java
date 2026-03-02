@@ -35,6 +35,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.data.loading.DatagenModLoader;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
 import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
@@ -104,7 +105,7 @@ public class TwilightDelight {
 		event.modify(TFItems.MEEF_STROGANOFF, b -> b.set(DataComponents.FOOD, new FoodProperties.Builder()
 				.nutrition(8).saturationModifier(0.6F).alwaysEdible().usingConvertsTo(Items.BOWL)
 				.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 6000), 1f).build()));
-		if (Configuration.ENABLE_STACKABLE_SOUP_ITEMS.get()) {
+		if (DatagenModLoader.isRunningDataGen() || Configuration.ENABLE_STACKABLE_SOUP_ITEMS.get()) {
 			event.modify(TFItems.MEEF_STROGANOFF, b -> b.set(DataComponents.MAX_STACK_SIZE, 16));
 		}
 
