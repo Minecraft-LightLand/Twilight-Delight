@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "tag": "forge:pasta/raw_pasta"
+    },
+    {
+      "tag": "twilightdelight:vension_raw"
+    },
+    {
+      "item": "farmersdelight:chicken_soup"
+    },
+    {
+      "item": "twilightforest:liveroot"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:liveroot_venison_noodle_soup"
+  }
+}

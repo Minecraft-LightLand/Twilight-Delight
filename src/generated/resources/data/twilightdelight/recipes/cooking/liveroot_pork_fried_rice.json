@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "tag": "forge:crops/rice"
+    },
+    {
+      "tag": "forge:raw_pork"
+    },
+    {
+      "tag": "forge:raw_pork"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "item": "twilightforest:liveroot"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:liveroot_pork_fried_rice"
+  }
+}

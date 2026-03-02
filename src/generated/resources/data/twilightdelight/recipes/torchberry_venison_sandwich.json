@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:bread"
+    },
+    {
+      "tag": "twilightdelight:vension_cooked"
+    },
+    {
+      "tag": "forge:salad_ingredients"
+    },
+    {
+      "item": "twilightforest:torchberries"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:torchberry_venison_sandwich"
+  }
+}
