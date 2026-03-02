@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-02T14:26:45.391991	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2026-03-02T15:18:41.317289	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
@@ -617,11 +617,11 @@ a62bf04346292839640d9ebdb57b564c85477a8a data/twilightdelight/recipes/cooked_tom
 81491257403cd56b9d42ca9225e0b83d0afcd67b data/twilightdelight/recipes/cooked_venison_rib_from_raw_venison_rib_campfire.json
 a19f5be0b781d923164d1a5310f651667e8d7da0 data/twilightdelight/recipes/cooked_venison_rib_from_raw_venison_rib_smelting.json
 313d1e41ea9eb463c45da3e97b6783cbc15eff63 data/twilightdelight/recipes/cooked_venison_rib_from_raw_venison_rib_smoking.json
-86b55a8777ae3a777c74edda41d9b687bbccf102 data/twilightdelight/recipes/cooking/fiery_snakes_block.json
+230cd3ed0aa244f7e49ff729efea7a4c4b21973d data/twilightdelight/recipes/cooking/fiery_snakes_block.json
 554bc5fca4ec811450fdcba9e3f55a98d2fcca71 data/twilightdelight/recipes/cooking/fried_insect.json
 11f1beb3b635d0c1f8116b302d0f864d6cf84671 data/twilightdelight/recipes/cooking/glow_venison_rib_with_pasta.json
 d5cb68e60bd376f55416320146ebed26633ee641 data/twilightdelight/recipes/cooking/glowstew.json
-13454d66e1a31b4673ae6b6706d38582f0d56127 data/twilightdelight/recipes/cooking/grilled_ghast.json
+90d4e8b3fc1365082571ce650317751f38d4a0bf data/twilightdelight/recipes/cooking/grilled_ghast.json
 adb6b303b4219c9f854934f2e8cbf000d257b471 data/twilightdelight/recipes/cooking/grilled_tomahawk_smeak.json
 a811135c1e18dc62cd08c9532b1fcdd0cfd71368 data/twilightdelight/recipes/cooking/lily_chicken_block.json
 b71e36c2a8109d17f45206aa9a086fbe539f101f data/twilightdelight/recipes/cooking/liveroot_pork_fried_rice.json
