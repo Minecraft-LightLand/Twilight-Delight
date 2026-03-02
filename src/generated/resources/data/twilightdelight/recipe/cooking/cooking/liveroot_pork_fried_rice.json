@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "tag": "c:crops/rice"
+    },
+    {
+      "tag": "c:foods/raw_pork"
+    },
+    {
+      "tag": "c:foods/raw_pork"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "item": "twilightforest:liveroot"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:liveroot_pork_fried_rice"
+  }
+}

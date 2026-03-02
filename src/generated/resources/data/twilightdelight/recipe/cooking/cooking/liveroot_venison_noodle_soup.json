@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "tag": "c:foods/pasta"
+    },
+    {
+      "tag": "twilightdelight:vension_raw"
+    },
+    {
+      "item": "farmersdelight:chicken_soup"
+    },
+    {
+      "item": "twilightforest:liveroot"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:liveroot_venison_noodle_soup"
+  }
+}
