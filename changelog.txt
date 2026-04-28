@@ -1,3 +1,7 @@
+3.2.0
+- Port to support Farmer's Delight 1.3
+
+
 3.1.1
 - Add 3 dishes
 - Buff some old dishes
