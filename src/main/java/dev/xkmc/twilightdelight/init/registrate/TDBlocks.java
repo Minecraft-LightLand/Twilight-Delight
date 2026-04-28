@@ -105,7 +105,7 @@ public class TDBlocks {
 					.tag(TagRef.HEAT_SOURCES, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register();
 
 			MAZE_BE = TwilightDelight.REGISTRATE.blockEntity("maze_stove", MazeStoveBlockEntity::new)
-					.register();
+					.validBlock(MAZE_STOVE).register();
 
 			FIERY_POT = TwilightDelight.REGISTRATE.block(
 							"fiery_cooking_pot", p -> new FieryCookingPotBlock(
@@ -230,7 +230,7 @@ public class TDBlocks {
 								.texture("cross", pvd.modLoc("block/" + stageName))
 								.texture("cross2", pvd.modLoc("block/" + stageName + "_head"))).build();
 					}))
-					.tag(TagRef.COMPOST_ACTIVATORS, TagRef.UNAFFECTED_BY_RICH_SOIL)
+					.tag(TagRef.COMPOST_ACTIVATORS, TagRef.UNAFFECTED_BY_RICH_SOIL, TagRef.BLOCK_MUSHROOM_COLONIES)
 					.loot((pvd, block) -> {
 						var item = TFBlocks.MUSHGLOOM.get().asItem();
 						Function<Integer, LootItemCondition.Builder> prop = i ->
@@ -257,7 +257,7 @@ public class TDBlocks {
 										AlternativesEntry.alternatives(s0, s1, s2, s3, self))
 								.apply(ApplyExplosionDecay.explosionDecay())));
 					})
-					.item(MushroomColonyItem::new)
+					.item(MushroomColonyItem::new).tag(TagRef.ITEM_MUSHROOM_COLONIES)
 					.model((ctx, pvd) -> pvd.generated(ctx,
 							pvd.modLoc("block/" + ctx.getName() + "_stage3"),
 							pvd.modLoc("block/" + ctx.getName() + "_stage3_head"))).build()

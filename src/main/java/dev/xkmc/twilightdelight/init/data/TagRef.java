@@ -7,8 +7,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
-import java.util.Locale;
-
 public class TagRef {
 
 	public static final TagKey<Block> HEAT_SOURCES = modBlockTag("heat_sources");
@@ -19,9 +17,11 @@ public class TagRef {
 	public static final TagKey<Block> BLOCK_PIES = modBlockTag("pies");
 	public static final TagKey<Block> BLOCK_CABINETS = modBlockTag("cabinets");
 	public static final TagKey<Block> BLOCK_WOODEN_CABINETS = modBlockTag("cabinets/wooden");
+	public static final TagKey<Block> BLOCK_MUSHROOM_COLONIES = modBlockTag("mushroom_colonies");
 	public static final TagKey<Item> ITEM_PIES = modItemTag("pies");
 	public static final TagKey<Item> ITEM_CABINETS = modItemTag("cabinets");
 	public static final TagKey<Item> ITEM_WOODEN_CABINETS = modItemTag("cabinets/wooden");
+	public static final TagKey<Item> ITEM_MUSHROOM_COLONIES = modItemTag("mushroom_colonies");
 
 	public static final TagKey<Item> TOOLS_KNIVES = forgeItemTag("tools/knives");
 	public static final TagKey<Item> BREAD = forgeItemTag("bread");
