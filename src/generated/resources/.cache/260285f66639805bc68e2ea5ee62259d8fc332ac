@@ -1,4 +1,4 @@
-// 1.20.1	2026-04-28T11:11:41.822214	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2026-04-28T11:55:48.679451	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
@@ -385,13 +385,23 @@ a190d86a5dc36f7c9f0c79ef85748f703845d68a assets/twilightdelight/models/item/torc
 7719822a992f431b01f84b6ce326ebcaab7537f8 assets/twilightdelight/models/item/twilight_ice_cream.json
 3516e703ccb701e6297cad84a0c1d41a104ac93d assets/twilightdelight/models/item/twilight_oak_cabinet.json
 fa499578e9ceeb889d13e12ab2a60882c73edc06 assets/twilightdelight/models/item/twilight_spring.json
+946c7338a5e9dc6d5d992c73711a451590a4fe18 data/diet/tags/items/fruits.json
+f7f261dd4edfe55461bd2c260aa156c4896a13c1 data/diet/tags/items/grains.json
+6525569db353cdee04cbc31e89b2326e97ccf165 data/diet/tags/items/proteins.json
+74f5ab494f84cd7741c423f95e7bae6ecf4c3d5a data/diet/tags/items/sugars.json
+9d2d12d29f1f819fa1dc13b89b3f3c3b6daa634a data/diet/tags/items/vegetables.json
 ed112369ce7a17629048f84177e4cf85ab00797f data/farmersdelight/tags/blocks/cabinets.json
 ed112369ce7a17629048f84177e4cf85ab00797f data/farmersdelight/tags/blocks/cabinets/wooden.json
 f1ea3fc1012b4fa5982613a49bf0f10885ac9466 data/farmersdelight/tags/blocks/compost_activators.json
+6b7ef39e710a0aecbbbf4f2553df19b44a289838 data/farmersdelight/tags/blocks/feasts.json
 6721c8be468978666c4d7975fe4bdb7843e6f151 data/farmersdelight/tags/blocks/heat_sources.json
+bd666cfb6243bbc30f76a1e138136f63ee378d2a data/farmersdelight/tags/blocks/pies.json
 f1ea3fc1012b4fa5982613a49bf0f10885ac9466 data/farmersdelight/tags/blocks/unaffected_by_rich_soil.json
 ed112369ce7a17629048f84177e4cf85ab00797f data/farmersdelight/tags/items/cabinets.json
 ed112369ce7a17629048f84177e4cf85ab00797f data/farmersdelight/tags/items/cabinets/wooden.json
+bd666cfb6243bbc30f76a1e138136f63ee378d2a data/farmersdelight/tags/items/pies.json
+a810ab73217ec02202e4df7783c6577d3cd45689 data/farmersdelight/tags/items/snacks.json
+a0cbe0c1675cd21ab052f2bdbd44847be509466f data/farmersdelight/tags/items/sweets.json
 43b5b1389f457fe487b4e9dd2ac100b17f400b91 data/forge/tags/blocks/storage_blocks.json
 49a6ce7d86ba1c88a1961c2db7a6ae9fd9dc8e69 data/forge/tags/items/insect.json
 edb5947f84984a39ab47c98c6fb0b3c3a9a8cc39 data/forge/tags/items/milk.json

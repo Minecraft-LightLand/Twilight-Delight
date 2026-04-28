@@ -10,12 +10,14 @@ import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
 import dev.xkmc.twilightdelight.init.registrate.delight.IFoodType;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.loaders.ItemLayerModelBuilder;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import java.util.function.Function;
@@ -45,14 +47,14 @@ public class TDItems {
 				.tag(ItemTags.SWORDS).register();
 	}
 
-	public static ItemEntry<Item> simpleFood(IFoodType r, String name, int nutrition, float saturation, EffectSupplier... effects) {
+	public static ItemEntry<Item> simpleFood(IFoodType r, String name, int nutrition, float saturation, List<EffectSupplier> effects, TagKey<Item>... tags) {
 		return food(name.toLowerCase(Locale.ROOT),
 				p -> r.create(p.rarity(r.getRarity())),
 				() -> simpleFood(r, nutrition, saturation, effects))
-				.model(r::model).register();
+				.model(r::model).tag(tags).register();
 	}
 
-	public static FoodProperties simpleFood(IFoodType r, int nutrition, float saturation, EffectSupplier... effects) {
+	public static FoodProperties simpleFood(IFoodType r, int nutrition, float saturation, List<EffectSupplier> effects) {
 		FoodProperties.Builder builder = new FoodProperties.Builder();
 		builder = builder.nutrition(nutrition).saturationMod(saturation);
 		builder = r.process(builder);

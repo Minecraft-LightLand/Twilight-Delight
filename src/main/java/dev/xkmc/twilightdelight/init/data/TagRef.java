@@ -7,14 +7,19 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
+import java.util.Locale;
+
 public class TagRef {
 
 	public static final TagKey<Block> HEAT_SOURCES = modBlockTag("heat_sources");
 	public static final TagKey<Block> COMPOST_ACTIVATORS = modBlockTag("compost_activators");
 	public static final TagKey<Block> UNAFFECTED_BY_RICH_SOIL = modBlockTag("unaffected_by_rich_soil");
+	public static final TagKey<Block> FEASTS = modBlockTag("feasts");
 
+	public static final TagKey<Block> BLOCK_PIES = modBlockTag("pies");
 	public static final TagKey<Block> BLOCK_CABINETS = modBlockTag("cabinets");
 	public static final TagKey<Block> BLOCK_WOODEN_CABINETS = modBlockTag("cabinets/wooden");
+	public static final TagKey<Item> ITEM_PIES = modItemTag("pies");
 	public static final TagKey<Item> ITEM_CABINETS = modItemTag("cabinets");
 	public static final TagKey<Item> ITEM_WOODEN_CABINETS = modItemTag("cabinets/wooden");
 
@@ -29,6 +34,14 @@ public class TagRef {
 	public static final TagKey<Item> EGGS = forgeItemTag("eggs");
 	public static final TagKey<Item> SALAD_INGREDIENTS = forgeItemTag("salad_ingredients");
 
+	public static final TagKey<Item> SWEETS = modItemTag("sweets");
+	public static final TagKey<Item> SNACKS = modItemTag("snacks");
+
+	public static final TagKey<Item> FRUITS = dietTag("fruits");
+	public static final TagKey<Item> GRAINS = dietTag("grains");
+	public static final TagKey<Item> PROTEINS = dietTag("proteins");
+	public static final TagKey<Item> SUGARS = dietTag("sugars");
+	public static final TagKey<Item> VEGETABLES = dietTag("vegetables");
 
 	private static TagKey<Item> forgeItemTag(String path) {
 		return ItemTags.create(new ResourceLocation("forge", path));
@@ -40,6 +53,11 @@ public class TagRef {
 
 	private static TagKey<Block> modBlockTag(String path) {
 		return BlockTags.create(new ResourceLocation("farmersdelight", path));
+	}
+
+
+	private static TagKey<Item> dietTag(String path) {
+		return ItemTags.create(new ResourceLocation("diet", path));
 	}
 
 }

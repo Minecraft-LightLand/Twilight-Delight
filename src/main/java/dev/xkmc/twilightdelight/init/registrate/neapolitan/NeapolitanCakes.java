@@ -8,6 +8,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.twilightdelight.compat.neapolitan.TDCakeBlock;
 import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFoodType;
@@ -28,6 +29,7 @@ import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.List;
 import java.util.Locale;
 
 public enum NeapolitanCakes {
@@ -53,11 +55,11 @@ public enum NeapolitanCakes {
 	@SuppressWarnings({"unchecked", "rawtype", "unsafe"})
 	NeapolitanCakes(MapColor color, EffectSupplier... effects) {
 		base = name().toLowerCase(Locale.ROOT);
-		var food = TDItems.simpleFood(DelightFoodType.NONE, 1, 0.1f, effects);
+		var food = TDItems.simpleFood(DelightFoodType.NONE, 1, 0.1f, List.of(effects));
 		var props = BlockBehaviour.Properties.of().mapColor(color).forceSolidOn().strength(0.5F)
 				.sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY);
 		item = TwilightDelight.REGISTRATE.item(base + "_cake_slice", p -> new TDFoodItem(p.food(food)))
-				.defaultModel().defaultLang().register();
+				.tag(TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS).defaultModel().defaultLang().register();
 		block = TwilightDelight.REGISTRATE.block(base + "_cake", p -> new TDCakeBlock(food, props, this))
 				.blockstate(this::genCakeModels).loot((pvd, block) -> pvd.dropOther(block, item.get()))
 				.item().properties(p->p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build().register();

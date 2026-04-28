@@ -165,7 +165,7 @@ public class TDBlocks {
 							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BOWL))
 									.when(ExplosionCondition.survivesExplosion())
 									.when(InvertedLootItemCondition.invert(getServe(block))))
-					)).register();
+					)).tag(TagRef.FEASTS).register();
 			LILY_CHICKEN = TwilightDelight.REGISTRATE.block(
 							"lily_chicken_block", p -> new LilyChickenBlock())
 					.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
@@ -184,8 +184,7 @@ public class TDBlocks {
 							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BONE_MEAL))
 									.when(ExplosionCondition.survivesExplosion())
 									.when(InvertedLootItemCondition.invert(getServe(block))))
-					))
-					.register();
+					)).tag(TagRef.FEASTS).register();
 			MEEF_WELLINGTON = TwilightDelight.REGISTRATE.block(
 							"meef_wellington_block", p -> new MeefWellingtonBlock())
 					.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
@@ -201,7 +200,7 @@ public class TDBlocks {
 							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BOWL))
 									.when(ExplosionCondition.survivesExplosion())
 									.when(InvertedLootItemCondition.invert(getServe(block))))
-					)).register();
+					)).tag(TagRef.FEASTS).register();
 		}
 		// misc
 		{

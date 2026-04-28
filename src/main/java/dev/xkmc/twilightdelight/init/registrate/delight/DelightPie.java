@@ -5,6 +5,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import net.minecraft.resources.ResourceLocation;
@@ -17,6 +18,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
+import java.util.List;
 import java.util.Locale;
 
 public enum DelightPie {
@@ -36,9 +38,9 @@ public enum DelightPie {
 
 	DelightPie(EffectSupplier... effects) {
 		String name = name().toLowerCase(Locale.ROOT);
-		FoodProperties food = TDItems.simpleFood(DelightFoodType.COOKIE, 3, 0.3f, effects);
+		FoodProperties food = TDItems.simpleFood(DelightFoodType.COOKIE, 3, 0.3f, List.of(effects));
 		slice = TwilightDelight.REGISTRATE.item(name + "_slice", p -> new TDFoodItem(p.food(food)))
-				.defaultModel().defaultLang().register();
+				.tag(TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS).defaultModel().defaultLang().register();
 		block = TwilightDelight.REGISTRATE.block(name,
 						p -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), slice::get))
 				.blockstate((ctx, pvd) -> {
@@ -47,7 +49,11 @@ public enum DelightPie {
 						models[i] = genCakeModel(pvd, i == 0 ? "" : "_slice" + i);
 					}
 					pvd.horizontalBlock(ctx.getEntry(), state -> models[state.getValue(PieBlock.BITES)]);
-				}).loot((a, b) -> a.dropOther(b, slice)).item().model((ctx, pvd) -> pvd.generated(ctx)).build().defaultLang().register();
+				}).loot((a, b) -> a.dropOther(b, slice))
+				.tag(TagRef.BLOCK_PIES)
+				.item().tag(TagRef.ITEM_PIES)
+				.model((ctx, pvd) -> pvd.generated(ctx)).build()
+				.defaultLang().register();
 	}
 
 	private BlockModelBuilder genCakeModel(RegistrateBlockstateProvider pvd, String model) {
