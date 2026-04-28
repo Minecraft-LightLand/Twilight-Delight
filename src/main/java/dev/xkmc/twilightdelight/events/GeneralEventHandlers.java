@@ -2,6 +2,7 @@ package dev.xkmc.twilightdelight.events;
 
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.data.ExtraLootGen;
+import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -61,7 +62,7 @@ public class GeneralEventHandlers {
 				}
 			}
 		}
-		if (event.getItemStack().is(ModTags.KNIVES)) {
+		if (event.getItemStack().is(TagRef.TOOLS_KNIVES)) {
 			if (state.is(TFBlocks.EXPERIMENT_115.get())) {
 				if (event.getLevel() instanceof ServerLevel sl) {
 					int i = state.getValue(Experiment115Block.BITES_TAKEN);

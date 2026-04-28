@@ -15,8 +15,7 @@
 		"ItemAccessor",
 		"ItemEntityMixin",
 		"RichSoilBlockMixin",
-		"SkilletBlockEntityMixin",
-		"StoveBlockEntityMixin"
+		"SkilletBlockEntityMixin"
 	],
 	"client": [
 		"CuttingBoardRendererMixin"

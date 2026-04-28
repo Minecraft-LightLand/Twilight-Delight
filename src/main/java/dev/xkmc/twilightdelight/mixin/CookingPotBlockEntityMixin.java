@@ -111,7 +111,7 @@ public abstract class CookingPotBlockEntityMixin extends SyncedBlockEntity imple
 	private static void twilightDelight$cookingTick$impl(Level level, BlockPos pos, BlockState state, CookingPotBlockEntity self, CallbackInfo ci) {
 		if (state.is(TDBlocks.FIERY_POT.get())) {
 			CookingPotBlockEntityMixin cookingPot = Wrappers.cast(self);
-			boolean isHeated = cookingPot.isHeated();
+			boolean isHeated = self.isHeated();
 			boolean didInventoryChange = false;
 			if (isHeated && cookingPot.hasInput()) {
 				Optional<CookingPotRecipe> recipe = cookingPot.getMatchingRecipe(new RecipeWrapper(cookingPot.inventory));

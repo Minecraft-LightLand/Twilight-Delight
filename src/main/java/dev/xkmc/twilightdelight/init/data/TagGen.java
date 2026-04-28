@@ -16,7 +16,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.fml.ModList;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class TagGen {
 
@@ -42,7 +41,7 @@ public class TagGen {
 	}
 
 	public static void genBlockTag(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {
-		pvd.addTag(ModTags.HEAT_SOURCES).add(TFBlocks.FIERY_BLOCK.get());
+		pvd.addTag(TagRef.HEAT_SOURCES).add(TFBlocks.FIERY_BLOCK.get());
 		var candle = pvd.addTag(BlockTags.CANDLE_CAKES);
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			for (var e : NeapolitanCakes.values()) {

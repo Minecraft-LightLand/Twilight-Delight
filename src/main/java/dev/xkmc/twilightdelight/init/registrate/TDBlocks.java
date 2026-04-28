@@ -1,9 +1,11 @@
 package dev.xkmc.twilightdelight.init.registrate;
 
+import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import dev.xkmc.twilightdelight.content.block.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.world.IronwoodTreeGrower;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -44,7 +46,6 @@ import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.block.*;
 import vectorwing.farmersdelight.common.item.MushroomColonyItem;
 import vectorwing.farmersdelight.common.loot.function.CopyMealFunction;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.Locale;
 import java.util.function.Function;
@@ -56,6 +57,7 @@ public class TDBlocks {
 					e -> e.icon(TDBlocks.MAZE_STOVE::asStack));
 
 	public static final BlockEntry<MazeStoveBlock> MAZE_STOVE;
+	public static final BlockEntityEntry<MazeStoveBlockEntity> MAZE_BE;
 	public static final BlockEntry<FieryCookingPotBlock> FIERY_POT;
 
 	public static final BlockEntry<FierySnakesBlock> FIERY_SNAKES;
@@ -100,7 +102,11 @@ public class TDBlocks {
 						).texture("particle", pvd.modLoc("block/" + ctx.getName() + "_bottom"));
 						pvd.horizontalBlock(ctx.get(), state -> state.getValue(StoveBlock.LIT) ? on : off);
 					})
-					.tag(ModTags.HEAT_SOURCES, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register();
+					.tag(TagRef.HEAT_SOURCES, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register();
+
+			MAZE_BE = TwilightDelight.REGISTRATE.blockEntity("maze_stove", MazeStoveBlockEntity::new)
+					.register();
+
 			FIERY_POT = TwilightDelight.REGISTRATE.block(
 							"fiery_cooking_pot", p -> new FieryCookingPotBlock(
 									BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
@@ -151,7 +157,7 @@ public class TDBlocks {
 						String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
 						return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
 					}))
-					.item().properties(p->p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
+					.item().properties(p -> p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
 					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
 							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
 									.when(ExplosionCondition.survivesExplosion())
@@ -167,7 +173,7 @@ public class TDBlocks {
 						String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
 						return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
 					}))
-					.item().properties(p->p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
+					.item().properties(p -> p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
 					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
 							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
 									.when(ExplosionCondition.survivesExplosion())
@@ -187,7 +193,7 @@ public class TDBlocks {
 						String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
 						return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
 					}))
-					.item().properties(p->p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
+					.item().properties(p -> p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
 					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
 							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
 									.when(ExplosionCondition.survivesExplosion())
@@ -225,7 +231,7 @@ public class TDBlocks {
 								.texture("cross", pvd.modLoc("block/" + stageName))
 								.texture("cross2", pvd.modLoc("block/" + stageName + "_head"))).build();
 					}))
-					.tag(ModTags.COMPOST_ACTIVATORS, ModTags.UNAFFECTED_BY_RICH_SOIL)
+					.tag(TagRef.COMPOST_ACTIVATORS, TagRef.UNAFFECTED_BY_RICH_SOIL)
 					.loot((pvd, block) -> {
 						var item = TFBlocks.MUSHGLOOM.get().asItem();
 						Function<Integer, LootItemCondition.Builder> prop = i ->
@@ -275,8 +281,8 @@ public class TDBlocks {
 									pvd.modLoc("block/" + ctx.getName() + "_top"));
 							pvd.horizontalBlock(ctx.get(), state -> state.getValue(CabinetBlock.OPEN) ? open : close);
 						})
-						.tag(BlockTags.MINEABLE_WITH_AXE)
-						.item().tag(ModTags.CABINETS, ModTags.WOODEN_CABINETS).build()
+						.tag(BlockTags.MINEABLE_WITH_AXE, TagRef.BLOCK_CABINETS, TagRef.BLOCK_WOODEN_CABINETS)
+						.item().tag(TagRef.ITEM_CABINETS, TagRef.ITEM_WOODEN_CABINETS).build()
 						.register();
 		}
 		// tree

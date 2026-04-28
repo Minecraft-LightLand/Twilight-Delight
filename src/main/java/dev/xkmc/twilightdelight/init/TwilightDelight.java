@@ -69,11 +69,6 @@ public class TwilightDelight {
 		TDEffects.register();
 		TDRecipes.register();
 		TDModConfig.init();
-		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TagGen::genItemTag);
-		REGISTRATE.addDataGenerator(ProviderType.BLOCK_TAGS, TagGen::genBlockTag);
-		REGISTRATE.addDataGenerator(ProviderType.LANG, LangData::genLang);
-		REGISTRATE.addDataGenerator(ProviderType.RECIPE, RecipeGen::genRecipes);
-		REGISTRATE.addDataGenerator(ProviderType.LOOT, ExtraLootGen::genLoot);
 	}
 
 	@SubscribeEvent
@@ -117,6 +112,12 @@ public class TwilightDelight {
 		var reg = new TDDatapackRegistriesGen(output, event.getLookupProvider());
 		event.getGenerator().addProvider(event.includeServer(), reg);
 		event.getGenerator().addProvider(event.includeServer(), new TDDatapackTagsGen(output, reg.getRegistryProvider(), event.getExistingFileHelper()));
+
+		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TagGen::genItemTag);
+		REGISTRATE.addDataGenerator(ProviderType.BLOCK_TAGS, TagGen::genBlockTag);
+		REGISTRATE.addDataGenerator(ProviderType.LANG, LangData::genLang);
+		REGISTRATE.addDataGenerator(ProviderType.RECIPE, RecipeGen::genRecipes);
+		REGISTRATE.addDataGenerator(ProviderType.LOOT, ExtraLootGen::genLoot);
 	}
 
 	@SubscribeEvent

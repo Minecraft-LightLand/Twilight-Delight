@@ -6,6 +6,7 @@ import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.l2library.base.L2Registrate;
 import dev.xkmc.twilightdelight.content.item.tool.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
 import dev.xkmc.twilightdelight.init.registrate.delight.IFoodType;
 import net.minecraft.tags.ItemTags;
@@ -13,8 +14,6 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.loaders.ItemLayerModelBuilder;
 import org.apache.commons.lang3.StringUtils;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.Arrays;
 import java.util.Locale;
@@ -34,13 +33,13 @@ public class TDItems {
 
 	// KNIVES
 	static {
-		IRONWOOD_KNIFE = handheld("ironwood_knife", IronwoodKnifeItem::new).tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).transform(e -> e.tab(TDBlocks.TAB.getKey(), x -> e.getEntry().fillItemCategory(x))).register();
-		STEELEAF_KNIFE = handheld("steeleaf_knife", SteeleafKnifeItem::new).tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).transform(e -> e.tab(TDBlocks.TAB.getKey(), x -> e.getEntry().fillItemCategory(x))).register();
-		KNIGHTMETAL_KNIFE = handheld("knightmetal_knife", KnightmetalKnifeItem::new).lang("Knightly Knife").tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).register();
+		IRONWOOD_KNIFE = handheld("ironwood_knife", IronwoodKnifeItem::new).tag(TagRef.TOOLS_KNIVES).transform(e -> e.tab(TDBlocks.TAB.getKey(), x -> e.getEntry().fillItemCategory(x))).register();
+		STEELEAF_KNIFE = handheld("steeleaf_knife", SteeleafKnifeItem::new).tag(TagRef.TOOLS_KNIVES).transform(e -> e.tab(TDBlocks.TAB.getKey(), x -> e.getEntry().fillItemCategory(x))).register();
+		KNIGHTMETAL_KNIFE = handheld("knightmetal_knife", KnightmetalKnifeItem::new).lang("Knightly Knife").tag(TagRef.TOOLS_KNIVES).register();
 
 		FIERY_KNIFE = handheld("fiery_knife", FieryKnifeItem::new)
 				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))
-				.tag(ModTags.KNIVES, ForgeTags.TOOLS_KNIVES).register();
+				.tag(TagRef.TOOLS_KNIVES).register();
 		TEARDROP_SWORD = handheld("teardrop_sword", TeardropSwordItem::new)
 				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))
 				.tag(ItemTags.SWORDS).register();
