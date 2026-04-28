@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_mushgloom": {
+    "has_liveroot": {
       "conditions": {
         "items": [
           {
-            "items": "twilightforest:mushgloom"
+            "items": "twilightforest:liveroot"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightdelight:cooking/cooking/glowstew"
+        "recipe": "twilightdelight:cooking/liveroot_pork_fried_rice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_mushgloom"
+      "has_liveroot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "twilightdelight:cooking/cooking/glowstew"
+      "twilightdelight:cooking/liveroot_pork_fried_rice"
     ]
   }
 }

@@ -1,10 +1,12 @@
 package dev.xkmc.twilightdelight.init.registrate;
 
+import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import dev.xkmc.l2core.init.reg.registrate.SimpleEntry;
 import dev.xkmc.l2core.serial.loot.LootHelper;
 import dev.xkmc.twilightdelight.content.block.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.data.TagRef;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.component.DataComponents;
@@ -54,6 +56,7 @@ public class TDBlocks {
 					e -> e.icon(TDBlocks.MAZE_STOVE::asStack));
 
 	public static final BlockEntry<MazeStoveBlock> MAZE_STOVE;
+	public static final BlockEntityEntry<MazeStoveBlockEntity> MAZE_BE;
 	public static final BlockEntry<FieryCookingPotBlock> FIERY_POT;
 
 	public static final BlockEntry<FierySnakesBlock> FIERY_SNAKES;
@@ -98,7 +101,11 @@ public class TDBlocks {
 						).texture("particle", pvd.modLoc("block/" + ctx.getName() + "_bottom"));
 						pvd.horizontalBlock(ctx.get(), state -> state.getValue(StoveBlock.LIT) ? on : off);
 					})
-					.tag(ModTags.HEAT_SOURCES, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register();
+					.tag(TagRef.HEAT_SOURCES, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register();
+			MAZE_BE = TwilightDelight.REGISTRATE.blockEntity("maze_stove", MazeStoveBlockEntity::new)
+					.validBlock(MAZE_STOVE)
+					.register();
+
 			FIERY_POT = TwilightDelight.REGISTRATE.block(
 							"fiery_cooking_pot", p -> new FieryCookingPotBlock(
 									BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
@@ -161,7 +168,7 @@ public class TDBlocks {
 							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BOWL))
 									.when(ExplosionCondition.survivesExplosion())
 									.when(InvertedLootItemCondition.invert(getServe(block))))
-					)).register();
+					)).tag(TagRef.FEASTS).register();
 			LILY_CHICKEN = TwilightDelight.REGISTRATE.block(
 							"lily_chicken_block", p -> new LilyChickenBlock())
 					.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
@@ -180,8 +187,7 @@ public class TDBlocks {
 							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BONE_MEAL))
 									.when(ExplosionCondition.survivesExplosion())
 									.when(InvertedLootItemCondition.invert(getServe(block))))
-					))
-					.register();
+					)).tag(TagRef.FEASTS).register();
 			MEEF_WELLINGTON = TwilightDelight.REGISTRATE.block(
 							"meef_wellington_block", p -> new MeefWellingtonBlock())
 					.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
@@ -197,7 +203,7 @@ public class TDBlocks {
 							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BOWL))
 									.when(ExplosionCondition.survivesExplosion())
 									.when(InvertedLootItemCondition.invert(getServe(block))))
-					)).register();
+					)).tag(TagRef.FEASTS).register();
 		}
 		// misc
 		{
@@ -226,7 +232,7 @@ public class TDBlocks {
 								.texture("cross", pvd.modLoc("block/" + stageName))
 								.texture("cross2", pvd.modLoc("block/" + stageName + "_head"))).build();
 					}))
-					.tag(ModTags.COMPOST_ACTIVATORS, ModTags.UNAFFECTED_BY_RICH_SOIL)
+					.tag(TagRef.COMPOST_ACTIVATORS, TagRef.UNAFFECTED_BY_RICH_SOIL, TagRef.BLOCK_MUSHROOM_COLONIES)
 					.loot((pvd, block) -> {
 						var item = TFBlocks.MUSHGLOOM.get().asItem();
 						Function<Integer, LootItemCondition.Builder> prop = i ->
@@ -253,7 +259,7 @@ public class TDBlocks {
 										AlternativesEntry.alternatives(s0, s1, s2, s3, self))
 								.apply(ApplyExplosionDecay.explosionDecay())));
 					})
-					.item(MushroomColonyItem::new)
+					.item(MushroomColonyItem::new).tag(TagRef.ITEM_MUSHROOM_COLONIES)
 					.model((ctx, pvd) -> pvd.generated(ctx,
 							pvd.modLoc("block/" + ctx.getName() + "_stage3"),
 							pvd.modLoc("block/" + ctx.getName() + "_stage3_head"))).build()
@@ -276,8 +282,8 @@ public class TDBlocks {
 									pvd.modLoc("block/" + ctx.getName() + "_top"));
 							pvd.horizontalBlock(ctx.get(), state -> state.getValue(CabinetBlock.OPEN) ? open : close);
 						})
-						.tag(BlockTags.MINEABLE_WITH_AXE)
-						.item().tag(ModTags.CABINETS, ModTags.WOODEN_CABINETS).build()
+						.tag(BlockTags.MINEABLE_WITH_AXE, TagRef.BLOCK_CABINETS, TagRef.BLOCK_WOODEN_CABINETS)
+						.item().tag(TagRef.ITEM_CABINETS, TagRef.ITEM_WOODEN_CABINETS).build()
 						.register();
 		}
 		// tree

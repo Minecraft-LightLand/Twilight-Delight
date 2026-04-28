@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_borer_essence": {
+    "has_liveroot": {
       "conditions": {
         "items": [
           {
-            "items": "twilightforest:borer_essence"
+            "items": "twilightforest:liveroot"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightdelight:cooking/cooking/transformation_powder"
+        "recipe": "twilightdelight:cooking/liveroot_venison_noodle_soup"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_borer_essence"
+      "has_liveroot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "twilightdelight:cooking/cooking/transformation_powder"
+      "twilightdelight:cooking/liveroot_venison_noodle_soup"
     ]
   }
 }

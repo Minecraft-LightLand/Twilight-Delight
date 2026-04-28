@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_glowstew": {
+    "has_liveroot": {
       "conditions": {
         "items": [
           {
-            "items": "twilightdelight:glowstew"
+            "items": "twilightforest:liveroot"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightdelight:cooking/cooking/glow_venison_rib_with_pasta"
+        "recipe": "twilightdelight:cooking/thousand_plant_stew"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_glowstew"
+      "has_liveroot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "twilightdelight:cooking/cooking/glow_venison_rib_with_pasta"
+      "twilightdelight:cooking/thousand_plant_stew"
     ]
   }
 }

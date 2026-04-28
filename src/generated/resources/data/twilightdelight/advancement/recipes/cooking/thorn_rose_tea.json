@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightdelight:cooking/cooking/thorn_rose_tea"
+        "recipe": "twilightdelight:cooking/thorn_rose_tea"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "twilightdelight:cooking/cooking/thorn_rose_tea"
+      "twilightdelight:cooking/thorn_rose_tea"
     ]
   }
 }

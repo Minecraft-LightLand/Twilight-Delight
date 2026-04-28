@@ -34,7 +34,6 @@ import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
-import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
@@ -155,7 +154,7 @@ public class RecipeGen {
 			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, TFItems.MAZE_WAFER.get(), 12)::unlockedBy, TFItems.LIVEROOT.get())
 					.pattern("AAA").pattern("BCB").pattern("AAA")
 					.define('A', Items.WHEAT)
-					.define('B', CommonTags.FOODS_MILK)
+					.define('B', TagRef.FOODS_MILK)
 					.define('C', TFItems.LIVEROOT.get())
 					.save(pvd, getID(TFItems.MAZE_WAFER.getId()));
 
@@ -179,26 +178,26 @@ public class RecipeGen {
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.MEEF_WRAP.item.get(), 1)::unlockedBy, TFItems.RAW_MEEF.get())
 					.requires(Tags.Items.FOODS_BREAD).requires(TagGen.MEEF_COOKED)
-					.requires(CommonTags.FOODS_LEAFY_GREEN)
-					.requires(CommonTags.FOODS_ONION)
+					.requires(TagRef.FOODS_LEAFY_GREEN)
+					.requires(TagRef.FOODS_ONION)
 					.save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.TORCHBERRY_VENISON_SANDWICH.item.get(), 1)::unlockedBy, TFItems.RAW_VENISON.get())
 					.requires(Tags.Items.FOODS_BREAD).requires(TagGen.VENSION_COOKED)
-					.requires(CommonTags.FOODS_LEAFY_GREEN)
+					.requires(TagRef.FOODS_LEAFY_GREEN)
 					.requires(TFItems.TORCHBERRIES.get())
 					.save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.CHOCOLATE_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
 					.requires(DelightFood.EXPERIMENT_113.item.get())
-					.requires(CommonTags.FOODS_MILK)
+					.requires(TagRef.FOODS_MILK)
 					.requires(Items.SUGAR)
 					.requires(Items.COCOA_BEANS)
 					.save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.MILKY_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
 					.requires(DelightFood.EXPERIMENT_113.item.get())
-					.requires(CommonTags.FOODS_MILK)
+					.requires(TagRef.FOODS_MILK)
 					.requires(Items.SUGAR)
 					.save(pvd);
 
@@ -216,16 +215,16 @@ public class RecipeGen {
 					.requires(Tags.Items.FOODS_BREAD)
 					.requires(TFItems.EXPERIMENT_115.get())
 					.requires(Tags.Items.CROPS_BEETROOT)
-					.requires(CommonTags.FOODS_TOMATO)
-					.requires(CommonTags.FOODS_ONION)
+					.requires(TagRef.FOODS_TOMATO)
+					.requires(TagRef.FOODS_ONION)
 					.save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.HYDRA_BURGER.item.get(), 1)::unlockedBy, TFItems.HYDRA_CHOP.get())
 					.requires(Tags.Items.FOODS_BREAD)
 					.requires(TagGen.HYDRA_MEAT)
-					.requires(CommonTags.FOODS_LEAFY_GREEN)
-					.requires(CommonTags.FOODS_TOMATO)
-					.requires(CommonTags.FOODS_ONION)
+					.requires(TagRef.FOODS_LEAFY_GREEN)
+					.requires(TagRef.FOODS_TOMATO)
+					.requires(TagRef.FOODS_ONION)
 					.save(pvd);
 
 			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, DelightFood.CHOCOLATE_WAFER.item.get(), 1)::unlockedBy, TFItems.MAZE_WAFER.get())
@@ -245,9 +244,9 @@ public class RecipeGen {
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.GHAST_BRAIN_SALAD.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_110.item.get())
 					.requires(Items.BOWL)
-					.requires(CommonTags.FOODS_LEAFY_GREEN)
-					.requires(CommonTags.FOODS_ONION)
-					.requires(CommonTags.FOODS_TOMATO)
+					.requires(TagRef.FOODS_LEAFY_GREEN)
+					.requires(TagRef.FOODS_ONION)
+					.requires(TagRef.FOODS_TOMATO)
 					.requires(DelightFood.EXPERIMENT_110.item.get())
 					.requires(TFItems.BORER_ESSENCE.get())
 					.requires(TFItems.TRANSFORMATION_POWDER.get())
@@ -267,7 +266,7 @@ public class RecipeGen {
 					.addIngredient(TFItems.NAGA_SCALE.get())
 					.addIngredient(ModItems.TOMATO_SAUCE.get())
 					.addIngredient(TFItems.TORCHBERRIES.get())
-					.build(pvd, getID(TDBlocks.FIERY_SNAKES.getId()));
+					.save(pvd, getID(TDBlocks.FIERY_SNAKES.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.FRIED_INSECT.item.get().asItem(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -276,7 +275,7 @@ public class RecipeGen {
 					.addIngredient(DelightFood.RAW_INSECT.item.get())
 					.addIngredient(ModItems.ONION.get())
 					.addIngredient(Items.CARROT)
-					.build(pvd, getID(DelightFood.FRIED_INSECT.item.getId()));
+					.save(pvd, getID(DelightFood.FRIED_INSECT.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GLOWSTEW.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -285,7 +284,7 @@ public class RecipeGen {
 					.addIngredient(Items.GLOWSTONE_DUST)
 					.addIngredient(TFBlocks.MUSHGLOOM.get().asItem())
 					.addIngredient(TFItems.TORCHBERRIES.get())
-					.build(pvd, getID(DelightFood.GLOWSTEW.item.getId()));
+					.save(pvd, getID(DelightFood.GLOWSTEW.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.MUSHGLOOM_SAUCE.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -294,7 +293,7 @@ public class RecipeGen {
 					.addIngredient(Items.BROWN_MUSHROOM)
 					.addIngredient(TFBlocks.MUSHGLOOM.get().asItem())
 					.addIngredient(ModItems.ONION.get())
-					.build(pvd, getID(DelightFood.MUSHGLOOM_SAUCE.item.getId()));
+					.save(pvd, getID(DelightFood.MUSHGLOOM_SAUCE.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GLOW_VENISON_RIB_WITH_PASTA.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -305,7 +304,7 @@ public class RecipeGen {
 					.addIngredient(ModItems.RAW_PASTA.get())
 					.addIngredient(TFItems.LIVEROOT.get())
 					.addIngredient(Items.BEETROOT)
-					.build(pvd, getID(DelightFood.GLOW_VENISON_RIB_WITH_PASTA.item.getId()));
+					.save(pvd, getID(DelightFood.GLOW_VENISON_RIB_WITH_PASTA.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.MUSHGLOOM_MEEF_PASTA.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -314,7 +313,7 @@ public class RecipeGen {
 					.addIngredient(DelightFood.MUSHGLOOM_SAUCE.item.get())
 					.addIngredient(TagGen.MEEF_RAW)
 					.addIngredient(ModItems.RAW_PASTA.get())
-					.build(pvd, getID(DelightFood.MUSHGLOOM_MEEF_PASTA.item.getId()));
+					.save(pvd, getID(DelightFood.MUSHGLOOM_MEEF_PASTA.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TFItems.MEEF_STROGANOFF.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -325,7 +324,7 @@ public class RecipeGen {
 					.addIngredient(TFItems.LIVEROOT.get())
 					.addIngredient(TFItems.TORCHBERRIES.get())
 					.addIngredient(ModItems.ONION.get())
-					.build(pvd, getID(TFItems.MEEF_STROGANOFF.getId()));
+					.save(pvd, getID(TFItems.MEEF_STROGANOFF.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GRILLED_GHAST.item.get(),
 							1, 800, 0.35f, Items.BOWL)::unlockedBy,
@@ -335,7 +334,7 @@ public class RecipeGen {
 					.addIngredient(Items.BEETROOT)
 					.addIngredient(ItemTagGenerator.FIERY_VIAL)
 					.addIngredient(TFItems.EXPERIMENT_115.get(), 2)
-					.build(pvd, getID(DelightFood.GRILLED_GHAST.item.getId()));
+					.save(pvd, getID(DelightFood.GRILLED_GHAST.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GRILLED_TOMAHAWK_SMEAK.item.get(),
 							1, 1600, 0.35f, Items.BOWL)::unlockedBy,
@@ -343,8 +342,8 @@ public class RecipeGen {
 					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(DelightFood.RAW_TOMAHAWK_SMEAK.item.get())
 					.addIngredient(DelightFood.MUSHGLOOM_SAUCE.item.get())
-					.addIngredient(CommonTags.FOODS_MILK)
-					.build(pvd, getID(DelightFood.GRILLED_TOMAHAWK_SMEAK.item.getId()));
+					.addIngredient(TagRef.FOODS_MILK)
+					.save(pvd, getID(DelightFood.GRILLED_TOMAHAWK_SMEAK.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.LILY_CHICKEN.get().asItem(),
 							1, 400, 0.35f)::unlockedBy,
@@ -353,7 +352,7 @@ public class RecipeGen {
 					.addIngredient(TFBlocks.HUGE_LILY_PAD.get().asItem())
 					.addIngredient(ModBlocks.ROAST_CHICKEN_BLOCK.get().asItem())
 					.addIngredient(TFBlocks.HUGE_WATER_LILY.get().asItem())
-					.build(pvd, getID(TDBlocks.LILY_CHICKEN.getId()));
+					.save(pvd, getID(TDBlocks.LILY_CHICKEN.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.THOUSAND_PLANT_STEW.item.get(),
 							1, 400, 0.35f, Items.BOWL)::unlockedBy,
@@ -365,7 +364,7 @@ public class RecipeGen {
 					.addIngredient(TFBlocks.TORCHBERRY_PLANT.get().asItem())
 					.addIngredient(Items.VINE)
 					.addIngredient(TFBlocks.FIDDLEHEAD.get().asItem())
-					.build(pvd, getID(DelightFood.THOUSAND_PLANT_STEW.item.getId()));
+					.save(pvd, getID(DelightFood.THOUSAND_PLANT_STEW.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TFItems.TRANSFORMATION_POWDER.get().asItem(),
 							1, 800, 0.5f, ModItems.CANVAS.get())::unlockedBy,
@@ -377,28 +376,28 @@ public class RecipeGen {
 					.addIngredient(Items.POISONOUS_POTATO)
 					.addIngredient(ModItems.ROTTEN_TOMATO.get())
 					.addIngredient(TFItems.BORER_ESSENCE.get())
-					.build(pvd, getID(TFItems.TRANSFORMATION_POWDER.getId()));
+					.save(pvd, getID(TFItems.TRANSFORMATION_POWDER.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.LIVEROOT_PORK_FRIED_RICE.item,
 							1, 200, 0.5f, Items.BOWL)::unlockedBy,
 					TFItems.LIVEROOT.get())
 					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-					.addIngredient(CommonTags.CROPS_RICE)
-					.addIngredient(CommonTags.FOODS_RAW_PORK)
-					.addIngredient(CommonTags.FOODS_RAW_PORK)
+					.addIngredient(TagRef.CROPS_RICE)
+					.addIngredient(TagRef.FOODS_RAW_PORK)
+					.addIngredient(TagRef.FOODS_RAW_PORK)
 					.addIngredient(Tags.Items.EGGS)
 					.addIngredient(TFItems.LIVEROOT.get())
-					.build(pvd, getID(DelightFood.LIVEROOT_PORK_FRIED_RICE.item.getId()));
+					.save(pvd, getID(DelightFood.LIVEROOT_PORK_FRIED_RICE.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.LIVEROOT_VENISON_NOODLE_SOUP.item,
 							1, 200, 0.5f, Items.BOWL)::unlockedBy,
 					TFItems.LIVEROOT.get())
 					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-					.addIngredient(CommonTags.FOODS_PASTA)
+					.addIngredient(TagRef.FOODS_PASTA)
 					.addIngredient(TagGen.VENSION_RAW)
 					.addIngredient(ModItems.CHICKEN_SOUP.get())
 					.addIngredient(TFItems.LIVEROOT.get())
-					.build(pvd, getID(DelightFood.LIVEROOT_VENISON_NOODLE_SOUP.item.getId()));
+					.save(pvd, getID(DelightFood.LIVEROOT_VENISON_NOODLE_SOUP.item.getId()));
 
 		}
 
@@ -411,7 +410,7 @@ public class RecipeGen {
 					.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 					.addIngredient(TFItems.FIERY_TEARS.get())
 					.addIngredient(Items.GHAST_TEAR)
-					.build(pvd, getID(DelightFood.TEAR_DRINK.item.getId()));
+					.save(pvd, getID(DelightFood.TEAR_DRINK.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.PHYTOCHEMICAL_JUICE.item.get().asItem(),
 							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
@@ -420,7 +419,7 @@ public class RecipeGen {
 					.addIngredient(TFItems.LIVEROOT.get())
 					.addIngredient(TFItems.STEELEAF_INGOT.get())
 					.addIngredient(Items.SUGAR)
-					.build(pvd, getID(DelightFood.PHYTOCHEMICAL_JUICE.item.getId()));
+					.save(pvd, getID(DelightFood.PHYTOCHEMICAL_JUICE.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.THORN_ROSE_TEA.item.get().asItem(),
 							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
@@ -428,7 +427,7 @@ public class RecipeGen {
 					.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 					.addIngredient(TFBlocks.THORN_ROSE.get().asItem())
 					.addIngredient(Items.SUGAR)
-					.build(pvd, getID(DelightFood.THORN_ROSE_TEA.item.getId()));
+					.save(pvd, getID(DelightFood.THORN_ROSE_TEA.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.TORCHBERRY_JUICE.item.get().asItem(),
 							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
@@ -436,7 +435,7 @@ public class RecipeGen {
 					.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
 					.addIngredient(TFItems.TORCHBERRIES.get())
 					.addIngredient(Items.SUGAR)
-					.build(pvd, getID(DelightFood.TORCHBERRY_JUICE.item.getId()));
+					.save(pvd, getID(DelightFood.TORCHBERRY_JUICE.item.getId()));
 		}
 
 		// cutting
@@ -445,61 +444,61 @@ public class RecipeGen {
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.RAW_MEEF.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							DelightFood.RAW_MEEF_SLICE.item.get(), 2)
 					.build(pvd, getID(DelightFood.RAW_MEEF_SLICE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.COOKED_MEEF.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							DelightFood.COOKED_MEEF_SLICE.item.get(), 2)
 					.build(pvd, getID(DelightFood.COOKED_MEEF_SLICE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(DelightFood.RAW_TOMAHAWK_SMEAK.item.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							DelightFood.RAW_MEEF_SLICE.item.get(), 4)
 					.build(pvd, getID(DelightFood.RAW_MEEF_SLICE.item.getId(), "_from_tomahawk"));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(DelightFood.COOKED_TOMAHAWK_SMEAK.item.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							DelightFood.COOKED_MEEF_SLICE.item.get(), 4)
 					.build(pvd, getID(DelightFood.COOKED_MEEF_SLICE.item.getId(), "_from_tomahawk"));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.RAW_VENISON.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							DelightFood.RAW_VENISON_RIB.item.get(), 2)
 					.build(pvd, getID(DelightFood.RAW_VENISON_RIB.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.COOKED_VENISON.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							DelightFood.COOKED_VENISON_RIB.item.get(), 2)
 					.build(pvd, getID(DelightFood.COOKED_VENISON_RIB.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.HYDRA_CHOP.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							DelightFood.HYDRA_PIECE.item.get(), 2)
 					.build(pvd, getID(DelightFood.HYDRA_PIECE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TagGen.INSECT),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							DelightFood.RAW_INSECT.item.get(), 2)
 					.build(pvd, getID(DelightFood.RAW_INSECT.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TDBlocks.MUSHGLOOM_COLONY.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							TFBlocks.MUSHGLOOM.get(), 5)
 					.build(pvd, getID(TDBlocks.MUSHGLOOM_COLONY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.UR_GHAST_TROPHY.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							DelightFood.EXPERIMENT_113.item.get(), 9)
 					.addResult(TFItems.EXPERIMENT_115.get(), 4)
 					.addResultWithChance(DelightFood.EXPERIMENT_110.item.get(), 0.1f)
@@ -507,25 +506,25 @@ public class RecipeGen {
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.HYDRA_TROPHY.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							TFItems.HYDRA_CHOP.get(), 4)
 					.build(pvd, getID(TFBlocks.HYDRA_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.NAGA_TROPHY.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							TFItems.NAGA_SCALE.get(), 9)
 					.build(pvd, getID(TFBlocks.NAGA_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.KNIGHT_PHANTOM_TROPHY.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							TFItems.PHANTOM_HELMET.get(), 1)
 					.build(pvd, getID(TFBlocks.KNIGHT_PHANTOM_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.LICH_TROPHY.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							Items.SKELETON_SKULL, 1)
 					.addResultWithChance(TFItems.ZOMBIE_SCEPTER.get(), 0.2f)
 					.addResultWithChance(TFItems.LIFEDRAIN_SCEPTER.get(), 0.2f)
@@ -534,14 +533,14 @@ public class RecipeGen {
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.MINOSHROOM_TROPHY.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							TFItems.RAW_MEEF.get(), 9)
 					.addResultWithChance(Items.RED_MUSHROOM, 0.5f, 8)
 					.build(pvd, getID(TFBlocks.MINOSHROOM_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.ALPHA_YETI_TROPHY.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							TFItems.ALPHA_YETI_FUR.get(), 9)
 					.addResultWithChance(TFItems.ICE_BOMB.get(), 0.5f, 4)
 					.build(pvd, getID(TFBlocks.ALPHA_YETI_TROPHY.getId()));
@@ -560,7 +559,7 @@ public class RecipeGen {
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.SNOW_QUEEN_TROPHY.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							TFItems.ICE_BOMB.get(), 9)
 					.addResultWithChance(TFItems.ICE_SWORD.get(), 0.2f)
 					.addResultWithChance(TFItems.GLASS_SWORD.get(), 0.1f)
@@ -569,7 +568,7 @@ public class RecipeGen {
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.QUEST_RAM_TROPHY.get()),
-							Ingredient.of(CommonTags.TOOLS_KNIFE),
+							Ingredient.of(TagRef.KNIFE),
 							Items.MUTTON, 9)
 					.build(pvd, getID(TFBlocks.QUEST_RAM_TROPHY.getId()));
 
@@ -681,7 +680,7 @@ public class RecipeGen {
 
 		CuttingBoardRecipeBuilder.cuttingRecipe(
 						Ingredient.of(pie.block.get()),
-						Ingredient.of(CommonTags.TOOLS_KNIFE),
+						Ingredient.of(TagRef.KNIFE),
 						pie.slice.get(), 4)
 				.build(pvd, getID(pie.slice.getId()));
 	}
@@ -713,7 +712,7 @@ public class RecipeGen {
 
 		CuttingBoardRecipeBuilder.cuttingRecipe(
 						Ingredient.of(cake.block.get()),
-						Ingredient.of(CommonTags.TOOLS_KNIFE),
+						Ingredient.of(TagRef.KNIFE),
 						cake.item.get(), 7)
 				.build(pvd, getID(cake.item.getId()));
 

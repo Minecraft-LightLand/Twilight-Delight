@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_mushgloom_sauce": {
+    "has_raw_tomahawk_smeak": {
       "conditions": {
         "items": [
           {
-            "items": "twilightdelight:mushgloom_sauce"
+            "items": "twilightdelight:raw_tomahawk_smeak"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightdelight:cooking/cooking/mushgloom_meef_pasta"
+        "recipe": "twilightdelight:cooking/grilled_tomahawk_smeak"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_mushgloom_sauce"
+      "has_raw_tomahawk_smeak"
     ]
   ],
   "rewards": {
     "recipes": [
-      "twilightdelight:cooking/cooking/mushgloom_meef_pasta"
+      "twilightdelight:cooking/grilled_tomahawk_smeak"
     ]
   }
 }

@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw_insect": {
+    "has_mushgloom_sauce": {
       "conditions": {
         "items": [
           {
-            "items": "twilightdelight:raw_insect"
+            "items": "twilightdelight:mushgloom_sauce"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightdelight:cooking/cooking/fried_insect"
+        "recipe": "twilightdelight:cooking/mushgloom_meef_pasta"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_raw_insect"
+      "has_mushgloom_sauce"
     ]
   ],
   "rewards": {
     "recipes": [
-      "twilightdelight:cooking/cooking/fried_insect"
+      "twilightdelight:cooking/mushgloom_meef_pasta"
     ]
   }
 }

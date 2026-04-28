@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightdelight:cooking/cooking/torchberry_juice"
+        "recipe": "twilightdelight:cooking/torchberry_juice"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "twilightdelight:cooking/cooking/torchberry_juice"
+      "twilightdelight:cooking/torchberry_juice"
     ]
   }
 }

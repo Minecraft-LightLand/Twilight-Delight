@@ -22,7 +22,7 @@ public class TDDrinkableItem extends Item {
 
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext level, List<Component> list, TooltipFlag isAdvanced) {
-		if (Configuration.FOOD_EFFECT_TOOLTIP.get())
+		if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get())
 			TDFoodItem.getFoodEffects(stack, list);
 	}
 

@@ -1,24 +1,24 @@
 {
-  "required": true,
-  "priority": 1000,
-  "package": "dev.xkmc.twilightdelight.mixin",
-  "compatibilityLevel": "JAVA_21",
-  "mixins": [
-	"AddItemModifierAccessor",
-	"CookingPotBlockEntityMixin",
-	"CookingPotMenuMixin",
-	"CuttingBoardBlockEntityMixin",
-	"EntityMixin",
-	"ItemEntityMixin",
-	"RichSoilBlockMixin",
-	"SkilletBlockEntityMixin",
-	"StoveBlockEntityMixin"
-  ],
-  "client": [
-	"CuttingBoardRendererMixin"
-  ],
-  "injectors": {
-	"defaultRequire": 1
-  },
-  "minVersion": "0.8"
+	"required": true,
+	"priority": 1000,
+	"package": "dev.xkmc.twilightdelight.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"AbstractStoveBlockEntityAccessor",
+		"AddItemModifierAccessor",
+		"CookingPotBlockEntityMixin",
+		"CookingPotMenuMixin",
+		"CuttingBoardBlockEntityMixin",
+		"EntityMixin",
+		"ItemEntityMixin",
+		"RichSoilBlockMixin",
+		"SkilletBlockEntityMixin"
+	],
+	"client": [
+		"CuttingBoardRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"minVersion": "0.8"
 }

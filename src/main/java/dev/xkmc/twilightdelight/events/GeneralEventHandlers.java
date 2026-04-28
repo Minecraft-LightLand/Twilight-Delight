@@ -2,12 +2,12 @@ package dev.xkmc.twilightdelight.events;
 
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.data.ExtraLootGen;
+import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.network.protocol.game.ClientboundAnimatePacket;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -31,7 +31,6 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import twilightforest.block.Experiment115Block;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFMobEffects;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 @EventBusSubscriber(modid = TwilightDelight.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class GeneralEventHandlers {
@@ -60,7 +59,7 @@ public class GeneralEventHandlers {
 				}
 			}
 		}
-		if (event.getItemStack().is(ModTags.KNIVES)) {
+		if (event.getItemStack().is(TagRef.KNIFE)) {
 			if (state.is(TFBlocks.EXPERIMENT_115.get())) {
 				if (event.getLevel() instanceof ServerLevel sl) {
 					int i = state.getValue(Experiment115Block.BITES_TAKEN);

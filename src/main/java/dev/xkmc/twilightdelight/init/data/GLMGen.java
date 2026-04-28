@@ -20,7 +20,6 @@ import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.loot.modifier.AddItemModifier;
 import vectorwing.farmersdelight.common.registry.ModItems;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -79,7 +78,7 @@ public class GLMGen extends GlobalLootModifierProvider {
 				LootContext.EntityTarget.ATTACKER,
 				EntityPredicate.Builder.entity().equipment(
 						EntityEquipmentPredicate.Builder.equipment().mainhand(
-										ItemPredicate.Builder.item().of(ModTags.KNIVES))
+										ItemPredicate.Builder.item().of(TagRef.KNIFE))
 								.build()).build()).build();
 	}
 

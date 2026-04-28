@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightdelight:cooking/cooking/fiery_snakes_block"
+        "recipe": "twilightdelight:cooking/fiery_snakes_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "twilightdelight:cooking/cooking/fiery_snakes_block"
+      "twilightdelight:cooking/fiery_snakes_block"
     ]
   }
 }

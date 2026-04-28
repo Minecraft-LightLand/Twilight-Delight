@@ -14,6 +14,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 import vectorwing.farmersdelight.common.crafting.CuttingBoardRecipe;
 
 import java.util.ArrayList;
@@ -41,8 +42,8 @@ public class FieryCuttingRecipe extends CuttingBoardRecipe {
 	}
 
 	@Override
-	public List<ItemStack> rollResults(RandomSource rand, int fortuneLevel) {
-		List<ItemStack> prev = super.rollResults(rand, fortuneLevel);
+	public List<ItemStack> rollResults(RandomSource rand, int fortuneLevel, RecipeWrapper inventory) {
+		List<ItemStack> prev = super.rollResults(rand, fortuneLevel, inventory);
 		List<ItemStack> ans = new ArrayList<>();
 		int particle = 0;
 		for (ItemStack stack : prev) {

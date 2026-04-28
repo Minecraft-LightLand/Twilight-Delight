@@ -6,17 +6,18 @@ import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
 import dev.xkmc.twilightdelight.content.item.tool.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
 import dev.xkmc.twilightdelight.init.registrate.delight.IFoodType;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.client.model.generators.loaders.ItemLayerModelBuilder;
 import org.apache.commons.lang3.StringUtils;
-import vectorwing.farmersdelight.common.tag.CommonTags;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import java.util.function.Supplier;
@@ -35,29 +36,30 @@ public class TDItems {
 	static {
 		IRONWOOD_KNIFE = handheld("ironwood_knife", IronwoodKnifeItem::new)
 				.tab(TDBlocks.TAB.key(), (x, m) -> x.get().fillItemCategory(m))
-				.tag(ModTags.KNIVES, CommonTags.TOOLS_KNIFE).register();
+				.tag(TagRef.KNIFE).register();
 		STEELEAF_KNIFE = handheld("steeleaf_knife", SteeleafKnifeItem::new)
 				.tab(TDBlocks.TAB.key(), (x, m) -> x.get().fillItemCategory(m))
-				.tag(ModTags.KNIVES, CommonTags.TOOLS_KNIFE).register();
+				.tag(TagRef.KNIFE).register();
 		KNIGHTMETAL_KNIFE = handheld("knightmetal_knife", KnightmetalKnifeItem::new)
 				.lang("Knightly Knife")
-				.tag(ModTags.KNIVES, CommonTags.TOOLS_KNIFE).register();
+				.tag(TagRef.KNIFE).register();
 		FIERY_KNIFE = handheld("fiery_knife", FieryKnifeItem::new)
 				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))
-				.tag(ModTags.KNIVES, CommonTags.TOOLS_KNIFE).register();
+				.tag(TagRef.KNIFE).register();
 		TEARDROP_SWORD = handheld("teardrop_sword", TeardropSwordItem::new)
 				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))
 				.tag(ItemTags.SWORDS).register();
 	}
 
-	public static ItemEntry<Item> simpleFood(IFoodType r, String name, int nutrition, float saturation, EffectSupplier... effects) {
+	@SafeVarargs
+	public static ItemEntry<Item> simpleFood(IFoodType r, String name, int nutrition, float saturation, List<EffectSupplier> effects, TagKey<Item>... tags) {
 		return food(name.toLowerCase(Locale.ROOT),
 				p -> r.create(p.rarity(r.getRarity())),
 				() -> simpleFood(r, nutrition, saturation, effects))
-				.model(r::model).register();
+				.model(r::model).tag(tags).register();
 	}
 
-	public static FoodProperties simpleFood(IFoodType r, int nutrition, float saturation, EffectSupplier... effects) {
+	public static FoodProperties simpleFood(IFoodType r, int nutrition, float saturation, List<EffectSupplier> effects) {
 		FoodProperties.Builder builder = new FoodProperties.Builder();
 		builder = builder.nutrition(nutrition).saturationModifier(saturation);
 		builder = r.process(builder);
