@@ -59,7 +59,7 @@ public enum DelightPie {
 	private BlockModelBuilder genCakeModel(RegistrateBlockstateProvider pvd, String model) {
 		String base = name().toLowerCase(Locale.ROOT);
 		return pvd.models().getBuilder(base + model).parent(new ModelFile.UncheckedModelFile(
-						new ResourceLocation(FarmersDelight.MODID, "block/pie" + model)))
+				pvd.modLoc("block/pie" + model)))
 				.texture("particle", pvd.modLoc("block/" + base + "_top"))
 				.texture("top", pvd.modLoc("block/" + base + "_top"))
 				.texture("bottom", pvd.modLoc("block/pie_bottom"))
