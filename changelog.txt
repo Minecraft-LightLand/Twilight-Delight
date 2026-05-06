@@ -1,3 +1,6 @@
+3.2.1
+- Fix pie model
+
 3.2.0
 - Port to support Farmer's Delight 1.3
 

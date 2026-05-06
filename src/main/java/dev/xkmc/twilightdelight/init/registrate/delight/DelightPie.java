@@ -8,14 +8,12 @@ import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
-import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.List;
@@ -55,7 +53,7 @@ public enum DelightPie {
 	private BlockModelBuilder genCakeModel(RegistrateBlockstateProvider pvd, String model) {
 		String base = name().toLowerCase(Locale.ROOT);
 		return pvd.models().getBuilder(base + model).parent(new ModelFile.UncheckedModelFile(
-						ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "block/pie" + model)))
+						pvd.modLoc("block/pie" + model)))
 				.texture("particle", pvd.modLoc("block/" + base + "_top"))
 				.texture("top", pvd.modLoc("block/" + base + "_top"))
 				.texture("bottom", pvd.modLoc("block/pie_bottom"))
