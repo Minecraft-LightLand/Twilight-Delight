@@ -132,11 +132,6 @@ repositories {
         name 'Progwml6 maven'
         url 'https://dvs1.progwml6.com/files/maven'
     }
-
-    maven {
-        name = "OctoStudios"
-        url = uri("https://maven.octo-studios.com/releases")
-    }
     mavenLocal();
 }
 
@@ -167,7 +162,7 @@ dependencies {
     implementation "curse.maven:farmers-delight-398521:8001010"
     runtimeOnly "curse.maven:geckolib-388172:7415496"
     runtimeOnly "curse.maven:ars-nouveau-401955:7417840"
-    runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.0.14+1.21.1"
+    //runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.0.14+1.21.1"
     runtimeOnly "curse.maven:appleskin-248787:7517379"
 
 

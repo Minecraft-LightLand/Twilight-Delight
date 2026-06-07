@@ -1,3 +1,6 @@
+3.2.2
+- Fix cooking pot heating tray texture
+
 3.2.1
 - Fix pie model
 
