@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "twilightdelight:item_absent",
+      "item": "twilitgourmet:ground_venison"
+    }
+  ],
   "type": "minecraft:smelting",
   "category": "food",
   "cookingtime": 200,

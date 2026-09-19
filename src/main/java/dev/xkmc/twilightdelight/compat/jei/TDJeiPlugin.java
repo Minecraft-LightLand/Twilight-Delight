@@ -1,6 +1,7 @@
 package dev.xkmc.twilightdelight.compat.jei;
 
 import dev.xkmc.l2serial.util.Wrappers;
+import dev.xkmc.twilightdelight.compat.TGCompat;
 import dev.xkmc.twilightdelight.content.recipe.BaseEffectRecipe;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
@@ -90,6 +91,10 @@ public class TDJeiPlugin implements IModPlugin {
 
 	@Override
 	public void onRuntimeAvailable(IJeiRuntime jeiRuntime) {
+		if (TGCompat.isLoaded()) {
+			jeiRuntime.getIngredientManager().removeIngredientsAtRuntime(
+					mezz.jei.api.constants.VanillaTypes.ITEM_STACK, TGCompat.duplicateStacks());
+		}
 	}
 
 

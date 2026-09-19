@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "twilightdelight:item_absent",
+      "item": "twilitgourmet:mangrove_cabinet"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_mangrove_slab": {

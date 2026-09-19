@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "twilightdelight:item_absent",
+      "item": "twilitgourmet:mining_cabinet"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_mining_slab": {

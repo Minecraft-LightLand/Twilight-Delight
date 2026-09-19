@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "twilightdelight:item_absent",
+      "item": "twilitgourmet:ironwood_knife"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_ironwood_ingot": {

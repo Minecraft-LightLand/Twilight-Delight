@@ -1,6 +1,10 @@
 {
   "values": [
     "twilightforest:raw_venison",
-    "twilightdelight:raw_venison_rib"
+    "twilightdelight:raw_venison_rib",
+    {
+      "id": "twilitgourmet:ground_venison",
+      "required": false
+    }
   ]
 }

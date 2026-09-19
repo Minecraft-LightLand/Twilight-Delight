@@ -2,6 +2,7 @@ package dev.xkmc.twilightdelight.init.data;
 
 import com.tterrag.registrate.providers.RegistrateItemTagsProvider;
 import com.tterrag.registrate.providers.RegistrateTagsProvider;
+import dev.xkmc.twilightdelight.compat.TGCompat;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import net.minecraft.resources.ResourceLocation;
@@ -31,10 +32,14 @@ public class TagGen {
 						TFBlocks.MOONWORM.get().asItem());
 		pvd.addTag(Tags.Items.FOODS).addTag(INSECT);
 		pvd.addTag(HYDRA_MEAT).add(TFItems.HYDRA_CHOP.get(), DelightFood.HYDRA_PIECE.item.get());
-		pvd.addTag(MEEF_COOKED).add(TFItems.COOKED_MEEF.get(), DelightFood.COOKED_MEEF_SLICE.item.get());
-		pvd.addTag(MEEF_RAW).add(TFItems.RAW_MEEF.get(), DelightFood.RAW_MEEF_SLICE.item.get());
-		pvd.addTag(VENSION_COOKED).add(TFItems.COOKED_VENISON.get(), DelightFood.COOKED_VENISON_RIB.item.get());
-		pvd.addTag(VENSION_RAW).add(TFItems.RAW_VENISON.get(), DelightFood.RAW_VENISON_RIB.item.get());
+		pvd.addTag(MEEF_COOKED).add(TFItems.COOKED_MEEF.get(), DelightFood.COOKED_MEEF_SLICE.item.get())
+				.addOptional(TGCompat.loc("meef_patty"));
+		pvd.addTag(MEEF_RAW).add(TFItems.RAW_MEEF.get(), DelightFood.RAW_MEEF_SLICE.item.get())
+				.addOptional(TGCompat.loc("minced_meef"));
+		pvd.addTag(VENSION_COOKED).add(TFItems.COOKED_VENISON.get(), DelightFood.COOKED_VENISON_RIB.item.get())
+				.addOptional(TGCompat.loc("venison_patty"));
+		pvd.addTag(VENSION_RAW).add(TFItems.RAW_VENISON.get(), DelightFood.RAW_VENISON_RIB.item.get())
+				.addOptional(TGCompat.loc("ground_venison"));
 	}
 
 	public static void genBlockTag(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {

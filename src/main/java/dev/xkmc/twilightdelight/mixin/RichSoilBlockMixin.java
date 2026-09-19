@@ -1,5 +1,6 @@
 package dev.xkmc.twilightdelight.mixin;
 
+import dev.xkmc.twilightdelight.compat.TGCompat;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.util.RichSoilUtil;
 import net.minecraft.core.BlockPos;
@@ -24,10 +25,13 @@ public class RichSoilBlockMixin {
 			BlockPos abovePos = pos.above();
 			BlockState aboveState = level.getBlockState(abovePos);
 			Block aboveBlock = aboveState.getBlock();
-			if (aboveBlock == TFBlocks.MUSHGLOOM.get()) {
-				level.setBlockAndUpdate(pos.above(), TDBlocks.MUSHGLOOM_COLONY.get().defaultBlockState());
-				ci.cancel();
-			}
+		if (aboveBlock == TFBlocks.MUSHGLOOM.get()) {
+			// Twilit Gourmet grows its own colony from mushgloom (via bonemeal);
+			// defer to it when its colony exists so only one colony type is obtainable
+			if (TGCompat.isItemPresent(TGCompat.loc("mushgloom_colony"))) return;
+			level.setBlockAndUpdate(pos.above(), TDBlocks.MUSHGLOOM_COLONY.get().defaultBlockState());
+			ci.cancel();
+		}
 		}
 	}
 

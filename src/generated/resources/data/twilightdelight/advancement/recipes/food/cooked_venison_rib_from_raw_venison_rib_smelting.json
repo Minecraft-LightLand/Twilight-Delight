@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "twilightdelight:item_absent",
+      "item": "twilitgourmet:ground_venison"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_raw_venison_rib": {

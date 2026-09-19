@@ -1,6 +1,10 @@
 {
   "values": [
     "twilightforest:cooked_venison",
-    "twilightdelight:cooked_venison_rib"
+    "twilightdelight:cooked_venison_rib",
+    {
+      "id": "twilitgourmet:venison_patty",
+      "required": false
+    }
   ]
 }

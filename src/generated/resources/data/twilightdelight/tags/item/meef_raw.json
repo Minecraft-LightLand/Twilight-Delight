@@ -1,6 +1,10 @@
 {
   "values": [
     "twilightforest:raw_meef",
-    "twilightdelight:raw_meef_slice"
+    "twilightdelight:raw_meef_slice",
+    {
+      "id": "twilitgourmet:minced_meef",
+      "required": false
+    }
   ]
 }

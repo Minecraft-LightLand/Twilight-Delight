@@ -2,7 +2,9 @@ package dev.xkmc.twilightdelight.init.data;
 
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
+import dev.xkmc.l2core.serial.recipe.ConditionalRecipeWrapper;
 import dev.xkmc.l2core.serial.recipe.DataRecipeWrapper;
+import dev.xkmc.twilightdelight.compat.TGCompat;
 import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipeBuilder;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
@@ -13,8 +15,10 @@ import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
@@ -49,35 +53,35 @@ public class RecipeGen {
 		// tool crafting
 		{
 
-			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.FIERY_KNIFE.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
-					.pattern("A").pattern("B")
-					.define('A', TFItems.FIERY_INGOT.get())
-					.define('B', Items.BLAZE_ROD)
-					.save(pvd);
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.FIERY_KNIFE.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
+				.pattern("A").pattern("B")
+				.define('A', TFItems.FIERY_INGOT.get())
+				.define('B', Items.BLAZE_ROD)
+				.save(TGCompat.noTG(pvd, TGCompat.loc("fiery_knife")));
 
-			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.MISC, TDItems.FIERY_KNIFE.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
-					.requires(ModItems.IRON_KNIFE.get())
-					.requires(ItemTagGenerator.FIERY_VIAL)
-					.requires(Items.BLAZE_ROD)
-					.save(pvd, getID(TDItems.FIERY_KNIFE.getId(), "alt"));
+		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.MISC, TDItems.FIERY_KNIFE.get(), 1)::unlockedBy, TFItems.FIERY_INGOT.get())
+				.requires(ModItems.IRON_KNIFE.get())
+				.requires(ItemTagGenerator.FIERY_VIAL)
+				.requires(Items.BLAZE_ROD)
+				.save(TGCompat.noTG(pvd, TGCompat.loc("fiery_knife")), getID(TDItems.FIERY_KNIFE.getId(), "alt"));
 
-			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.IRONWOOD_KNIFE.get(), 1)::unlockedBy, TFItems.IRONWOOD_INGOT.get())
-					.pattern("A").pattern("B")
-					.define('A', TFItems.IRONWOOD_INGOT.get())
-					.define('B', Tags.Items.RODS_WOODEN)
-					.save(new DataRecipeWrapper(pvd, TDItems.IRONWOOD_KNIFE.get().getDefault(pvd.getProvider())));
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.IRONWOOD_KNIFE.get(), 1)::unlockedBy, TFItems.IRONWOOD_INGOT.get())
+				.pattern("A").pattern("B")
+				.define('A', TFItems.IRONWOOD_INGOT.get())
+				.define('B', Tags.Items.RODS_WOODEN)
+				.save(ConditionalRecipeWrapper.of(new DataRecipeWrapper(pvd, TDItems.IRONWOOD_KNIFE.get().getDefault(pvd.getProvider())), TGCompat.absentOf(TGCompat.loc("ironwood_knife"))));
 
-			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.STEELEAF_KNIFE.get(), 1)::unlockedBy, TFItems.STEELEAF_INGOT.get())
-					.pattern("A").pattern("B")
-					.define('A', TFItems.STEELEAF_INGOT.get())
-					.define('B', Tags.Items.RODS_WOODEN)
-					.save(new DataRecipeWrapper(pvd, TDItems.STEELEAF_KNIFE.get().getDefault(pvd.getProvider())));
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.STEELEAF_KNIFE.get(), 1)::unlockedBy, TFItems.STEELEAF_INGOT.get())
+				.pattern("A").pattern("B")
+				.define('A', TFItems.STEELEAF_INGOT.get())
+				.define('B', Tags.Items.RODS_WOODEN)
+				.save(ConditionalRecipeWrapper.of(new DataRecipeWrapper(pvd, TDItems.STEELEAF_KNIFE.get().getDefault(pvd.getProvider())), TGCompat.absentOf(TGCompat.loc("steeleaf_knife"))));
 
-			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.KNIGHTMETAL_KNIFE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
-					.pattern("A").pattern("B")
-					.define('A', TFItems.KNIGHTMETAL_INGOT.get())
-					.define('B', Tags.Items.RODS_WOODEN)
-					.save(pvd);
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.KNIGHTMETAL_KNIFE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
+				.pattern("A").pattern("B")
+				.define('A', TFItems.KNIGHTMETAL_INGOT.get())
+				.define('B', Tags.Items.RODS_WOODEN)
+				.save(TGCompat.noTG(pvd, TGCompat.loc("knightmetal_knife")));
 
 			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDBlocks.MAZE_STOVE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
 					.pattern("KKK").pattern("MTM").pattern("MCM")
@@ -108,10 +112,10 @@ public class RecipeGen {
 				var cab = TDBlocks.CABINETS[e.ordinal()];
 				var slab = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(TwilightForestMod.ID, id + "_slab"));
 				var trapdoor = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(TwilightForestMod.ID, id + "_trapdoor"));
-				unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, cab.get(), 1)::unlockedBy, slab)
-						.pattern("---").pattern("D D").pattern("---")
-						.define('-', slab).define('D', trapdoor)
-						.save(pvd);
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, cab.get(), 1)::unlockedBy, slab)
+					.pattern("---").pattern("D D").pattern("---")
+					.define('-', slab).define('D', trapdoor)
+					.save(TGCompat.noTG(pvd, TGCompat.loc(cab.getId().getPath())));
 			}
 		}
 
@@ -129,10 +133,13 @@ public class RecipeGen {
 		// smelting
 		{
 
-			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_MEEF_SLICE.item.get()), DelightFood.COOKED_MEEF_SLICE.item, 1);
-			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_TOMAHAWK_SMEAK.item.get()), DelightFood.COOKED_TOMAHAWK_SMEAK.item, 1);
-			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_INSECT.item.get()), DelightFood.COOKED_INSECT.item, 1);
-			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_VENISON_RIB.item.get()), DelightFood.COOKED_VENISON_RIB.item, 1);
+		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_TOMAHAWK_SMEAK.item.get()), DelightFood.COOKED_TOMAHAWK_SMEAK.item, 1);
+		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_INSECT.item.get()), DelightFood.COOKED_INSECT.item, 1);
+		// duplicated by Twilit Gourmet (ground venison / minced meef chain): disabled when it is present
+		tripleCookCond(TGCompat.noTG(pvd, TGCompat.loc("minced_meef")),
+				DelightFood.RAW_MEEF_SLICE.item.get(), DelightFood.COOKED_MEEF_SLICE.item, 1);
+		tripleCookCond(TGCompat.noTG(pvd, TGCompat.loc("ground_venison")),
+				DelightFood.RAW_VENISON_RIB.item.get(), DelightFood.COOKED_VENISON_RIB.item, 1);
 		}
 
 		// food crafting
@@ -442,41 +449,41 @@ public class RecipeGen {
 		{
 			path = "cutting/";
 
-			CuttingBoardRecipeBuilder.cuttingRecipe(
-							Ingredient.of(TFItems.RAW_MEEF.get()),
-							Ingredient.of(TagRef.KNIFE),
-							DelightFood.RAW_MEEF_SLICE.item.get(), 2)
-					.build(pvd, getID(DelightFood.RAW_MEEF_SLICE.item.getId()));
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(TFItems.RAW_MEEF.get()),
+						Ingredient.of(TagRef.KNIFE),
+						DelightFood.RAW_MEEF_SLICE.item.get(), 2)
+				.build(TGCompat.noTG(pvd, TGCompat.loc("minced_meef")), getID(DelightFood.RAW_MEEF_SLICE.item.getId()));
 
-			CuttingBoardRecipeBuilder.cuttingRecipe(
-							Ingredient.of(TFItems.COOKED_MEEF.get()),
-							Ingredient.of(TagRef.KNIFE),
-							DelightFood.COOKED_MEEF_SLICE.item.get(), 2)
-					.build(pvd, getID(DelightFood.COOKED_MEEF_SLICE.item.getId()));
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(TFItems.COOKED_MEEF.get()),
+						Ingredient.of(TagRef.KNIFE),
+						DelightFood.COOKED_MEEF_SLICE.item.get(), 2)
+				.build(TGCompat.noTG(pvd, TGCompat.loc("minced_meef")), getID(DelightFood.COOKED_MEEF_SLICE.item.getId()));
 
-			CuttingBoardRecipeBuilder.cuttingRecipe(
-							Ingredient.of(DelightFood.RAW_TOMAHAWK_SMEAK.item.get()),
-							Ingredient.of(TagRef.KNIFE),
-							DelightFood.RAW_MEEF_SLICE.item.get(), 4)
-					.build(pvd, getID(DelightFood.RAW_MEEF_SLICE.item.getId(), "_from_tomahawk"));
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(DelightFood.RAW_TOMAHAWK_SMEAK.item.get()),
+						Ingredient.of(TagRef.KNIFE),
+						DelightFood.RAW_MEEF_SLICE.item.get(), 4)
+				.build(TGCompat.noTG(pvd, TGCompat.loc("minced_meef")), getID(DelightFood.RAW_MEEF_SLICE.item.getId(), "_from_tomahawk"));
 
-			CuttingBoardRecipeBuilder.cuttingRecipe(
-							Ingredient.of(DelightFood.COOKED_TOMAHAWK_SMEAK.item.get()),
-							Ingredient.of(TagRef.KNIFE),
-							DelightFood.COOKED_MEEF_SLICE.item.get(), 4)
-					.build(pvd, getID(DelightFood.COOKED_MEEF_SLICE.item.getId(), "_from_tomahawk"));
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(DelightFood.COOKED_TOMAHAWK_SMEAK.item.get()),
+						Ingredient.of(TagRef.KNIFE),
+						DelightFood.COOKED_MEEF_SLICE.item.get(), 4)
+				.build(TGCompat.noTG(pvd, TGCompat.loc("minced_meef")), getID(DelightFood.COOKED_MEEF_SLICE.item.getId(), "_from_tomahawk"));
 
-			CuttingBoardRecipeBuilder.cuttingRecipe(
-							Ingredient.of(TFItems.RAW_VENISON.get()),
-							Ingredient.of(TagRef.KNIFE),
-							DelightFood.RAW_VENISON_RIB.item.get(), 2)
-					.build(pvd, getID(DelightFood.RAW_VENISON_RIB.item.getId()));
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(TFItems.RAW_VENISON.get()),
+						Ingredient.of(TagRef.KNIFE),
+						DelightFood.RAW_VENISON_RIB.item.get(), 2)
+				.build(TGCompat.noTG(pvd, TGCompat.loc("ground_venison")), getID(DelightFood.RAW_VENISON_RIB.item.getId()));
 
-			CuttingBoardRecipeBuilder.cuttingRecipe(
-							Ingredient.of(TFItems.COOKED_VENISON.get()),
-							Ingredient.of(TagRef.KNIFE),
-							DelightFood.COOKED_VENISON_RIB.item.get(), 2)
-					.build(pvd, getID(DelightFood.COOKED_VENISON_RIB.item.getId()));
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(TFItems.COOKED_VENISON.get()),
+						Ingredient.of(TagRef.KNIFE),
+						DelightFood.COOKED_VENISON_RIB.item.get(), 2)
+				.build(TGCompat.noTG(pvd, TGCompat.loc("ground_venison")), getID(DelightFood.COOKED_VENISON_RIB.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFItems.HYDRA_CHOP.get()),
@@ -490,11 +497,11 @@ public class RecipeGen {
 							DelightFood.RAW_INSECT.item.get(), 2)
 					.build(pvd, getID(DelightFood.RAW_INSECT.item.getId()));
 
-			CuttingBoardRecipeBuilder.cuttingRecipe(
-							Ingredient.of(TDBlocks.MUSHGLOOM_COLONY.get()),
-							Ingredient.of(TagRef.KNIFE),
-							TFBlocks.MUSHGLOOM.get(), 5)
-					.build(pvd, getID(TDBlocks.MUSHGLOOM_COLONY.getId()));
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(TDBlocks.MUSHGLOOM_COLONY.get()),
+						Ingredient.of(TagRef.KNIFE),
+						TFBlocks.MUSHGLOOM.get(), 5)
+				.build(TGCompat.noTG(pvd, TGCompat.loc("mushgloom_colony")), getID(TDBlocks.MUSHGLOOM_COLONY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.UR_GHAST_TROPHY.get()),
@@ -738,6 +745,22 @@ public class RecipeGen {
 		pvd.smelting(in, RecipeCategory.FOOD, out, exp, 200);
 		pvd.smoking(in, RecipeCategory.FOOD, out, exp, 100);
 		pvd.campfire(in, RecipeCategory.FOOD, out, exp, 300);
+	}
+
+	// same output shape as RegistrateRecipeProvider helpers, but saved through the given output
+	// so neoforge conditions can be attached
+	private static void tripleCookCond(RecipeOutput out, Item ingredient, Supplier<Item> result, int exp) {
+		var rloc = BuiltInRegistries.ITEM.getKey(result.get());
+		var iloc = BuiltInRegistries.ITEM.getKey(ingredient);
+		String base = rloc.getPath() + "_from_" + iloc.getPath();
+		String crit = "has_" + iloc.getPath();
+		var trigger = InventoryChangeTrigger.TriggerInstance.hasItems(ingredient);
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), RecipeCategory.FOOD, result.get(), exp, 200)
+				.unlockedBy(crit, trigger).save(out, TwilightDelight.loc(base + "_smelting"));
+		SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), RecipeCategory.FOOD, result.get(), exp, 100)
+				.unlockedBy(crit, trigger).save(out, TwilightDelight.loc(base + "_smoking"));
+		SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), RecipeCategory.FOOD, result.get(), exp, 300)
+				.unlockedBy(crit, trigger).save(out, TwilightDelight.loc(base + "_campfire"));
 	}
 
 	private static void stripLog(RegistrateRecipeProvider pvd, DeferredBlock<? extends Block> log, DeferredBlock<? extends Block> stripped) {

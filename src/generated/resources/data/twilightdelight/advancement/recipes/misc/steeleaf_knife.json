@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "twilightdelight:item_absent",
+      "item": "twilitgourmet:steeleaf_knife"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_steeleaf_ingot": {

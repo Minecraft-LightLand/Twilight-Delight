@@ -7,6 +7,7 @@ import dev.xkmc.l2core.init.L2TagGen;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
 import dev.xkmc.l2core.init.reg.simple.Reg;
 import dev.xkmc.twilightdelight.compat.ThirstCompat;
+import dev.xkmc.twilightdelight.compat.ItemAbsentCondition;
 import dev.xkmc.twilightdelight.init.data.*;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
@@ -38,6 +39,8 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.data.loading.DatagenModLoader;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.RegisterEvent;
 import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
 import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 import net.neoforged.neoforgespi.language.IModFileInfo;
@@ -108,6 +111,12 @@ public class TwilightDelight {
 			event.modify(TFItems.MEEF_STROGANOFF, b -> b.set(DataComponents.MAX_STACK_SIZE, 16));
 		}
 
+	}
+
+	@SubscribeEvent
+	public static void registerConditions(RegisterEvent event) {
+		event.register(NeoForgeRegistries.Keys.CONDITION_CODECS,
+				helper -> helper.register(TwilightDelight.loc("item_absent"), ItemAbsentCondition.CODEC));
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGH)
