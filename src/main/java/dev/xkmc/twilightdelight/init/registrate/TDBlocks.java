@@ -111,27 +111,10 @@ public class TDBlocks {
 									BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
 											.strength(0.5F, 6.0F)
 											.sound(SoundType.LANTERN)))
-					.blockstate((ctx, pvd) -> {
-						String asset = "block/hot_cooking_pot";
-						ModelFile base = pvd.models().getBuilder(ctx.getName())
-								.parent(new ModelFile.UncheckedModelFile(pvd.modLoc(asset)))
-								.texture("top", asset + "_top")
-								.texture("bottom", asset + "_bottom")
-								.texture("side", asset + "_side")
-								.texture("parts", asset + "_parts");
-						ModelFile handle = pvd.models().getBuilder(ctx.getName() + "_handle")
-								.parent(new ModelFile.UncheckedModelFile(pvd.modLoc(asset + "_handle")))
-								.texture("top", asset + "_top")
-								.texture("bottom", asset + "_bottom")
-								.texture("side", asset + "_side")
-								.texture("parts", asset + "_parts")
-								.texture("handle", asset + "_handle");
-						ModelFile tray = pvd.models().getBuilder(ctx.getName() + "_tray")
-								.parent(new ModelFile.UncheckedModelFile(pvd.modLoc(asset + "_tray")))
-								.texture("top", asset + "_top")
-								.texture("bottom", asset + "_bottom")
-								.texture("side", asset + "_side")
-								.texture("parts", asset + "_parts");
+				.blockstate((ctx, pvd) -> {
+					ModelFile base = new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName()));
+					ModelFile handle = new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + "_handle"));
+					ModelFile tray = new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + "_tray"));
 						pvd.horizontalBlock(ctx.getEntry(), state ->
 								switch (state.getValue(CookingPotBlock.SUPPORT)) {
 									case NONE -> base;
@@ -330,8 +313,8 @@ public class TDBlocks {
 											.isSuffocating((state, getter, pos) -> false)
 											.isViewBlocking((state, getter, pos) -> false)
 											.strength(10, 10).requiresCorrectToolForDrops()))
-					.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(), pvd.models().withExistingParent(ctx.getName(), "block/leaves")
-							.texture("all", pvd.modLoc("block/" + ctx.getName()))))
+				.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(),
+						new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName()))))
 					.tag(BlockTags.LEAVES, BlockTags.MINEABLE_WITH_HOE, BlockTags.NEEDS_DIAMOND_TOOL)
 					.item().tag(ItemTags.LEAVES).removeTab(TAB.key()).build()
 					.loot((pvd, block) -> {

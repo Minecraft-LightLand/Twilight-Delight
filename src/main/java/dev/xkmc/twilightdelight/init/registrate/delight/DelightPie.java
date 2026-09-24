@@ -12,7 +12,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
@@ -50,15 +49,9 @@ public enum DelightPie {
 				}).loot((a, b) -> a.dropOther(b, slice)).item().model((ctx, pvd) -> pvd.generated(ctx)).build().defaultLang().register();
 	}
 
-	private BlockModelBuilder genCakeModel(RegistrateBlockstateProvider pvd, String model) {
+	private ModelFile genCakeModel(RegistrateBlockstateProvider pvd, String model) {
 		String base = name().toLowerCase(Locale.ROOT);
-		return pvd.models().getBuilder(base + model).parent(new ModelFile.UncheckedModelFile(
-						pvd.modLoc("block/pie" + model)))
-				.texture("particle", pvd.modLoc("block/" + base + "_top"))
-				.texture("top", pvd.modLoc("block/" + base + "_top"))
-				.texture("bottom", pvd.modLoc("block/pie_bottom"))
-				.texture("side", pvd.modLoc("block/pie_side"))
-				.texture("inner", pvd.modLoc("block/" + base + "_inner"));
+		return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + base + model));
 	}
 
 

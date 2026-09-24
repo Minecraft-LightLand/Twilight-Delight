@@ -1,0 +1,49 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"4": "twilightdelight:block/aurora_pie_inner",
+		"5": "twilightdelight:block/aurora_pie_side_light",
+		"6": "twilightdelight:block/aurora_pie_top",
+		"7": "twilightdelight:block/aurora_pie_bottom",
+		"8": "twilightdelight:block/aurora_pie_light",
+		"9": "twilightdelight:block/aurora_pie_side",
+		"particle": "twilightdelight:block/aurora_pie_inner"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 2],
+			"to": [14, 4, 8],
+			"faces": {
+				"north": {"uv": [2, 12, 14, 16], "texture": "#9"},
+				"east": {"uv": [8, 12, 14, 16], "texture": "#9"},
+				"south": {"uv": [2, 12, 14, 16], "texture": "#4"},
+				"west": {"uv": [2, 12, 8, 16], "texture": "#9"},
+				"up": {"uv": [2, 2, 14, 8], "texture": "#6"},
+				"down": {"uv": [2, 8, 14, 14], "texture": "#7", "cullface": "down"}
+			}
+		},
+		{
+			"from": [2, 0, 2],
+			"to": [14, 4, 8],
+			"shade": false,
+			"faces": {
+				"south": {"uv": [2, 12, 14, 16], "texture": "#5", "neoforge_data": { "color": "FFFFFFFF", "block_light": 7, "sky_light": 7 }},
+				"up": {"uv": [2, 2, 14, 8], "texture": "#8", "neoforge_data": { "color": "FFFFFFFF", "block_light": 7, "sky_light": 7 }}
+			}
+		}
+	],
+	"groups": [
+		0,
+		{
+			"name": "pie_light",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 0,
+			"shade": false,
+			"children": [1]
+		}
+	]
+}
