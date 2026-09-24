@@ -1,0 +1,45 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"top": "twilightdelight:block/aurora_pie_top",
+		"bottom": "twilightdelight:block/aurora_pie_bottom",
+		"particle": "twilightdelight:block/aurora_pie_light",
+		"side": "twilightdelight:block/aurora_pie_side"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 2],
+			"to": [14, 4, 14],
+			"faces": {
+				"north": {"uv": [2, 12, 14, 16], "texture": "#side"},
+				"east": {"uv": [2, 12, 14, 16], "texture": "#side"},
+				"south": {"uv": [2, 12, 14, 16], "texture": "#side"},
+				"west": {"uv": [2, 12, 14, 16], "texture": "#side"},
+				"up": {"uv": [2, 2, 14, 14], "texture": "#top"},
+				"down": {"uv": [2, 2, 14, 14], "texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [2, 0, 2],
+			"to": [14, 4, 14],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [2, 2, 14, 14], "texture": "#particle", "forge_data": { "color": "FFFFFFFF", "block_light": 7, "sky_light": 7 }}
+			}
+		}
+	],
+	"groups": [
+		0,
+		{
+			"name": "pie_light",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 0,
+			"shade": false,
+			"children": [1]
+		}
+	]
+}

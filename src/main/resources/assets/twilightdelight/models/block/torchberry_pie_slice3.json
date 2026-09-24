@@ -1,0 +1,50 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"4": "twilightdelight:block/torchberry_pie_light",
+		"5": "twilightdelight:block/torchberry_pie_side_light",
+		"particle": "twilightdelight:block/torchberry_pie_light",
+		"side": "twilightdelight:block/pie_side",
+		"inner": "twilightdelight:block/torchberry_pie_inner",
+		"top": "twilightdelight:block/torchberry_pie_top",
+		"bottom": "twilightdelight:block/pie_bottom"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 2],
+			"to": [14, 4, 8],
+			"faces": {
+				"north": {"uv": [2, 12, 8, 16], "texture": "#side"},
+				"east": {"uv": [8, 12, 14, 16], "texture": "#side"},
+				"south": {"uv": [8, 12, 14, 16], "texture": "#inner"},
+				"west": {"uv": [2, 12, 8, 16], "texture": "#inner"},
+				"up": {"uv": [8, 2, 14, 8], "texture": "#top"},
+				"down": {"uv": [2, 8, 14, 14], "texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [8, 0, 2],
+			"to": [14, 4, 8],
+			"shade": false,
+			"faces": {
+				"south": {"uv": [8, 12, 14, 16], "texture": "#5", "forge_data": { "color": "FFFFFFFF", "block_light": 7, "sky_light": 7 }},
+				"west": {"uv": [2, 12, 8, 16], "texture": "#5", "forge_data": { "color": "FFFFFFFF", "block_light": 7, "sky_light": 7 }},
+				"up": {"uv": [8, 2, 14, 8], "texture": "#4", "forge_data": { "color": "FFFFFFFF", "block_light": 7, "sky_light": 7 }}
+			}
+		}
+	],
+	"groups": [
+		0,
+		{
+			"name": "pie_light",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 0,
+			"shade": false,
+			"children": [1]
+		}
+	]
+}

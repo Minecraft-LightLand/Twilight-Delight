@@ -1,14 +1,16 @@
 {
+	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"render_type": "minecraft:cutout",
 	"textures": {
+		"4": "twilightdelight:block/lily_petal",
 		"particle": "twilightdelight:block/lily_chicken_eaten",
 		"body": "twilightdelight:block/lily_chicken_eaten",
 		"gibs": "twilightdelight:block/lily_chicken_gibs",
 		"tray_bottom": "twilightdelight:block/tray_bottom",
 		"tray_top": "twilightdelight:block/tray_top_veggies"
 	},
-  "render_type": "minecraft:cutout",
 	"elements": [
 		{
 			"name": "body",
@@ -83,17 +85,73 @@
 				"up": {"uv": [1, 1, 15, 15], "texture": "#tray_top"},
 				"down": {"uv": [1, 1, 15, 15], "texture": "#tray_bottom", "cullface": "down"}
 			}
+		},
+		{
+			"from": [1, -0.001, 1],
+			"to": [15, 1.999, 1],
+			"rotation": {"angle": 45, "axis": "x", "origin": [1, 1.999, 1]},
+			"faces": {
+				"north": {"uv": [0, 12, 14, 14], "rotation": 180, "texture": "#4"},
+				"south": {"uv": [0, 14, 14, 12], "texture": "#4"}
+			}
+		},
+		{
+			"from": [1, -0.001, 15],
+			"to": [15, 1.999, 15],
+			"rotation": {"angle": -45, "axis": "x", "origin": [1, 1.999, 15]},
+			"faces": {
+				"north": {"uv": [14, 16, 0, 14], "texture": "#4"},
+				"south": {"uv": [14, 12, 0, 14], "rotation": 180, "texture": "#4"}
+			}
+		},
+		{
+			"from": [2.55025, -5.15785, 1],
+			"to": [2.55025, -3.15785, 15],
+			"rotation": {"angle": -45, "axis": "z", "origin": [8, 1.29189, 8]},
+			"faces": {
+				"east": {"uv": [14, 16, 0, 14], "texture": "#4"},
+				"west": {"uv": [14, 14, 0, 16], "rotation": 180, "texture": "#4"}
+			}
+		},
+		{
+			"from": [13.44975, -5.15785, 1],
+			"to": [13.44975, -3.15785, 15],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 1.29189, 8]},
+			"faces": {
+				"east": {"uv": [0, 14, 14, 16], "rotation": 180, "texture": "#4"},
+				"west": {"uv": [0, 16, 14, 14], "texture": "#4"}
+			}
+		},
+		{
+			"from": [4, 1.999, 11],
+			"to": [12, 1.999, 17],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [12, 2, 12]},
+			"faces": {
+				"up": {"uv": [0, 12, 8, 6], "texture": "#4"},
+				"down": {"uv": [0, 6, 8, 12], "texture": "#4"}
+			}
+		},
+		{
+			"from": [4, 1.999, 12],
+			"to": [12, 1.999, 18],
+			"rotation": {"angle": -45, "axis": "x", "origin": [12, 2, 12]},
+			"faces": {
+				"up": {"uv": [8, 12, 16, 6], "texture": "#4"},
+				"down": {"uv": [8, 6, 16, 12], "texture": "#4"}
+			}
 		}
 	],
 	"groups": [
 		{
 			"name": "roast_chicken",
 			"origin": [8, 8, 8],
+			"scope": 0,
 			"color": 0,
 			"children": [
 				{
 					"name": "chicken",
 					"origin": [8, 8, 8],
+					"scope": 0,
 					"color": 0,
 					"children": [
 						0,
@@ -101,6 +159,7 @@
 						{
 							"name": "bones",
 							"origin": [16, 28, 16],
+							"scope": 0,
 							"color": 0,
 							"children": [2, 3, 4, 5]
 						}
@@ -109,8 +168,16 @@
 				{
 					"name": "plate",
 					"origin": [8, 8, 8],
+					"scope": 0,
 					"color": 0,
-					"children": [6]
+					"children": [6, 7, 8, 9, 10]
+				},
+				{
+					"name": "lily_petal",
+					"origin": [12.00071, 1.99929, 10],
+					"scope": 0,
+					"color": 0,
+					"children": [11, 12]
 				}
 			]
 		}

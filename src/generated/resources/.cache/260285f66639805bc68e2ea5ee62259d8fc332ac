@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-06T15:02:33.594295	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2026-09-24T21:57:38.547153	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
@@ -102,10 +102,6 @@ ad3f332acbff67120892aa8ceee717c337b60d6d assets/twilightdelight/models/block/aur
 0f2bcadc7601e0be345c8acae7ae3602db18e4f5 assets/twilightdelight/models/block/aurora_cake_slice6.json
 032a4e4649ba75065ff701ea4d0e320bc751a640 assets/twilightdelight/models/block/aurora_candle_cake.json
 b22bdc8f420e2a8144cea1a4c70baab29cf6701f assets/twilightdelight/models/block/aurora_candle_cake_lit.json
-aecaa088e3cdac247e66af9eba21d8244620dbc4 assets/twilightdelight/models/block/aurora_pie.json
-8d4f85bcde14b0165f08cb8e087585785034d530 assets/twilightdelight/models/block/aurora_pie_slice1.json
-92a417d586918157d6d1e2ff40151b0fc7e83885 assets/twilightdelight/models/block/aurora_pie_slice2.json
-9f347a5acc9a7f4c235d89960ca432f1b373691a assets/twilightdelight/models/block/aurora_pie_slice3.json
 ab612a71f843ffff21c52d56981891186c114fae assets/twilightdelight/models/block/black_aurora_candle_cake.json
 bf739f9d0393f03abe336bf1176fd402e32e2b73 assets/twilightdelight/models/block/black_aurora_candle_cake_lit.json
 72bc71e7d736bf738c572e0dfd3f3ac37ea125a1 assets/twilightdelight/models/block/black_glacier_candle_cake.json
@@ -142,9 +138,6 @@ f2baca2f3d62849904992f9649418b9ffa89eb59 assets/twilightdelight/models/block/cya
 3390a5567bd0539f13b3539f131f6cddb4d2a9f3 assets/twilightdelight/models/block/cyan_torchberry_candle_cake_lit.json
 1342cb602f13216ca26b3725e05838182635e3af assets/twilightdelight/models/block/dark_cabinet.json
 36c2974cf09c20024ecee90e444576f67731b8c2 assets/twilightdelight/models/block/dark_cabinet_open.json
-0d600ae7e82be165cd8d0ecde20c4fc939b5b0cc assets/twilightdelight/models/block/fiery_cooking_pot.json
-0099d7be39326d625dfceac81b6f8edeb542b642 assets/twilightdelight/models/block/fiery_cooking_pot_handle.json
-6b7e1765218a56d917174dcc0dc60a4416b63b57 assets/twilightdelight/models/block/fiery_cooking_pot_tray.json
 690f2b3310566ae5e52542d8eabd27c338b4acdc assets/twilightdelight/models/block/glacier_cake.json
 36ce10baff04b1856d9e850d0a785e0d2a632c51 assets/twilightdelight/models/block/glacier_cake_slice1.json
 267fbc2162fa66007e0d99aea6b76c4ff1b5abe4 assets/twilightdelight/models/block/glacier_cake_slice2.json
@@ -170,7 +163,6 @@ b9d6288c8aff53617490386aa854dbeaaf414079 assets/twilightdelight/models/block/gra
 0c37eded743831e1b9166c868c4c802ee558417d assets/twilightdelight/models/block/green_phytochemical_candle_cake_lit.json
 3d82e25dfd8405398e7a2aa46179ee903155a196 assets/twilightdelight/models/block/green_torchberry_candle_cake.json
 d598114341d23cb627ded26236c4cec079445a33 assets/twilightdelight/models/block/green_torchberry_candle_cake_lit.json
-7a0f2743763936a8238eef07758350fdcf58d7e0 assets/twilightdelight/models/block/ironwood_leaves.json
 d0567e107caafbe0e300d515a48a1e30b0c58f6c assets/twilightdelight/models/block/ironwood_log.json
 0881df6741fc8feedd114334c1d5f6b6a4618b33 assets/twilightdelight/models/block/ironwood_log_horizontal.json
 0f6afa1663e6811a80146a943cc26bb245b197ca assets/twilightdelight/models/block/ironwood_sapling.json
@@ -271,10 +263,6 @@ aa48b6aed9b6c2519572d6b12a7b1c5c5b3d011f assets/twilightdelight/models/block/tor
 dfbdb1ef05135154b7b56f983e266899dedc41b1 assets/twilightdelight/models/block/torchberry_cake_slice6.json
 a4bc250ac95c9e6f4fea1763f39f6644e7004c1a assets/twilightdelight/models/block/torchberry_candle_cake.json
 00c3feda402b7d6c68c2a38edc462590ceae861b assets/twilightdelight/models/block/torchberry_candle_cake_lit.json
-913a03547b89c31c12488ef8f0bb0543fdd739cb assets/twilightdelight/models/block/torchberry_pie.json
-304f02e8c8c00259f4276cd6834f3c47539c8cf5 assets/twilightdelight/models/block/torchberry_pie_slice1.json
-ab9ec9027152ea8c5b3e28006beedfc3d17cfbb0 assets/twilightdelight/models/block/torchberry_pie_slice2.json
-1e722a1146658813d98b7d86a0f263c02919a3ad assets/twilightdelight/models/block/torchberry_pie_slice3.json
 05e3efa07d8d99a43f5bcb9dd21f3ac74722ff20 assets/twilightdelight/models/block/transformation_cabinet.json
 a5033d762c8688432ae0a1ff898ca02cfb74d3a3 assets/twilightdelight/models/block/transformation_cabinet_open.json
 f1e6679716f8b697222c991abaadb419ac8cf5a5 assets/twilightdelight/models/block/twilight_oak_cabinet.json

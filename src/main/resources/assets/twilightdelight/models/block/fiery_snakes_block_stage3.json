@@ -1,55 +1,79 @@
 {
+	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "minecraft:cutout",
 	"texture_size": [32, 32],
 	"textures": {
+		"3": "twilightdelight:block/chop_light",
 		"chop": "twilightdelight:block/chop",
 		"particle": "twilightdelight:block/tray_bottom",
 		"tray_bottom": "twilightdelight:block/tray_bottom",
-		"tray_top": "twilightdelight:block/tray_top_snakes",
-		"torchberry": "twilightdelight:block/torchberry",
-		"snake_head": "twilightdelight:block/snake1"
+		"tray_top": "twilightdelight:block/tray_top_snakes"
 	},
 	"elements": [
 		{
-			"name": "torchberry",
-			"from": [2, 2, 3],
-			"to": [4, 4, 5],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 8]},
-			"faces": {
-				"north": {"uv": [3, 1, 5, 3], "texture": "#torchberry"},
-				"east": {"uv": [3, 4, 5, 6], "texture": "#torchberry"},
-				"south": {"uv": [0, 1, 2, 3], "texture": "#torchberry"},
-				"west": {"uv": [0, 4, 2, 6], "texture": "#torchberry"},
-				"up": {"uv": [8, 3, 6, 1], "rotation": 180, "texture": "#torchberry"},
-				"down": {"uv": [9, 0, 6, 3], "rotation": 180, "texture": "#torchberry"}
-			}
-		},
-		{
-			"name": "snake_head",
-			"from": [6, 2, 2],
-			"to": [9, 5, 5],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 8]},
-			"faces": {
-				"north": {"uv": [3, 0, 6, 3], "texture": "#snake_head"},
-				"east": {"uv": [3, 3, 6, 6], "texture": "#snake_head"},
-				"south": {"uv": [0, 0, 3, 3], "texture": "#snake_head"},
-				"west": {"uv": [0, 3, 3, 6], "texture": "#snake_head"},
-				"up": {"uv": [3, 9, 0, 6], "rotation": 180, "texture": "#snake_head"},
-				"down": {"uv": [9, 0, 6, 3], "rotation": 180, "texture": "#snake_head"}
-			}
-		},
-		{
 			"name": "chop",
 			"from": [11, 2, 6],
-			"to": [13, 7, 12],
+			"to": [14, 9, 14],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 8]},
 			"faces": {
-				"north": {"uv": [9, 2.5, 10, 5], "texture": "#chop"},
-				"east": {"uv": [0, 6, 3, 8.5], "texture": "#chop"},
-				"south": {"uv": [9, 0, 10, 2.5], "texture": "#chop"},
-				"west": {"uv": [5, 5, 8, 7.5], "texture": "#chop"},
-				"up": {"uv": [5, 3, 4, 0], "rotation": 180, "texture": "#chop"},
-				"down": {"uv": [5, 3, 4, 6], "rotation": 180, "texture": "#chop"}
+				"north": {"uv": [0, 3.5, 1.5, 7], "texture": "#chop"},
+				"east": {"uv": [6, 0, 10, 3.5], "texture": "#chop"},
+				"south": {"uv": [4.5, 0, 6, 3.5], "texture": "#chop"},
+				"west": {"uv": [6, 0, 10, 3.5], "texture": "#chop"},
+				"up": {"uv": [6, 11, 4.5, 7], "rotation": 180, "texture": "#chop"}
+			}
+		},
+		{
+			"name": "naga",
+			"from": [11, 2, 2],
+			"to": [11, 5, 6],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 8]},
+			"faces": {
+				"west": {"uv": [10, 5, 12, 6.5], "texture": "#chop"}
+			}
+		},
+		{
+			"name": "naga",
+			"from": [11, 2, 2],
+			"to": [14, 5, 6],
+			"rotation": {"angle": 0, "axis": "y", "origin": [17, 1, 8]},
+			"faces": {
+				"north": {"uv": [11.5, 1.5, 10, 3], "texture": "#chop"},
+				"east": {"uv": [15.5, 1.5, 13.5, 3], "texture": "#chop"},
+				"south": {"uv": [10, 1.5, 11.5, 3], "texture": "#chop"},
+				"up": {"uv": [13.5, 1.5, 11.5, 3], "rotation": 90, "texture": "#chop"}
+			}
+		},
+		{
+			"name": "torchberry",
+			"from": [11.3, 5.3, 3.7],
+			"to": [13.3, 6.3, 5.7],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "z", "origin": [12.8, 5.8, 4.7]},
+			"faces": {
+				"north": {"uv": [6.5, 8.5, 7, 9.5], "rotation": 90, "texture": "#3", "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }},
+				"east": {"uv": [6.5, 8.5, 7, 9.5], "rotation": 90, "texture": "#3", "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }},
+				"south": {"uv": [6.5, 8.5, 7, 9.5], "rotation": 270, "texture": "#3", "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }},
+				"west": {"uv": [6.5, 9.5, 7, 8.5], "rotation": 90, "texture": "#3", "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }},
+				"up": {"uv": [7, 9.5, 6, 10.5], "rotation": 270, "texture": "#3", "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }},
+				"down": {"uv": [6, 8.5, 7, 9.5], "rotation": 270, "texture": "#3", "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }}
+			}
+		},
+		{
+			"name": "torchberry",
+			"from": [13.55, 6.55, 5.95],
+			"to": [11.05, 5.05, 3.45],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [20.8, 6.8, 12.2]},
+			"faces": {
+				"north": {"uv": [7, 8.5, 8.5, 9.4], "texture": "#3", "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }},
+				"east": {"uv": [7, 8.5, 8.5, 9.4], "texture": "#3", "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }},
+				"south": {"uv": [7, 8.5, 8.5, 9.4], "texture": "#3", "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }},
+				"west": {"uv": [7, 8.5, 8.5, 9.4], "texture": "#3", "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }},
+				"up": {"uv": [7, 8.5, 8.5, 10], "rotation": 180, "texture": "#3", "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }},
+				"down": {"uv": [7, 8.5, 8.5, 10], "rotation": 180, "texture": "#3", "forge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }}
 			}
 		},
 		{
@@ -69,29 +93,43 @@
 	],
 	"groups": [
 		{
-			"name": "fiery_snakes",
-			"origin": [8, 8, 8],
+			"name": "chop",
+			"origin": [8, 1, 8],
+			"scope": 0,
 			"color": 0,
-			"children": [
-				{
-					"name": "snakes",
-					"origin": [8, 8, 8],
-					"color": 0,
-					"children": [0, 1]
-				},
-				{
-					"name": "chop",
-					"origin": [8, 8, 8],
-					"color": 0,
-					"children": [2]
-				},
-				{
-					"name": "plate",
-					"origin": [8, 8, 8],
-					"color": 0,
-					"children": [3]
-				}
-			]
+			"children": [0]
+		},
+		{
+			"name": "naga",
+			"origin": [-1, 1, 8],
+			"scope": 0,
+			"color": 0,
+			"children": [1, 2]
+		},
+		{
+			"name": "torchberry_light",
+			"origin": [1, 2, 8],
+			"scope": 0,
+			"color": 0,
+			"shade": false,
+			"children": []
+		},
+		{
+			"name": "torchberry2_light",
+			"origin": [1, 2, 8],
+			"scope": 0,
+			"color": 0,
+			"shade": false,
+			"children": [3, 4]
+		},
+		5,
+		{
+			"name": "naga_light",
+			"origin": [-1, 1, 8],
+			"scope": 0,
+			"color": 0,
+			"shade": false,
+			"children": []
 		}
 	]
 }

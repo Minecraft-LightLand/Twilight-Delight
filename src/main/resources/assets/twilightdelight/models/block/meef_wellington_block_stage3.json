@@ -1,175 +1,77 @@
 {
-  "credit": "Made with Blockbench",
-  "parent": "block/block",
-  "textures": {
-	"particle": "twilightdelight:block/meef_wellington_block_body",
-	"ham": "twilightdelight:block/meef_wellington_block_body",
-	"tray_top": "twilightdelight:block/meef_wellington_block_tray",
-	"tray_side": "farmersdelight:block/tray_bottom"
-  },
-  "elements": [
-	{
-	  "from": [
-		1,
-		0,
-		1
-	  ],
-	  "to": [
-		15,
-		2,
-		15
-	  ],
-	  "rotation": {
-		"angle": 0,
-		"axis": "y",
-		"origin": [
-		  8.19552,
-		  1,
-		  8
-		]
-	  },
-	  "faces": {
-		"north": {
-		  "uv": [
-			1,
-			11,
-			15,
-			13
-		  ],
-		  "texture": "#tray_side"
-		},
-		"east": {
-		  "uv": [
-			1,
-			11,
-			15,
-			13
-		  ],
-		  "texture": "#tray_side"
-		},
-		"south": {
-		  "uv": [
-			1,
-			11,
-			15,
-			13
-		  ],
-		  "texture": "#tray_side"
-		},
-		"west": {
-		  "uv": [
-			1,
-			11,
-			15,
-			13
-		  ],
-		  "texture": "#tray_side"
-		},
-		"up": {
-		  "uv": [
-			1,
-			1,
-			15,
-			15
-		  ],
-		  "rotation": 90,
-		  "texture": "#tray_top"
-		},
-		"down": {
-		  "uv": [
-			1,
-			1,
-			15,
-			15
-		  ],
-		  "rotation": 270,
-		  "texture": "#tray_side",
-		  "cullface": "down"
-		}
-	  }
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"render_type": "minecraft:cutout",
+	"parent": "block/block",
+	"textures": {
+		"3": "twilightdelight:block/tray_bottom",
+		"4": "twilightdelight:block/meef_wellington_block_tray_light",
+		"5": "twilightdelight:block/meef_wellington_block_body",
+		"particle": "twilightdelight:block/meef_wellington_block_front",
+		"ham": "twilightdelight:block/meef_wellington_block_front",
+		"tray_top": "twilightdelight:block/meef_wellington_block_tray"
 	},
-	{
-	  "from": [
-		5,
-		2,
-		4
-	  ],
-	  "to": [
-		11,
-		5,
-		12
-	  ],
-	  "rotation": {
-		"angle": 0,
-		"axis": "y",
-		"origin": [
-		  8,
-		  3,
-		  8
-		]
-	  },
-	  "faces": {
-		"north": {
-		  "uv": [
-			8,
-			6,
-			11,
-			12
-		  ],
-		  "rotation": 270,
-		  "texture": "#ham"
+	"elements": [
+		{
+			"name": "meef_wellington",
+			"from": [4.5, 2, 4],
+			"to": [7.5, 9, 12],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [6, 5.5, 8]},
+			"faces": {
+				"north": {"uv": [9, 8, 12, 15], "texture": "#5"},
+				"east": {"uv": [8, 0, 0, 7], "texture": "#ham"},
+				"south": {"uv": [12, 8, 9, 15], "texture": "#5"},
+				"west": {"uv": [0, 0, 8, 7], "texture": "#ham"},
+				"up": {"uv": [0, 0, 3, 8], "texture": "#5"}
+			}
 		},
-		"east": {
-		  "uv": [
-			0,
-			6,
-			3,
-			14
-		  ],
-		  "rotation": 90,
-		  "texture": "#ham"
+		{
+			"name": "tray",
+			"from": [1, 0, 1],
+			"to": [15, 2, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 3.5, 8]},
+			"faces": {
+				"north": {"uv": [1, 11, 15, 13], "texture": "#3"},
+				"east": {"uv": [1, 11, 15, 13], "texture": "#3"},
+				"south": {"uv": [1, 11, 15, 13], "texture": "#3"},
+				"west": {"uv": [1, 11, 15, 13], "texture": "#3"},
+				"up": {"uv": [1, 1, 15, 15], "rotation": 90, "texture": "#tray_top"},
+				"down": {"uv": [1, 1, 15, 15], "rotation": 270, "texture": "#3", "cullface": "down"}
+			}
 		},
-		"south": {
-		  "uv": [
-			8,
-			6,
-			11,
-			12
-		  ],
-		  "rotation": 90,
-		  "texture": "#ham"
-		},
-		"west": {
-		  "uv": [
-			8,
-			6,
-			11,
-			12
-		  ],
-		  "rotation": 90,
-		  "texture": "#ham"
-		},
-		"up": {
-		  "uv": [
-			0,
-			0,
-			8,
-			6
-		  ],
-		  "rotation": 90,
-		  "texture": "#ham"
-		},
-		"down": {
-		  "uv": [
-			8,
-			0,
-			0,
-			6
-		  ],
-		  "rotation": 90,
-		  "texture": "#ham"
+		{
+			"name": "tray_light",
+			"from": [1, 0, 1],
+			"to": [15, 2, 15],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 3.5, 8]},
+			"faces": {
+				"up": {"uv": [1, 1, 15, 15], "rotation": 90, "texture": "#4", "forge_data": { "color": "FFFFFFFF", "block_light": 5, "sky_light": 5 }}
+			}
 		}
-	  }
-	}
-  ]
+	],
+	"groups": [
+		{
+			"name": "meef_wellington",
+			"origin": [8, 3.5, 8],
+			"scope": 0,
+			"color": 0,
+			"children": [0]
+		},
+		{
+			"name": "tray",
+			"origin": [8, 3.5, 8],
+			"scope": 0,
+			"color": 0,
+			"children": [1]
+		},
+		{
+			"name": "tray_light",
+			"origin": [8, 8, 8],
+			"scope": 0,
+			"color": 0,
+			"shade": false,
+			"children": [2]
+		}
+	]
 }

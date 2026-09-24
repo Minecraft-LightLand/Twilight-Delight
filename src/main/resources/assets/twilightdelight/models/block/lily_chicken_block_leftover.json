@@ -1,13 +1,15 @@
 {
+	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"render_type": "minecraft:cutout",
 	"textures": {
+		"3": "twilightdelight:block/tray_top_veggies",
+		"4": "twilightdelight:block/lily_petal",
 		"gibs": "twilightdelight:block/lily_chicken_gibs",
-		"particle": "twilightdelight:block/tray_top_leftover",
-		"tray_top": "twilightdelight:block/tray_top_leftover",
-		"tray_bottom": "twilightdelight:block/tray_bottom"
+		"tray_bottom": "twilightdelight:block/tray_bottom",
+		"particle": "twilightdelight:block/lily_petal"
 	},
-  	"render_type": "minecraft:cutout",
 	"elements": [
 		{
 			"name": "ribcage_end",
@@ -54,8 +56,44 @@
 				"east": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
 				"south": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
 				"west": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
-				"up": {"uv": [1, 1, 15, 15], "texture": "#tray_top"},
+				"up": {"uv": [1, 1, 15, 15], "texture": "#3"},
 				"down": {"uv": [1, 1, 15, 15], "texture": "#tray_bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [13.44975, -5.15785, 1],
+			"to": [13.44975, -3.15785, 15],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 1.29189, 8]},
+			"faces": {
+				"east": {"uv": [0, 14, 14, 16], "rotation": 180, "texture": "#4"},
+				"west": {"uv": [0, 16, 14, 14], "texture": "#4"}
+			}
+		},
+		{
+			"from": [1, -0.001, 15],
+			"to": [15, 1.999, 15],
+			"rotation": {"angle": -45, "axis": "x", "origin": [1, 1.999, 15]},
+			"faces": {
+				"north": {"uv": [14, 16, 0, 14], "texture": "#4"},
+				"south": {"uv": [14, 12, 0, 14], "rotation": 180, "texture": "#4"}
+			}
+		},
+		{
+			"from": [2.55025, -5.15785, 1],
+			"to": [2.55025, -3.15785, 15],
+			"rotation": {"angle": -45, "axis": "z", "origin": [8, 1.29189, 8]},
+			"faces": {
+				"east": {"uv": [14, 16, 0, 14], "texture": "#4"},
+				"west": {"uv": [14, 14, 0, 16], "rotation": 180, "texture": "#4"}
+			}
+		},
+		{
+			"from": [1, -0.001, 1],
+			"to": [15, 1.999, 1],
+			"rotation": {"angle": 45, "axis": "x", "origin": [1, 1.999, 1]},
+			"faces": {
+				"north": {"uv": [0, 12, 14, 14], "rotation": 180, "texture": "#4"},
+				"south": {"uv": [0, 14, 14, 12], "texture": "#4"}
 			}
 		}
 	],
@@ -63,16 +101,19 @@
 		{
 			"name": "roast_chicken",
 			"origin": [8, 8, 8],
+			"scope": 0,
 			"color": 0,
 			"children": [
 				{
 					"name": "chicken",
 					"origin": [8, 8, 8],
+					"scope": 0,
 					"color": 0,
 					"children": [
 						{
 							"name": "bones",
 							"origin": [16, 28, 16],
+							"scope": 0,
 							"color": 0,
 							"children": [0, 1, 2, 3]
 						}
@@ -81,8 +122,9 @@
 				{
 					"name": "plate",
 					"origin": [8, 8, 8],
+					"scope": 0,
 					"color": 0,
-					"children": [4]
+					"children": [4, 5, 6, 7, 8]
 				}
 			]
 		}
