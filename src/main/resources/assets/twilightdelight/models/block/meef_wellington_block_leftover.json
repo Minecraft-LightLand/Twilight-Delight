@@ -1,82 +1,55 @@
 {
-  "credit": "Made with Blockbench",
-  "parent": "block/block",
-  "textures": {
-	"particle": "farmersdelight:block/tray_bottom",
-	"tray_top": "twilightdelight:block/meef_wellington_block_tray",
-	"tray_side": "farmersdelight:block/tray_bottom"
-  },
-  "elements": [
-	{
-	  "from": [
-		1,
-		0,
-		1
-	  ],
-	  "to": [
-		15,
-		2,
-		15
-	  ],
-	  "faces": {
-		"north": {
-		  "uv": [
-			1,
-			11,
-			15,
-			13
-		  ],
-		  "texture": "#tray_side"
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"render_type": "minecraft:cutout",
+	"parent": "block/block",
+	"textures": {
+		"3": "twilightdelight:block/tray_bottom",
+		"4": "twilightdelight:block/meef_wellington_block_tray_light",
+                "particle": "twilightdelight:block/meef_wellington_block_front",
+		"tray_top": "twilightdelight:block/meef_wellington_block_tray"
+	},
+	"elements": [
+		{
+			"name": "tray",
+			"from": [1, 0, 1],
+			"to": [15, 2, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 3.5, 8]},
+			"faces": {
+				"north": {"uv": [1, 11, 15, 13], "texture": "#3"},
+				"east": {"uv": [1, 11, 15, 13], "texture": "#3"},
+				"south": {"uv": [1, 11, 15, 13], "texture": "#3"},
+				"west": {"uv": [1, 11, 15, 13], "texture": "#3"},
+				"up": {"uv": [1, 1, 15, 15], "rotation": 90, "texture": "#tray_top"},
+				"down": {"uv": [1, 1, 15, 15], "rotation": 270, "texture": "#3", "cullface": "down"}
+			}
 		},
-		"east": {
-		  "uv": [
-			1,
-			11,
-			15,
-			13
-		  ],
-		  "texture": "#tray_side"
-		},
-		"south": {
-		  "uv": [
-			1,
-			11,
-			15,
-			13
-		  ],
-		  "texture": "#tray_side"
-		},
-		"west": {
-		  "uv": [
-			1,
-			11,
-			15,
-			13
-		  ],
-		  "texture": "#tray_side"
-		},
-		"up": {
-		  "uv": [
-			1,
-			1,
-			15,
-			15
-		  ],
-		  "rotation": 90,
-		  "texture": "#tray_top"
-		},
-		"down": {
-		  "uv": [
-			1,
-			1,
-			15,
-			15
-		  ],
-		  "rotation": 270,
-		  "texture": "#tray_side",
-		  "cullface": "down"
+		{
+			"name": "tray_light",
+			"from": [1, 0, 1],
+			"to": [15, 2, 15],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 3.5, 8]},
+			"faces": {
+				"up": {"uv": [1, 1, 15, 15], "rotation": 90, "texture": "#4", "neoforge_data": { "color": "FFFFFFFF", "block_light": 5, "sky_light": 5 }}
+			}
 		}
-	  }
-	}
-  ]
+	],
+	"groups": [
+		{
+			"name": "tray",
+			"origin": [8, 3.5, 8],
+			"scope": 0,
+			"color": 0,
+			"children": [0]
+		},
+		{
+			"name": "tray_light",
+			"origin": [8, 8, 8],
+			"scope": 0,
+			"color": 0,
+			"shade": false,
+			"children": [1]
+		}
+	]
 }

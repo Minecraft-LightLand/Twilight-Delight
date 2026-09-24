@@ -1,6 +1,14 @@
 {
+	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
+		"4": "twilightdelight:block/torchberry_pie_light",
+		"5": "twilightdelight:block/torchberry_pie_side_light",
+		"inner": "twilightdelight:block/torchberry_pie_inner",
+		"side": "twilightdelight:block/pie_side",
+		"top": "twilightdelight:block/torchberry_pie_top",
+		"bottom": "twilightdelight:block/pie_bottom",
+		"particle": "twilightdelight:block/torchberry_pie_light"
 	},
 	"elements": [
 		{
@@ -25,6 +33,48 @@
 				"up": {"uv": [2, 2, 14, 8], "texture": "#top"},
 				"down": {"uv": [2, 8, 14, 14], "texture": "#bottom", "cullface": "down"}
 			}
+		},
+		{
+			"from": [2, 0, 2],
+			"to": [14, 4, 8],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [2, 2, 14, 8], "texture": "#4"}
+			}
+		},
+		{
+			"from": [2, 0, 8],
+			"to": [8, 4, 14],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [2, 8, 8, 14], "texture": "#4"}
+			}
+		},
+		{
+			"from": [2, 0, 8],
+			"to": [8, 4, 14],
+			"faces": {
+				"east": {"uv": [2, 12, 8, 16], "texture": "#5"}
+			}
+		},
+		{
+			"from": [2, 0, 2],
+			"to": [14, 4, 8],
+			"faces": {
+				"south": {"uv": [2, 12, 14, 16], "texture": "#5"}
+			}
+		}
+	],
+	"groups": [
+		0,
+		1,
+		{
+			"name": "pie_light",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 0,
+			"shade": false,
+			"children": [2, 3, 4, 5]
 		}
 	]
 }
