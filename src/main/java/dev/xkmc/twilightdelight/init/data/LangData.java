@@ -56,6 +56,7 @@ public enum LangData {
 		pvd.add("effect.twilightdelight.frozen_range.description", "Freeze enemies around you, and make you immune to Frosty. Can also freeze items.");
 		pvd.add("effect.twilightdelight.temporal_sadness.description", "Reduce movement speed and attack damage.");
 		pvd.add("effect.twilightdelight.aurora_glowing.description", "Make yourself and all entities your see glow with rainbow color.");
+		pvd.add("effect.twilightdelight.twilight_aura.description", "Randomly transform nearby ordinary mobs into twilight creatures.");
 		PatchouliLang.genLang(pvd);
 	}
 

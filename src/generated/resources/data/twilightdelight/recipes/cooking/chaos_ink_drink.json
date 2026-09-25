@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "minecraft:ink_sac"
+    },
+    {
+      "item": "minecraft:ink_sac"
+    },
+    {
+      "item": "twilightdelight:witchcraft_bone_meal"
+    },
+    {
+      "item": "twilightforest:raven_feather"
+    },
+    [
+      {
+        "item": "twilightforest:zombie_scepter"
+      },
+      {
+        "item": "twilightforest:twilight_scepter"
+      },
+      {
+        "item": "twilightforest:lifedrain_scepter"
+      }
+    ]
+  ],
+  "result": {
+    "item": "twilightdelight:chaos_ink_drink"
+  }
+}

@@ -9,7 +9,7 @@
   ],
   "key": {
     "E": {
-      "item": "minecraft:egg"
+      "tag": "forge:eggs"
     },
     "M": {
       "tag": "forge:milk"

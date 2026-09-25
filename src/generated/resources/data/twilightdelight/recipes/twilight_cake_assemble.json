@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "twilightdelight:twilight_cake_slice"
+    },
+    {
+      "item": "twilightdelight:twilight_cake_slice"
+    },
+    {
+      "item": "twilightdelight:twilight_cake_slice"
+    },
+    {
+      "item": "twilightdelight:twilight_cake_slice"
+    },
+    {
+      "item": "twilightdelight:twilight_cake_slice"
+    },
+    {
+      "item": "twilightdelight:twilight_cake_slice"
+    },
+    {
+      "item": "twilightdelight:twilight_cake_slice"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:twilight_cake"
+  }
+}

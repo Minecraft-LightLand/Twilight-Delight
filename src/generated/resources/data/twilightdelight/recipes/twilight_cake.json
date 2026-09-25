@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "tag": "forge:eggs"
+    },
+    "M": {
+      "tag": "forge:milk"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    },
+    "X": {
+      "item": "twilightforest:liveroot"
+    }
+  },
+  "pattern": [
+    "MXM",
+    "SES",
+    "WXW"
+  ],
+  "result": {
+    "item": "twilightdelight:twilight_cake"
+  },
+  "show_notification": true
+}

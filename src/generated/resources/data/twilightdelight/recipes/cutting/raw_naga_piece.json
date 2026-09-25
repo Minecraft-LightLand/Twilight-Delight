@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightdelight:raw_naga_meat"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "twilightdelight:raw_naga_piece"
+    },
+    {
+      "chance": 0.5,
+      "item": "twilightforest:naga_scale"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

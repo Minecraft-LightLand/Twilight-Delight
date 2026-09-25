@@ -26,6 +26,8 @@ public class TagGen {
 	public static final TagKey<Item> MEEF_RAW = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "meef_raw"));
 	public static final TagKey<Item> VENSION_COOKED = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "vension_cooked"));
 	public static final TagKey<Item> VENSION_RAW = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "vension_raw"));
+	public static final TagKey<Item> NAGA_COOKED = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "naga_cooked"));
+	public static final TagKey<Item> NAGA_RAW = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "naga_raw"));
 
 	public static void genItemTag(RegistrateItemTagsProvider pvd) {
 		pvd.addTag(INSECT)
@@ -38,6 +40,8 @@ public class TagGen {
 		pvd.addTag(MEEF_RAW).add(TFItems.RAW_MEEF.get(), DelightFood.RAW_MEEF_SLICE.item.get());
 		pvd.addTag(VENSION_COOKED).add(TFItems.COOKED_VENISON.get(), DelightFood.COOKED_VENISON_RIB.item.get());
 		pvd.addTag(VENSION_RAW).add(TFItems.RAW_VENISON.get(), DelightFood.RAW_VENISON_RIB.item.get());
+		pvd.addTag(NAGA_COOKED).add(DelightFood.COOKED_NAGA_MEAT.item.get(), DelightFood.COOKED_NAGA_PIECE.item.get());
+		pvd.addTag(NAGA_RAW).add(DelightFood.RAW_NAGA_MEAT.item.get(), DelightFood.RAW_NAGA_PIECE.item.get());
 	}
 
 	public static void genBlockTag(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {

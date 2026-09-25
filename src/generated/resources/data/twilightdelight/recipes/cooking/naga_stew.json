@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "twilightdelight:naga_raw"
+    },
+    {
+      "tag": "twilightdelight:naga_raw"
+    },
+    {
+      "tag": "forge:crops/onion"
+    },
+    {
+      "tag": "forge:salad_ingredients"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:naga_stew"
+  }
+}

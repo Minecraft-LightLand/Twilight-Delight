@@ -17,6 +17,8 @@ import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightPie;
+import dev.xkmc.twilightdelight.init.registrate.delight.DelightCake;
+import dev.xkmc.twilightdelight.init.loot.NagaMeatModifier;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import dev.xkmc.twilightdelight.mixin.FoodPropertiesAccessor;
@@ -61,6 +63,8 @@ public class TwilightDelight {
 		TDItems.register();
 		DelightFood.register();
 		DelightPie.register();
+		DelightCake.register();
+		NagaMeatModifier.register();
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			NeapolitanFood.register();
 			NeapolitanCakes.register();
@@ -91,6 +95,7 @@ public class TwilightDelight {
 			EffectSyncEvents.TRACKED.add(TDEffects.FROZEN_RANGE.get());
 			EffectSyncEvents.TRACKED.add(TDEffects.POISON_RANGE.get());
 			EffectSyncEvents.TRACKED.add(TDEffects.AURORA_GLOWING.get());
+			EffectSyncEvents.TRACKED.add(TDEffects.TWILIGHT_AURA.get());
 
 			if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 				((ItemAccessor) NeapolitanItems.ADZUKI_ICE_CREAM.get()).setCraftingRemainingItem(Items.BOWL);

@@ -1,0 +1,15 @@
+{
+  "type": "twilightdelight:naga_meat",
+  "conditions": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "twilightforest:lich"
+      }
+    }
+  ],
+  "item": "twilightdelight:witchcraft_bone",
+  "max": 6,
+  "min": 2
+}

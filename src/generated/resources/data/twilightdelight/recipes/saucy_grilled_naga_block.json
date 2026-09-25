@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bowl"
+    },
+    "C": {
+      "item": "minecraft:carrot"
+    },
+    "M": {
+      "tag": "twilightdelight:naga_cooked"
+    },
+    "S": {
+      "item": "twilightdelight:mushgloom_sauce"
+    },
+    "T": {
+      "item": "twilightforest:torchberries"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "CST",
+    " B "
+  ],
+  "result": {
+    "item": "twilightdelight:saucy_grilled_naga_block"
+  },
+  "show_notification": true
+}

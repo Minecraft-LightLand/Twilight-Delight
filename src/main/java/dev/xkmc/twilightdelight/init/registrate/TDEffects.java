@@ -15,6 +15,7 @@ public class TDEffects {
 	public static final RegistryEntry<MobEffect> FROZEN_RANGE;
 	public static final RegistryEntry<MobEffect> TEMPORAL_SADNESS;
 	public static final RegistryEntry<MobEffect> AURORA_GLOWING;
+	public static final RegistryEntry<MobEffect> TWILIGHT_AURA;
 
 	static {
 		FIRE_RANGE = genEffect("fire_range", FireRange::new);
@@ -22,6 +23,7 @@ public class TDEffects {
 		FROZEN_RANGE = genEffect("frozen_range", FrozenRange::new);
 		TEMPORAL_SADNESS = genEffect("temporal_sadness", TemporalSadness::new);
 		AURORA_GLOWING = genEffect("aurora_glowing", AuroraGlowing::new);
+		TWILIGHT_AURA = genEffect("twilight_aura", TwilightAura::new);
 	}
 
 	public static <T extends MobEffect> RegistryEntry<T> genEffect(String name, NonNullSupplier<T> sup) {

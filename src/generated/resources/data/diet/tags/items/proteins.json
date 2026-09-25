@@ -9,6 +9,13 @@
     "twilightdelight:cooked_tomahawk_smeak",
     "twilightdelight:raw_insect",
     "twilightdelight:cooked_insect",
+    "twilightdelight:raw_naga_piece",
+    "twilightdelight:cooked_naga_piece",
+    "twilightdelight:raw_naga_meat",
+    "twilightdelight:cooked_naga_meat",
+    "twilightdelight:naga_skewers",
+    "twilightdelight:naga_stew",
+    "twilightdelight:naga_meatball_congee",
     "twilightdelight:experiment_113",
     "twilightdelight:chocolate_113",
     "twilightdelight:milky_113",
@@ -28,6 +35,9 @@
     "twilightdelight:grilled_tomahawk_smeak",
     "twilightdelight:ghast_brain_salad",
     "twilightdelight:plate_of_lily_chicken",
-    "twilightdelight:plate_of_meef_wellington"
+    "twilightdelight:plate_of_meef_wellington",
+    "twilightdelight:plate_of_saucy_grilled_naga",
+    "twilightdelight:witchcraft_bone_broth",
+    "twilightdelight:bowl_of_chaos_stew"
   ]
 }

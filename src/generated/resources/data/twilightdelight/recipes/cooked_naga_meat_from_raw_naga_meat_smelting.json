@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "twilightdelight:raw_naga_meat"
+  },
+  "result": "twilightdelight:cooked_naga_meat"
+}

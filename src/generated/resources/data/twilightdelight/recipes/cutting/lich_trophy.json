@@ -10,6 +10,14 @@
       "item": "minecraft:skeleton_skull"
     },
     {
+      "count": 3,
+      "item": "twilightdelight:witchcraft_bone"
+    },
+    {
+      "chance": 0.5,
+      "item": "twilightforest:transformation_powder"
+    },
+    {
       "chance": 0.2,
       "item": "twilightforest:zombie_scepter"
     },

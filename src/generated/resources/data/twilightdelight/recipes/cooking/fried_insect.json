@@ -10,7 +10,7 @@
       "item": "twilightdelight:raw_insect"
     },
     {
-      "item": "farmersdelight:onion"
+      "tag": "forge:crops/onion"
     },
     {
       "item": "minecraft:carrot"

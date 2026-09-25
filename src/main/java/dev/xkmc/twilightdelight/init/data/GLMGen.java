@@ -2,6 +2,8 @@ package dev.xkmc.twilightdelight.init.data;
 
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.loot.NagaMeatModifier;
+import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.mixin.AddItemModifierAccessor;
 import net.minecraft.advancements.critereon.*;
@@ -37,6 +39,12 @@ public class GLMGen extends GlobalLootModifierProvider {
 		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAK.item), of(TFEntities.MINOTAUR), 0.3f, true);
 		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAK.item), of(TFEntities.MINOSHROOM), 1f, false);
 		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAK.item), of(TFEntities.MINOSHROOM), 1f, true);
+		add("scavenging_raw_naga_meat_from_naga", new NagaMeatModifier(DelightFood.RAW_NAGA_MEAT.item.get(), 5, 10,
+				killTarget(TFEntities.NAGA.get()), fire(false)));
+		add("scavenging_cooked_naga_meat_from_naga", new NagaMeatModifier(DelightFood.COOKED_NAGA_MEAT.item.get(), 5, 10,
+				killTarget(TFEntities.NAGA.get()), fire(true)));
+		add("scavenging_witchcraft_bone_from_lich", new NagaMeatModifier(TDItems.WITCHCRAFT_BONE.get(), 2, 6,
+				killTarget(TFEntities.LICH.get())));
 	}
 
 	private void scavenging(EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float base, float loot, boolean nofire) {

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:cooking/witchcraft_bone_broth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_witchcraft_bone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "twilightdelight:witchcraft_bone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_witchcraft_bone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:cooking/witchcraft_bone_broth"
+    ]
+  },
+  "sends_telemetry_event": true
+}
