@@ -35,13 +35,13 @@ public class TDItems {
 
 	// KNIVES
 	static {
-		IRONWOOD_KNIFE = handheld("ironwood_knife", IronwoodKnifeItem::new).tag(TagRef.TOOLS_KNIVES).transform(e -> e.tab(TDBlocks.TAB.getKey(), x -> e.getEntry().fillItemCategory(x))).register();
-		STEELEAF_KNIFE = handheld("steeleaf_knife", SteeleafKnifeItem::new).tag(TagRef.TOOLS_KNIVES).transform(e -> e.tab(TDBlocks.TAB.getKey(), x -> e.getEntry().fillItemCategory(x))).register();
-		KNIGHTMETAL_KNIFE = handheld("knightmetal_knife", KnightmetalKnifeItem::new).lang("Knightly Knife").tag(TagRef.TOOLS_KNIVES).register();
+		IRONWOOD_KNIFE = handheld("ironwood_knife", IronwoodKnifeItem::new).tag(TagRef.TOOLS_KNIVES, TagRef.MOD_KNIFE).transform(e -> e.tab(TDBlocks.TAB.getKey(), x -> e.getEntry().fillItemCategory(x))).register();
+		STEELEAF_KNIFE = handheld("steeleaf_knife", SteeleafKnifeItem::new).tag(TagRef.TOOLS_KNIVES, TagRef.MOD_KNIFE).transform(e -> e.tab(TDBlocks.TAB.getKey(), x -> e.getEntry().fillItemCategory(x))).register();
+		KNIGHTMETAL_KNIFE = handheld("knightmetal_knife", KnightmetalKnifeItem::new).lang("Knightly Knife").tag(TagRef.TOOLS_KNIVES, TagRef.MOD_KNIFE).register();
 
 		FIERY_KNIFE = handheld("fiery_knife", FieryKnifeItem::new)
 				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))
-				.tag(TagRef.TOOLS_KNIVES).register();
+				.tag(TagRef.TOOLS_KNIVES, TagRef.MOD_KNIFE).register();
 		TEARDROP_SWORD = handheld("teardrop_sword", TeardropSwordItem::new)
 				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))
 				.tag(ItemTags.SWORDS).register();
