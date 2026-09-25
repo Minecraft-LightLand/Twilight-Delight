@@ -1,3 +1,8 @@
+2.2.4
+- Add naga and lich related food
+- Add twilight cake, and twilight aura effect
+- Add ironwood tree
+
 2.2.3
 - Texture overhaul
 

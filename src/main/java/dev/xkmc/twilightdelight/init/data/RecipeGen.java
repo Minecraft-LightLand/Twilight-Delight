@@ -83,11 +83,11 @@ public class RecipeGen {
 					.define('B', Tags.Items.RODS_WOODEN)
 					.save(e -> pvd.accept(new NBTRecipe(e, TDItems.STEELEAF_KNIFE.get().getDefault())));
 
-			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.KNIGHTMETAL_KNIFE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
-					.pattern("A").pattern("B")
-					.define('A', TFItems.KNIGHTMETAL_INGOT.get())
-					.define('B', Tags.Items.RODS_WOODEN)
-					.save(pvd);
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.KNIGHTMETAL_KNIFE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
+				.pattern("A").pattern("B")
+				.define('A', TFItems.KNIGHTMETAL_INGOT.get())
+				.define('B', Tags.Items.RODS_WOODEN)
+				.save(pvd);
 
 			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDBlocks.MAZE_STOVE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
 					.pattern("KKK").pattern("MTM").pattern("MCM")
@@ -154,7 +154,7 @@ public class RecipeGen {
 		delightPie(pvd, DelightPie.AURORA_PIE, TFBlocks.AURORA_BLOCK.get().asItem());
 		delightPie(pvd, DelightPie.TORCHBERRY_PIE, TFItems.TORCHBERRIES.get());
 
-		delightCake(pvd, DelightCake.TWILIGHT, TFItems.LIVEROOT.get());
+		delightCake(pvd, DelightCake.TWILIGHT);
 
 		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.NAGA_SKEWERS.item.get(), 2)::unlockedBy, DelightFood.COOKED_NAGA_PIECE.item.get())
 				.requires(TagGen.NAGA_COOKED)
@@ -685,6 +685,9 @@ public class RecipeGen {
 
 			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(Items.BOW), TFItems.ICE_BOW.get())::unlockedBy,
 					Items.BOW).save(pvd, new ResourceLocation(getID(TFItems.ICE_BOW.getId())));
+
+			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(ModItems.DIAMOND_KNIFE.get()), TDItems.ICE_KNIFE.get())::unlockedBy,
+					ModItems.DIAMOND_KNIFE.get()).save(pvd, new ResourceLocation(getID(TDItems.ICE_KNIFE.getId())));
 		}
 
 		// log stripping
@@ -778,12 +781,12 @@ public class RecipeGen {
 				.save(pvd);
 	}
 
-	private static void delightCake(RegistrateRecipeProvider pvd, DelightCake cake, Item ingredient) {
-		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, cake.block.get().asItem(), 1)::unlockedBy, ingredient)
-				.pattern("MXM").pattern("SES").pattern("WXW")
-				.define('M', TagGen.MILK).define('S', Items.SUGAR)
-				.define('W', Items.WHEAT).define('E', TagRef.EGGS)
-				.define('X', ingredient)
+	private static void delightCake(RegistrateRecipeProvider pvd, DelightCake cake) {
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, cake.block.get().asItem(), 1)::unlockedBy, Items.DIAMOND)
+				.pattern(" DP").pattern("GWG").pattern("TCT")
+				.define('D', Items.DIAMOND).define('P', Items.POPPY)
+				.define('G', Items.GRASS_BLOCK).define('W', Items.WATER_BUCKET)
+				.define('T', Items.DIRT).define('C', Items.CAKE)
 				.save(pvd);
 
 		CuttingBoardRecipeBuilder.cuttingRecipe(

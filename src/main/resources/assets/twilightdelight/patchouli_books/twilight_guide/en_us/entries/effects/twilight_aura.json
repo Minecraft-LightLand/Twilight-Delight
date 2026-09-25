@@ -1,0 +1,16 @@
+{
+  "name": "Twilight Aura",
+  "icon": "twilightdelight:twilight_cake",
+  "category": "twilightdelight:effects",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "Once per second, this effect randomly transforms one ordinary mob around you into its twilight counterpart, following Twilight Forest transformation powder recipes.$(br2)Transformed mobs are marked so they are never transformed again. Range of effect is marked with portal particles."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightdelight:twilight_cake",
+	  "text": "Obtainable from Twilight Cake and its slices."
+	}
+  ]
+}

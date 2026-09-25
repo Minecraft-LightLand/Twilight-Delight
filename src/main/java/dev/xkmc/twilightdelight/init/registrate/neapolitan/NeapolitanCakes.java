@@ -33,15 +33,15 @@ import java.util.List;
 import java.util.Locale;
 
 public enum NeapolitanCakes {
-	AURORA(MapColor.COLOR_CYAN,
+	AURORA(7, MapColor.COLOR_CYAN,
 			new EffectSupplier(TDEffects.AURORA_GLOWING, 300, 0, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 300, 2, 1),
 			new EffectSupplier(() -> MobEffects.JUMP, 300, 1, 1)),
-	TORCHBERRY(MapColor.COLOR_YELLOW,
+	TORCHBERRY(10, MapColor.COLOR_YELLOW,
 			new EffectSupplier(TDEffects.FIRE_RANGE, 300, 0, 1)),
-	PHYTOCHEMICAL(MapColor.COLOR_GREEN,
+	PHYTOCHEMICAL(0, MapColor.COLOR_GREEN,
 			new EffectSupplier(TDEffects.POISON_RANGE, 300, 0, 1)),
-	GLACIER(MapColor.COLOR_LIGHT_BLUE,
+	GLACIER(0, MapColor.COLOR_LIGHT_BLUE,
 			new EffectSupplier(TDEffects.FROZEN_RANGE, 300, 0, 1)),
 	;
 
@@ -53,11 +53,11 @@ public enum NeapolitanCakes {
 	public final ItemEntry<TDFoodItem> item;
 
 	@SuppressWarnings({"unchecked", "rawtype", "unsafe"})
-	NeapolitanCakes(MapColor color, EffectSupplier... effects) {
+	NeapolitanCakes(int light, MapColor color, EffectSupplier... effects) {
 		base = name().toLowerCase(Locale.ROOT);
 		var food = TDItems.simpleFood(DelightFoodType.NONE, 1, 0.1f, List.of(effects));
 		var props = BlockBehaviour.Properties.of().mapColor(color).forceSolidOn().strength(0.5F)
-				.sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY);
+				.sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY).lightLevel(s -> light);
 		item = TwilightDelight.REGISTRATE.item(base + "_cake_slice", p -> new TDFoodItem(p.food(food)))
 				.tag(TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS).defaultModel().defaultLang().register();
 		block = TwilightDelight.REGISTRATE.block(base + "_cake", p -> new TDCakeBlock(food, props, this))

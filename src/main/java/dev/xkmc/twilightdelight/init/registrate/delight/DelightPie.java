@@ -21,8 +21,8 @@ import java.util.List;
 import java.util.Locale;
 
 public enum DelightPie {
-	TORCHBERRY_PIE(new EffectSupplier(TDEffects.FIRE_RANGE, 300, 0, 1)),
-	AURORA_PIE(
+	TORCHBERRY_PIE(10, new EffectSupplier(TDEffects.FIRE_RANGE, 300, 0, 1)),
+	AURORA_PIE(7,
 			new EffectSupplier(TDEffects.AURORA_GLOWING, 300, 0, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 300, 2, 1),
 			new EffectSupplier(() -> MobEffects.JUMP, 300, 1, 1));
@@ -35,13 +35,13 @@ public enum DelightPie {
 	public final ItemEntry<TDFoodItem> slice;
 
 
-	DelightPie(EffectSupplier... effects) {
+	DelightPie(int light, EffectSupplier... effects) {
 		String name = name().toLowerCase(Locale.ROOT);
 		FoodProperties food = TDItems.simpleFood(DelightFoodType.COOKIE, 3, 0.3f, List.of(effects));
 		slice = TwilightDelight.REGISTRATE.item(name + "_slice", p -> new TDFoodItem(p.food(food)))
 				.tag(TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS).defaultModel().defaultLang().register();
 		block = TwilightDelight.REGISTRATE.block(name,
-						p -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), slice::get))
+						p -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE).lightLevel(s -> light), slice::get))
 				.blockstate((ctx, pvd) -> {
 					ModelFile[] models = new ModelFile[4];
 					for (int i = 0; i < 4; i++) {

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_diamond": {
+    "has_diamond_knife": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:diamond"
+              "farmersdelight:diamond_knife"
             ]
           }
         ]
@@ -15,21 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightdelight:twilight_cake"
+        "recipe": "twilightdelight:cutting/ice_knife"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_diamond",
+      "has_diamond_knife",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "twilightdelight:twilight_cake"
+      "twilightdelight:cutting/ice_knife"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

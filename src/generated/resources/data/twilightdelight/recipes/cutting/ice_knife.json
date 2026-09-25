@@ -1,0 +1,10 @@
+{
+  "type": "twilightdelight:frozen",
+  "ingredient": {
+    "item": "farmersdelight:diamond_knife"
+  },
+  "result": {
+    "item": "twilightdelight:ice_knife",
+    "nbt": "{Damage:0}"
+  }
+}

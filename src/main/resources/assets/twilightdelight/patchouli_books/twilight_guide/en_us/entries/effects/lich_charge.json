@@ -1,0 +1,16 @@
+{
+  "name": "Lich Charge",
+  "icon": "twilightdelight:chaos_ink_drink",
+  "category": "twilightdelight:effects",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "This effect slowly restores durability of lich scepters in your hotbar and offhand. Scepters with higher max durability recharge faster."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightdelight:chaos_ink_drink",
+	  "text": "Obtainable from Chaos Ink Drink, Witchcraft Bone Broth, Magic Cake Scroll, and Bowl of Chaos Stew."
+	}
+  ]
+}

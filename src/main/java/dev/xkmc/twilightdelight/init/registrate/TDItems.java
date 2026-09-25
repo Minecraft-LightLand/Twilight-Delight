@@ -18,7 +18,6 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.loaders.ItemLayerModelBuilder;
 import org.apache.commons.lang3.StringUtils;
-import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,6 +34,7 @@ public class TDItems {
 	public static final ItemEntry<IronwoodKnifeItem> IRONWOOD_KNIFE;
 	public static final ItemEntry<SteeleafKnifeItem> STEELEAF_KNIFE;
 	public static final ItemEntry<KnightmetalKnifeItem> KNIGHTMETAL_KNIFE;
+	public static final ItemEntry<IceKnifeItem> ICE_KNIFE;
 	public static final ItemEntry<TeardropSwordItem> TEARDROP_SWORD;
 
 	public static final ItemEntry<Item> WITCHCRAFT_BONE;
@@ -49,7 +49,7 @@ public class TDItems {
 				.defaultModel().lang("Witchcraft Bone Meal").register();
 		CHAOS_INK_DRINK = TwilightDelight.REGISTRATE.item("chaos_ink_drink",
 						p -> new ReusableDrinkItem(p, 2, 0.3f, List.of(
-								new EffectSupplier(ModEffects.NOURISHMENT, 600, 0, 1))))
+								new EffectSupplier(TDEffects.LICH_CHARGE, 3600, 0, 1))))
 				.model((ctx, pvd) -> {
 					for (int i = 1; i <= 3; i++) {
 						pvd.getBuilder(ctx.getName() + "_stage" + i)
@@ -61,7 +61,7 @@ public class TDItems {
 							.texture("layer0", pvd.modLoc("item/" + ctx.getName()));
 					float[] thresholds = {0.25f, 0.5f, 0.75f};
 					for (int i = 0; i < 3; i++) {
-						base.override().predicate(new ResourceLocation("damage"), thresholds[i])
+						base.override().predicate(new ResourceLocation(TwilightDelight.MODID, "sips"), thresholds[i])
 								.model(new ModelFile.UncheckedModelFile(
 										pvd.modLoc("item/" + ctx.getName() + "_stage" + (i + 1)))).end();
 					}
@@ -77,6 +77,13 @@ public class TDItems {
 
 		FIERY_KNIFE = handheld("fiery_knife", FieryKnifeItem::new)
 				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))
+				.tag(TagRef.TOOLS_KNIVES, TagRef.MOD_KNIFE).register();
+		ICE_KNIFE = TwilightDelight.REGISTRATE.item("ice_knife", IceKnifeItem::new)
+				.model((ctx, pvd) -> pvd.getBuilder(ctx.getName())
+						.parent(new ModelFile.UncheckedModelFile(new ResourceLocation("minecraft:item/handheld")))
+						.texture("layer0", pvd.modLoc("item/" + ctx.getName() + "_solid"))
+						.texture("layer1", pvd.modLoc("item/" + ctx.getName() + "_clear"))
+						.customLoader(ItemLayerModelBuilder::begin))
 				.tag(TagRef.TOOLS_KNIVES, TagRef.MOD_KNIFE).register();
 		TEARDROP_SWORD = handheld("teardrop_sword", TeardropSwordItem::new)
 				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))

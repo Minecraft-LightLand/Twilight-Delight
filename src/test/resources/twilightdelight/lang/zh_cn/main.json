@@ -9,11 +9,15 @@
 	"frozen_range": "范围霜冻",
 	"temporal_sadness": "莫名的悲伤",
 	"aurora_glowing": "极光",
+	"twilight_aura": "暮色光环",
+	"lich_charge": "巫妖充能",
 	"fire_range.description": "点燃周围的敌人，自身不会被点燃",
 	"poison_range.description": "使周围的敌人中毒，自身免疫中毒",
 	"frozen_range.description": "冰冻周围敌人，自身免疫冰冻。可以冷冻物品",
 	"temporal_sadness.description": "降低攻击和移动速度",
-	"aurora_glowing.description": "让自身和看到的所有实体发出彩虹色的光"
+	"aurora_glowing.description": "让自身和看到的所有实体发出彩虹色的光",
+	"twilight_aura.description": "随机将附近的普通生物转化为暮色生物",
+	"lich_charge.description": "修复快捷栏和副手中的巫妖权杖耐久"
 
   },
   "patchouli.twilightdelight.landing": "享受来自暮色的美味和甜品",

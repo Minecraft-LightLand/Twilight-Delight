@@ -124,9 +124,12 @@ public class GeneralEventHandlers {
 		Entity var2 = event.getSource().getEntity();
 		if (var2 instanceof LivingEntity living) {
 			var item = living.getMainHandItem();
-			if ((item.is(TDItems.FIERY_KNIFE.get()) || item.is(TDItems.TEARDROP_SWORD.get())) && !event.getEntity().fireImmune()) {
-				event.getEntity().setSecondsOnFire(1);
-			}
+		if ((item.is(TDItems.FIERY_KNIFE.get()) || item.is(TDItems.TEARDROP_SWORD.get())) && !event.getEntity().fireImmune()) {
+			event.getEntity().setSecondsOnFire(1);
+		}
+		if (item.is(TDItems.ICE_KNIFE.get())) {
+			event.getEntity().clearFire();
+		}
 		}
 
 	}
