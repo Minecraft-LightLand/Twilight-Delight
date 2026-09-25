@@ -18,6 +18,7 @@ import twilightforest.init.TFDataMaps;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Once per second, randomly transforms one non-twilight mob in range into
@@ -71,13 +72,19 @@ public class TwilightAura extends RangeRenderEffect {
 		if (!(level instanceof ServerLevel server)) return;
 		EntityType<?> type = getTransformTarget(old);
 		if (type == null || !(type.create(server) instanceof Mob converted)) return;
-		converted.copyPosition(old);
+		converted.moveTo(old.getX(), old.getY(), old.getZ(), old.getYRot(), old.getXRot());
 		EventHooks.finalizeMobSpawn(converted, server,
 				server.getCurrentDifficultyAt(converted.blockPosition()),
 				MobSpawnType.CONVERSION, null);
-		CompoundTag tag = new CompoundTag();
-		old.saveWithoutId(tag);
-		converted.load(tag);
+		UUID uuid = converted.getUUID();
+		try {
+			CompoundTag tag = new CompoundTag();
+			old.saveWithoutId(tag);
+			converted.load(tag);
+		} catch (Exception e) {
+			TwilightDelight.LOGGER.warn("Couldn't transform entity NBT data", e);
+		}
+		converted.setUUID(uuid);
 		converted.getPersistentData().putBoolean(TRANSFORMED_TAG, true);
 		server.addFreshEntity(converted);
 		old.discard();

@@ -35,16 +35,18 @@ public enum DelightFood {
 	COOKED_NAGA_PIECE(DelightFoodType.FAST, 4, 0.8F, TagRef.PROTEINS),
 	RAW_NAGA_MEAT(DelightFoodType.NONE, 4, 0.6F, TagRef.PROTEINS),
 	COOKED_NAGA_MEAT(DelightFoodType.NONE, 8, 0.8F, TagRef.PROTEINS),
-	NAGA_SKEWERS(DelightFoodType.STICK, 8, 0.9F,
+	NAGA_SKEWERS(DelightFoodType.STICK, 8, 0.9F, List.of(
 			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 1200, 0, 1),
+			new EffectSupplier(MobEffects.MOVEMENT_SPEED, 1200, 0, 1)),
 			TagRef.PROTEINS),
 	NAGA_STEW(DelightFoodType.BOWL, 12, 0.8F, List.of(
 			new EffectSupplier(ModEffects.NOURISHMENT, 3600, 0, 1),
 			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 1800, 1, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
-	NAGA_MEATBALL_CONGEE(DelightFoodType.BOWL, 10, 0.8F, List.of(
+	NAGA_MEATBALL_CONGEE(DelightFoodType.BOWL, 12, 0.8F, List.of(
 			new EffectSupplier(ModEffects.NOURISHMENT, 3600, 0, 1),
-			new EffectSupplier(MobEffects.REGENERATION, 600, 0, 1)),
+			new EffectSupplier(MobEffects.REGENERATION, 600, 0, 1),
+			new EffectSupplier(MobEffects.MOVEMENT_SPEED, 1800, 1, 1)),
 			TagRef.PROTEINS, TagRef.GRAINS, TagRef.VEGETABLES),
 	CHOCOLATE_WAFER(DelightFoodType.NONE, 9, 0.6F,
 			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
@@ -170,19 +172,19 @@ public enum DelightFood {
 			TagRef.PROTEINS, TagRef.GRAINS, TagRef.VEGETABLES),
 	PLATE_OF_SAUCY_GRILLED_NAGA(DelightFoodType.BOWL, 16, 0.9f, List.of(
 			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1),
-			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 3600, 1, 1)),
+			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 1800, 2, 1),
+			new EffectSupplier(MobEffects.MOVEMENT_SPEED, 1800, 2, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
 	WITCHCRAFT_BONE_BROTH(DelightFoodType.BOWL, 8, 0.7f, List.of(
-			new EffectSupplier(ModEffects.NOURISHMENT, 3600, 0, 1),
-			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 1200, 0, 1)),
+			new EffectSupplier(ModEffects.NOURISHMENT, 2400, 0, 1),
+			new EffectSupplier(TDEffects.LICH_CHARGE, 1200, 0, 1)),
 			TagRef.PROTEINS),
 	MAGIC_CAKE_SCROLL(DelightFoodType.NONE, 6, 0.6F,
-			new EffectSupplier(MobEffects.DAMAGE_BOOST, 1200, 0, 1),
+			new EffectSupplier(TDEffects.LICH_CHARGE, 600, 0, 1),
 			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
-	BOWL_OF_CHAOS_STEW(DelightFoodType.BOWL, 18, 1.0f, List.of(
-			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1),
-			new EffectSupplier(MobEffects.REGENERATION, 1800, 1, 1),
-			new EffectSupplier(MobEffects.DAMAGE_BOOST, 3600, 1, 1)),
+	BOWL_OF_CHAOS_STEW(DelightFoodType.BOWL, 14, 1.0f, List.of(
+			new EffectSupplier(ModEffects.NOURISHMENT, 4800, 0, 1),
+			new EffectSupplier(TDEffects.LICH_CHARGE, 1800, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
 
 	THORN_ROSE_TEA(DelightFoodType.ROSE, 4, 0.25f,

@@ -18,7 +18,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
-import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.List;
 import java.util.Locale;
@@ -27,8 +26,8 @@ public enum DelightCake {
 
 	TWILIGHT(List.of(
 			new EffectSupplier(MobEffects.NIGHT_VISION, 600, 0, 1),
-			new EffectSupplier(ModEffects.NOURISHMENT, 1200, 0, 1),
-			new EffectSupplier(TDEffects.TWILIGHT_AURA, 400, 0, 1)));
+			new EffectSupplier(MobEffects.DIG_SPEED, 600, 0, 1),
+			new EffectSupplier(TDEffects.TWILIGHT_AURA, 600, 0, 1)));
 
 	public static void register() {
 
@@ -43,7 +42,7 @@ public enum DelightCake {
 		slice = TwilightDelight.REGISTRATE.item(name + "_cake_slice", p -> new TDFoodItem(p.food(food)))
 				.tag(TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS).defaultModel().defaultLang().register();
 		block = TwilightDelight.REGISTRATE.block(name + "_cake",
-						p -> new TwilightCakeBlock(food, BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)))
+						p -> new TwilightCakeBlock(food, BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), () -> slice.get()))
 				.blockstate((ctx, pvd) -> genCakeModels(ctx, pvd, name))
 				.loot((pvd, block) -> pvd.dropOther(block, slice.get()))
 				.item().properties(p -> p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
@@ -56,8 +55,7 @@ public enum DelightCake {
 		for (int i = 1; i <= 6; i++) {
 			slice[i] = new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + name + "_cake_slice" + i));
 		}
-		pvd.getVariantBuilder(ctx.getEntry()).forAllStates(e ->
-				ConfiguredModel.builder().modelFile(slice[e.getValue(BlockStateProperties.BITES)]).build());
+		pvd.horizontalBlock(ctx.get(), state -> slice[state.getValue(BlockStateProperties.BITES)]);
 	}
 
 }

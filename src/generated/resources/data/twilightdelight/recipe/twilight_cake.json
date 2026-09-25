@@ -2,26 +2,29 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "E": {
-      "tag": "c:eggs"
+    "C": {
+      "item": "minecraft:cake"
     },
-    "M": {
-      "tag": "c:drinks/milk"
+    "D": {
+      "item": "minecraft:diamond"
     },
-    "S": {
-      "item": "minecraft:sugar"
+    "G": {
+      "item": "minecraft:grass_block"
+    },
+    "P": {
+      "item": "minecraft:poppy"
+    },
+    "T": {
+      "item": "minecraft:dirt"
     },
     "W": {
-      "item": "minecraft:wheat"
-    },
-    "X": {
-      "item": "twilightforest:liveroot"
+      "item": "minecraft:water_bucket"
     }
   },
   "pattern": [
-    "MXM",
-    "SES",
-    "WXW"
+    " DP",
+    "GWG",
+    "TCT"
   ],
   "result": {
     "count": 1,

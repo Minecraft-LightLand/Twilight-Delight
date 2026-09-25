@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neapolitan"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ice_bomb": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:ice_bomb"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:neapolitan/glacier_milkshake"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ice_bomb"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:neapolitan/glacier_milkshake"
+    ]
+  }
+}

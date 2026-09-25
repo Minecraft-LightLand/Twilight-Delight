@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "twilightdelight:block/cyan_aurora_candle_cake"
+    },
+    "lit=true": {
+      "model": "twilightdelight:block/cyan_aurora_candle_cake_lit"
+    }
+  }
+}

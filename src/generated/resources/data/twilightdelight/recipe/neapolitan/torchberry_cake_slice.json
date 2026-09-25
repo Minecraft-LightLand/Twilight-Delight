@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightdelight:torchberry_cake"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 7,
+        "id": "twilightdelight:torchberry_cake_slice"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

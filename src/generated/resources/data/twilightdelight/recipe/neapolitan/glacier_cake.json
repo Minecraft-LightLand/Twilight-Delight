@@ -1,0 +1,36 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neapolitan"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "tag": "c:eggs"
+    },
+    "M": {
+      "tag": "c:drinks/milk"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    },
+    "X": {
+      "item": "twilightforest:ice_bomb"
+    }
+  },
+  "pattern": [
+    "MXM",
+    "SES",
+    "WXW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:glacier_cake"
+  }
+}

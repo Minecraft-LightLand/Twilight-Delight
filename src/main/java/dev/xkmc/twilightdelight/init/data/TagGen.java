@@ -1,16 +1,19 @@
 package dev.xkmc.twilightdelight.init.data;
 
+import com.teamabnormals.neapolitan.core.Neapolitan;
 import com.tterrag.registrate.providers.RegistrateItemTagsProvider;
 import com.tterrag.registrate.providers.RegistrateTagsProvider;
 import dev.xkmc.twilightdelight.compat.TGCompat;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.Tags;
 import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
@@ -49,7 +52,6 @@ public class TagGen {
 	public static void genBlockTag(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {
 		pvd.addTag(TagRef.HEAT_SOURCES).add(TFBlocks.FIERY_BLOCK.get());
 		var candle = pvd.addTag(BlockTags.CANDLE_CAKES);
-		/* TODO neapolitan
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			for (var e : NeapolitanCakes.values()) {
 				candle.addOptional(e.candle.getId());
@@ -57,8 +59,6 @@ public class TagGen {
 					candle.addOptional(c.getId());
 			}
 		}
-
-		 */
 	}
 
 }

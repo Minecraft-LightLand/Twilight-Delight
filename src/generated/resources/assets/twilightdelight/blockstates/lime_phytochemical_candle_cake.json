@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "twilightdelight:block/lime_phytochemical_candle_cake"
+    },
+    "lit=true": {
+      "model": "twilightdelight:block/lime_phytochemical_candle_cake_lit"
+    }
+  }
+}

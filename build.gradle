@@ -158,8 +158,11 @@ dependencies {
 
     compileOnly "curse.maven:thirst-was-taken-679270:6490040"
     implementation "curse.maven:just-enough-effect-descriptions-jeed-532286:5634312"
-    implementation "curse.maven:the-twilight-forest-227639:7398100"
+    implementation "curse.maven:the-twilight-forest-227639:7797302"
     implementation "curse.maven:farmers-delight-398521:8083481"
+    implementation "curse.maven:neapolitan-382016:7119475"
+    implementation "curse.maven:blueprint-382216:8048607"
+    runtimeOnly "curse.maven:gallery-1173553:8159692"
     runtimeOnly "curse.maven:geckolib-388172:7415496"
     runtimeOnly "curse.maven:ars-nouveau-401955:7417840"
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1"
@@ -178,7 +181,7 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
     mainFile.addGameVersion("1.21.1")
     mainFile.addModLoader("NeoForge")
     mainFile.addRequirement("farmers-delight", "the-twilight-forest")
-    mainFile.addOptional("neapolitan", "patchouli", "just-enough-effect-descriptions-jeed", "thirst-was-taken")
+    mainFile.addOptional("neapolitan", "blueprint", "patchouli", "just-enough-effect-descriptions-jeed", "thirst-was-taken")
     mainFile.releaseType = "release"
     disableVersionDetection()
 }
@@ -196,6 +199,7 @@ modrinth {
     dependencies {
         required.project "farmers-delight"
         optional.project "neapolitan"
+        optional.project "blueprint"
         optional.project "patchouli"
         optional.project "thirst-was-taken"
     }

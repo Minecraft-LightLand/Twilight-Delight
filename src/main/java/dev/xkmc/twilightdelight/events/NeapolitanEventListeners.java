@@ -1,12 +1,24 @@
 package dev.xkmc.twilightdelight.events;
 
+import dev.xkmc.twilightdelight.compat.neapolitan.TDCakeBlock;
+import dev.xkmc.twilightdelight.init.data.TagRef;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.Containers;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.CakeBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+
 public class NeapolitanEventListeners {
 
-	/* TODO neapolitan
 	@SubscribeEvent
 	public static void onItemUse(PlayerInteractEvent.RightClickBlock event) {
 		BlockState state = event.getLevel().getBlockState(event.getPos());
-		if (event.getItemStack().is(ModTags.KNIVES)) {
+		if (event.getItemStack().is(TagRef.KNIFE)) {
 			if (state.getBlock() instanceof TDCakeBlock cake) {
 				Level level = event.getLevel();
 				BlockPos pos = event.getPos();
@@ -23,7 +35,5 @@ public class NeapolitanEventListeners {
 			}
 		}
 	}
-
-	 */
 
 }

@@ -10,6 +10,7 @@
 		"CookingPotMenuMixin",
 		"CuttingBoardBlockEntityMixin",
 		"EntityMixin",
+		"ItemAccessor",
 		"ItemEntityMixin",
 		"RichSoilBlockMixin",
 		"SkilletBlockEntityMixin"

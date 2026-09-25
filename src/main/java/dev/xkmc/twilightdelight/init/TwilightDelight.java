@@ -1,22 +1,27 @@
 package dev.xkmc.twilightdelight.init;
 
 import com.mojang.logging.LogUtils;
+import com.teamabnormals.neapolitan.core.Neapolitan;
+import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import com.tterrag.registrate.providers.ProviderType;
 import dev.ghen.thirst.Thirst;
 import dev.xkmc.l2core.init.L2TagGen;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
 import dev.xkmc.l2core.init.reg.simple.Reg;
-import dev.xkmc.twilightdelight.compat.ThirstCompat;
 import dev.xkmc.twilightdelight.compat.ItemAbsentCondition;
+import dev.xkmc.twilightdelight.compat.ThirstCompat;
+import dev.xkmc.twilightdelight.events.NeapolitanEventListeners;
 import dev.xkmc.twilightdelight.init.data.*;
+import dev.xkmc.twilightdelight.init.loot.NagaMeatModifier;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
+import dev.xkmc.twilightdelight.init.registrate.delight.DelightCake;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightPie;
-import dev.xkmc.twilightdelight.init.registrate.delight.DelightCake;
-import dev.xkmc.twilightdelight.init.loot.NagaMeatModifier;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import dev.xkmc.twilightdelight.util.StoveAddBlockUtil;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
@@ -37,6 +42,7 @@ import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.data.loading.DatagenModLoader;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
@@ -73,12 +79,11 @@ public class TwilightDelight {
 		DelightPie.register();
 		DelightCake.register();
 		NagaMeatModifier.register();
-		/* TODO neapolitan
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			NeapolitanFood.register();
 			NeapolitanCakes.register();
-			MinecraftForge.EVENT_BUS.register(NeapolitanEventListeners.class);
-		}*/
+			NeoForge.EVENT_BUS.register(NeapolitanEventListeners.class);
+		}
 		TDEffects.register();
 		TDRecipes.register();
 		TDModConfig.init();
@@ -91,15 +96,6 @@ public class TwilightDelight {
 			Set<Block> set = new LinkedHashSet<>(ModBlockEntityTypes.CABINET.get().validBlocks);
 			for (var e : TDBlocks.WoodTypes.values()) set.add(TDBlocks.CABINETS[e.ordinal()].get());
 			ModBlockEntityTypes.CABINET.get().validBlocks = set;
-
-			/* TODO neapolitan
-			if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
-				((ItemAccessor) NeapolitanItems.ADZUKI_ICE_CREAM.get()).setCraftingRemainingItem(Items.BOWL);
-				((ItemAccessor) NeapolitanItems.BANANA_ICE_CREAM.get()).setCraftingRemainingItem(Items.BOWL);
-				((ItemAccessor) NeapolitanItems.MINT_ICE_CREAM.get()).setCraftingRemainingItem(Items.BOWL);
-			}
-			 */
-
 			if (ModList.get().isLoaded(Thirst.ID)) {
 				ThirstCompat.init();
 			}
@@ -113,6 +109,17 @@ public class TwilightDelight {
 				.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 6000), 1f).build()));
 		if (DatagenModLoader.isRunningDataGen() || Configuration.ENABLE_STACKABLE_SOUP_ITEMS.get()) {
 			event.modify(TFItems.MEEF_STROGANOFF, b -> b.set(DataComponents.MAX_STACK_SIZE, 16));
+
+			if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
+				event.modify(NeapolitanItems.ADZUKI_ICE_CREAM.get(), b -> b.set(DataComponents.MAX_STACK_SIZE, 16));
+				event.modify(NeapolitanItems.BANANA_ICE_CREAM.get(), b -> b.set(DataComponents.MAX_STACK_SIZE, 16));
+				event.modify(NeapolitanItems.MINT_ICE_CREAM.get(), b -> b.set(DataComponents.MAX_STACK_SIZE, 16));
+				event.modify(NeapolitanItems.NEAPOLITAN_ICE_CREAM.get(), b -> b.set(DataComponents.MAX_STACK_SIZE, 16));
+				event.modify(NeapolitanItems.CHOCOLATE_ICE_CREAM.get(), b -> b.set(DataComponents.MAX_STACK_SIZE, 16));
+				event.modify(NeapolitanItems.STRAWBERRY_ICE_CREAM.get(), b -> b.set(DataComponents.MAX_STACK_SIZE, 16));
+				event.modify(NeapolitanItems.VANILLA_ICE_CREAM.get(), b -> b.set(DataComponents.MAX_STACK_SIZE, 16));
+			}
+
 		}
 
 	}

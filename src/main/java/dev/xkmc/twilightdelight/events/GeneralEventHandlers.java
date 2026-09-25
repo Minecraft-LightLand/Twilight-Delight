@@ -100,6 +100,9 @@ public class GeneralEventHandlers {
 			if ((item.is(TDItems.FIERY_KNIFE.get()) || item.is(TDItems.TEARDROP_SWORD.get())) && !event.getEntity().fireImmune()) {
 				event.getEntity().setRemainingFireTicks(20);
 			}
+			if (item.is(TDItems.ICE_KNIFE.get())) {
+				event.getEntity().clearFire();
+			}
 		}
 
 		LivingEntity target = event.getEntity();

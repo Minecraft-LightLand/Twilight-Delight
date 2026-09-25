@@ -1,18 +1,22 @@
 package dev.xkmc.twilightdelight.content.item.food;
 
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import vectorwing.farmersdelight.common.Configuration;
 
 import java.util.List;
 
@@ -28,10 +32,19 @@ public class ReusableDrinkItem extends Item {
 	private final List<EffectSupplier> effects;
 
 	public ReusableDrinkItem(Properties props, int nutrition, float saturation, List<EffectSupplier> effects) {
-		super(props.stacksTo(1).durability(4));
+		super(withFood(props, nutrition, saturation, effects).stacksTo(1).durability(4));
 		this.nutrition = nutrition;
 		this.saturation = saturation;
 		this.effects = effects;
+	}
+
+	private static Properties withFood(Properties props, int nutrition, float saturation, List<EffectSupplier> effects) {
+		FoodProperties.Builder builder = new FoodProperties.Builder()
+				.nutrition(nutrition).saturationModifier(saturation);
+		for (var e : effects) {
+			builder = builder.effect(e::get, e.chance());
+		}
+		return props.food(builder.build());
 	}
 
 	@Override
@@ -68,6 +81,12 @@ public class ReusableDrinkItem extends Item {
 			}
 		}
 		return stack;
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, TooltipContext level, List<Component> list, TooltipFlag flag) {
+		if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get())
+			TDFoodItem.getFoodEffects(stack, list);
 	}
 
 }

@@ -1,0 +1,120 @@
+{
+ "format_version": "26.3",
+ "credit": "Made with Blockbench",
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "particle": "twilightdelight:item/wrought_iron_sword_large",
+  "layer0": "twilightdelight:item/wrought_iron_sword_large"
+ },
+ "gui_light": "front",
+ "display": {
+  "thirdperson_righthand": {
+   "rotation": [
+    0,
+    -90,
+    55
+   ],
+   "translation": [
+    0,
+    12,
+    -1.5
+   ],
+   "scale": [
+    1.7,
+    1.7,
+    0.85
+   ]
+  },
+  "thirdperson_lefthand": {
+   "rotation": [
+    0,
+    90,
+    -55
+   ],
+   "translation": [
+    0,
+    12,
+    -1.5
+   ],
+   "scale": [
+    1.7,
+    1.7,
+    0.85
+   ]
+  },
+  "firstperson_righthand": {
+   "rotation": [
+    0,
+    -90,
+    25
+   ],
+   "translation": [
+    1.13,
+    11.2,
+    3.63
+   ],
+   "scale": [
+    1.36,
+    1.36,
+    0.68
+   ]
+  },
+  "firstperson_lefthand": {
+   "rotation": [
+    0,
+    90,
+    -25
+   ],
+   "translation": [
+    1.13,
+    11.2,
+    3.63
+   ],
+   "scale": [
+    1.36,
+    1.36,
+    0.68
+   ]
+  },
+  "ground": {
+   "scale": [
+    2,
+    2,
+    1
+   ]
+  },
+  "gui": {
+   "translation": [
+    -6,
+    -6,
+    0
+   ],
+   "scale": [
+    2,
+    2,
+    1
+   ]
+  },
+  "head": {
+   "scale": [
+    2,
+    2,
+    1
+   ]
+  },
+  "fixed": {
+   "scale": [
+    2,
+    2,
+    1
+   ]
+  },
+  "on_shelf": {
+   "scale": [
+    2,
+    2,
+    1
+   ]
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neapolitan"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:neapolitan/torchberry_milkshake_alt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_torchberries": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:torchberries"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_torchberries"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:neapolitan/torchberry_milkshake_alt"
+    ]
+  }
+}

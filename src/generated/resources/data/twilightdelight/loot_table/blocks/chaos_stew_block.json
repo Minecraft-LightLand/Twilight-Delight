@@ -25,25 +25,25 @@
     },
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        },
-        {
-          "condition": "minecraft:inverted",
-          "term": {
-            "block": "twilightdelight:chaos_stew_block",
-            "condition": "minecraft:block_state_property",
-            "properties": {
-              "servings": "4"
-            }
-          }
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:bowl"
+          "conditions": [
+            {
+              "condition": "minecraft:survives_explosion"
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "block": "twilightdelight:chaos_stew_block",
+                "condition": "minecraft:block_state_property",
+                "properties": {
+                  "servings": "4"
+                }
+              }
+            }
+          ],
+          "name": "twilightforest:lich_trophy"
         }
       ],
       "rolls": 1.0

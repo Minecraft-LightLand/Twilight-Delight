@@ -1,0 +1,10 @@
+{
+  "type": "twilightdelight:frozen",
+  "ingredient": {
+    "item": "farmersdelight:diamond_knife"
+  },
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:ice_knife"
+  }
+}

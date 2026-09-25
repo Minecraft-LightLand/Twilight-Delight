@@ -2,6 +2,9 @@ package dev.xkmc.twilightdelight.init.data;
 
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
+import com.tterrag.registrate.util.entry.ItemEntry;
+import com.teamabnormals.neapolitan.core.Neapolitan;
+import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import dev.xkmc.l2core.serial.recipe.ConditionalRecipeWrapper;
 import dev.xkmc.l2core.serial.recipe.DataRecipeWrapper;
 import dev.xkmc.twilightdelight.compat.TGCompat;
@@ -12,6 +15,8 @@ import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightPie;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightCake;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
+import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -28,6 +33,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -83,6 +89,12 @@ public class RecipeGen {
 				.define('A', TFItems.KNIGHTMETAL_INGOT.get())
 				.define('B', Tags.Items.RODS_WOODEN)
 				.save(TGCompat.noTG(pvd, TGCompat.loc("knightmetal_knife")));
+
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.WROUGHT_IRON_SWORD.get(), 1)::unlockedBy, Items.IRON_INGOT)
+				.pattern("A").pattern("A").pattern("B")
+				.define('A', TFItems.WROUGHT_IRON_BAR)
+				.define('B', Tags.Items.RODS_WOODEN)
+				.save(pvd);
 
 			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDBlocks.MAZE_STOVE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
 					.pattern("KKK").pattern("MTM").pattern("MCM")
@@ -151,7 +163,7 @@ public class RecipeGen {
 		delightPie(pvd, DelightPie.AURORA_PIE, TFBlocks.AURORA_BLOCK.get().asItem());
 		delightPie(pvd, DelightPie.TORCHBERRY_PIE, TFItems.TORCHBERRIES.get());
 
-		delightCake(pvd, DelightCake.TWILIGHT, TFItems.LIVEROOT.get());
+		delightCake(pvd, DelightCake.TWILIGHT);
 
 		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.NAGA_SKEWERS.item.get(), 2)::unlockedBy, DelightFood.COOKED_NAGA_PIECE.item.get())
 				.requires(TagGen.NAGA_COOKED)
@@ -705,6 +717,9 @@ public class RecipeGen {
 
 			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(Items.BOW), TFItems.ICE_BOW.get())::unlockedBy,
 					Items.BOW).save(pvd, ResourceLocation.parse(getID(TFItems.ICE_BOW.getId())));
+
+			unlock(pvd, new SimpleFrozenRecipeBuilder(Ingredient.of(ModItems.DIAMOND_KNIFE.get()), TDItems.ICE_KNIFE.get())::unlockedBy,
+					ModItems.DIAMOND_KNIFE.get()).save(pvd, ResourceLocation.parse(getID(TDItems.ICE_KNIFE.getId())));
 		}
 
 		// log stripping
@@ -729,7 +744,6 @@ public class RecipeGen {
 			stripLog(pvd, TFBlocks.TRANSFORMATION_WOOD, TFBlocks.STRIPPED_TRANSFORMATION_WOOD);
 		}
 
-		/* TODO neapolitan
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			path = "neapolitan/";
 			neapolitan(pvd, NeapolitanFood.AURORA_ICE_CREAM.item,
@@ -769,8 +783,6 @@ public class RecipeGen {
 
 		}
 
-		 */
-
 	}
 
 	private static void delightPie(RegistrateRecipeProvider pvd, DelightPie pie, Item ingredient) {
@@ -794,12 +806,12 @@ public class RecipeGen {
 				.build(pvd, getID(pie.slice.getId()));
 	}
 
-	private static void delightCake(RegistrateRecipeProvider pvd, DelightCake cake, Item ingredient) {
-		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, cake.block.get().asItem(), 1)::unlockedBy, ingredient)
-				.pattern("MXM").pattern("SES").pattern("WXW")
-				.define('M', TagRef.FOODS_MILK).define('S', Items.SUGAR)
-				.define('W', Items.WHEAT).define('E', Tags.Items.EGGS)
-				.define('X', ingredient)
+	private static void delightCake(RegistrateRecipeProvider pvd, DelightCake cake) {
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, cake.block.get().asItem(), 1)::unlockedBy, Items.DIAMOND)
+				.pattern(" DP").pattern("GWG").pattern("TCT")
+				.define('D', Items.DIAMOND).define('P', Items.POPPY)
+				.define('G', Items.GRASS_BLOCK).define('W', Items.WATER_BUCKET)
+				.define('T', Items.DIRT).define('C', Items.CAKE)
 				.save(pvd);
 
 		CuttingBoardRecipeBuilder.cuttingRecipe(
@@ -813,9 +825,8 @@ public class RecipeGen {
 				.save(pvd, getID(cake.block.getId()) + "_assemble");
 	}
 
-	/* TODO neapolitan
 	private static void neapolitan(RegistrateRecipeProvider pvd, ItemEntry<?> ice_cream, ItemEntry<?> milkshake, NeapolitanCakes cake, Item ingredient) {
-		TagKey<Item> milk = ItemTags.create(new ResourceLocation("forge", "milk"));
+		var milk = TagRef.FOODS_MILK;
 		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, ice_cream.get(), 1)::unlockedBy, ingredient)
 				.requires(Items.BOWL).requires(milk).requires(NeapolitanItems.ICE_CUBES.get()).requires(Items.SUGAR)
 				.requires(ingredient)
@@ -834,7 +845,7 @@ public class RecipeGen {
 		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, cake.block.get().asItem(), 1)::unlockedBy, ingredient)
 				.pattern("MXM").pattern("SES").pattern("WXW")
 				.define('M', milk).define('S', Items.SUGAR)
-				.define('W', Items.WHEAT).define('E', Items.EGG)
+				.define('W', Items.WHEAT).define('E', Tags.Items.EGGS)
 				.define('X', ingredient)
 				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cake.block.getId()));
 
@@ -848,7 +859,6 @@ public class RecipeGen {
 				.requires(cake.item.get(), 7)
 				.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(cake.block.getId()) + "_assemble");
 	}
-	*/
 
 	private static String getID(ResourceLocation item) {
 		return TwilightDelight.MODID + ":" + path + item.getPath();
