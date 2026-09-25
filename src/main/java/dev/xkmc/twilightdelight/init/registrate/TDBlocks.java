@@ -283,7 +283,7 @@ public class TDBlocks {
 							.renderType("cutout")))
 					.tag(BlockTags.SAPLINGS)
 					.item().model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("block/" + ctx.getName())))
-					.tag(ItemTags.SAPLINGS).removeTab(TAB.key()).build()//TODO
+					.tag(ItemTags.SAPLINGS).build()//TODO
 					.register();
 
 			IRON_LOGS = TwilightDelight.REGISTRATE.block(
@@ -292,7 +292,7 @@ public class TDBlocks {
 											.strength(10, 10).requiresCorrectToolForDrops()))
 					.blockstate((ctx, pvd) -> pvd.logBlock(ctx.get()))
 					.tag(BlockTags.LOGS, BlockTags.LOGS_THAT_BURN, BlockTags.MINEABLE_WITH_AXE, BlockTags.NEEDS_DIAMOND_TOOL)
-					.item().tag(ItemTags.LOGS, ItemTags.LOGS_THAT_BURN).removeTab(TAB.key()).build()//TODO
+					.item().tag(ItemTags.LOGS, ItemTags.LOGS_THAT_BURN).build()//TODO
 					.loot((pvd, block) -> {
 						var helper = new LootHelper(pvd);
 						pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
@@ -316,7 +316,7 @@ public class TDBlocks {
 				.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(),
 						new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName()))))
 					.tag(BlockTags.LEAVES, BlockTags.MINEABLE_WITH_HOE, BlockTags.NEEDS_DIAMOND_TOOL)
-					.item().tag(ItemTags.LEAVES).removeTab(TAB.key()).build()
+					.item().tag(ItemTags.LEAVES).build()
 					.loot((pvd, block) -> {
 						var helper = new LootHelper(pvd);
 						pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool()

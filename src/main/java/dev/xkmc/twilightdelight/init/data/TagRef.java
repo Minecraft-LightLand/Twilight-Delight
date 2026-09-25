@@ -35,6 +35,7 @@ public class TagRef {
 
 	public static final TagKey<Item> SWEETS = modItemTag("sweets");
 	public static final TagKey<Item> SNACKS = modItemTag("snacks");
+	public static final TagKey<Item> MOD_KNIFE = modItemTag("tools/knives");
 
 	public static final TagKey<Item> FRUITS = dietTag("fruits");
 	public static final TagKey<Item> GRAINS = dietTag("grains");
