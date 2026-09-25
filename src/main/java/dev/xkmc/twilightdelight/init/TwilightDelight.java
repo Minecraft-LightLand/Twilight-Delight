@@ -15,6 +15,8 @@ import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightPie;
+import dev.xkmc.twilightdelight.init.registrate.delight.DelightCake;
+import dev.xkmc.twilightdelight.init.loot.NagaMeatModifier;
 import dev.xkmc.twilightdelight.util.StoveAddBlockUtil;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
@@ -69,6 +71,8 @@ public class TwilightDelight {
 		TDItems.register();
 		DelightFood.register();
 		DelightPie.register();
+		DelightCake.register();
+		NagaMeatModifier.register();
 		/* TODO neapolitan
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			NeapolitanFood.register();
@@ -129,7 +133,8 @@ public class TwilightDelight {
 		REGISTRATE.addDataGenerator(ProviderType.LOOT, ExtraLootGen::genLoot);
 		REGISTRATE.addDataGenerator(L2TagGen.EFF_TAGS, pvd -> pvd.addTag(L2TagGen.TRACKED_EFFECTS).add(
 				TDEffects.FIRE_RANGE.get(), TDEffects.FROZEN_RANGE.get(),
-				TDEffects.POISON_RANGE.get(), TDEffects.AURORA_GLOWING.get()
+				TDEffects.POISON_RANGE.get(), TDEffects.AURORA_GLOWING.get(),
+				TDEffects.TWILIGHT_AURA.get()
 		));
 		REGISTRATE.addDataGenerator(ProviderType.DATA_MAP, pvd -> pvd.builder(NeoForgeDataMaps.COMPOSTABLES)
 				.add(TDBlocks.MUSHGLOOM_COLONY.getSibling(Registries.ITEM), new Compostable(1), false));

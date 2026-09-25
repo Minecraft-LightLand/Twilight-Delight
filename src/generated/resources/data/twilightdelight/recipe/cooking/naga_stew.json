@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "twilightdelight:naga_raw"
+    },
+    {
+      "tag": "twilightdelight:naga_raw"
+    },
+    {
+      "tag": "c:foods/onion"
+    },
+    {
+      "tag": "c:foods/leafy_green"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:naga_stew"
+  }
+}

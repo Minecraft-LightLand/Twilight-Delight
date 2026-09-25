@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "twilightdelight:item/bowl_of_chaos_stew"
+  }
+}

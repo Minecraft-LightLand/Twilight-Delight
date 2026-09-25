@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightdelight:cooked_naga_meat"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "twilightdelight:cooked_naga_piece"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

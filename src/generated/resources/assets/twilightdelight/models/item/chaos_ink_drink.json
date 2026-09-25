@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "twilightdelight:item/chaos_ink_drink_stage1",
+      "predicate": {
+        "minecraft:damage": 0.25
+      }
+    },
+    {
+      "model": "twilightdelight:item/chaos_ink_drink_stage2",
+      "predicate": {
+        "minecraft:damage": 0.5
+      }
+    },
+    {
+      "model": "twilightdelight:item/chaos_ink_drink_stage3",
+      "predicate": {
+        "minecraft:damage": 0.75
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "twilightdelight:item/chaos_ink_drink"
+  }
+}

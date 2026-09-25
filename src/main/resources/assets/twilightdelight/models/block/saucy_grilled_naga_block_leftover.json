@@ -1,0 +1,48 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"0": "twilightdelight:block/large_tray_bottom",
+		"2": "twilightdelight:block/saucy_grilled_naga_tray_top",
+		"8": "twilightdelight:block/meef_wellington_block_tray_light",
+		"particle": "twilightdelight:block/large_tray_bottom"
+	},
+	"elements": [
+		{
+			"name": "plate",
+			"from": [0, 0, 0],
+			"to": [16, 2, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 8]},
+			"faces": {
+				"north": {"uv": [0, 12, 16, 14], "texture": "#0"},
+				"east": {"uv": [0, 12, 16, 14], "texture": "#0"},
+				"south": {"uv": [0, 12, 16, 14], "texture": "#0"},
+				"west": {"uv": [0, 12, 16, 14], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#2"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"from": [-0.01, 1.99, -0.01],
+			"to": [16.01, 2.01, 16.01],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2, 8]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#8", "neoforge_data": { "color": "FFFFFFFF", "block_light": 15, "sky_light": 15 }}
+			}
+		}
+	],
+	"groups": [
+		0,
+		{
+			"name": "light3",
+			"origin": [13, 12, 3],
+			"scope": 0,
+			"color": 0,
+			"shade": false,
+			"children": [1]
+		}
+	]
+}

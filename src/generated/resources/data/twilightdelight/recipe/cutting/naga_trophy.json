@@ -11,6 +11,12 @@
         "count": 9,
         "id": "twilightforest:naga_scale"
       }
+    },
+    {
+      "item": {
+        "count": 6,
+        "id": "twilightdelight:raw_naga_meat"
+      }
     }
   ],
   "tool": {

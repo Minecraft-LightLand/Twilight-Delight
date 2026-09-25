@@ -13,6 +13,19 @@
       }
     },
     {
+      "item": {
+        "count": 3,
+        "id": "twilightdelight:witchcraft_bone"
+      }
+    },
+    {
+      "chance": 0.5,
+      "item": {
+        "count": 1,
+        "id": "twilightforest:exanimate_essence"
+      }
+    },
+    {
       "chance": 0.2,
       "item": {
         "count": 1,

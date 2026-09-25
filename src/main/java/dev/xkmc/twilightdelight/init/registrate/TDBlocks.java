@@ -62,6 +62,8 @@ public class TDBlocks {
 	public static final BlockEntry<FierySnakesBlock> FIERY_SNAKES;
 	public static final BlockEntry<LilyChickenBlock> LILY_CHICKEN;
 	public static final BlockEntry<MeefWellingtonBlock> MEEF_WELLINGTON;
+	public static final BlockEntry<SaucyGrilledNagaBlock> SAUCY_GRILLED_NAGA;
+	public static final BlockEntry<ChaosStewBlock> CHAOS_STEW;
 
 	public static final BlockEntry<Block> TORCHBERRIES_CRATE;
 	public static final BlockEntry<MushroomColonyBlock> MUSHGLOOM_COLONY;
@@ -171,23 +173,55 @@ public class TDBlocks {
 									.when(ExplosionCondition.survivesExplosion())
 									.when(InvertedLootItemCondition.invert(getServe(block))))
 					)).tag(TagRef.FEASTS).register();
-			MEEF_WELLINGTON = TwilightDelight.REGISTRATE.block(
-							"meef_wellington_block", p -> new MeefWellingtonBlock())
-					.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
-						int serve = state.getValue(FeastBlock.SERVINGS);
-						String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
-						return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
-					}))
-					.item().properties(p->p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
-					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
-							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
-									.when(ExplosionCondition.survivesExplosion())
-									.when(getServe(block))))
-							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BOWL))
-									.when(ExplosionCondition.survivesExplosion())
-									.when(InvertedLootItemCondition.invert(getServe(block))))
-					)).tag(TagRef.FEASTS).register();
-		}
+		MEEF_WELLINGTON = TwilightDelight.REGISTRATE.block(
+						"meef_wellington_block", p -> new MeefWellingtonBlock())
+				.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
+					int serve = state.getValue(FeastBlock.SERVINGS);
+					String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
+					return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
+				}))
+				.item().properties(p -> p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
+				.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
+						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
+								.when(ExplosionCondition.survivesExplosion())
+								.when(getServe(block))))
+						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BOWL))
+								.when(ExplosionCondition.survivesExplosion())
+								.when(InvertedLootItemCondition.invert(getServe(block))))
+				)).tag(TagRef.FEASTS).register();
+		SAUCY_GRILLED_NAGA = TwilightDelight.REGISTRATE.block(
+						"saucy_grilled_naga_block", p -> new SaucyGrilledNagaBlock())
+				.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
+					int serve = state.getValue(FeastBlock.SERVINGS);
+					String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
+					return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
+				}))
+				.item().properties(p -> p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
+				.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
+						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
+								.when(ExplosionCondition.survivesExplosion())
+								.when(getServe(block))))
+						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BOWL))
+								.when(ExplosionCondition.survivesExplosion())
+								.when(InvertedLootItemCondition.invert(getServe(block))))
+				)).tag(TagRef.FEASTS).register();
+		CHAOS_STEW = TwilightDelight.REGISTRATE.block(
+						"chaos_stew_block", p -> new ChaosStewBlock())
+				.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
+					int serve = state.getValue(FeastBlock.SERVINGS);
+					String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
+					return new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + ctx.getName() + suffix));
+				}))
+				.item().properties(p -> p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
+				.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
+						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
+								.when(ExplosionCondition.survivesExplosion())
+								.when(getServe(block))))
+						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BOWL))
+								.when(ExplosionCondition.survivesExplosion())
+								.when(InvertedLootItemCondition.invert(getServe(block))))
+				)).tag(TagRef.FEASTS).register();
+	}
 		// misc
 		{
 			TORCHBERRIES_CRATE = TwilightDelight.REGISTRATE.block(

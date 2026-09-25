@@ -1,0 +1,24 @@
+{
+  "type": "twilightdelight:naga_meat",
+  "conditions": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "twilightforest:naga"
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "flags": {
+          "is_on_fire": true
+        }
+      }
+    }
+  ],
+  "item": "twilightdelight:cooked_naga_meat",
+  "max": 10,
+  "min": 5
+}

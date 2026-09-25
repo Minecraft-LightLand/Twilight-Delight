@@ -1,0 +1,57 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"4": "twilightdelight:block/twilight_cake_top_portal",
+		"8": "twilightdelight:block/twilight_cake_top",
+		"9": "twilightdelight:block/twilight_cake_bottom",
+		"11": "twilightdelight:block/twilight_cake_side",
+		"particle": "twilightdelight:block/twilight_cake_top"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 1],
+			"to": [15, 8, 15],
+			"faces": {
+				"north": {"uv": [1, 8, 15, 16], "texture": "#11"},
+				"east": {"uv": [1, 8, 15, 16], "texture": "#11"},
+				"south": {"uv": [1, 8, 15, 16], "texture": "#11"},
+				"west": {"uv": [1, 8, 15, 16], "texture": "#11"},
+				"up": {"uv": [1, 1, 15, 15], "texture": "#8"},
+				"down": {"uv": [1, 1, 15, 15], "texture": "#9", "cullface": "down"}
+			}
+		},
+		{
+			"from": [13, 8, 13],
+			"to": [3, 7, 3],
+			"rotation": {"angle": 0, "axis": "z", "origin": [8, 7.5, 8]},
+			"faces": {
+				"north": {"uv": [3, 2, 13, 3], "rotation": 180, "texture": "#8"},
+				"east": {"uv": [3, 2, 13, 3], "rotation": 180, "texture": "#8"},
+				"south": {"uv": [3, 2, 13, 3], "rotation": 180, "texture": "#8"},
+				"west": {"uv": [3, 2, 13, 3], "rotation": 180, "texture": "#8"},
+				"up": {"uv": [3, 3, 13, 13], "rotation": 180, "texture": "#4"}
+			}
+		},
+		{
+			"from": [1, 8, 14],
+			"to": [6, 12, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3.5, 11, 14]},
+			"faces": {
+				"north": {"uv": [11, 4, 16, 8], "texture": "#11"},
+				"south": {"uv": [16, 4, 11, 8], "texture": "#11"}
+			}
+		},
+		{
+			"from": [1.5, 9.92388, 13.61732],
+			"to": [5.5, 13.92388, 13.61732],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [3.5, 11, 14]},
+			"faces": {
+				"north": {"uv": [8, 0, 12, 4], "texture": "#11"},
+				"south": {"uv": [16, 0, 12, 4], "texture": "#11"}
+			}
+		}
+	]
+}

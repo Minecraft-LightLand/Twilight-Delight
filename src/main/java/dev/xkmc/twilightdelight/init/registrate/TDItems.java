@@ -4,17 +4,21 @@ import com.tterrag.registrate.builders.ItemBuilder;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
+import dev.xkmc.twilightdelight.content.item.food.ReusableDrinkItem;
 import dev.xkmc.twilightdelight.content.item.tool.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
 import dev.xkmc.twilightdelight.init.registrate.delight.IFoodType;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.client.model.generators.loaders.ItemLayerModelBuilder;
 import org.apache.commons.lang3.StringUtils;
+import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,6 +35,38 @@ public class TDItems {
 	public static final ItemEntry<SteeleafKnifeItem> STEELEAF_KNIFE;
 	public static final ItemEntry<KnightmetalKnifeItem> KNIGHTMETAL_KNIFE;
 	public static final ItemEntry<TeardropSwordItem> TEARDROP_SWORD;
+
+	public static final ItemEntry<Item> WITCHCRAFT_BONE;
+	public static final ItemEntry<Item> WITCHCRAFT_BONE_MEAL;
+	public static final ItemEntry<ReusableDrinkItem> CHAOS_INK_DRINK;
+
+	// WITCHCRAFT
+	static {
+		WITCHCRAFT_BONE = TwilightDelight.REGISTRATE.item("witchcraft_bone", Item::new)
+				.defaultModel().lang("Witchcraft Bone").register();
+		WITCHCRAFT_BONE_MEAL = TwilightDelight.REGISTRATE.item("witchcraft_bone_meal", Item::new)
+				.defaultModel().lang("Witchcraft Bone Meal").register();
+		CHAOS_INK_DRINK = TwilightDelight.REGISTRATE.item("chaos_ink_drink",
+						p -> new ReusableDrinkItem(p, 2, 0.3f, List.of(
+								new EffectSupplier(ModEffects.NOURISHMENT, 600, 0, 1))))
+				.model((ctx, pvd) -> {
+					for (int i = 1; i <= 3; i++) {
+						pvd.getBuilder(ctx.getName() + "_stage" + i)
+								.parent(new ModelFile.UncheckedModelFile(ResourceLocation.parse("minecraft:item/generated")))
+								.texture("layer0", pvd.modLoc("item/" + ctx.getName() + "_stage" + i));
+					}
+					var base = pvd.getBuilder(ctx.getName())
+							.parent(new ModelFile.UncheckedModelFile(ResourceLocation.parse("minecraft:item/generated")))
+							.texture("layer0", pvd.modLoc("item/" + ctx.getName()));
+					float[] thresholds = {0.25f, 0.5f, 0.75f};
+					for (int i = 0; i < 3; i++) {
+						base.override().predicate(ResourceLocation.withDefaultNamespace("damage"), thresholds[i])
+								.model(new ModelFile.UncheckedModelFile(
+										pvd.modLoc("item/" + ctx.getName() + "_stage" + (i + 1)))).end();
+					}
+				})
+				.lang("Chaos Ink Drink").register();
+	}
 
 	// KNIVES
 	static {
