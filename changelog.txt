@@ -1,3 +1,13 @@
+3.2.3
+- Add naga and lich related food (12 in total)
+- Add twilight cake, and twilight aura effect
+- Add ironwood tree sapling
+- Add ice knife and wrought iron sword
+- Increase ghast brain drop rate from 10% to 30%
+- Fix knife not triggering scavenging drop
+- Restore Neapolitan compat
+- When Twilit Gourmet is present, hide duplicating items and blocks
+
 3.2.2
 - Fix cooking pot heating tray texture
 

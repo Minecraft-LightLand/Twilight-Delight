@@ -16,6 +16,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import twilightforest.init.TFItems;
 import vectorwing.farmersdelight.common.Configuration;
 
 import java.util.List;
@@ -88,7 +89,7 @@ public class ReusableDrinkItem extends Item {
 		}
 		int sips = getSips(stack) - 1;
 		if (sips <= 0) {
-			return new ItemStack(Items.GLASS_BOTTLE);
+			return new ItemStack(TFItems.GREATER_FLASK.get());
 		}
 		setSips(stack, sips);
 		return stack;
