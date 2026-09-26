@@ -1,0 +1,24 @@
+{
+  "type": "twilightdelight:scepter_duplicate",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "twilightdelight:witchcraft_bone"
+    },
+    "M": {
+      "item": "minecraft:golden_apple"
+    },
+    "S": {
+      "item": "twilightforest:fortification_scepter"
+    }
+  },
+  "pattern": [
+    " M ",
+    "MSM",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightforest:fortification_scepter"
+  }
+}

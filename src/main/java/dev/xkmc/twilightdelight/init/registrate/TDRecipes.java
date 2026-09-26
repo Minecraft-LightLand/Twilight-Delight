@@ -4,6 +4,7 @@ import dev.xkmc.l2core.init.reg.simple.SR;
 import dev.xkmc.l2core.init.reg.simple.Val;
 import dev.xkmc.l2core.serial.recipe.BaseRecipe;
 import dev.xkmc.twilightdelight.content.recipe.BaseEffectRecipe;
+import dev.xkmc.twilightdelight.content.recipe.ScepterDuplicateRecipe;
 import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipe;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -19,6 +20,9 @@ public class TDRecipes {
 
 	public static final Val<BaseRecipe.RecType<SimpleFrozenRecipe, BaseEffectRecipe<?>, SingleRecipeInput>> RS_FROZEN =
 			RS.reg("frozen", () -> new BaseRecipe.RecType<>(SimpleFrozenRecipe.class, WORLD_RECIPE));
+
+	public static final Val<ScepterDuplicateRecipe.Serializer> RS_SCEPTER_DUPLICATE =
+			RS.reg("scepter_duplicate", ScepterDuplicateRecipe.Serializer::new);
 
 	public static void register() {
 	}

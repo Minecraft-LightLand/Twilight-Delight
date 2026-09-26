@@ -1,0 +1,15 @@
+{
+  "base": {
+    "parent": "twilightdelight:item/wrought_iron_sword_base"
+  },
+  "gui_light": "front",
+  "loader": "neoforge:separate_transforms",
+  "perspectives": {
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "twilightdelight:item/wrought_iron_sword"
+      }
+    }
+  }
+}

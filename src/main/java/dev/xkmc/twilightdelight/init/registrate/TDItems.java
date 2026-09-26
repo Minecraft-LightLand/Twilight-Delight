@@ -15,8 +15,12 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.client.renderer.block.model.BlockModel;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.client.model.generators.loaders.ItemLayerModelBuilder;
+import net.neoforged.neoforge.client.model.generators.loaders.SeparateTransformsModelBuilder;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
@@ -94,7 +98,16 @@ public class TDItems {
 				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))
 				.tag(ItemTags.SWORDS).register();
 		WROUGHT_IRON_SWORD = TwilightDelight.REGISTRATE.item("wrought_iron_sword", WroughtIronSwordItem::new)
-				.model((ctx, pvd) -> {})
+				.model((ctx, pvd) -> {
+					var base = new ItemModelBuilder(null, pvd.existingFileHelper)
+							.parent(pvd.getExistingFile(pvd.modLoc("item/wrought_iron_sword_base")));
+					var gui = new ItemModelBuilder(null, pvd.existingFileHelper)
+							.parent(pvd.getExistingFile(pvd.mcLoc("item/generated")))
+							.texture("layer0", pvd.modLoc("item/wrought_iron_sword"));
+					pvd.getBuilder(ctx.getName()).guiLight(BlockModel.GuiLight.FRONT)
+							.customLoader(SeparateTransformsModelBuilder::begin)
+							.base(base).perspective(ItemDisplayContext.GUI, gui);
+				})
 				.tag(ItemTags.SWORDS).register();
 	}
 

@@ -19,7 +19,7 @@
       }
     },
     {
-      "chance": 0.1,
+      "chance": 0.3,
       "item": {
         "count": 1,
         "id": "twilightdelight:experiment_110"

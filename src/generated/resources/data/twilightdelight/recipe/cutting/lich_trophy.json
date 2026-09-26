@@ -24,27 +24,6 @@
         "count": 1,
         "id": "twilightforest:exanimate_essence"
       }
-    },
-    {
-      "chance": 0.2,
-      "item": {
-        "count": 1,
-        "id": "twilightforest:zombie_scepter"
-      }
-    },
-    {
-      "chance": 0.2,
-      "item": {
-        "count": 1,
-        "id": "twilightforest:lifedrain_scepter"
-      }
-    },
-    {
-      "chance": 0.2,
-      "item": {
-        "count": 1,
-        "id": "twilightforest:twilight_scepter"
-      }
     }
   ],
   "tool": {

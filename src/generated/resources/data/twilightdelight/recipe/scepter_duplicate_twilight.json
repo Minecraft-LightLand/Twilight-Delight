@@ -1,0 +1,24 @@
+{
+  "type": "twilightdelight:scepter_duplicate",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "twilightdelight:witchcraft_bone"
+    },
+    "M": {
+      "tag": "c:ender_pearls"
+    },
+    "S": {
+      "item": "twilightforest:twilight_scepter"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "MSM",
+    "MBM"
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightforest:twilight_scepter"
+  }
+}

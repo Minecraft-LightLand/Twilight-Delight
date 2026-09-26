@@ -5,7 +5,7 @@
   "pages": [
 	{
 	  "type": "patchouli:text",
-	  "text": "This effect slowly restores durability of Twilight Forest scepters in your hotbar and offhand. Scepters with higher max durability recharge faster."
+	  "text": "This effect slowly restores durability of lich scepters in your hotbar and offhand. Scepters with higher max durability recharge faster."
 	},
 	{
 	  "type": "patchouli:spotlight",
