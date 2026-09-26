@@ -1,7 +1,10 @@
 2.2.4
-- Add naga and lich related food
+- Add naga and lich related food (12 in total)
 - Add twilight cake, and twilight aura effect
 - Add ironwood tree
+- Add ice knife
+- Increase ghast brain drop rate from 10% to 30%
+- Fix knife not triggering scavenging drop
 
 2.2.3
 - Texture overhaul

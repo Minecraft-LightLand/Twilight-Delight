@@ -16,18 +16,6 @@
     {
       "chance": 0.5,
       "item": "twilightforest:transformation_powder"
-    },
-    {
-      "chance": 0.2,
-      "item": "twilightforest:zombie_scepter"
-    },
-    {
-      "chance": 0.2,
-      "item": "twilightforest:lifedrain_scepter"
-    },
-    {
-      "chance": 0.2,
-      "item": "twilightforest:twilight_scepter"
     }
   ],
   "tool": {

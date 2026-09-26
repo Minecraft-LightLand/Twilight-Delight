@@ -54,7 +54,7 @@ public class TDBlocks {
 
 	public static final RegistryEntry<CreativeModeTab> TAB =
 			TwilightDelight.REGISTRATE.buildModCreativeTab("twilight_delight", "Twilight's Flavors & Delight",
-					e -> e.icon(TDBlocks.MAZE_STOVE::asStack));
+					e -> e.icon(TDBlocks.CHAOS_STEW::asStack));
 
 	public static final BlockEntry<MazeStoveBlock> MAZE_STOVE;
 	public static final BlockEntityEntry<MazeStoveBlockEntity> MAZE_BE;

@@ -1,0 +1,24 @@
+{
+  "type": "twilightdelight:scepter_duplicate",
+  "category": "equipment",
+  "group": "",
+  "key": {
+    "B": {
+      "item": "twilightdelight:witchcraft_bone"
+    },
+    "M": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "S": {
+      "item": "twilightforest:zombie_scepter"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "MSM",
+    "MBM"
+  ],
+  "result": {
+    "item": "twilightforest:zombie_scepter"
+  }
+}

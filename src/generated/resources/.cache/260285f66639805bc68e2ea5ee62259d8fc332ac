@@ -1,4 +1,4 @@
-// 1.20.1	2026-09-25T22:05:06.175444	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2026-09-26T20:08:15.524694	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
@@ -296,7 +296,7 @@ a6cd9cd753d2bdb73ed749b3f3026b5c5e608d9b assets/twilightdelight/models/item/auro
 984c59dbe621cf44c5644d0cf417a024b60b1d2d assets/twilightdelight/models/item/borer_tear_soup.json
 9412d1810a5e2717d6394fd1813ecd4ee9cbc15e assets/twilightdelight/models/item/bowl_of_chaos_stew.json
 6deccfb3daad28aac1da5e86efac37842e9f15e6 assets/twilightdelight/models/item/canopy_cabinet.json
-fa2ed97c26d32e85c739f69b2122c36fb8752a3b assets/twilightdelight/models/item/chaos_ink_drink.json
+c1e087fa1739c0db9bd3c30a29562adf85f34615 assets/twilightdelight/models/item/chaos_ink_drink.json
 b2e46f58cf8fab62f6131dee4454a7485fa6f4e9 assets/twilightdelight/models/item/chaos_ink_drink_stage1.json
 fc70a590faec9b554af5689732d2926c7c2e7cc6 assets/twilightdelight/models/item/chaos_ink_drink_stage2.json
 845e419fb6133485a2d3d1ca6b5699bb562c95bf assets/twilightdelight/models/item/chaos_ink_drink_stage3.json
@@ -468,6 +468,10 @@ f5acafb64e9e3ab728fe37a54509507906c9795d data/twilightdelight/advancements/recip
 18b50b1996bf26f65b94dafa425ed94aaa9aeba1 data/twilightdelight/advancements/recipes/decorations/time_cabinet.json
 a088dbc9923bad8a5373db912e207d5277e355a5 data/twilightdelight/advancements/recipes/decorations/transformation_cabinet.json
 ea8cd9a404f0953a2d04b624ae4589b0aa9215c5 data/twilightdelight/advancements/recipes/decorations/twilight_oak_cabinet.json
+36bc0e9e359c2410d84ca2e76f3a68456ade335f data/twilightdelight/advancements/recipes/equipment/scepter_duplicate_fortification.json
+285f1b0bc31d0a99962fb6b430e41728d7819c76 data/twilightdelight/advancements/recipes/equipment/scepter_duplicate_lifedrain.json
+63701222c38cc3f9af2c75f75ccc5f64e87c1437 data/twilightdelight/advancements/recipes/equipment/scepter_duplicate_twilight.json
+997e150700fe8230603f58e156a88c169d91ba29 data/twilightdelight/advancements/recipes/equipment/scepter_duplicate_zombie.json
 dd382843fa19d280054d7fcf59fe61ea2326317e data/twilightdelight/advancements/recipes/food/aurora_pie.json
 e97a0c4fb532a84de3786adaa690cd5c28b79661 data/twilightdelight/advancements/recipes/food/aurora_pie_from_slices.json
 4f69960f72ad4bcbcfcb49800a165f603b6b8c75 data/twilightdelight/advancements/recipes/food/berry_stick.json
@@ -706,7 +710,7 @@ a7b2db2d20e0ed167379b99f248ea630159d3895 data/twilightdelight/recipes/cutting/co
 2696dc9af1ffbf0d10baa3bf5d6ce8cb80d02129 data/twilightdelight/recipes/cutting/ice_knife.json
 07806ee7a6101fd1f040737cad9138da694f5d00 data/twilightdelight/recipes/cutting/ice_sword.json
 2c26b59147c81389b759a14b25de43b67e9639a5 data/twilightdelight/recipes/cutting/knight_phantom_trophy.json
-0ddf86d2e4d3ce979b45990ea2453f1740579041 data/twilightdelight/recipes/cutting/lich_trophy.json
+4b43b6cfbd3713e62fd5de25d2be53ae2e583c27 data/twilightdelight/recipes/cutting/lich_trophy.json
 2600ce0186344cb89882258623bf660125e7e467 data/twilightdelight/recipes/cutting/minoshroom_trophy.json
 388e43aeb046eaa9c168c514f7db006bc6b6d1b9 data/twilightdelight/recipes/cutting/mushgloom_colony.json
 0cd5650147c6de41c8e2cc3c58722538fde71c34 data/twilightdelight/recipes/cutting/naga_scale.json
@@ -722,7 +726,7 @@ dc6e533cbdd6c06bf99833404ba5851ef1d11ad9 data/twilightdelight/recipes/cutting/ra
 12e6038e1b0e955d057ab42be8f85524f57b13c7 data/twilightdelight/recipes/cutting/snow_queen_trophy.json
 43f8e863fa71bbb54a1739419ed88f2959438127 data/twilightdelight/recipes/cutting/torchberry_pie.json
 ae0e5f21076090ee4ca0617b6d79b98c746ce508 data/twilightdelight/recipes/cutting/twilight_cake.json
-eb7ffd799fdc92d64ca2deae1f649ce735f827fe data/twilightdelight/recipes/cutting/ur_ghast_trophy.json
+39fd95300a9b634bf5f38aa8e5fc5209d4fabeb8 data/twilightdelight/recipes/cutting/ur_ghast_trophy.json
 af1bf1cb93a5ffa06bbadf259cad4fe8801c7fd4 data/twilightdelight/recipes/dark_cabinet.json
 33566a745b04f5f56b46cb48fcaab6e66a73d1b9 data/twilightdelight/recipes/fiery_cooking_pot.json
 27e129c50df53dbdf5460c4f9850eee6d864061c data/twilightdelight/recipes/fiery_knife.json
@@ -771,6 +775,10 @@ e5b13c154413da21975656ba78562ccb96d314bc data/twilightdelight/recipes/rainbow_ic
 5f995833632d0c48d459440053bff0b3f7519e0c data/twilightdelight/recipes/raw_ironwood.json
 17e4c844856dd10d300864008efc286451972865 data/twilightdelight/recipes/refreshing_ice_cream.json
 d77842578260574de4da6b094841cc582b61b1e1 data/twilightdelight/recipes/saucy_grilled_naga_block.json
+292ac44aee8f872079822e99a650339c3918b7f9 data/twilightdelight/recipes/scepter_duplicate_fortification.json
+086f3ad5a186d025153c9109ae2f2a992dd76f8d data/twilightdelight/recipes/scepter_duplicate_lifedrain.json
+684ac6c6d13dfe5dcc7fcb1fb4b3ff9616e08ca6 data/twilightdelight/recipes/scepter_duplicate_twilight.json
+3fe151beea3903ac09e5e493de84c351d430e451 data/twilightdelight/recipes/scepter_duplicate_zombie.json
 22722a9b5a02e1ff5d917e88b04dd27f4e68bf3d data/twilightdelight/recipes/sorting_cabinet.json
 146521595cfe967f91f9b857efa23457388bba85 data/twilightdelight/recipes/steeleaf_knife.json
 ad3be2165c3013c51716abf237c6b8e206ecbfee data/twilightdelight/recipes/stripping/stripped_canopy_log.json

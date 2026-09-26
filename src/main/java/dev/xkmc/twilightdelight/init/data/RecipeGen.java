@@ -9,6 +9,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.l2library.compat.jeed.JeedDataGenerator;
 import dev.xkmc.l2library.serial.recipe.ConditionalRecipeWrapper;
 import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipeBuilder;
+import dev.xkmc.twilightdelight.content.recipe.ScepterDuplicateRecipeBuilder;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
@@ -574,7 +575,7 @@ public class RecipeGen {
 							Ingredient.of(TagRef.TOOLS_KNIVES),
 							DelightFood.EXPERIMENT_113.item.get(), 9)
 					.addResult(TFItems.EXPERIMENT_115.get(), 4)
-					.addResultWithChance(DelightFood.EXPERIMENT_110.item.get(), 0.1f)
+					.addResultWithChance(DelightFood.EXPERIMENT_110.item.get(), 0.3f)
 					.save(pvd, getID(TFBlocks.UR_GHAST_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
@@ -615,9 +616,6 @@ public class RecipeGen {
 						Items.SKELETON_SKULL, 1)
 				.addResult(TDItems.WITCHCRAFT_BONE.get(), 3)
 				.addResultWithChance(TFItems.TRANSFORMATION_POWDER.get(), 0.5f)
-				.addResultWithChance(TFItems.ZOMBIE_SCEPTER.get(), 0.2f)
-				.addResultWithChance(TFItems.LIFEDRAIN_SCEPTER.get(), 0.2f)
-				.addResultWithChance(TFItems.TWILIGHT_SCEPTER.get(), 0.2f)
 				.save(pvd, getID(TFBlocks.LICH_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
@@ -667,6 +665,41 @@ public class RecipeGen {
 							DelightFood.NAGA_CHIP.item.get(), 4)
 					.save(pvd, getID(TFItems.NAGA_SCALE.getId()));
 
+		}
+
+		// scepter duplication
+		{
+			unlock(pvd, ScepterDuplicateRecipeBuilder.shaped(TFItems.ZOMBIE_SCEPTER.get())::unlockedBy,
+					TFItems.ZOMBIE_SCEPTER.get())
+					.pattern("MMM").pattern("MSM").pattern("MBM")
+					.define('M', Items.ROTTEN_FLESH)
+					.define('S', TFItems.ZOMBIE_SCEPTER.get())
+					.define('B', TDItems.WITCHCRAFT_BONE.get())
+					.save(pvd, new ResourceLocation(TwilightDelight.MODID, "scepter_duplicate_zombie"));
+
+			unlock(pvd, ScepterDuplicateRecipeBuilder.shaped(TFItems.TWILIGHT_SCEPTER.get())::unlockedBy,
+					TFItems.TWILIGHT_SCEPTER.get())
+					.pattern("MMM").pattern("MSM").pattern("MBM")
+					.define('M', Tags.Items.ENDER_PEARLS)
+					.define('S', TFItems.TWILIGHT_SCEPTER.get())
+					.define('B', TDItems.WITCHCRAFT_BONE.get())
+					.save(pvd, new ResourceLocation(TwilightDelight.MODID, "scepter_duplicate_twilight"));
+
+			unlock(pvd, ScepterDuplicateRecipeBuilder.shaped(TFItems.LIFEDRAIN_SCEPTER.get())::unlockedBy,
+					TFItems.LIFEDRAIN_SCEPTER.get())
+					.pattern("MMM").pattern("MSM").pattern("MBM")
+					.define('M', Items.FERMENTED_SPIDER_EYE)
+					.define('S', TFItems.LIFEDRAIN_SCEPTER.get())
+					.define('B', TDItems.WITCHCRAFT_BONE.get())
+					.save(pvd, new ResourceLocation(TwilightDelight.MODID, "scepter_duplicate_lifedrain"));
+
+			unlock(pvd, ScepterDuplicateRecipeBuilder.shaped(TFItems.FORTIFICATION_SCEPTER.get())::unlockedBy,
+					TFItems.FORTIFICATION_SCEPTER.get())
+					.pattern(" M ").pattern("MSM").pattern(" B ")
+					.define('M', Items.GOLDEN_APPLE)
+					.define('S', TFItems.FORTIFICATION_SCEPTER.get())
+					.define('B', TDItems.WITCHCRAFT_BONE.get())
+					.save(pvd, new ResourceLocation(TwilightDelight.MODID, "scepter_duplicate_fortification"));
 		}
 
 		// freezing

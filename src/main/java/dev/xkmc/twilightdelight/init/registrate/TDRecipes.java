@@ -3,6 +3,7 @@ package dev.xkmc.twilightdelight.init.registrate;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import dev.xkmc.l2library.serial.recipe.BaseRecipe;
 import dev.xkmc.twilightdelight.content.recipe.BaseEffectRecipe;
+import dev.xkmc.twilightdelight.content.recipe.ScepterDuplicateRecipe;
 import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipe;
 import dev.xkmc.twilightdelight.content.recipe.WorldInv;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
@@ -17,6 +18,10 @@ public class TDRecipes {
 	public static final RegistryEntry<BaseRecipe.RecType<SimpleFrozenRecipe, BaseEffectRecipe<?>, WorldInv>> RS_FROZEN =
 			TwilightDelight.REGISTRATE.simple("frozen", ForgeRegistries.Keys.RECIPE_SERIALIZERS,
 					() -> new BaseRecipe.RecType<>(SimpleFrozenRecipe.class, WORLD_RECIPE));
+
+	public static final RegistryEntry<ScepterDuplicateRecipe.Serializer> RS_SCEPTER_DUPLICATE =
+			TwilightDelight.REGISTRATE.simple("scepter_duplicate", ForgeRegistries.Keys.RECIPE_SERIALIZERS,
+					ScepterDuplicateRecipe.Serializer::new);
 
 	public static void register() {
 	}
