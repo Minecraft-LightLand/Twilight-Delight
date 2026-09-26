@@ -1,0 +1,16 @@
+{
+  "name": "巫妖充能",
+  "icon": "twilightdelight:chaos_ink_drink",
+  "category": "twilightdelight:effects",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "这个效果会缓慢修复你快捷栏和副手中暮影森林权杖的耐久。耐久上限越高的权杖充能越快"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightdelight:chaos_ink_drink",
+	  "text": "通过巫术墨饮、巫妖骨汤、魔法瑞士卷和盘装巫妖乱炖获得"
+	}
+  ]
+}

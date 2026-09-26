@@ -4,19 +4,19 @@
     {
       "model": "twilightdelight:item/chaos_ink_drink_stage1",
       "predicate": {
-        "minecraft:damage": 0.25
+        "twilightdelight:sips": 0.25
       }
     },
     {
       "model": "twilightdelight:item/chaos_ink_drink_stage2",
       "predicate": {
-        "minecraft:damage": 0.5
+        "twilightdelight:sips": 0.5
       }
     },
     {
       "model": "twilightdelight:item/chaos_ink_drink_stage3",
       "predicate": {
-        "minecraft:damage": 0.75
+        "twilightdelight:sips": 0.75
       }
     }
   ],

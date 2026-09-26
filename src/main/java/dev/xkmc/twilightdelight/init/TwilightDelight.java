@@ -14,6 +14,7 @@ import dev.xkmc.twilightdelight.events.NeapolitanEventListeners;
 import dev.xkmc.twilightdelight.init.data.*;
 import dev.xkmc.twilightdelight.init.loot.NagaMeatModifier;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
+import dev.xkmc.twilightdelight.init.registrate.TDDataComponents;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
@@ -37,6 +38,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -72,7 +74,8 @@ public class TwilightDelight {
 	public static final Reg REG = new Reg(MODID);
 	public static final L2Registrate REGISTRATE = new L2Registrate(MODID);
 
-	public TwilightDelight() {
+	public TwilightDelight(IEventBus bus) {
+		TDDataComponents.register(bus);
 		TDBlocks.register();
 		TDItems.register();
 		DelightFood.register();

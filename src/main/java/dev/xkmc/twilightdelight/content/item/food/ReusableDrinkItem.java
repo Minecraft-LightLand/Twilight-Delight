@@ -1,9 +1,9 @@
 package dev.xkmc.twilightdelight.content.item.food;
 
+import dev.xkmc.twilightdelight.init.registrate.TDDataComponents;
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,20 +22,34 @@ import java.util.List;
 
 /**
  * A drinkable item with multiple sips. Each sip applies a small meal and
- * damages the item; the model changes with damage and the last sip
- * returns a glass bottle.
+ * consumes one sip stored in a data component; the model changes with
+ * remaining sips and the last sip returns a glass bottle.
  */
 public class ReusableDrinkItem extends Item {
+
+	public static final int MAX_SIPS = 4;
 
 	private final int nutrition;
 	private final float saturation;
 	private final List<EffectSupplier> effects;
 
 	public ReusableDrinkItem(Properties props, int nutrition, float saturation, List<EffectSupplier> effects) {
-		super(withFood(props, nutrition, saturation, effects).stacksTo(1).durability(4));
+		super(withFood(props, nutrition, saturation, effects).stacksTo(1));
 		this.nutrition = nutrition;
 		this.saturation = saturation;
 		this.effects = effects;
+	}
+
+	public static int getSips(ItemStack stack) {
+		return Mth.clamp(stack.getOrDefault(TDDataComponents.SIPS.get(), MAX_SIPS), 0, MAX_SIPS);
+	}
+
+	public static void setSips(ItemStack stack, int sips) {
+		stack.set(TDDataComponents.SIPS.get(), Mth.clamp(sips, 0, MAX_SIPS));
+	}
+
+	public static float getSipsProperty(ItemStack stack) {
+		return (MAX_SIPS - getSips(stack)) / (float) MAX_SIPS;
 	}
 
 	private static Properties withFood(Properties props, int nutrition, float saturation, List<EffectSupplier> effects) {
@@ -72,14 +86,11 @@ public class ReusableDrinkItem extends Item {
 				}
 			}
 		}
-		if (level instanceof ServerLevel server && eater instanceof Player player) {
-			ServerPlayer sp = player instanceof ServerPlayer serverPlayer ? serverPlayer : null;
-			stack.hurtAndBreak(1, server, sp, item -> {
-			});
-			if (stack.isEmpty()) {
-				return new ItemStack(Items.GLASS_BOTTLE);
-			}
+		int sips = getSips(stack) - 1;
+		if (sips <= 0) {
+			return new ItemStack(Items.GLASS_BOTTLE);
 		}
+		setSips(stack, sips);
 		return stack;
 	}
 

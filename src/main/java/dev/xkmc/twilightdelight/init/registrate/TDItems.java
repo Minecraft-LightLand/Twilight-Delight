@@ -61,7 +61,7 @@ public class TDItems {
 							.texture("layer0", pvd.modLoc("item/" + ctx.getName()));
 					float[] thresholds = {0.25f, 0.5f, 0.75f};
 					for (int i = 0; i < 3; i++) {
-						base.override().predicate(ResourceLocation.withDefaultNamespace("damage"), thresholds[i])
+						base.override().predicate(TwilightDelight.loc("sips"), thresholds[i])
 								.model(new ModelFile.UncheckedModelFile(
 										pvd.modLoc("item/" + ctx.getName() + "_stage" + (i + 1)))).end();
 					}

@@ -1,7 +1,10 @@
 package dev.xkmc.twilightdelight.init;
 
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
+import dev.xkmc.twilightdelight.init.registrate.TDItems;
+import dev.xkmc.twilightdelight.content.item.food.ReusableDrinkItem;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -11,12 +14,19 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
 import javax.annotation.Nullable;
 
 @EventBusSubscriber(value = Dist.CLIENT, modid = TwilightDelight.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class TwilightDelightClient {
+
+	@SubscribeEvent
+	public static void registerItemProperties(FMLClientSetupEvent event) {
+		ItemProperties.register(TDItems.CHAOS_INK_DRINK.get(), TwilightDelight.loc("sips"),
+				(stack, level, entity, seed) -> ReusableDrinkItem.getSipsProperty(stack));
+	}
 
 	@SubscribeEvent
 	public static void registerBlockColor(RegisterColorHandlersEvent.Block event) {
