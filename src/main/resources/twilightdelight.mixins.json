@@ -12,8 +12,10 @@
 		"EntityMixin",
 		"ItemAccessor",
 		"ItemEntityMixin",
+		"LootTableProviderMixin",
 		"RichSoilBlockMixin",
-		"SkilletBlockEntityMixin"
+		"SkilletBlockEntityMixin",
+		"TDLootTableAccessor"
 	],
 	"client": [
 		"CuttingBoardRendererMixin"

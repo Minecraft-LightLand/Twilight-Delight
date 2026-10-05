@@ -1,6 +1,7 @@
 package dev.xkmc.twilightdelight.init.registrate.neapolitan;
 
 import com.teamabnormals.neapolitan.common.block.FlavoredCandleCakeBlock;
+import com.teamabnormals.neapolitan.core.Neapolitan;
 import com.tterrag.registrate.providers.DataGenContext;
 import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
@@ -8,6 +9,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.twilightdelight.compat.neapolitan.TDCakeBlock;
 import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.data.TDLootConditions;
 import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
@@ -29,6 +31,7 @@ import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -122,6 +125,15 @@ public enum NeapolitanCakes {
 	}
 
 	public static void register() {
+		// every block this enum creates is absent without Neapolitan, so its loot table must be
+		// gated: loot tables are parsed and validated eagerly, referenced or not
+		List<String> blocks = new ArrayList<>();
+		for (var cake : values()) {
+			blocks.add(cake.block.getId().getPath());
+			blocks.add(cake.candle.getId().getPath());
+			for (var colored : cake.colored_candles) blocks.add(colored.getId().getPath());
+		}
+		TDLootConditions.requireMods(Neapolitan.MOD_ID, blocks.toArray(String[]::new));
 	}
 
 }
