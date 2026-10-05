@@ -1,3 +1,6 @@
+2.2.5
+- Add twilight rich soil and fiddlehead colony
+
 2.2.4
 - Add naga and lich related food (12 in total)
 - Add twilight cake, and twilight aura effect
