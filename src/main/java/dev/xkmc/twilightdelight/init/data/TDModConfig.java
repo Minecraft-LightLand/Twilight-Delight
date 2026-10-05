@@ -22,6 +22,7 @@ public class TDModConfig {
 
 		public ModConfigSpec.IntValue effectRange;
 		public ModConfigSpec.IntValue auroraRange;
+		public ModConfigSpec.IntValue richSoilTrials;
 
 		Server(Builder builder) {
 			markPlain();
@@ -29,6 +30,9 @@ public class TDModConfig {
 					.defineInRange("effectRange", 6, 0, 128);
 			auroraRange = builder.text("Range for aurora range")
 					.defineInRange("auroraRange", 24, 0, 128);
+			richSoilTrials = builder
+					.text("Trials for twilight rich soil/farmland boosting plants per random tick")
+					.defineInRange("richSoilTrials", 5, 0, 32);
 		}
 
 	}

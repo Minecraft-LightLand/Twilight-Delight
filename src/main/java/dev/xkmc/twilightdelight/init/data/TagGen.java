@@ -5,6 +5,7 @@ import com.tterrag.registrate.providers.RegistrateItemTagsProvider;
 import com.tterrag.registrate.providers.RegistrateTagsProvider;
 import dev.xkmc.twilightdelight.compat.TGCompat;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
+import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import net.minecraft.resources.ResourceLocation;
@@ -51,6 +52,10 @@ public class TagGen {
 
 	public static void genBlockTag(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {
 		pvd.addTag(TagRef.HEAT_SOURCES).add(TFBlocks.FIERY_BLOCK.get());
+		pvd.addTag(ModTags.Blocks.MUSHROOM_COLONY_GROWABLE_ON).add(TDBlocks.TWILIGHT_RICH_SOIL.get());
+		pvd.addTag(BlockTags.DIRT).add(TDBlocks.TWILIGHT_RICH_SOIL.get());
+		pvd.addTag(BlockTags.MUSHROOM_GROW_BLOCK).add(TDBlocks.TWILIGHT_RICH_SOIL.get());
+		pvd.addTag(BlockTags.BAMBOO_PLANTABLE_ON).add(TDBlocks.TWILIGHT_RICH_SOIL.get());
 		var candle = pvd.addTag(BlockTags.CANDLE_CAKES);
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			for (var e : NeapolitanCakes.values()) {

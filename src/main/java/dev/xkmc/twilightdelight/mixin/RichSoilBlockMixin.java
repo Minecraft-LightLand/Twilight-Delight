@@ -1,6 +1,7 @@
 package dev.xkmc.twilightdelight.mixin;
 
 import dev.xkmc.twilightdelight.compat.TGCompat;
+import dev.xkmc.twilightdelight.content.block.FiddleheadClumpBlock;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.util.RichSoilUtil;
 import net.minecraft.core.BlockPos;
@@ -30,6 +31,10 @@ public class RichSoilBlockMixin {
 			// defer to it when its colony exists so only one colony type is obtainable
 			if (TGCompat.isItemPresent(TGCompat.loc("mushgloom_colony"))) return;
 			level.setBlockAndUpdate(pos.above(), TDBlocks.MUSHGLOOM_COLONY.get().defaultBlockState());
+			ci.cancel();
+		}
+		if (aboveBlock == TFBlocks.FIDDLEHEAD.get()) {
+			level.setBlockAndUpdate(pos.above(), TDBlocks.FIDDLEHEAD_CLUMP.get().defaultBlockState());
 			ci.cancel();
 		}
 		}

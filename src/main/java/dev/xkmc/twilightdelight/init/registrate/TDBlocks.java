@@ -67,6 +67,10 @@ public class TDBlocks {
 
 	public static final BlockEntry<Block> TORCHBERRIES_CRATE;
 	public static final BlockEntry<MushroomColonyBlock> MUSHGLOOM_COLONY;
+	public static final BlockEntry<FiddleheadClumpBlock> FIDDLEHEAD_CLUMP;
+	public static final BlockEntry<FiddleheadClumpUpperBlock> FIDDLEHEAD_CLUMP_UPPER;
+	public static final BlockEntry<TwilightRichSoilBlock> TWILIGHT_RICH_SOIL;
+	public static final BlockEntry<TwilightRichSoilFarmlandBlock> TWILIGHT_RICH_SOIL_FARMLAND;
 
 	public static final BlockEntry<SaplingBlock> IRON_SAPLING;
 	public static final BlockEntry<RotatedPillarBlock> IRON_LOGS;
@@ -280,6 +284,111 @@ public class TDBlocks {
 					.model((ctx, pvd) -> pvd.generated(ctx,
 							pvd.modLoc("block/" + ctx.getName() + "_stage3"),
 							pvd.modLoc("block/" + ctx.getName() + "_stage3_head"))).build()
+					.register();
+
+			// fiddlehead clump: a mushroom colony whose upper half tracks the colony age
+			FIDDLEHEAD_CLUMP = TwilightDelight.REGISTRATE.block(
+							"fiddlehead_clump", p -> new FiddleheadClumpBlock(
+									DeferredHolder.create(Registries.ITEM,
+											TFBlocks.FIDDLEHEAD.unwrapKey().orElseThrow().location()),
+									BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM)
+											.instabreak().sound(SoundType.FUNGUS)
+											.noCollission().noOcclusion().randomTicks()))
+					.blockstate((ctx, pvd) -> pvd.getVariantBuilder(ctx.get()).forAllStates((state) -> {
+						int age = state.getValue(MushroomColonyBlock.COLONY_AGE);
+						String modelName = age == 0 ? "fiddlehead_clump_stage0" : "fiddlehead_clump_stage" + age;
+						return ConfiguredModel.builder()
+								.modelFile(new ModelFile.UncheckedModelFile(pvd.modLoc("block/" + modelName))).build();
+					}))
+					.tag(TagRef.COMPOST_ACTIVATORS, TagRef.UNAFFECTED_BY_RICH_SOIL, TagRef.BLOCK_MUSHROOM_COLONIES)
+					.loot((pvd, block) -> {
+						var item = TFBlocks.FIDDLEHEAD.get().asItem();
+						Function<Integer, LootItemCondition.Builder> prop = i ->
+								LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+										.setProperties(StatePropertiesPredicate.Builder.properties()
+												.hasProperty(MushroomColonyBlock.COLONY_AGE, i));
+						var s0 = LootItem.lootTableItem(item)
+								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(2)))
+								.when(prop.apply(0));
+						var s1 = LootItem.lootTableItem(item)
+								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(3)))
+								.when(prop.apply(1));
+						var s2 = LootItem.lootTableItem(item)
+								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(4)))
+								.when(prop.apply(2));
+						var s3 = LootItem.lootTableItem(item)
+								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(5)))
+								.when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.TOOLS_SHEAR)).invert())
+								.when(prop.apply(3));
+						var self = LootItem.lootTableItem(block.asItem())
+								.when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.TOOLS_SHEAR)))
+								.when(prop.apply(3));
+						pvd.add(block, LootTable.lootTable().withPool(LootPool.lootPool().add(
+										AlternativesEntry.alternatives(s0, s1, s2, s3, self))
+								.apply(ApplyExplosionDecay.explosionDecay())));
+					})
+					.item(MushroomColonyItem::new).tag(TagRef.ITEM_MUSHROOM_COLONIES)
+					.model((ctx, pvd) -> pvd.generated(ctx,
+							pvd.modLoc("block/fiddlehead_clump_bottom_stage3"),
+							pvd.modLoc("block/fiddlehead_clump_top_stage3"))).build()
+					.register();
+
+			FIDDLEHEAD_CLUMP_UPPER = TwilightDelight.REGISTRATE.block(
+							"fiddlehead_clump_upper", p -> new FiddleheadClumpUpperBlock(
+									BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM)
+											.instabreak().sound(SoundType.FUNGUS)
+											.noCollission().noOcclusion()))
+					.blockstate((ctx, pvd) -> pvd.getVariantBuilder(ctx.get()).forAllStates((state) -> {
+						int age = Math.max(1, state.getValue(FiddleheadClumpUpperBlock.AGE));
+						return ConfiguredModel.builder().modelFile(
+								new ModelFile.UncheckedModelFile(pvd.modLoc("block/fiddlehead_clump_stage" + age + "_top"))).build();
+					}))
+					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()))
+					.register();
+
+			// twilight rich soil: converts mushrooms/fiddleheads above it into colonies
+			TWILIGHT_RICH_SOIL = TwilightDelight.REGISTRATE.block(
+							"twilight_rich_soil", p -> new TwilightRichSoilBlock(
+									BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).randomTicks()))
+					.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(),
+							pvd.models().cubeAll(ctx.getName(), pvd.modLoc("block/" + ctx.getName()))))
+					.tag(BlockTags.MINEABLE_WITH_SHOVEL)
+					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(
+							LootPool.lootPool().add(LootItem.lootTableItem(block.asItem()))
+									.when(ExplosionCondition.survivesExplosion()))))
+					.item()
+					.model((ctx, pvd) -> pvd.withExistingParent(ctx.getName(),
+							pvd.modLoc("block/" + ctx.getName())))
+					.build()
+					.register();
+
+			TWILIGHT_RICH_SOIL_FARMLAND = TwilightDelight.REGISTRATE.block(
+							"twilight_rich_soil_farmland", p -> new TwilightRichSoilFarmlandBlock(
+									BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND)))
+					.blockstate((ctx, pvd) -> {
+						ModelFile dry = pvd.models().withExistingParent(ctx.getName(),
+										pvd.mcLoc("block/farmland"))
+								.texture("particle", pvd.modLoc("block/" + ctx.getName()))
+								.texture("dirt", pvd.mcLoc("block/dirt"))
+								.texture("side", pvd.modLoc("block/" + ctx.getName() + "_side"))
+								.texture("top", pvd.modLoc("block/" + ctx.getName()));
+						ModelFile moist = pvd.models().withExistingParent(ctx.getName() + "_moist",
+										pvd.mcLoc("block/farmland_moist"))
+								.texture("particle", pvd.modLoc("block/" + ctx.getName() + "_moist"))
+								.texture("dirt", pvd.mcLoc("block/dirt"))
+								.texture("side", pvd.modLoc("block/" + ctx.getName() + "_side"))
+								.texture("top", pvd.modLoc("block/" + ctx.getName() + "_moist"));
+						pvd.getVariantBuilder(ctx.get()).forAllStates((state) -> ConfiguredModel.builder()
+								.modelFile(state.getValue(FarmBlock.MOISTURE) > 0 ? moist : dry).build());
+					})
+					.tag(BlockTags.MINEABLE_WITH_SHOVEL)
+					.loot((pvd, block) -> pvd.add(block, LootTable.lootTable().withPool(
+							LootPool.lootPool().add(LootItem.lootTableItem(TWILIGHT_RICH_SOIL.get().asItem()))
+									.when(ExplosionCondition.survivesExplosion()))))
+					.item()
+					.model((ctx, pvd) -> pvd.withExistingParent(ctx.getName(),
+							pvd.modLoc("block/" + ctx.getName())))
+					.build()
 					.register();
 		}
 		// cabinet

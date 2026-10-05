@@ -143,6 +143,12 @@ public class RecipeGen {
 
 			pvd.storage(TFItems.TORCHBERRIES::get, RecipeCategory.MISC, TDBlocks.TORCHBERRIES_CRATE);
 
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.MISC, TDBlocks.TWILIGHT_RICH_SOIL.get(), 1)::unlockedBy,
+					TFItems.LIVEROOT.get())
+					.requires(ModBlocks.RICH_SOIL.get())
+					.requires(TFItems.LIVEROOT.get())
+					.save(pvd);
+
 		}
 
 		// smelting
@@ -602,6 +608,12 @@ public class RecipeGen {
 						Ingredient.of(TagRef.KNIFE),
 						TFBlocks.MUSHGLOOM.get(), 5)
 				.build(TGCompat.noTG(pvd, TGCompat.loc("mushgloom_colony")), getID(TDBlocks.MUSHGLOOM_COLONY.getId()));
+
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(TDBlocks.FIDDLEHEAD_CLUMP.get()),
+						Ingredient.of(TagRef.KNIFE),
+						TFBlocks.FIDDLEHEAD.get(), 5)
+				.save(pvd, getID(TDBlocks.FIDDLEHEAD_CLUMP.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.UR_GHAST_TROPHY.get()),

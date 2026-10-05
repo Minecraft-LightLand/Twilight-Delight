@@ -10,6 +10,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -31,11 +32,29 @@ public class TwilightDelightClient {
 	@SubscribeEvent
 	public static void registerBlockColor(RegisterColorHandlersEvent.Block event) {
 		event.register(TwilightDelightClient::getLeafBlockColor, TDBlocks.IRON_LEAVES.get());
+		event.register(TwilightDelightClient::getGrassBlockColor,
+				TDBlocks.FIDDLEHEAD_CLUMP.get(), TDBlocks.FIDDLEHEAD_CLUMP_UPPER.get());
 	}
 
 	@SubscribeEvent
 	public static void registerItemColor(RegisterColorHandlersEvent.Item event) {
+		var blockColors = event.getBlockColors();
 		event.register(TwilightDelightClient::getLeafItemColor, TDBlocks.IRON_LEAVES.get().asItem());
+		event.register((stack, tintIndex) -> stack.getItem() instanceof BlockItem blockItem
+						? blockColors.getColor(blockItem.getBlock().defaultBlockState(), null, null, tintIndex)
+						: -1,
+				TDBlocks.FIDDLEHEAD_CLUMP.get().asItem());
+	}
+
+	/**
+	 * Tint the fiddlehead by biome, mirroring how vanilla tints grass.
+	 */
+	private static int getGrassBlockColor(BlockState state, @Nullable BlockAndTintGetter getter,
+			@Nullable BlockPos pos, int tintIndex) {
+		if ((tintIndex & 1) == 1) return -1;
+		return getter != null && pos != null
+				? BiomeColors.getAverageGrassColor(getter, pos)
+				: GrassColor.get(0.5, 1.0);
 	}
 
 	private static int getLeafBlockColor(BlockState state, @Nullable BlockAndTintGetter getter, @Nullable BlockPos pos, int tintIndex) {

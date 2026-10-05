@@ -1,0 +1,20 @@
+{
+  "name": "暮色沃土",
+  "icon": "twilightdelight:twilight_rich_soil",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "暮色沃土每次随机刻度会多次催熟上方和下方的植物，具体次数可在配置文件中调整。$(br2)用锄头耕耘可以得到暮色沃土耕地，在完全湿润时可以催熟作物。"
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "twilightdelight:twilight_rich_soil"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightdelight:witchcraft_bone_meal",
+	  "text": "也可以对肥沃泥土使用巫妖骨粉，将其转化为暮色沃土。$(br2)和沃土一样，它也会把上方的荧光蘑菇和暮色蕨转化为菌落和蕨丛。"
+	}
+  ]
+}

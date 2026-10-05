@@ -1,0 +1,16 @@
+{
+  "name": "暮色蕨农场",
+  "icon": "twilightdelight:fiddlehead_clump",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "把暮色蕨种在沃土或暮色沃土上，它就会变成暮色蕨丛。$(br2)蕨丛在可支持菌落生长的土壤上会经历4个阶段生长。上方要留出空间，以便长出高大的蕨叶，也可以用骨粉催熟。"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightdelight:fiddlehead_clump",
+	  "text": "打碎长成的蕨丛会掉落2到5个暮色蕨，数量随生长阶段提高。$(br2)完全长成后，用剪刀采集可以直接获得蕨丛本身，或在切菜板上用刀切割获得5个暮色蕨。"
+	}
+  ]
+}

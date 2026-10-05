@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "twilightdelight:block/fiddlehead_clump_bottom_stage3",
+    "layer1": "twilightdelight:block/fiddlehead_clump_top_stage3"
+  }
+}
