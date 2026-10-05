@@ -1,3 +1,7 @@
+3.2.4
+- Add twilight rich soil and fiddlehead colony
+- Fix logspam and tag error when compat mods not installed
+
 3.2.3
 - Add naga and lich related food (12 in total)
 - Add twilight cake, and twilight aura effect
