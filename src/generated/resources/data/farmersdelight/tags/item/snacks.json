@@ -7,9 +7,21 @@
     "twilightdelight:torchberry_pie_slice",
     "twilightdelight:aurora_pie_slice",
     "twilightdelight:twilight_cake_slice",
-    "twilightdelight:aurora_cake_slice",
-    "twilightdelight:torchberry_cake_slice",
-    "twilightdelight:phytochemical_cake_slice",
-    "twilightdelight:glacier_cake_slice"
+    {
+      "id": "twilightdelight:aurora_cake_slice",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:torchberry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:phytochemical_cake_slice",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:glacier_cake_slice",
+      "required": false
+    }
   ]
 }

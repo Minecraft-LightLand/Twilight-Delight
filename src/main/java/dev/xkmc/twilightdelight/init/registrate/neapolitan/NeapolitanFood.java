@@ -77,7 +77,10 @@ public enum NeapolitanFood {
 	}
 
 	NeapolitanFood(NeapolitanFoodType r, int nutrition, float saturation, List<EffectSupplier> effects, TagKey<Item>... tags) {
-		item = TDItems.simpleFood(r, name(), nutrition, saturation, effects, tags);
+		// optionalFood: these only exist when Neapolitan is loaded, so their tag entries must be
+		// emitted as "required": false — the tag files ship regardless and a required entry
+		// naming a missing registry key makes the whole tag fail to load
+		item = TDItems.optionalFood(r, name(), nutrition, saturation, effects, tags);
 	}
 
 	public static void register() {

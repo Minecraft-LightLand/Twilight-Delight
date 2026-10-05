@@ -8,20 +8,65 @@
     "twilightdelight:torchberry_pie_slice",
     "twilightdelight:aurora_pie_slice",
     "twilightdelight:twilight_cake_slice",
-    "twilightdelight:aurora_ice_cream",
-    "twilightdelight:aurora_milkshake",
-    "twilightdelight:torchberry_ice_cream",
-    "twilightdelight:torchberry_milkshake",
-    "twilightdelight:phytochemical_ice_cream",
-    "twilightdelight:phytochemical_milkshake",
-    "twilightdelight:glacier_ice_cream",
-    "twilightdelight:glacier_milkshake",
-    "twilightdelight:twilight_ice_cream",
-    "twilightdelight:rainbow_ice_cream",
-    "twilightdelight:refreshing_ice_cream",
-    "twilightdelight:aurora_cake_slice",
-    "twilightdelight:torchberry_cake_slice",
-    "twilightdelight:phytochemical_cake_slice",
-    "twilightdelight:glacier_cake_slice"
+    {
+      "id": "twilightdelight:aurora_ice_cream",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:aurora_milkshake",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:torchberry_ice_cream",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:torchberry_milkshake",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:phytochemical_ice_cream",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:phytochemical_milkshake",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:glacier_ice_cream",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:glacier_milkshake",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:twilight_ice_cream",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:rainbow_ice_cream",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:refreshing_ice_cream",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:aurora_cake_slice",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:torchberry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:phytochemical_cake_slice",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:glacier_cake_slice",
+      "required": false
+    }
   ]
 }

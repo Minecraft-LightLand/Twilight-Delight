@@ -119,6 +119,20 @@ public class TDItems {
 				.model(r::model).tag(tags).register();
 	}
 
+	/**
+	 * Same as {@link #simpleFood}, but every tag entry it generates is written with
+	 * {@code "required": false}. For food that only exists when an optional mod is loaded:
+	 * the tag files are still shipped, and a required entry naming a missing registry key
+	 * makes the whole tag fail to load.
+	 */
+	@SafeVarargs
+	public static ItemEntry<Item> optionalFood(IFoodType r, String name, int nutrition, float saturation, List<EffectSupplier> effects, TagKey<Item>... tags) {
+		return food(name.toLowerCase(Locale.ROOT),
+				p -> r.create(p.rarity(r.getRarity())),
+				() -> simpleFood(r, nutrition, saturation, effects))
+				.model(r::model).asOptional().tag(tags).register();
+	}
+
 	public static FoodProperties simpleFood(IFoodType r, int nutrition, float saturation, List<EffectSupplier> effects) {
 		FoodProperties.Builder builder = new FoodProperties.Builder();
 		builder = builder.nutrition(nutrition).saturationModifier(saturation);

@@ -61,14 +61,17 @@ public enum NeapolitanCakes {
 		var food = TDItems.simpleFood(DelightFoodType.NONE, 1, 0.1f, List.of(effects));
 		var props = BlockBehaviour.Properties.of().mapColor(color).forceSolidOn().strength(0.5F)
 				.sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY).lightLevel(s -> light);
+		// asOptional() throughout: none of these entries exist without Neapolitan, so their tag
+		// entries must be written with "required": false — the tag files ship regardless, and a
+		// required entry naming a missing registry key makes the whole tag fail to load
 		item = TwilightDelight.REGISTRATE.item(base + "_cake_slice", p -> new TDFoodItem(p.food(food)))
-				.tag(TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS).defaultModel().defaultLang().register();
+				.asOptional().tag(TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS).defaultModel().defaultLang().register();
 		block = TwilightDelight.REGISTRATE.block(base + "_cake", p -> new TDCakeBlock(food, props, this))
-				.blockstate(this::genCakeModels).loot((pvd, block) -> pvd.dropOther(block, item.get()))
-				.item().properties(p -> p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build().register();
+				.asOptional().blockstate(this::genCakeModels).loot((pvd, block) -> pvd.dropOther(block, item.get()))
+				.item().asOptional().properties(p -> p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build().register();
 		this.candle = TwilightDelight.REGISTRATE.block(base + "_candle_cake",
 						p -> new FlavoredCandleCakeBlock(block::get, Blocks.CANDLE, props))
-				.blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, "candle"))
+				.asOptional().blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, "candle"))
 				.loot((pvd, block) -> pvd.dropOther(block, Items.CANDLE))
 				.register();
 		colored_candles = new BlockEntry[DyeColor.values().length];
@@ -78,7 +81,7 @@ public enum NeapolitanCakes {
 			assert candle != null;
 			this.colored_candles[dye.ordinal()] = TwilightDelight.REGISTRATE.block(color_name + "_" + base + "_candle_cake",
 							p -> new FlavoredCandleCakeBlock(block::get, candle, props))
-					.blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, color_name + "_candle"))
+					.asOptional().blockstate((ctx, pvd) -> genCandleModels(ctx, pvd, color_name + "_candle"))
 					.loot((pvd, block) -> pvd.dropOther(block, candle.asItem()))
 					.register();
 		}
