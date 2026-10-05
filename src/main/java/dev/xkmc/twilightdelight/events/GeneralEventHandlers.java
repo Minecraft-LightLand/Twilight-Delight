@@ -4,6 +4,7 @@ import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.data.ExtraLootGen;
 import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
+import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.network.protocol.game.ClientboundAnimatePacket;
@@ -17,6 +18,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -52,36 +54,50 @@ public class GeneralEventHandlers {
 	@SubscribeEvent
 	public static void onItemUse(PlayerInteractEvent.RightClickBlock event) {
 		BlockState state = event.getLevel().getBlockState(event.getPos());
-		if (state.is(TFBlocks.EXPERIMENT_115.get())) {
-			if (event.getItemStack().is(Items.REDSTONE)) {
-				if (!state.getValue(Experiment115Block.REGENERATE)) {
-					if (state.getValue(Experiment115Block.BITES_TAKEN) > 0) {
-						event.setCanceled(true);
-						event.setCancellationResult(InteractionResult.FAIL);
+		// bone meal on uberous soil turns it into twilight rich soil
+		if (event.getItemStack().is(TDItems.WITCHCRAFT_BONE_MEAL.get()) && state.is(TFBlocks.UBEROUS_SOIL.get())) {
+			Level level = event.getLevel();
+			if (level instanceof ServerLevel sl) {
+				sl.setBlockAndUpdate(event.getPos(), TDBlocks.TWILIGHT_RICH_SOIL.get().defaultBlockState());
+				sl.playSound(null, event.getPos(), SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
+				if (!event.getEntity().getAbilities().instabuild) {
+					event.getItemStack().shrink(1);
+				}
+			}
+			event.setCanceled(true);
+			event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide()));
+		} else {
+			if (state.is(TFBlocks.EXPERIMENT_115.get())) {
+				if (event.getItemStack().is(Items.REDSTONE)) {
+					if (!state.getValue(Experiment115Block.REGENERATE)) {
+						if (state.getValue(Experiment115Block.BITES_TAKEN) > 0) {
+							event.setCanceled(true);
+							event.setCancellationResult(InteractionResult.FAIL);
+						}
 					}
 				}
 			}
-		}
-		if (event.getItemStack().is(TagRef.TOOLS_KNIVES)) {
-			if (state.is(TFBlocks.EXPERIMENT_115.get())) {
-				if (event.getLevel() instanceof ServerLevel sl) {
-					int i = state.getValue(Experiment115Block.BITES_TAKEN);
-					if (i < 7) {
-						event.getLevel().setBlock(event.getPos(), state.setValue(Experiment115Block.BITES_TAKEN, i + 1), 3);
-					} else {
-						event.getLevel().removeBlock(event.getPos(), false);
+			if (event.getItemStack().is(TagRef.TOOLS_KNIVES)) {
+				if (state.is(TFBlocks.EXPERIMENT_115.get())) {
+					if (event.getLevel() instanceof ServerLevel sl) {
+						int i = state.getValue(Experiment115Block.BITES_TAKEN);
+						if (i < 7) {
+							event.getLevel().setBlock(event.getPos(), state.setValue(Experiment115Block.BITES_TAKEN, i + 1), 3);
+						} else {
+							event.getLevel().removeBlock(event.getPos(), false);
+						}
+						var loot = getLoot(sl, ExtraLootGen.SCRAP_115, state, event);
+						for (var e : loot) {
+							event.getEntity().getInventory().placeItemBackInInventory(e);
+						}
+						event.getItemStack().hurtAndBreak(1, event.getEntity(),
+								e -> e.broadcastBreakEvent(event.getHand()));
 					}
-					var loot = getLoot(sl, ExtraLootGen.SCRAP_115, state, event);
-					for (var e : loot) {
-						event.getEntity().getInventory().placeItemBackInInventory(e);
-					}
-					event.getItemStack().hurtAndBreak(1, event.getEntity(),
-							e -> e.broadcastBreakEvent(event.getHand()));
+					event.getLevel().playSound(event.getEntity(), event.getPos(),
+							SoundEvents.WOOL_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+					event.setCanceled(true);
+					event.setCancellationResult(InteractionResult.SUCCESS);
 				}
-				event.getLevel().playSound(event.getEntity(), event.getPos(),
-						SoundEvents.WOOL_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
-				event.setCanceled(true);
-				event.setCancellationResult(InteractionResult.SUCCESS);
 			}
 		}
 	}

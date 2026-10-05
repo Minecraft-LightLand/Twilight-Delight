@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "moisture=0": {
+      "model": "twilightdelight:block/twilight_rich_soil_farmland"
+    },
+    "moisture=1": {
+      "model": "twilightdelight:block/twilight_rich_soil_farmland_moist"
+    },
+    "moisture=2": {
+      "model": "twilightdelight:block/twilight_rich_soil_farmland_moist"
+    },
+    "moisture=3": {
+      "model": "twilightdelight:block/twilight_rich_soil_farmland_moist"
+    },
+    "moisture=4": {
+      "model": "twilightdelight:block/twilight_rich_soil_farmland_moist"
+    },
+    "moisture=5": {
+      "model": "twilightdelight:block/twilight_rich_soil_farmland_moist"
+    },
+    "moisture=6": {
+      "model": "twilightdelight:block/twilight_rich_soil_farmland_moist"
+    },
+    "moisture=7": {
+      "model": "twilightdelight:block/twilight_rich_soil_farmland_moist"
+    }
+  }
+}

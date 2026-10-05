@@ -82,8 +82,7 @@ public class TDItems {
 				.model((ctx, pvd) -> pvd.getBuilder(ctx.getName())
 						.parent(new ModelFile.UncheckedModelFile(new ResourceLocation("minecraft:item/handheld")))
 						.texture("layer0", pvd.modLoc("item/" + ctx.getName() + "_solid"))
-						.texture("layer1", pvd.modLoc("item/" + ctx.getName() + "_clear"))
-						.customLoader(ItemLayerModelBuilder::begin))
+						.texture("layer1", pvd.modLoc("item/" + ctx.getName() + "_clear")))
 				.tag(TagRef.TOOLS_KNIVES, TagRef.MOD_KNIFE).register();
 		TEARDROP_SWORD = handheld("teardrop_sword", TeardropSwordItem::new)
 				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))

@@ -1,5 +1,6 @@
 package dev.xkmc.twilightdelight.mixin;
 
+import dev.xkmc.twilightdelight.content.block.FiddleheadClumpBlock;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.util.RichSoilUtil;
 import net.minecraft.core.BlockPos;
@@ -26,6 +27,11 @@ public class RichSoilBlockMixin {
 			Block aboveBlock = aboveState.getBlock();
 			if (aboveBlock == TFBlocks.MUSHGLOOM.get()) {
 				level.setBlockAndUpdate(pos.above(), TDBlocks.MUSHGLOOM_COLONY.get().defaultBlockState());
+				ci.cancel();
+			}
+
+			if (aboveBlock == TFBlocks.FIDDLEHEAD.get()) {
+				level.setBlockAndUpdate(pos.above(), TDBlocks.FIDDLEHEAD_CLUMP.get().defaultBlockState());
 				ci.cancel();
 			}
 		}

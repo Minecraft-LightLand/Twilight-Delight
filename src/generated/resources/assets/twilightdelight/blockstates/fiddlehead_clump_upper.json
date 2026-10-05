@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "twilightdelight:block/fiddlehead_clump_stage1_top"
+    },
+    "age=1": {
+      "model": "twilightdelight:block/fiddlehead_clump_stage1_top"
+    },
+    "age=2": {
+      "model": "twilightdelight:block/fiddlehead_clump_stage2_top"
+    },
+    "age=3": {
+      "model": "twilightdelight:block/fiddlehead_clump_stage3_top"
+    }
+  }
+}

@@ -16,7 +16,7 @@
       "tag": "forge:crops/onion"
     },
     {
-      "tag": "forge:salad_ingredients"
+      "item": "twilightforest:fiddlehead"
     }
   ],
   "result": {

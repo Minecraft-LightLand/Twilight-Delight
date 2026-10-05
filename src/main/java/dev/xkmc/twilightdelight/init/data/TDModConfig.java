@@ -22,12 +22,16 @@ public class TDModConfig {
 
 		public ForgeConfigSpec.IntValue effectRange;
 		public ForgeConfigSpec.IntValue auroraRange;
+		public ForgeConfigSpec.IntValue richSoilTrials;
 
 		Common(ForgeConfigSpec.Builder builder) {
 			effectRange = builder.comment("Range for hostile effects, such as fire/frost/poison")
 					.defineInRange("effectRange", 6, 0, 128);
 			auroraRange = builder.comment("Range for aurora range")
 					.defineInRange("auroraRange", 24, 0, 128);
+			richSoilTrials = builder
+					.comment("Trials for twilight rich soil/farmland boosting plants per random tick")
+					.defineInRange("richSoilTrials", 5, 0, 32);
 		}
 
 	}

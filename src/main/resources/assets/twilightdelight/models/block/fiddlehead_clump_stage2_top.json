@@ -1,0 +1,120 @@
+{
+	"format_version": "26.3",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "twilightdelight:block/fiddlehead_clump_top_stage2",
+		"particle": "twilightdelight:block/fiddlehead_clump_top_stage2"
+	},
+	"elements": [
+		{
+			"name": "fiddlehead_clump",
+			"from": [
+				0.8,
+				0,
+				8
+			],
+			"to": [
+				15.2,
+				16,
+				8
+			],
+			"shade_direction_override": "up",
+			"rotation": {
+				"angle": 45,
+				"axis": "y",
+				"origin": [
+					8,
+					8,
+					8
+				],
+				"rescale": true
+			},
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#1",
+					"tintindex": 0
+				},
+				"south": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#1",
+					"tintindex": 0
+				}
+			}
+		},
+		{
+			"name": "fiddlehead_clump",
+			"from": [
+				8,
+				0,
+				0.8
+			],
+			"to": [
+				8,
+				16,
+				15.2
+			],
+			"shade_direction_override": "up",
+			"rotation": {
+				"angle": 45,
+				"axis": "y",
+				"origin": [
+					8,
+					8,
+					8
+				],
+				"rescale": true
+			},
+			"faces": {
+				"east": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#1",
+					"tintindex": 0
+				},
+				"west": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#1",
+					"tintindex": 0
+				}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "fiddlehead_clump",
+			"origin": [
+				8,
+				8,
+				8
+			],
+			"scope": 0,
+			"color": 0,
+			"children": [
+				0,
+				1
+			]
+		}
+	],
+	"render_type": "minecraft:cutout"
+}

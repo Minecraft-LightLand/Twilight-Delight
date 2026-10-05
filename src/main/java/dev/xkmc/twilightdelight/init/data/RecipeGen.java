@@ -136,6 +136,12 @@ public class RecipeGen {
 
 			pvd.storage(TFItems.TORCHBERRIES::get, RecipeCategory.MISC, TDBlocks.TORCHBERRIES_CRATE);
 
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.MISC, TDBlocks.TWILIGHT_RICH_SOIL.get(), 1)::unlockedBy,
+					TFItems.LIVEROOT.get())
+					.requires(ModBlocks.RICH_SOIL.get())
+					.requires(TFItems.LIVEROOT.get())
+					.save(pvd);
+
 		}
 
 		// smelting
@@ -222,13 +228,13 @@ public class RecipeGen {
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.MEEF_WRAP.item.get(), 1)::unlockedBy, TFItems.RAW_MEEF.get())
 					.requires(TagRef.BREAD).requires(TagGen.MEEF_COOKED)
-					.requires(TagRef.SALAD_INGREDIENTS)
+					.requires(TFBlocks.FIDDLEHEAD.get().asItem())
 					.requires(TagRef.CROPS_ONION)
 					.save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.TORCHBERRY_VENISON_SANDWICH.item.get(), 1)::unlockedBy, TFItems.RAW_VENISON.get())
 					.requires(TagRef.BREAD).requires(TagGen.VENSION_COOKED)
-					.requires(TagRef.SALAD_INGREDIENTS)
+					.requires(TFBlocks.FIDDLEHEAD.get().asItem())
 					.requires(TFItems.TORCHBERRIES.get())
 					.save(pvd);
 
@@ -266,7 +272,7 @@ public class RecipeGen {
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.HYDRA_BURGER.item.get(), 1)::unlockedBy, TFItems.HYDRA_CHOP.get())
 					.requires(TagRef.BREAD)
 					.requires(TagGen.HYDRA_MEAT)
-					.requires(TagRef.SALAD_INGREDIENTS)
+					.requires(TFBlocks.FIDDLEHEAD.get().asItem())
 					.requires(TagRef.CROPS_TOMATO)
 					.requires(TagRef.CROPS_ONION)
 					.save(pvd);
@@ -288,7 +294,7 @@ public class RecipeGen {
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.GHAST_BRAIN_SALAD.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_110.item.get())
 					.requires(Items.BOWL)
-					.requires(TagRef.SALAD_INGREDIENTS)
+					.requires(TFBlocks.FIDDLEHEAD.get().asItem())
 					.requires(TagRef.CROPS_ONION)
 					.requires(TagRef.CROPS_TOMATO)
 					.requires(DelightFood.EXPERIMENT_110.item.get())
@@ -394,7 +400,7 @@ public class RecipeGen {
 				.addIngredient(TagGen.NAGA_RAW)
 				.addIngredient(TagGen.NAGA_RAW)
 				.addIngredient(TagRef.CROPS_ONION)
-				.addIngredient(TagRef.SALAD_INGREDIENTS)
+				.addIngredient(TFBlocks.FIDDLEHEAD.get().asItem())
 				.save(pvd, getID(DelightFood.NAGA_STEW.item.getId()));
 
 		unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.NAGA_MEATBALL_CONGEE.item.get(),
@@ -569,6 +575,12 @@ public class RecipeGen {
 							Ingredient.of(TagRef.TOOLS_KNIVES),
 							TFBlocks.MUSHGLOOM.get(), 5)
 					.save(pvd, getID(TDBlocks.MUSHGLOOM_COLONY.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(TDBlocks.FIDDLEHEAD_CLUMP.get()),
+						Ingredient.of(TagRef.TOOLS_KNIVES),
+						TFBlocks.FIDDLEHEAD.get(), 5)
+					.save(pvd, getID(TDBlocks.FIDDLEHEAD_CLUMP.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.UR_GHAST_TROPHY.get()),

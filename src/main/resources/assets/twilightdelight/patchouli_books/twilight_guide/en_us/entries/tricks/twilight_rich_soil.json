@@ -1,0 +1,20 @@
+{
+  "name": "Twilight Rich Soil",
+  "icon": "twilightdelight:twilight_rich_soil",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "Twilight Rich Soil boosts plants above and below it several times per random tick. The number of trials can be changed in config.$(br2)Till it with a hoe to get Twilight Rich Soil Farmland, which boosts crops when fully moist."
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "twilightdelight:twilight_rich_soil"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightdelight:witchcraft_bone_meal",
+	  "text": "Alternatively, use Witchcraft Bone Meal on Uberous Soil to convert it into Twilight Rich Soil.$(br2)Like rich soil, it also converts Mushgloom and Fiddlehead above it into colonies."
+	}
+  ]
+}

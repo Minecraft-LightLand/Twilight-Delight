@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightdelight:fiddlehead_clump"
+    }
+  ],
+  "result": [
+    {
+      "count": 5,
+      "item": "twilightforest:fiddlehead"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

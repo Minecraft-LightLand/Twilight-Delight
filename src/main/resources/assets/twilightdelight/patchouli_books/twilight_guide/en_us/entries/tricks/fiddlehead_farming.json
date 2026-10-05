@@ -1,0 +1,16 @@
+{
+  "name": "Farming Fiddlehead",
+  "icon": "twilightdelight:fiddlehead_clump",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:text",
+	  "text": "Plant Fiddlehead on Rich Soil or Twilight Rich Soil and it will turn into a Fiddlehead Clump.$(br2)The clump grows through 4 stages on soil that supports colonies. Keep the space above empty so tall fronds can sprout, and use Bone Meal to speed it up."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightdelight:fiddlehead_clump",
+	  "text": "Breaking a grown clump drops 2 to 5 Fiddleheads depending on its stage.$(br2)At full growth, harvest it with Shears to pick up the Clump itself, or cut it on a Cutting Board with a knife for 5 Fiddleheads."
+	}
+  ]
+}
