@@ -1,3 +1,6 @@
+3.2.5
+- fix mixin crash
+
 3.2.4
 - Add twilight rich soil and fiddlehead colony
 - Fix logspam and tag error when compat mods not installed
