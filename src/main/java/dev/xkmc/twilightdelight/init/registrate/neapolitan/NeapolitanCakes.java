@@ -105,7 +105,7 @@ public enum NeapolitanCakes {
 	}
 
 	private BlockModelBuilder genCakeModel(RegistrateBlockstateProvider pvd, String model) {
-		return pvd.models().withExistingParent(base + "_" + model, ResourceLocation.parse("block/cake"))
+		return pvd.models().withExistingParent(base + "_" + model, ResourceLocation.parse("block/" + model))
 				.texture("particle", pvd.modLoc("block/" + base + "_cake_side"))
 				.texture("bottom", pvd.modLoc("block/" + base + "_cake_bottom"))
 				.texture("top", pvd.modLoc("block/" + base + "_cake_top"))

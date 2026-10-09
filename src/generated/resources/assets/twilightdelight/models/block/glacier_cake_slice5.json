@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cake",
+  "parent": "minecraft:block/cake_slice5",
   "textures": {
     "bottom": "twilightdelight:block/glacier_cake_bottom",
     "inside": "twilightdelight:block/glacier_cake_inner",

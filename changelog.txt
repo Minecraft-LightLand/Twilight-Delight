@@ -1,3 +1,6 @@
+3.2.6
+- Fix neapolitan cake compat models
+
 3.2.5
 - fix mixin crash
 
