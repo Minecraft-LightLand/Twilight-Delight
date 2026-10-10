@@ -1,29 +1,38 @@
 package dev.xkmc.twilightdelight.content.block;
 
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
+import dev.xkmc.twilightdelight.util.VoxelBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 
+import java.util.List;
+
 public class SaucyGrilledNagaBlock extends FeastBlock {
 
-	protected static final VoxelShape PLATE_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
-	protected static final VoxelShape FULL_SHAPE = Shapes.joinUnoptimized(
-			PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 15.0D, 14.0D, 15.0D), BooleanOp.OR);
-	protected static final VoxelShape STAGE1_SHAPE = Shapes.joinUnoptimized(
-			PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 15.0D, 11.0D, 15.0D), BooleanOp.OR);
-	protected static final VoxelShape STAGE2_SHAPE = Shapes.joinUnoptimized(
-			PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 15.0D, 8.0D, 15.0D), BooleanOp.OR);
-	protected static final VoxelShape STAGE3_SHAPE = Shapes.joinUnoptimized(
-			PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 15.0D, 5.0D, 15.0D), BooleanOp.OR);
+	protected static final VoxelBuilder PLATE = new VoxelBuilder(0, 0, 0, 16, 2, 16);
+
+	/**
+	 * Indexed by {@link FeastBlock#SERVINGS}, then by
+	 * {@link net.minecraft.core.Direction#get2DDataValue()}: entry {@code i} is the state with
+	 * {@code servings == i}, so index 0 is the leftovers and index 4 is the untouched plate.
+	 * The torchberries and the plate edge overlay are decoration and excluded.
+	 */
+	protected static final VoxelShape[][] STAGE_SHAPES = {
+			VoxelBuilder.buildRotatedShapes(List.of(PLATE)),
+			served(3, 2, 3, 15, 5, 15),
+			served(3, 2, 3, 15, 8, 15),
+			served(3, 2, 3, 15, 11, 15),
+			served(3, 2, 3, 15, 14, 15)};
+
+	private static VoxelShape[] served(int x0, int y0, int z0, int x1, int y1, int z1) {
+		return VoxelBuilder.buildRotatedShapes(List.of(PLATE, new VoxelBuilder(x0, y0, z0, x1, y1, z1)));
+	}
 
 	public SaucyGrilledNagaBlock() {
 		super(Properties.ofFullCopy(Blocks.WHITE_WOOL).pushReaction(PushReaction.DESTROY), DelightFood.PLATE_OF_SAUCY_GRILLED_NAGA.item, true);
@@ -31,13 +40,7 @@ public class SaucyGrilledNagaBlock extends FeastBlock {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
-		return switch (state.getValue(SERVINGS)) {
-			case 3 -> STAGE1_SHAPE;
-			case 2 -> STAGE2_SHAPE;
-			case 1 -> STAGE3_SHAPE;
-			case 0 -> PLATE_SHAPE;
-			default -> FULL_SHAPE;
-		};
+		return STAGE_SHAPES[state.getValue(SERVINGS)][state.getValue(FACING).get2DDataValue()];
 	}
 
 }
