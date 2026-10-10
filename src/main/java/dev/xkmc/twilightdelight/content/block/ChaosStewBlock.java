@@ -6,6 +6,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import vectorwing.farmersdelight.common.block.FeastBlock;
@@ -19,7 +20,7 @@ public class ChaosStewBlock extends FeastBlock {
 	protected static final VoxelShape LEFTOVER_SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D);
 
 	public ChaosStewBlock() {
-		super(Properties.copy(Blocks.WHITE_WOOL), DelightFood.BOWL_OF_CHAOS_STEW.item, true);
+		super(Properties.copy(Blocks.WHITE_WOOL).pushReaction(PushReaction.DESTROY), DelightFood.BOWL_OF_CHAOS_STEW.item, true);
 	}
 
 	@Override
