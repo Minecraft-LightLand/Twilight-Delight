@@ -327,8 +327,8 @@ public class TDBlocks {
 					})
 					.item(MushroomColonyItem::new).tag(TagRef.ITEM_MUSHROOM_COLONIES)
 					.model((ctx, pvd) -> pvd.generated(ctx,
-							pvd.modLoc("block/fiddlehead_clump_bottom_stage3"),
-							pvd.modLoc("block/fiddlehead_clump_top_stage3"))).build()
+							pvd.modLoc("block/fiddlehead_clump_soil_stage0"),
+							pvd.modLoc("block/fiddlehead_clump_stage0"))).build()
 					.register();
 
 			FIDDLEHEAD_CLUMP_UPPER = TwilightDelight.REGISTRATE.block(
@@ -363,18 +363,16 @@ public class TDBlocks {
 			TWILIGHT_RICH_SOIL_FARMLAND = TwilightDelight.REGISTRATE.block(
 							"twilight_rich_soil_farmland", p -> new TwilightRichSoilFarmlandBlock(
 									BlockBehaviour.Properties.copy(Blocks.FARMLAND)))
+					// vanilla farmland has no dedicated side slot: template_farmland draws the four
+					// sides and the bottom from "dirt", and only the tilled surface from "top"
 					.blockstate((ctx, pvd) -> {
 						ModelFile dry = pvd.models().withExistingParent(ctx.getName(),
 										pvd.mcLoc("block/farmland"))
-								.texture("particle", pvd.modLoc("block/" + ctx.getName()))
-								.texture("dirt", pvd.mcLoc("block/dirt"))
-								.texture("side", pvd.modLoc("block/" + ctx.getName() + "_side"))
+								.texture("dirt", pvd.modLoc("block/twilight_rich_soil"))
 								.texture("top", pvd.modLoc("block/" + ctx.getName()));
 						ModelFile moist = pvd.models().withExistingParent(ctx.getName() + "_moist",
 										pvd.mcLoc("block/farmland_moist"))
-								.texture("particle", pvd.modLoc("block/" + ctx.getName() + "_moist"))
-								.texture("dirt", pvd.mcLoc("block/dirt"))
-								.texture("side", pvd.modLoc("block/" + ctx.getName() + "_side"))
+								.texture("dirt", pvd.modLoc("block/" + ctx.getName() + "_side"))
 								.texture("top", pvd.modLoc("block/" + ctx.getName() + "_moist"));
 						pvd.getVariantBuilder(ctx.get()).forAllStates((state) -> ConfiguredModel.builder()
 								.modelFile(state.getValue(FarmBlock.MOISTURE) > 0 ? moist : dry).build());

@@ -1,9 +1,7 @@
 {
   "parent": "minecraft:block/farmland_moist",
   "textures": {
-    "dirt": "minecraft:block/dirt",
-    "particle": "twilightdelight:block/twilight_rich_soil_farmland_moist",
-    "side": "twilightdelight:block/twilight_rich_soil_farmland_side",
+    "dirt": "twilightdelight:block/twilight_rich_soil_farmland_side",
     "top": "twilightdelight:block/twilight_rich_soil_farmland_moist"
   }
 }
