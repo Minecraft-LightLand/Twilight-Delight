@@ -30,7 +30,7 @@ public class FoodTwilight extends ConfigDataProvider {
 	public void add(ConfigDataProvider.Collector map) {
 
 		// twilight forest
-		if (ModList.get().isLoaded(TwilightForestMod.ID)) {
+		if (ModList.get().isLoaded(CuisineDelight.MODID)) {
 			map.add(CuisineDelight.INGREDIENT, ResourceLocation.fromNamespaceAndPath(TwilightForestMod.ID, "meat"), IngredientConfig.build(
 					IngredientConfig.get(Ingredient.of(TFItems.RAW_MEEF.get()), FoodType.MEAT,
 							240, 360, 80, 0.5f, 0.5f, 3, 12),
@@ -60,7 +60,7 @@ public class FoodTwilight extends ConfigDataProvider {
 		}
 
 		// twilight delight
-		if (ModList.get().isLoaded(TwilightDelight.MODID)) {
+		if (ModList.get().isLoaded(CuisineDelight.MODID)) {
 			map.add(CuisineDelight.INGREDIENT, ResourceLocation.fromNamespaceAndPath(TwilightDelight.MODID, "meat"), IngredientConfig.build(
 					IngredientConfig.get(Ingredient.of(DelightFood.RAW_INSECT.item.get()), FoodType.MEAT,
 							240, 360, 80, 1, 0.5f, 2, 8),

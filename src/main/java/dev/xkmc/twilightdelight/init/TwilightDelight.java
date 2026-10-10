@@ -5,6 +5,7 @@ import com.teamabnormals.neapolitan.core.Neapolitan;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import com.tterrag.registrate.providers.ProviderType;
 import dev.ghen.thirst.Thirst;
+import dev.xkmc.cuisinedelight.init.CuisineDelight;
 import dev.xkmc.l2core.init.L2TagGen;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
 import dev.xkmc.l2core.init.reg.simple.Reg;
@@ -155,7 +156,8 @@ public class TwilightDelight {
 		var file = event.getExistingFileHelper();
 		var run = event.includeServer();
 		gen.addProvider(run, new GLMGen(output, pvd));
-		gen.addProvider(run, new FoodTwilight(gen, pvd));
+		if (ModList.get().isLoaded(CuisineDelight.MODID))
+			gen.addProvider(run, new FoodTwilight(gen, pvd));
 		var reg = new TDDatapackRegistriesGen(output, pvd);
 		gen.addProvider(run, reg);
 		gen.addProvider(run, new TDDatapackTagsGen(output, reg.getRegistryProvider(), file));

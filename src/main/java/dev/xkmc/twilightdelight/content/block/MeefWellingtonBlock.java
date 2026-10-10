@@ -6,6 +6,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -16,7 +17,7 @@ public class MeefWellingtonBlock extends FeastBlock {
 	protected static final VoxelShape PLATE_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 15.0D);
 
 	public MeefWellingtonBlock() {
-		super(Properties.ofFullCopy(Blocks.WHITE_WOOL), DelightFood.PLATE_OF_MEEF_WELLINGTON.item, true);
+		super(Properties.ofFullCopy(Blocks.WHITE_WOOL).pushReaction(PushReaction.DESTROY), DelightFood.PLATE_OF_MEEF_WELLINGTON.item, true);
 	}
 
 	@Override
