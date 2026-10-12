@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "tag": "forge:insect"
+      "item": "twilightforest:mushgloom"
     }
   ],
   "result": [

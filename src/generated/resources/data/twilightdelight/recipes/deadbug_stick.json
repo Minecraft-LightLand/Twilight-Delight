@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:insect"
+    },
+    {
+      "tag": "forge:insect"
+    },
+    {
+      "tag": "forge:insect"
+    },
+    {
+      "tag": "forge:rods/wooden"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:deadbug_stick"
+  }
+}

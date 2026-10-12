@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:cooking/velvet_antler_stewed_chicken_soup"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_velvet_antler_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "twilightdelight:velvet_antler_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_velvet_antler_slice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:cooking/velvet_antler_stewed_chicken_soup"
+    ]
+  },
+  "sends_telemetry_event": true
+}

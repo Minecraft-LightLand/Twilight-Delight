@@ -1,0 +1,35 @@
+{
+  "criteria": {
+    "eat_deadbug_stick": {
+      "conditions": {
+        "item": {
+          "items": [
+            "twilightdelight:deadbug_stick"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.twilightdelight.no_more_bugs.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "twilightdelight:deadbug_stick"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.twilightdelight.no_more_bugs.title"
+    }
+  },
+  "requirements": [
+    [
+      "eat_deadbug_stick"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

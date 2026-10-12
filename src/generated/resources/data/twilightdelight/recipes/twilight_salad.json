@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "twilightdelight:raw_insect"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "tag": "forge:crops/tomato"
+    },
+    {
+      "item": "twilightforest:torchberries"
+    },
+    {
+      "item": "twilightforest:moss_patch"
+    },
+    {
+      "item": "twilightforest:mayapple"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:twilight_salad"
+  }
+}

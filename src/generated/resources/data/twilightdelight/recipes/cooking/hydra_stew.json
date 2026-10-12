@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "tag": "twilightdelight:hydra_meat"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "twilightforest:mayapple"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:hydra_stew"
+  }
+}

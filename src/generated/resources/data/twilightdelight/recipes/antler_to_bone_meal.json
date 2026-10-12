@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "twilightdelight:antler"
+    }
+  ],
+  "result": {
+    "count": 5,
+    "item": "minecraft:bone_meal"
+  }
+}

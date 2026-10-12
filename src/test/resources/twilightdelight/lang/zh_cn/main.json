@@ -22,5 +22,11 @@
   },
   "patchouli.twilightdelight.landing": "享受来自暮色的美味和甜品",
   "patchouli.twilightdelight.title": "暮色风味乐事教程",
-  "twilightdelight.jei.frozen": "冰镇"
+  "twilightdelight.jei.frozen": "冰镇",
+  "advancements.twilightdelight": {
+    "no_more_bugs": {
+      "title": "再也不用担心虫虫了",
+      "description": "吃掉一串虫肉串"
+    }
+  }
 }

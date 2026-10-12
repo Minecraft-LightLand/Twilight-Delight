@@ -149,6 +149,7 @@ public class RecipeGen {
 
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_MEEF_SLICE.item.get()), DelightFood.COOKED_MEEF_SLICE.item, 1);
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_TOMAHAWK_SMEAK.item.get()), DelightFood.COOKED_TOMAHAWK_SMEAK.item, 1);
+		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_TOMAKAWK_SMEAXE.item.get()), DelightFood.COOKED_TOMAKAWK_SMEAXE.item, 1);
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_INSECT.item.get()), DelightFood.COOKED_INSECT.item, 1);
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_VENISON_RIB.item.get()), DelightFood.COOKED_VENISON_RIB.item, 1);
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_NAGA_MEAT.item.get()), DelightFood.COOKED_NAGA_MEAT.item, 1);
@@ -282,6 +283,52 @@ public class RecipeGen {
 					.define('A', TFItems.MAZE_WAFER.get())
 					.define('B', Items.COCOA_BEANS)
 					.save(pvd);
+
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, DelightFood.SLIME_WAFER.item.get(), 1)::unlockedBy, TFItems.MAZE_WAFER.get())
+					.pattern("A").pattern("B").pattern("A")
+					.define('A', TFItems.MAZE_WAFER.get())
+					.define('B', Items.SLIME_BALL)
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.HYDRA_SKEWER.item.get(), 1)::unlockedBy, TFItems.HYDRA_CHOP.get())
+					.requires(TFItems.STEELEAF_INGOT.get())
+					.requires(TagGen.HYDRA_MEAT)
+					.requires(TFItems.LIVEROOT.get())
+					.requires(Tags.Items.RODS_WOODEN)
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.HYDRA_STUFFED_POTATO.item.get(), 1)::unlockedBy, Items.BAKED_POTATO)
+					.requires(Items.BAKED_POTATO)
+					.requires(TagGen.HYDRA_MEAT)
+					.requires(DelightFood.MUSHGLOOM_SAUCE.item.get())
+					.requires(TagRef.CROPS_ONION)
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.INSECT_ROLL.item.get(), 1)::unlockedBy, DelightFood.RAW_INSECT.item.get())
+					.requires(DelightFood.RAW_INSECT.item.get())
+					.requires(TagRef.CROPS_RICE)
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.TWILIGHT_SALAD.item.get(), 1)::unlockedBy, DelightFood.RAW_INSECT.item.get())
+					.requires(Items.BOWL)
+					.requires(DelightFood.RAW_INSECT.item.get())
+					.requires(Items.CARROT)
+					.requires(TagRef.CROPS_TOMATO)
+					.requires(TFItems.TORCHBERRIES.get())
+					.requires(TFBlocks.MOSS_PATCH.get().asItem())
+					.requires(TFBlocks.MAYAPPLE.get().asItem())
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.DEADBUG_STICK.item.get(), 1)::unlockedBy, TFBlocks.FIREFLY.get().asItem())
+					.requires(TagGen.INSECT)
+					.requires(TagGen.INSECT)
+					.requires(TagGen.INSECT)
+					.requires(Tags.Items.RODS_WOODEN)
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.MISC, Items.BONE_MEAL, 5)::unlockedBy, TDItems.ANTLER.get())
+					.requires(TDItems.ANTLER.get())
+					.save(pvd, getID(TDItems.ANTLER.getId(), "_to_bone_meal"));
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.BORER_TEAR_SOUP.item.get(), 1)::unlockedBy, TFItems.BORER_ESSENCE.get())
 					.requires(Items.BOWL)
@@ -483,6 +530,63 @@ public class RecipeGen {
 					.addIngredient(TFItems.LIVEROOT.get())
 					.save(pvd, getID(DelightFood.LIVEROOT_VENISON_NOODLE_SOUP.item.getId()));
 
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.RED_THREAD_PASTA.item.get(),
+							1, 400, 0.5f, Items.BOWL)::unlockedBy,
+					TFBlocks.RED_THREAD.get().asItem())
+					.addIngredient(TFBlocks.RED_THREAD.get().asItem(), 3)
+					.addIngredient(ModItems.TOMATO_SAUCE.get())
+					.addIngredient(Items.BEETROOT_SOUP)
+					.addIngredient(Items.SWEET_BERRIES)
+					.save(pvd, getID(DelightFood.RED_THREAD_PASTA.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.FIERY_BLOOD_CURD.item.get(),
+							1, 800, 0.5f, Items.BUCKET)::unlockedBy,
+					TFItems.FIERY_BLOOD.get())
+					.addIngredient(TFItems.FIERY_BLOOD.get(), 2)
+					.addIngredient(TagGen.HYDRA_MEAT)
+					.addIngredient(TFItems.TORCHBERRIES.get())
+					.addIngredient(TFBlocks.MAYAPPLE.get().asItem())
+					.addIngredient(Items.BLAZE_ROD)
+					.save(pvd, getID(DelightFood.FIERY_BLOOD_CURD.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.HYDRA_STEW.item.get(),
+							1, 400, 0.5f, Items.BOWL)::unlockedBy,
+					TFItems.HYDRA_CHOP.get())
+					.addIngredient(TagGen.HYDRA_MEAT)
+					.addIngredient(Items.POTATO)
+					.addIngredient(TFBlocks.MAYAPPLE.get().asItem())
+					.save(pvd, getID(DelightFood.HYDRA_STEW.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.FRIED_HYDRA_CHOP.item.get(),
+							1, 800, 0.5f, Items.BUCKET)::unlockedBy,
+					TFItems.HYDRA_CHOP.get())
+					.addIngredient(TagGen.HYDRA_MEAT)
+					.addIngredient(TagRef.EGGS)
+					.addIngredient(ModItems.WHEAT_DOUGH.get())
+					.addIngredient(Items.CARROT)
+					.addIngredient(TFBlocks.MOSS_PATCH.get().asItem())
+					.addIngredient(TFBlocks.MAYAPPLE.get().asItem())
+					.save(pvd, getID(DelightFood.FRIED_HYDRA_CHOP.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GLOWING_CURRY_RICE.item.get(),
+							1, 400, 0.5f, Items.BOWL)::unlockedBy,
+					DelightFood.COOKED_INSECT.item.get())
+					.addIngredient(DelightFood.COOKED_INSECT.item.get())
+					.addIngredient(TagRef.CROPS_RICE)
+					.addIngredient(DelightFood.MUSHGLOOM_SAUCE.item.get())
+					.addIngredient(TagRef.CROPS_ONION)
+					.addIngredient(Items.POTATO)
+					.save(pvd, getID(DelightFood.GLOWING_CURRY_RICE.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.VELVET_ANTLER_STEWED_CHICKEN_SOUP.item.get(),
+							1, 400, 0.5f, Items.BOWL)::unlockedBy,
+					DelightFood.VELVET_ANTLER_SLICE.item.get())
+					.addIngredient(DelightFood.VELVET_ANTLER_SLICE.item.get())
+					.addIngredient(Items.CHICKEN)
+					.addIngredient(TFItems.LIVEROOT.get())
+					.addIngredient(Items.BROWN_MUSHROOM)
+					.save(pvd, getID(DelightFood.VELVET_ANTLER_STEWED_CHICKEN_SOUP.item.getId()));
+
 		}
 
 		// drink cooking
@@ -516,6 +620,14 @@ public class RecipeGen {
 					.addIngredient(TFItems.TORCHBERRIES.get())
 					.addIngredient(Items.SUGAR)
 					.save(pvd, getID(DelightFood.TORCHBERRY_JUICE.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.ANTLER_WINE.item.get().asItem(),
+							1, 400, 0.5f, Items.GLASS_BOTTLE)::unlockedBy,
+					TDItems.ANTLER.get())
+					.addIngredient(TDItems.ANTLER.get())
+					.addIngredient(TFItems.TORCHBERRIES.get())
+					.addIngredient(TFItems.LIVEROOT.get())
+					.save(pvd, getID(DelightFood.ANTLER_WINE.item.getId()));
 		}
 
 		// cutting
@@ -565,10 +677,16 @@ public class RecipeGen {
 					.save(pvd, getID(DelightFood.HYDRA_PIECE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
-							Ingredient.of(TagGen.INSECT),
+							Ingredient.of(TFBlocks.MUSHGLOOM.get().asItem()),
 							Ingredient.of(TagRef.TOOLS_KNIVES),
 							DelightFood.RAW_INSECT.item.get(), 2)
 					.save(pvd, getID(DelightFood.RAW_INSECT.item.getId()));
+
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TDItems.ANTLER.get()),
+							Ingredient.of(TagRef.TOOLS_KNIVES),
+							DelightFood.VELVET_ANTLER_SLICE.item.get(), 3)
+					.save(pvd, getID(DelightFood.VELVET_ANTLER_SLICE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TDBlocks.MUSHGLOOM_COLONY.get()),

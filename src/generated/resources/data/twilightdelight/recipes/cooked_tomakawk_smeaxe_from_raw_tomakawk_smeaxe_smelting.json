@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "twilightdelight:raw_tomakawk_smeaxe"
+  },
+  "result": "twilightdelight:cooked_tomakawk_smeaxe"
+}
