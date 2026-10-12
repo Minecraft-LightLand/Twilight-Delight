@@ -304,9 +304,11 @@ public class RecipeGen {
 					.requires(TagRef.CROPS_ONION)
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.INSECT_ROLL.item.get(), 1)::unlockedBy, DelightFood.RAW_INSECT.item.get())
-					.requires(DelightFood.RAW_INSECT.item.get())
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.INSECT_ROLL.item.get(), 2)::unlockedBy, DelightFood.RAW_INSECT.item.get())
+					.requires(Items.BOWL)
 					.requires(TagRef.CROPS_RICE)
+					.requires(DelightFood.RAW_INSECT.item.get())
+					.requires(DelightFood.RAW_INSECT.item.get())
 					.save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.TWILIGHT_SALAD.item.get(), 1)::unlockedBy, DelightFood.RAW_INSECT.item.get())

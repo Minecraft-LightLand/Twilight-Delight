@@ -1,4 +1,4 @@
-// 1.20.1	2026-10-12T13:22:02.298259	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2026-10-12T16:48:32.549498	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
@@ -812,7 +812,7 @@ c573ce1a82b0b168bb5f8be672779630c0b53421 data/twilightdelight/recipes/ghast_burg
 4f6e05307201a1249300f04101d57bafecf18e7a data/twilightdelight/recipes/hydra_burger.json
 c93479c8b7a7b04eb85d78938cb405f0a9d0be56 data/twilightdelight/recipes/hydra_skewer.json
 1da721ad0b964b554c5166ab1babfaca62ec14f7 data/twilightdelight/recipes/hydra_stuffed_potato.json
-6f1747ac30a1715b5ea66e78e509a43ad93bdf0c data/twilightdelight/recipes/insect_roll.json
+ef189db74e2a3dfdd4aba3f749618df732d81d80 data/twilightdelight/recipes/insect_roll.json
 3d8fa9e21052ef5ca43ee2c387a4d537a781a8f5 data/twilightdelight/recipes/ironwood_knife.json
 8fb15f1b575b216d0d4a2e1d2d281d7f8d6e429a data/twilightdelight/recipes/jeed/temporal_sadness.json
 da57705f1ff5cc602b972c483e8dfa6917180567 data/twilightdelight/recipes/knightmetal_knife.json
