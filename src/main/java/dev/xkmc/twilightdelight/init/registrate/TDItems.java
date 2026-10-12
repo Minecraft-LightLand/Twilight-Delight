@@ -1,6 +1,8 @@
 package dev.xkmc.twilightdelight.init.registrate;
 
 import com.tterrag.registrate.builders.ItemBuilder;
+import com.tterrag.registrate.providers.DataGenContext;
+import com.tterrag.registrate.providers.RegistrateItemModelProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
@@ -14,6 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -45,6 +48,9 @@ public class TDItems {
 	public static final ItemEntry<Item> WITCHCRAFT_BONE_MEAL;
 	public static final ItemEntry<ReusableDrinkItem> CHAOS_INK_DRINK;
 
+	public static final ItemEntry<Item> ANTLER;
+	public static final ItemEntry<BowItem> ANTLER_BOW;
+
 	// WITCHCRAFT
 	static {
 		WITCHCRAFT_BONE = TwilightDelight.REGISTRATE.item("witchcraft_bone", Item::new)
@@ -71,6 +77,15 @@ public class TDItems {
 					}
 				})
 				.lang("Chaos Ink Drink").register();
+	}
+
+	// ANTLER
+	static {
+		ANTLER = TwilightDelight.REGISTRATE.item("antler", Item::new)
+				.defaultModel().lang("Antler").register();
+		ANTLER_BOW = TwilightDelight.REGISTRATE.item("antler_bow", BowItem::new)
+				.properties(e -> e.durability(384))
+				.model(TDItems::bow).lang("Antler Bow").register();
 	}
 
 	// KNIVES
@@ -159,6 +174,30 @@ public class TDItems {
 
 	private static <T extends Item> ItemBuilder<T, L2Registrate> handheld(String id, NonNullFunction<Item.Properties, T> factory) {
 		return TwilightDelight.REGISTRATE.item(id, factory).model((ctx, pvd) -> pvd.handheld(ctx));
+	}
+
+	/**
+	 * Mirrors how Twilight Forest writes its own bow models: the idle bow plus one model per
+	 * pull stage, all parented to the vanilla bow for the display transforms.
+	 */
+	private static <T extends Item> void bow(DataGenContext<Item, T> ctx, RegistrateItemModelProvider pvd) {
+		for (int i = 0; i < 3; i++) {
+			pvd.getBuilder(ctx.getName() + "_pulling_" + i)
+					.parent(new ModelFile.UncheckedModelFile(ResourceLocation.parse("minecraft:item/bow")))
+					.texture("layer0", pvd.modLoc("item/" + ctx.getName() + "_pulling_" + i));
+		}
+
+		var base = pvd.getBuilder(ctx.getName())
+				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.parse("minecraft:item/bow")))
+				.texture("layer0", pvd.itemTexture(ctx));
+		for (int i = 0; i < 3; i++) {
+			var override = base.override().predicate(ResourceLocation.withDefaultNamespace("pulling"), 1.0f);
+			if (i > 0) {
+				override.predicate(ResourceLocation.withDefaultNamespace("pull"), i == 1 ? 0.65f : 0.9f);
+			}
+			override.model(new ModelFile.UncheckedModelFile(
+					pvd.modLoc("item/" + ctx.getName() + "_pulling_" + i))).end();
+		}
 	}
 
 	public static void register() {

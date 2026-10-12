@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "item": "twilightdelight:velvet_antler_slice"
+    },
+    {
+      "item": "minecraft:chicken"
+    },
+    {
+      "item": "twilightforest:liveroot"
+    },
+    {
+      "item": "minecraft:brown_mushroom"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:velvet_antler_stewed_chicken_soup"
+  }
+}

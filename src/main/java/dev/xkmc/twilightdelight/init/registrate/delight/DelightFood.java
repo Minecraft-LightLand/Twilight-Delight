@@ -21,6 +21,13 @@ public enum DelightFood {
 	COOKED_MEEF_SLICE(DelightFoodType.FAST, 3, 0.8F, TagRef.PROTEINS),
 	RAW_TOMAHAWK_SMEAK(DelightFoodType.NONE, 6, 0.7F, TagRef.PROTEINS),
 	COOKED_TOMAHAWK_SMEAK(DelightFoodType.NONE, 12, 0.8F, TagRef.PROTEINS),
+	RAW_TOMAKAWK_SMEAXE(DelightFoodType.TOMAHAWK, 6, 0.7F, List.of(
+			new EffectSupplier(MobEffects.DAMAGE_BOOST, 400, 1, 1)),
+			TagRef.PROTEINS),
+	COOKED_TOMAKAWK_SMEAXE(DelightFoodType.COOKED_TOMAHAWK, 12, 0.8F, List.of(
+			new EffectSupplier(MobEffects.DAMAGE_BOOST, 400, 3, 1),
+			new EffectSupplier(MobEffects.MOVEMENT_SPEED, 400, 1, 1)),
+			TagRef.PROTEINS),
 	RAW_INSECT(DelightFoodType.NONE, 2, 0.2F, TagRef.PROTEINS),
 	COOKED_INSECT(DelightFoodType.NONE, 6, 0.6F, TagRef.PROTEINS),
 	TORCHBERRY_COOKIE(DelightFoodType.FAST, 2, 0.2F, List.of(
@@ -49,6 +56,12 @@ public enum DelightFood {
 			new EffectSupplier(MobEffects.MOVEMENT_SPEED, 1800, 1, 1)),
 			TagRef.PROTEINS, TagRef.GRAINS, TagRef.VEGETABLES),
 	CHOCOLATE_WAFER(DelightFoodType.NONE, 9, 0.6F,
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	SLIME_WAFER(DelightFoodType.NONE, 9, 0.6F, List.of(
+			new EffectSupplier(MobEffects.JUMP, 200, 1, 1)),
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	MAZE_SLIME_WAFER(DelightFoodType.NONE, 9, 0.6F, List.of(
+			new EffectSupplier(MobEffects.JUMP, 200, 1, 1)),
 			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
 	EXPERIMENT_113(DelightFoodType.STICK, 6, 1.2F,
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 100, 0, 0.33f),
@@ -174,6 +187,51 @@ public enum DelightFood {
 			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1),
 			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 1800, 2, 1),
 			new EffectSupplier(MobEffects.MOVEMENT_SPEED, 1800, 2, 1)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
+	RED_THREAD_PASTA(DelightFoodType.BOWL, 12, 0.8f, List.of(
+			new EffectSupplier(MobEffects.NIGHT_VISION, 3600, 0, 1),
+			new EffectSupplier(MobEffects.DAMAGE_BOOST, 600, 1, 1),
+			new EffectSupplier(MobEffects.DIG_SPEED, 600, 1, 1)),
+			TagRef.GRAINS, TagRef.VEGETABLES),
+	HYDRA_SKEWER(DelightFoodType.STICK, 8, 0.9f, List.of(
+			new EffectSupplier(MobEffects.REGENERATION, 200, 0, 1),
+			new EffectSupplier(MobEffects.FIRE_RESISTANCE, 2400, 0, 1)),
+			TagRef.PROTEINS),
+	FIERY_BLOOD_CURD(DelightFoodType.NONE, 14, 0.8f, List.of(
+			new EffectSupplier(MobEffects.REGENERATION, 100, 1, 1),
+			new EffectSupplier(MobEffects.FIRE_RESISTANCE, 3600, 0, 1)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
+	HYDRA_STUFFED_POTATO(DelightFoodType.NONE, 8, 0.6f, List.of(
+			new EffectSupplier(MobEffects.REGENERATION, 100, 0, 1),
+			new EffectSupplier(MobEffects.FIRE_RESISTANCE, 1200, 0, 1)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
+	HYDRA_STEW(DelightFoodType.BOWL, 12, 0.8f, List.of(
+			new EffectSupplier(MobEffects.REGENERATION, 200, 0, 1),
+			new EffectSupplier(MobEffects.FIRE_RESISTANCE, 2400, 0, 1)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
+	FRIED_HYDRA_CHOP(DelightFoodType.NONE, 12, 0.8f, List.of(
+			new EffectSupplier(MobEffects.REGENERATION, 100, 1, 1),
+			new EffectSupplier(MobEffects.FIRE_RESISTANCE, 3600, 0, 1)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
+	INSECT_ROLL(DelightFoodType.NONE, 6, 0.6f,
+			TagRef.PROTEINS, TagRef.GRAINS),
+	TWILIGHT_SALAD(DelightFoodType.BOWL, 8, 0.6f,
+			TagRef.PROTEINS, TagRef.VEGETABLES, TagRef.FRUITS),
+	GLOWING_CURRY_RICE(DelightFoodType.BOWL, 12, 0.8f, List.of(
+			new EffectSupplier(MobEffects.DIG_SPEED, 200, 0, 1)),
+			TagRef.PROTEINS, TagRef.GRAINS, TagRef.VEGETABLES),
+	DEADBUG_STICK(DelightFoodType.STICK, 6, 0.3f,
+			TagRef.PROTEINS),
+	VELVET_ANTLER_SLICE(DelightFoodType.NONE, 2, 0.3f, List.of(
+			new EffectSupplier(MobEffects.REGENERATION, 100, 0, 1)),
+			TagRef.PROTEINS),
+	ANTLER_WINE(DelightFoodType.DRINK, 4, 0.25f, List.of(
+			new EffectSupplier(MobEffects.DIG_SPEED, 200, 0, 1),
+			new EffectSupplier(MobEffects.MOVEMENT_SPEED, 400, 0, 1),
+			new EffectSupplier(MobEffects.JUMP, 200, 0, 1),
+			new EffectSupplier(MobEffects.CONFUSION, 60, 0, 1))),
+	VELVET_ANTLER_STEWED_CHICKEN_SOUP(DelightFoodType.BOWL, 10, 0.8f, List.of(
+			new EffectSupplier(MobEffects.REGENERATION, 600, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
 	WITCHCRAFT_BONE_BROTH(DelightFoodType.BOWL, 8, 0.7f, List.of(
 			new EffectSupplier(ModEffects.NOURISHMENT, 2400, 0, 1),

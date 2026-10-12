@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "item": "twilightdelight:cooked_insect"
+    },
+    {
+      "tag": "c:crops/rice"
+    },
+    {
+      "item": "twilightdelight:mushgloom_sauce"
+    },
+    {
+      "tag": "c:foods/onion"
+    },
+    {
+      "item": "minecraft:potato"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:glowing_curry_rice"
+  }
+}

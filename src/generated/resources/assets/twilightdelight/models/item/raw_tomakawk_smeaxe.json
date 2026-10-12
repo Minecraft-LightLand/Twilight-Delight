@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "twilightdelight:item/raw_tomakawk_smeaxe"
+  }
+}

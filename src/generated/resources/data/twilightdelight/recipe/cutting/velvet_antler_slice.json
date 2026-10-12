@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "twilightdelight:antler"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 3,
+        "id": "twilightdelight:velvet_antler_slice"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

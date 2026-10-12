@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "twilightdelight:item/antler_bow_pulling_0"
+  }
+}

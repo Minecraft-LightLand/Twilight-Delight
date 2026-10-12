@@ -1,0 +1,34 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bucket"
+  },
+  "cookingtime": 800,
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "tag": "twilightdelight:hydra_meat"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "item": "farmersdelight:wheat_dough"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "twilightforest:moss_patch"
+    },
+    {
+      "item": "twilightforest:mayapple"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:fried_hydra_chop"
+  }
+}

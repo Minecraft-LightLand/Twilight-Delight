@@ -32,6 +32,20 @@
       "type": "MEAT",
       "effects": [],
       "ingredient": {
+        "item": "twilightdelight:raw_tomakawk_smeaxe"
+      },
+      "max_time": 360,
+      "min_time": 240,
+      "nutrition": 12,
+      "overcook_penalty": 0.5,
+      "raw_penalty": 0.5,
+      "size": 6,
+      "stir_time": 80
+    },
+    {
+      "type": "MEAT",
+      "effects": [],
+      "ingredient": {
         "item": "twilightdelight:raw_meef_slice"
       },
       "max_time": 300,

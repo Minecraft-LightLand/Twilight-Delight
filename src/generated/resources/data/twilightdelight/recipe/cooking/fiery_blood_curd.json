@@ -1,0 +1,34 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bucket"
+  },
+  "cookingtime": 800,
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "item": "twilightforest:fiery_blood"
+    },
+    {
+      "item": "twilightforest:fiery_blood"
+    },
+    {
+      "tag": "twilightdelight:hydra_meat"
+    },
+    {
+      "item": "twilightforest:torchberries"
+    },
+    {
+      "item": "twilightforest:mayapple"
+    },
+    {
+      "item": "minecraft:blaze_rod"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:fiery_blood_curd"
+  }
+}

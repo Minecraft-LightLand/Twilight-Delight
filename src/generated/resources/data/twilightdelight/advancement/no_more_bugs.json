@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "eat_deadbug_stick": {
+      "conditions": {
+        "item": {
+          "items": "twilightdelight:deadbug_stick"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.twilightdelight.no_more_bugs.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "twilightdelight:deadbug_stick"
+    },
+    "title": {
+      "translate": "advancements.twilightdelight.no_more_bugs.title"
+    }
+  },
+  "requirements": [
+    [
+      "eat_deadbug_stick"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_antler": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightdelight:antler"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:cooking/antler_wine"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_antler"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:cooking/antler_wine"
+    ]
+  }
+}

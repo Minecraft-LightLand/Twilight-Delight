@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "twilightdelight:item/velvet_antler_stewed_chicken_soup"
+  }
+}

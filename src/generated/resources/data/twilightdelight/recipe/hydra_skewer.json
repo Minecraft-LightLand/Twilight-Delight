@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "twilightdelight:hydra_meat"
+    },
+    {
+      "item": "twilightforest:steeleaf_ingot"
+    },
+    {
+      "item": "twilightforest:liveroot"
+    },
+    {
+      "tag": "c:rods/wooden"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:hydra_skewer"
+  }
+}

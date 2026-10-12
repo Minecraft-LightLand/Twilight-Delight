@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_tomakawk_smeaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightdelight:raw_tomakawk_smeaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:cooked_tomakawk_smeaxe_from_raw_tomakawk_smeaxe_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_tomakawk_smeaxe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:cooked_tomakawk_smeaxe_from_raw_tomakawk_smeaxe_smoking"
+    ]
+  }
+}

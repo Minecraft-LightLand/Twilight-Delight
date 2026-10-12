@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "tag": "c:crops/rice"
+    },
+    {
+      "item": "twilightforest:liveroot"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "twilightforest:shika_senbei"
+  }
+}

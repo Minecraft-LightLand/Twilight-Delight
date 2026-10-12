@@ -4,6 +4,7 @@ import dev.xkmc.twilightdelight.content.item.food.InBowlItem;
 import dev.xkmc.twilightdelight.content.item.food.RoseTeaItem;
 import dev.xkmc.twilightdelight.content.item.food.TDDrinkableItem;
 import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
+import dev.xkmc.twilightdelight.content.item.tool.TomahawkSmeaxeItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -14,6 +15,8 @@ import java.util.function.Supplier;
 public enum DelightFoodClassType {
 	REGULAR(TDFoodItem::new, () -> Items.AIR),
 	FIRE_PROOF(p -> new TDFoodItem(p.fireResistant()), () -> Items.AIR),
+	TOMAHAWK(p -> new TomahawkSmeaxeItem(3, p), () -> Items.AIR),
+	COOKED_TOMAHAWK(p -> new TomahawkSmeaxeItem(5, p), () -> Items.AIR),
 	STICK(p -> new TDFoodItem(p.craftRemainder(Items.STICK)), () -> Items.STICK),
 	SAUCE(p -> new TDFoodItem(p.stacksTo(64)), () -> Items.BOWL),
 	BOWL(p -> new TDFoodItem(p.stacksTo(16)), () -> Items.BOWL),

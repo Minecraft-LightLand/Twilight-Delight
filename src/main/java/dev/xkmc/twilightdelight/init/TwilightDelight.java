@@ -142,6 +142,7 @@ public class TwilightDelight {
 		REGISTRATE.addDataGenerator(ProviderType.LANG, LangData::genLang);
 		REGISTRATE.addDataGenerator(ProviderType.RECIPE, RecipeGen::genRecipes);
 		REGISTRATE.addDataGenerator(ProviderType.LOOT, ExtraLootGen::genLoot);
+		REGISTRATE.addDataGenerator(ProviderType.ADVANCEMENT, AdvancementGen::genAdvancements);
 		REGISTRATE.addDataGenerator(L2TagGen.EFF_TAGS, pvd -> pvd.addTag(L2TagGen.TRACKED_EFFECTS).add(
 				TDEffects.FIRE_RANGE.get(), TDEffects.FROZEN_RANGE.get(),
 				TDEffects.POISON_RANGE.get(), TDEffects.AURORA_GLOWING.get(),

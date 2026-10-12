@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "tag": "twilightdelight:hydra_meat"
+    },
+    {
+      "item": "twilightdelight:mushgloom_sauce"
+    },
+    {
+      "tag": "c:foods/onion"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:hydra_stuffed_potato"
+  }
+}
