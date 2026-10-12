@@ -38,12 +38,16 @@ public class TwilightDelightClient {
 
 	@SubscribeEvent
 	public static void registerItemColor(RegisterColorHandlersEvent.Item event) {
-		var blockColors = event.getBlockColors();
 		event.register(TwilightDelightClient::getLeafItemColor, TDBlocks.IRON_LEAVES.get().asItem());
-		event.register((stack, tintIndex) -> stack.getItem() instanceof BlockItem blockItem
-						? blockColors.getColor(blockItem.getBlock().defaultBlockState(), null, null, tintIndex)
-						: -1,
-				TDBlocks.FIDDLEHEAD_CLUMP.get().asItem());
+		event.register(TwilightDelightClient::getFiddleheadItemColor, TDBlocks.FIDDLEHEAD_CLUMP.get().asItem());
+	}
+
+	/**
+	 * The clump item renders soil on layer0 and the fiddlehead on layer1; only the plant takes
+	 * the tint, and without a level/pos to average over that is the plain biome foliage color.
+	 */
+	private static int getFiddleheadItemColor(ItemStack stack, int tintIndex) {
+		return tintIndex == 1 ? FoliageColor.get(0.5, 1.0) : -1;
 	}
 
 	/**
