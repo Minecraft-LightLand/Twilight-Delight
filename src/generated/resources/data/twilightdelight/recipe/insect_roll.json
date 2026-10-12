@@ -3,14 +3,20 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "twilightdelight:raw_insect"
+      "item": "minecraft:bowl"
     },
     {
       "tag": "c:crops/rice"
+    },
+    {
+      "item": "twilightdelight:raw_insect"
+    },
+    {
+      "item": "twilightdelight:raw_insect"
     }
   ],
   "result": {
-    "count": 1,
+    "count": 2,
     "id": "twilightdelight:insect_roll"
   }
 }

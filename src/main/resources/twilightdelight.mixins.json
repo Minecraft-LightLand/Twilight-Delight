@@ -4,6 +4,7 @@
 	"package": "dev.xkmc.twilightdelight.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
+		"AbstractCookingRecipeMixin",
 		"AbstractStoveBlockEntityAccessor",
 		"AddItemModifierAccessor",
 		"CookingPotBlockEntityMixin",
