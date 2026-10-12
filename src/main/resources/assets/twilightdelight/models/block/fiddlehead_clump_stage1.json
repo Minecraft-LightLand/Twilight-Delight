@@ -1,7 +1,7 @@
 {
-	"format_version": "26.3",
+	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
-	"ambientocclusion": false,
+	"render_type": "minecraft:cutout",
 	"textures": {
 		"0": "twilightdelight:block/fiddlehead_clump_bottom_stage1",
 		"1": "twilightdelight:block/fiddlehead_clump_soil_stage1",
@@ -10,214 +10,65 @@
 	"elements": [
 		{
 			"name": "fiddlehead_clump",
-			"from": [
-				0.8,
-				0,
-				8
-			],
-			"to": [
-				15.2,
-				16,
-				8
-			],
-			"shade_direction_override": "up",
-			"rotation": {
-				"angle": 45,
-				"axis": "y",
-				"origin": [
-					8,
-					8,
-					8
-				],
-				"rescale": true
-			},
+			"from": [0.8, 0, 8],
+			"to": [15.2, 16, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
 			"faces": {
-				"north": {
-					"uv": [
-						0,
-						0,
-						16,
-						16
-					],
-					"texture": "#0",
-					"tintindex": 0
-				},
-				"south": {
-					"uv": [
-						0,
-						0,
-						16,
-						16
-					],
-					"texture": "#0",
-					"tintindex": 0
-				}
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0", "tintindex": 0}
 			}
 		},
 		{
 			"name": "fiddlehead_clump",
-			"from": [
-				8,
-				0,
-				0.8
-			],
-			"to": [
-				8,
-				16,
-				15.2
-			],
-			"shade_direction_override": "up",
-			"rotation": {
-				"angle": 45,
-				"axis": "y",
-				"origin": [
-					8,
-					8,
-					8
-				],
-				"rescale": true
-			},
+			"from": [8, 0, 0.8],
+			"to": [8, 16, 15.2],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
 			"faces": {
-				"east": {
-					"uv": [
-						0,
-						0,
-						16,
-						16
-					],
-					"texture": "#0",
-					"tintindex": 0
-				},
-				"west": {
-					"uv": [
-						0,
-						0,
-						16,
-						16
-					],
-					"texture": "#0",
-					"tintindex": 0
-				}
+				"east": {"uv": [0, 0, 16, 16], "texture": "#0", "tintindex": 0},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#0", "tintindex": 0}
 			}
 		},
 		{
 			"name": "soil",
-			"from": [
-				0.8,
-				0,
-				8
-			],
-			"to": [
-				15.2,
-				16,
-				8
-			],
-			"shade_direction_override": "up",
-			"rotation": {
-				"angle": 45,
-				"axis": "y",
-				"origin": [
-					8,
-					8,
-					8
-				],
-				"rescale": true
-			},
+			"from": [0.8, 0, 8],
+			"to": [15.2, 16, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
 			"faces": {
-				"north": {
-					"uv": [
-						0,
-						0,
-						16,
-						16
-					],
-					"texture": "#1"
-				},
-				"south": {
-					"uv": [
-						0,
-						0,
-						16,
-						16
-					],
-					"texture": "#1"
-				}
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"}
 			}
 		},
 		{
 			"name": "soil",
-			"from": [
-				8,
-				0,
-				0.8
-			],
-			"to": [
-				8,
-				16,
-				15.2
-			],
-			"shade_direction_override": "up",
-			"rotation": {
-				"angle": 45,
-				"axis": "y",
-				"origin": [
-					8,
-					8,
-					8
-				],
-				"rescale": true
-			},
+			"from": [8, 0, 0.8],
+			"to": [8, 16, 15.2],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
 			"faces": {
-				"east": {
-					"uv": [
-						0,
-						0,
-						16,
-						16
-					],
-					"texture": "#1"
-				},
-				"west": {
-					"uv": [
-						0,
-						0,
-						16,
-						16
-					],
-					"texture": "#1"
-				}
+				"east": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#1"}
 			}
 		}
 	],
 	"groups": [
 		{
 			"name": "fiddlehead_clump",
-			"origin": [
-				8,
-				8,
-				8
-			],
+			"origin": [8, 8, 8],
 			"scope": 0,
 			"color": 0,
-			"children": [
-				0,
-				1
-			]
+			"shade": false,
+			"children": [0, 1]
 		},
 		{
 			"name": "soil",
-			"origin": [
-				8,
-				8,
-				8
-			],
+			"origin": [8, 8, 8],
 			"scope": 0,
 			"color": 0,
-			"children": [
-				2,
-				3
-			]
+			"shade": false,
+			"children": [2, 3]
 		}
-	],
-	"render_type": "minecraft:cutout"
+	]
 }

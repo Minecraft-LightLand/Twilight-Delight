@@ -4,14 +4,12 @@ import dev.xkmc.twilightdelight.content.block.FiddleheadClumpBlock;
 import dev.xkmc.twilightdelight.content.item.food.ReusableDrinkItem;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
-import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -39,12 +37,14 @@ public class TwilightDelightClient {
 		}, TDBlocks.FIDDLEHEAD_CLUMP.get(), TDBlocks.FIDDLEHEAD_CLUMP_UPPER.get());
 	}
 
+	/**
+	 * The clump item renders soil on layer0 and the fiddlehead on layer1; only the plant takes
+	 * the tint, and without a level/pos to average over that is the plain biome foliage color.
+	 */
 	@SubscribeEvent
 	public static void registerItemColor(RegisterColorHandlersEvent.Item event) {
-		BlockColors blockColors = event.getBlockColors();
-		event.register((stack, tintIndex) -> stack.getItem() instanceof BlockItem blockItem
-				? blockColors.getColor(blockItem.getBlock().defaultBlockState(), null, null, tintIndex)
-				: -1, (ItemLike) TDBlocks.FIDDLEHEAD_CLUMP.get().asItem());
+		event.register((stack, tintIndex) -> tintIndex == 1 ? FoliageColor.get(0.5, 1.0) : -1,
+				(ItemLike) TDBlocks.FIDDLEHEAD_CLUMP.get().asItem());
 	}
 
 }
