@@ -1,5 +1,6 @@
 package dev.xkmc.twilightdelight.events;
 
+import dev.xkmc.twilightdelight.content.item.tool.AntlerBowItem;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.data.ExtraLootGen;
 import dev.xkmc.twilightdelight.init.data.TagRef;
@@ -26,6 +27,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -99,6 +101,19 @@ public class GeneralEventHandlers {
 					event.setCancellationResult(InteractionResult.SUCCESS);
 				}
 			}
+		}
+	}
+
+	/**
+	 * The antler bow is light enough to draw twice as fast. Vanilla reads the draw straight off
+	 * the use countdown, so burning one extra tick of it per tick doubles the rate: full power,
+	 * and the fully pulled model, arrive in 10 ticks instead of 20. The event fires on both
+	 * sides, so the pull animation finishes at the same moment the shot does.
+	 */
+	@SubscribeEvent
+	public static void onItemUseTick(LivingEntityUseItemEvent.Tick event) {
+		if (event.getItem().getItem() instanceof AntlerBowItem) {
+			event.setDuration(event.getDuration() - 1);
 		}
 	}
 

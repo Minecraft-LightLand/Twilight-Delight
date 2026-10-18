@@ -16,7 +16,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.loaders.ItemLayerModelBuilder;
@@ -45,7 +44,7 @@ public class TDItems {
 	public static final ItemEntry<ReusableDrinkItem> CHAOS_INK_DRINK;
 
 	public static final ItemEntry<Item> ANTLER;
-	public static final ItemEntry<BowItem> ANTLER_BOW;
+	public static final ItemEntry<AntlerBowItem> ANTLER_BOW;
 
 	// WITCHCRAFT
 	static {
@@ -79,7 +78,7 @@ public class TDItems {
 	static {
 		ANTLER = TwilightDelight.REGISTRATE.item("antler", Item::new)
 				.defaultModel().lang("Antler").register();
-		ANTLER_BOW = TwilightDelight.REGISTRATE.item("antler_bow", BowItem::new)
+		ANTLER_BOW = TwilightDelight.REGISTRATE.item("antler_bow", AntlerBowItem::new)
 				.properties(e -> e.durability(1384))
 				.model(TDItems::bow).lang("Antler Bow").register();
 	}

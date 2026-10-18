@@ -120,6 +120,7 @@
   "effect.twilightdelight.twilight_aura.description": "Randomly transform nearby ordinary mobs into twilight creatures.",
   "item.twilightdelight.antler": "Antler",
   "item.twilightdelight.antler_bow": "Antler Bow",
+  "item.twilightdelight.antler_bow.tooltip": "Draws twice as fast",
   "item.twilightdelight.antler_wine": "Antler Wine",
   "item.twilightdelight.aurora_cake_slice": "Aurora Cake Slice",
   "item.twilightdelight.aurora_ice_cream": "Aurora Ice Cream",
