@@ -66,7 +66,7 @@ public class FoodTwilight extends ConfigDataProvider {
 							240, 360, 80, 1, 0.5f, 2, 8),
 					IngredientConfig.get(Ingredient.of(DelightFood.RAW_TOMAHAWK_SMEAK.item.get()), FoodType.MEAT,
 							240, 360, 80, 0.5f, 0.5f, 6, 12),
-				IngredientConfig.get(Ingredient.of(DelightFood.RAW_TOMAKAWK_SMEAXE.item.get()), FoodType.MEAT,
+				IngredientConfig.get(Ingredient.of(DelightFood.RAW_TOMAHAWK_SMEAXE.item.get()), FoodType.MEAT,
 							240, 360, 80, 0.5f, 0.5f, 6, 12),
 					IngredientConfig.get(Ingredient.of(DelightFood.RAW_MEEF_SLICE.item.get()), FoodType.MEAT,
 							180, 300, 80, 0.5f, 0.5f, 2, 12),
@@ -106,7 +106,7 @@ public class FoodTwilight extends ConfigDataProvider {
 					.item(DelightFood.RAW_MEEF_SLICE.item.get(), DelightFood.COOKED_MEEF_SLICE.item.get(), Stage.COOKED)
 					.item(DelightFood.RAW_VENISON_RIB.item.get(), DelightFood.COOKED_VENISON_RIB.item.get(), Stage.COOKED)
 					.item(DelightFood.RAW_TOMAHAWK_SMEAK.item.get(), DelightFood.COOKED_TOMAHAWK_SMEAK.item.get(), Stage.COOKED)
-				.item(DelightFood.RAW_TOMAKAWK_SMEAXE.item.get(), DelightFood.COOKED_TOMAKAWK_SMEAXE.item.get(), Stage.COOKED)
+				.item(DelightFood.RAW_TOMAHAWK_SMEAXE.item.get(), DelightFood.COOKED_TOMAHAWK_SMEAXE.item.get(), Stage.COOKED)
 			);
 
 			map.add(CuisineDelight.TRANSFORM, ResourceLocation.fromNamespaceAndPath(TwilightDelight.MODID, "fluids"), new CookTransformConfig()

@@ -4,10 +4,10 @@
   "cookingtime": 300,
   "experience": 1.0,
   "ingredient": {
-    "item": "twilightdelight:raw_tomakawk_smeaxe"
+    "item": "twilightdelight:raw_tomahawk_smeaxe"
   },
   "result": {
     "count": 1,
-    "id": "twilightdelight:cooked_tomakawk_smeaxe"
+    "id": "twilightdelight:cooked_tomahawk_smeaxe"
   }
 }

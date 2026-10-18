@@ -32,7 +32,7 @@
       "type": "MEAT",
       "effects": [],
       "ingredient": {
-        "item": "twilightdelight:raw_tomakawk_smeaxe"
+        "item": "twilightdelight:raw_tomahawk_smeaxe"
       },
       "max_time": 360,
       "min_time": 240,

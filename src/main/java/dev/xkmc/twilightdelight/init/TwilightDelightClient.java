@@ -6,6 +6,7 @@ import dev.xkmc.twilightdelight.content.item.food.ReusableDrinkItem;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockAndTintGetter;
@@ -27,6 +28,13 @@ public class TwilightDelightClient {
 	public static void registerItemProperties(FMLClientSetupEvent event) {
 		ItemProperties.register(TDItems.CHAOS_INK_DRINK.get(), TwilightDelight.loc("sips"),
 				(stack, level, entity, seed) -> ReusableDrinkItem.getSipsProperty(stack));
+		// Vanilla only registers these two on Items.BOW, so without this the antler bow's
+		// generated pulling models never match and the draw animation never plays.
+		ItemProperties.register(TDItems.ANTLER_BOW.get(), ResourceLocation.withDefaultNamespace("pulling"),
+				(stack, level, entity, seed) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
+		ItemProperties.register(TDItems.ANTLER_BOW.get(), ResourceLocation.withDefaultNamespace("pull"),
+				(stack, level, entity, seed) -> entity != null && entity.getUseItem() == stack
+						? (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 20.0F : 0.0F);
 	}
 
 	@SubscribeEvent

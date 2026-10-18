@@ -41,10 +41,10 @@ public class GLMGen extends GlobalLootModifierProvider {
 		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAK.item), of(TFEntities.MINOTAUR), 0.3f, true);
 		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAK.item), of(TFEntities.MINOSHROOM), 1f, false);
 		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAK.item), of(TFEntities.MINOSHROOM), 1f, true);
-		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAKAWK_SMEAXE.item), of(TFEntities.MINOTAUR), 0.2f, false);
-		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAKAWK_SMEAXE.item), of(TFEntities.MINOTAUR), 0.2f, true);
-		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAKAWK_SMEAXE.item), of(TFEntities.MINOSHROOM), 1f, false);
-		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAKAWK_SMEAXE.item), of(TFEntities.MINOSHROOM), 1f, true);
+		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAXE.item), of(TFEntities.MINOTAUR), 0.2f, false);
+		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAXE.item), of(TFEntities.MINOTAUR), 0.2f, true);
+		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAXE.item), of(TFEntities.MINOSHROOM), 1f, false);
+		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAXE.item), of(TFEntities.MINOSHROOM), 1f, true);
 		lootDrop(of(TDItems.ANTLER), of(TFEntities.DEER), create(TDItems.ANTLER.get(), 1,
 				killTarget(TFEntities.DEER.get()),
 				withChance(0.3f, 0)));
