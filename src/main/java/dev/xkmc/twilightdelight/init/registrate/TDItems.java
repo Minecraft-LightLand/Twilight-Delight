@@ -80,7 +80,7 @@ public class TDItems {
 		ANTLER = TwilightDelight.REGISTRATE.item("antler", Item::new)
 				.defaultModel().lang("Antler").register();
 		ANTLER_BOW = TwilightDelight.REGISTRATE.item("antler_bow", BowItem::new)
-				.properties(e -> e.durability(384))
+				.properties(e -> e.durability(1384))
 				.model(TDItems::bow).lang("Antler Bow").register();
 	}
 
