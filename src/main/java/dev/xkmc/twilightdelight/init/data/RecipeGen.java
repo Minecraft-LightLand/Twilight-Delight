@@ -149,7 +149,7 @@ public class RecipeGen {
 
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_MEEF_SLICE.item.get()), DelightFood.COOKED_MEEF_SLICE.item, 1);
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_TOMAHAWK_SMEAK.item.get()), DelightFood.COOKED_TOMAHAWK_SMEAK.item, 1);
-		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_TOMAKAWK_SMEAXE.item.get()), DelightFood.COOKED_TOMAKAWK_SMEAXE.item, 1);
+		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_TOMAHAWK_SMEAXE.item.get()), DelightFood.COOKED_TOMAHAWK_SMEAXE.item, 1);
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_INSECT.item.get()), DelightFood.COOKED_INSECT.item, 1);
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_VENISON_RIB.item.get()), DelightFood.COOKED_VENISON_RIB.item, 1);
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_NAGA_MEAT.item.get()), DelightFood.COOKED_NAGA_MEAT.item, 1);

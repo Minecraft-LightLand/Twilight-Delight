@@ -1,3 +1,8 @@
+2.2.6
+- Add 16 new food
+- Fix some food shapes
+- Add antler bow and tomahawk smeaxe
+
 2.2.5
 - Add twilight rich soil and fiddlehead colony
 

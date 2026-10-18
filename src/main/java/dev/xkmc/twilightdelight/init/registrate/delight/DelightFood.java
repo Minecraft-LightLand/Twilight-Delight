@@ -21,10 +21,10 @@ public enum DelightFood {
 	COOKED_MEEF_SLICE(DelightFoodType.MEAT_PIECE, 3, 0.8F, TagRef.PROTEINS),
 	RAW_TOMAHAWK_SMEAK(DelightFoodType.MEAT, 6, 0.7F, TagRef.PROTEINS),
 	COOKED_TOMAHAWK_SMEAK(DelightFoodType.MEAT, 12, 0.8F, TagRef.PROTEINS),
-	RAW_TOMAKAWK_SMEAXE(DelightFoodType.TOMAHAWK, 6, 0.7F, List.of(
+	RAW_TOMAHAWK_SMEAXE(DelightFoodType.TOMAHAWK, 6, 0.7F, List.of(
 			new EffectSupplier(() -> MobEffects.DAMAGE_BOOST, 400, 1, 1)),
 			TagRef.PROTEINS),
-	COOKED_TOMAKAWK_SMEAXE(DelightFoodType.COOKED_TOMAHAWK, 12, 0.8F, List.of(
+	COOKED_TOMAHAWK_SMEAXE(DelightFoodType.COOKED_TOMAHAWK, 12, 0.8F, List.of(
 			new EffectSupplier(() -> MobEffects.DAMAGE_BOOST, 400, 3, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 400, 1, 1)),
 			TagRef.PROTEINS),

@@ -24,6 +24,13 @@ public class TwilightDelightClient {
 		ItemProperties.register(TDItems.CHAOS_INK_DRINK.get(),
 				new ResourceLocation(TwilightDelight.MODID, "sips"),
 				(stack, level, entity, seed) -> ReusableDrinkItem.getSipsProperty(stack));
+		// Vanilla only registers these two on Items.BOW, so without this the antler bow's
+		// generated pulling models never match and the draw animation never plays.
+		ItemProperties.register(TDItems.ANTLER_BOW.get(), new ResourceLocation("pulling"),
+				(stack, level, entity, seed) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
+		ItemProperties.register(TDItems.ANTLER_BOW.get(), new ResourceLocation("pull"),
+				(stack, level, entity, seed) -> entity != null && entity.getUseItem() == stack
+						? (float) (stack.getUseDuration() - entity.getUseItemRemainingTicks()) / 20.0F : 0.0F);
 	}
 
 	/**
