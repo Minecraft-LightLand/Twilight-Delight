@@ -48,6 +48,7 @@ public enum LangData {
 		pvd.add("item.twilightdelight.ice_knife.tooltip", "Puts out fire. Prevents cooked drops");
 		pvd.add("item.twilightdelight.wrought_iron_sword.tooltip", "Attacks from 1 block further");
 		pvd.add("item.twilightdelight.knightmetal_knife.tooltip", "Extra damage to armored targets");
+		pvd.add("item.twilightdelight.antler_bow.tooltip", "Draws twice as fast");
 		pvd.add("item.twilightdelight.teardrop_sword.desc", "Burns the target and has a chance to cry");
 		pvd.add("block.twilightdelight.maze_stove.tooltip", "Cook Twilight meals faster");
 		pvd.add("block.twilightdelight.fiery_cooking_pot.tooltip", "Heats itself. Cook Twilight meals fastly.");
