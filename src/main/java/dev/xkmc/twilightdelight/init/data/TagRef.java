@@ -33,6 +33,8 @@ public class TagRef {
 	public static final TagKey<Item> FOODS_ONION = commonItemTag("foods/onion");
 	public static final TagKey<Item> FOODS_TOMATO = commonItemTag("foods/tomato");
 
+	public static final TagKey<Item> BANNED_UNCRAFTABLES = twilightForestItemTag("banned_uncraftables");
+
 	public static final TagKey<Item> SWEETS = modItemTag("sweets");
 	public static final TagKey<Item> SNACKS = modItemTag("snacks");
 	public static final TagKey<Item> MOD_KNIFE = modItemTag("tools/knives");
@@ -57,6 +59,10 @@ public class TagRef {
 
 	private static TagKey<Item> dietTag(String path) {
 		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("diet", path));
+	}
+
+	private static TagKey<Item> twilightForestItemTag(String path) {
+		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("twilightforest", path));
 	}
 
 }

@@ -1,6 +1,5 @@
 package dev.xkmc.twilightdelight.init.registrate.delight;
 
-import dev.xkmc.twilightdelight.content.item.food.InBowlItem;
 import dev.xkmc.twilightdelight.content.item.food.RoseTeaItem;
 import dev.xkmc.twilightdelight.content.item.food.TDDrinkableItem;
 import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
@@ -32,7 +31,8 @@ public enum DelightFoodClassType {
 	}
 
 	public void container(FoodProperties.Builder builder) {
-		builder.usingConvertsTo(container.get());
+		if (container.get() != Items.AIR)
+			builder.usingConvertsTo(container.get());
 	}
 
 	public Item create(Item.Properties props) {

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "twilightdelight:antler"
+    },
+    "B": {
+      "item": "minecraft:bone"
+    },
+    "X": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " AX",
+    "B X",
+    " AX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:antler_bow"
+  }
+}
