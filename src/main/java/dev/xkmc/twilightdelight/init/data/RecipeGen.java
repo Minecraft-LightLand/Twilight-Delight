@@ -90,6 +90,14 @@ public class RecipeGen {
 				.define('B', Tags.Items.RODS_WOODEN)
 				.save(pvd);
 
+		// same shape as the vanilla bow, the antlers are the limbs and the bone the grip
+		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.ANTLER_BOW.get(), 1)::unlockedBy, TDItems.ANTLER.get())
+				.pattern(" AX").pattern("B X").pattern(" AX")
+				.define('A', TDItems.ANTLER.get())
+				.define('X', Items.STRING)
+				.define('B', Items.BONE)
+				.save(pvd);
+
 			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDBlocks.MAZE_STOVE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
 					.pattern("KKK").pattern("MTM").pattern("MCM")
 					.define('K', TFItems.KNIGHTMETAL_INGOT.get())

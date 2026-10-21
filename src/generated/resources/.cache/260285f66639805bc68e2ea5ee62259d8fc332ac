@@ -1,4 +1,4 @@
-// 1.20.1	2026-10-18T21:17:11.611828	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2026-10-22T00:05:01.04731	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
@@ -594,6 +594,7 @@ b947999d0c7f7e2ecfffb4d777d08499a8b0565c data/twilightdelight/advancements/recip
 157e3525ecbd6a6fe012c33e274c6997613d0417 data/twilightdelight/advancements/recipes/frozen/cutting/ice_sword.json
 645d5d04081c42a93c55421c7ebcd2324a998e63 data/twilightdelight/advancements/recipes/frozen/obsidian.json
 058df5502f232b470643be2dc8fa1543c2db81d5 data/twilightdelight/advancements/recipes/frozen/packed_ice.json
+d5bc866fdccc076b1a1aaa276659337dfc6a88fb data/twilightdelight/advancements/recipes/misc/antler_bow.json
 301e48982bd357dba7a2d405cde9f481ecbabd13 data/twilightdelight/advancements/recipes/misc/antler_to_bone_meal.json
 625ecb191a8fb9cd2ea0be940aafc31018a1d34f data/twilightdelight/advancements/recipes/misc/fiery_cooking_pot.json
 1a148b083dafa435cb7239ca989397cd57a04776 data/twilightdelight/advancements/recipes/misc/fiery_knife.json
@@ -708,6 +709,7 @@ d65548bca80f51504d3ad4ff845179b4bdd01820 data/twilightdelight/loot_tables/blocks
 a707cfa856a8953d9f610dd03582c3aca7ed1301 data/twilightdelight/loot_tables/blocks/yellow_phytochemical_candle_cake.json
 be314686fb1de05736f20a36c3f6a5ea757bb0c1 data/twilightdelight/loot_tables/blocks/yellow_torchberry_candle_cake.json
 fbf1704e0c01a4f0e5e24fbd650c853424c4bfe6 data/twilightdelight/loot_tables/scrap_115.json
+e756e28a0b73a5e0a16d719a321744fd5fa49838 data/twilightdelight/recipes/antler_bow.json
 f16184062514e5f5c06699677cf46265fe03727c data/twilightdelight/recipes/antler_to_bone_meal.json
 54a5404e4b2e9610997a63848220a6b71304df45 data/twilightdelight/recipes/aurora_pie.json
 029bde2f43d4587babdea3fbda57245aac1bc9ef data/twilightdelight/recipes/aurora_pie_from_slices.json
@@ -898,3 +900,4 @@ e366005ab82a52bf3dc917f40d0f3348f676f63c data/twilightdelight/tags/items/naga_co
 55a7794aefdab672ecc4c78d4f06abc750176ca7 data/twilightdelight/tags/items/naga_raw.json
 55c3a0b21468046aa0c405ef592459ca2e9e27af data/twilightdelight/tags/items/vension_cooked.json
 39f23cb61cf43cb5ee710b577dd864632deeca10 data/twilightdelight/tags/items/vension_raw.json
+6b4e4dc9a2bc80a3f783e7f3d16469544ea624df data/twilightforest/tags/items/banned_uncraftables.json

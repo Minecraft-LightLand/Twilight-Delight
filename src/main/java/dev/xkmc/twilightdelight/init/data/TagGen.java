@@ -44,6 +44,13 @@ public class TagGen {
 		pvd.addTag(VENSION_RAW).add(TFItems.RAW_VENISON.get(), DelightFood.RAW_VENISON_RIB.item.get());
 		pvd.addTag(NAGA_COOKED).add(DelightFood.COOKED_NAGA_MEAT.item.get(), DelightFood.COOKED_NAGA_PIECE.item.get());
 		pvd.addTag(NAGA_RAW).add(DelightFood.RAW_NAGA_MEAT.item.get(), DelightFood.RAW_NAGA_PIECE.item.get());
+		// uncrafting a scepter hands back its repair ingredient, a golden apple for the fortification
+		// scepter for example, so keep them off the Twilight Forest uncrafting table
+		pvd.addTag(TagRef.BANNED_UNCRAFTABLES)
+				.add(TFItems.ZOMBIE_SCEPTER.get(),
+						TFItems.TWILIGHT_SCEPTER.get(),
+						TFItems.LIFEDRAIN_SCEPTER.get(),
+						TFItems.FORTIFICATION_SCEPTER.get());
 	}
 
 	public static void genBlockTag(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {

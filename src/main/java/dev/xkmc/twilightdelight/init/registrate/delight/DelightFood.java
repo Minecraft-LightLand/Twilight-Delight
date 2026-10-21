@@ -13,7 +13,7 @@ import java.util.List;
 
 public enum DelightFood {
 	HYDRA_PIECE(DelightFoodType.HYDRA_PIECE, 9, 2.0F,
-			new EffectSupplier(() -> MobEffects.REGENERATION, 20, 0, 1),
+			new EffectSupplier(() -> MobEffects.REGENERATION, 600, 0, 1),
 			TagRef.PROTEINS),
 	RAW_VENISON_RIB(DelightFoodType.MEAT_PIECE, 2, 0.7f, TagRef.PROTEINS),
 	COOKED_VENISON_RIB(DelightFoodType.MEAT_PIECE, 4, 0.8f, TagRef.PROTEINS),
@@ -35,7 +35,7 @@ public enum DelightFood {
 			new EffectSupplier(TDEffects.FIRE_RANGE, 200, 0, 0.3f)),
 			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
 	NAGA_CHIP(DelightFoodType.MEAT_PIECE, 2, 0.8F, List.of(
-			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 200, 2, 1),
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 200, 1, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 200, 2, 1)),
 			TagRef.SNACKS),
 	RAW_NAGA_PIECE(DelightFoodType.MEAT_PIECE, 2, 0.6F, TagRef.PROTEINS),
@@ -95,7 +95,7 @@ public enum DelightFood {
 			new EffectSupplier(() -> MobEffects.REGENERATION, 1200, 1, 1),
 			TagRef.PROTEINS),
 	HYDRA_BURGER(DelightFoodType.MEAT, 18, 0.8f, List.of(
-			new EffectSupplier(() -> MobEffects.REGENERATION, 6000, 1, 1),
+			new EffectSupplier(() -> MobEffects.REGENERATION, 1800, 1, 1),
 			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1)),
 			TagRef.PROTEINS),
 	BERRY_STICK(DelightFoodType.STICK, 6, 0.3f, List.of(
@@ -173,7 +173,8 @@ public enum DelightFood {
 	PLATE_OF_FIERY_SNAKES(DelightFoodType.BOWL_MEAT, 20, 1.9f, List.of(
 			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1),
 			new EffectSupplier(() -> MobEffects.DAMAGE_BOOST, 6000, 2, 1),
-			new EffectSupplier(() -> MobEffects.REGENERATION, 6000, 1, 1))),
+			new EffectSupplier(() -> MobEffects.REGENERATION, 6000, 1, 1),
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1800, 2, 1))),
 	PLATE_OF_MEEF_WELLINGTON(DelightFoodType.BOWL_MEAT, 14, 0.8f, List.of(
 			new EffectSupplier(() -> MobEffects.DAMAGE_BOOST, 3600, 1, 1),
 			new EffectSupplier(() -> MobEffects.REGENERATION, 3600, 1, 1),
@@ -182,7 +183,7 @@ public enum DelightFood {
 			TagRef.PROTEINS, TagRef.GRAINS, TagRef.VEGETABLES),
 	PLATE_OF_SAUCY_GRILLED_NAGA(DelightFoodType.BOWL_MEAT, 16, 0.9f, List.of(
 			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1),
-			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1800, 2, 1),
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1800, 1, 1),
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 1800, 2, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
 	RED_THREAD_PASTA(DelightFoodType.BOWL, 12, 0.8f, List.of(
@@ -191,24 +192,28 @@ public enum DelightFood {
 			new EffectSupplier(() -> MobEffects.DIG_SPEED, 600, 1, 1)),
 			TagRef.GRAINS, TagRef.VEGETABLES),
 	HYDRA_SKEWER(DelightFoodType.STICK, 8, 0.9f, List.of(
-			new EffectSupplier(() -> MobEffects.REGENERATION, 200, 0, 1),
-			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 2400, 0, 1)),
+			new EffectSupplier(() -> MobEffects.REGENERATION, 1800, 0, 1),
+			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1),
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 600, 1, 1)),
 			TagRef.PROTEINS),
 	FIERY_BLOOD_CURD(DelightFoodType.NONE, 14, 0.8f, List.of(
-			new EffectSupplier(() -> MobEffects.REGENERATION, 100, 1, 1),
-			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 3600, 0, 1)),
+			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1),
+			new EffectSupplier(() -> MobEffects.REGENERATION, 1800, 2, 1),
+			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1),
+			new EffectSupplier(TDEffects.FIRE_RANGE, 1800, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
 	HYDRA_STUFFED_POTATO(DelightFoodType.NONE, 8, 0.6f, List.of(
-			new EffectSupplier(() -> MobEffects.REGENERATION, 100, 0, 1),
-			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 1200, 0, 1)),
+			new EffectSupplier(() -> MobEffects.REGENERATION, 1800, 0, 1),
+			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
 	HYDRA_STEW(DelightFoodType.BOWL, 12, 0.8f, List.of(
-			new EffectSupplier(() -> MobEffects.REGENERATION, 200, 0, 1),
-			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 2400, 0, 1)),
+			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1),
+			new EffectSupplier(() -> MobEffects.REGENERATION, 1200, 2, 1),
+			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
 	FRIED_HYDRA_CHOP(DelightFoodType.NONE, 12, 0.8f, List.of(
-			new EffectSupplier(() -> MobEffects.REGENERATION, 100, 1, 1),
-			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 3600, 0, 1)),
+			new EffectSupplier(() -> MobEffects.REGENERATION, 1800, 2, 1),
+			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
 	INSECT_ROLL(DelightFoodType.NONE, 6, 0.6f,
 			TagRef.PROTEINS, TagRef.GRAINS),

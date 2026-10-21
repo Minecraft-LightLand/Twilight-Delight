@@ -34,6 +34,8 @@ public class TagRef {
 	public static final TagKey<Item> EGGS = forgeItemTag("eggs");
 	public static final TagKey<Item> SALAD_INGREDIENTS = forgeItemTag("salad_ingredients");
 
+	public static final TagKey<Item> BANNED_UNCRAFTABLES = twilightForestItemTag("banned_uncraftables");
+
 	public static final TagKey<Item> SWEETS = modItemTag("sweets");
 	public static final TagKey<Item> SNACKS = modItemTag("snacks");
 	public static final TagKey<Item> MOD_KNIFE = modItemTag("tools/knives");
@@ -59,6 +61,10 @@ public class TagRef {
 
 	private static TagKey<Item> dietTag(String path) {
 		return ItemTags.create(new ResourceLocation("diet", path));
+	}
+
+	private static TagKey<Item> twilightForestItemTag(String path) {
+		return ItemTags.create(new ResourceLocation("twilightforest", path));
 	}
 
 }
