@@ -94,8 +94,8 @@ public class RecipeGen {
 		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.ANTLER_BOW.get(), 1)::unlockedBy, TDItems.ANTLER.get())
 				.pattern(" AX").pattern("B X").pattern(" AX")
 				.define('A', TDItems.ANTLER.get())
-				.define('X', Items.STRING)
-				.define('B', Items.BONE)
+				.define('X', ModItems.ROPE.get())
+				.define('B', Items.LEATHER)
 				.save(pvd);
 
 			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDBlocks.MAZE_STOVE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
@@ -634,7 +634,7 @@ public class RecipeGen {
 					.save(pvd, getID(DelightFood.CRAB_CLAW_PASTA.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.STUFFED_CRAB_CLAW.item.get(),
-							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+							1, 200, 0.35f)::unlockedBy,
 					TDItems.HELMET_CRAB_CLAW.get())
 					.addIngredient(TDItems.HELMET_CRAB_CLAW.get())
 					.addIngredient(Items.POTATO)

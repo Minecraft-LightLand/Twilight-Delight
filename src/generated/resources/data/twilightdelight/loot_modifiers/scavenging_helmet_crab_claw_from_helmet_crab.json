@@ -7,9 +7,7 @@
       "predicate": {
         "equipment": {
           "mainhand": {
-            "items": [
-              "twilightforest:diamond_minotaur_axe"
-            ]
+            "tag": "forge:tools/knives"
           }
         }
       }
@@ -18,23 +16,14 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "type": "twilightforest:minotaur"
+        "type": "twilightforest:helmet_crab"
       }
     },
     {
-      "chance": 0.2,
+      "chance": 1.0,
       "condition": "minecraft:random_chance_with_looting",
       "looting_multiplier": 0.0
-    },
-    {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
-      "predicate": {
-        "flags": {
-          "is_on_fire": true
-        }
-      }
     }
   ],
-  "item": "twilightdelight:cooked_tomahawk_smeaxe"
+  "item": "twilightdelight:helmet_crab_claw"
 }
