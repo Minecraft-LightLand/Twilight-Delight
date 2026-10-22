@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "twilightdelight:phantom_bone"
+    },
+    {
+      "tag": "forge:bread"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "twilightforest:liveroot"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "twilightdelight:phantom_energy_bar"
+  }
+}

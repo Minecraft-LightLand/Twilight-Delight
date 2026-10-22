@@ -1,0 +1,39 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "twilightforest:phantom_helmet"
+  },
+  "cookingtime": 400,
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "item": "twilightdelight:phantom_bone"
+    },
+    [
+      {
+        "item": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "minecraft:red_mushroom"
+      },
+      {
+        "item": "twilightforest:mushgloom"
+      }
+    ],
+    {
+      "tag": "forge:crops"
+    },
+    {
+      "tag": "forge:crops/rice"
+    },
+    {
+      "item": "twilightdelight:helmet_crab_claw"
+    },
+    {
+      "item": "twilightdelight:helmet_crab_claw"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:delicious_in_maze"
+  }
+}

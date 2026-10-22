@@ -25,6 +25,7 @@ public class TagRef {
 
 	public static final TagKey<Item> TOOLS_KNIVES = forgeItemTag("tools/knives");
 	public static final TagKey<Item> BREAD = forgeItemTag("bread");
+	public static final TagKey<Item> CROPS = forgeItemTag("crops");
 	public static final TagKey<Item> CROPS_ONION = forgeItemTag("crops/onion");
 	public static final TagKey<Item> CROPS_TOMATO = forgeItemTag("crops/tomato");
 	public static final TagKey<Item> CROPS_RICE = forgeItemTag("crops/rice");

@@ -92,7 +92,27 @@
 		"torchberry_pie_slice": "火炬浆果派切片",
 		"liveroot_pork_fried_rice": "活根猪肉炒饭",
 		"liveroot_venison_noodle_soup": "活根炖鹿汤面",
-		"torchberry_venison_sandwich": "火炬浆果鹿肉三明治"
+		"torchberry_venison_sandwich": "火炬浆果鹿肉三明治",
+		"helmet_crab_claw": "骑居蟹钳",
+		"helmet_crab_claw.tooltip": "既可切也可剪",
+		"cooked_helmet_crab_claw": "熟骑居蟹钳",
+		"crab_claw_pasta": "蟹钳意面",
+		"stuffed_crab_claw": "填馅蟹钳",
+		"omazeo": "迷宫奥利奥",
+		"redcanp": "红帽罐头",
+		"phantom_bone": "幻影之骨",
+		"phantom_bone_broth": "幻影大骨汤",
+		"tomb_of_the_phantom": "幻影之墓",
+		"phantom_energy_bar": "幻影能量棒",
+		"jack_phantom": "杰克幻影",
+		"delicious_in_maze": "迷宫饭",
+		"plate_of_delicious_in_maze": "盘装迷宫饭",
+		"tomato_sauce_113": "113蘸番茄酱",
+		"regret_soup": "悔恨之汤",
+		"ghast_tentacle_salad": "凉拌恶魂触手",
+		"thickcut_ghast_fries": "恶魂粗薯",
+		"ghastling_mousse_cake": "迷你恶魂慕斯蛋糕",
+		"bowl_of_ghastling_mousse_cake": "碗装迷你恶魂慕斯蛋糕"
 	},
 	"block.twilightdelight": {
 		"lily_chicken_block": "荷花鸡",
@@ -111,7 +131,9 @@
 		"fiery_cooking_pot.tooltip": "自我供热，快速烹饪暮色菜肴",
 		"torchberries_crate": "箱装火炬浆果",
 		"aurora_pie": "极光冰晶派",
-		"torchberry_pie": "火炬浆果派"
+		"torchberry_pie": "火炬浆果派",
+		"delicious_in_maze": "迷宫饭",
+		"ghastling_mousse_cake": "迷你恶魂慕斯蛋糕"
 	},
 	"-cartesian": {
 		"drinks": {

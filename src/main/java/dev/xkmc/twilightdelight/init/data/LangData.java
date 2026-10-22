@@ -49,6 +49,7 @@ public enum LangData {
 		pvd.add("item.twilightdelight.knightmetal_knife.tooltip", "Extra damage to armored targets");
 		pvd.add("item.twilightdelight.antler_bow.tooltip", "Draws twice as fast");
 		pvd.add("item.twilightdelight.teardrop_sword.desc", "Burns the target and has a chance to cry");
+		pvd.add("item.twilightdelight.helmet_crab_claw.tooltip", "Cuts like a knife, shears like shears");
 		pvd.add("block.twilightdelight.maze_stove.tooltip", "Cook Twilight meals faster");
 		pvd.add("block.twilightdelight.fiery_cooking_pot.tooltip", "Heats itself. Cook Twilight meals fastly.");
 		pvd.add("death.attack.twilightdelight.thorn_rose_tea", "%1$s acknowledged that every rose has its thorn");
@@ -60,6 +61,7 @@ public enum LangData {
 		pvd.add("effect.twilightdelight.aurora_glowing.description", "Make yourself and all entities your see glow with rainbow color.");
 		pvd.add("effect.twilightdelight.twilight_aura.description", "Randomly transform nearby ordinary mobs into twilight creatures.");
 		pvd.add("effect.twilightdelight.lich_charge.description", "Restores durability of lich scepters in hotbar and offhand.");
+		pvd.add("effect.twilightdelight.phantom_blessing.description", "The Knight Phantom's blessing.");
 		PatchouliLang.genLang(pvd);
 	}
 

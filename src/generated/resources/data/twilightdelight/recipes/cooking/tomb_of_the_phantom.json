@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "twilightdelight:phantom_bone"
+    },
+    {
+      "item": "twilightdelight:phantom_bone"
+    },
+    {
+      "item": "minecraft:vine"
+    },
+    {
+      "item": "twilightforest:moss_patch"
+    },
+    {
+      "item": "farmersdelight:raw_pasta"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:tomb_of_the_phantom"
+  }
+}

@@ -261,6 +261,72 @@ public enum DelightFood {
 			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 12000, 0, 1),
 			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 12000, 1, 1),
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 1200, 0, 1))),
+
+	COOKED_HELMET_CRAB_CLAW(DelightFoodType.MEAT_PIECE, 4, 0.8F, TagRef.PROTEINS),
+	CRAB_CLAW_PASTA(DelightFoodType.BOWL_MEAT, 12, 0.8F, List.of(
+			new EffectSupplier(() -> MobEffects.DIG_SPEED, 600, 0, 1),
+			new EffectSupplier(ModEffects.NOURISHMENT, 1800, 0, 1)),
+			TagRef.PROTEINS, TagRef.GRAINS, TagRef.VEGETABLES),
+	STUFFED_CRAB_CLAW(DelightFoodType.MEAT, 8, 0.6F, List.of(
+			new EffectSupplier(() -> MobEffects.DAMAGE_BOOST, 1200, 0, 1),
+			new EffectSupplier(ModEffects.NOURISHMENT, 1800, 0, 1)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
+	OMAZEO(DelightFoodType.COOKIE, 2, 0.2F, List.of(
+			new EffectSupplier(() -> MobEffects.NIGHT_VISION, 1200, 0, 1),
+			new EffectSupplier(() -> MobEffects.LUCK, 1200, 0, 1),
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1200, 0, 1)),
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	REDCANP(DelightFoodType.MEAT, 6, 0.6F, List.of(
+			new EffectSupplier(() -> MobEffects.HERO_OF_THE_VILLAGE, 300, 0, 1),
+			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 3600, 0, 1),
+			new EffectSupplier(ModEffects.NOURISHMENT, 3000, 0, 1)),
+			TagRef.PROTEINS),
+	PHANTOM_BONE_BROTH(DelightFoodType.BOWL, 8, 0.8F, List.of(
+			new EffectSupplier(TDEffects.PHANTOM_BLESSING, 600, 0, 1),
+			new EffectSupplier(ModEffects.NOURISHMENT, 1800, 0, 1)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
+	TOMB_OF_THE_PHANTOM(DelightFoodType.NONE, 10, 0.8F, List.of(
+			new EffectSupplier(TDEffects.PHANTOM_BLESSING, 1200, 0, 1),
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1200, 0, 1),
+			new EffectSupplier(ModEffects.NOURISHMENT, 1800, 0, 1)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
+	PHANTOM_ENERGY_BAR(DelightFoodType.NONE, 6, 0.4F,
+			new EffectSupplier(TDEffects.PHANTOM_BLESSING, 300, 0, 1),
+			TagRef.GRAINS, TagRef.SUGARS),
+	JACK_PHANTOM(DelightFoodType.DRINK, 4, 0.25F, List.of(
+			new EffectSupplier(TDEffects.PHANTOM_BLESSING, 1200, 0, 1),
+			new EffectSupplier(() -> MobEffects.CONFUSION, 200, 0, 1),
+			new EffectSupplier(() -> MobEffects.DAMAGE_BOOST, 600, 2, 1))),
+	PLATE_OF_DELICIOUS_IN_MAZE(DelightFoodType.BOWL_MEAT, 16, 0.9F, List.of(
+			new EffectSupplier(TDEffects.PHANTOM_BLESSING, 1800, 0, 1),
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1200, 2, 1),
+			new EffectSupplier(ModEffects.NOURISHMENT, 3000, 0, 1)),
+			TagRef.PROTEINS, TagRef.GRAINS, TagRef.VEGETABLES),
+	TOMATO_SAUCE_113(DelightFoodType.MEAT_STICK, 6, 1.2F, List.of(
+			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 3600, 0, 1),
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 3600, 0, 1),
+			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 100, 0, 0.33f)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
+	REGRET_SOUP(DelightFoodType.BOWL, 8, 0.7F, List.of(
+			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 200, 0, 1),
+			new EffectSupplier(() -> MobEffects.REGENERATION, 900, 1, 1)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
+	GHAST_TENTACLE_SALAD(DelightFoodType.BOWL, 6, 0.6F, List.of(
+			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 200, 0, 0.33f),
+			new EffectSupplier(() -> MobEffects.REGENERATION, 1000, 1, 1),
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1000, 1, 1)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
+	THICKCUT_GHAST_FRIES(DelightFoodType.NONE, 10, 0.8F, List.of(
+			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 200, 0, 0.33f),
+			new EffectSupplier(() -> MobEffects.REGENERATION, 900, 1, 1),
+			new EffectSupplier(ModEffects.NOURISHMENT, 3000, 0, 1)),
+			TagRef.VEGETABLES, TagRef.GRAINS),
+	BOWL_OF_GHASTLING_MOUSSE_CAKE(DelightFoodType.NONE, 10, 0.8F, List.of(
+			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 200, 0, 0.33f),
+			new EffectSupplier(() -> MobEffects.SLOW_FALLING, 3600, 0, 1),
+			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1),
+			new EffectSupplier(() -> MobEffects.ABSORPTION, 1200, 3, 1)),
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
 	;
 
 	public final ItemEntry<Item> item;

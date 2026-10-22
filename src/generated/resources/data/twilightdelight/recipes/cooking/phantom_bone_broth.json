@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "twilightdelight:phantom_bone"
+    },
+    {
+      "item": "twilightforest:moss_patch"
+    },
+    {
+      "item": "minecraft:grass"
+    },
+    [
+      {
+        "item": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "minecraft:red_mushroom"
+      },
+      {
+        "item": "twilightforest:mushgloom"
+      }
+    ]
+  ],
+  "result": {
+    "item": "twilightdelight:phantom_bone_broth"
+  }
+}

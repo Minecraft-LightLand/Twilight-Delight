@@ -1,0 +1,51 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"1": "twilightdelight:block/tray_top",
+		"particle": "twilightdelight:block/tray_bottom",
+		"tray_bottom": "twilightdelight:block/tray_bottom"
+	},
+	"elements": [
+		{
+			"name": "plate",
+			"from": [1, 0, 1],
+			"to": [15, 2, 15],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [8, 1, 8]
+			},
+			"faces": {
+				"north": {
+					"uv": [1, 11, 15, 13],
+					"texture": "#tray_bottom"
+				},
+				"east": {
+					"uv": [1, 11, 15, 13],
+					"texture": "#tray_bottom"
+				},
+				"south": {
+					"uv": [1, 11, 15, 13],
+					"texture": "#tray_bottom"
+				},
+				"west": {
+					"uv": [1, 11, 15, 13],
+					"texture": "#tray_bottom"
+				},
+				"up": {
+					"uv": [1, 1, 15, 15],
+					"rotation": 180,
+					"texture": "#1"
+				},
+				"down": {
+					"uv": [1, 1, 15, 15],
+					"rotation": 180,
+					"texture": "#tray_bottom"
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:survives_explosion"
+            },
+            {
+              "block": "twilightdelight:delicious_in_maze",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "servings": "4"
+              }
+            }
+          ],
+          "name": "twilightdelight:delicious_in_maze"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:survives_explosion"
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "block": "twilightdelight:delicious_in_maze",
+                "condition": "minecraft:block_state_property",
+                "properties": {
+                  "servings": "4"
+                }
+              }
+            }
+          ],
+          "name": "twilightforest:phantom_helmet"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "twilightdelight:blocks/delicious_in_maze"
+}

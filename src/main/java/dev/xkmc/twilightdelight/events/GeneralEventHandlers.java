@@ -22,8 +22,14 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -32,6 +38,7 @@ import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import twilightforest.block.Experiment115Block;
@@ -41,6 +48,12 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 
 @Mod.EventBusSubscriber(modid = TwilightDelight.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class GeneralEventHandlers {
+
+	/**
+	 * The chest of the Dark Tower boss, where the Knight Phantom keeps its loot.
+	 */
+	public static final ResourceLocation STRONGHOLD_BOSS_CHEST =
+			new ResourceLocation("twilightforest", "chests/stronghold_boss");
 
 	private static ObjectArrayList<ItemStack> getLoot(ServerLevel sl, ResourceLocation id, BlockState state, PlayerInteractEvent.RightClickBlock event) {
 		var ctx = new LootParams.Builder(sl)
@@ -163,6 +176,20 @@ public class GeneralEventHandlers {
 		}
 		}
 
+	}
+
+	/**
+	 * The chest of the Dark Tower boss holds what is left of the Knight Phantom,
+	 * a handful of phantom bones among the phantom armour.
+	 */
+	@SubscribeEvent
+	public static void onLootTableLoad(LootTableLoadEvent event) {
+		if (!STRONGHOLD_BOSS_CHEST.equals(event.getName())) return;
+		event.getTable().addPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1.0F))
+				.add(LootItem.lootTableItem(TDItems.PHANTOM_BONE.get())
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 9.0F))))
+				.build());
 	}
 
 	public static boolean skipLootTable(ResourceLocation name) {
