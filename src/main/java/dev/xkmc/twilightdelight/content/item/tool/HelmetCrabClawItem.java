@@ -2,6 +2,7 @@ package dev.xkmc.twilightdelight.content.item.tool;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
@@ -33,13 +34,17 @@ import java.util.List;
 public class HelmetCrabClawItem extends KnifeItem {
 
 	public HelmetCrabClawItem(Properties properties) {
-		super(Tiers.IRON, properties.component(DataComponents.TOOL, createToolProperties()));
+		super(Tiers.IRON, properties.attributes(KnifeItem.createAttributes(Tiers.IRON, 0.5F, -2.0F)));
+	}
+
+	public static void modifyComponent(DataComponentPatch.Builder builder) {
+		builder.set(DataComponents.TOOL, createToolProperties());
 	}
 
 	/**
 	 * The knife rules of the iron tier, plus the shears rules of the vanilla shears.
 	 */
-	private static Tool createToolProperties() {
+	public static Tool createToolProperties() {
 		return new Tool(List.of(
 				Tool.Rule.deniesDrops(Tiers.IRON.getIncorrectBlocksForDrops()),
 				Tool.Rule.minesAndDrops(ModTags.Blocks.MINEABLE_WITH_KNIFE, Tiers.IRON.getSpeed()),

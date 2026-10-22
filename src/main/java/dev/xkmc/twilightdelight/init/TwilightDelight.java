@@ -11,6 +11,7 @@ import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
 import dev.xkmc.l2core.init.reg.simple.Reg;
 import dev.xkmc.twilightdelight.compat.ItemAbsentCondition;
 import dev.xkmc.twilightdelight.compat.ThirstCompat;
+import dev.xkmc.twilightdelight.content.item.tool.HelmetCrabClawItem;
 import dev.xkmc.twilightdelight.events.NeapolitanEventListeners;
 import dev.xkmc.twilightdelight.init.data.*;
 import dev.xkmc.twilightdelight.init.loot.NagaMeatModifier;
@@ -111,6 +112,7 @@ public class TwilightDelight {
 		event.modify(TFItems.MEEF_STROGANOFF, b -> b.set(DataComponents.FOOD, new FoodProperties.Builder()
 				.nutrition(8).saturationModifier(0.6F).alwaysEdible().usingConvertsTo(Items.BOWL)
 				.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 6000), 1f).build()));
+		event.modify(TDItems.HELMET_CRAB_CLAW, HelmetCrabClawItem::modifyComponent);
 		if (DatagenModLoader.isRunningDataGen() || Configuration.ENABLE_STACKABLE_SOUP_ITEMS.get()) {
 			event.modify(TFItems.MEEF_STROGANOFF, b -> b.set(DataComponents.MAX_STACK_SIZE, 16));
 
