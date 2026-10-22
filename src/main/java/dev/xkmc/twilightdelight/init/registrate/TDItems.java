@@ -93,7 +93,7 @@ public class TDItems {
 	// HELMET CRAB
 	static {
 		HELMET_CRAB_CLAW = TwilightDelight.REGISTRATE.item("helmet_crab_claw", HelmetCrabClawItem::new)
-				.model((ctx, pvd) -> pvd.generated(ctx))
+				.model((ctx, pvd) -> pvd.handheld(ctx))
 				.tag(TagRef.KNIFE, TagRef.MOD_KNIFE).register();
 		PHANTOM_BONE = TwilightDelight.REGISTRATE.item("phantom_bone", Item::new)
 				.defaultModel().lang("Phantom Bone").register();

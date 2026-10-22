@@ -39,10 +39,6 @@ public class GLMGen extends GlobalLootModifierProvider {
 		scavenging(of(ModItems.HAM.get(), FarmersDelight.MODID, "ham"), of(TFEntities.BOAR), 0.67f, 0.1f, true);
 		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAK.item), of(TFEntities.MINOTAUR), 0.3f, false);
 		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAK.item), of(TFEntities.MINOTAUR), 0.3f, true);
-		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAK.item), of(TFEntities.MINOSHROOM), 1f, false);
-		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAK.item), of(TFEntities.MINOSHROOM), 1f, true);
-		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAXE.item), of(TFEntities.MINOTAUR), 0.2f, false);
-		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAXE.item), of(TFEntities.MINOTAUR), 0.2f, true);
 		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.RAW_TOMAHAWK_SMEAXE.item), of(TFEntities.MINOSHROOM), 1f, false);
 		lootDropMeat(TFItems.DIAMOND_MINOTAUR_AXE.get(), of(DelightFood.COOKED_TOMAHAWK_SMEAXE.item), of(TFEntities.MINOSHROOM), 1f, true);
 		lootDrop(of(TDItems.ANTLER), of(TFEntities.DEER), create(TDItems.ANTLER.get(), 1,
@@ -54,9 +50,12 @@ public class GLMGen extends GlobalLootModifierProvider {
 				killTarget(TFEntities.NAGA.get()), fire(true)));
 		add("scavenging_witchcraft_bone_from_lich", new NagaMeatModifier(TDItems.WITCHCRAFT_BONE.get(), 2, 6,
 				killTarget(TFEntities.LICH.get())));
-		mobDrop(of(TDItems.HELMET_CRAB_CLAW), of(TFEntities.HELMET_CRAB), 0.5f);
+		mobDrop(of(TDItems.HELMET_CRAB_CLAW), of(TFEntities.HELMET_CRAB), 0.1f);
+		scavenging(of(TDItems.HELMET_CRAB_CLAW), of(TFEntities.HELMET_CRAB), 1f, 0f, false);
 		mobDrop(of(DelightFood.OMAZEO.item), of(TFEntities.REDCAP), 0.025f);
 		mobDrop(of(DelightFood.REDCANP.item), of(TFEntities.REDCAP), 0.1f);
+		mobDrop(of(DelightFood.OMAZEO.item), of(TFEntities.REDCAP_SAPPER), 0.05f);
+		mobDrop(of(DelightFood.REDCANP.item), of(TFEntities.REDCAP_SAPPER), 0.15f);
 	}
 
 	private void scavenging(EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float base, float loot, boolean nofire) {

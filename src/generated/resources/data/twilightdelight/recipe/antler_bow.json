@@ -6,10 +6,10 @@
       "item": "twilightdelight:antler"
     },
     "B": {
-      "item": "minecraft:bone"
+      "item": "minecraft:leather"
     },
     "X": {
-      "item": "minecraft:string"
+      "item": "farmersdelight:rope"
     }
   },
   "pattern": [
