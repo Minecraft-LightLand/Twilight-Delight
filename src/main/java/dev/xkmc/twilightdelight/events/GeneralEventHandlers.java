@@ -1,5 +1,6 @@
 package dev.xkmc.twilightdelight.events;
 
+import dev.xkmc.twilightdelight.content.effect.PhantomBlessing;
 import dev.xkmc.twilightdelight.content.item.tool.AntlerBowItem;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.data.ExtraLootGen;
@@ -35,6 +36,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.LootTableLoadEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
@@ -138,7 +140,17 @@ public class GeneralEventHandlers {
 		}
 	}
 
+	/**
+	 * The armor of the blessed one takes over a part of the damage.
+	 */
 	@SubscribeEvent
+	public static void onLivingIncomingDamage(LivingDamageEvent.Pre event) {
+		LivingEntity target = event.getEntity();
+		if (!target.level().isClientSide()) {
+			event.setNewDamage(PhantomBlessing.shareDamage(target, event.getSource(), event.getNewDamage()));
+		}
+	}
+
 	public static void onKnightmetalToolDamage(LivingIncomingDamageEvent event) {
 		if (event.getSource().getDirectEntity() instanceof LivingEntity living) {
 			var item = living.getMainHandItem();

@@ -25,7 +25,7 @@ public class TDEffects {
 		AURORA_GLOWING = genEffect("aurora_glowing", AuroraGlowing::new, "Make yourself glow with rainbow color. All entities appear rainbow glowing to you");
 		TWILIGHT_AURA = genEffect("twilight_aura", TwilightAura::new, "Randomly transform nearby ordinary mobs into twilight creatures.");
 		LICH_CHARGE = genEffect("lich_charge", LichCharge::new, "Restores durability of lich scepters in hotbar and offhand.");
-		PHANTOM_BLESSING = genEffect("phantom_blessing", PhantomBlessing::new, "The Knight Phantom's blessing.");
+		PHANTOM_BLESSING = genEffect("phantom_blessing", PhantomBlessing::new, "Your armor takes over a part of the damage you take.");
 	}
 
 	public static SimpleEntry<MobEffect> genEffect(String name, NonNullSupplier<MobEffect> sup, String desc) {
