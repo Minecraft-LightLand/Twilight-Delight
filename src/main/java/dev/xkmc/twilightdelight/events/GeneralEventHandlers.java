@@ -1,5 +1,6 @@
 package dev.xkmc.twilightdelight.events;
 
+import dev.xkmc.twilightdelight.content.effect.PhantomBlessing;
 import dev.xkmc.twilightdelight.content.item.tool.AntlerBowItem;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.data.ExtraLootGen;
@@ -31,12 +32,10 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
-import net.minecraftforge.event.entity.living.MobEffectEvent;
+import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -137,6 +136,17 @@ public class GeneralEventHandlers {
 		}
 		if (event.getEffectInstance().getEffect() == TFMobEffects.FROSTY.get() && event.getEntity().hasEffect(TDEffects.FROZEN_RANGE.get())) {
 			event.setResult(Event.Result.DENY);
+		}
+	}
+
+	/**
+	 * The armor of the blessed one takes over a part of the damage.
+	 */
+	@SubscribeEvent(priority = EventPriority.LOW)
+	public static void onLivingHurt(LivingDamageEvent event) {
+		LivingEntity target = event.getEntity();
+		if (!target.level().isClientSide()) {
+			event.setAmount(PhantomBlessing.shareDamage(target, event.getSource(), event.getAmount()));
 		}
 	}
 

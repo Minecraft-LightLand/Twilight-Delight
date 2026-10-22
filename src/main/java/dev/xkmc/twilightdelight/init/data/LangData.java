@@ -61,7 +61,7 @@ public enum LangData {
 		pvd.add("effect.twilightdelight.aurora_glowing.description", "Make yourself and all entities your see glow with rainbow color.");
 		pvd.add("effect.twilightdelight.twilight_aura.description", "Randomly transform nearby ordinary mobs into twilight creatures.");
 		pvd.add("effect.twilightdelight.lich_charge.description", "Restores durability of lich scepters in hotbar and offhand.");
-		pvd.add("effect.twilightdelight.phantom_blessing.description", "The Knight Phantom's blessing.");
+		pvd.add("effect.twilightdelight.phantom_blessing.description", "Your armor takes over a part of the damage you take.");
 		PatchouliLang.genLang(pvd);
 	}
 
