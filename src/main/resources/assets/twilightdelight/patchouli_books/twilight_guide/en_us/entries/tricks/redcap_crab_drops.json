@@ -1,0 +1,20 @@
+{
+	"name": "Redcap and Helmet Crab Drops",
+	"icon": "twilightdelight:redcanp",
+	"category": "twilightdelight:tricks",
+	"pages": [
+		{
+			"type": "patchouli:spotlight",
+			"item": [
+				"twilightdelight:redcanp",
+				"twilightdelight:omazeo"
+			],
+			"text": "Redcaps and their sapper variant have a chance to drop Redcanp and Omazeo, with the sapper dropping them more often."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "twilightdelight:helmet_crab_claw",
+			"text": "Kill a Helmet Crab with a knife to always get a Helmet Crab Claw, which cuts like a knife and shears like shears."
+		}
+	]
+}

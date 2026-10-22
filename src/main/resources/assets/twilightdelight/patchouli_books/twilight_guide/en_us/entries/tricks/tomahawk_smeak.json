@@ -1,16 +1,17 @@
 {
-  "name": "Getting Tomahawk Smeak",
-  "icon": "twilightdelight:raw_tomahawk_smeak",
-  "category": "twilightdelight:tricks",
-  "pages": [
-	{
-	  "type": "patchouli:text",
-	  "text": "You can scavenge Tomahawk Smeak from Minotaur and Minoshroom with Diamond Minotaur Axe with varying chance."
-	},
-	{
-	  "type": "patchouli:spotlight",
-	  "item": "twilightdelight:raw_tomahawk_smeak",
-	  "text": "It's an ingredient to cook Meef stroganoff."
-	}
-  ]
+	"name": "Getting Tomahawk Smeak",
+	"icon": "twilightdelight:raw_tomahawk_smeak",
+	"category": "twilightdelight:tricks",
+	"pages": [
+		{
+			"type": "patchouli:spotlight",
+			"item": "twilightdelight:raw_tomahawk_smeak",
+			"text": "Kill a Minotaur with a Diamond Minotaur Axe to scavenge Tomahawk Smeak with a chance."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "twilightdelight:raw_tomahawk_smeaxe",
+			"text": "Kill a Minoshroom the same way to always get a Tomahawk Smeaxe. It is both a meal and a weapon: it swings like a tomahawk for 10 damage, but combat never wears it down. Each bite spends one use, and only a bone is left once it is finished."
+		}
+	]
 }
