@@ -1,16 +1,17 @@
 {
-  "name": "获取战斧牛头人肋排",
-  "icon": "twilightdelight:raw_tomahawk_smeak",
-  "category": "twilightdelight:tricks",
-  "pages": [
-	{
-	  "type": "patchouli:text",
-	  "text": "用钻石米诺陶战斧击杀米诺陶和米诺菇有概率掉落战斧牛头人肋排。"
-	},
-	{
-	  "type": "patchouli:spotlight",
-	  "item": "twilightdelight:raw_tomahawk_smeak",
-	  "text": "战斧牛头人排能用来做牛头人沙拉酱肉"
-	}
-  ]
+	"name": "获取战斧牛头人肋排",
+	"icon": "twilightdelight:raw_tomahawk_smeak",
+	"category": "twilightdelight:tricks",
+	"pages": [
+		{
+			"type": "patchouli:spotlight",
+			"item": "twilightdelight:raw_tomahawk_smeak",
+			"text": "用钻石米诺陶战斧击杀米诺陶有概率掉落战斧牛头人肋排。"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "twilightdelight:raw_tomahawk_smeaxe",
+			"text": "同样用钻石米诺陶战斧击杀米诺菇则必定掉落真·战斧·牛排。它既是食物也是武器：挥砍时能像战斧一样造成 10 点伤害，战斗却不会磨损它，每吃一口才会减少一次使用次数，吃完后只剩下一根骨头。"
+		}
+	]
 }

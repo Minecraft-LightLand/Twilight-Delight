@@ -1,0 +1,20 @@
+{
+	"name": "红帽地精与骑居蟹的掉落",
+	"icon": "twilightdelight:redcanp",
+	"category": "twilightdelight:tricks",
+	"pages": [
+		{
+			"type": "patchouli:spotlight",
+			"item": [
+				"twilightdelight:redcanp",
+				"twilightdelight:omazeo"
+			],
+			"text": "红帽地精和它的变种都有概率掉落红帽罐头和迷宫奥利奥，变种的掉落概率更高。"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "twilightdelight:helmet_crab_claw",
+			"text": "用任意小刀击杀骑居蟹必定掉落骑居蟹钳，它既能像小刀一样切，也能像剪刀一样剪。"
+		}
+	]
+}
