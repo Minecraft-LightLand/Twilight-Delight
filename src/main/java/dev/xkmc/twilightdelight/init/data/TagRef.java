@@ -25,6 +25,7 @@ public class TagRef {
 	public static final TagKey<Item> ITEM_MUSHROOM_COLONIES = modItemTag("mushroom_colonies");
 
 	public static final TagKey<Item> KNIFE = commonItemTag("tools/knife");
+	public static final TagKey<Item> CROPS = commonItemTag("crops");
 	public static final TagKey<Item> CROPS_RICE = commonItemTag("crops/rice");
 	public static final TagKey<Item> FOODS_RAW_PORK = commonItemTag("foods/raw_pork");
 	public static final TagKey<Item> FOODS_PASTA = commonItemTag("foods/pasta");

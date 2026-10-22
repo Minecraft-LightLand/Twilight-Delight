@@ -54,6 +54,9 @@ public class GLMGen extends GlobalLootModifierProvider {
 				killTarget(TFEntities.NAGA.get()), fire(true)));
 		add("scavenging_witchcraft_bone_from_lich", new NagaMeatModifier(TDItems.WITCHCRAFT_BONE.get(), 2, 6,
 				killTarget(TFEntities.LICH.get())));
+		mobDrop(of(TDItems.HELMET_CRAB_CLAW), of(TFEntities.HELMET_CRAB), 0.5f);
+		mobDrop(of(DelightFood.OMAZEO.item), of(TFEntities.REDCAP), 0.025f);
+		mobDrop(of(DelightFood.REDCANP.item), of(TFEntities.REDCAP), 0.1f);
 	}
 
 	private void scavenging(EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float base, float loot, boolean nofire) {
@@ -79,6 +82,14 @@ public class GLMGen extends GlobalLootModifierProvider {
 
 	private void lootDrop(EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, AddItemModifier loot) {
 		add("scavenging_" + item.id().getPath() + "_from_" + type.id().getPath(), loot);
+	}
+
+	/**
+	 * A plain drop: the item falls off the mob itself, no knife involved.
+	 */
+	private void mobDrop(EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float chance) {
+		add("drop_" + item.id().getPath() + "_from_" + type.id().getPath(),
+				create(item.type(), 1, killTarget(type.type()), withChance(chance, 0)));
 	}
 
 	private static LootItemCondition killTarget(EntityType<?> type) {

@@ -15,7 +15,10 @@
     "twilightdelight:scavenging_antler_from_deer",
     "twilightdelight:scavenging_raw_naga_meat_from_naga",
     "twilightdelight:scavenging_cooked_naga_meat_from_naga",
-    "twilightdelight:scavenging_witchcraft_bone_from_lich"
+    "twilightdelight:scavenging_witchcraft_bone_from_lich",
+    "twilightdelight:drop_helmet_crab_claw_from_helmet_crab",
+    "twilightdelight:drop_omazeo_from_redcap",
+    "twilightdelight:drop_redcanp_from_redcap"
   ],
   "replace": false
 }

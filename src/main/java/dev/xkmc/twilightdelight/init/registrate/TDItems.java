@@ -50,6 +50,9 @@ public class TDItems {
 	public static final ItemEntry<Item> ANTLER;
 	public static final ItemEntry<AntlerBowItem> ANTLER_BOW;
 
+	public static final ItemEntry<HelmetCrabClawItem> HELMET_CRAB_CLAW;
+	public static final ItemEntry<Item> PHANTOM_BONE;
+
 	// WITCHCRAFT
 	static {
 		WITCHCRAFT_BONE = TwilightDelight.REGISTRATE.item("witchcraft_bone", Item::new)
@@ -85,6 +88,15 @@ public class TDItems {
 		ANTLER_BOW = TwilightDelight.REGISTRATE.item("antler_bow", AntlerBowItem::new)
 				.properties(e -> e.durability(1384))
 				.model(TDItems::bow).lang("Antler Bow").register();
+	}
+
+	// HELMET CRAB
+	static {
+		HELMET_CRAB_CLAW = TwilightDelight.REGISTRATE.item("helmet_crab_claw", HelmetCrabClawItem::new)
+				.model((ctx, pvd) -> pvd.generated(ctx))
+				.tag(TagRef.KNIFE, TagRef.MOD_KNIFE).register();
+		PHANTOM_BONE = TwilightDelight.REGISTRATE.item("phantom_bone", Item::new)
+				.defaultModel().lang("Phantom Bone").register();
 	}
 
 	// KNIVES

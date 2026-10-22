@@ -64,6 +64,8 @@ public class TDBlocks {
 	public static final BlockEntry<MeefWellingtonBlock> MEEF_WELLINGTON;
 	public static final BlockEntry<SaucyGrilledNagaBlock> SAUCY_GRILLED_NAGA;
 	public static final BlockEntry<ChaosStewBlock> CHAOS_STEW;
+	public static final BlockEntry<DeliciousInMazeBlock> DELICIOUS_IN_MAZE;
+	public static final BlockEntry<GhastlingMousseCakeBlock> GHASTLING_MOUSSE_CAKE;
 
 	public static final BlockEntry<Block> TORCHBERRIES_CRATE;
 	public static final BlockEntry<MushroomColonyBlock> MUSHGLOOM_COLONY;
@@ -224,6 +226,40 @@ public class TDBlocks {
 						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(TFBlocks.LICH_TROPHY.get())
 								.when(ExplosionCondition.survivesExplosion())
 								.when(InvertedLootItemCondition.invert(getServe(block)))))
+				)).tag(TagRef.FEASTS).register();
+		// the block models keep the "_block" suffix the artist gave them, the block itself is
+		// named after the meal it holds, so its item is "delicious_in_maze"
+		DELICIOUS_IN_MAZE = TwilightDelight.REGISTRATE.block(
+						"delicious_in_maze", p -> new DeliciousInMazeBlock())
+				.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
+					int serve = state.getValue(FeastBlock.SERVINGS);
+					String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
+					return new ModelFile.UncheckedModelFile(pvd.modLoc("block/delicious_in_maze_block" + suffix));
+				}))
+				.item().properties(p -> p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
+				.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
+						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
+								.when(ExplosionCondition.survivesExplosion())
+								.when(getServe(block))))
+						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(TFItems.PHANTOM_HELMET.get())
+								.when(ExplosionCondition.survivesExplosion())
+								.when(InvertedLootItemCondition.invert(getServe(block)))))
+				)).tag(TagRef.FEASTS).register();
+		GHASTLING_MOUSSE_CAKE = TwilightDelight.REGISTRATE.block(
+						"ghastling_mousse_cake", p -> new GhastlingMousseCakeBlock())
+				.blockstate((ctx, pvd) -> pvd.horizontalBlock(ctx.get(), state -> {
+					int serve = state.getValue(FeastBlock.SERVINGS);
+					String suffix = serve == 4 ? "" : serve == 0 ? "_leftover" : ("_stage" + (4 - serve));
+					return new ModelFile.UncheckedModelFile(pvd.modLoc("block/ghastling_mousse_cake_block" + suffix));
+				}))
+				.item().properties(p -> p.stacksTo(1)).model((ctx, pvd) -> pvd.generated(ctx)).build()
+				.loot((pvd, block) -> pvd.add(block, LootTable.lootTable()
+						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
+								.when(ExplosionCondition.survivesExplosion())
+								.when(getServe(block))))
+						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BOWL))
+								.when(ExplosionCondition.survivesExplosion())
+								.when(InvertedLootItemCondition.invert(getServe(block))))
 				)).tag(TagRef.FEASTS).register();
 	}
 		// misc

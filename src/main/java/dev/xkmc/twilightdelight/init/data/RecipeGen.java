@@ -167,6 +167,7 @@ public class RecipeGen {
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_INSECT.item.get()), DelightFood.COOKED_INSECT.item, 1);
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_NAGA_MEAT.item.get()), DelightFood.COOKED_NAGA_MEAT.item, 1);
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_NAGA_PIECE.item.get()), DelightFood.COOKED_NAGA_PIECE.item, 1);
+		tripleCook(pvd, DataIngredient.items(TDItems.HELMET_CRAB_CLAW.get()), DelightFood.COOKED_HELMET_CRAB_CLAW.item, 1);
 		// duplicated by Twilit Gourmet (ground venison / minced meef chain): disabled when it is present
 		tripleCookCond(TGCompat.noTG(pvd, TGCompat.loc("minced_meef")),
 				DelightFood.RAW_MEEF_SLICE.item.get(), DelightFood.COOKED_MEEF_SLICE.item, 1);
@@ -379,6 +380,32 @@ public class RecipeGen {
 					.requires(DelightFood.EXPERIMENT_110.item.get())
 					.requires(TFItems.BORER_ESSENCE.get())
 					.requires(TFItems.TRANSFORMATION_POWDER.get())
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, TDBlocks.GHASTLING_MOUSSE_CAKE.get(), 1)::unlockedBy, TFItems.EXPERIMENT_115.get())
+					.requires(TFItems.EXPERIMENT_115.get(), 4)
+					.requires(DelightFood.EXPERIMENT_113.item.get(), 2)
+					.requires(Items.BEETROOT_SOUP)
+					.requires(Items.CAKE)
+					.requires(Items.BOWL)
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.TOMATO_SAUCE_113.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
+					.requires(DelightFood.EXPERIMENT_113.item.get())
+					.requires(ModItems.TOMATO_SAUCE.get())
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.GHAST_TENTACLE_SALAD.item.get(), 1)::unlockedBy, DelightFood.EXPERIMENT_113.item.get())
+					.requires(DelightFood.EXPERIMENT_113.item.get(), 3)
+					.requires(Items.SUGAR)
+					.requires(Items.BOWL)
+					.save(pvd);
+
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.PHANTOM_ENERGY_BAR.item.get(), 2)::unlockedBy, TDItems.PHANTOM_BONE.get())
+					.requires(TDItems.PHANTOM_BONE.get())
+					.requires(Tags.Items.FOODS_BREAD)
+					.requires(Items.COCOA_BEANS)
+					.requires(TFItems.LIVEROOT.get())
 					.save(pvd);
 
 		}
@@ -650,6 +677,89 @@ public class RecipeGen {
 					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 					.addIngredient(TFBlocks.MOSS_PATCH.get().asItem())
 					.save(pvd, getID(TFItems.MOSS_SOUP.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.CRAB_CLAW_PASTA.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					TDItems.HELMET_CRAB_CLAW.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(TDItems.HELMET_CRAB_CLAW.get())
+					.addIngredient(ModItems.RAW_PASTA.get())
+					.addIngredient(ModItems.TOMATO_SAUCE.get())
+					.addIngredient(Items.CARROT)
+					.save(pvd, getID(DelightFood.CRAB_CLAW_PASTA.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.STUFFED_CRAB_CLAW.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					TDItems.HELMET_CRAB_CLAW.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(TDItems.HELMET_CRAB_CLAW.get())
+					.addIngredient(Items.POTATO)
+					.addIngredient(Items.CARROT)
+					.addIngredient(TFItems.TORCHBERRIES.get())
+					.addIngredient(TFBlocks.MAYAPPLE.get().asItem())
+					.save(pvd, getID(DelightFood.STUFFED_CRAB_CLAW.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.PHANTOM_BONE_BROTH.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					TDItems.PHANTOM_BONE.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(TDItems.PHANTOM_BONE.get())
+					.addIngredient(TFBlocks.MOSS_PATCH.get().asItem())
+					.addIngredient(Items.SHORT_GRASS)
+					.addIngredient(Ingredient.of(Items.BROWN_MUSHROOM, Items.RED_MUSHROOM,
+							TFBlocks.MUSHGLOOM.get().asItem()))
+					.save(pvd, getID(DelightFood.PHANTOM_BONE_BROTH.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.TOMB_OF_THE_PHANTOM.item.get(),
+							1, 200, 0.35f)::unlockedBy,
+					TDItems.PHANTOM_BONE.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(TDItems.PHANTOM_BONE.get(), 2)
+					.addIngredient(Items.VINE)
+					.addIngredient(TFBlocks.MOSS_PATCH.get().asItem())
+					.addIngredient(ModItems.RAW_PASTA.get())
+					.save(pvd, getID(DelightFood.TOMB_OF_THE_PHANTOM.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.JACK_PHANTOM.item.get(),
+							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
+					TDItems.PHANTOM_BONE.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+					.addIngredient(TDItems.PHANTOM_BONE.get())
+					.addIngredient(Items.WHEAT_SEEDS, 3)
+					.addIngredient(TFItems.LIVEROOT.get())
+					.addIngredient(Items.NETHER_WART)
+					.save(pvd, getID(DelightFood.JACK_PHANTOM.item.getId()));
+
+			// the meal is served in a phantom knight helmet, which is what the block leaves behind
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.DELICIOUS_IN_MAZE.get().asItem(),
+							1, 400, 0.5f, TFItems.PHANTOM_HELMET.get())::unlockedBy,
+					TDItems.PHANTOM_BONE.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(TDItems.PHANTOM_BONE.get())
+					.addIngredient(Ingredient.of(Items.BROWN_MUSHROOM, Items.RED_MUSHROOM,
+							TFBlocks.MUSHGLOOM.get().asItem()))
+					.addIngredient(TagRef.CROPS)
+					.addIngredient(TagRef.CROPS_RICE)
+					.addIngredient(TDItems.HELMET_CRAB_CLAW.get(), 2)
+					.save(pvd, getID(TDBlocks.DELICIOUS_IN_MAZE.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.REGRET_SOUP.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					DelightFood.EXPERIMENT_110.item.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(DelightFood.EXPERIMENT_110.item.get())
+					.addIngredient(Items.GHAST_TEAR, 3)
+					.save(pvd, getID(DelightFood.REGRET_SOUP.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.THICKCUT_GHAST_FRIES.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					DelightFood.EXPERIMENT_113.item.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(DelightFood.EXPERIMENT_113.item.get(), 3)
+					.addIngredient(Items.POTATO)
+					.addIngredient(ModItems.WHEAT_DOUGH.get())
+					.addIngredient(ModItems.TOMATO_SAUCE.get())
+					.save(pvd, getID(DelightFood.THICKCUT_GHAST_FRIES.item.getId()));
 
 		}
 
