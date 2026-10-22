@@ -1,3 +1,8 @@
+2.2.7
+- Add 19 food related to phantom knight and ghast
+- fix uncrafting dupe for scepter
+- adjust food effects
+
 2.2.6
 - Add 16 new food
 - Fix some food shapes
