@@ -11,7 +11,6 @@ import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.network.protocol.game.ClientboundAnimatePacket;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -24,18 +23,12 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.LootTableLoadEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
@@ -47,12 +40,6 @@ import twilightforest.init.TFMobEffects;
 
 @EventBusSubscriber(modid = TwilightDelight.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class GeneralEventHandlers {
-
-	/**
-	 * The drop table of the Knight Phantom, it holds the phantom armour and the bones.
-	 */
-	public static final ResourceLocation KNIGHT_PHANTOM_LOOT =
-			ResourceLocation.fromNamespaceAndPath("twilightforest", "entities/knight_phantom");
 
 	private static ObjectArrayList<ItemStack> getLoot(ServerLevel sl, ResourceKey<LootTable> id, BlockState state, PlayerInteractEvent.RightClickBlock event) {
 		var ctx = new LootParams.Builder(sl)
@@ -181,20 +168,6 @@ public class GeneralEventHandlers {
 			}
 		}
 
-	}
-
-	/**
-	 * The Knight Phantom keeps its loot in its own drop table, a handful of phantom
-	 * bones are part of it.
-	 */
-	@SubscribeEvent
-	public static void onLootTableLoad(LootTableLoadEvent event) {
-		if (!KNIGHT_PHANTOM_LOOT.equals(event.getName())) return;
-		event.getTable().addPool(LootPool.lootPool()
-				.setRolls(ConstantValue.exactly(1.0F))
-				.add(LootItem.lootTableItem(TDItems.PHANTOM_BONE.get())
-						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 9.0F))))
-				.build());
 	}
 
 }

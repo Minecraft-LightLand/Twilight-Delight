@@ -1,0 +1,12 @@
+{
+  "type": "twilightdelight:random_count",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "twilightforest:entities/knight_phantom"
+    }
+  ],
+  "item": "twilightdelight:phantom_bone",
+  "max": 9,
+  "min": 2
+}

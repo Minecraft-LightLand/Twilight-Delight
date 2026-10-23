@@ -15,6 +15,7 @@ import dev.xkmc.twilightdelight.content.item.tool.HelmetCrabClawItem;
 import dev.xkmc.twilightdelight.events.NeapolitanEventListeners;
 import dev.xkmc.twilightdelight.init.data.*;
 import dev.xkmc.twilightdelight.init.loot.NagaMeatModifier;
+import dev.xkmc.twilightdelight.init.loot.RandomCountModifier;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDDataComponents;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
@@ -84,6 +85,7 @@ public class TwilightDelight {
 		DelightPie.register();
 		DelightCake.register();
 		NagaMeatModifier.register();
+		RandomCountModifier.register();
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			NeapolitanFood.register();
 			NeapolitanCakes.register();

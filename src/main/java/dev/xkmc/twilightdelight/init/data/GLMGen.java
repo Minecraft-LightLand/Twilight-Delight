@@ -2,6 +2,7 @@ package dev.xkmc.twilightdelight.init.data;
 
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.loot.NagaMeatModifier;
+import dev.xkmc.twilightdelight.init.loot.RandomCountModifier;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.mixin.AddItemModifierAccessor;
@@ -16,6 +17,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithEnchantedBonusCondition;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
+import net.neoforged.neoforge.common.loot.LootTableIdCondition;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import twilightforest.init.TFEntities;
 import twilightforest.init.TFItems;
@@ -26,6 +28,12 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 import java.util.concurrent.CompletableFuture;
 
 public class GLMGen extends GlobalLootModifierProvider {
+
+	/**
+	 * The drop table of the Knight Phantom, it holds the phantom armour and the bones.
+	 */
+	private static final ResourceLocation KNIGHT_PHANTOM_LOOT =
+			ResourceLocation.fromNamespaceAndPath("twilightforest", "entities/knight_phantom");
 
 	public GLMGen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries, TwilightDelight.MODID);
@@ -56,6 +64,10 @@ public class GLMGen extends GlobalLootModifierProvider {
 		mobDrop(of(DelightFood.REDCANP.item), of(TFEntities.REDCAP), 0.1f);
 		mobDrop(of(DelightFood.OMAZEO.item), of(TFEntities.REDCAP_SAPPER), 0.05f);
 		mobDrop(of(DelightFood.REDCANP.item), of(TFEntities.REDCAP_SAPPER), 0.15f);
+
+		// a handful of phantom bones among the armour the Knight Phantom drops
+		add("phantom_bone_from_knight_phantom", new RandomCountModifier(TDItems.PHANTOM_BONE.get(), 2, 9,
+				LootTableIdCondition.builder(KNIGHT_PHANTOM_LOOT).build()));
 	}
 
 	private void scavenging(EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float base, float loot, boolean nofire) {

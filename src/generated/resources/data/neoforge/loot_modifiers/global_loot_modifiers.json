@@ -17,7 +17,8 @@
     "twilightdelight:drop_omazeo_from_redcap",
     "twilightdelight:drop_redcanp_from_redcap",
     "twilightdelight:drop_omazeo_from_redcap_sapper",
-    "twilightdelight:drop_redcanp_from_redcap_sapper"
+    "twilightdelight:drop_redcanp_from_redcap_sapper",
+    "twilightdelight:phantom_bone_from_knight_phantom"
   ],
   "replace": false
 }

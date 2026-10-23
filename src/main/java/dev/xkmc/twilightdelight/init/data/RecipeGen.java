@@ -151,12 +151,6 @@ public class RecipeGen {
 
 			pvd.storage(TFItems.TORCHBERRIES::get, RecipeCategory.MISC, TDBlocks.TORCHBERRIES_CRATE);
 
-			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.MISC, TDBlocks.TWILIGHT_RICH_SOIL.get(), 1)::unlockedBy,
-					TFItems.LIVEROOT.get())
-					.requires(ModBlocks.RICH_SOIL.get())
-					.requires(TFItems.LIVEROOT.get())
-					.save(pvd);
-
 		}
 
 		// smelting
