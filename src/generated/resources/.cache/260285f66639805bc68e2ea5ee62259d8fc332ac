@@ -1,4 +1,4 @@
-// 1.20.1	2026-10-22T17:44:55.519323	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2026-10-23T10:49:37.178435	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
@@ -643,7 +643,6 @@ bc26fe6a3dcb31b7776685fb4f986ce267b61ee6 data/twilightdelight/advancements/recip
 2749f20f01add472b18050cac82240254cbe1d3b data/twilightdelight/advancements/recipes/misc/teardrop_sword.json
 ae44b6375aaf5ab22fdcc7fb8a89064c3b9060f5 data/twilightdelight/advancements/recipes/misc/torchberries_crate.json
 e75bd8b36dacd628d5a1aa3374d216ac3f5f3161 data/twilightdelight/advancements/recipes/misc/torchberries_from_torchberries_crate.json
-90e8467f062aff210e04a7794f15f054a04b3409 data/twilightdelight/advancements/recipes/misc/twilight_rich_soil.json
 6b2366aef416dac26c351f9084624351d834b9de data/twilightdelight/advancements/recipes/misc/witchcraft_bone_meal.json
 29c82b6c168c540b9373e3fec1325f12304e294b data/twilightdelight/loot_tables/blocks/aurora_cake.json
 31cf0d02cbe6067e166499372916c83a3cd3a9e7 data/twilightdelight/loot_tables/blocks/aurora_candle_cake.json
@@ -840,7 +839,7 @@ c87b21f46d67102fcb63aa71fcf607682d25e039 data/twilightdelight/recipes/cutting/fi
 3c11122c8c851b8cda0d27090026ad98bd84a21d data/twilightdelight/recipes/cutting/phantom_chestplate.json
 6035b9c325ca0546717f0782c89ec9756cdfe8e7 data/twilightdelight/recipes/cutting/phantom_helmet.json
 6ea7948085124f4d228d133b53b7b0be9616e4a9 data/twilightdelight/recipes/cutting/quest_ram_trophy.json
-4abecff7de439b78e4974d795cc91077510b32f2 data/twilightdelight/recipes/cutting/raw_insect.json
+bd901e56c6b73a1d62b5cb24a8537ec541b28f89 data/twilightdelight/recipes/cutting/raw_insect.json
 6c62cd14348eebe3e6dfdc46255dc3b9c9fbcfb7 data/twilightdelight/recipes/cutting/raw_meef_slice.json
 6aa1c1bd5903f17826ea132b9a7ea79c1fff7efa data/twilightdelight/recipes/cutting/raw_meef_slice_from_tomahawk.json
 ddddc3ace336f7126f3049214d65574922b66e1f data/twilightdelight/recipes/cutting/raw_naga_piece.json
@@ -942,7 +941,6 @@ d358b5a2a2251dbe3d70e7055b315fc3b3341ce8 data/twilightdelight/recipes/twilight_c
 e47149966e8d126b121088fdff5aeb58db43a706 data/twilightdelight/recipes/twilight_cake_assemble.json
 c92d287ea8ff8b5959c41ebdab72ca86d3bc4c23 data/twilightdelight/recipes/twilight_ice_cream.json
 c6aa3426c651b4a3972387cddaaeb20758039cc8 data/twilightdelight/recipes/twilight_oak_cabinet.json
-eb53a0cd99786ca4dee3de59825717e5e5dbb403 data/twilightdelight/recipes/twilight_rich_soil.json
 5ec2733af435bb1b3633499e056c26237e2e031b data/twilightdelight/recipes/twilight_salad.json
 c775677487f9ff955fef8cf11684a5927af47b61 data/twilightdelight/recipes/twilight_spring.json
 82abceee71435003d710a61627ec8a33e544ae8e data/twilightdelight/recipes/witchcraft_bone_meal.json

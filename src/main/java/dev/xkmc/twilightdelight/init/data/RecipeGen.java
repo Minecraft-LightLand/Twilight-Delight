@@ -8,15 +8,15 @@ import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.l2library.compat.jeed.JeedDataGenerator;
 import dev.xkmc.l2library.serial.recipe.ConditionalRecipeWrapper;
-import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipeBuilder;
 import dev.xkmc.twilightdelight.content.recipe.ScepterDuplicateRecipeBuilder;
+import dev.xkmc.twilightdelight.content.recipe.SimpleFrozenRecipeBuilder;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
+import dev.xkmc.twilightdelight.init.registrate.delight.DelightCake;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightPie;
-import dev.xkmc.twilightdelight.init.registrate.delight.DelightCake;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import net.mehvahdjukaar.jeed.Jeed;
@@ -84,19 +84,19 @@ public class RecipeGen {
 					.define('B', Tags.Items.RODS_WOODEN)
 					.save(e -> pvd.accept(new NBTRecipe(e, TDItems.STEELEAF_KNIFE.get().getDefault())));
 
-		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.KNIGHTMETAL_KNIFE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
-				.pattern("A").pattern("B")
-				.define('A', TFItems.KNIGHTMETAL_INGOT.get())
-				.define('B', Tags.Items.RODS_WOODEN)
-				.save(pvd);
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.KNIGHTMETAL_KNIFE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
+					.pattern("A").pattern("B")
+					.define('A', TFItems.KNIGHTMETAL_INGOT.get())
+					.define('B', Tags.Items.RODS_WOODEN)
+					.save(pvd);
 
-		// same shape as the vanilla bow, the antlers are the limbs and the bone the grip
-		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.ANTLER_BOW.get(), 1)::unlockedBy, TDItems.ANTLER.get())
-				.pattern(" AX").pattern("B X").pattern(" AX")
-				.define('A', TDItems.ANTLER.get())
-				.define('X', ModItems.ROPE.get())
-				.define('B', Items.LEATHER)
-				.save(pvd);
+			// same shape as the vanilla bow, the antlers are the limbs and the bone the grip
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.ANTLER_BOW.get(), 1)::unlockedBy, TDItems.ANTLER.get())
+					.pattern(" AX").pattern("B X").pattern(" AX")
+					.define('A', TDItems.ANTLER.get())
+					.define('X', ModItems.ROPE.get())
+					.define('B', Items.LEATHER)
+					.save(pvd);
 
 			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDBlocks.MAZE_STOVE.get(), 1)::unlockedBy, TFItems.KNIGHTMETAL_INGOT.get())
 					.pattern("KKK").pattern("MTM").pattern("MCM")
@@ -144,66 +144,60 @@ public class RecipeGen {
 
 			pvd.storage(TFItems.TORCHBERRIES::get, RecipeCategory.MISC, TDBlocks.TORCHBERRIES_CRATE);
 
-			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.MISC, TDBlocks.TWILIGHT_RICH_SOIL.get(), 1)::unlockedBy,
-					TFItems.LIVEROOT.get())
-					.requires(ModBlocks.RICH_SOIL.get())
-					.requires(TFItems.LIVEROOT.get())
-					.save(pvd);
-
 		}
 
 		// smelting
 		{
 
-		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_MEEF_SLICE.item.get()), DelightFood.COOKED_MEEF_SLICE.item, 1);
-		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_TOMAHAWK_SMEAK.item.get()), DelightFood.COOKED_TOMAHAWK_SMEAK.item, 1);
-		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_TOMAHAWK_SMEAXE.item.get()), DelightFood.COOKED_TOMAHAWK_SMEAXE.item, 1);
-		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_INSECT.item.get()), DelightFood.COOKED_INSECT.item, 1);
-		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_VENISON_RIB.item.get()), DelightFood.COOKED_VENISON_RIB.item, 1);
-		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_NAGA_MEAT.item.get()), DelightFood.COOKED_NAGA_MEAT.item, 1);
-		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_NAGA_PIECE.item.get()), DelightFood.COOKED_NAGA_PIECE.item, 1);
-		tripleCook(pvd, DataIngredient.items(TDItems.HELMET_CRAB_CLAW.get()), DelightFood.COOKED_HELMET_CRAB_CLAW.item, 1);
+			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_MEEF_SLICE.item.get()), DelightFood.COOKED_MEEF_SLICE.item, 1);
+			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_TOMAHAWK_SMEAK.item.get()), DelightFood.COOKED_TOMAHAWK_SMEAK.item, 1);
+			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_TOMAHAWK_SMEAXE.item.get()), DelightFood.COOKED_TOMAHAWK_SMEAXE.item, 1);
+			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_INSECT.item.get()), DelightFood.COOKED_INSECT.item, 1);
+			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_VENISON_RIB.item.get()), DelightFood.COOKED_VENISON_RIB.item, 1);
+			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_NAGA_MEAT.item.get()), DelightFood.COOKED_NAGA_MEAT.item, 1);
+			tripleCook(pvd, DataIngredient.items(DelightFood.RAW_NAGA_PIECE.item.get()), DelightFood.COOKED_NAGA_PIECE.item, 1);
+			tripleCook(pvd, DataIngredient.items(TDItems.HELMET_CRAB_CLAW.get()), DelightFood.COOKED_HELMET_CRAB_CLAW.item, 1);
 		}
 
 		// food crafting
 		{
 
-		delightPie(pvd, DelightPie.AURORA_PIE, TFBlocks.AURORA_BLOCK.get().asItem());
-		delightPie(pvd, DelightPie.TORCHBERRY_PIE, TFItems.TORCHBERRIES.get());
+			delightPie(pvd, DelightPie.AURORA_PIE, TFBlocks.AURORA_BLOCK.get().asItem());
+			delightPie(pvd, DelightPie.TORCHBERRY_PIE, TFItems.TORCHBERRIES.get());
 
-		delightCake(pvd, DelightCake.TWILIGHT);
+			delightCake(pvd, DelightCake.TWILIGHT);
 
-		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.NAGA_SKEWERS.item.get(), 2)::unlockedBy, DelightFood.COOKED_NAGA_PIECE.item.get())
-				.requires(TagGen.NAGA_COOKED)
-				.requires(TagGen.NAGA_COOKED)
-				.requires(Items.CARROT)
-				.requires(Items.BAKED_POTATO)
-				.requires(Tags.Items.RODS_WOODEN)
-				.requires(Tags.Items.RODS_WOODEN).save(pvd);
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.NAGA_SKEWERS.item.get(), 2)::unlockedBy, DelightFood.COOKED_NAGA_PIECE.item.get())
+					.requires(TagGen.NAGA_COOKED)
+					.requires(TagGen.NAGA_COOKED)
+					.requires(Items.CARROT)
+					.requires(Items.BAKED_POTATO)
+					.requires(Tags.Items.RODS_WOODEN)
+					.requires(Tags.Items.RODS_WOODEN).save(pvd);
 
-		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, TDBlocks.SAUCY_GRILLED_NAGA.get(), 1)::unlockedBy, DelightFood.COOKED_NAGA_MEAT.item.get())
-				.pattern("MMM").pattern("CST").pattern(" B ")
-				.define('M', TagGen.NAGA_COOKED)
-				.define('C', Items.CARROT)
-				.define('S', DelightFood.MUSHGLOOM_SAUCE.item.get())
-				.define('T', TFItems.TORCHBERRIES.get())
-				.define('B', Items.BOWL)
-				.save(pvd);
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, TDBlocks.SAUCY_GRILLED_NAGA.get(), 1)::unlockedBy, DelightFood.COOKED_NAGA_MEAT.item.get())
+					.pattern("MMM").pattern("CST").pattern(" B ")
+					.define('M', TagGen.NAGA_COOKED)
+					.define('C', Items.CARROT)
+					.define('S', DelightFood.MUSHGLOOM_SAUCE.item.get())
+					.define('T', TFItems.TORCHBERRIES.get())
+					.define('B', Items.BOWL)
+					.save(pvd);
 
-		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.MISC, TDItems.WITCHCRAFT_BONE_MEAL.get(), 3)::unlockedBy, TDItems.WITCHCRAFT_BONE.get())
-				.requires(TDItems.WITCHCRAFT_BONE.get()).save(pvd);
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.MISC, TDItems.WITCHCRAFT_BONE_MEAL.get(), 3)::unlockedBy, TDItems.WITCHCRAFT_BONE.get())
+					.requires(TDItems.WITCHCRAFT_BONE.get()).save(pvd);
 
-		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.MAGIC_CAKE_SCROLL.item.get(), 2)::unlockedBy, TDItems.WITCHCRAFT_BONE_MEAL.get())
-				.requires(TDItems.WITCHCRAFT_BONE_MEAL.get())
-				.requires(TDItems.WITCHCRAFT_BONE_MEAL.get())
-				.requires(Items.WHEAT)
-				.requires(TagRef.EGGS)
-				.requires(TagGen.MILK)
-				.requires(Items.SUGAR).save(pvd);
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.MAGIC_CAKE_SCROLL.item.get(), 2)::unlockedBy, TDItems.WITCHCRAFT_BONE_MEAL.get())
+					.requires(TDItems.WITCHCRAFT_BONE_MEAL.get())
+					.requires(TDItems.WITCHCRAFT_BONE_MEAL.get())
+					.requires(Items.WHEAT)
+					.requires(TagRef.EGGS)
+					.requires(TagGen.MILK)
+					.requires(Items.SUGAR).save(pvd);
 
-		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.BERRY_STICK.item.get(), 1)::unlockedBy, TFItems.TORCHBERRIES.get())
-				.requires(Items.SWEET_BERRIES).requires(Items.GLOW_BERRIES).requires(TFItems.TORCHBERRIES.get())
-				.requires(Tags.Items.RODS_WOODEN).save(pvd);
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.BERRY_STICK.item.get(), 1)::unlockedBy, TFItems.TORCHBERRIES.get())
+					.requires(Items.SWEET_BERRIES).requires(Items.GLOW_BERRIES).requires(TFItems.TORCHBERRIES.get())
+					.requires(Tags.Items.RODS_WOODEN).save(pvd);
 
 			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, DelightFood.TORCHBERRY_COOKIE.item.get(), 8)::unlockedBy, TFItems.TORCHBERRIES.get())
 					.pattern("BAB")
@@ -401,13 +395,13 @@ public class RecipeGen {
 					.addIngredient(TFItems.TORCHBERRIES.get())
 					.save(pvd, getID(TDBlocks.FIERY_SNAKES.getId()));
 
-		unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.FRIED_INSECT.item.get().asItem(),
-						1, 200, 0.35f, Items.BOWL)::unlockedBy,
-				DelightFood.RAW_INSECT.item.get())
-				.addIngredient(DelightFood.RAW_INSECT.item.get())
-				.addIngredient(TagRef.CROPS_ONION)
-				.addIngredient(Items.CARROT)
-				.save(pvd, getID(DelightFood.FRIED_INSECT.item.getId()));
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.FRIED_INSECT.item.get().asItem(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					DelightFood.RAW_INSECT.item.get())
+					.addIngredient(DelightFood.RAW_INSECT.item.get())
+					.addIngredient(TagRef.CROPS_ONION)
+					.addIngredient(Items.CARROT)
+					.save(pvd, getID(DelightFood.FRIED_INSECT.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GLOWSTEW.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -417,13 +411,13 @@ public class RecipeGen {
 					.addIngredient(TFItems.TORCHBERRIES.get())
 					.save(pvd, getID(DelightFood.GLOWSTEW.item.getId()));
 
-		unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.MUSHGLOOM_SAUCE.item.get(),
-						1, 200, 0.35f, Items.BOWL)::unlockedBy,
-				TFBlocks.MUSHGLOOM.get().asItem())
-				.addIngredient(Items.BROWN_MUSHROOM)
-				.addIngredient(TFBlocks.MUSHGLOOM.get().asItem())
-				.addIngredient(TagRef.CROPS_ONION)
-				.save(pvd, getID(DelightFood.MUSHGLOOM_SAUCE.item.getId()));
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.MUSHGLOOM_SAUCE.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					TFBlocks.MUSHGLOOM.get().asItem())
+					.addIngredient(Items.BROWN_MUSHROOM)
+					.addIngredient(TFBlocks.MUSHGLOOM.get().asItem())
+					.addIngredient(TagRef.CROPS_ONION)
+					.save(pvd, getID(DelightFood.MUSHGLOOM_SAUCE.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.GLOW_VENISON_RIB_WITH_PASTA.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
@@ -470,61 +464,61 @@ public class RecipeGen {
 					.addIngredient(TagGen.MILK)
 					.save(pvd, getID(DelightFood.GRILLED_TOMAHAWK_SMEAK.item.getId()));
 
-		unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.LILY_CHICKEN.get().asItem(),
-						1, 400, 0.35f)::unlockedBy,
-				TFBlocks.HUGE_LILY_PAD.get().asItem())
-				.addIngredient(TFBlocks.HUGE_LILY_PAD.get().asItem())
-				.addIngredient(ModBlocks.ROAST_CHICKEN_BLOCK.get().asItem())
-				.addIngredient(TFBlocks.HUGE_WATER_LILY.get().asItem())
-				.save(pvd, getID(TDBlocks.LILY_CHICKEN.getId()));
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.LILY_CHICKEN.get().asItem(),
+							1, 400, 0.35f)::unlockedBy,
+					TFBlocks.HUGE_LILY_PAD.get().asItem())
+					.addIngredient(TFBlocks.HUGE_LILY_PAD.get().asItem())
+					.addIngredient(ModBlocks.ROAST_CHICKEN_BLOCK.get().asItem())
+					.addIngredient(TFBlocks.HUGE_WATER_LILY.get().asItem())
+					.save(pvd, getID(TDBlocks.LILY_CHICKEN.getId()));
 
-		unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.NAGA_STEW.item.get(),
-						1, 200, 0.35f, Items.BOWL)::unlockedBy,
-				DelightFood.RAW_NAGA_PIECE.item.get())
-				.addIngredient(TagGen.NAGA_RAW)
-				.addIngredient(TagGen.NAGA_RAW)
-				.addIngredient(TagRef.CROPS_ONION)
-				.addIngredient(TFBlocks.FIDDLEHEAD.get().asItem())
-				.save(pvd, getID(DelightFood.NAGA_STEW.item.getId()));
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.NAGA_STEW.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					DelightFood.RAW_NAGA_PIECE.item.get())
+					.addIngredient(TagGen.NAGA_RAW)
+					.addIngredient(TagGen.NAGA_RAW)
+					.addIngredient(TagRef.CROPS_ONION)
+					.addIngredient(TFBlocks.FIDDLEHEAD.get().asItem())
+					.save(pvd, getID(DelightFood.NAGA_STEW.item.getId()));
 
-		unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.NAGA_MEATBALL_CONGEE.item.get(),
-						1, 200, 0.35f, Items.BOWL)::unlockedBy,
-				DelightFood.RAW_NAGA_PIECE.item.get())
-				.addIngredient(TagGen.NAGA_RAW)
-				.addIngredient(TagGen.NAGA_RAW)
-				.addIngredient(Items.CARROT)
-				.addIngredient(Items.DRIED_KELP)
-				.addIngredient(TagRef.CROPS_RICE)
-				.save(pvd, getID(DelightFood.NAGA_MEATBALL_CONGEE.item.getId()));
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.NAGA_MEATBALL_CONGEE.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					DelightFood.RAW_NAGA_PIECE.item.get())
+					.addIngredient(TagGen.NAGA_RAW)
+					.addIngredient(TagGen.NAGA_RAW)
+					.addIngredient(Items.CARROT)
+					.addIngredient(Items.DRIED_KELP)
+					.addIngredient(TagRef.CROPS_RICE)
+					.save(pvd, getID(DelightFood.NAGA_MEATBALL_CONGEE.item.getId()));
 
-		unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.WITCHCRAFT_BONE_BROTH.item.get(),
-						1, 200, 0.35f, Items.BOWL)::unlockedBy,
-				TDItems.WITCHCRAFT_BONE.get())
-				.addIngredient(TDItems.WITCHCRAFT_BONE.get())
-				.addIngredient(Items.LAPIS_LAZULI)
-				.addIngredient(Items.AMETHYST_SHARD)
-				.addIngredient(Ingredient.of(Items.BROWN_MUSHROOM, Items.RED_MUSHROOM,
-						TFBlocks.MUSHGLOOM.get().asItem()))
-				.save(pvd, getID(DelightFood.WITCHCRAFT_BONE_BROTH.item.getId()));
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.WITCHCRAFT_BONE_BROTH.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					TDItems.WITCHCRAFT_BONE.get())
+					.addIngredient(TDItems.WITCHCRAFT_BONE.get())
+					.addIngredient(Items.LAPIS_LAZULI)
+					.addIngredient(Items.AMETHYST_SHARD)
+					.addIngredient(Ingredient.of(Items.BROWN_MUSHROOM, Items.RED_MUSHROOM,
+							TFBlocks.MUSHGLOOM.get().asItem()))
+					.save(pvd, getID(DelightFood.WITCHCRAFT_BONE_BROTH.item.getId()));
 
-		unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.CHAOS_INK_DRINK.get(),
-						1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
-				TDItems.WITCHCRAFT_BONE_MEAL.get())
-				.addIngredient(Items.INK_SAC, 2)
-				.addIngredient(TDItems.WITCHCRAFT_BONE_MEAL.get())
-				.addIngredient(TFItems.RAVEN_FEATHER.get())
-				.addIngredient(Ingredient.of(TFItems.ZOMBIE_SCEPTER.get(),
-						TFItems.TWILIGHT_SCEPTER.get(), TFItems.LIFEDRAIN_SCEPTER.get()))
-				.save(pvd, getID(TDItems.CHAOS_INK_DRINK.getId()));
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDItems.CHAOS_INK_DRINK.get(),
+							1, 200, 0.35f, Items.GLASS_BOTTLE)::unlockedBy,
+					TDItems.WITCHCRAFT_BONE_MEAL.get())
+					.addIngredient(Items.INK_SAC, 2)
+					.addIngredient(TDItems.WITCHCRAFT_BONE_MEAL.get())
+					.addIngredient(TFItems.RAVEN_FEATHER.get())
+					.addIngredient(Ingredient.of(TFItems.ZOMBIE_SCEPTER.get(),
+							TFItems.TWILIGHT_SCEPTER.get(), TFItems.LIFEDRAIN_SCEPTER.get()))
+					.save(pvd, getID(TDItems.CHAOS_INK_DRINK.getId()));
 
-		unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.CHAOS_STEW.get().asItem(),
-						1, 400, 0.5f, TFBlocks.LICH_TROPHY.get().asItem())::unlockedBy,
-				DelightFood.WITCHCRAFT_BONE_BROTH.item.get())
-				.addIngredient(DelightFood.WITCHCRAFT_BONE_BROTH.item.get())
-				.addIngredient(Items.ENDER_PEARL, 2)
-				.addIngredient(Items.NETHER_WART, 2)
-				.addIngredient(TFItems.RAVEN_FEATHER.get())
-				.save(pvd, getID(TDBlocks.CHAOS_STEW.getId()));
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.CHAOS_STEW.get().asItem(),
+							1, 400, 0.5f, TFBlocks.LICH_TROPHY.get().asItem())::unlockedBy,
+					DelightFood.WITCHCRAFT_BONE_BROTH.item.get())
+					.addIngredient(DelightFood.WITCHCRAFT_BONE_BROTH.item.get())
+					.addIngredient(Items.ENDER_PEARL, 2)
+					.addIngredient(Items.NETHER_WART, 2)
+					.addIngredient(TFItems.RAVEN_FEATHER.get())
+					.save(pvd, getID(TDBlocks.CHAOS_STEW.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.THOUSAND_PLANT_STEW.item.get(),
 							1, 400, 0.35f, Items.BOWL)::unlockedBy,
@@ -789,7 +783,7 @@ public class RecipeGen {
 					.save(pvd, getID(DelightFood.HYDRA_PIECE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
-							Ingredient.of(TFBlocks.MUSHGLOOM.get().asItem()),
+					Ingredient.of(TagGen.INSECT),
 							Ingredient.of(TagRef.TOOLS_KNIVES),
 							DelightFood.RAW_INSECT.item.get(), 2)
 					.save(pvd, getID(DelightFood.RAW_INSECT.item.getId()));
@@ -807,9 +801,9 @@ public class RecipeGen {
 					.save(pvd, getID(TDBlocks.MUSHGLOOM_COLONY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
-						Ingredient.of(TDBlocks.FIDDLEHEAD_CLUMP.get()),
-						Ingredient.of(TagRef.TOOLS_KNIVES),
-						TFBlocks.FIDDLEHEAD.get(), 5)
+							Ingredient.of(TDBlocks.FIDDLEHEAD_CLUMP.get()),
+							Ingredient.of(TagRef.TOOLS_KNIVES),
+							TFBlocks.FIDDLEHEAD.get(), 5)
 					.save(pvd, getID(TDBlocks.FIDDLEHEAD_CLUMP.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
@@ -826,25 +820,25 @@ public class RecipeGen {
 							TFItems.HYDRA_CHOP.get(), 4)
 					.save(pvd, getID(TFBlocks.HYDRA_TROPHY.getId()));
 
-		CuttingBoardRecipeBuilder.cuttingRecipe(
-						Ingredient.of(TFBlocks.NAGA_TROPHY.get()),
-						Ingredient.of(TagRef.TOOLS_KNIVES),
-						TFItems.NAGA_SCALE.get(), 9)
-				.addResult(DelightFood.RAW_NAGA_MEAT.item.get(), 6)
-				.save(pvd, getID(TFBlocks.NAGA_TROPHY.getId()));
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFBlocks.NAGA_TROPHY.get()),
+							Ingredient.of(TagRef.TOOLS_KNIVES),
+							TFItems.NAGA_SCALE.get(), 9)
+					.addResult(DelightFood.RAW_NAGA_MEAT.item.get(), 6)
+					.save(pvd, getID(TFBlocks.NAGA_TROPHY.getId()));
 
-		CuttingBoardRecipeBuilder.cuttingRecipe(
-						Ingredient.of(DelightFood.RAW_NAGA_MEAT.item.get()),
-						Ingredient.of(TagRef.TOOLS_KNIVES),
-						DelightFood.RAW_NAGA_PIECE.item.get(), 2)
-				.addResultWithChance(TFItems.NAGA_SCALE.get(), 0.5f)
-				.save(pvd, getID(DelightFood.RAW_NAGA_PIECE.item.getId()));
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(DelightFood.RAW_NAGA_MEAT.item.get()),
+							Ingredient.of(TagRef.TOOLS_KNIVES),
+							DelightFood.RAW_NAGA_PIECE.item.get(), 2)
+					.addResultWithChance(TFItems.NAGA_SCALE.get(), 0.5f)
+					.save(pvd, getID(DelightFood.RAW_NAGA_PIECE.item.getId()));
 
-		CuttingBoardRecipeBuilder.cuttingRecipe(
-						Ingredient.of(DelightFood.COOKED_NAGA_MEAT.item.get()),
-						Ingredient.of(TagRef.TOOLS_KNIVES),
-						DelightFood.COOKED_NAGA_PIECE.item.get(), 2)
-				.save(pvd, getID(DelightFood.COOKED_NAGA_PIECE.item.getId()));
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(DelightFood.COOKED_NAGA_MEAT.item.get()),
+							Ingredient.of(TagRef.TOOLS_KNIVES),
+							DelightFood.COOKED_NAGA_PIECE.item.get(), 2)
+					.save(pvd, getID(DelightFood.COOKED_NAGA_PIECE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.KNIGHT_PHANTOM_TROPHY.get()),
@@ -852,13 +846,13 @@ public class RecipeGen {
 							TFItems.PHANTOM_HELMET.get(), 1)
 					.save(pvd, getID(TFBlocks.KNIGHT_PHANTOM_TROPHY.getId()));
 
-		CuttingBoardRecipeBuilder.cuttingRecipe(
-						Ingredient.of(TFBlocks.LICH_TROPHY.get()),
-						Ingredient.of(TagRef.TOOLS_KNIVES),
-						Items.SKELETON_SKULL, 1)
-				.addResult(TDItems.WITCHCRAFT_BONE.get(), 3)
-				.addResultWithChance(TFItems.TRANSFORMATION_POWDER.get(), 0.5f)
-				.save(pvd, getID(TFBlocks.LICH_TROPHY.getId()));
+			CuttingBoardRecipeBuilder.cuttingRecipe(
+							Ingredient.of(TFBlocks.LICH_TROPHY.get()),
+							Ingredient.of(TagRef.TOOLS_KNIVES),
+							Items.SKELETON_SKULL, 1)
+					.addResult(TDItems.WITCHCRAFT_BONE.get(), 3)
+					.addResultWithChance(TFItems.TRANSFORMATION_POWDER.get(), 0.5f)
+					.save(pvd, getID(TFBlocks.LICH_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.MINOSHROOM_TROPHY.get()),

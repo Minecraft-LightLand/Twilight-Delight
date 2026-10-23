@@ -19,6 +19,7 @@ import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightPie;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightCake;
 import dev.xkmc.twilightdelight.init.loot.NagaMeatModifier;
+import dev.xkmc.twilightdelight.init.loot.RandomCountModifier;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanCakes;
 import dev.xkmc.twilightdelight.init.registrate.neapolitan.NeapolitanFood;
 import dev.xkmc.twilightdelight.mixin.FoodPropertiesAccessor;
@@ -65,6 +66,7 @@ public class TwilightDelight {
 		DelightPie.register();
 		DelightCake.register();
 		NagaMeatModifier.register();
+		RandomCountModifier.register();
 		if (ModList.get().isLoaded(Neapolitan.MOD_ID)) {
 			NeapolitanFood.register();
 			NeapolitanCakes.register();

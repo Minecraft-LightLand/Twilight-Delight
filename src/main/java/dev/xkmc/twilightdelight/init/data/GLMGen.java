@@ -3,6 +3,7 @@ package dev.xkmc.twilightdelight.init.data;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.loot.NagaMeatModifier;
+import dev.xkmc.twilightdelight.init.loot.RandomCountModifier;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
 import dev.xkmc.twilightdelight.mixin.AddItemModifierAccessor;
@@ -16,6 +17,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithLootingCondition;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
+import net.minecraftforge.common.loot.LootTableIdCondition;
 import net.minecraftforge.registries.RegistryObject;
 import twilightforest.init.TFEntities;
 import twilightforest.init.TFItems;
@@ -23,6 +25,12 @@ import vectorwing.farmersdelight.common.loot.modifier.AddItemModifier;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class GLMGen extends GlobalLootModifierProvider {
+
+	/**
+	 * The chest of the Dark Tower boss, where the Knight Phantom keeps its loot.
+	 */
+	private static final ResourceLocation STRONGHOLD_BOSS_CHEST =
+			new ResourceLocation("twilightforest", "chests/stronghold_boss");
 
 	public GLMGen(DataGenerator gen) {
 		super(gen.getPackOutput(), TwilightDelight.MODID);
@@ -53,6 +61,10 @@ public class GLMGen extends GlobalLootModifierProvider {
 		mobDrop(DelightFood.REDCANP.item, TFEntities.REDCAP, 0.1f);
 		mobDrop(DelightFood.OMAZEO.item, TFEntities.REDCAP_SAPPER, 0.05f);
 		mobDrop(DelightFood.REDCANP.item, TFEntities.REDCAP_SAPPER, 0.15f);
+
+		// a handful of phantom bones among what the Knight Phantom left in the boss chest
+		add("phantom_bone_from_stronghold_boss", new RandomCountModifier(TDItems.PHANTOM_BONE.get(), 2, 9,
+				LootTableIdCondition.builder(STRONGHOLD_BOSS_CHEST).build()));
 	}
 
 	private void scavenging(EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float base, float loot, boolean nofire) {
