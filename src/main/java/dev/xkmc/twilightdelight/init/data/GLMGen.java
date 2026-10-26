@@ -66,7 +66,7 @@ public class GLMGen extends GlobalLootModifierProvider {
 		mobDrop(of(DelightFood.REDCANP.item), of(TFEntities.REDCAP_SAPPER), 0.15f);
 
 		// a handful of phantom bones among the armour the Knight Phantom drops
-		add("phantom_bone_from_knight_phantom", new RandomCountModifier(TDItems.PHANTOM_BONE.get(), 2, 9,
+		add("phantom_bone_from_knight_phantom", new RandomCountModifier(TDItems.PHANTOM_BONE.get(), 1, 2,
 				LootTableIdCondition.builder(KNIGHT_PHANTOM_LOOT).build()));
 	}
 
