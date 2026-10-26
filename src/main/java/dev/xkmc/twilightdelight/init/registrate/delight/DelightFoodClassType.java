@@ -19,6 +19,7 @@ public enum DelightFoodClassType {
 	STICK(p -> new TDFoodItem(p.craftRemainder(Items.STICK)), () -> Items.STICK),
 	SAUCE(p -> new TDFoodItem(p.stacksTo(64)), () -> Items.BOWL),
 	BOWL(p -> new TDFoodItem(p.stacksTo(16)), () -> Items.BOWL),
+	BUCKET(p -> new TDFoodItem(p.stacksTo(16)), () -> Items.BUCKET),
 	DRINK(p -> new TDDrinkableItem(p.stacksTo(16)), () -> Items.GLASS_BOTTLE),
 	ROSE_TEA(p -> new RoseTeaItem(p.stacksTo(16)), () -> Items.GLASS_BOTTLE);
 

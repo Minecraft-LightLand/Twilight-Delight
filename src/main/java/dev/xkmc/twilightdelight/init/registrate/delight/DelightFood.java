@@ -199,7 +199,7 @@ public enum DelightFood {
 			new EffectSupplier(MobEffects.FIRE_RESISTANCE, 6000, 0, 1),
 			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 600, 1, 1)),
 			TagRef.PROTEINS),
-	FIERY_BLOOD_CURD(DelightFoodType.NONE, 14, 0.8f, List.of(
+	FIERY_BLOOD_CURD(DelightFoodType.BUCKET, 14, 0.8f, List.of(
 			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1),
 			new EffectSupplier(MobEffects.REGENERATION, 1800, 2, 1),
 			new EffectSupplier(MobEffects.FIRE_RESISTANCE, 6000, 0, 1),
@@ -214,7 +214,7 @@ public enum DelightFood {
 			new EffectSupplier(MobEffects.REGENERATION, 1200, 2, 1),
 			new EffectSupplier(MobEffects.FIRE_RESISTANCE, 6000, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
-	FRIED_HYDRA_CHOP(DelightFoodType.NONE, 12, 0.8f, List.of(
+	FRIED_HYDRA_CHOP(DelightFoodType.BOWL, 12, 0.8f, List.of(
 			new EffectSupplier(MobEffects.REGENERATION, 1800, 2, 1),
 			new EffectSupplier(MobEffects.FIRE_RESISTANCE, 6000, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
@@ -288,7 +288,7 @@ public enum DelightFood {
 			new EffectSupplier(TDEffects.PHANTOM_BLESSING, 600, 0, 1),
 			new EffectSupplier(ModEffects.NOURISHMENT, 1800, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
-	TOMB_OF_THE_PHANTOM(DelightFoodType.NONE, 10, 0.8F, List.of(
+	TOMB_OF_THE_PHANTOM(DelightFoodType.BOWL, 10, 0.8F, List.of(
 			new EffectSupplier(TDEffects.PHANTOM_BLESSING, 1200, 0, 1),
 			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 1200, 0, 1),
 			new EffectSupplier(ModEffects.NOURISHMENT, 1800, 0, 1)),
@@ -319,12 +319,12 @@ public enum DelightFood {
 			new EffectSupplier(MobEffects.REGENERATION, 1000, 1, 1),
 			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 1000, 1, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
-	THICKCUT_GHAST_FRIES(DelightFoodType.NONE, 10, 0.8F, List.of(
+	THICKCUT_GHAST_FRIES(DelightFoodType.BOWL, 10, 0.8F, List.of(
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 200, 0, 0.33f),
 			new EffectSupplier(MobEffects.REGENERATION, 900, 1, 1),
 			new EffectSupplier(ModEffects.NOURISHMENT, 3000, 0, 1)),
 			TagRef.VEGETABLES, TagRef.GRAINS),
-	BOWL_OF_GHASTLING_MOUSSE_CAKE(DelightFoodType.NONE, 10, 0.8F, List.of(
+	BOWL_OF_GHASTLING_MOUSSE_CAKE(DelightFoodType.BOWL, 10, 0.8F, List.of(
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 200, 0, 0.33f),
 			new EffectSupplier(MobEffects.SLOW_FALLING, 3600, 0, 1),
 			new EffectSupplier(MobEffects.FIRE_RESISTANCE, 6000, 0, 1),
