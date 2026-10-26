@@ -155,7 +155,7 @@ public enum DelightFood {
 	BORER_TEAR_SOUP(DelightFoodType.BOWL, 6, 0.6f,
 			new EffectSupplier(() -> MobEffects.SATURATION, 10, 0, 1),
 			TagRef.VEGETABLES),
-	GHAST_BRAIN_SALAD(DelightFoodType.BOWL, 6, 0.6f, List.of(
+	GHAST_BRAIN_SALAD(DelightFoodType.BOWL_MEAT, 6, 0.6f, List.of(
 			new EffectSupplier(() -> MobEffects.HEALTH_BOOST, 2400, 4, 1),
 			new EffectSupplier(() -> MobEffects.NIGHT_VISION, 2400, 0, 1),
 			new EffectSupplier(() -> MobEffects.DAMAGE_BOOST, 2400, 4, 1),
@@ -191,38 +191,38 @@ public enum DelightFood {
 			new EffectSupplier(() -> MobEffects.DAMAGE_BOOST, 600, 1, 1),
 			new EffectSupplier(() -> MobEffects.DIG_SPEED, 600, 1, 1)),
 			TagRef.GRAINS, TagRef.VEGETABLES),
-	HYDRA_SKEWER(DelightFoodType.STICK, 8, 0.9f, List.of(
+	HYDRA_SKEWER(DelightFoodType.STICK_MEAT, 8, 0.9f, List.of(
 			new EffectSupplier(() -> MobEffects.REGENERATION, 1800, 0, 1),
 			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1),
 			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 600, 1, 1)),
 			TagRef.PROTEINS),
-	FIERY_BLOOD_CURD(DelightFoodType.NONE, 14, 0.8f, List.of(
+	FIERY_BLOOD_CURD(DelightFoodType.BUCKET_MEAT, 14, 0.8f, List.of(
 			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1),
 			new EffectSupplier(() -> MobEffects.REGENERATION, 1800, 2, 1),
 			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1),
 			new EffectSupplier(TDEffects.FIRE_RANGE, 1800, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
-	HYDRA_STUFFED_POTATO(DelightFoodType.NONE, 8, 0.6f, List.of(
+	HYDRA_STUFFED_POTATO(DelightFoodType.MEAT, 8, 0.6f, List.of(
 			new EffectSupplier(() -> MobEffects.REGENERATION, 1800, 0, 1),
 			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
-	HYDRA_STEW(DelightFoodType.BOWL, 12, 0.8f, List.of(
+	HYDRA_STEW(DelightFoodType.BOWL_MEAT, 12, 0.8f, List.of(
 			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1),
 			new EffectSupplier(() -> MobEffects.REGENERATION, 1200, 2, 1),
 			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
-	FRIED_HYDRA_CHOP(DelightFoodType.NONE, 12, 0.8f, List.of(
+	FRIED_HYDRA_CHOP(DelightFoodType.BOWL_MEAT, 12, 0.8f, List.of(
 			new EffectSupplier(() -> MobEffects.REGENERATION, 1800, 2, 1),
 			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
-	INSECT_ROLL(DelightFoodType.NONE, 6, 0.6f,
+	INSECT_ROLL(DelightFoodType.MEAT, 6, 0.6f,
 			TagRef.PROTEINS, TagRef.GRAINS),
-	TWILIGHT_SALAD(DelightFoodType.BOWL, 8, 0.6f,
+	TWILIGHT_SALAD(DelightFoodType.BOWL_MEAT, 8, 0.6f,
 			TagRef.PROTEINS, TagRef.VEGETABLES, TagRef.FRUITS),
-	GLOWING_CURRY_RICE(DelightFoodType.BOWL, 12, 0.8f, List.of(
+	GLOWING_CURRY_RICE(DelightFoodType.BOWL_MEAT, 12, 0.8f, List.of(
 			new EffectSupplier(() -> MobEffects.DIG_SPEED, 200, 0, 1)),
 			TagRef.PROTEINS, TagRef.GRAINS, TagRef.VEGETABLES),
-	DEADBUG_STICK(DelightFoodType.STICK, 6, 0.3f,
+	DEADBUG_STICK(DelightFoodType.STICK_MEAT, 6, 0.3f,
 			TagRef.PROTEINS),
 	VELVET_ANTLER_SLICE(DelightFoodType.NONE, 2, 0.3f, List.of(
 			new EffectSupplier(() -> MobEffects.REGENERATION, 100, 0, 1)),
@@ -232,7 +232,7 @@ public enum DelightFood {
 			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 400, 0, 1),
 			new EffectSupplier(() -> MobEffects.JUMP, 200, 0, 1),
 			new EffectSupplier(() -> MobEffects.CONFUSION, 60, 0, 1))),
-	VELVET_ANTLER_STEWED_CHICKEN_SOUP(DelightFoodType.BOWL, 10, 0.8f, List.of(
+	VELVET_ANTLER_STEWED_CHICKEN_SOUP(DelightFoodType.BOWL_MEAT, 10, 0.8f, List.of(
 			new EffectSupplier(() -> MobEffects.REGENERATION, 600, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
 	WITCHCRAFT_BONE_BROTH(DelightFoodType.BOWL_MEAT, 8, 0.7f, List.of(
@@ -285,7 +285,7 @@ public enum DelightFood {
 			new EffectSupplier(TDEffects.PHANTOM_BLESSING, 600, 0, 1),
 			new EffectSupplier(ModEffects.NOURISHMENT, 1800, 0, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
-	TOMB_OF_THE_PHANTOM(DelightFoodType.NONE, 10, 0.8F, List.of(
+	TOMB_OF_THE_PHANTOM(DelightFoodType.BOWL, 10, 0.8F, List.of(
 			new EffectSupplier(TDEffects.PHANTOM_BLESSING, 1200, 0, 1),
 			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1200, 0, 1),
 			new EffectSupplier(ModEffects.NOURISHMENT, 1800, 0, 1)),
@@ -307,21 +307,21 @@ public enum DelightFood {
 			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 3600, 0, 1),
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 100, 0, 0.33f)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
-	REGRET_SOUP(DelightFoodType.BOWL, 8, 0.7F, List.of(
+	REGRET_SOUP(DelightFoodType.BOWL_MEAT, 8, 0.7F, List.of(
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 200, 0, 1),
 			new EffectSupplier(() -> MobEffects.REGENERATION, 900, 1, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
-	GHAST_TENTACLE_SALAD(DelightFoodType.BOWL, 6, 0.6F, List.of(
+	GHAST_TENTACLE_SALAD(DelightFoodType.BOWL_MEAT, 6, 0.6F, List.of(
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 200, 0, 0.33f),
 			new EffectSupplier(() -> MobEffects.REGENERATION, 1000, 1, 1),
 			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1000, 1, 1)),
 			TagRef.PROTEINS, TagRef.VEGETABLES),
-	THICKCUT_GHAST_FRIES(DelightFoodType.NONE, 10, 0.8F, List.of(
+	THICKCUT_GHAST_FRIES(DelightFoodType.BOWL_MEAT, 10, 0.8F, List.of(
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 200, 0, 0.33f),
 			new EffectSupplier(() -> MobEffects.REGENERATION, 900, 1, 1),
 			new EffectSupplier(ModEffects.NOURISHMENT, 3000, 0, 1)),
 			TagRef.VEGETABLES, TagRef.GRAINS),
-	BOWL_OF_GHASTLING_MOUSSE_CAKE(DelightFoodType.NONE, 10, 0.8F, List.of(
+	BOWL_OF_GHASTLING_MOUSSE_CAKE(DelightFoodType.BOWL_MEAT, 10, 0.8F, List.of(
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 200, 0, 0.33f),
 			new EffectSupplier(() -> MobEffects.SLOW_FALLING, 3600, 0, 1),
 			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1),

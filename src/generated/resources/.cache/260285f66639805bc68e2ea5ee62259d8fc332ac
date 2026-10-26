@@ -1,4 +1,4 @@
-// 1.20.1	2026-10-23T10:49:37.178435	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2026-10-26T20:46:02.882349	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
@@ -786,7 +786,7 @@ bc62b69ccead7e2d39698bd751e927fd793c5306 data/twilightdelight/recipes/cooking/ch
 3064a2b3bcf04d4ff3406915b16e07062621f879 data/twilightdelight/recipes/cooking/delicious_in_maze.json
 1ed31d57321a906480146ff5f1d2171c0874afae data/twilightdelight/recipes/cooking/fiery_blood_curd.json
 230cd3ed0aa244f7e49ff729efea7a4c4b21973d data/twilightdelight/recipes/cooking/fiery_snakes_block.json
-73fe1c9cf28f55c0f7d764954ebf173039e3cd12 data/twilightdelight/recipes/cooking/fried_hydra_chop.json
+51963266d668ef4d3804ba14afd2868b92a0ac3a data/twilightdelight/recipes/cooking/fried_hydra_chop.json
 34280615bd1a863316f2554183f2f85ca26a24ab data/twilightdelight/recipes/cooking/fried_insect.json
 11f1beb3b635d0c1f8116b302d0f864d6cf84671 data/twilightdelight/recipes/cooking/glow_venison_rib_with_pasta.json
 e8d5f0fedefafdca932ee29a447e9de0f025337e data/twilightdelight/recipes/cooking/glowing_curry_rice.json
@@ -812,7 +812,7 @@ abd9656f6b0f3f61e504bc8677d9e9e4d169d136 data/twilightdelight/recipes/cooking/ph
 bf4b7336c6f7e552434b9cbf5ab0f5c3639d24e5 data/twilightdelight/recipes/cooking/thickcut_ghast_fries.json
 c968ec9fe876c2c257dda7df2d8c35cdae83af94 data/twilightdelight/recipes/cooking/thorn_rose_tea.json
 cca456625f4a22fd82e94a5b23feee39800d218b data/twilightdelight/recipes/cooking/thousand_plant_stew.json
-a0c2a2fee9494a5fadefce07ad6f316eae23faea data/twilightdelight/recipes/cooking/tomb_of_the_phantom.json
+6dcf6890a252046f88578ba5d0bc544ae85cb39e data/twilightdelight/recipes/cooking/tomb_of_the_phantom.json
 f4b4593875eeb61ac53fafb00d6ce44f2819433c data/twilightdelight/recipes/cooking/torchberry_juice.json
 6a9673c19c91edcd2e6e80b39bf766887980595e data/twilightdelight/recipes/cooking/transformation_powder.json
 09a484edbb7cfe3e86e11bda20878e0c98b581a2 data/twilightdelight/recipes/cooking/velvet_antler_stewed_chicken_soup.json

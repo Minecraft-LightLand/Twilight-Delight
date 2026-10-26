@@ -1,6 +1,6 @@
 package dev.xkmc.twilightdelight.init.registrate.delight;
 
-import dev.xkmc.twilightdelight.content.item.food.InBowlItem;
+import dev.xkmc.twilightdelight.content.item.food.ContainedFoodItem;
 import dev.xkmc.twilightdelight.content.item.food.RoseTeaItem;
 import dev.xkmc.twilightdelight.content.item.food.TDDrinkableItem;
 import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
@@ -12,12 +12,13 @@ import java.util.function.Function;
 
 public enum DelightFoodClassType {
 	REGULAR(TDFoodItem::new),
-	FIRE_PROOF(p-> new TDFoodItem(p.fireResistant())),
+	FIRE_PROOF(p -> new TDFoodItem(p.fireResistant())),
 	TOMAHAWK(p -> new TomahawkSmeaxeItem(3, p)),
 	COOKED_TOMAHAWK(p -> new TomahawkSmeaxeItem(5, p)),
 	STICK(p -> new TDFoodItem(p.craftRemainder(Items.STICK))),
-	SAUCE(p -> new InBowlItem(p.stacksTo(64).craftRemainder(Items.BOWL))),
-	BOWL(p -> new InBowlItem(p.stacksTo(16).craftRemainder(Items.BOWL))),
+	SAUCE(p -> new ContainedFoodItem(Items.BOWL, p.stacksTo(64).craftRemainder(Items.BOWL))),
+	BOWL(p -> new ContainedFoodItem(Items.BOWL, p.stacksTo(16).craftRemainder(Items.BOWL))),
+	BUCKET(p -> new ContainedFoodItem(Items.BUCKET, p.stacksTo(16).craftRemainder(Items.BUCKET))),
 	DRINK(p -> new TDDrinkableItem(p.stacksTo(16).craftRemainder(Items.GLASS_BOTTLE))),
 	ROSE_TEA(p -> new RoseTeaItem(p.stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
 

@@ -18,9 +18,11 @@ public enum DelightFoodType implements IFoodType {
 	TOMAHAWK(Rarity.UNCOMMON, true, false, false, DelightFoodClassType.TOMAHAWK),
 	COOKED_TOMAHAWK(Rarity.UNCOMMON, true, false, false, DelightFoodClassType.COOKED_TOMAHAWK),
 	STICK(Rarity.COMMON, false, true, false, DelightFoodClassType.STICK),
+	STICK_MEAT(Rarity.COMMON, true, true, false, DelightFoodClassType.STICK),
 	SAUCE(Rarity.COMMON, false, false, false, DelightFoodClassType.SAUCE),
 	BOWL(Rarity.COMMON, false, false, false, DelightFoodClassType.BOWL),
 	BOWL_MEAT(Rarity.COMMON, true, false, false, DelightFoodClassType.BOWL),
+	BUCKET_MEAT(Rarity.COMMON, true, false, false, DelightFoodClassType.BUCKET),
 	DRINK(Rarity.COMMON, false, false, true, DelightFoodClassType.DRINK),
 	ROSE(Rarity.COMMON, false, false, true, DelightFoodClassType.ROSE_TEA);
 
@@ -48,7 +50,7 @@ public enum DelightFoodType implements IFoodType {
 			pvd.getBuilder(ctx.getName()).parent(new ModelFile.UncheckedModelFile(
 							new ResourceLocation("farmersdelight:item/mug")))
 					.texture("layer0", pvd.itemTexture(ctx));
-		} else if (this == MEAT_STICK || this == STICK || this == TOMAHAWK || this == COOKED_TOMAHAWK) {
+		} else if (this == MEAT_STICK || this == STICK || this == STICK_MEAT || this == TOMAHAWK || this == COOKED_TOMAHAWK) {
 			pvd.handheld(ctx);
 		} else {
 			pvd.generated(ctx);

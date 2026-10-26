@@ -589,7 +589,7 @@ public class RecipeGen {
 					.save(pvd, getID(DelightFood.HYDRA_STEW.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.FRIED_HYDRA_CHOP.item.get(),
-							1, 800, 0.5f, Items.BUCKET)::unlockedBy,
+							1, 800, 0.5f, Items.BOWL)::unlockedBy,
 					TFItems.HYDRA_CHOP.get())
 					.addIngredient(TagGen.HYDRA_MEAT)
 					.addIngredient(TagRef.EGGS)
@@ -648,7 +648,7 @@ public class RecipeGen {
 					.save(pvd, getID(DelightFood.PHANTOM_BONE_BROTH.item.getId()));
 
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.TOMB_OF_THE_PHANTOM.item.get(),
-							1, 200, 0.35f)::unlockedBy,
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					TDItems.PHANTOM_BONE.get())
 					.addIngredient(TDItems.PHANTOM_BONE.get(), 2)
 					.addIngredient(Items.VINE)
