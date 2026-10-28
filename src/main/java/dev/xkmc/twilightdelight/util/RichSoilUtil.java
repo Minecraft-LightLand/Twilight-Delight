@@ -92,6 +92,7 @@ public class RichSoilUtil {
 	}
 
 	public static void convertIronwood(BlockPos pos, Level level) {
+		var soil = level.getBlockState(pos);
 		var up = pos.above();
 		var state = level.getBlockState(up);
 		if (state.is(TFBlocks.DARKWOOD_SAPLING.get())) {
@@ -104,7 +105,7 @@ public class RichSoilUtil {
 						}
 					}
 				}
-				if (level.getRandom().nextFloat() * 10 < count) {
+				if (soil.is(TDBlocks.TWILIGHT_RICH_SOIL.get()) || level.getRandom().nextFloat() * 10 < count) {
 					level.setBlockAndUpdate(up, TDBlocks.IRON_SAPLING.get().defaultBlockState());
 				}
 			}

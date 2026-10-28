@@ -13,6 +13,8 @@
 		"EntityMixin",
 		"ItemAccessor",
 		"ItemEntityMixin",
+		"KeepRichSoilGiantTreeMixin",
+		"KeepRichSoilTreeMixin",
 		"LootTableProviderMixin",
 		"RichSoilBlockMixin",
 		"SkilletBlockEntityMixin",

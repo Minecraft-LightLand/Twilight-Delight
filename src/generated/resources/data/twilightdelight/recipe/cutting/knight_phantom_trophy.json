@@ -11,6 +11,12 @@
         "count": 1,
         "id": "twilightforest:phantom_helmet"
       }
+    },
+    {
+      "item": {
+        "count": 2,
+        "id": "twilightdelight:phantom_bone"
+      }
     }
   ],
   "tool": {
