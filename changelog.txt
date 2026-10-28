@@ -1,3 +1,8 @@
+2.2.8
+- Fix some food container bug and recipe bugs
+- twilight rich soil no longer replaced by tree growth
+- Add Ironwood tree obtain method in patchouli
+
 2.2.7
 - Add 19 food related to phantom knight and ghast
 - fix uncrafting dupe for scepter

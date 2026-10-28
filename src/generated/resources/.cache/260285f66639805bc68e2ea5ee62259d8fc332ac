@@ -1,4 +1,4 @@
-// 1.20.1	2026-10-26T20:46:02.882349	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2026-10-26T21:00:06.09409	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
@@ -830,7 +830,7 @@ c87b21f46d67102fcb63aa71fcf607682d25e039 data/twilightdelight/recipes/cutting/fi
 1d4d081c7bdf16e2931acab135c6b3a0d67a316f data/twilightdelight/recipes/cutting/ice_bow.json
 2696dc9af1ffbf0d10baa3bf5d6ce8cb80d02129 data/twilightdelight/recipes/cutting/ice_knife.json
 07806ee7a6101fd1f040737cad9138da694f5d00 data/twilightdelight/recipes/cutting/ice_sword.json
-2c26b59147c81389b759a14b25de43b67e9639a5 data/twilightdelight/recipes/cutting/knight_phantom_trophy.json
+31d2952b52ee915973493a6bb87b86e410465545 data/twilightdelight/recipes/cutting/knight_phantom_trophy.json
 4b43b6cfbd3713e62fd5de25d2be53ae2e583c27 data/twilightdelight/recipes/cutting/lich_trophy.json
 2600ce0186344cb89882258623bf660125e7e467 data/twilightdelight/recipes/cutting/minoshroom_trophy.json
 388e43aeb046eaa9c168c514f7db006bc6b6d1b9 data/twilightdelight/recipes/cutting/mushgloom_colony.json

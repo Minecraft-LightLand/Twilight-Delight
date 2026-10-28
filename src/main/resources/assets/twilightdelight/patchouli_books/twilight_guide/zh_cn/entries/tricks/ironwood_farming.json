@@ -1,0 +1,12 @@
+{
+  "name": "种植铁木",
+  "icon": "twilightdelight:ironwood_sapling",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightdelight:ironwood_sapling",
+	  "text": "在暮色沃土上种植黑树树苗。每当暮色沃土催熟它时，上方的树苗就可能变成铁木树苗。让它长成大树，就能获得铁木。"
+	}
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Growing Ironwood",
+  "icon": "twilightdelight:ironwood_sapling",
+  "category": "twilightdelight:tricks",
+  "pages": [
+	{
+	  "type": "patchouli:spotlight",
+	  "item": "twilightdelight:ironwood_sapling",
+	  "text": "Plant a Darkwood Sapling on Twilight Rich Soil. Whenever the soil boosts it, the sapling above may turn into an Ironwood Sapling. Let it grow into a tree to get Ironwood."
+	}
+  ]
+}

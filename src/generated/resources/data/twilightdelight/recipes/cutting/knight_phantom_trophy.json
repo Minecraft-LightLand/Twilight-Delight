@@ -8,6 +8,10 @@
   "result": [
     {
       "item": "twilightforest:phantom_helmet"
+    },
+    {
+      "count": 2,
+      "item": "twilightdelight:phantom_bone"
     }
   ],
   "tool": {

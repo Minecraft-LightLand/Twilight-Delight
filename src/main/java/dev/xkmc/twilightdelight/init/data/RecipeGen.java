@@ -844,6 +844,7 @@ public class RecipeGen {
 							Ingredient.of(TFBlocks.KNIGHT_PHANTOM_TROPHY.get()),
 							Ingredient.of(TagRef.TOOLS_KNIVES),
 							TFItems.PHANTOM_HELMET.get(), 1)
+					.addResult(TDItems.PHANTOM_BONE.get(), 2)
 					.save(pvd, getID(TFBlocks.KNIGHT_PHANTOM_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
