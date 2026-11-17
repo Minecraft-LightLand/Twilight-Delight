@@ -3,6 +3,7 @@ package dev.xkmc.twilightdelight.init.registrate.neapolitan;
 import com.tterrag.registrate.providers.DataGenContext;
 import com.tterrag.registrate.providers.RegistrateItemModelProvider;
 import dev.xkmc.twilightdelight.compat.neapolitan.TDIceCreamItem;
+import dev.xkmc.twilightdelight.compat.neapolitan.TDMetalIceCreamItem;
 import dev.xkmc.twilightdelight.compat.neapolitan.TDMilkshakeItem;
 import dev.xkmc.twilightdelight.init.registrate.delight.IFoodType;
 import net.minecraft.world.food.FoodProperties;
@@ -15,7 +16,8 @@ import java.util.function.Supplier;
 
 public enum NeapolitanFoodType implements IFoodType {
 	MILKSHAKE(Rarity.COMMON, p -> new TDMilkshakeItem(p.stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)), () -> Items.GLASS_BOTTLE),
-	ICE_CREAM(Rarity.COMMON, p -> new TDIceCreamItem(p.stacksTo(16).craftRemainder(Items.BOWL)), () -> Items.BOWL);
+	ICE_CREAM(Rarity.COMMON, p -> new TDIceCreamItem(p.stacksTo(16).craftRemainder(Items.BOWL)), () -> Items.BOWL),
+	METAL_ICE_CREAM(Rarity.COMMON, p -> new TDMetalIceCreamItem(p.stacksTo(16).craftRemainder(Items.BOWL)), () -> Items.BOWL);
 
 	public final Rarity rarity;
 	private final Function<Item.Properties, Item> type;

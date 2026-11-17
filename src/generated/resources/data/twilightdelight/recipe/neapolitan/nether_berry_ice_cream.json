@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neapolitan"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:drinks/milk"
+    },
+    {
+      "item": "neapolitan:ice_cubes"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "twilightforest:blightberry"
+    },
+    {
+      "item": "twilightforest:duskberry"
+    },
+    {
+      "item": "twilightforest:skyberry"
+    },
+    {
+      "item": "twilightforest:stingberry"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:nether_berry_ice_cream"
+  }
+}

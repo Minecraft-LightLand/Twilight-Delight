@@ -7,6 +7,18 @@
     "twilightdelight:magic_cake_scroll",
     "twilightdelight:omazeo",
     "twilightdelight:bowl_of_ghastling_mousse_cake",
+    "twilightdelight:raspberry_jelly",
+    "twilightdelight:blueberry_jelly",
+    "twilightdelight:blackberry_jelly",
+    "twilightdelight:maloberry_jelly",
+    "twilightdelight:blightberry_jelly",
+    "twilightdelight:duskberry_jelly",
+    "twilightdelight:skyberry_jelly",
+    "twilightdelight:stingberry_jelly",
+    "twilightdelight:iron_berry_jelly",
+    "twilightdelight:copper_berry_jelly",
+    "twilightdelight:gold_berry_jelly",
+    "twilightdelight:essence_berry_jelly",
     "twilightdelight:torchberry_pie_slice",
     "twilightdelight:aurora_pie_slice",
     "twilightdelight:twilight_cake_slice",
@@ -52,6 +64,18 @@
     },
     {
       "id": "twilightdelight:refreshing_ice_cream",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:overworld_berry_ice_cream",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:nether_berry_ice_cream",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:raw_metal_ice_cream",
       "required": false
     },
     {

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blackberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:blackberry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:cooking/blackberry_jelly"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blackberry"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:cooking/blackberry_jelly"
+    ]
+  }
+}

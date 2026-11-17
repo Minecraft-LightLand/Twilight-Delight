@@ -1,8 +1,10 @@
 package dev.xkmc.twilightdelight.init.registrate.delight;
 
+import dev.xkmc.twilightdelight.content.item.food.MetalFoodItem;
 import dev.xkmc.twilightdelight.content.item.food.RoseTeaItem;
 import dev.xkmc.twilightdelight.content.item.food.TDDrinkableItem;
 import dev.xkmc.twilightdelight.content.item.food.TDFoodItem;
+import dev.xkmc.twilightdelight.content.item.food.XPFoodItem;
 import dev.xkmc.twilightdelight.content.item.tool.TomahawkSmeaxeItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -19,6 +21,8 @@ public enum DelightFoodClassType {
 	STICK(p -> new TDFoodItem(p.craftRemainder(Items.STICK)), () -> Items.STICK),
 	SAUCE(p -> new TDFoodItem(p.stacksTo(64)), () -> Items.BOWL),
 	BOWL(p -> new TDFoodItem(p.stacksTo(16)), () -> Items.BOWL),
+	METAL_BOWL(p -> new MetalFoodItem(p.stacksTo(16)), () -> Items.BOWL),
+	XP_BOWL(p -> new XPFoodItem(p.stacksTo(16), 6, 20), () -> Items.BOWL),
 	BUCKET(p -> new TDFoodItem(p.stacksTo(16)), () -> Items.BUCKET),
 	DRINK(p -> new TDDrinkableItem(p.stacksTo(16)), () -> Items.GLASS_BOTTLE),
 	ROSE_TEA(p -> new RoseTeaItem(p.stacksTo(16)), () -> Items.GLASS_BOTTLE);

@@ -755,6 +755,20 @@ public class RecipeGen {
 					.addIngredient(ModItems.TOMATO_SAUCE.get())
 					.save(pvd, getID(DelightFood.THICKCUT_GHAST_FRIES.item.getId()));
 
+			// berry jellies: two berries boiled down with sugar and slime, served in a bowl
+			berryJelly(pvd, DelightFood.RASPBERRY_JELLY, TFItems.RASPBERRY.get());
+			berryJelly(pvd, DelightFood.BLUEBERRY_JELLY, TFItems.BLUEBERRY.get());
+			berryJelly(pvd, DelightFood.BLACKBERRY_JELLY, TFItems.BLACKBERRY.get());
+			berryJelly(pvd, DelightFood.MALOBERRY_JELLY, TFItems.MALOBERRY.get());
+			berryJelly(pvd, DelightFood.BLIGHTBERRY_JELLY, TFItems.BLIGHTBERRY.get());
+			berryJelly(pvd, DelightFood.DUSKBERRY_JELLY, TFItems.DUSKBERRY.get());
+			berryJelly(pvd, DelightFood.SKYBERRY_JELLY, TFItems.SKYBERRY.get());
+			berryJelly(pvd, DelightFood.STINGBERRY_JELLY, TFItems.STINGBERRY.get());
+			berryJelly(pvd, DelightFood.IRON_BERRY_JELLY, TFItems.IRON_BERRY.get());
+			berryJelly(pvd, DelightFood.COPPER_BERRY_JELLY, TFItems.COPPER_BERRY.get());
+			berryJelly(pvd, DelightFood.GOLD_BERRY_JELLY, TFItems.GOLD_BERRY.get());
+			berryJelly(pvd, DelightFood.ESSENCE_BERRY_JELLY, TFItems.ESSENCE_BERRY.get());
+
 		}
 
 		// drink cooking
@@ -1068,6 +1082,13 @@ public class RecipeGen {
 					NeapolitanCakes.TORCHBERRY,
 					TFItems.TORCHBERRIES.get());
 
+			berryIceCream(pvd, NeapolitanFood.OVERWORLD_BERRY_ICE_CREAM.item,
+					TFItems.RASPBERRY.get(), TFItems.BLUEBERRY.get(), TFItems.BLACKBERRY.get(), TFItems.MALOBERRY.get());
+			berryIceCream(pvd, NeapolitanFood.NETHER_BERRY_ICE_CREAM.item,
+					TFItems.BLIGHTBERRY.get(), TFItems.DUSKBERRY.get(), TFItems.SKYBERRY.get(), TFItems.STINGBERRY.get());
+			berryIceCream(pvd, NeapolitanFood.RAW_METAL_ICE_CREAM.item,
+					TFItems.IRON_BERRY.get(), TFItems.GOLD_BERRY.get(), TFItems.COPPER_BERRY.get());
+
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, NeapolitanFood.TWILIGHT_ICE_CREAM.item.get(), 3)::unlockedBy, TFItems.TORCHBERRIES.get())
 					.requires(NeapolitanFood.TORCHBERRY_ICE_CREAM.item.get())
 					.requires(NeapolitanItems.CHOCOLATE_ICE_CREAM.get())
@@ -1128,6 +1149,31 @@ public class RecipeGen {
 		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, cake.block.get(), 1)::unlockedBy, cake.slice.get())
 				.requires(cake.slice.get(), 7)
 				.save(pvd, getID(cake.block.getId()) + "_assemble");
+	}
+
+	// berry jelly boiled down in a cooking pot, then set in a bowl
+	private static void berryJelly(RegistrateRecipeProvider pvd, DelightFood jelly, Item berry) {
+		unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(jelly.item.get(),
+						1, 200, 0.35f, Items.BOWL)::unlockedBy,
+				berry)
+				.setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+				.addIngredient(berry, 2)
+				.addIngredient(Items.SLIME_BALL, 2)
+				.addIngredient(Items.SUGAR)
+				.save(pvd, getID(jelly.item.getId()));
+	}
+
+	// ice cream churned from several berries, saved as a neapolitan-conditional recipe
+	private static void berryIceCream(RegistrateRecipeProvider pvd, ItemEntry<?> ice_cream, Item... berries) {
+		var builder = unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, ice_cream.get(), 1)::unlockedBy, berries[0])
+				.requires(Items.BOWL)
+				.requires(TagRef.FOODS_MILK)
+				.requires(NeapolitanItems.ICE_CUBES.get())
+				.requires(Items.SUGAR);
+		for (Item berry : berries) {
+			builder.requires(berry);
+		}
+		builder.save(ConditionalRecipeWrapper.mod(pvd, Neapolitan.MOD_ID), getID(ice_cream.getId()));
 	}
 
 	private static void neapolitan(RegistrateRecipeProvider pvd, ItemEntry<?> ice_cream, ItemEntry<?> milkshake, NeapolitanCakes cake, Item ingredient) {

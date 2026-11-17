@@ -18,6 +18,8 @@ public enum DelightFoodType implements IFoodType {
 	STICK(Rarity.COMMON, true, false, DelightFoodClassType.STICK),
 	SAUCE(Rarity.COMMON, false, false, DelightFoodClassType.SAUCE),
 	BOWL(Rarity.COMMON, false, false, DelightFoodClassType.BOWL),
+	METAL_BOWL(Rarity.COMMON, false, false, DelightFoodClassType.METAL_BOWL),
+	XP_BOWL(Rarity.COMMON, false, false, DelightFoodClassType.XP_BOWL),
 	BUCKET(Rarity.COMMON, false, false, DelightFoodClassType.BUCKET),
 	DRINK(Rarity.COMMON, false, true, DelightFoodClassType.DRINK),
 	ROSE(Rarity.COMMON, false, true, DelightFoodClassType.ROSE_TEA);

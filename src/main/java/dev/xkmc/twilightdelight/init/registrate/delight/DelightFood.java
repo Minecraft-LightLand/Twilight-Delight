@@ -330,6 +330,43 @@ public enum DelightFood {
 			new EffectSupplier(MobEffects.FIRE_RESISTANCE, 6000, 0, 1),
 			new EffectSupplier(MobEffects.ABSORPTION, 1200, 3, 1)),
 			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+
+	// berry jellies: processed berries keep the berry's effects but longer,
+	// and only a fraction of the berry's drawbacks
+	RASPBERRY_JELLY(DelightFoodType.BOWL, 4, 0.4F,
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	BLUEBERRY_JELLY(DelightFoodType.BOWL, 4, 0.4F,
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	BLACKBERRY_JELLY(DelightFoodType.BOWL, 4, 0.4F,
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	MALOBERRY_JELLY(DelightFoodType.BOWL, 4, 0.4F,
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	BLIGHTBERRY_JELLY(DelightFoodType.BOWL, 4, 0.4F, List.of(
+			new EffectSupplier(MobEffects.REGENERATION, 600, 0, 1),
+			new EffectSupplier(MobEffects.POISON, 100, 0, 0.3f)),
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	DUSKBERRY_JELLY(DelightFoodType.BOWL, 4, 0.4F, List.of(
+			new EffectSupplier(MobEffects.NIGHT_VISION, 2400, 0, 1),
+			new EffectSupplier(MobEffects.BLINDNESS, 60, 0, 0.3f)),
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	SKYBERRY_JELLY(DelightFoodType.BOWL, 4, 0.4F, List.of(
+			new EffectSupplier(MobEffects.JUMP, 1200, 1, 1),
+			new EffectSupplier(MobEffects.MOVEMENT_SLOWDOWN, 60, 0, 0.3f)),
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	STINGBERRY_JELLY(DelightFoodType.BOWL, 4, 0.4F, List.of(
+			new EffectSupplier(MobEffects.DAMAGE_BOOST, 1200, 1, 1),
+			new EffectSupplier(MobEffects.DIG_SLOWDOWN, 100, 0, 0.3f)),
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	IRON_BERRY_JELLY(DelightFoodType.METAL_BOWL, 4, 0.4F,
+			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 1200, 0, 1),
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	COPPER_BERRY_JELLY(DelightFoodType.METAL_BOWL, 4, 0.4F,
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	GOLD_BERRY_JELLY(DelightFoodType.METAL_BOWL, 4, 0.4F, List.of(
+			new EffectSupplier(MobEffects.DIG_SPEED, 1200, 0, 1)),
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+	ESSENCE_BERRY_JELLY(DelightFoodType.XP_BOWL, 4, 0.4F,
+			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
 	;
 
 	public final ItemEntry<Item> item;
