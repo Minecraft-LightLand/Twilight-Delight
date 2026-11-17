@@ -6,8 +6,12 @@
 		{
 			"type": "patchouli:spotlight",
 			"item": [
-				"twilightdelight:redcanp",
-				"twilightdelight:omazeo"
+				{
+					"item": "twilightdelight:redcanp"
+				},
+				{
+					"item": "twilightdelight:omazeo"
+				}
 			],
 			"text": "Redcaps and their sapper variant have a chance to drop Redcanp and Omazeo, with the sapper dropping them more often."
 		},

@@ -6,8 +6,12 @@
 		{
 			"type": "patchouli:spotlight",
 			"item": [
-				"twilightdelight:redcanp",
-				"twilightdelight:omazeo"
+				{
+					"item": "twilightdelight:redcanp"
+				},
+				{
+					"item": "twilightdelight:omazeo"
+				}
 			],
 			"text": "红帽地精和它的变种都有概率掉落红帽罐头和迷宫奥利奥，变种的掉落概率更高。"
 		},
