@@ -94,8 +94,8 @@ public class RecipeGen {
 
 		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.MISC, TDItems.WROUGHT_IRON_SWORD.get(), 1)::unlockedBy, Items.IRON_INGOT)
 				.pattern("A").pattern("A").pattern("B")
-				.define('A', TFItems.WROUGHT_IRON_BAR)
-				.define('B', Tags.Items.RODS_WOODEN)
+				.define('A', TFBlocks.WROUGHT_IRON_FENCE)
+				.define('B', TFItems.WROUGHT_IRON_BAR)
 				.save(pvd);
 
 		// same shape as the vanilla bow, the antlers are the limbs and the bone the grip

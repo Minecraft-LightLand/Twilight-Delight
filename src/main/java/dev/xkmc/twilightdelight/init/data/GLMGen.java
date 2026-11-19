@@ -41,6 +41,12 @@ public class GLMGen extends GlobalLootModifierProvider {
 	private static final ResourceLocation ALPHA_YETI_LOOT =
 			ResourceLocation.fromNamespaceAndPath("twilightforest", "entities/alpha_yeti");
 
+	/**
+	 * The drop table of the Ur-Ghast, the boss of the Dark Tower.
+	 */
+	private static final ResourceLocation UR_GHAST_LOOT =
+			ResourceLocation.fromNamespaceAndPath("twilightforest", "entities/ur_ghast");
+
 	public GLMGen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries, TwilightDelight.MODID);
 	}
@@ -74,6 +80,10 @@ public class GLMGen extends GlobalLootModifierProvider {
 		add("yeti_meat_from_alpha_yeti", new RandomCountModifier(DelightFood.RAW_YETI_MEAT.item.get(), 2, 6,
 				LootTableIdCondition.builder(ALPHA_YETI_LOOT).build()));
 		mobDrop(of(DelightFood.RAW_YETI_MEAT_SLICE.item), of(TFEntities.YETI), 0.025f);
+
+		// the Ur-Ghast hoards a pile of experiment 113
+		add("experiment_113_from_ur_ghast", new RandomCountModifier(DelightFood.EXPERIMENT_113.item.get(), 6, 12,
+				LootTableIdCondition.builder(UR_GHAST_LOOT).build()));
 
 		// a handful of phantom bones among the armour the Knight Phantom drops
 		add("phantom_bone_from_knight_phantom", new RandomCountModifier(TDItems.PHANTOM_BONE.get(), 1, 2,

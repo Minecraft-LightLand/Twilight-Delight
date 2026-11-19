@@ -132,7 +132,10 @@ public class TDItems {
 							.texture("layer0", pvd.modLoc("item/wrought_iron_sword"));
 					pvd.getBuilder(ctx.getName()).guiLight(BlockModel.GuiLight.FRONT)
 							.customLoader(SeparateTransformsModelBuilder::begin)
-							.base(base).perspective(ItemDisplayContext.GUI, gui);
+							.base(base)
+							.perspective(ItemDisplayContext.GUI, gui)
+							.perspective(ItemDisplayContext.FIXED, gui)
+							.perspective(ItemDisplayContext.GROUND, gui);
 				})
 				.tag(ItemTags.SWORDS).register();
 	}

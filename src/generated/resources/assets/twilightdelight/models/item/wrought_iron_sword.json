@@ -5,6 +5,18 @@
   "gui_light": "front",
   "loader": "neoforge:separate_transforms",
   "perspectives": {
+    "fixed": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "twilightdelight:item/wrought_iron_sword"
+      }
+    },
+    "ground": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "twilightdelight:item/wrought_iron_sword"
+      }
+    },
     "gui": {
       "parent": "minecraft:item/generated",
       "textures": {

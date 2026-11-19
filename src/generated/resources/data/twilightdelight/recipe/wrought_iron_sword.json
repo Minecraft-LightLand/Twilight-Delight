@@ -3,10 +3,10 @@
   "category": "misc",
   "key": {
     "A": {
-      "item": "twilightforest:wrought_iron_bar"
+      "item": "twilightforest:wrought_iron_fence"
     },
     "B": {
-      "tag": "c:rods/wooden"
+      "item": "twilightforest:wrought_iron_bar"
     }
   },
   "pattern": [
