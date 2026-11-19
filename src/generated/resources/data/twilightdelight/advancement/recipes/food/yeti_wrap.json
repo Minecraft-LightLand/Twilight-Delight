@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cooked_yeti_meat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightdelight:cooked_yeti_meat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:yeti_wrap"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cooked_yeti_meat"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:yeti_wrap"
+    ]
+  }
+}

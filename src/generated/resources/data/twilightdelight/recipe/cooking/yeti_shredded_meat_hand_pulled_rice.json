@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "twilightdelight:raw_yeti_meat"
+    },
+    {
+      "tag": "c:crops/rice"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "tag": "twilightdelight:ferns"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:yeti_shredded_meat_hand_pulled_rice"
+  }
+}

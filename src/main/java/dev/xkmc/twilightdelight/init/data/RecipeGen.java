@@ -162,6 +162,8 @@ public class RecipeGen {
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_NAGA_MEAT.item.get()), DelightFood.COOKED_NAGA_MEAT.item, 1);
 		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_NAGA_PIECE.item.get()), DelightFood.COOKED_NAGA_PIECE.item, 1);
 		tripleCook(pvd, DataIngredient.items(TDItems.HELMET_CRAB_CLAW.get()), DelightFood.COOKED_HELMET_CRAB_CLAW.item, 1);
+		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_YETI_MEAT.item.get()), DelightFood.COOKED_YETI_MEAT.item, 1);
+		tripleCook(pvd, DataIngredient.items(DelightFood.RAW_YETI_MEAT_SLICE.item.get()), DelightFood.COOKED_YETI_MEAT_SLICE.item, 1);
 		// duplicated by Twilit Gourmet (ground venison / minced meef chain): disabled when it is present
 		tripleCookCond(TGCompat.noTG(pvd, TGCompat.loc("minced_meef")),
 				DelightFood.RAW_MEEF_SLICE.item.get(), DelightFood.COOKED_MEEF_SLICE.item, 1);
@@ -184,6 +186,25 @@ public class RecipeGen {
 				.requires(Items.BAKED_POTATO)
 				.requires(Tags.Items.RODS_WOODEN)
 				.requires(Tags.Items.RODS_WOODEN).save(pvd);
+
+		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.YETI_WRAP.item.get(), 1)::unlockedBy, DelightFood.COOKED_YETI_MEAT.item.get())
+				.requires(DelightFood.COOKED_YETI_MEAT.item.get())
+				.requires(Tags.Items.FOODS_BREAD)
+				.requires(TagGen.FERNS)
+				.requires(TagRef.FOODS_ONION)
+				.save(pvd);
+
+		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.GLACIER_POPSICLE.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
+				.requires(TFItems.ICE_BOMB.get())
+				.requires(Items.ICE, 4)
+				.requires(Items.SUGAR)
+				.requires(Tags.Items.RODS_WOODEN)
+				.save(pvd);
+
+		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.GLACIER_APPLE.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
+				.requires(TFItems.ICE_BOMB.get(), 2)
+				.requires(Items.GOLDEN_APPLE)
+				.save(pvd);
 
 		unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, TDBlocks.SAUCY_GRILLED_NAGA.get(), 1)::unlockedBy, DelightFood.COOKED_NAGA_MEAT.item.get())
 				.pattern("MMM").pattern("CST").pattern(" B ")
@@ -755,6 +776,50 @@ public class RecipeGen {
 					.addIngredient(ModItems.TOMATO_SAUCE.get())
 					.save(pvd, getID(DelightFood.THICKCUT_GHAST_FRIES.item.getId()));
 
+			// yeti meat is a whole meal's worth of meat, so it boils down into stews,
+			// a rice dish, the pemmican cakes and the borscht cauldron
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.YETI_PEMMICAN.item.get(),
+							2, 200, 0.35f)::unlockedBy,
+					DelightFood.COOKED_YETI_MEAT.item.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(DelightFood.COOKED_YETI_MEAT.item.get())
+					.addIngredient(TFItems.LIVEROOT.get())
+					.addIngredient(TagGen.BERRIES)
+					.save(pvd, getID(DelightFood.YETI_PEMMICAN.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.YETI_MEAT_STEW.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					DelightFood.RAW_YETI_MEAT.item.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(DelightFood.RAW_YETI_MEAT.item.get())
+					.addIngredient(TagGen.FERNS)
+					.addIngredient(TFItems.LIVEROOT.get())
+					.save(pvd, getID(DelightFood.YETI_MEAT_STEW.item.getId()));
+
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.YETI_SHREDDED_MEAT_HAND_PULLED_RICE.item.get(),
+							1, 200, 0.35f, Items.BOWL)::unlockedBy,
+					DelightFood.RAW_YETI_MEAT.item.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(DelightFood.RAW_YETI_MEAT.item.get())
+					.addIngredient(TagRef.CROPS_RICE)
+					.addIngredient(Items.POTATO)
+					.addIngredient(TagGen.FERNS)
+					.save(pvd, getID(DelightFood.YETI_SHREDDED_MEAT_HAND_PULLED_RICE.item.getId()));
+
+			// the borscht is ladled out of a cauldron, so the cauldron is what the block
+			// leaves behind and the bowls are what it is served in
+			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.YETI_BORSCHT.get().asItem(),
+							1, 400, 0.5f, Items.BOWL)::unlockedBy,
+					DelightFood.RAW_YETI_MEAT.item.get())
+					.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+					.addIngredient(DelightFood.RAW_YETI_MEAT.item.get())
+					.addIngredient(Items.CARROT)
+					.addIngredient(Items.POTATO)
+					.addIngredient(Items.BEETROOT)
+					.addIngredient(TagRef.FOODS_ONION)
+					.addIngredient(TagRef.FOODS_CABBAGE)
+					.save(pvd, getID(TDBlocks.YETI_BORSCHT.getId()));
+
 			// berry jellies: two berries boiled down with sugar and slime, served in a bowl
 			berryJelly(pvd, DelightFood.RASPBERRY_JELLY, TFItems.RASPBERRY.get());
 			berryJelly(pvd, DelightFood.BLUEBERRY_JELLY, TFItems.BLUEBERRY.get());
@@ -920,6 +985,18 @@ public class RecipeGen {
 						Ingredient.of(TagRef.KNIFE),
 						DelightFood.COOKED_NAGA_PIECE.item.get(), 2)
 				.build(pvd, getID(DelightFood.COOKED_NAGA_PIECE.item.getId()));
+
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(DelightFood.RAW_YETI_MEAT.item.get()),
+						Ingredient.of(TagRef.KNIFE),
+						DelightFood.RAW_YETI_MEAT_SLICE.item.get(), 2)
+				.build(pvd, getID(DelightFood.RAW_YETI_MEAT_SLICE.item.getId()));
+
+		CuttingBoardRecipeBuilder.cuttingRecipe(
+						Ingredient.of(DelightFood.COOKED_YETI_MEAT.item.get()),
+						Ingredient.of(TagRef.KNIFE),
+						DelightFood.COOKED_YETI_MEAT_SLICE.item.get(), 2)
+				.build(pvd, getID(DelightFood.COOKED_YETI_MEAT_SLICE.item.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(
 							Ingredient.of(TFBlocks.KNIGHT_PHANTOM_TROPHY.get()),

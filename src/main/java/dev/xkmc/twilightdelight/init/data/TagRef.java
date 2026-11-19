@@ -32,6 +32,7 @@ public class TagRef {
 	public static final TagKey<Item> FOODS_MILK = Tags.Items.DRINKS_MILK;
 	public static final TagKey<Item> FOODS_LEAFY_GREEN = commonItemTag("foods/leafy_green");
 	public static final TagKey<Item> FOODS_ONION = commonItemTag("foods/onion");
+	public static final TagKey<Item> FOODS_CABBAGE = commonItemTag("foods/cabbage");
 	public static final TagKey<Item> FOODS_TOMATO = commonItemTag("foods/tomato");
 
 	public static final TagKey<Item> BANNED_UNCRAFTABLES = twilightForestItemTag("banned_uncraftables");

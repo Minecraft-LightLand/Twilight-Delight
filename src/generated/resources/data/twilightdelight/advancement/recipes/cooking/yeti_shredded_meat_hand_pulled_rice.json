@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_yeti_meat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightdelight:raw_yeti_meat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightdelight:cooking/yeti_shredded_meat_hand_pulled_rice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_yeti_meat"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightdelight:cooking/yeti_shredded_meat_hand_pulled_rice"
+    ]
+  }
+}

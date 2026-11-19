@@ -18,6 +18,8 @@
     "twilightdelight:drop_redcanp_from_redcap",
     "twilightdelight:drop_omazeo_from_redcap_sapper",
     "twilightdelight:drop_redcanp_from_redcap_sapper",
+    "twilightdelight:yeti_meat_from_alpha_yeti",
+    "twilightdelight:drop_raw_yeti_meat_slice_from_yeti",
     "twilightdelight:phantom_bone_from_knight_phantom"
   ],
   "replace": false

@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "twilightdelight:raw_yeti_meat"
+    },
+    {
+      "tag": "twilightdelight:ferns"
+    },
+    {
+      "item": "twilightforest:liveroot"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:yeti_meat_stew"
+  }
+}

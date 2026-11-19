@@ -13,6 +13,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.Tags;
@@ -30,6 +31,8 @@ public class TagGen {
 	public static final TagKey<Item> VENSION_RAW = ItemTags.create(TwilightDelight.loc("vension_raw"));
 	public static final TagKey<Item> NAGA_COOKED = ItemTags.create(TwilightDelight.loc("naga_cooked"));
 	public static final TagKey<Item> NAGA_RAW = ItemTags.create(TwilightDelight.loc("naga_raw"));
+	public static final TagKey<Item> FERNS = ItemTags.create(TwilightDelight.loc("ferns"));
+	public static final TagKey<Item> BERRIES = ItemTags.create(TwilightDelight.loc("berries"));
 
 	public static void genItemTag(RegistrateItemTagsProvider pvd) {
 		pvd.addTag(INSECT)
@@ -48,6 +51,14 @@ public class TagGen {
 				.addOptional(TGCompat.loc("ground_venison"));
 		pvd.addTag(NAGA_COOKED).add(DelightFood.COOKED_NAGA_MEAT.item.get(), DelightFood.COOKED_NAGA_PIECE.item.get());
 		pvd.addTag(NAGA_RAW).add(DelightFood.RAW_NAGA_MEAT.item.get(), DelightFood.RAW_NAGA_PIECE.item.get());
+		// ferns: the vanilla fern and the Twilight Forest fiddlehead are interchangeable
+		pvd.addTag(FERNS).add(Items.FERN, Items.LARGE_FERN, TFBlocks.FIDDLEHEAD.get().asItem());
+		// berries: every berry either side of the mod ships, so the berry slot in a recipe
+		// takes what the player happens to have
+		pvd.addTag(BERRIES).add(Items.SWEET_BERRIES, Items.GLOW_BERRIES,
+				TFItems.RASPBERRY.get(), TFItems.BLUEBERRY.get(), TFItems.BLACKBERRY.get(), TFItems.MALOBERRY.get(),
+				TFItems.BLIGHTBERRY.get(), TFItems.DUSKBERRY.get(), TFItems.SKYBERRY.get(), TFItems.STINGBERRY.get(),
+				TFItems.TORCHBERRIES.get());
 		// uncrafting a scepter hands back its repair ingredient, a golden apple for the fortification
 		// scepter for example, so keep them off the Twilight Forest uncrafting table
 		pvd.addTag(TagRef.BANNED_UNCRAFTABLES)
