@@ -30,6 +30,8 @@ public class TagGen {
 	public static final TagKey<Item> VENSION_RAW = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "vension_raw"));
 	public static final TagKey<Item> NAGA_COOKED = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "naga_cooked"));
 	public static final TagKey<Item> NAGA_RAW = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "naga_raw"));
+	public static final TagKey<Item> FERNS = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "ferns"));
+	public static final TagKey<Item> BERRIES = ItemTags.create(new ResourceLocation(TwilightDelight.MODID, "berries"));
 
 	public static void genItemTag(RegistrateItemTagsProvider pvd) {
 		pvd.addTag(INSECT)
@@ -44,6 +46,11 @@ public class TagGen {
 		pvd.addTag(VENSION_RAW).add(TFItems.RAW_VENISON.get(), DelightFood.RAW_VENISON_RIB.item.get());
 		pvd.addTag(NAGA_COOKED).add(DelightFood.COOKED_NAGA_MEAT.item.get(), DelightFood.COOKED_NAGA_PIECE.item.get());
 		pvd.addTag(NAGA_RAW).add(DelightFood.RAW_NAGA_MEAT.item.get(), DelightFood.RAW_NAGA_PIECE.item.get());
+		// ferns: the vanilla fern and the Twilight Forest fiddlehead are interchangeable
+		pvd.addTag(FERNS).add(Items.FERN, Items.LARGE_FERN, TFBlocks.FIDDLEHEAD.get().asItem());
+		// berries: every berry this side of the mod ships, so the berry slot in a recipe
+		// takes what the player happens to have
+		pvd.addTag(BERRIES).add(Items.SWEET_BERRIES, Items.GLOW_BERRIES, TFItems.TORCHBERRIES.get());
 		// uncrafting a scepter hands back its repair ingredient, a golden apple for the fortification
 		// scepter for example, so keep them off the Twilight Forest uncrafting table
 		pvd.addTag(TagRef.BANNED_UNCRAFTABLES)

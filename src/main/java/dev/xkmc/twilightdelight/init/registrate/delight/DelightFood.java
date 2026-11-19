@@ -327,6 +327,47 @@ public enum DelightFood {
 			new EffectSupplier(() -> MobEffects.FIRE_RESISTANCE, 6000, 0, 1),
 			new EffectSupplier(() -> MobEffects.ABSORPTION, 1200, 3, 1)),
 			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
+
+	// yeti and glacier food line
+	RAW_YETI_MEAT(DelightFoodType.MEAT, 4, 0.5F, TagRef.PROTEINS),
+	COOKED_YETI_MEAT(DelightFoodType.MEAT, 8, 0.8F, List.of(
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1200, 0, 1),
+			new EffectSupplier(() -> MobEffects.ABSORPTION, 1200, 0, 1)),
+			TagRef.PROTEINS),
+	RAW_YETI_MEAT_SLICE(DelightFoodType.MEAT_PIECE, 1, 0.5F, TagRef.PROTEINS),
+	COOKED_YETI_MEAT_SLICE(DelightFoodType.MEAT_PIECE, 3, 0.8F, TagRef.PROTEINS),
+	YETI_PEMMICAN(DelightFoodType.NONE, 8, 0.8F, List.of(
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 600, 0, 1),
+			new EffectSupplier(() -> MobEffects.ABSORPTION, 600, 0, 1)),
+			TagRef.PROTEINS),
+	YETI_MEAT_STEW(DelightFoodType.BOWL_MEAT, 12, 0.8F, List.of(
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1200, 1, 1),
+			new EffectSupplier(() -> MobEffects.ABSORPTION, 1200, 1, 1),
+			new EffectSupplier(ModEffects.NOURISHMENT, 3600, 0, 1)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
+	YETI_WRAP(DelightFoodType.MEAT, 10, 0.8F, List.of(
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1200, 1, 1),
+			new EffectSupplier(() -> MobEffects.ABSORPTION, 1200, 1, 1)),
+			TagRef.PROTEINS, TagRef.GRAINS),
+	YETI_SHREDDED_MEAT_HAND_PULLED_RICE(DelightFoodType.BOWL_MEAT, 12, 0.8F, List.of(
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 2400, 1, 1),
+			new EffectSupplier(() -> MobEffects.ABSORPTION, 2400, 1, 1),
+			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1)),
+			TagRef.PROTEINS, TagRef.GRAINS, TagRef.VEGETABLES),
+	GLACIER_POPSICLE(DelightFoodType.STICK, 4, 0.3F,
+			new EffectSupplier(TDEffects.FROZEN_RANGE, 900, 0, 1),
+			TagRef.SWEETS, TagRef.SNACKS),
+	GLACIER_APPLE(DelightFoodType.NONE, 6, 0.6F, List.of(
+			new EffectSupplier(() -> MobEffects.ABSORPTION, 1200, 1, 1),
+			new EffectSupplier(() -> MobEffects.REGENERATION, 100, 1, 1),
+			new EffectSupplier(TDEffects.FROZEN_RANGE, 3000, 0, 1)),
+			TagRef.FRUITS),
+	BOWL_OF_YETI_BORSCHT(DelightFoodType.BOWL_MEAT, 16, 0.9F, List.of(
+			new EffectSupplier(() -> MobEffects.DAMAGE_BOOST, 3600, 0, 1),
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 3600, 1, 1),
+			new EffectSupplier(() -> MobEffects.ABSORPTION, 3600, 1, 1),
+			new EffectSupplier(ModEffects.NOURISHMENT, 6000, 0, 1)),
+			TagRef.PROTEINS, TagRef.VEGETABLES),
 	;
 
 	public final ItemEntry<Item> item;

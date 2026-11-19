@@ -1,0 +1,12 @@
+{
+  "type": "twilightdelight:random_count",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "twilightforest:entities/alpha_yeti"
+    }
+  ],
+  "item": "twilightdelight:raw_yeti_meat",
+  "max": 6,
+  "min": 2
+}

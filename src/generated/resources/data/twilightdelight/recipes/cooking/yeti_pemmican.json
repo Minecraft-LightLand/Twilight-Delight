@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "twilightdelight:cooked_yeti_meat"
+    },
+    {
+      "item": "twilightforest:liveroot"
+    },
+    {
+      "tag": "twilightdelight:berries"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "twilightdelight:yeti_pemmican"
+  }
+}

@@ -32,6 +32,12 @@ public class GLMGen extends GlobalLootModifierProvider {
 	private static final ResourceLocation STRONGHOLD_BOSS_CHEST =
 			new ResourceLocation("twilightforest", "chests/stronghold_boss");
 
+	/**
+	 * The drop table of the Alpha Yeti, where the yeti meat comes from.
+	 */
+	private static final ResourceLocation ALPHA_YETI_LOOT =
+			new ResourceLocation("twilightforest", "entities/alpha_yeti");
+
 	public GLMGen(DataGenerator gen) {
 		super(gen.getPackOutput(), TwilightDelight.MODID);
 	}
@@ -61,6 +67,10 @@ public class GLMGen extends GlobalLootModifierProvider {
 		mobDrop(DelightFood.REDCANP.item, TFEntities.REDCAP, 0.1f);
 		mobDrop(DelightFood.OMAZEO.item, TFEntities.REDCAP_SAPPER, 0.05f);
 		mobDrop(DelightFood.REDCANP.item, TFEntities.REDCAP_SAPPER, 0.15f);
+		// yeti meat: the alpha carries a stack worth of meat, the small ones only a slice
+		add("yeti_meat_from_alpha_yeti", new RandomCountModifier(DelightFood.RAW_YETI_MEAT.item.get(), 2, 6,
+				LootTableIdCondition.builder(ALPHA_YETI_LOOT).build()));
+		mobDrop(DelightFood.RAW_YETI_MEAT_SLICE.item, TFEntities.YETI, 0.025f);
 
 		// a handful of phantom bones among what the Knight Phantom left in the boss chest
 		add("phantom_bone_from_stronghold_boss", new RandomCountModifier(TDItems.PHANTOM_BONE.get(), 2, 9,

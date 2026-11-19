@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "twilightdelight:cooked_yeti_meat"
+    },
+    {
+      "tag": "forge:bread"
+    },
+    {
+      "tag": "twilightdelight:ferns"
+    },
+    {
+      "tag": "forge:crops/onion"
+    }
+  ],
+  "result": {
+    "item": "twilightdelight:yeti_wrap"
+  }
+}

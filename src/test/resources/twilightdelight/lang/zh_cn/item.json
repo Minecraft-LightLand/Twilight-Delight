@@ -112,7 +112,19 @@
 		"ghast_tentacle_salad": "凉拌恶魂触手",
 		"thickcut_ghast_fries": "恶魂粗薯",
 		"ghastling_mousse_cake": "迷你恶魂慕斯蛋糕",
-		"bowl_of_ghastling_mousse_cake": "碗装迷你恶魂慕斯蛋糕"
+		"bowl_of_ghastling_mousse_cake": "碗装迷你恶魂慕斯蛋糕",
+		"raw_yeti_meat": "生雪怪肉",
+		"cooked_yeti_meat": "熟雪怪肉",
+		"raw_yeti_meat_slice": "生雪怪肉片",
+		"cooked_yeti_meat_slice": "熟雪怪肉片",
+		"yeti_pemmican": "雪怪皮米肯肉糕",
+		"yeti_meat_stew": "雪怪肉炖",
+		"yeti_wrap": "雪怪卷饼",
+		"yeti_shredded_meat_hand_pulled_rice": "雪怪肉丝手抓饭",
+		"glacier_popsicle": "冰川冰棍",
+		"glacier_apple": "冰川苹果",
+		"yeti_borscht": "雪怪罗宋汤",
+		"bowl_of_yeti_borscht": "碗装雪怪罗宋汤"
 	},
 	"block.twilightdelight": {
 		"lily_chicken_block": "荷花鸡",
@@ -137,7 +149,8 @@
 		"aurora_pie": "极光冰晶派",
 		"torchberry_pie": "火炬浆果派",
 		"delicious_in_maze": "迷宫饭",
-		"ghastling_mousse_cake": "迷你恶魂慕斯蛋糕"
+		"ghastling_mousse_cake": "迷你恶魂慕斯蛋糕",
+		"yeti_borscht": "雪怪罗宋汤"
 	},
 	"-cartesian": {
 		"drinks": {
