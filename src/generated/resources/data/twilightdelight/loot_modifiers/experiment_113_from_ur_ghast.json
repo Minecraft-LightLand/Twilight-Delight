@@ -1,0 +1,12 @@
+{
+  "type": "twilightdelight:random_count",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "twilightforest:entities/ur_ghast"
+    }
+  ],
+  "item": "twilightdelight:experiment_113",
+  "max": 12,
+  "min": 6
+}
