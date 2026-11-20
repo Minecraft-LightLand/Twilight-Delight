@@ -43,7 +43,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:bowl"
+          "name": "minecraft:cauldron"
         }
       ],
       "rolls": 1.0

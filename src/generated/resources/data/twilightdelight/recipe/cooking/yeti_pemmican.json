@@ -3,7 +3,7 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "item": "twilightdelight:cooked_yeti_meat"
+      "tag": "twilightdelight:yeti_cooked"
     },
     {
       "item": "twilightforest:liveroot"

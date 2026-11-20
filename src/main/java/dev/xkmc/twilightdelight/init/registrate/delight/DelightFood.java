@@ -63,22 +63,22 @@ public enum DelightFood {
 	MAZE_SLIME_WAFER(DelightFoodType.NONE, 9, 0.6F, List.of(
 			new EffectSupplier(MobEffects.JUMP, 200, 1, 1)),
 			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
-	EXPERIMENT_113(DelightFoodType.STICK, 6, 1.2F,
+	EXPERIMENT_113(DelightFoodType.DRUMSTICK, 6, 1.2F,
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 100, 0, 0.33f),
 			TagRef.PROTEINS),
-	CHOCOLATE_113(DelightFoodType.STICK, 6, 1.2F, List.of(
+	CHOCOLATE_113(DelightFoodType.DRUMSTICK, 6, 1.2F, List.of(
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 100, 0, 0.33f),
 			new EffectSupplier(MobEffects.DAMAGE_BOOST, 600, 4, 1)),
 			TagRef.PROTEINS, TagRef.SUGARS),
-	MILKY_113(DelightFoodType.STICK, 6, 1.2F,
+	MILKY_113(DelightFoodType.DRUMSTICK, 6, 1.2F,
 			new EffectSupplier(MobEffects.HEAL, 1, 0, 1),
 			TagRef.PROTEINS),
-	GLOW_113(DelightFoodType.STICK, 6, 1.2F, List.of(
+	GLOW_113(DelightFoodType.DRUMSTICK, 6, 1.2F, List.of(
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 100, 0, 0.33f),
 			new EffectSupplier(MobEffects.NIGHT_VISION, 6000, 0, 1),
 			new EffectSupplier(MobEffects.GLOWING, 6000, 0, 1)),
 			TagRef.PROTEINS),
-	HONEY_113(DelightFoodType.STICK, 6, 1.2F, List.of(
+	HONEY_113(DelightFoodType.DRUMSTICK, 6, 1.2F, List.of(
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 100, 0, 0.33f),
 			new EffectSupplier(MobEffects.MOVEMENT_SPEED, 3600, 2, 1)),
 			TagRef.PROTEINS, TagRef.SUGARS),
@@ -305,7 +305,7 @@ public enum DelightFood {
 			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 1200, 2, 1),
 			new EffectSupplier(ModEffects.NOURISHMENT, 3000, 0, 1)),
 			TagRef.PROTEINS, TagRef.GRAINS, TagRef.VEGETABLES),
-	TOMATO_SAUCE_113(DelightFoodType.STICK, 6, 1.2F, List.of(
+	TOMATO_SAUCE_113(DelightFoodType.DRUMSTICK, 6, 1.2F, List.of(
 			new EffectSupplier(MobEffects.FIRE_RESISTANCE, 3600, 0, 1),
 			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 3600, 0, 1),
 			new EffectSupplier(TDEffects.TEMPORAL_SADNESS, 100, 0, 0.33f)),
@@ -376,7 +376,7 @@ public enum DelightFood {
 			TagRef.PROTEINS),
 	RAW_YETI_MEAT_SLICE(DelightFoodType.FAST, 1, 0.5F, TagRef.PROTEINS),
 	COOKED_YETI_MEAT_SLICE(DelightFoodType.FAST, 3, 0.8F, TagRef.PROTEINS),
-	YETI_PEMMICAN(DelightFoodType.NONE, 8, 0.8F, List.of(
+	YETI_PEMMICAN(DelightFoodType.NONE, 4, 0.8F, List.of(
 			new EffectSupplier(MobEffects.DAMAGE_RESISTANCE, 600, 0, 1),
 			new EffectSupplier(MobEffects.ABSORPTION, 600, 0, 1)),
 			TagRef.PROTEINS),

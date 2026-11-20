@@ -276,7 +276,7 @@ public class TDBlocks {
 						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(block.asItem())
 								.when(ExplosionCondition.survivesExplosion())
 								.when(getServe(block))))
-						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BOWL))
+						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.CAULDRON))
 								.when(ExplosionCondition.survivesExplosion())
 								.when(InvertedLootItemCondition.invert(getServe(block))))
 				)).tag(TagRef.FEASTS).register();

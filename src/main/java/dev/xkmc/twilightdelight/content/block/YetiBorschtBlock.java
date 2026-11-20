@@ -16,8 +16,8 @@ import vectorwing.farmersdelight.common.block.FeastBlock;
 
 /**
  * A cauldron of yeti borscht. The cauldron is both the cooking vessel and the
- * serving vessel, so the block leaves a bowl behind once all servings are taken
- * and an empty cauldron as the leftover model.
+ * serving vessel, so the block stays as an empty cauldron once all servings are
+ * taken and drops a cauldron item when broken partway through.
  */
 public class YetiBorschtBlock extends FeastBlock {
 

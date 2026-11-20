@@ -21,7 +21,15 @@
     "twilightdelight:yeti_meat_from_alpha_yeti",
     "twilightdelight:drop_raw_yeti_meat_slice_from_yeti",
     "twilightdelight:experiment_113_from_ur_ghast",
-    "twilightdelight:phantom_bone_from_knight_phantom"
+    "twilightdelight:phantom_bone_from_knight_phantom",
+    "twilightdelight:wrought_iron_sword_from_tower_foyer",
+    "twilightdelight:wrought_iron_sword_from_tower_room",
+    "twilightdelight:wrought_iron_sword_from_tower_library",
+    "twilightdelight:wrought_iron_sword_from_tower_potion",
+    "twilightdelight:wrought_iron_sword_from_tower_enchanting",
+    "twilightdelight:wrought_iron_sword_from_tower_jars",
+    "twilightdelight:wrought_iron_sword_from_tower_grave_upper",
+    "twilightdelight:wrought_iron_sword_from_tower_grave_lower"
   ],
   "replace": false
 }

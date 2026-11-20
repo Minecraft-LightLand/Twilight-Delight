@@ -1,0 +1,16 @@
+{
+  "type": "twilightdelight:random_count",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "twilightforest:chests/tower_potion"
+    },
+    {
+      "chance": 0.1,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "twilightdelight:wrought_iron_sword",
+  "max": 1,
+  "min": 1
+}

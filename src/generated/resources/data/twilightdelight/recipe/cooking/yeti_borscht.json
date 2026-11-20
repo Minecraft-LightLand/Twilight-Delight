@@ -2,13 +2,13 @@
   "type": "farmersdelight:cooking",
   "container": {
     "count": 1,
-    "id": "minecraft:bowl"
+    "id": "minecraft:cauldron"
   },
   "cookingtime": 400,
   "experience": 0.5,
   "ingredients": [
     {
-      "item": "twilightdelight:raw_yeti_meat"
+      "tag": "twilightdelight:yeti_raw"
     },
     {
       "item": "minecraft:carrot"

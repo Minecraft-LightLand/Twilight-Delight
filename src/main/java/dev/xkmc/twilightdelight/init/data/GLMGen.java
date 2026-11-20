@@ -15,6 +15,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithEnchantedBonusCondition;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.common.loot.LootTableIdCondition;
@@ -46,6 +47,14 @@ public class GLMGen extends GlobalLootModifierProvider {
 	 */
 	private static final ResourceLocation UR_GHAST_LOOT =
 			ResourceLocation.fromNamespaceAndPath("twilightforest", "entities/ur_ghast");
+
+	/**
+	 * The chest loot tables of the Lich Tower.
+	 */
+	private static final String[] LICH_TOWER_CHESTS = {
+			"tower_foyer", "tower_room", "tower_library", "tower_potion",
+			"tower_enchanting", "tower_jars", "tower_grave_upper", "tower_grave_lower"
+	};
 
 	public GLMGen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries, TwilightDelight.MODID);
@@ -88,6 +97,12 @@ public class GLMGen extends GlobalLootModifierProvider {
 		// a handful of phantom bones among the armour the Knight Phantom drops
 		add("phantom_bone_from_knight_phantom", new RandomCountModifier(TDItems.PHANTOM_BONE.get(), 1, 2,
 				LootTableIdCondition.builder(KNIGHT_PHANTOM_LOOT).build()));
+
+		// a rare wrought iron sword among the Lich's hoard
+		for (var chest : LICH_TOWER_CHESTS)
+			add("wrought_iron_sword_from_" + chest, new RandomCountModifier(TDItems.WROUGHT_IRON_SWORD.get(), 1, 1,
+					LootTableIdCondition.builder(ResourceLocation.fromNamespaceAndPath("twilightforest", "chests/" + chest)).build(),
+					LootItemRandomChanceCondition.randomChance(0.1f).build()));
 	}
 
 	private void scavenging(EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float base, float loot, boolean nofire) {

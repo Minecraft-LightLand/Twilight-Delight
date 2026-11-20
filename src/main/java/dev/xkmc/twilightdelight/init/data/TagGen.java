@@ -31,6 +31,8 @@ public class TagGen {
 	public static final TagKey<Item> VENSION_RAW = ItemTags.create(TwilightDelight.loc("vension_raw"));
 	public static final TagKey<Item> NAGA_COOKED = ItemTags.create(TwilightDelight.loc("naga_cooked"));
 	public static final TagKey<Item> NAGA_RAW = ItemTags.create(TwilightDelight.loc("naga_raw"));
+	public static final TagKey<Item> YETI_COOKED = ItemTags.create(TwilightDelight.loc("yeti_cooked"));
+	public static final TagKey<Item> YETI_RAW = ItemTags.create(TwilightDelight.loc("yeti_raw"));
 	public static final TagKey<Item> FERNS = ItemTags.create(TwilightDelight.loc("ferns"));
 	public static final TagKey<Item> BERRIES = ItemTags.create(TwilightDelight.loc("berries"));
 
@@ -51,6 +53,8 @@ public class TagGen {
 				.addOptional(TGCompat.loc("ground_venison"));
 		pvd.addTag(NAGA_COOKED).add(DelightFood.COOKED_NAGA_MEAT.item.get(), DelightFood.COOKED_NAGA_PIECE.item.get());
 		pvd.addTag(NAGA_RAW).add(DelightFood.RAW_NAGA_MEAT.item.get(), DelightFood.RAW_NAGA_PIECE.item.get());
+		pvd.addTag(YETI_COOKED).add(DelightFood.COOKED_YETI_MEAT.item.get(), DelightFood.COOKED_YETI_MEAT_SLICE.item.get());
+		pvd.addTag(YETI_RAW).add(DelightFood.RAW_YETI_MEAT.item.get(), DelightFood.RAW_YETI_MEAT_SLICE.item.get());
 		// ferns: the vanilla fern and the Twilight Forest fiddlehead are interchangeable
 		pvd.addTag(FERNS).add(Items.FERN, Items.LARGE_FERN, TFBlocks.FIDDLEHEAD.get().asItem());
 		// berries: every berry either side of the mod ships, so the berry slot in a recipe
@@ -71,6 +75,8 @@ public class TagGen {
 	public static void genBlockTag(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {
 		pvd.addTag(TagRef.HEAT_SOURCES).add(TFBlocks.FIERY_BLOCK.get());
 		pvd.addTag(ModTags.Blocks.MUSHROOM_COLONY_GROWABLE_ON).add(TDBlocks.TWILIGHT_RICH_SOIL.get());
+		// plants that hang from the block above them, so rich soil under them still boosts them
+		pvd.addTag(ModTags.Blocks.PLANTED_FROM_BELOW).add(TFBlocks.TORCHBERRY_PLANT.get(), TFBlocks.ROOT_STRAND.get());
 		pvd.addTag(BlockTags.DIRT).add(TDBlocks.TWILIGHT_RICH_SOIL.get());
 		pvd.addTag(BlockTags.MUSHROOM_GROW_BLOCK).add(TDBlocks.TWILIGHT_RICH_SOIL.get());
 		pvd.addTag(BlockTags.BAMBOO_PLANTABLE_ON).add(TDBlocks.TWILIGHT_RICH_SOIL.get());
