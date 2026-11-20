@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "twilightdelight:cooked_yeti_meat"
+      "tag": "twilightdelight:yeti_cooked"
     },
     {
       "tag": "forge:bread"

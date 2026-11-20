@@ -15,6 +15,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithLootingCondition;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
 import net.minecraftforge.common.loot.LootTableIdCondition;
@@ -43,6 +44,11 @@ public class GLMGen extends GlobalLootModifierProvider {
 	 */
 	private static final ResourceLocation UR_GHAST_LOOT =
 			new ResourceLocation("twilightforest", "entities/ur_ghast");
+
+	/**
+	 * The chest loot tables of the Lich Tower.
+	 */
+	private static final String[] LICH_TOWER_CHESTS = {"tower_room", "tower_library"};
 
 	public GLMGen(DataGenerator gen) {
 		super(gen.getPackOutput(), TwilightDelight.MODID);
@@ -85,6 +91,12 @@ public class GLMGen extends GlobalLootModifierProvider {
 		// a handful of phantom bones among what the Knight Phantom left in the boss chest
 		add("phantom_bone_from_stronghold_boss", new RandomCountModifier(TDItems.PHANTOM_BONE.get(), 2, 9,
 				LootTableIdCondition.builder(STRONGHOLD_BOSS_CHEST).build()));
+
+		// a rare wrought iron sword among the Lich's hoard
+		for (var chest : LICH_TOWER_CHESTS)
+			add("wrought_iron_sword_from_" + chest, new RandomCountModifier(TDItems.WROUGHT_IRON_SWORD.get(), 1, 1,
+					LootTableIdCondition.builder(new ResourceLocation("twilightforest", "chests/" + chest)).build(),
+					LootItemRandomChanceCondition.randomChance(0.1f).build()));
 	}
 
 	private void scavenging(EntryHolder<? extends Item> item, EntryHolder<? extends EntityType<?>> type, float base, float loot, boolean nofire) {

@@ -1,0 +1,27 @@
+{
+  "base": {
+    "parent": "twilightdelight:item/wrought_iron_sword_base"
+  },
+  "gui_light": "front",
+  "loader": "forge:separate_transforms",
+  "perspectives": {
+    "fixed": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "twilightdelight:item/wrought_iron_sword"
+      }
+    },
+    "ground": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "twilightdelight:item/wrought_iron_sword"
+      }
+    },
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "twilightdelight:item/wrought_iron_sword"
+      }
+    }
+  }
+}

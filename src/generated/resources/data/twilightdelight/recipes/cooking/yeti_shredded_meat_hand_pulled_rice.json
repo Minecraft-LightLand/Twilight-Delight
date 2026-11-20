@@ -7,7 +7,7 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "item": "twilightdelight:raw_yeti_meat"
+      "tag": "twilightdelight:yeti_raw"
     },
     {
       "tag": "forge:crops/rice"

@@ -178,17 +178,20 @@ public class RecipeGen {
 					.requires(Tags.Items.RODS_WOODEN).save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.YETI_WRAP.item.get(), 1)::unlockedBy, DelightFood.COOKED_YETI_MEAT.item.get())
-					.requires(DelightFood.COOKED_YETI_MEAT.item.get())
+					.requires(TagGen.YETI_COOKED)
 					.requires(TagRef.BREAD)
 					.requires(TagGen.FERNS)
 					.requires(TagRef.CROPS_ONION)
 					.save(pvd);
 
-			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.GLACIER_POPSICLE.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
-					.requires(TFItems.ICE_BOMB.get())
-					.requires(Items.ICE, 4)
-					.requires(Items.SUGAR)
-					.requires(Tags.Items.RODS_WOODEN)
+			unlock(pvd, new ShapedRecipeBuilder(RecipeCategory.FOOD, DelightFood.GLACIER_POPSICLE.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
+					.pattern(" IB")
+					.pattern("ISI")
+					.pattern("RI ")
+					.define('I', Items.ICE)
+					.define('S', Items.SUGAR)
+					.define('B', TFItems.ICE_BOMB.get())
+					.define('R', Tags.Items.RODS_WOODEN)
 					.save(pvd);
 
 			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.GLACIER_APPLE.item.get(), 1)::unlockedBy, TFItems.ICE_BOMB.get())
@@ -719,7 +722,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.YETI_PEMMICAN.item.get(),
 							2, 200, 0.35f)::unlockedBy,
 					DelightFood.COOKED_YETI_MEAT.item.get())
-					.addIngredient(DelightFood.COOKED_YETI_MEAT.item.get())
+					.addIngredient(TagGen.YETI_COOKED)
 					.addIngredient(TFItems.LIVEROOT.get())
 					.addIngredient(TagGen.BERRIES)
 					.save(pvd, getID(DelightFood.YETI_PEMMICAN.item.getId()));
@@ -727,7 +730,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.YETI_MEAT_STEW.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					DelightFood.RAW_YETI_MEAT.item.get())
-					.addIngredient(DelightFood.RAW_YETI_MEAT.item.get())
+					.addIngredient(TagGen.YETI_RAW)
 					.addIngredient(TagGen.FERNS)
 					.addIngredient(TFItems.LIVEROOT.get())
 					.save(pvd, getID(DelightFood.YETI_MEAT_STEW.item.getId()));
@@ -735,7 +738,7 @@ public class RecipeGen {
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(DelightFood.YETI_SHREDDED_MEAT_HAND_PULLED_RICE.item.get(),
 							1, 200, 0.35f, Items.BOWL)::unlockedBy,
 					DelightFood.RAW_YETI_MEAT.item.get())
-					.addIngredient(DelightFood.RAW_YETI_MEAT.item.get())
+					.addIngredient(TagGen.YETI_RAW)
 					.addIngredient(TagRef.CROPS_RICE)
 					.addIngredient(Items.POTATO)
 					.addIngredient(TagGen.FERNS)
@@ -744,9 +747,9 @@ public class RecipeGen {
 			// the borscht is ladled out of a cauldron, so the cauldron is what the block
 			// leaves behind and the bowls are what it is served in
 			unlock(pvd, CookingPotRecipeBuilder.cookingPotRecipe(TDBlocks.YETI_BORSCHT.get().asItem(),
-							1, 400, 0.5f, Items.BOWL)::unlockedBy,
+							1, 400, 0.5f, Items.CAULDRON)::unlockedBy,
 					DelightFood.RAW_YETI_MEAT.item.get())
-					.addIngredient(DelightFood.RAW_YETI_MEAT.item.get())
+					.addIngredient(TagGen.YETI_RAW)
 					.addIngredient(Items.CARROT)
 					.addIngredient(Items.POTATO)
 					.addIngredient(Items.BEETROOT)
@@ -1093,6 +1096,13 @@ public class RecipeGen {
 					.requires(NeapolitanItems.MINT_ICE_CREAM.get())
 					.requires(NeapolitanFood.PHYTOCHEMICAL_ICE_CREAM.item.get())
 					.requires(Items.BOWL, 3).save(nea);
+
+			// 1.20 Twilight Forest has no ore berries, so raw ore stands in for them
+			unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, NeapolitanFood.RAW_METAL_ICE_CREAM.item.get(), 1)::unlockedBy, Items.RAW_IRON)
+					.requires(Items.BOWL).requires(ItemTags.create(new ResourceLocation("forge", "milk")))
+					.requires(NeapolitanItems.ICE_CUBES.get()).requires(Items.SUGAR)
+					.requires(Items.RAW_IRON).requires(Items.RAW_GOLD).requires(Items.RAW_COPPER)
+					.save(nea);
 
 		}
 

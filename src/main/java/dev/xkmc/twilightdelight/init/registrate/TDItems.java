@@ -12,13 +12,17 @@ import dev.xkmc.twilightdelight.init.TwilightDelight;
 import dev.xkmc.twilightdelight.init.data.TagRef;
 import dev.xkmc.twilightdelight.init.registrate.delight.EffectSupplier;
 import dev.xkmc.twilightdelight.init.registrate.delight.IFoodType;
+import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.loaders.ItemLayerModelBuilder;
+import net.minecraftforge.client.model.generators.loaders.SeparateTransformsModelBuilder;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
@@ -38,6 +42,7 @@ public class TDItems {
 	public static final ItemEntry<KnightmetalKnifeItem> KNIGHTMETAL_KNIFE;
 	public static final ItemEntry<IceKnifeItem> ICE_KNIFE;
 	public static final ItemEntry<TeardropSwordItem> TEARDROP_SWORD;
+	public static final ItemEntry<WroughtIronSwordItem> WROUGHT_IRON_SWORD;
 
 	public static final ItemEntry<Item> WITCHCRAFT_BONE;
 	public static final ItemEntry<Item> WITCHCRAFT_BONE_MEAL;
@@ -112,6 +117,21 @@ public class TDItems {
 				.tag(TagRef.TOOLS_KNIVES, TagRef.MOD_KNIFE).register();
 		TEARDROP_SWORD = handheld("teardrop_sword", TeardropSwordItem::new)
 				.model((ctx, pvd) -> pvd.handheld(ctx).customLoader(ItemLayerModelBuilder::begin).emissive(15, 15, 0))
+				.tag(ItemTags.SWORDS).register();
+		WROUGHT_IRON_SWORD = TwilightDelight.REGISTRATE.item("wrought_iron_sword", WroughtIronSwordItem::new)
+				.model((ctx, pvd) -> {
+					var base = new ItemModelBuilder(null, pvd.existingFileHelper)
+							.parent(new ModelFile.UncheckedModelFile(pvd.modLoc("item/wrought_iron_sword_base")));
+					var gui = new ItemModelBuilder(null, pvd.existingFileHelper)
+							.parent(new ModelFile.UncheckedModelFile(pvd.mcLoc("item/generated")))
+							.texture("layer0", pvd.modLoc("item/wrought_iron_sword"));
+					pvd.getBuilder(ctx.getName()).guiLight(BlockModel.GuiLight.FRONT)
+							.customLoader(SeparateTransformsModelBuilder::begin)
+							.base(base)
+							.perspective(ItemDisplayContext.GUI, gui)
+							.perspective(ItemDisplayContext.FIXED, gui)
+							.perspective(ItemDisplayContext.GROUND, gui);
+				})
 				.tag(ItemTags.SWORDS).register();
 	}
 

@@ -336,7 +336,7 @@ public enum DelightFood {
 			TagRef.PROTEINS),
 	RAW_YETI_MEAT_SLICE(DelightFoodType.MEAT_PIECE, 1, 0.5F, TagRef.PROTEINS),
 	COOKED_YETI_MEAT_SLICE(DelightFoodType.MEAT_PIECE, 3, 0.8F, TagRef.PROTEINS),
-	YETI_PEMMICAN(DelightFoodType.NONE, 8, 0.8F, List.of(
+	YETI_PEMMICAN(DelightFoodType.NONE, 4, 0.8F, List.of(
 			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 600, 0, 1),
 			new EffectSupplier(() -> MobEffects.ABSORPTION, 600, 0, 1)),
 			TagRef.PROTEINS),

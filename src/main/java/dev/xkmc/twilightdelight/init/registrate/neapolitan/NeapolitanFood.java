@@ -64,6 +64,11 @@ public enum NeapolitanFood {
 			new EffectSupplier(TDEffects.POISON_RANGE, 600, 0, 1),
 			new EffectSupplier(NeapolitanMobEffects.BERSERKING, 600, 0, 1)),
 			TagRef.SWEETS, TagRef.SUGARS),
+
+	RAW_METAL_ICE_CREAM(NeapolitanFoodType.METAL_ICE_CREAM, 6, 0.4f, List.of(
+			new EffectSupplier(() -> MobEffects.DAMAGE_RESISTANCE, 1200, 1, 1),
+			new EffectSupplier(() -> MobEffects.DIG_SPEED, 1200, 1, 1)),
+			TagRef.SWEETS, TagRef.SUGARS),
 	;
 
 	public final ItemEntry<Item> item;
