@@ -11,6 +11,10 @@
       "item": "twilightforest:ice_bomb"
     },
     {
+      "count": 10,
+      "item": "twilightdelight:fragile_snowflake"
+    },
+    {
       "chance": 0.2,
       "item": "twilightforest:ice_sword"
     },

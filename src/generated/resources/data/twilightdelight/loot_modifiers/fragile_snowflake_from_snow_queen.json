@@ -1,0 +1,12 @@
+{
+  "type": "twilightdelight:random_count",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "twilightforest:entities/snow_queen"
+    }
+  ],
+  "item": "twilightdelight:fragile_snowflake",
+  "max": 16,
+  "min": 6
+}

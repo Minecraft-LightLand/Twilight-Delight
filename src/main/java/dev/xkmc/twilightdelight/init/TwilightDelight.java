@@ -13,6 +13,7 @@ import dev.xkmc.twilightdelight.events.NeapolitanEventListeners;
 import dev.xkmc.twilightdelight.init.data.*;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
+import dev.xkmc.twilightdelight.init.registrate.TDEntities;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightFood;
@@ -62,6 +63,7 @@ public class TwilightDelight {
 	public TwilightDelight() {
 		TDBlocks.register();
 		TDItems.register();
+		TDEntities.register();
 		DelightFood.register();
 		DelightPie.register();
 		DelightCake.register();

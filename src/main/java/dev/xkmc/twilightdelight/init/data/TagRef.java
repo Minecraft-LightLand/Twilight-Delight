@@ -1,5 +1,6 @@
 package dev.xkmc.twilightdelight.init.data;
 
+import dev.xkmc.twilightdelight.init.TwilightDelight;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -38,6 +39,8 @@ public class TagRef {
 
 	public static final TagKey<Item> BANNED_UNCRAFTABLES = twilightForestItemTag("banned_uncraftables");
 
+	public static final TagKey<Item> AURORA_BLOCKS = twilightDelightItemTag("aurora_blocks");
+
 	public static final TagKey<Item> SWEETS = modItemTag("sweets");
 	public static final TagKey<Item> SNACKS = modItemTag("snacks");
 	public static final TagKey<Item> MOD_KNIFE = modItemTag("tools/knives");
@@ -67,6 +70,10 @@ public class TagRef {
 
 	private static TagKey<Item> twilightForestItemTag(String path) {
 		return ItemTags.create(new ResourceLocation("twilightforest", path));
+	}
+
+	private static TagKey<Item> twilightDelightItemTag(String path) {
+		return ItemTags.create(new ResourceLocation(TwilightDelight.MODID, path));
 	}
 
 }

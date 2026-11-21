@@ -3,6 +3,7 @@
   "death.attack.twilightdelight.thorn_rose_tea": "%1$s承认了每朵玫瑰都有刺",
   "death.attack.twilightdelight.thorn_rose_tea.player": "%1$s在试图逃离%2$s时承认了每朵玫瑰都有刺",
   "twilightdelight.tooltip.chance": "%2$s%%的概率获得%1$s",
+  "entity.twilightdelight.fragile_snowflake": "易碎雪花",
   "effect.twilightdelight": {
 	"poison_range": "范围剧毒",
 	"fire_range": "范围火焰",

@@ -328,6 +328,27 @@ public enum DelightFood {
 			new EffectSupplier(() -> MobEffects.ABSORPTION, 1200, 3, 1)),
 			TagRef.SWEETS, TagRef.SNACKS, TagRef.SUGARS),
 
+	// snow queen food line
+	AURORA_SNOWFLAKE_YOGURT(DelightFoodType.DRINK, 4, 0.25F, List.of(
+			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 600, 1, 1),
+			new EffectSupplier(() -> MobEffects.JUMP, 600, 0, 1),
+			new EffectSupplier(TDEffects.AURORA_GLOWING, 600, 0, 1))),
+	AURORA_SNOWFLAKE_CRYSTAL_DUMPLINGS(DelightFoodType.NONE, 8, 0.8F, List.of(
+			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 900, 1, 1),
+			new EffectSupplier(() -> MobEffects.JUMP, 900, 0, 1),
+			new EffectSupplier(TDEffects.AURORA_GLOWING, 900, 0, 1)),
+			TagRef.GRAINS),
+	AURORA_SNOWFLAKE_CHEESE_SANDWICH(DelightFoodType.NONE, 9, 0.8F, List.of(
+			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 600, 1, 1),
+			new EffectSupplier(() -> MobEffects.JUMP, 600, 0, 1),
+			new EffectSupplier(TDEffects.AURORA_GLOWING, 600, 0, 1)),
+			TagRef.GRAINS),
+	AURORA_SNOWFLAKE_RICECAKE(DelightFoodType.NONE, 6, 0.6F, List.of(
+			new EffectSupplier(() -> MobEffects.MOVEMENT_SPEED, 300, 1, 1),
+			new EffectSupplier(() -> MobEffects.JUMP, 300, 0, 1),
+			new EffectSupplier(TDEffects.AURORA_GLOWING, 300, 0, 1)),
+			TagRef.GRAINS, TagRef.SUGARS),
+
 	// yeti and glacier food line
 	RAW_YETI_MEAT(DelightFoodType.MEAT, 4, 0.5F, TagRef.PROTEINS),
 	COOKED_YETI_MEAT(DelightFoodType.MEAT, 8, 0.8F, List.of(

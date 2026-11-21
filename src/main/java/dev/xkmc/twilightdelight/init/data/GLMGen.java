@@ -46,6 +46,12 @@ public class GLMGen extends GlobalLootModifierProvider {
 			new ResourceLocation("twilightforest", "entities/ur_ghast");
 
 	/**
+	 * The drop table of the Snow Queen, the boss of the Aurora Palace.
+	 */
+	private static final ResourceLocation SNOW_QUEEN_LOOT =
+			new ResourceLocation("twilightforest", "entities/snow_queen");
+
+	/**
 	 * The chest loot tables of the Lich Tower.
 	 */
 	private static final String[] LICH_TOWER_CHESTS = {"tower_room", "tower_library"};
@@ -83,6 +89,10 @@ public class GLMGen extends GlobalLootModifierProvider {
 		add("yeti_meat_from_alpha_yeti", new RandomCountModifier(DelightFood.RAW_YETI_MEAT.item.get(), 2, 6,
 				LootTableIdCondition.builder(ALPHA_YETI_LOOT).build()));
 		mobDrop(DelightFood.RAW_YETI_MEAT_SLICE.item, TFEntities.YETI, 0.025f);
+
+		// the Snow Queen herself shatters into a handful of fragile snowflakes
+		add("fragile_snowflake_from_snow_queen", new RandomCountModifier(TDItems.FRAGILE_SNOWFLAKE.get(), 6, 16,
+				LootTableIdCondition.builder(SNOW_QUEEN_LOOT).build()));
 
 		// the Ur-Ghast hoards a pile of experiment 113
 		add("experiment_113_from_ur_ghast", new RandomCountModifier(DelightFood.EXPERIMENT_113.item.get(), 6, 12,

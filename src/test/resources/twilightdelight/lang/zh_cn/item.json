@@ -127,7 +127,13 @@
 		"glacier_popsicle": "冰川冰棍",
 		"glacier_apple": "冰川苹果",
 		"yeti_borscht": "雪怪罗宋汤",
-		"bowl_of_yeti_borscht": "碗装雪怪罗宋汤"
+		"bowl_of_yeti_borscht": "碗装雪怪罗宋汤",
+		"fragile_snowflake": "易碎雪花",
+		"fragile_snowflake.tooltip": "笔直飞出，命中后碎裂并冻结周围的目标",
+		"aurora_snowflake_yogurt": "极光雪花酸奶",
+		"aurora_snowflake_crystal_dumplings": "极光雪花水晶饺",
+		"aurora_snowflake_cheese_sandwich": "极光雪花芝士三明治",
+		"aurora_snowflake_ricecake": "极光雪花年糕"
 	},
 	"block.twilightdelight": {
 		"lily_chicken_block": "荷花鸡",
