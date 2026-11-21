@@ -1,3 +1,7 @@
+2.2.9
+- 15 food item related to yeti and ice queen
+- fix patchouli book
+
 2.2.8
 - Fix some food container bug and recipe bugs
 - twilight rich soil no longer replaced by tree growth
