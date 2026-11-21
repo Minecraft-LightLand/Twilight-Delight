@@ -994,9 +994,7 @@ public class RecipeGen {
 							Ingredient.of(TagRef.TOOLS_KNIVES),
 							TFItems.ICE_BOMB.get(), 9)
 					.addResult(TDItems.FRAGILE_SNOWFLAKE.get(), 10)
-					.addResultWithChance(TFItems.ICE_SWORD.get(), 0.2f)
 					.addResultWithChance(TFItems.GLASS_SWORD.get(), 0.1f)
-					.addResultWithChance(TFItems.ICE_BOW.get(), 0.2f)
 					.save(pvd, getID(TFBlocks.SNOW_QUEEN_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(

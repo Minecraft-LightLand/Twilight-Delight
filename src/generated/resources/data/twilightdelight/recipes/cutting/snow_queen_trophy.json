@@ -15,16 +15,8 @@
       "item": "twilightdelight:fragile_snowflake"
     },
     {
-      "chance": 0.2,
-      "item": "twilightforest:ice_sword"
-    },
-    {
       "chance": 0.1,
       "item": "twilightforest:glass_sword"
-    },
-    {
-      "chance": 0.2,
-      "item": "twilightforest:ice_bow"
     }
   ],
   "tool": {

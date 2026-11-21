@@ -1,4 +1,4 @@
-// 1.20.1	2026-11-21T12:09:24.077364	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2026-11-21T13:04:46.865943	Registrate Provider for twilightdelight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 6204d35322eb11bfd2b898b2f2a32323ad5474a4 assets/twilightdelight/blockstates/aurora_cake.json
 610bfe7245bd60d8b5ad5952ddaa36dc92c5d633 assets/twilightdelight/blockstates/aurora_candle_cake.json
 953f0013b56ee11d9c636b94fc62928de2cd0809 assets/twilightdelight/blockstates/aurora_pie.json
@@ -900,7 +900,7 @@ bd901e56c6b73a1d62b5cb24a8537ec541b28f89 data/twilightdelight/recipes/cutting/ra
 ddddc3ace336f7126f3049214d65574922b66e1f data/twilightdelight/recipes/cutting/raw_naga_piece.json
 dc6e533cbdd6c06bf99833404ba5851ef1d11ad9 data/twilightdelight/recipes/cutting/raw_venison_rib.json
 1450f2b43ce15b4f021d7a580b760789fd13419b data/twilightdelight/recipes/cutting/raw_yeti_meat_slice.json
-0820552d4314f3a261747f76269c4037fd39ca9f data/twilightdelight/recipes/cutting/snow_queen_trophy.json
+1c0f23b28dcd5d0fb9b9141817d0c4ee30828bc6 data/twilightdelight/recipes/cutting/snow_queen_trophy.json
 43f8e863fa71bbb54a1739419ed88f2959438127 data/twilightdelight/recipes/cutting/torchberry_pie.json
 ae0e5f21076090ee4ca0617b6d79b98c746ce508 data/twilightdelight/recipes/cutting/twilight_cake.json
 39fd95300a9b634bf5f38aa8e5fc5209d4fabeb8 data/twilightdelight/recipes/cutting/ur_ghast_trophy.json

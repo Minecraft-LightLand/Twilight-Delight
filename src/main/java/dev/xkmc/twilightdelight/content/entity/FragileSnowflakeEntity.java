@@ -3,6 +3,7 @@ package dev.xkmc.twilightdelight.content.entity;
 import dev.xkmc.twilightdelight.init.registrate.TDEntities;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,6 +14,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import twilightforest.init.TFMobEffects;
+import twilightforest.init.TFSounds;
 
 /**
  * A fragile snowflake thrown like a snowball, except that it does not fall. On impact it
@@ -24,6 +26,7 @@ public class FragileSnowflakeEntity extends ThrowableItemProjectile {
 	private static final double RADIUS = 2.0D;
 	private static final int FROSTY_TIME = 100;
 	private static final int FROSTY_AMPLIFIER = 1;
+	private static final int MAX_LIFE = 40;
 	private static final byte SHATTER_EVENT = 3;
 
 	public FragileSnowflakeEntity(EntityType<? extends FragileSnowflakeEntity> type, Level level) {
@@ -45,11 +48,21 @@ public class FragileSnowflakeEntity extends ThrowableItemProjectile {
 	}
 
 	@Override
+	public void tick() {
+		super.tick();
+		if (!level().isClientSide && tickCount >= MAX_LIFE) {
+			discard();
+		}
+	}
+
+	@Override
 	protected void onHit(HitResult hit) {
 		super.onHit(hit);
 		if (level().isClientSide) {
 			return;
 		}
+		level().playSound(null, getX(), getY(), getZ(),
+				TFSounds.ICE_CORE_DEATH.get(), SoundSource.NEUTRAL, 1.0F, 1.0F);
 		Vec3 center = hit.getLocation();
 		AABB area = new AABB(center, center).inflate(RADIUS);
 		for (LivingEntity target : level().getEntitiesOfClass(LivingEntity.class, area)) {
