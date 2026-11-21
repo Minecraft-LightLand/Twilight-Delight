@@ -1,3 +1,7 @@
+3.2.10
+- 15 food item related to yeti and ice queen
+- 15 ice cream and berry jelly food
+
 3.2.9
 - Fix some food container bug and recipe bugs
 - twilight rich soil no longer replaced by tree growth
