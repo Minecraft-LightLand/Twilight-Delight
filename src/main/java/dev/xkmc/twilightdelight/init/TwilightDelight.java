@@ -19,6 +19,7 @@ import dev.xkmc.twilightdelight.init.loot.RandomCountModifier;
 import dev.xkmc.twilightdelight.init.registrate.TDBlocks;
 import dev.xkmc.twilightdelight.init.registrate.TDDataComponents;
 import dev.xkmc.twilightdelight.init.registrate.TDEffects;
+import dev.xkmc.twilightdelight.init.registrate.TDEntities;
 import dev.xkmc.twilightdelight.init.registrate.TDItems;
 import dev.xkmc.twilightdelight.init.registrate.TDRecipes;
 import dev.xkmc.twilightdelight.init.registrate.delight.DelightCake;
@@ -81,6 +82,7 @@ public class TwilightDelight {
 		TDDataComponents.register(bus);
 		TDBlocks.register();
 		TDItems.register();
+		TDEntities.register();
 		DelightFood.register();
 		DelightPie.register();
 		DelightCake.register();

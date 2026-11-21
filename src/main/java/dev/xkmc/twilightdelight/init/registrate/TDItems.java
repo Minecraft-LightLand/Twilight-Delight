@@ -6,6 +6,7 @@ import com.tterrag.registrate.providers.RegistrateItemModelProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
+import dev.xkmc.twilightdelight.content.item.FragileSnowflakeItem;
 import dev.xkmc.twilightdelight.content.item.food.ReusableDrinkItem;
 import dev.xkmc.twilightdelight.content.item.tool.*;
 import dev.xkmc.twilightdelight.init.TwilightDelight;
@@ -53,6 +54,8 @@ public class TDItems {
 	public static final ItemEntry<HelmetCrabClawItem> HELMET_CRAB_CLAW;
 	public static final ItemEntry<Item> PHANTOM_BONE;
 
+	public static final ItemEntry<FragileSnowflakeItem> FRAGILE_SNOWFLAKE;
+
 	// WITCHCRAFT
 	static {
 		WITCHCRAFT_BONE = TwilightDelight.REGISTRATE.item("witchcraft_bone", Item::new)
@@ -88,6 +91,13 @@ public class TDItems {
 		ANTLER_BOW = TwilightDelight.REGISTRATE.item("antler_bow", AntlerBowItem::new)
 				.properties(e -> e.durability(1384))
 				.model(TDItems::bow).lang("Antler Bow").register();
+	}
+
+	// SNOW QUEEN
+	static {
+		FRAGILE_SNOWFLAKE = TwilightDelight.REGISTRATE.item("fragile_snowflake", FragileSnowflakeItem::new)
+				.properties(p -> p.stacksTo(16))
+				.defaultModel().lang("Fragile Snowflake").register();
 	}
 
 	// HELMET CRAB

@@ -63,6 +63,13 @@ public class TagGen {
 				TFItems.RASPBERRY.get(), TFItems.BLUEBERRY.get(), TFItems.BLACKBERRY.get(), TFItems.MALOBERRY.get(),
 				TFItems.BLIGHTBERRY.get(), TFItems.DUSKBERRY.get(), TFItems.SKYBERRY.get(), TFItems.STINGBERRY.get(),
 				TFItems.TORCHBERRIES.get());
+		// every aurora block in the Aurora Palace, so the snowflake recipes accept whichever one
+		// the player happens to have
+		pvd.addTag(TagRef.AURORA_BLOCKS).add(
+				TFBlocks.AURORA_BLOCK.get().asItem(),
+				TFBlocks.AURORA_PILLAR.get().asItem(),
+				TFBlocks.AURORA_SLAB.get().asItem(),
+				TFBlocks.AURORALIZED_GLASS.get().asItem());
 		// uncrafting a scepter hands back its repair ingredient, a golden apple for the fortification
 		// scepter for example, so keep them off the Twilight Forest uncrafting table
 		pvd.addTag(TagRef.BANNED_UNCRAFTABLES)

@@ -13,10 +13,9 @@
       }
     },
     {
-      "chance": 0.2,
       "item": {
-        "count": 1,
-        "id": "twilightforest:ice_sword"
+        "count": 10,
+        "id": "twilightdelight:fragile_snowflake"
       }
     },
     {
@@ -24,13 +23,6 @@
       "item": {
         "count": 1,
         "id": "twilightforest:glass_sword"
-      }
-    },
-    {
-      "chance": 0.2,
-      "item": {
-        "count": 1,
-        "id": "twilightforest:ice_bow"
       }
     }
   ],

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "twilightdelight:aurora_blocks"
+    },
+    {
+      "tag": "twilightdelight:aurora_blocks"
+    },
+    {
+      "item": "twilightdelight:fragile_snowflake"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "c:drinks/milk"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:aurora_snowflake_yogurt"
+  }
+}

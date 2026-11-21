@@ -179,6 +179,38 @@ public class RecipeGen {
 
 		delightCake(pvd, DelightCake.TWILIGHT);
 
+		// snow queen food line
+		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.AURORA_SNOWFLAKE_YOGURT.item.get(), 1)::unlockedBy, TDItems.FRAGILE_SNOWFLAKE.get())
+				.requires(Ingredient.of(TagRef.AURORA_BLOCKS), 2)
+				.requires(TDItems.FRAGILE_SNOWFLAKE.get())
+				.requires(Items.SUGAR)
+				.requires(TagRef.FOODS_MILK)
+				.requires(Items.GLASS_BOTTLE)
+				.save(pvd);
+
+		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.AURORA_SNOWFLAKE_CRYSTAL_DUMPLINGS.item.get(), 1)::unlockedBy, TDItems.FRAGILE_SNOWFLAKE.get())
+				.requires(Ingredient.of(TagRef.AURORA_BLOCKS), 3)
+				.requires(TDItems.FRAGILE_SNOWFLAKE.get())
+				.requires(ModItems.WHEAT_DOUGH.get())
+				.requires(Items.AMETHYST_SHARD)
+				.requires(Items.SNOW)
+				.save(pvd);
+
+		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.AURORA_SNOWFLAKE_CHEESE_SANDWICH.item.get(), 1)::unlockedBy, TDItems.FRAGILE_SNOWFLAKE.get())
+				.requires(Ingredient.of(TagRef.AURORA_BLOCKS), 2)
+				.requires(TDItems.FRAGILE_SNOWFLAKE.get())
+				.requires(Items.SNOW_BLOCK)
+				.requires(TagRef.FOODS_MILK)
+				.requires(TagRef.FOODS_MILK)
+				.save(pvd);
+
+		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.AURORA_SNOWFLAKE_RICECAKE.item.get(), 1)::unlockedBy, TDItems.FRAGILE_SNOWFLAKE.get())
+				.requires(TagRef.AURORA_BLOCKS)
+				.requires(TDItems.FRAGILE_SNOWFLAKE.get())
+				.requires(ModItems.COOKED_RICE.get())
+				.requires(Items.SUGAR)
+				.save(pvd);
+
 		unlock(pvd, new ShapelessRecipeBuilder(RecipeCategory.FOOD, DelightFood.NAGA_SKEWERS.item.get(), 2)::unlockedBy, DelightFood.COOKED_NAGA_PIECE.item.get())
 				.requires(TagGen.NAGA_COOKED)
 				.requires(TagGen.NAGA_COOKED)
@@ -1046,9 +1078,8 @@ public class RecipeGen {
 							Ingredient.of(TFBlocks.SNOW_QUEEN_TROPHY.get()),
 							Ingredient.of(TagRef.KNIFE),
 							TFItems.ICE_BOMB.get(), 9)
-					.addResultWithChance(TFItems.ICE_SWORD.get(), 0.2f)
+					.addResult(TDItems.FRAGILE_SNOWFLAKE.get(), 10)
 					.addResultWithChance(TFItems.GLASS_SWORD.get(), 0.1f)
-					.addResultWithChance(TFItems.ICE_BOW.get(), 0.2f)
 					.build(pvd, getID(TFBlocks.SNOW_QUEEN_TROPHY.getId()));
 
 			CuttingBoardRecipeBuilder.cuttingRecipe(

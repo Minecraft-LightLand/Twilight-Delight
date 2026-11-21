@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "twilightdelight:aurora_blocks"
+    },
+    {
+      "item": "twilightdelight:fragile_snowflake"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightdelight:aurora_snowflake_ricecake"
+  }
+}
